@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>MindFlux — Mapas Mentais</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div id="dashboardScreen" class="screen">
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark">M</span>
+      <span class="brand-name">MindFlux</span>
+    </div>
+    <div class="topbar-actions">
+      <button id="btnNewMap" class="btn btn-primary">+ Novo mapa</button>
+      <button id="btnImportMap" class="btn btn-ghost">Importar JSON</button>
+      <input id="importFileInput" type="file" accept="application/json" hidden />
+    </div>
+  </header>
+
+  <main class="dashboard-main">
+    <div class="dashboard-toolrow">
+      <input id="dashboardSearch" class="search-input" type="text" placeholder="Buscar mapas..." />
+    </div>
+    <div id="mapGrid" class="map-grid"></div>
+    <div id="emptyState" class="empty-state" hidden>
+      <p>Você ainda não tem nenhum mapa mental.</p>
+      <button id="btnNewMapEmpty" class="btn btn-primary">Criar meu primeiro mapa</button>
+    </div>
+  </main>
+</div>
+
+<div id="editorScreen" class="screen" hidden>
+  <header class="toolbar">
+    <div class="toolbar-group">
+      <button id="btnBackToDashboard" class="btn btn-ghost" title="Voltar aos meus mapas">← Meus mapas</button>
+      <input id="mapTitleInput" class="map-title-input" type="text" value="Mapa sem título" />
+    </div>
+    <div class="toolbar-group">
+      <button id="btnUndo" class="btn btn-icon" title="Desfazer (Ctrl+Z)">↺</button>
+      <button id="btnRedo" class="btn btn-icon" title="Refazer (Ctrl+Y)">↻</button>
+      <span class="toolbar-sep"></span>
+      <button id="btnZoomOut" class="btn btn-icon" title="Diminuir zoom">−</button>
+      <button id="btnZoomReset" class="btn btn-ghost" title="Restaurar zoom">100%</button>
+      <button id="btnZoomIn" class="btn btn-icon" title="Aumentar zoom">+</button>
+      <button id="btnFit" class="btn btn-ghost" title="Ajustar à tela">Ajustar</button>
+      <span class="toolbar-sep"></span>
+      <input id="searchInput" class="search-input search-input-small" type="text" placeholder="Buscar tópico..." />
+    </div>
+    <div class="toolbar-group">
+      <button id="btnExportPng" class="btn btn-ghost">Exportar PNG</button>
+      <button id="btnExportJson" class="btn btn-ghost">Exportar JSON</button>
+      <button id="btnShortcuts" class="btn btn-ghost">Atalhos</button>
+    </div>
+  </header>
+
+  <div class="editor-body">
+    <aside id="colorPanel" class="color-panel" hidden>
+      <div class="color-panel-title">Cor do tópico</div>
+      <div id="colorSwatches" class="color-swatches"></div>
+    </aside>
+
+    <div id="canvasViewport" class="canvas-viewport">
+      <div id="canvasContent" class="canvas-content">
+        <svg id="connectorsLayer" class="connectors-layer"></svg>
+        <div id="nodesLayer" class="nodes-layer"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="statusbar">
+    <span id="statusText">Pronto.</span>
+    <span id="saveIndicator" class="save-indicator"></span>
+  </footer>
+</div>
+
+<div id="modalOverlay" class="modal-overlay" hidden>
+  <div class="modal">
+    <div id="modalTitle" class="modal-title"></div>
+    <div id="modalBody" class="modal-body"></div>
+    <div class="modal-actions">
+      <button id="modalCancel" class="btn btn-ghost">Cancelar</button>
+      <button id="modalConfirm" class="btn btn-primary">Confirmar</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
