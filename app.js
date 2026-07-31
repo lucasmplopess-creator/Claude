@@ -748,6 +748,10 @@
         div.appendChild(toggle);
       }
 
+      if (node.id === selectedNodeId) {
+        div.appendChild(buildNodeActions(node));
+      }
+
       div.addEventListener("mousedown", function (e) { onNodeMouseDown(e, node); });
       div.addEventListener("dblclick", function (e) {
         e.stopPropagation();
@@ -756,6 +760,40 @@
 
       layer.appendChild(div);
     });
+  }
+
+  function buildNodeActions(node) {
+    var wrap = document.createElement("div");
+    wrap.className = "node-actions";
+    wrap.addEventListener("mousedown", function (e) { e.stopPropagation(); });
+
+    var addBtn = document.createElement("button");
+    addBtn.type = "button";
+    addBtn.className = "node-action-btn";
+    addBtn.textContent = "+ Subtópico";
+    addBtn.title = "Adicionar subtópico (Tab)";
+    addBtn.addEventListener("click", function (e) { e.stopPropagation(); addChild(node.id); });
+    wrap.appendChild(addBtn);
+
+    var editBtn = document.createElement("button");
+    editBtn.type = "button";
+    editBtn.className = "node-action-btn";
+    editBtn.textContent = "Editar";
+    editBtn.title = "Renomear (duplo clique)";
+    editBtn.addEventListener("click", function (e) { e.stopPropagation(); startEditingNode(node.id, true); });
+    wrap.appendChild(editBtn);
+
+    if (node.id !== currentMap.root.id) {
+      var delBtn = document.createElement("button");
+      delBtn.type = "button";
+      delBtn.className = "node-action-btn danger";
+      delBtn.textContent = "Excluir";
+      delBtn.title = "Excluir tópico (Delete)";
+      delBtn.addEventListener("click", function (e) { e.stopPropagation(); deleteNode(node.id); });
+      wrap.appendChild(delBtn);
+    }
+
+    return wrap;
   }
 
   /* ============ Color panel ============ */
@@ -859,11 +897,19 @@
   function selectNode(nodeId) {
     if (selectedNodeId === nodeId) return;
     var prev = els.nodesLayer.querySelector(".node.selected");
-    if (prev) prev.classList.remove("selected");
+    if (prev) {
+      prev.classList.remove("selected");
+      var prevActions = prev.querySelector(".node-actions");
+      if (prevActions) prevActions.remove();
+    }
     selectedNodeId = nodeId;
     if (nodeId) {
       var el = els.nodesLayer.querySelector('[data-id="' + nodeId + '"]');
-      if (el) el.classList.add("selected");
+      if (el) {
+        el.classList.add("selected");
+        var node = findNode(currentMap.root, nodeId);
+        if (node) el.appendChild(buildNodeActions(node));
+      }
     }
     updateColorPanel();
   }
