@@ -856,12 +856,23 @@
     };
   }
 
+  function selectNode(nodeId) {
+    if (selectedNodeId === nodeId) return;
+    var prev = els.nodesLayer.querySelector(".node.selected");
+    if (prev) prev.classList.remove("selected");
+    selectedNodeId = nodeId;
+    if (nodeId) {
+      var el = els.nodesLayer.querySelector('[data-id="' + nodeId + '"]');
+      if (el) el.classList.add("selected");
+    }
+    updateColorPanel();
+  }
+
   function onViewportMouseDown(e) {
     if (e.target !== els.canvasViewport && e.target !== els.canvasContent && e.target.id !== "connectorsLayer" && e.target.id !== "nodesLayer") {
       return;
     }
-    selectedNodeId = null;
-    render();
+    selectNode(null);
     panState = {
       startClientX: e.clientX,
       startClientY: e.clientY,
@@ -877,8 +888,7 @@
       var input = els.nodesLayer.querySelector('[data-editing-input="' + editingNodeId + '"]');
       if (input) commitNodeText(editingNodeId, input.value);
     }
-    selectedNodeId = node.id;
-    render();
+    selectNode(node.id);
     var startCanvas = clientToCanvas(e.clientX, e.clientY);
     drag = {
       nodeId: node.id,

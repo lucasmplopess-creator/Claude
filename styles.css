@@ -241,10 +241,16 @@ input {
 }
 
 .color-panel {
-  width: 180px;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 15;
+  width: 148px;
   background: var(--surface);
-  border-right: 1px solid var(--border);
-  padding: 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px;
+  box-shadow: var(--shadow);
   overflow-y: auto;
 }
 .color-panel-title { font-size: 13px; font-weight: 600; margin-bottom: 10px; color: var(--text-muted); }
