@@ -72,11 +72,6 @@
       <div id="themeGrid" class="theme-grid"></div>
     </aside>
 
-    <aside id="colorPanel" class="color-panel" hidden>
-      <div class="color-panel-title">Cor do tópico</div>
-      <div id="colorSwatches" class="color-swatches"></div>
-    </aside>
-
     <div id="canvasViewport" class="canvas-viewport">
       <div id="canvasContent" class="canvas-content">
         <svg id="connectorsLayer" class="connectors-layer"></svg>
@@ -84,6 +79,9 @@
       </div>
     </div>
   </div>
+
+  <input id="nodeImageInput" type="file" accept="image/*" hidden />
+  <input id="nodeAttachInput" type="file" hidden />
 
   <footer class="statusbar">
     <span id="statusText">Pronto.</span>

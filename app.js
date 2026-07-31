@@ -39,10 +39,37 @@
   var LIST_BASE_X = 260;
   var LIST_BASE_Y = 200;
 
+  var MAX_IMAGE_DIM = 480;
+  var MAX_ATTACH_BYTES = 3 * 1024 * 1024;
+
+  var FONT_OPTIONS = [
+    { id: "default", name: "Padrão", css: null },
+    { id: "serif", name: "Serifada", css: "Georgia, 'Times New Roman', serif" },
+    { id: "mono", name: "Monoespaçada", css: "'Courier New', monospace" },
+    { id: "rounded", name: "Arredondada", css: "Verdana, 'Trebuchet MS', sans-serif" }
+  ];
+
+  function svgIcon(inner) {
+    return '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">' + inner + '</svg>';
+  }
+
+  var ICONS = {
+    edit: svgIcon('<path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>'),
+    add: svgIcon('<line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>'),
+    color: '<svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="8"/></svg>',
+    image: svgIcon('<rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/>'),
+    attach: svgIcon('<path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48"/>'),
+    link: svgIcon('<path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>'),
+    comment: svgIcon('<path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>'),
+    "delete": svgIcon('<polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/>')
+  };
+
   var els = {};
   var currentMap = null;
   var selectedNodeId = null;
   var editingNodeId = null;
+  var openPopover = null;
+  var filePickTargetNodeId = null;
   var history = [];
   var future = [];
   var pan = { x: 0, y: 0 };
@@ -59,7 +86,6 @@
     cacheEls();
     bindDashboardEvents();
     bindEditorEvents();
-    buildColorSwatches();
     showDashboard();
   }
 
@@ -93,14 +119,14 @@
     els.layoutOptions = document.getElementById("layoutOptions");
     els.themeGrid = document.getElementById("themeGrid");
 
-    els.colorPanel = document.getElementById("colorPanel");
-    els.colorSwatches = document.getElementById("colorSwatches");
     els.canvasViewport = document.getElementById("canvasViewport");
     els.canvasContent = document.getElementById("canvasContent");
     els.connectorsLayer = document.getElementById("connectorsLayer");
     els.nodesLayer = document.getElementById("nodesLayer");
     els.statusText = document.getElementById("statusText");
     els.saveIndicator = document.getElementById("saveIndicator");
+    els.nodeImageInput = document.getElementById("nodeImageInput");
+    els.nodeAttachInput = document.getElementById("nodeAttachInput");
 
     els.modalOverlay = document.getElementById("modalOverlay");
     els.modalTitle = document.getElementById("modalTitle");
@@ -214,7 +240,12 @@
   }
 
   function persistMap(map) {
-    localStorage.setItem(STORAGE_MAP_PREFIX + map.id, JSON.stringify(map));
+    try {
+      localStorage.setItem(STORAGE_MAP_PREFIX + map.id, JSON.stringify(map));
+    } catch (e) {
+      flashStatus("Armazenamento cheio — remova imagens/anexos grandes para continuar salvando.");
+      return;
+    }
     var index = loadIndex();
     var entry = index.find(function (m) { return m.id === map.id; });
     if (!entry) {
@@ -479,12 +510,10 @@
     els.dashboardScreen.hidden = true;
     els.editorScreen.hidden = false;
     els.mapTitleInput.value = map.name;
-    els.colorPanel.hidden = true;
     els.appearancePanel.hidden = true;
     els.statusText.textContent = "Pronto.";
 
     applyCanvasTheme();
-    buildColorSwatches();
     render();
     centerOnRoot();
     renderAppearancePanel();
@@ -519,6 +548,19 @@
     els.btnCloseAppearance.addEventListener("click", function () { els.appearancePanel.hidden = true; });
     els.searchInput.addEventListener("keydown", function (e) {
       if (e.key === "Enter") { e.preventDefault(); runSearch(); }
+    });
+
+    els.nodeImageInput.addEventListener("change", function (e) {
+      var file = e.target.files[0];
+      var targetId = filePickTargetNodeId;
+      e.target.value = "";
+      if (file && targetId) handleImageFile(file, targetId);
+    });
+    els.nodeAttachInput.addEventListener("change", function (e) {
+      var file = e.target.files[0];
+      var targetId = filePickTargetNodeId;
+      e.target.value = "";
+      if (file && targetId) handleAttachFile(file, targetId);
     });
 
     els.canvasViewport.addEventListener("mousedown", onViewportMouseDown);
@@ -721,7 +763,7 @@
 
     renderConnectors(visible);
     renderNodes(visible);
-    updateColorPanel();
+    reopenPopoverIfNeeded();
     els.btnUndo.disabled = history.length === 0;
     els.btnRedo.disabled = future.length === 0;
   }
@@ -764,6 +806,24 @@
       }
       div.dataset.id = node.id;
 
+      if (node.image) {
+        var imgWrap = document.createElement("div");
+        imgWrap.className = "node-image-wrap";
+        var thumb = document.createElement("img");
+        thumb.className = "node-image";
+        thumb.src = node.image;
+        imgWrap.appendChild(thumb);
+        var removeImgBtn = document.createElement("button");
+        removeImgBtn.type = "button";
+        removeImgBtn.className = "node-image-remove";
+        removeImgBtn.title = "Remover imagem";
+        removeImgBtn.textContent = "×";
+        removeImgBtn.addEventListener("mousedown", function (e) { e.stopPropagation(); });
+        removeImgBtn.addEventListener("click", function (e) { e.stopPropagation(); removeNodeImage(node.id); });
+        imgWrap.appendChild(removeImgBtn);
+        div.appendChild(imgWrap);
+      }
+
       if (editingNodeId === node.id) {
         var input = document.createElement("input");
         input.type = "text";
@@ -781,8 +841,12 @@
       } else {
         var span = document.createElement("span");
         span.textContent = node.text;
+        applyTextStyle(span, node.textStyle);
         div.appendChild(span);
       }
+
+      var meta = buildNodeMeta(node);
+      if (meta) div.appendChild(meta);
 
       if (node.children.length > 0) {
         var toggle = document.createElement("div");
@@ -816,33 +880,382 @@
     wrap.className = "node-actions";
     wrap.addEventListener("mousedown", function (e) { e.stopPropagation(); });
 
-    var addBtn = document.createElement("button");
-    addBtn.type = "button";
-    addBtn.className = "node-action-btn";
-    addBtn.textContent = "+ Subtópico";
-    addBtn.title = "Adicionar subtópico (Tab)";
-    addBtn.addEventListener("click", function (e) { e.stopPropagation(); addChild(node.id); });
-    wrap.appendChild(addBtn);
-
-    var editBtn = document.createElement("button");
-    editBtn.type = "button";
-    editBtn.className = "node-action-btn";
-    editBtn.textContent = "Editar";
-    editBtn.title = "Renomear (duplo clique)";
-    editBtn.addEventListener("click", function (e) { e.stopPropagation(); startEditingNode(node.id, true); });
-    wrap.appendChild(editBtn);
+    wrap.appendChild(iconButton(ICONS.edit, "Renomear (duplo clique)", function () {
+      startEditingNode(node.id, true);
+    }));
+    wrap.appendChild(iconButton(ICONS.add, "Adicionar subtópico (Tab)", function () {
+      addChild(node.id);
+    }));
+    wrap.appendChild(iconButton("<b>Aa</b>", "Estilo do texto", function (e) {
+      toggleNodePopover(node, "text", e.currentTarget);
+    }));
+    wrap.appendChild(iconButton(ICONS.color, "Cor do tópico", function (e) {
+      toggleNodePopover(node, "color", e.currentTarget);
+    }));
+    wrap.appendChild(iconButton(ICONS.image, "Adicionar imagem", function () {
+      triggerFilePick("image", node.id);
+    }));
+    wrap.appendChild(iconButton(ICONS.attach, "Anexar arquivo", function () {
+      triggerFilePick("attach", node.id);
+    }));
+    wrap.appendChild(iconButton(ICONS.link, "Adicionar link", function () {
+      promptNodeLink(node);
+    }));
+    wrap.appendChild(iconButton(ICONS.comment, "Adicionar comentário", function () {
+      promptNodeNote(node);
+    }));
 
     if (node.id !== currentMap.root.id) {
-      var delBtn = document.createElement("button");
-      delBtn.type = "button";
-      delBtn.className = "node-action-btn danger";
-      delBtn.textContent = "Excluir";
-      delBtn.title = "Excluir tópico (Delete)";
-      delBtn.addEventListener("click", function (e) { e.stopPropagation(); deleteNode(node.id); });
-      wrap.appendChild(delBtn);
+      wrap.appendChild(iconButton(ICONS["delete"], "Excluir tópico (Delete)", function () {
+        deleteNode(node.id);
+      }, true));
     }
 
     return wrap;
+  }
+
+  function iconButton(html, title, onClick, danger) {
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "node-action-icon" + (danger ? " danger" : "");
+    btn.title = title;
+    btn.innerHTML = html;
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      onClick(e);
+    });
+    return btn;
+  }
+
+  /* ============ Node popovers (text style / color) ============ */
+
+  function toggleNodePopover(node, type) {
+    var nodeDiv = els.nodesLayer.querySelector('[data-id="' + node.id + '"]');
+    if (!nodeDiv) return;
+    var existing = nodeDiv.querySelector(".node-popover");
+    var wasOpenSameType = openPopover && openPopover.nodeId === node.id && openPopover.type === type;
+    if (existing) existing.remove();
+    if (wasOpenSameType) {
+      openPopover = null;
+      return;
+    }
+    openPopover = { nodeId: node.id, type: type };
+    nodeDiv.appendChild(buildNodePopover(node, type));
+  }
+
+  function reopenPopoverIfNeeded() {
+    if (!openPopover) return;
+    var node = findNode(currentMap.root, openPopover.nodeId);
+    var nodeDiv = node ? els.nodesLayer.querySelector('[data-id="' + openPopover.nodeId + '"]') : null;
+    if (!node || !nodeDiv) { openPopover = null; return; }
+    nodeDiv.appendChild(buildNodePopover(node, openPopover.type));
+  }
+
+  function buildNodePopover(node, type) {
+    var pop = document.createElement("div");
+    pop.className = "node-popover";
+    pop.addEventListener("mousedown", function (e) { e.stopPropagation(); });
+
+    if (type === "text") {
+      var style = node.textStyle || {};
+      var row1 = document.createElement("div");
+      row1.className = "popover-row";
+      [["bold", "B", "Negrito"], ["italic", "I", "Itálico"], ["underline", "U", "Sublinhado"]].forEach(function (t) {
+        var key = t[0], label = t[1], title = t[2];
+        var b = document.createElement("button");
+        b.type = "button";
+        b.className = "popover-toggle-btn" + (style[key] ? " active" : "");
+        b.textContent = label;
+        b.title = title;
+        if (key === "bold") b.style.fontWeight = "700";
+        if (key === "italic") b.style.fontStyle = "italic";
+        if (key === "underline") b.style.textDecoration = "underline";
+        b.addEventListener("click", function () {
+          var patch = {};
+          patch[key] = !style[key];
+          setNodeTextStyle(node.id, patch);
+        });
+        row1.appendChild(b);
+      });
+      pop.appendChild(row1);
+
+      pop.appendChild(popoverLabel("Tamanho"));
+      var row2 = document.createElement("div");
+      row2.className = "popover-row";
+      var currentSize = style.fontSize ? String(style.fontSize) : "14";
+      [["12", "P"], ["14", "M"], ["18", "G"], ["24", "XG"]].forEach(function (t) {
+        var size = t[0], label = t[1];
+        var b = document.createElement("button");
+        b.type = "button";
+        b.className = "popover-toggle-btn" + (currentSize === size ? " active" : "");
+        b.textContent = label;
+        b.addEventListener("click", function () { setNodeTextStyle(node.id, { fontSize: Number(size) }); });
+        row2.appendChild(b);
+      });
+      pop.appendChild(row2);
+
+      pop.appendChild(popoverLabel("Fonte"));
+      var select = document.createElement("select");
+      select.className = "popover-select";
+      FONT_OPTIONS.forEach(function (f) {
+        var opt = document.createElement("option");
+        opt.value = f.id;
+        opt.textContent = f.name;
+        if ((style.fontFamily || "default") === f.id) opt.selected = true;
+        select.appendChild(opt);
+      });
+      select.addEventListener("mousedown", function (e) { e.stopPropagation(); });
+      select.addEventListener("change", function () { setNodeTextStyle(node.id, { fontFamily: select.value }); });
+      pop.appendChild(select);
+    } else if (type === "color") {
+      pop.appendChild(popoverLabel("Cor do tópico"));
+      var grid = document.createElement("div");
+      grid.className = "color-swatches";
+      currentTheme().colors.concat([currentTheme().rootColor]).forEach(function (color) {
+        var sw = document.createElement("div");
+        sw.className = "color-swatch" + (node.color.toLowerCase() === color.toLowerCase() ? " active" : "");
+        sw.style.background = color;
+        sw.addEventListener("click", function () { setNodeColor(node.id, color); });
+        grid.appendChild(sw);
+      });
+      pop.appendChild(grid);
+    }
+
+    return pop;
+  }
+
+  function popoverLabel(text) {
+    var label = document.createElement("div");
+    label.className = "popover-label";
+    label.textContent = text;
+    return label;
+  }
+
+  function setNodeTextStyle(nodeId, patch) {
+    var node = findNode(currentMap.root, nodeId);
+    if (!node) return;
+    pushHistory();
+    node.textStyle = node.textStyle || {};
+    for (var key in patch) node.textStyle[key] = patch[key];
+    render();
+    scheduleSave();
+  }
+
+  function applyTextStyle(span, style) {
+    if (!style) return;
+    if (style.bold) span.style.fontWeight = "700";
+    if (style.italic) span.style.fontStyle = "italic";
+    if (style.underline) span.style.textDecoration = "underline";
+    if (style.fontSize) span.style.fontSize = style.fontSize + "px";
+    var font = FONT_OPTIONS.filter(function (f) { return f.id === style.fontFamily; })[0];
+    if (font && font.css) span.style.fontFamily = font.css;
+  }
+
+  /* ============ Image / attachment / link / comment ============ */
+
+  function triggerFilePick(mode, nodeId) {
+    filePickTargetNodeId = nodeId;
+    if (mode === "image") els.nodeImageInput.click();
+    else els.nodeAttachInput.click();
+  }
+
+  function handleImageFile(file, nodeId) {
+    if (!file.type || file.type.indexOf("image/") !== 0) {
+      flashStatus("Selecione um arquivo de imagem.");
+      return;
+    }
+    var reader = new FileReader();
+    reader.onload = function () {
+      var img = new Image();
+      img.onload = function () {
+        var scale = Math.min(1, MAX_IMAGE_DIM / Math.max(img.width, img.height));
+        var w = Math.max(1, Math.round(img.width * scale));
+        var h = Math.max(1, Math.round(img.height * scale));
+        var canvas = document.createElement("canvas");
+        canvas.width = w;
+        canvas.height = h;
+        canvas.getContext("2d").drawImage(img, 0, 0, w, h);
+        setNodeImage(nodeId, canvas.toDataURL("image/jpeg", 0.82));
+      };
+      img.onerror = function () { flashStatus("Não foi possível ler a imagem."); };
+      img.src = reader.result;
+    };
+    reader.onerror = function () { flashStatus("Não foi possível ler o arquivo."); };
+    reader.readAsDataURL(file);
+  }
+
+  function setNodeImage(nodeId, dataUrl) {
+    var node = findNode(currentMap.root, nodeId);
+    if (!node) return;
+    pushHistory();
+    node.image = dataUrl;
+    render();
+    scheduleSave();
+  }
+
+  function removeNodeImage(nodeId) {
+    var node = findNode(currentMap.root, nodeId);
+    if (!node) return;
+    pushHistory();
+    delete node.image;
+    render();
+    scheduleSave();
+  }
+
+  function handleAttachFile(file, nodeId) {
+    if (file.size > MAX_ATTACH_BYTES) {
+      showModal({
+        title: "Arquivo muito grande",
+        bodyHTML: "<p>Esse app guarda tudo no navegador (sem servidor), então anexos têm um limite de 3 MB. Escolha um arquivo menor.</p>",
+        hideConfirm: true,
+        cancelText: "Entendi"
+      });
+      return;
+    }
+    var reader = new FileReader();
+    reader.onload = function () { setNodeAttachment(nodeId, file.name, reader.result); };
+    reader.onerror = function () { flashStatus("Não foi possível ler o arquivo."); };
+    reader.readAsDataURL(file);
+  }
+
+  function setNodeAttachment(nodeId, name, dataUrl) {
+    var node = findNode(currentMap.root, nodeId);
+    if (!node) return;
+    pushHistory();
+    node.attachment = { name: name, dataUrl: dataUrl };
+    render();
+    scheduleSave();
+  }
+
+  function removeNodeAttachment(nodeId) {
+    var node = findNode(currentMap.root, nodeId);
+    if (!node) return;
+    pushHistory();
+    delete node.attachment;
+    render();
+    scheduleSave();
+  }
+
+  function downloadNodeAttachment(node) {
+    if (!node.attachment) return;
+    var a = document.createElement("a");
+    a.href = node.attachment.dataUrl;
+    a.download = node.attachment.name;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+  }
+
+  function promptNodeLink(node) {
+    showModal({
+      title: "Link do tópico",
+      bodyHTML: '<input type="text" id="nodeLinkInput" placeholder="https://exemplo.com" />',
+      confirmText: node.link ? "Salvar" : "Adicionar",
+      onOpen: function (body) {
+        var input = body.querySelector("#nodeLinkInput");
+        input.value = node.link || "";
+        input.focus();
+        input.addEventListener("keydown", function (e) {
+          if (e.key === "Enter") { e.preventDefault(); els.modalConfirm.click(); }
+        });
+      },
+      onConfirm: function () {
+        var value = document.getElementById("nodeLinkInput").value.trim();
+        if (value && !/^https?:\/\//i.test(value)) value = "https://" + value;
+        setNodeLink(node.id, value || null);
+      }
+    });
+  }
+
+  function setNodeLink(nodeId, url) {
+    var node = findNode(currentMap.root, nodeId);
+    if (!node) return;
+    pushHistory();
+    if (url) node.link = url; else delete node.link;
+    render();
+    scheduleSave();
+  }
+
+  function promptNodeNote(node) {
+    showModal({
+      title: "Comentário do tópico",
+      bodyHTML: '<textarea id="nodeNoteInput" rows="4" style="width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:8px;font:inherit;resize:vertical;"></textarea>',
+      confirmText: node.note ? "Salvar" : "Adicionar",
+      onOpen: function (body) {
+        var textarea = body.querySelector("#nodeNoteInput");
+        textarea.value = node.note || "";
+        textarea.focus();
+      },
+      onConfirm: function () {
+        var value = document.getElementById("nodeNoteInput").value.trim();
+        setNodeNote(node.id, value || null);
+      }
+    });
+  }
+
+  function setNodeNote(nodeId, text) {
+    var node = findNode(currentMap.root, nodeId);
+    if (!node) return;
+    pushHistory();
+    if (text) node.note = text; else delete node.note;
+    render();
+    scheduleSave();
+  }
+
+  function buildNodeMeta(node) {
+    if (!node.link && !node.attachment && !node.note) return null;
+    var meta = document.createElement("div");
+    meta.className = "node-meta";
+
+    if (node.link) {
+      var linkBadge = document.createElement("a");
+      linkBadge.className = "node-badge";
+      linkBadge.href = node.link;
+      linkBadge.target = "_blank";
+      linkBadge.rel = "noopener noreferrer";
+      linkBadge.title = node.link;
+      linkBadge.innerHTML = ICONS.link;
+      linkBadge.addEventListener("mousedown", function (e) { e.stopPropagation(); });
+      linkBadge.addEventListener("click", function (e) { e.stopPropagation(); });
+      meta.appendChild(linkBadge);
+      meta.appendChild(badgeRemoveBtn("Remover link", function () { setNodeLink(node.id, null); }));
+    }
+
+    if (node.attachment) {
+      var attachBadge = document.createElement("button");
+      attachBadge.type = "button";
+      attachBadge.className = "node-badge";
+      attachBadge.title = "Baixar " + node.attachment.name;
+      attachBadge.innerHTML = ICONS.attach;
+      attachBadge.addEventListener("mousedown", function (e) { e.stopPropagation(); });
+      attachBadge.addEventListener("click", function (e) { e.stopPropagation(); downloadNodeAttachment(node); });
+      meta.appendChild(attachBadge);
+      meta.appendChild(badgeRemoveBtn("Remover anexo", function () { removeNodeAttachment(node.id); }));
+    }
+
+    if (node.note) {
+      var noteBadge = document.createElement("button");
+      noteBadge.type = "button";
+      noteBadge.className = "node-badge";
+      noteBadge.title = node.note;
+      noteBadge.innerHTML = ICONS.comment;
+      noteBadge.addEventListener("mousedown", function (e) { e.stopPropagation(); });
+      noteBadge.addEventListener("click", function (e) { e.stopPropagation(); promptNodeNote(node); });
+      meta.appendChild(noteBadge);
+    }
+
+    return meta;
+  }
+
+  function badgeRemoveBtn(title, onClick) {
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "node-badge-remove";
+    btn.title = title;
+    btn.textContent = "×";
+    btn.addEventListener("mousedown", function (e) { e.stopPropagation(); });
+    btn.addEventListener("click", function (e) { e.stopPropagation(); onClick(); });
+    return btn;
   }
 
   /* ============ Themes & layouts ============ */
@@ -873,7 +1286,6 @@
     });
     paletteCursor = currentMap.root.children.length;
     applyCanvasTheme();
-    buildColorSwatches();
     render();
     scheduleSave();
     renderAppearancePanel();
@@ -1010,34 +1422,6 @@
 
   /* ============ Color panel ============ */
 
-  function buildColorSwatches() {
-    els.colorSwatches.innerHTML = "";
-    currentTheme().colors.concat([currentTheme().rootColor]).forEach(function (color) {
-      var sw = document.createElement("div");
-      sw.className = "color-swatch";
-      sw.style.background = color;
-      sw.dataset.color = color;
-      sw.addEventListener("click", function () {
-        if (selectedNodeId) setNodeColor(selectedNodeId, color);
-      });
-      els.colorSwatches.appendChild(sw);
-    });
-  }
-
-  function updateColorPanel() {
-    if (!selectedNodeId) {
-      els.colorPanel.hidden = true;
-      return;
-    }
-    var node = findNode(currentMap.root, selectedNodeId);
-    if (!node) { els.colorPanel.hidden = true; return; }
-    els.colorPanel.hidden = false;
-    var swatches = els.colorSwatches.querySelectorAll(".color-swatch");
-    swatches.forEach(function (sw) {
-      sw.classList.toggle("active", sw.dataset.color.toLowerCase() === node.color.toLowerCase());
-    });
-  }
-
   /* ============ Canvas transform (pan/zoom) ============ */
 
   function applyTransform() {
@@ -1113,7 +1497,10 @@
       prev.classList.remove("selected");
       var prevActions = prev.querySelector(".node-actions");
       if (prevActions) prevActions.remove();
+      var prevPopover = prev.querySelector(".node-popover");
+      if (prevPopover) prevPopover.remove();
     }
+    openPopover = null;
     selectedNodeId = nodeId;
     if (nodeId) {
       var el = els.nodesLayer.querySelector('[data-id="' + nodeId + '"]');
@@ -1123,7 +1510,6 @@
         if (node) el.appendChild(buildNodeActions(node));
       }
     }
-    updateColorPanel();
   }
 
   function onViewportMouseDown(e) {
