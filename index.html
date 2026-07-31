@@ -51,6 +51,7 @@
       <input id="searchInput" class="search-input search-input-small" type="text" placeholder="Buscar tópico..." />
     </div>
     <div class="toolbar-group">
+      <button id="btnAppearance" class="btn btn-ghost">Aparência</button>
       <button id="btnExportPng" class="btn btn-ghost">Exportar PNG</button>
       <button id="btnExportJson" class="btn btn-ghost">Exportar JSON</button>
       <button id="btnShortcuts" class="btn btn-ghost">Atalhos</button>
@@ -58,6 +59,19 @@
   </header>
 
   <div class="editor-body">
+    <aside id="appearancePanel" class="appearance-panel" hidden>
+      <div class="appearance-panel-header">
+        <h3>Aparência</h3>
+        <button id="btnCloseAppearance" class="btn-icon-plain" title="Fechar">×</button>
+      </div>
+
+      <div class="appearance-section-label">Layout</div>
+      <div id="layoutOptions" class="layout-options"></div>
+
+      <div class="appearance-section-label">Temas</div>
+      <div id="themeGrid" class="theme-grid"></div>
+    </aside>
+
     <aside id="colorPanel" class="color-panel" hidden>
       <div class="color-panel-title">Cor do tópico</div>
       <div id="colorSwatches" class="color-swatches"></div>

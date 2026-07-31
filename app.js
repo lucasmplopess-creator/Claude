@@ -5,12 +5,39 @@
   var STORAGE_MAP_PREFIX = "mindflux:map:";
   var CANVAS_CENTER_X = 3000;
   var CANVAS_CENTER_Y = 2000;
-  var ROOT_COLOR = "#2D3142";
-  var PALETTE = [
-    "#5B5FEF", "#F76E6E", "#4CC9A0", "#F7B84F",
-    "#B57BEE", "#F76EC2", "#3AB6D6", "#8BC34A"
-  ];
   var MAX_HISTORY = 60;
+
+  var THEMES = [
+    { id: "meister", name: "Meister", rootColor: "#2D3142", colors: ["#5B5FEF", "#F76E6E", "#4CC9A0", "#F7B84F", "#B57BEE", "#F76EC2", "#3AB6D6", "#8BC34A"] },
+    { id: "prism", name: "Prism", rootColor: "#212529", colors: ["#4361EE", "#F72585", "#4CC9F0", "#FFB703", "#7209B7", "#06D6A0", "#FB5607", "#3A86FF"] },
+    { id: "colorburst", name: "Color Burst", rootColor: "#1D3557", colors: ["#E63946", "#2A9D8F", "#E9C46A", "#E76F51", "#457B9D", "#F4A261", "#9B5DE5", "#00BBF9"] },
+    { id: "ocean", name: "Ocean", rootColor: "#03045E", colors: ["#0077B6", "#00B4D8", "#48CAE4", "#0096C7", "#023E8A", "#5390D9", "#4EA8DE", "#0466C8"] },
+    { id: "sunset", name: "Sunset", rootColor: "#6A040F", colors: ["#FF6B6B", "#FFA07A", "#FFD166", "#F77F00", "#EF476F", "#D62828", "#C9184A", "#FFB4A2"] },
+    { id: "vintage", name: "Vintage", rootColor: "#3E2723", colors: ["#A9927D", "#8C6A5D", "#B08968", "#7F5539", "#9C6644", "#DDB892", "#6B4C3B", "#AD8B73"] },
+    { id: "pastel", name: "Pastel", rootColor: "#495057", colors: ["#A0C4FF", "#FFADAD", "#FFD6A5", "#CBF3C9", "#CAFFBF", "#9BF6FF", "#BDB2FF", "#FFC6FF"] },
+    { id: "bubbles", name: "Bubbles", rootColor: "#22223B", colors: ["#FF006E", "#FB5607", "#FFBE0B", "#8338EC", "#3A86FF", "#06D6A0", "#EF476F", "#118AB2"] },
+    { id: "aquarelle", name: "Aquarelle", rootColor: "#023047", colors: ["#8ECAE6", "#219EBC", "#FFB703", "#FB8500", "#A8DADC", "#457B9D", "#E76F51", "#E63946"] },
+    { id: "spring", name: "Spring", rootColor: "#1B4332", colors: ["#95D5B2", "#74C69D", "#52B788", "#40916C", "#B7E4C7", "#FFD166", "#EF476F", "#2D6A4F"] },
+    { id: "nostalgia", name: "Nostalgia", rootColor: "#22223B", colors: ["#C9ADA7", "#9A8C98", "#4A4E69", "#B08968", "#DDBEA9", "#CB997E", "#A5A58D", "#6B705C"] },
+    { id: "cubicle", name: "Cubicle", rootColor: "#212529", colors: ["#6C757D", "#495057", "#5C677D", "#457B9D", "#868E96", "#4A5568", "#718096", "#2B6CB0"] },
+    { id: "midnite", name: "Midnite", rootColor: "#2b2c3d", dark: true, canvasBg: "#14151f", dotColor: "#2a2b3d", colors: ["#4CC9F0", "#F72585", "#7209B7", "#4361EE", "#4895EF", "#B5179E", "#3A0CA3", "#4CC9A0"] },
+    { id: "fireworks", name: "Fireworks", rootColor: "#2b2c3d", dark: true, canvasBg: "#16161e", dotColor: "#2c2c38", colors: ["#FF006E", "#FB5607", "#FFBE0B", "#8338EC", "#3A86FF", "#06D6A0", "#EF476F", "#F15BB5"] },
+    { id: "blackboard", name: "Blackboard", rootColor: "#333333", dark: true, canvasBg: "#1c1c1c", dotColor: "#333333", colors: ["#FFFFFF", "#8ECAE6", "#FFD166", "#95D5B2", "#F4A261", "#CDB4DB", "#F28482", "#A8DADC"] },
+    { id: "darkmode", name: "Dark Mode", rootColor: "#2b2c3d", dark: true, canvasBg: "#1a1a24", dotColor: "#2a2a38", colors: ["#5B5FEF", "#F76E6E", "#4CC9A0", "#F7B84F", "#B57BEE", "#F76EC2", "#3AB6D6", "#8BC34A"] }
+  ];
+
+  var LAYOUTS = [
+    { id: "mindmap", name: "Mapa mental" },
+    { id: "org", name: "Organograma" },
+    { id: "list", name: "Lista" }
+  ];
+
+  var ORG_LEVEL_GAP = 130;
+  var ORG_SLOT_WIDTH = 190;
+  var LIST_ROW_GAP = 62;
+  var LIST_INDENT = 70;
+  var LIST_BASE_X = 260;
+  var LIST_BASE_Y = 200;
 
   var els = {};
   var currentMap = null;
@@ -59,6 +86,12 @@
     els.btnExportPng = document.getElementById("btnExportPng");
     els.btnExportJson = document.getElementById("btnExportJson");
     els.btnShortcuts = document.getElementById("btnShortcuts");
+
+    els.btnAppearance = document.getElementById("btnAppearance");
+    els.appearancePanel = document.getElementById("appearancePanel");
+    els.btnCloseAppearance = document.getElementById("btnCloseAppearance");
+    els.layoutOptions = document.getElementById("layoutOptions");
+    els.themeGrid = document.getElementById("themeGrid");
 
     els.colorPanel = document.getElementById("colorPanel");
     els.colorSwatches = document.getElementById("colorSwatches");
@@ -265,12 +298,14 @@
       name: name,
       createdAt: ts,
       updatedAt: ts,
+      themeId: THEMES[0].id,
+      layoutMode: "mindmap",
       root: {
         id: uid(),
         text: name,
         x: CANVAS_CENTER_X,
         y: CANVAS_CENTER_Y,
-        color: ROOT_COLOR,
+        color: THEMES[0].rootColor,
         collapsed: false,
         side: 0,
         children: []
@@ -431,6 +466,8 @@
     var map = loadMap(id);
     if (!map) return;
     currentMap = map;
+    currentMap.themeId = currentMap.themeId || THEMES[0].id;
+    currentMap.layoutMode = currentMap.layoutMode || "mindmap";
     selectedNodeId = null;
     editingNodeId = null;
     history = [];
@@ -443,10 +480,14 @@
     els.editorScreen.hidden = false;
     els.mapTitleInput.value = map.name;
     els.colorPanel.hidden = true;
+    els.appearancePanel.hidden = true;
     els.statusText.textContent = "Pronto.";
 
-    centerOnRoot();
+    applyCanvasTheme();
+    buildColorSwatches();
     render();
+    centerOnRoot();
+    renderAppearancePanel();
   }
 
   function countTopLevelChildren(root) {
@@ -470,6 +511,12 @@
     els.btnExportPng.addEventListener("click", exportPng);
     els.btnExportJson.addEventListener("click", function () { exportMapJson(currentMap); });
     els.btnShortcuts.addEventListener("click", showShortcutsModal);
+    els.btnAppearance.addEventListener("click", function () {
+      selectNode(null);
+      els.appearancePanel.hidden = !els.appearancePanel.hidden;
+      if (!els.appearancePanel.hidden) renderAppearancePanel();
+    });
+    els.btnCloseAppearance.addEventListener("click", function () { els.appearancePanel.hidden = true; });
     els.searchInput.addEventListener("keydown", function (e) {
       if (e.key === "Enter") { e.preventDefault(); runSearch(); }
     });
@@ -548,7 +595,8 @@
     var x = parent.x + side * offsetX;
     var y = parent.y + dir * magnitude * 70;
 
-    var color = isRootParent ? PALETTE[paletteCursor++ % PALETTE.length] : parent.color;
+    var themeColors = currentTheme().colors;
+    var color = isRootParent ? themeColors[paletteCursor++ % themeColors.length] : parent.color;
 
     var child = {
       id: uid(),
@@ -666,6 +714,7 @@
   }
 
   function render() {
+    applyAutoLayout(currentLayoutMode());
     var visible = getVisibleNodes();
     var visibleIds = {};
     visible.forEach(function (n) { visibleIds[n.id] = true; });
@@ -796,11 +845,174 @@
     return wrap;
   }
 
+  /* ============ Themes & layouts ============ */
+
+  function currentTheme() {
+    var themeId = currentMap ? currentMap.themeId : null;
+    var found = THEMES.filter(function (t) { return t.id === themeId; })[0];
+    return found || THEMES[0];
+  }
+
+  function currentLayoutMode() {
+    return (currentMap && currentMap.layoutMode) || "mindmap";
+  }
+
+  function setColorRecursive(node, color) {
+    node.color = color;
+    node.children.forEach(function (child) { setColorRecursive(child, color); });
+  }
+
+  function applyTheme(themeId) {
+    var theme = THEMES.filter(function (t) { return t.id === themeId; })[0];
+    if (!theme || !currentMap) return;
+    pushHistory();
+    currentMap.themeId = themeId;
+    currentMap.root.color = theme.rootColor;
+    currentMap.root.children.forEach(function (branch, i) {
+      setColorRecursive(branch, theme.colors[i % theme.colors.length]);
+    });
+    paletteCursor = currentMap.root.children.length;
+    applyCanvasTheme();
+    buildColorSwatches();
+    render();
+    scheduleSave();
+    renderAppearancePanel();
+  }
+
+  function setLayoutMode(mode) {
+    if (!currentMap || currentMap.layoutMode === mode) return;
+    currentMap.layoutMode = mode;
+    if (mode === "mindmap") layoutMindmapRoot();
+    render();
+    fitToScreen();
+    scheduleSave();
+    renderAppearancePanel();
+  }
+
+  function layoutMindmapRoot() {
+    var root = currentMap.root;
+    root.x = CANVAS_CENTER_X;
+    root.y = CANVAS_CENTER_Y;
+    root.children.forEach(function (child, i) {
+      child.side = i % 2 === 0 ? 1 : -1;
+      layoutMindmapNode(child, root, i, true);
+    });
+  }
+
+  function layoutMindmapNode(node, parent, indexAmongSiblings, isTopLevel) {
+    var offsetX = isTopLevel ? 260 : 220;
+    var dir = indexAmongSiblings % 2 === 0 ? -1 : 1;
+    var magnitude = Math.ceil((indexAmongSiblings + 1) / 2);
+    node.x = parent.x + node.side * offsetX;
+    node.y = parent.y + dir * magnitude * 70;
+    node.children.forEach(function (child, i) {
+      child.side = node.side;
+      layoutMindmapNode(child, node, i, false);
+    });
+  }
+
+  function applyCanvasTheme() {
+    var theme = currentTheme();
+    els.canvasViewport.classList.toggle("dark-canvas", !!theme.dark);
+    if (theme.dark) {
+      els.canvasViewport.style.backgroundColor = theme.canvasBg;
+      els.canvasViewport.style.backgroundImage = "radial-gradient(circle, " + theme.dotColor + " 1px, transparent 1px)";
+    } else {
+      els.canvasViewport.style.backgroundColor = "";
+      els.canvasViewport.style.backgroundImage = "";
+    }
+  }
+
+  function renderAppearancePanel() {
+    if (!currentMap) return;
+    var mode = currentLayoutMode();
+    els.layoutOptions.innerHTML = "";
+    LAYOUTS.forEach(function (layout) {
+      var card = document.createElement("div");
+      card.className = "layout-card" + (layout.id === mode ? " active" : "");
+      card.innerHTML = '<div class="layout-card-icon">' + layoutIconSvg(layout.id) + '</div><div class="layout-card-label"></div>';
+      card.querySelector(".layout-card-label").textContent = layout.name;
+      card.addEventListener("click", function () { setLayoutMode(layout.id); });
+      els.layoutOptions.appendChild(card);
+    });
+
+    var activeThemeId = currentTheme().id;
+    els.themeGrid.innerHTML = "";
+    THEMES.forEach(function (theme) {
+      var card = document.createElement("div");
+      card.className = "theme-card" + (theme.dark ? " theme-card-dark" : "") + (theme.id === activeThemeId ? " active" : "");
+      var preview = document.createElement("div");
+      preview.className = "theme-preview";
+      var positions = [
+        { x: -30, y: -8, rot: -18 },
+        { x: -22, y: 8, rot: 18 },
+        { x: 14, y: -8, rot: 18 },
+        { x: 22, y: 8, rot: -18 }
+      ];
+      theme.colors.slice(0, 4).forEach(function (color, i) {
+        var bar = document.createElement("div");
+        bar.className = "theme-preview-bar";
+        bar.style.background = color;
+        var p = positions[i];
+        bar.style.transform = "translate(" + p.x + "px, " + p.y + "px) rotate(" + p.rot + "deg)";
+        preview.appendChild(bar);
+      });
+      card.appendChild(preview);
+      var label = document.createElement("div");
+      label.className = "theme-card-label";
+      label.textContent = theme.name;
+      card.appendChild(label);
+      card.addEventListener("click", function () { applyTheme(theme.id); });
+      els.themeGrid.appendChild(card);
+    });
+  }
+
+  function layoutIconSvg(layoutId) {
+    if (layoutId === "mindmap") {
+      return '<svg width="40" height="32" viewBox="0 0 40 32" fill="none"><circle cx="20" cy="16" r="4" fill="#5B5FEF"/><line x1="16" y1="14" x2="4" y2="6" stroke="#9aa" stroke-width="2"/><line x1="16" y1="18" x2="4" y2="26" stroke="#9aa" stroke-width="2"/><line x1="24" y1="14" x2="36" y2="6" stroke="#9aa" stroke-width="2"/><line x1="24" y1="18" x2="36" y2="26" stroke="#9aa" stroke-width="2"/><circle cx="4" cy="6" r="3" fill="#F76E6E"/><circle cx="4" cy="26" r="3" fill="#4CC9A0"/><circle cx="36" cy="6" r="3" fill="#F7B84F"/><circle cx="36" cy="26" r="3" fill="#B57BEE"/></svg>';
+    }
+    if (layoutId === "org") {
+      return '<svg width="40" height="32" viewBox="0 0 40 32" fill="none"><rect x="14" y="2" width="12" height="7" rx="2" fill="#5B5FEF"/><line x1="20" y1="9" x2="20" y2="15" stroke="#9aa" stroke-width="2"/><line x1="6" y1="15" x2="34" y2="15" stroke="#9aa" stroke-width="2"/><line x1="6" y1="15" x2="6" y2="21" stroke="#9aa" stroke-width="2"/><line x1="20" y1="15" x2="20" y2="21" stroke="#9aa" stroke-width="2"/><line x1="34" y1="15" x2="34" y2="21" stroke="#9aa" stroke-width="2"/><rect x="1" y="21" width="10" height="7" rx="2" fill="#F76E6E"/><rect x="15" y="21" width="10" height="7" rx="2" fill="#4CC9A0"/><rect x="29" y="21" width="10" height="7" rx="2" fill="#F7B84F"/></svg>';
+    }
+    return '<svg width="40" height="32" viewBox="0 0 40 32" fill="none"><rect x="2" y="3" width="14" height="5" rx="2" fill="#5B5FEF"/><line x1="6" y1="8" x2="6" y2="15" stroke="#9aa" stroke-width="2"/><rect x="10" y="13" width="12" height="5" rx="2" fill="#F76E6E"/><line x1="6" y1="15" x2="6" y2="24" stroke="#9aa" stroke-width="2"/><rect x="10" y="22" width="12" height="5" rx="2" fill="#4CC9A0"/></svg>';
+  }
+
+  function applyAutoLayout(mode) {
+    if (!currentMap) return;
+    if (mode === "org") {
+      layoutOrgNode(currentMap.root, 0, { x: 0 });
+    } else if (mode === "list") {
+      layoutListNode(currentMap.root, 0, { count: 0 });
+    }
+  }
+
+  function layoutOrgNode(node, depth, counter) {
+    node.y = 260 + depth * ORG_LEVEL_GAP;
+    if (node.collapsed || node.children.length === 0) {
+      node.x = counter.x * ORG_SLOT_WIDTH + ORG_SLOT_WIDTH / 2;
+      counter.x++;
+      return;
+    }
+    var startX = counter.x;
+    node.children.forEach(function (child) { layoutOrgNode(child, depth + 1, counter); });
+    var endX = counter.x - 1;
+    node.x = ((startX + endX) / 2) * ORG_SLOT_WIDTH + ORG_SLOT_WIDTH / 2;
+  }
+
+  function layoutListNode(node, depth, order) {
+    node.x = LIST_BASE_X + depth * LIST_INDENT;
+    node.y = LIST_BASE_Y + order.count * LIST_ROW_GAP;
+    order.count++;
+    if (!node.collapsed) {
+      node.children.forEach(function (child) { layoutListNode(child, depth + 1, order); });
+    }
+  }
+
   /* ============ Color panel ============ */
 
   function buildColorSwatches() {
     els.colorSwatches.innerHTML = "";
-    PALETTE.concat([ROOT_COLOR]).forEach(function (color) {
+    currentTheme().colors.concat([currentTheme().rootColor]).forEach(function (color) {
       var sw = document.createElement("div");
       sw.className = "color-swatch";
       sw.style.background = color;
@@ -835,8 +1047,8 @@
 
   function centerOnRoot() {
     var rect = els.canvasViewport.getBoundingClientRect();
-    pan.x = rect.width / 2 - CANVAS_CENTER_X * zoom;
-    pan.y = rect.height / 2 - CANVAS_CENTER_Y * zoom;
+    pan.x = rect.width / 2 - currentMap.root.x * zoom;
+    pan.y = rect.height / 2 - currentMap.root.y * zoom;
     applyTransform();
   }
 
@@ -935,6 +1147,7 @@
       if (input) commitNodeText(editingNodeId, input.value);
     }
     selectNode(node.id);
+    if (currentLayoutMode() !== "mindmap") return;
     var startCanvas = clientToCanvas(e.clientX, e.clientY);
     drag = {
       nodeId: node.id,
