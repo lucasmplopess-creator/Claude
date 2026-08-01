@@ -115,24 +115,15 @@ function writingLines(n) {
   }));
 }
 
-function buildChapterDoc(theme, guide, criteria) {
+function buildChapterContent(theme, guide, criteria, opts = {}) {
   const p = palette;
-  return new Document({
-    numbering: {
-      config: [
-        { reference: "question-list", levels: [{ level: 0, format: LevelFormat.DECIMAL, text: "%1.", alignment: AlignmentType.LEFT, style: { paragraph: { indent: { left: 400, hanging: 300 } } } }] },
-        { reference: "expr-list", levels: [{ level: 0, format: LevelFormat.BULLET, text: "•", alignment: AlignmentType.LEFT, style: { paragraph: { indent: { left: 360, hanging: 260 } } } }] },
-      ],
-    },
-    sections: [
-      {
-        properties: { page: { size: { width: 11906, height: 16838 }, margin: { top: 1000, bottom: 1000, left: 1100, right: 1100 } } },
-        headers: { default: new Header({ children: [new Paragraph({ alignment: AlignmentType.RIGHT, children: [new TextRun({ text: "English Speaking Practice — Nação Fluente", color: p.lightGrey, size: 16, font: FONT })] })] }) },
-        footers: { default: new Footer({ children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [
-          new TextRun({ text: `Bloco ${theme.block} — ${theme.blockName}   |   Página `, color: p.lightGrey, size: 16, font: FONT }),
-          new TextRun({ children: [PageNumber.CURRENT], color: p.lightGrey, size: 16, font: FONT }),
-        ] })] }) },
-        children: [
+  return [
+          ...(opts.withHeading ? [new Paragraph({
+            heading: opts.headingLevel || HeadingLevel.HEADING_2,
+            pageBreakBefore: opts.pageBreakBefore !== false,
+            spacing: { after: 0 },
+            children: [new TextRun({ text: `Tema ${theme.num} — ${theme.titleEn}`, color: "FFFFFF", size: 2, font: FONT })],
+          })] : []),
           new Table({
             width: { size: 9200, type: WidthType.DXA }, columnWidths: [9200],
             rows: [new TableRow({ children: [new TableCell({
@@ -194,10 +185,30 @@ function buildChapterDoc(theme, guide, criteria) {
           ...writingLines(3),
 
           new Paragraph({ spacing: { before: 300 }, alignment: AlignmentType.CENTER, children: [new TextRun({ text: theme.num >= 104 ? "Parabéns — você concluiu os 104 temas do English Speaking Practice. Volte a qualquer tema sempre que quiser revisar." : `Marque este tema como concluído no seu Painel de Evolução e siga para o Tema ${theme.num + 1}.`, bold: true, color: p.cover, size: 21, font: FONT })] }),
-        ],
+  ];
+}
+
+function buildChapterDoc(theme, guide, criteria) {
+  const p = palette;
+  return new Document({
+    numbering: {
+      config: [
+        { reference: "question-list", levels: [{ level: 0, format: LevelFormat.DECIMAL, text: "%1.", alignment: AlignmentType.LEFT, style: { paragraph: { indent: { left: 400, hanging: 300 } } } }] },
+        { reference: "expr-list", levels: [{ level: 0, format: LevelFormat.BULLET, text: "•", alignment: AlignmentType.LEFT, style: { paragraph: { indent: { left: 360, hanging: 260 } } } }] },
+      ],
+    },
+    sections: [
+      {
+        properties: { page: { size: { width: 11906, height: 16838 }, margin: { top: 1000, bottom: 1000, left: 1100, right: 1100 } } },
+        headers: { default: new Header({ children: [new Paragraph({ alignment: AlignmentType.RIGHT, children: [new TextRun({ text: "English Speaking Practice — Nação Fluente", color: p.lightGrey, size: 16, font: FONT })] })] }) },
+        footers: { default: new Footer({ children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [
+          new TextRun({ text: `Bloco ${theme.block} — ${theme.blockName}   |   Página `, color: p.lightGrey, size: 16, font: FONT }),
+          new TextRun({ children: [PageNumber.CURRENT], color: p.lightGrey, size: 16, font: FONT }),
+        ] })] }) },
+        children: buildChapterContent(theme, guide, criteria),
       },
     ],
   });
 }
 
-module.exports = { buildChapterDoc };
+module.exports = { buildChapterDoc, buildChapterContent, stepLabel, bodyText, noteBox, hCell, bCell, writingLines, FONT };

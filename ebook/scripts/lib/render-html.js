@@ -26,20 +26,9 @@ function lines(n) {
   return Array.from({ length: n }).map(() => `<div class="lines"></div>`).join("");
 }
 
-function renderChapterHtml(theme, guide, criteria) {
-  const numStr = String(theme.num).padStart(2, "0");
-  return `<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<title>Tema ${theme.num} — ${esc(theme.titleEn)}</title>
-<style>
-  @page {
-    size: A4;
-    margin: 2.2cm 2cm 2.4cm 2cm;
-    @top-right { content: "English Speaking Practice — Nação Fluente"; font-size: 8pt; color: #${palette.lightGrey}; font-family: 'Helvetica', Arial, sans-serif; }
-    @bottom-center { content: "Bloco ${theme.block} — ${esc(theme.blockName)}   |   Página " counter(page); font-size: 8pt; color: #${palette.lightGrey}; font-family: 'Helvetica', Arial, sans-serif; }
-  }
+function chapterCss(pageRule) {
+  return `
+  ${pageRule}
   * { box-sizing: border-box; }
   body { font-family: 'Helvetica', Arial, sans-serif; color: #${palette.grey}; font-size: 10.5pt; line-height: 1.5; }
   .cover { background: #${palette.cover}; color: #fff; padding: 22px 24px; border-radius: 4px; margin-bottom: 14px; }
@@ -95,10 +84,12 @@ function renderChapterHtml(theme, guide, criteria) {
 
   .s7 h2, .s7 .tag { background: #${palette.step7}; }
   .s7 th { background: #${palette.step7}; }
-</style>
-</head>
-<body>
+  `;
+}
 
+function renderChapterBody(theme, guide, criteria, opts = {}) {
+  return `
+<div class="chapter" id="tema-${theme.num}"${opts.pageBreak === false ? "" : ' style="page-break-before: always;"'}>
 <div class="cover">
   <div class="eyebrow">TEMA ${theme.num} &nbsp;·&nbsp; BLOCO ${theme.block} — ${esc(theme.blockName).toUpperCase()}</div>
   <h1>${esc(theme.titleEn)}</h1>
@@ -182,10 +173,30 @@ ${lines(3)}
 </div>
 
 <p class="footer-note">${theme.num >= 104 ? "Parabéns — você concluiu os 104 temas do English Speaking Practice. Volte a qualquer tema sempre que quiser revisar." : `Marque este tema como concluído no seu Painel de Evolução e siga para o Tema ${theme.num + 1}.`}</p>
+</div>
+`;
+}
 
+function renderChapterHtml(theme, guide, criteria) {
+  const pageRule = `
+  @page {
+    size: A4;
+    margin: 2.2cm 2cm 2.4cm 2cm;
+    @top-right { content: "English Speaking Practice — Nação Fluente"; font-size: 8pt; color: #${palette.lightGrey}; font-family: 'Helvetica', Arial, sans-serif; }
+    @bottom-center { content: "Bloco ${theme.block} — ${esc(theme.blockName)}   |   Página " counter(page); font-size: 8pt; color: #${palette.lightGrey}; font-family: 'Helvetica', Arial, sans-serif; }
+  }`;
+  return `<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Tema ${theme.num} — ${esc(theme.titleEn)}</title>
+<style>${chapterCss(pageRule)}</style>
+</head>
+<body>
+${renderChapterBody(theme, guide, criteria, { pageBreak: false })}
 </body>
 </html>
 `;
 }
 
-module.exports = { renderChapterHtml };
+module.exports = { renderChapterHtml, renderChapterBody, chapterCss, esc };

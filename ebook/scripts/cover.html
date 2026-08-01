@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<style>
+  @font-face { font-family: 'BigShoulders'; src: url('../assets/fonts/BigShoulders-Bold.ttf'); font-weight: 700; }
+  @font-face { font-family: 'WorkSans'; src: url('../assets/fonts/WorkSans-Regular.ttf'); font-weight: 400; }
+  @font-face { font-family: 'WorkSans'; src: url('../assets/fonts/WorkSans-Bold.ttf'); font-weight: 700; }
+  @font-face { font-family: 'WorkSans'; src: url('../assets/fonts/WorkSans-Italic.ttf'); font-weight: 400; font-style: italic; }
+  @font-face { font-family: 'Outfit'; src: url('../assets/fonts/Outfit-Bold.ttf'); font-weight: 700; }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 2000px; height: 2828px; overflow: hidden; }
+
+  body {
+    position: relative;
+    background: linear-gradient(165deg, #0D2035 0%, #14304B 42%, #1B3B57 72%, #1F4463 100%);
+    font-family: 'WorkSans', sans-serif;
+  }
+
+  /* subtle diagonal stripe texture, top-right corner */
+  .stripes {
+    position: absolute;
+    top: 0; right: 0;
+    width: 720px; height: 720px;
+    opacity: 0.10;
+    background-image: repeating-linear-gradient(45deg, #ffffff 0px, #ffffff 2px, transparent 2px, transparent 34px);
+    -webkit-mask-image: radial-gradient(circle at top right, black 0%, black 35%, transparent 72%);
+    mask-image: radial-gradient(circle at top right, black 0%, black 35%, transparent 72%);
+  }
+
+  /* soft ambient glow behind headline */
+  .glow {
+    position: absolute;
+    top: 560px; left: 50%;
+    transform: translateX(-50%);
+    width: 1900px; height: 1900px;
+    background: radial-gradient(circle, rgba(111,179,224,0.32) 0%, rgba(111,179,224,0.10) 32%, rgba(20,48,75,0) 62%);
+  }
+
+  /* brand row */
+  .brand {
+    position: absolute; top: 108px; left: 130px; right: 130px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand .mark { display: flex; align-items: center; gap: 18px; }
+  .brand .dot { width: 30px; height: 30px; border-radius: 50%; background: #6FB3E0; box-shadow: 0 0 0 7px rgba(111,179,224,0.18); }
+  .brand .name { font-family: 'WorkSans'; font-weight: 700; letter-spacing: 3px; font-size: 30px; color: #EAF3FA; text-transform: uppercase; }
+  .brand .badge {
+    font-family: 'WorkSans'; font-weight: 700; font-size: 20px; letter-spacing: 2px; color: #0D2035;
+    background: #6FB3E0; padding: 12px 26px; border-radius: 999px; text-transform: uppercase;
+  }
+
+  /* eyebrow */
+  .eyebrow {
+    position: absolute; top: 322px; left: 130px; right: 130px; text-align: center;
+    font-family: 'WorkSans'; font-weight: 700; letter-spacing: 6px; font-size: 26px;
+    color: #8FC4EC; text-transform: uppercase;
+  }
+
+  /* title block */
+  .titleblock { position: absolute; top: 420px; left: 100px; right: 100px; text-align: center; }
+  .titleblock h1 {
+    font-family: 'BigShoulders'; font-weight: 700; color: #FFFFFF;
+    font-size: 220px; line-height: 0.92; letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .titleblock h1 .accent { color: #6FB3E0; }
+  .titleblock .pt {
+    margin-top: 34px; font-family: 'WorkSans'; font-style: italic; font-weight: 400;
+    font-size: 52px; color: #C9D6E3;
+  }
+
+  /* hook line */
+  .hook {
+    position: absolute; top: 1220px; left: 260px; right: 260px; text-align: center;
+    font-family: 'WorkSans'; font-weight: 400; font-size: 40px; line-height: 1.45; color: #EAF3FA;
+  }
+  .hook b { font-weight: 700; color: #FFFFFF; }
+
+  /* benefits row */
+  .benefits {
+    position: absolute; top: 1420px; left: 130px; right: 130px;
+    display: flex; justify-content: center; gap: 70px;
+  }
+  .benefits .b { display: flex; align-items: center; gap: 16px; }
+  .benefits .b .check {
+    width: 44px; height: 44px; border-radius: 50%; background: rgba(111,179,224,0.16);
+    border: 1.5px solid #6FB3E0; flex: none;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .benefits .b .check svg { width: 22px; height: 22px; }
+  .benefits .b span.txt { font-family: 'WorkSans'; font-weight: 700; font-size: 26px; color: #EAF3FA; letter-spacing: 0.2px; }
+
+  .divider { position: absolute; top: 1580px; left: 260px; right: 260px; height: 1px; background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(143,196,236,0.45) 50%, rgba(255,255,255,0) 100%); }
+
+  /* skyline */
+  .skyline { position: absolute; bottom: 620px; left: 0; right: 0; height: 460px; }
+  .bldg { position: absolute; bottom: 0; background: linear-gradient(180deg, #16324C 0%, #0E2033 100%); }
+  .bldg .win { position: absolute; width: 10px; height: 14px; background: rgba(143, 196, 236, 0.55); }
+
+  /* value strip */
+  .strip {
+    position: absolute; bottom: 300px; left: 130px; right: 130px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(143,196,236,0.35);
+    border-radius: 22px;
+    padding: 46px 60px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .strip .item { display: flex; flex-direction: column; align-items: center; text-align: center; flex: 1; }
+  .strip .item .num { font-family: 'Outfit'; font-weight: 700; font-size: 68px; color: #FFFFFF; }
+  .strip .item .lbl { font-family: 'WorkSans'; font-weight: 400; font-size: 24px; color: #C9D6E3; margin-top: 8px; letter-spacing: 0.5px; }
+  .strip .sep { width: 1px; height: 90px; background: rgba(255,255,255,0.18); }
+
+  /* footer tagline */
+  .footer {
+    position: absolute; bottom: 120px; left: 130px; right: 130px; text-align: center;
+    font-family: 'WorkSans'; font-weight: 700; font-size: 28px; letter-spacing: 1px; color: #8FC4EC;
+  }
+</style>
+</head>
+<body>
+
+  <div class="stripes"></div>
+  <div class="glow"></div>
+
+  <div class="brand">
+    <div class="mark">
+      <div class="dot"></div>
+      <div class="name">Nação Fluente</div>
+    </div>
+    <div class="badge">E-book completo</div>
+  </div>
+
+  <div class="eyebrow">Protocolo Semanal de Inglês para Profissionais</div>
+
+  <div class="titleblock">
+    <h1>English<br><span class="accent">Speaking</span><br>Practice</h1>
+    <div class="pt">Treino de Conversação</div>
+  </div>
+
+  <div class="hook">Destrave conversas reais em inglês — mesmo que você ainda <b>trave na hora de falar.</b></div>
+
+  <div class="benefits">
+    <div class="b"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#6FB3E0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="txt">Sem depender de professor</span></div>
+    <div class="b"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#6FB3E0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="txt">Pratique também com IA</span></div>
+    <div class="b"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#6FB3E0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="txt">Cronograma pronto pra seguir</span></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="skyline" id="skyline"></div>
+
+  <div class="strip">
+    <div class="item"><div class="num">104</div><div class="lbl">TEMAS PROFISSIONAIS</div></div>
+    <div class="sep"></div>
+    <div class="item"><div class="num">632</div><div class="lbl">PÁGINAS DE PRÁTICA</div></div>
+    <div class="sep"></div>
+    <div class="item"><div class="num">7</div><div class="lbl">ETAPAS GUIADAS</div></div>
+    <div class="sep"></div>
+    <div class="item"><div class="num">416</div><div class="lbl">ÁUDIOS PARA TREINO</div></div>
+  </div>
+
+  <div class="footer">MÉTODO ESTRUTURADO · PRÁTICA AUTÔNOMA · RESULTADOS REAIS</div>
+
+<script>
+  // Build a skyline silhouette procedurally
+  const skyline = document.getElementById('skyline');
+  const W = 2000;
+  let x = -20;
+  const heights = [180,260,140,320,200,380,150,420,240,300,170,350,220,400,180,290,160,340,210,260,190,310,150];
+  const widths  = [110,90,130,80,120,70,140,90,110,85,125,75,115,95,130,80,120,90,105,100,115,85,120];
+  let i = 0;
+  while (x < W + 20) {
+    const h = heights[i % heights.length];
+    const w = widths[i % widths.length];
+    const b = document.createElement('div');
+    b.className = 'bldg';
+    b.style.left = x + 'px';
+    b.style.width = w + 'px';
+    b.style.height = h + 'px';
+    // windows grid
+    const cols = Math.max(2, Math.floor(w / 24));
+    const rows = Math.max(3, Math.floor(h / 30));
+    for (let c = 0; c < cols; c++) {
+      for (let r = 0; r < rows; r++) {
+        if (Math.random() < 0.55) {
+          const win = document.createElement('div');
+          win.className = 'win';
+          win.style.left = (10 + c * 24) + 'px';
+          win.style.bottom = (14 + r * 28) + 'px';
+          win.style.opacity = (0.35 + Math.random() * 0.5).toFixed(2);
+          b.appendChild(win);
+        }
+      }
+    }
+    skyline.appendChild(b);
+    x += w + 6;
+    i++;
+  }
+</script>
+
+</body>
+</html>
