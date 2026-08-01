@@ -3,7 +3,10 @@ const path = require("path");
 const { Packer } = require("docx");
 const { buildChapterDoc } = require("./lib/render-docx");
 const { renderChapterHtml } = require("./lib/render-html");
-const { themes, READING_GUIDE, SELF_ASSESS_CRITERIA } = require("./data/bloco1");
+const { READING_GUIDE, SELF_ASSESS_CRITERIA } = require("./lib/constants");
+
+const blocoArg = process.argv[2] || "bloco1";
+const { themes } = require(`./data/${blocoArg}`);
 
 const OUT = path.join(__dirname, "..", "output");
 const HTML_OUT = path.join(OUT, "html");
