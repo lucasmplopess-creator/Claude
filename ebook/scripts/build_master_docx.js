@@ -3,11 +3,12 @@ const path = require("path");
 const {
   Document, Packer, Paragraph, TextRun, HeadingLevel, ImageRun,
   Header, Footer, PageNumber, AlignmentType, ShadingType, Table, TableRow, TableCell,
-  WidthType, TableOfContents, PageBreak,
+  WidthType, TableOfContents, VerticalAlign,
 } = require("docx");
-const { buildChapterContent, stepLabel, bodyText, hCell, bCell, FONT } = require("./lib/render-docx");
+const { buildChapterContent, FONT, getIcon } = require("./lib/render-docx");
 const { READING_GUIDE, SELF_ASSESS_CRITERIA } = require("./lib/constants");
 const palette = require("./lib/palette");
+const { BLOCK_EN } = require("./lib/translations");
 
 const BLOCK_TAGLINES = {
   1: "A base para qualquer conversa em inglês.",
@@ -28,7 +29,7 @@ const BLOCK_TAGLINES = {
 const blocks = [];
 for (let i = 1; i <= 13; i++) {
   const { themes } = require(`./data/bloco${i}`);
-  blocks.push({ num: i, name: themes[0].blockName, tagline: BLOCK_TAGLINES[i], themes });
+  blocks.push({ num: i, name: themes[0].blockName, nameEn: BLOCK_EN[i], tagline: BLOCK_TAGLINES[i], themes });
 }
 
 function hiddenHeading(level, text) {
@@ -40,35 +41,46 @@ function hiddenHeading(level, text) {
   });
 }
 
-function fmHeading(text) {
+function fmHeading(pt, en) {
   return new Paragraph({
     shading: { type: ShadingType.CLEAR, fill: palette.cover },
-    spacing: { before: 300, after: 150 },
-    children: [new TextRun({ text, bold: true, color: "FFFFFF", size: 24, font: FONT })],
+    spacing: { before: 220, after: 100 },
+    children: [
+      new TextRun({ text: pt, bold: true, color: "FFFFFF", size: 23, font: FONT }),
+      new TextRun({ text: en, italics: true, color: "8fc4ec", size: 16, font: FONT, break: 1 }),
+    ],
   });
 }
 
 function fmPara(text) {
-  return new Paragraph({ spacing: { after: 160, line: 300 }, children: [new TextRun({ text, color: palette.grey, size: 22, font: FONT })] });
+  return new Paragraph({ spacing: { after: 120, line: 276 }, children: [new TextRun({ text, color: palette.grey, size: 21, font: FONT })] });
 }
 
 function dividerBlock(block) {
   const rows = block.themes.map(t => new Paragraph({
-    spacing: { after: 60 },
-    children: [new TextRun({ text: `${String(t.num).padStart(2, "0")}   `, bold: true, color: "8fc4ec", size: 21, font: FONT }), new TextRun({ text: t.titleEn, color: "EAF3FA", size: 21, font: FONT })],
+    spacing: { after: 50 },
+    children: [new TextRun({ text: `${String(t.num).padStart(2, "0")}   `, bold: true, color: "8fc4ec", size: 20, font: FONT }), new TextRun({ text: t.titleEn, color: "EAF3FA", size: 20, font: FONT })],
   }));
   return new Table({
-    width: { size: 9200, type: WidthType.DXA }, columnWidths: [9200],
-    rows: [new TableRow({ children: [new TableCell({
-      width: { size: 9200, type: WidthType.DXA }, shading: { type: ShadingType.CLEAR, fill: palette.cover },
-      margins: { top: 500, bottom: 500, left: 500, right: 500 },
-      children: [
-        new Paragraph({ spacing: { after: 40 }, children: [new TextRun({ text: `BLOCO ${block.num} DE 13`, bold: true, color: "8fc4ec", size: 20, font: FONT })] }),
-        new Paragraph({ spacing: { after: 40 }, children: [new TextRun({ text: block.name, bold: true, color: "FFFFFF", size: 34, font: FONT })] }),
-        new Paragraph({ spacing: { after: 260 }, children: [new TextRun({ text: block.tagline, italics: true, color: "C9D6E3", size: 22, font: FONT })] }),
-        ...rows,
-      ],
-    })] })],
+    width: { size: 9200, type: WidthType.DXA }, columnWidths: [1300, 7900],
+    rows: [new TableRow({ children: [
+      new TableCell({
+        width: { size: 1300, type: WidthType.DXA }, shading: { type: ShadingType.CLEAR, fill: palette.cover },
+        margins: { top: 450, bottom: 0, left: 450, right: 0 }, verticalAlign: VerticalAlign.TOP,
+        children: [new Paragraph({ children: [new ImageRun({ data: getIcon(block.num), transformation: { width: 50, height: 50 }, type: "png" })] })],
+      }),
+      new TableCell({
+        width: { size: 7900, type: WidthType.DXA }, shading: { type: ShadingType.CLEAR, fill: palette.cover },
+        margins: { top: 450, bottom: 450, left: 250, right: 450 },
+        children: [
+          new Paragraph({ spacing: { after: 30 }, children: [new TextRun({ text: `BLOCO ${block.num} DE 13`, bold: true, color: "8fc4ec", size: 19, font: FONT })] }),
+          new Paragraph({ spacing: { after: 20 }, children: [new TextRun({ text: block.name, bold: true, color: "FFFFFF", size: 32, font: FONT })] }),
+          new Paragraph({ spacing: { after: 40 }, children: [new TextRun({ text: block.nameEn, italics: true, color: "8fc4ec", size: 24, font: FONT })] }),
+          new Paragraph({ spacing: { after: 200 }, children: [new TextRun({ text: block.tagline, italics: true, color: "C9D6E3", size: 21, font: FONT })] }),
+          ...rows,
+        ],
+      }),
+    ] })],
   });
 }
 
@@ -76,29 +88,30 @@ async function main() {
   const coverBuffer = fs.readFileSync(path.join(__dirname, "..", "assets", "cover.png"));
 
   const bodyChildren = [
-    new Paragraph({ children: [new TextRun({ text: "English Speaking Practice", bold: true, color: palette.cover, size: 60, font: FONT })] }),
-    new Paragraph({ spacing: { after: 260 }, children: [new TextRun({ text: "Treino de Conversação — Nação Fluente", italics: true, color: palette.step6, size: 28, font: FONT })] }),
+    new Paragraph({ children: [new TextRun({ text: "English Speaking Practice", bold: true, color: palette.cover, size: 58, font: FONT })] }),
+    new Paragraph({ spacing: { after: 200 }, children: [new TextRun({ text: "Treino de Conversação · Nação Fluente", italics: true, color: palette.step6, size: 27, font: FONT })] }),
 
-    fmHeading("Boas-vindas"),
-    fmPara("Você já consegue ler um texto em inglês. Já assiste vídeo com legenda e entende boa parte do que se fala. Mas na hora de abrir a boca — numa reunião, numa entrevista, numa conversa de corredor com um estrangeiro — trava."),
+    fmHeading("Boas-vindas", "Welcome"),
+    fmPara("Você já consegue ler um texto em inglês. Já assiste vídeo com legenda e entende boa parte do que se fala. Mas na hora de abrir a boca (numa reunião, numa entrevista, numa conversa de corredor com um estrangeiro) trava."),
     fmPara("O English Speaking Practice foi criado para resolver exatamente isso: um protocolo semanal de estudo que leva você, toda semana, de um tema relevante do mundo real até uma conversa sustentada em inglês, com argumento, opinião e confiança."),
 
-    fmHeading("Para quem é este material"),
-    fmPara("Para quem já lê e assiste conteúdo em inglês em nível intermediário, mas trava na hora de falar, argumentar e sustentar opiniões — especialmente em contextos profissionais e sociais adultos."),
+    fmHeading("Para quem é este material", "Who this book is for"),
+    fmPara("Para quem já lê e assiste conteúdo em inglês em nível intermediário, mas trava na hora de falar, argumentar e sustentar opiniões, especialmente em contextos profissionais e sociais adultos."),
 
-    fmHeading("Como funciona: o sistema guiado em 7 etapas"),
-    fmPara("Etapa 1 — Vocabulário contextualizado. Etapa 2 — Leitura com orientação de estudo. Etapa 3 — Listening com suporte em áudio e vídeo. Etapa 4 — Writing como preparação para a fala. Etapa 5 — Gramática de apoio aplicada à conversação. Etapa 6 — Speaking com perguntas abertas. Etapa 7 — Autoavaliação de performance."),
+    fmHeading("Como funciona: o sistema guiado em 7 etapas", "How it works: the 7-step guided system"),
+    fmPara("Etapa 1: Vocabulário contextualizado. Etapa 2: Leitura com orientação de estudo. Etapa 3: Listening com suporte em áudio e vídeo. Etapa 4: Writing como preparação para a fala. Etapa 5: Gramática de apoio aplicada à conversação. Etapa 6: Speaking com perguntas abertas. Etapa 7: Autoavaliação de performance."),
 
-    fmHeading("O que você vai encontrar neste livro"),
+    fmHeading("O que você vai encontrar neste livro", "What you'll find in this book"),
     fmPara("104 temas relevantes do mundo profissional, organizados em 13 blocos temáticos; mais de 1.200 tópicos de discussão e perguntas de speaking; 104 textos de leitura com roteiro de áudio; 104 quadros de gramática aplicada; 104 exercícios interativos com gabarito; e painel de autoavaliação em cada tema."),
 
-    new Paragraph({ pageBreakBefore: true, spacing: { after: 200 }, children: [new TextRun({ text: "Sumário", bold: true, color: palette.cover, size: 44, font: FONT })] }),
-    fmPara("Este sumário é um campo dinâmico do Word. Clique com o botão direito sobre ele e escolha \"Atualizar campo\" (ou pressione F9) para carregar os números de página corretos."),
+    new Paragraph({ pageBreakBefore: true, spacing: { after: 10 }, children: [new TextRun({ text: "Sumário", bold: true, color: palette.cover, size: 42, font: FONT })] }),
+    new Paragraph({ spacing: { after: 160 }, children: [new TextRun({ text: "Table of Contents", italics: true, color: palette.step6, size: 22, font: FONT })] }),
+    fmPara("Este sumário é um campo dinâmico do Word. Clique com o botão direito sobre ele e escolha \"Atualizar campo\" (ou pressione F9) para carregar os números de página corretos. This is a live Word field; right-click and choose \"Update field\" to load page numbers."),
     new TableOfContents("Sumário", { hyperlink: true, headingStyleRange: "1-2" }),
   ];
 
   for (const block of blocks) {
-    bodyChildren.push(hiddenHeading(HeadingLevel.HEADING_1, `Bloco ${block.num} — ${block.name}`));
+    bodyChildren.push(hiddenHeading(HeadingLevel.HEADING_1, `Bloco ${block.num}: ${block.name} (${block.nameEn})`));
     bodyChildren.push(dividerBlock(block));
     for (const theme of block.themes) {
       bodyChildren.push(...buildChapterContent(theme, READING_GUIDE, SELF_ASSESS_CRITERIA, {
@@ -126,8 +139,8 @@ async function main() {
         ],
       },
       {
-        properties: { page: { size: { width: 11906, height: 16838 }, margin: { top: 1000, bottom: 1000, left: 1100, right: 1100 } } },
-        headers: { default: new Header({ children: [new Paragraph({ alignment: AlignmentType.RIGHT, children: [new TextRun({ text: "English Speaking Practice — Nação Fluente", color: palette.lightGrey, size: 16, font: FONT })] })] }) },
+        properties: { page: { size: { width: 11906, height: 16838 }, margin: { top: 800, bottom: 800, left: 1000, right: 1000 } } },
+        headers: { default: new Header({ children: [new Paragraph({ alignment: AlignmentType.RIGHT, children: [new TextRun({ text: "English Speaking Practice · Nação Fluente", color: palette.lightGrey, size: 16, font: FONT })] })] }) },
         footers: { default: new Footer({ children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [
           new TextRun({ text: "Página ", color: palette.lightGrey, size: 16, font: FONT }),
           new TextRun({ children: [PageNumber.CURRENT], color: palette.lightGrey, size: 16, font: FONT }),

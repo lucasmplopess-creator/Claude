@@ -2,40 +2,45 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Tema 72 — Discussing Innovation in Your Industry</title>
+<title>Tema 72: Discussing Innovation in Your Industry</title>
 <style>
   
   @page {
     size: A4;
-    margin: 2.2cm 2cm 2.4cm 2cm;
-    @top-right { content: "English Speaking Practice — Nação Fluente"; font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
-    @bottom-center { content: "Bloco 9 — Tecnologia e Inovação   |   Página " counter(page); font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
+    margin: 1.9cm 2cm 2.1cm 2cm;
+    @top-right { content: "English Speaking Practice · Nação Fluente"; font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
+    @bottom-center { content: "Bloco 9 · Tecnologia e Inovação (Technology and Innovation)   |   Página " counter(page); font-size: 7.5pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
   }
   * { box-sizing: border-box; }
-  body { font-family: 'Helvetica', Arial, sans-serif; color: #444444; font-size: 10.5pt; line-height: 1.5; }
-  .cover { background: #1B3B57; color: #fff; padding: 22px 24px; border-radius: 4px; margin-bottom: 14px; }
-  .cover .eyebrow { color: #8fc4ec; font-weight: bold; font-size: 9.5pt; letter-spacing: 0.5px; margin-bottom: 6px; }
-  .cover h1 { font-size: 22pt; margin: 0 0 6px 0; color: #fff; }
-  .cover .subtitle { color: #C9D6E3; font-style: italic; font-size: 12pt; margin: 0; }
-  .meta { margin: 10px 0 14px 0; font-size: 10.5pt; }
+  body { font-family: 'Helvetica', Arial, sans-serif; color: #444444; font-size: 10.5pt; line-height: 1.42; }
+  .cover { background: #1B3B57; color: #fff; padding: 16px 18px; border-radius: 4px; margin-bottom: 10px; display: flex; align-items: center; gap: 16px; }
+  .cover .icon { width: 54px; height: 54px; flex: none; opacity: 0.92; }
+  .cover .eyebrow { color: #8fc4ec; font-weight: bold; font-size: 9pt; letter-spacing: 0.4px; margin-bottom: 4px; }
+  .cover .eyebrow .en { display: block; color: #6f93ad; font-weight: normal; font-style: italic; font-size: 7.5pt; letter-spacing: 0.2px; margin-top: 1px; }
+  .cover h1 { font-size: 19pt; margin: 0 0 3px 0; color: #fff; line-height: 1.12; }
+  .cover .subtitle { color: #C9D6E3; font-style: italic; font-size: 10.5pt; margin: 0; }
+  .meta { margin: 8px 0 10px 0; font-size: 10pt; }
   .meta b { color: #1B3B57; }
-  .intro { margin-bottom: 6px; }
-  h2.step { color: #fff; padding: 8px 12px; font-size: 12.5pt; margin: 22px 0 10px 0; border-radius: 3px; }
-  h2.step .tag { background: rgba(255,255,255,0.22); padding: 2px 8px; border-radius: 3px; font-size: 9.5pt; margin-right: 8px; }
-  table { width: 100%; border-collapse: collapse; margin: 8px 0 14px 0; font-size: 9.8pt; }
-  th { color: #fff; text-align: left; padding: 6px 8px; }
-  td { padding: 6px 8px; border-bottom: 1px solid #E3E9EF; vertical-align: top; }
+  .intro { margin-bottom: 4px; }
+  p { margin: 0 0 8px 0; }
+  h2.step { color: #fff; padding: 6px 10px; font-size: 11.5pt; margin: 16px 0 8px 0; border-radius: 3px; display: flex; align-items: center; }
+  h2.step .tag { background: rgba(255,255,255,0.22); padding: 2px 7px; border-radius: 3px; font-size: 8.5pt; margin-right: 8px; flex: none; }
+  h2.step .stitle { display: flex; flex-direction: column; line-height: 1.18; }
+  h2.step .stitle .en { font-weight: normal; font-style: italic; font-size: 8pt; opacity: 0.82; }
+  table { width: 100%; border-collapse: collapse; margin: 6px 0 10px 0; font-size: 9.5pt; }
+  th { color: #fff; text-align: left; padding: 5px 7px; }
+  td { padding: 5px 7px; border-bottom: 1px solid #E3E9EF; vertical-align: top; }
   .example { font-style: italic; }
-  .notebox { border-radius: 4px; padding: 10px 14px; margin: 10px 0 16px 0; border: 1px solid; }
-  .notebox .title { font-weight: bold; margin-bottom: 6px; }
-  .notebox p { margin: 3px 0; }
-  ol, ul { margin: 6px 0 14px 0; padding-left: 20px; }
-  ol li, ul li { margin-bottom: 7px; }
-  .lines { border-bottom: 1px solid #C9D6E3; height: 22px; margin-bottom: 6px; }
-  .expr-list { list-style: none; padding-left: 0; margin: 6px 0 14px 0; }
-  .expr-list li { margin-bottom: 6px; padding-left: 14px; position: relative; }
-  .gabarito { font-style: italic; color: #1B3B57; margin-top: -6px; }
-  .footer-note { text-align: center; font-weight: bold; color: #1B3B57; margin-top: 18px; font-size: 11pt; }
+  .notebox { border-radius: 4px; padding: 8px 12px; margin: 6px 0 10px 0; border: 1px solid; }
+  .notebox .title { font-weight: bold; margin-bottom: 4px; }
+  .notebox p { margin: 2px 0; }
+  ol, ul { margin: 4px 0 10px 0; padding-left: 19px; }
+  ol li, ul li { margin-bottom: 5px; }
+  .lines { border-bottom: 1px solid #C9D6E3; height: 17px; margin-bottom: 4px; }
+  .expr-list { list-style: none; padding-left: 0; margin: 4px 0 10px 0; }
+  .expr-list li { margin-bottom: 4px; padding-left: 14px; position: relative; }
+  .gabarito { font-style: italic; color: #1B3B57; margin-top: -4px; }
+  .footer-note { text-align: center; font-weight: bold; color: #1B3B57; margin-top: 12px; font-size: 10.5pt; }
 
   .s1 h2, .s1 .tag { background: #2E86C1; }
   .s1 th { background: #2E86C1; }
@@ -72,16 +77,19 @@
 
 <div class="chapter" id="tema-72">
 <div class="cover">
-  <div class="eyebrow">TEMA 72 &nbsp;·&nbsp; BLOCO 9 — TECNOLOGIA E INOVAÇÃO</div>
-  <h1>Discussing Innovation in Your Industry</h1>
-  <p class="subtitle">Discutindo inovação no seu setor</p>
+  <img class="icon" src="file:///home/user/Claude/ebook/assets/icons/block-9.png">
+  <div>
+    <div class="eyebrow">TEMA 72 &nbsp;·&nbsp; BLOCO 9 &nbsp;·&nbsp; TECNOLOGIA E INOVAÇÃO<span class="en">THEME 72 · BLOCK 9 · TECHNOLOGY AND INNOVATION</span></div>
+    <h1>Discussing Innovation in Your Industry</h1>
+    <p class="subtitle">Discutindo inovação no seu setor</p>
+  </div>
 </div>
 
 <div class="meta"><b>Tempo estimado:</b> 60–90 minutos, divididos ao longo da semana.</div>
 <p class="intro">Fechando o Bloco 9: falar sobre inovação e disrupção no seu setor, em inglês, exige vocabulário específico de negócios que vai além de "things are changing fast".</p>
 
 <div class="s1">
-<h2 class="step"><span class="tag">ETAPA 1</span>Vocabulário Contextualizado</h2>
+<h2 class="step "><span class="tag">ETAPA 1</span><span class="stitle"><span class="pt">Vocabulário Contextualizado</span><span class="en">Contextualized Vocabulary</span></span></h2>
 <p>Estas palavras e expressões vão te ajudar a se expressar sobre este tema com mais precisão e naturalidade.</p>
 <table>
 <tr><th>Word / Expression</th><th>Tradução</th><th>Example Sentence</th></tr>
@@ -102,35 +110,35 @@
 </div>
 
 <div class="s2">
-<h2 class="step"><span class="tag">ETAPA 2</span>Leitura com Orientação de Estudo</h2>
+<h2 class="step "><span class="tag">ETAPA 2</span><span class="stitle"><span class="pt">Leitura com Orientação de Estudo</span><span class="en">Guided Reading</span></span></h2>
 <div class="notebox">
   <div class="title">Como ler este texto</div>
-  <p>1) Leia uma vez, rápido, só para captar a ideia geral — sem parar no que não entender.</p><p>2) Leia de novo e grife toda expressão da Etapa 1 que aparecer no texto.</p><p>3) Releia em voz alta, como se você estivesse contando essa história sobre você mesmo.</p>
+  <p>1) Leia uma vez, rápido, só para captar a ideia geral, sem parar no que não entender.</p><p>2) Leia de novo e grife toda expressão da Etapa 1 que aparecer no texto.</p><p>3) Releia em voz alta, como se você estivesse contando essa história sobre você mesmo.</p>
 </div>
 <p><b>"Disruption Is Rarely Sudden From the Inside"</b></p>
-<p>From the outside, disruption often looks sudden — an incumbent industry collapses seemingly overnight. From the inside, in English business conversation, the more accurate description is usually a slow accumulation of small shifts that legacy players underestimated one at a time.</p><p>"It wasn't one single innovation that disrupted us — it was a series of smaller shifts in customer expectations that we were slow to respond to" is a more nuanced, more credible way to describe change than "everything changed overnight."</p><p>Talking about staying ahead of the curve in English also tends to focus on process, not luck: "We stay ahead by treating emerging trends as worth testing early, even before we're sure they'll matter" — framing innovation as a discipline, not a lucky guess.</p>
+<p>From the outside, disruption often looks sudden, an incumbent industry collapses seemingly overnight. From the inside, in English business conversation, the more accurate description is usually a slow accumulation of small shifts that legacy players underestimated one at a time.</p><p>"It wasn't one single innovation that disrupted us, it was a series of smaller shifts in customer expectations that we were slow to respond to" is a more nuanced, more credible way to describe change than "everything changed overnight."</p><p>Talking about staying ahead of the curve in English also tends to focus on process, not luck: "We stay ahead by treating emerging trends as worth testing early, even before we're sure they'll matter", framing innovation as a discipline, not a lucky guess.</p>
 </div>
 
 <div class="s3">
-<h2 class="step"><span class="tag">ETAPA 3</span>Listening com Suporte em Áudio e Vídeo</h2>
+<h2 class="step "><span class="tag">ETAPA 3</span><span class="stitle"><span class="pt">Listening com Suporte em Áudio e Vídeo</span><span class="en">Guided Listening</span></span></h2>
 <p>Ouça o áudio deste tema (arquivo disponível para download na plataforma: <i>audio/tema-72-innovation-in-your-industry.mp3</i>) com o roteiro abaixo. Primeiro sem ler, depois acompanhando o texto.</p>
 <div class="notebox">
   <div class="title">Roteiro do áudio (Audio Script)</div>
-  <p>"How has your industry been disrupted over the last few years?"</p><p>"It wasn't one big paradigm shift — it was a series of smaller market shifts that legacy players, including us, underestimated. Staying ahead of the curve now means testing emerging trends early, before we're sure they'll matter."</p>
+  <p>"How has your industry been disrupted over the last few years?"</p><p>"It wasn't one big paradigm shift, it was a series of smaller market shifts that legacy players, including us, underestimated. Staying ahead of the curve now means testing emerging trends early, before we're sure they'll matter."</p>
 </div>
 <p>Note que a disrupção é descrita como acúmulo gradual, não um evento único e súbito.</p>
 </div>
 
 <div class="s4">
-<h2 class="step"><span class="tag">ETAPA 4</span>Writing como Preparação para a Fala</h2>
-<p>Antes de falar, escreva. Use as perguntas abaixo como guia e escreva de 4 a 6 frases — não precisa ser perfeito, precisa existir no papel primeiro.</p>
+<h2 class="step "><span class="tag">ETAPA 4</span><span class="stitle"><span class="pt">Writing como Preparação para a Fala</span><span class="en">Writing Before Speaking</span></span></h2>
+<p>Antes de falar, escreva. Use as perguntas abaixo como guia e escreva de 4 a 6 frases: não precisa ser perfeito, precisa existir no papel primeiro.</p>
 <ol><li>Describe a disruption that has affected your industry in recent years.</li><li>What's an emerging trend in your field that's worth watching closely?</li><li>How does your organization try to stay ahead of the curve, if at all?</li><li>What's a legacy player in your industry that has struggled to adapt?</li></ol>
 <p>Espaço para escrever:</p>
-<div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div>
+<div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div>
 </div>
 
 <div class="s5">
-<h2 class="step"><span class="tag">ETAPA 5</span>Gramática de Apoio Aplicada à Conversação</h2>
+<h2 class="step "><span class="tag">ETAPA 5</span><span class="stitle"><span class="pt">Gramática de Apoio Aplicada à Conversação</span><span class="en">Grammar for Conversation</span></span></h2>
 <p>Discutir inovação e disrupção depende do Present Continuous para mudanças em andamento e do Present Perfect para o que já mudou.</p>
 <table>
 <tr><th>Estrutura</th><th>Exemplo (EN)</th><th>Tradução (PT)</th></tr>
@@ -139,33 +147,33 @@
     <tr><td><b>Comparativo</b><br>(mais inovador que)</td><td class="example">This approach is far more innovative than what incumbents are doing.</td><td>Usado para comparar diretamente o nível de inovação entre players.</td></tr>
     <tr><td><b>Present Perfect</b><br>(o que já mudou)</td><td class="example">The industry has shifted a lot in the last five years.</td><td>Usado para resumir uma mudança acumulada até o momento presente.</td></tr>
 </table>
-<p>Dica prática: use Present Continuous ("is shifting", "is changing") para tendências em curso, e Present Perfect ("has shifted", "has changed") para resumir o resultado acumulado até agora — a escolha certa evita ambiguidade sobre se a mudança já terminou ou está em andamento.</p>
+<p>Dica prática: use Present Continuous ("is shifting", "is changing") para tendências em curso, e Present Perfect ("has shifted", "has changed") para resumir o resultado acumulado até agora, a escolha certa evita ambiguidade sobre se a mudança já terminou ou está em andamento.</p>
 </div>
 
 <div class="s6">
-<h2 class="step"><span class="tag">ETAPA 6</span>Speaking — Perguntas Abertas</h2>
-<p>Responda em voz alta, gravando se possível. Não vale responder em uma frase só — use o que você escreveu na Etapa 4 como base, mas fale livremente.</p>
+<h2 class="step "><span class="tag">ETAPA 6</span><span class="stitle"><span class="pt">Speaking: Perguntas Abertas</span><span class="en">Open-Ended Speaking</span></span></h2>
+<p>Responda em voz alta, gravando se possível. Não vale responder em uma frase só: use o que você escreveu na Etapa 4 como base, mas fale livremente.</p>
 <ol><li>Describe a disruption that has affected your industry in recent years.</li><li>What's an emerging trend in your field that you think is worth watching closely?</li><li>How does your organization try to stay ahead of the curve, if at all?</li><li>What's a legacy player in your industry that has struggled to adapt to change?</li><li>Do you think your industry is due for a paradigm shift? What might trigger it?</li><li>How do you personally try to keep up with innovation in your field?</li><li>What's the risk of chasing every emerging trend instead of focusing on core work?</li><li>How did a company you admire gain a first-mover advantage in your industry?</li><li>What would it take for your organization to genuinely reinvent itself?</li><li>How do you evaluate whether a new technology is truly cutting-edge or just hype?</li></ol>
 <p><b>Expressões úteis para esta conversa:</b></p>
-<ul class="expr-list"><li>"It wasn't one big shift, it was a series of smaller ones." — para descrever disrupção com nuance.</li><li>"That's an emerging trend worth watching." — para sinalizar atenção sem exagero.</li><li>"We stay ahead by testing things early." — para descrever inovação como processo.</li><li>"Legacy players are struggling to adapt." — para nomear resistência à mudança.</li></ul>
+<ul class="expr-list"><li>"It wasn't one big shift, it was a series of smaller ones.", para descrever disrupção com nuance.</li><li>"That's an emerging trend worth watching.", para sinalizar atenção sem exagero.</li><li>"We stay ahead by testing things early.", para descrever inovação como processo.</li><li>"Legacy players are struggling to adapt.", para nomear resistência à mudança.</li></ul>
 </div>
 
 <div class="sx">
-<h2 class="step"><span class="tag">EXERCÍCIO</span>Complete com a Palavra Certa</h2>
+<h2 class="step "><span class="tag">EXERCÍCIO</span><span class="stitle"><span class="pt">Complete com a Palavra Certa</span><span class="en">Vocabulary Check</span></span></h2>
 <p>Complete cada frase com uma palavra ou expressão da Etapa 1. Gabarito ao final desta seção.</p>
 <ol><li>This technology caused real ______ in how we operate.</li><li>The ______ were slow to react to the new technology.</li><li>They had a real ______ in this space.</li><li>This feels like a real ______, not just a trend.</li><li>The company had to ______ itself to survive the shift.</li></ol>
 <p class="gabarito">Gabarito: 1) disruption   2) incumbents   3) first-mover advantage   4) paradigm shift   5) reinvent</p>
 </div>
 
 <div class="s7">
-<h2 class="step"><span class="tag">ETAPA 7</span>Autoavaliação de Performance</h2>
+<h2 class="step "><span class="tag">ETAPA 7</span><span class="stitle"><span class="pt">Autoavaliação de Performance</span><span class="en">Self-Assessment</span></span></h2>
 <p>Antes de marcar este tema como concluído, avalie honestamente como foi sua prática.</p>
 <table>
-<tr><th>Critério</th><th>Como foi?</th><th>Nota (1–5)</th></tr>
+<tr><th>Critério</th><th>Como foi?</th><th>Nota (1-5)</th></tr>
 <tr><td>Consegui usar o vocabulário novo sem parar para pensar</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Entendi o áudio/vídeo sem depender da transcrição</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Escrevi minhas respostas antes de falar</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Apliquei a estrutura gramatical da etapa 5 corretamente</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Sustentei minhas respostas por mais de 2 frases</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Me senti confiante ao falar sobre este tema</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 </table>
 <p>O que travou mais nesta conversa? O que você quer treinar de novo antes de seguir para o próximo tema?</p>
-<div class="lines"></div><div class="lines"></div><div class="lines"></div>
+<div class="lines"></div><div class="lines"></div>
 </div>
 
 <p class="footer-note">Marque este tema como concluído no seu Painel de Evolução e siga para o Tema 73.</p>

@@ -1,4 +1,4 @@
-// Bloco 5 — Negociação e Persuasão (Temas 33–40)
+// Bloco 5, Negociação e Persuasão (Temas 33–40)
 const themes = [
   {
     num: 33,
@@ -24,16 +24,16 @@ const themes = [
     ],
     readingTitle: "Clarity Beats Cleverness in a Negotiation",
     readingParagraphs: [
-      "A common mistake in negotiations is trying to sound clever instead of clear. In English, a strong opening position doesn't hide behind vague language — it lays out exactly what matters and why, in plain terms: \"Our bottom line is a 90-day window. Quality standards are non-negotiable. Everything else is open for discussion.\"",
+      "A common mistake in negotiations is trying to sound clever instead of clear. In English, a strong opening position doesn't hide behind vague language, it lays out exactly what matters and why, in plain terms: \"Our bottom line is a 90-day window. Quality standards are non-negotiable. Everything else is open for discussion.\"",
       "Being upfront about priorities, oddly, often creates more room to negotiate, not less. When the other side knows what's truly fixed versus flexible, they can propose creative trade-offs instead of guessing where the real limits are.",
-      "Framing matters as much as content. The same position — \"we need a lower price\" — lands very differently framed as \"we're looking for a partnership that works long-term for both sides\" rather than a one-time discount request.",
+      "Framing matters as much as content. The same position, \"we need a lower price\", lands very differently framed as \"we're looking for a partnership that works long-term for both sides\" rather than a one-time discount request.",
     ],
     audioFile: "audio/tema-33-presenting-your-position.mp3",
     audioScript: [
       "\"Before we get into numbers, let me lay out our position.\"",
-      "\"Go ahead.\" \"Our bottom line is the 90-day timeline — that's non-negotiable. Pricing and scope, though, we have real flexibility on. I wanted to be upfront about that from the start.\"",
+      "\"Go ahead.\" \"Our bottom line is the 90-day timeline, that's non-negotiable. Pricing and scope, though, we have real flexibility on. I wanted to be upfront about that from the start.\"",
     ],
-    audioFollowup: "Note como a pessoa separa claramente o que é inegociável do que tem flexibilidade — isso orienta toda a negociação que vem depois.",
+    audioFollowup: "Note como a pessoa separa claramente o que é inegociável do que tem flexibilidade, isso orienta toda a negociação que vem depois.",
     writingQuestions: [
       "What's a position you need to present clearly in an upcoming negotiation?",
       "What's non-negotiable for you in that situation, and what's flexible?",
@@ -43,13 +43,13 @@ const themes = [
     grammarIntro: "Declarar uma posição de forma formal e clara depende de estruturas específicas para necessidades, desejos e justificativas.",
     grammarRows: [
       ["Our position is that...", "Our position is that the timeline needs to stay fixed.", "Forma direta e formal de declarar uma postura em uma negociação."],
-      ["What we need / what we'd like\n(necessidade vs desejo)", "What we need is a firm deadline; what we'd like is more budget flexibility.", "Distingue claramente entre exigências e preferências — fundamental em negociação."],
+      ["What we need / what we'd like\n(necessidade vs desejo)", "What we need is a firm deadline; what we'd like is more budget flexibility.", "Distingue claramente entre exigências e preferências, fundamental em negociação."],
       ["given that\n(justificativa)", "Given that timelines are tight, we'd need a faster decision.", "Usado para justificar uma posição com base em um fato already conhecido."],
     ],
     grammarTip: "Dica prática: separar \"what we need\" de \"what we'd like\" na mesma frase é uma das formas mais eficazes de comunicar prioridades em uma negociação em inglês.",
     speakingQuestions: [
       "How would you lay out your position at the start of an important negotiation?",
-      "What's something that's a bottom line for you — completely non-negotiable?",
+      "What's something that's a bottom line for you, completely non-negotiable?",
       "How do you frame a tough ask so it sounds like a partnership, not a demand?",
       "What leverage do you typically bring into a negotiation?",
       "How honest do you tend to be about your priorities early in a negotiation?",
@@ -60,10 +60,10 @@ const themes = [
       "What's a position you've had to soften over time after further conversation?",
     ],
     expressions: [
-      "\"Let me lay out our position.\" — abertura clara para uma negociação.",
-      "\"That's a bottom line for us.\" — para marcar algo como inegociável.",
-      "\"I wanted to be upfront about that.\" — para reforçar transparência.",
-      "\"Here's where we have some flexibility.\" — para abrir espaço de negociação.",
+      "\"Let me lay out our position.\", abertura clara para uma negociação.",
+      "\"That's a bottom line for us.\", para marcar algo como inegociável.",
+      "\"I wanted to be upfront about that.\", para reforçar transparência.",
+      "\"Here's where we have some flexibility.\", para abrir espaço de negociação.",
     ],
     exerciseSentences: [
       "Let me ______ the three main points of our proposal.",
@@ -81,7 +81,7 @@ const themes = [
     titleEn: "Making a Counteroffer",
     titlePt: "Fazendo uma contraproposta",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "Fazer uma contraproposta em inglês exige um tom firme, mas colaborativo — sem soar como uma recusa nem como uma rendição. Este tema treina exatamente esse equilíbrio.",
+    intro: "Fazer uma contraproposta em inglês exige um tom firme, mas colaborativo, sem soar como uma recusa nem como uma rendição. Este tema treina exatamente esse equilíbrio.",
     vocab: [
       ["counteroffer", "contraproposta", "We'd like to make a counteroffer before we decide."],
       ["to meet in the middle", "chegar a um meio-termo", "Maybe we can meet in the middle on the price."],
@@ -98,8 +98,8 @@ const themes = [
     ],
     readingTitle: "A Counteroffer Is a Conversation, Not a Rejection",
     readingParagraphs: [
-      "New negotiators often treat a counteroffer as confrontational — as if pushing back means the deal is falling apart. In English, a well-framed counteroffer does the opposite: it signals genuine interest in reaching an agreement, just not on the current terms.",
-      "The structure that works well pairs acknowledgment with a specific ask: \"We appreciate the offer — we'd like to counter with a slightly longer timeline in exchange for the lower price.\" This shows the counteroffer isn't a rejection, it's a trade.",
+      "New negotiators often treat a counteroffer as confrontational, as if pushing back means the deal is falling apart. In English, a well-framed counteroffer does the opposite: it signals genuine interest in reaching an agreement, just not on the current terms.",
+      "The structure that works well pairs acknowledgment with a specific ask: \"We appreciate the offer, we'd like to counter with a slightly longer timeline in exchange for the lower price.\" This shows the counteroffer isn't a rejection, it's a trade.",
       "Every concession should ideally come with something in return, even something small: \"We could meet in the middle on price if you're flexible on the payment schedule.\" This keeps the negotiation feeling collaborative instead of like a tug-of-war.",
     ],
     audioFile: "audio/tema-34-making-a-counteroffer.mp3",
@@ -107,20 +107,20 @@ const themes = [
       "\"We appreciate the offer, but we'd like to come back with a counteroffer.\"",
       "\"Sure, go ahead.\" \"If you could bring the price down by 10%, we could commit to a 12-month contract instead of six. That feels like a fair compromise.\"",
     ],
-    audioFollowup: "Note que a contraproposta vem acompanhada de uma troca concreta — não é só um pedido, é uma negociação de mão dupla.",
+    audioFollowup: "Note que a contraproposta vem acompanhada de uma troca concreta, não é só um pedido, é uma negociação de mão dupla.",
     writingQuestions: [
       "Describe a situation where you'd need to make a counteroffer.",
       "What could you offer in exchange for the concession you're asking for?",
-      "What's your bottom line in that situation — where would you stop pushing back?",
+      "What's your bottom line in that situation, where would you stop pushing back?",
       "How do you usually soften a counteroffer so it doesn't sound like a rejection?",
     ],
     grammarIntro: "Contrapropostas dependem muito de condicionais de troca (\"se você fizer X, nós fazemos Y\") e de modais de possibilidade.",
     grammarRows: [
-      ["Primeiro condicional de troca\n(If... could/would)", "If you could lower the price, we could commit to a longer contract.", "Estrutura central de qualquer contraproposta — condiciona uma concessão à outra."],
+      ["Primeiro condicional de troca\n(If... could/would)", "If you could lower the price, we could commit to a longer contract.", "Estrutura central de qualquer contraproposta, condiciona uma concessão à outra."],
       ["would be willing to\n(concessão)", "We'd be willing to extend the deadline if the scope stays the same.", "Usado para sinalizar disposição a ceder, de forma condicional."],
       ["unless\n(condição negativa)", "We can't move forward unless the timeline changes.", "Usado para declarar uma condição necessária, de forma direta mas educada."],
     ],
-    grammarTip: "Dica prática: toda contraproposta forte tem a estrutura \"If you could X, we could Y\" — isso transforma um pedido em uma troca, o que soa muito mais colaborativo.",
+    grammarTip: "Dica prática: toda contraproposta forte tem a estrutura \"If you could X, we could Y\", isso transforma um pedido em uma troca, o que soa muito mais colaborativo.",
     speakingQuestions: [
       "Describe a time you had to make a counteroffer. How did you approach it?",
       "What's something you could offer in exchange for a concession you need?",
@@ -134,10 +134,10 @@ const themes = [
       "How has your comfort with making counteroffers changed over your career?",
     ],
     expressions: [
-      "\"We'd like to come back with a counteroffer.\" — abertura direta e educada.",
-      "\"Maybe we can meet in the middle on...\" — para propor um meio-termo.",
-      "\"That feels like a fair compromise.\" — para validar um acordo equilibrado.",
-      "\"We're holding firm on...\" — para manter uma posição sem soar hostil.",
+      "\"We'd like to come back with a counteroffer.\", abertura direta e educada.",
+      "\"Maybe we can meet in the middle on...\", para propor um meio-termo.",
+      "\"That feels like a fair compromise.\", para validar um acordo equilibrado.",
+      "\"We're holding firm on...\", para manter uma posição sem soar hostil.",
     ],
     exerciseSentences: [
       "We'd like to make a ______ before we decide.",
@@ -172,29 +172,29 @@ const themes = [
     ],
     readingTitle: "Start With Agreement, Not Disagreement",
     readingParagraphs: [
-      "Negotiators who focus first on differences tend to create adversarial conversations by default — even when both sides actually want similar outcomes. Starting instead with common ground resets the tone: \"We both want this launched successfully — let's start there.\"",
-      "In English, this often sounds like naming the shared goal explicitly before diving into disagreements: \"Our overlapping interest here is speed — you want it live fast, we want it done right fast. Let's build from that.\" This reframes the rest of the negotiation as collaborative problem-solving.",
-      "Even in tense negotiations, returning to common ground periodically — \"we both agreed timeline matters more than price, right?\" — helps bridge gaps that would otherwise feel like a standoff.",
+      "Negotiators who focus first on differences tend to create adversarial conversations by default, even when both sides actually want similar outcomes. Starting instead with common ground resets the tone: \"We both want this launched successfully, let's start there.\"",
+      "In English, this often sounds like naming the shared goal explicitly before diving into disagreements: \"Our overlapping interest here is speed, you want it live fast, we want it done right fast. Let's build from that.\" This reframes the rest of the negotiation as collaborative problem-solving.",
+      "Even in tense negotiations, returning to common ground periodically, \"we both agreed timeline matters more than price, right?\", helps bridge gaps that would otherwise feel like a standoff.",
     ],
     audioFile: "audio/tema-35-finding-common-ground.mp3",
     audioScript: [
       "\"Before we get stuck on pricing, can we find some common ground?\"",
       "\"Sure.\" \"We both want this partnership to work long-term, right? That's a shared goal. Let's build the rest of the conversation from there.\"",
     ],
-    audioFollowup: "Note que a pessoa nomeia o objetivo compartilhado antes de voltar ao ponto de tensão (preço) — isso muda o tom da conversa inteira.",
+    audioFollowup: "Note que a pessoa nomeia o objetivo compartilhado antes de voltar ao ponto de tensão (preço), isso muda o tom da conversa inteira.",
     writingQuestions: [
       "What's a shared goal you have with someone you're currently negotiating with?",
       "How would you name that common ground out loud in the conversation?",
       "Describe a negotiation where finding common ground changed the tone.",
       "What overlapping interests exist between you and a difficult counterpart?",
     ],
-    grammarIntro: "Falar sobre pontos em comum depende de estruturas que unem as duas partes em uma mesma frase — o \"we\" compartilhado.",
+    grammarIntro: "Falar sobre pontos em comum depende de estruturas que unem as duas partes em uma mesma frase, o \"we\" compartilhado.",
     grammarRows: [
       ["What we both want is...", "What we both want is a solution that works long-term.", "Estrutura central para nomear um objetivo compartilhado explicitamente."],
       ["so that\n(propósito compartilhado)", "Let's align on priorities so that we're not negotiating blindly.", "Conecta uma ação a um propósito comum entre as partes."],
       ["neither of us wants...", "Neither of us wants this to drag on for months.", "Usado para nomear uma preocupação ou desejo compartilhado, geralmente negativo."],
     ],
-    grammarTip: "Dica prática: \"neither of us\" é seguido de verbo no singular (\"neither of us wants\", não \"want\") — um erro comum entre falantes de português.",
+    grammarTip: "Dica prática: \"neither of us\" é seguido de verbo no singular (\"neither of us wants\", não \"want\"), um erro comum entre falantes de português.",
     speakingQuestions: [
       "What's a shared goal you've used to reset a tense negotiation?",
       "How do you find common ground with someone whose priorities seem totally different?",
@@ -208,10 +208,10 @@ const themes = [
       "How do you bridge the gap when two sides seem far apart on priorities?",
     ],
     expressions: [
-      "\"Let's find some common ground first.\" — para redirecionar a conversa.",
-      "\"We both want the same thing here, really.\" — para reforçar o objetivo compartilhado.",
-      "\"That's a shared goal, right?\" — para confirmar alinhamento.",
-      "\"Let's build from there.\" — para avançar a partir de um ponto de acordo.",
+      "\"Let's find some common ground first.\", para redirecionar a conversa.",
+      "\"We both want the same thing here, really.\", para reforçar o objetivo compartilhado.",
+      "\"That's a shared goal, right?\", para confirmar alinhamento.",
+      "\"Let's build from there.\", para avançar a partir de um ponto de acordo.",
     ],
     exerciseSentences: [
       "Let's start by finding some ______.",
@@ -229,14 +229,14 @@ const themes = [
     titleEn: "Handling Objections",
     titlePt: "Lidando com objeções",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "Uma objeção bem tratada em inglês não é rebatida — é acolhida e depois reformulada. Este tema ensina essa técnica, essencial em vendas, negociações e até conversas internas.",
+    intro: "Uma objeção bem tratada em inglês não é rebatida, é acolhida e depois reformulada. Este tema ensina essa técnica, essencial em vendas, negociações e até conversas internas.",
     vocab: [
       ["objection", "objeção", "That's a fair objection, let me address it."],
       ["to raise a concern", "levantar uma preocupação", "She raised a concern about the timeline."],
       ["to address (an objection)", "responder a / lidar com", "Let me address that objection directly."],
       ["pushback", "resistência / contestação", "We got some pushback on the pricing structure."],
       ["to anticipate", "antecipar", "I anticipated that objection and came prepared."],
-      ["valid concern", "preocupação legítima", "That's a valid concern — let me explain how we handle it."],
+      ["valid concern", "preocupação legítima", "That's a valid concern, let me explain how we handle it."],
       ["to reframe", "reformular / reenquadrar", "Let me reframe that a bit."],
       ["sticking point", "ponto de impasse", "Pricing has been the main sticking point."],
       ["to overcome (an objection)", "superar (uma objeção)", "We managed to overcome most of their objections."],
@@ -246,7 +246,7 @@ const themes = [
     ],
     readingTitle: "An Objection Is Information, Not an Attack",
     readingParagraphs: [
-      "The instinct when facing an objection is often to defend immediately. In English, the more effective move is almost always to acknowledge first: \"That's a valid concern\" or \"I understand why that's a sticking point\" — before offering any counterargument.",
+      "The instinct when facing an objection is often to defend immediately. In English, the more effective move is almost always to acknowledge first: \"That's a valid concern\" or \"I understand why that's a sticking point\", before offering any counterargument.",
       "This isn't just politeness. Acknowledging an objection signals that you actually heard it, which makes the person more open to your response. Jumping straight to defense, even a good one, often triggers more resistance, not less.",
       "The best responses to objections also separate what's a real deal-breaker from what's just a concern worth addressing: \"Is this something that would stop us moving forward entirely, or is it more that you need reassurance on how we'd handle it?\" That question alone often does half the work of resolving the objection.",
     ],
@@ -266,9 +266,9 @@ const themes = [
     grammarRows: [
       ["I understand your concern, however...", "I understand your concern, however, we've built in some flexibility.", "Reconhece a objeção antes de introduzir uma resposta ou contra-argumento."],
       ["What if we...?\n(solução hipotética)", "What if we broke the timeline into two phases?", "Usado para propor uma solução alternativa de forma colaborativa."],
-      ["Voz passiva\n(suavizar a objeção)", "That's a fair concern — it's been raised before.", "Suaviza a objeção ao despersonalizá-la, mostrando que não é incomum."],
+      ["Voz passiva\n(suavizar a objeção)", "That's a fair concern, it's been raised before.", "Suaviza a objeção ao despersonalizá-la, mostrando que não é incomum."],
     ],
-    grammarTip: "Dica prática: nunca comece a resposta a uma objeção com \"but\" — comece com \"however\" ou \"that said\", depois de reconhecer a preocupação. Soa muito menos defensivo.",
+    grammarTip: "Dica prática: nunca comece a resposta a uma objeção com \"but\", comece com \"however\" ou \"that said\", depois de reconhecer a preocupação. Soa muito menos defensivo.",
     speakingQuestions: [
       "What's an objection you hear often in your work, and how do you usually handle it?",
       "Describe a time you anticipated an objection and were ready for it.",
@@ -282,10 +282,10 @@ const themes = [
       "How has your approach to handling objections changed with experience?",
     ],
     expressions: [
-      "\"That's a fair concern.\" — reconhecimento imediato e genuíno.",
-      "\"Let me address that directly.\" — para mostrar disposição a responder.",
-      "\"Is this a deal-breaker, or...?\" — para calibrar a gravidade da objeção.",
-      "\"I anticipated that, actually.\" — para transmitir preparo.",
+      "\"That's a fair concern.\", reconhecimento imediato e genuíno.",
+      "\"Let me address that directly.\", para mostrar disposição a responder.",
+      "\"Is this a deal-breaker, or...?\", para calibrar a gravidade da objeção.",
+      "\"I anticipated that, actually.\", para transmitir preparo.",
     ],
     exerciseSentences: [
       "That's a fair ______, let me address it.",
@@ -303,7 +303,7 @@ const themes = [
     titleEn: "Negotiating Deadlines and Scope",
     titlePt: "Negociando prazos e escopo",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "Negociar prazo e escopo é uma das conversas mais recorrentes no trabalho — e uma das que mais exige clareza em inglês para evitar mal-entendidos caros.",
+    intro: "Negociar prazo e escopo é uma das conversas mais recorrentes no trabalho, e uma das que mais exige clareza em inglês para evitar mal-entendidos caros.",
     vocab: [
       ["deadline", "prazo final", "The deadline is tight, but workable."],
       ["scope", "escopo", "The scope has grown a lot since we started."],
@@ -318,10 +318,10 @@ const themes = [
       ["to prioritize", "priorizar", "We'll need to prioritize features if the deadline stays fixed."],
       ["flexible", "flexível", "The scope is flexible, but the deadline isn't."],
     ],
-    readingTitle: "Deadline or Scope — Rarely Both",
+    readingTitle: "Deadline or Scope, Rarely Both",
     readingParagraphs: [
-      "One of the most useful ideas in negotiating deadlines and scope, in any language, is that they usually trade off against each other. Fixed deadline, flexible scope — or fixed scope, flexible deadline. Trying to lock both rarely ends well, and English negotiators tend to name this trade-off explicitly.",
-      "\"If the deadline stays fixed, we'll need to cut scope — here's what I'd prioritize keeping.\" This kind of sentence turns a difficult negotiation into a structured choice, rather than an argument about whether the deadline is \"realistic.\"",
+      "One of the most useful ideas in negotiating deadlines and scope, in any language, is that they usually trade off against each other. Fixed deadline, flexible scope, or fixed scope, flexible deadline. Trying to lock both rarely ends well, and English negotiators tend to name this trade-off explicitly.",
+      "\"If the deadline stays fixed, we'll need to cut scope, here's what I'd prioritize keeping.\" This kind of sentence turns a difficult negotiation into a structured choice, rather than an argument about whether the deadline is \"realistic.\"",
       "Building in a buffer, and saying so out loud, also helps: \"We've built in a small buffer for this deadline, but scope creep would eat into it fast.\" Naming the risk early makes it much easier to renegotiate later without it feeling like a surprise.",
     ],
     audioFile: "audio/tema-37-negotiating-deadlines-and-scope.mp3",
@@ -342,7 +342,7 @@ const themes = [
       ["as long as\n(condição)", "We can hit the deadline, as long as scope doesn't change.", "Usado para estabelecer uma condição clara para cumprir um compromisso."],
       ["by + prazo\n(Future / Future Perfect)", "We will have the first deliverable ready by Friday.", "Usado para comunicar um compromisso de prazo de forma precisa."],
     ],
-    grammarTip: "Dica prática: \"as long as\" é uma das estruturas mais úteis em negociação de prazos — deixa claro que seu compromisso depende de uma condição específica, sem soar como desculpa.",
+    grammarTip: "Dica prática: \"as long as\" é uma das estruturas mais úteis em negociação de prazos, deixa claro que seu compromisso depende de uma condição específica, sem soar como desculpa.",
     speakingQuestions: [
       "Describe a recent negotiation you had over a deadline or project scope.",
       "How do you decide what to prioritize when a deadline can't move?",
@@ -356,10 +356,10 @@ const themes = [
       "How do you lock in a deadline in a way that prevents scope creep later?",
     ],
     expressions: [
-      "\"If the deadline stays fixed, we'd need to...\" — para nomear o trade-off.",
-      "\"Let's lock in the deadline before adding anything else.\" — para prevenir scope creep.",
-      "\"We've built in a small buffer for this.\" — para comunicar margem de segurança.",
-      "\"That's a classic case of scope creep.\" — para nomear o problema com clareza.",
+      "\"If the deadline stays fixed, we'd need to...\", para nomear o trade-off.",
+      "\"Let's lock in the deadline before adding anything else.\", para prevenir scope creep.",
+      "\"We've built in a small buffer for this.\", para comunicar margem de segurança.",
+      "\"That's a classic case of scope creep.\", para nomear o problema com clareza.",
     ],
     exerciseSentences: [
       "The ______ is tight, but workable.",
@@ -377,7 +377,7 @@ const themes = [
     titleEn: "Closing a Deal Confidently",
     titlePt: "Fechando um acordo com confiança",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "Fechar um acordo é um momento com sua própria linguagem em inglês — direta, calorosa, e livre da ansiedade de \"será que ainda vão desistir?\". Este tema cobre exatamente esse momento.",
+    intro: "Fechar um acordo é um momento com sua própria linguagem em inglês, direta, calorosa, e livre da ansiedade de \"será que ainda vão desistir?\". Este tema cobre exatamente esse momento.",
     vocab: [
       ["to close the deal", "fechar o negócio", "Let's close the deal today if we can."],
       ["to seal the deal", "selar o acordo", "A handshake sealed the deal."],
@@ -394,16 +394,16 @@ const themes = [
     ],
     readingTitle: "Closing Well Means Closing Clearly",
     readingParagraphs: [
-      "A surprising number of deals stall not during negotiation, but at the very end, simply because nobody explicitly says it's done. In English, closing a deal well usually involves a clear, direct summary: \"So, to confirm — final terms are X, Y, and Z. Are we good to move forward?\"",
+      "A surprising number of deals stall not during negotiation, but at the very end, simply because nobody explicitly says it's done. In English, closing a deal well usually involves a clear, direct summary: \"So, to confirm, final terms are X, Y, and Z. Are we good to move forward?\"",
       "This clarity avoids the classic problem of a deal that feels agreed in the room but unravels afterward because each side remembered slightly different terms. Summarizing out loud, then confirming agreement explicitly, prevents that.",
-      "Closing language also tends to be warm, not just transactional: \"Great working through this with you — let's shake on it\" signals the relationship matters beyond just the paperwork, which matters a lot for deals that will require ongoing collaboration.",
+      "Closing language also tends to be warm, not just transactional: \"Great working through this with you, let's shake on it\" signals the relationship matters beyond just the paperwork, which matters a lot for deals that will require ongoing collaboration.",
     ],
     audioFile: "audio/tema-38-closing-a-deal.mp3",
     audioScript: [
-      "\"So, to confirm the final terms — 12-month contract, pricing as discussed, kickoff in two weeks. Are we good to move forward?\"",
-      "\"Sounds right to me.\" \"Great, let's shake on it — I'll get the paperwork over by tomorrow.\"",
+      "\"So, to confirm the final terms, 12-month contract, pricing as discussed, kickoff in two weeks. Are we good to move forward?\"",
+      "\"Sounds right to me.\" \"Great, let's shake on it, I'll get the paperwork over by tomorrow.\"",
     ],
-    audioFollowup: "Note o resumo claro dos termos finais antes de confirmar o fechamento — isso evita mal-entendidos depois.",
+    audioFollowup: "Note o resumo claro dos termos finais antes de confirmar o fechamento, isso evita mal-entendidos depois.",
     writingQuestions: [
       "Describe a deal you closed recently. How did you confirm the final terms?",
       "What language do you use to move from negotiation to a confirmed agreement?",
@@ -416,7 +416,7 @@ const themes = [
       ["Shall we?\n(tag question de fechamento)", "We're all set, shall we?", "Pergunta curta e educada para confirmar o fechamento de um acordo."],
       ["Present Perfect\n(resumo do que foi combinado)", "We've agreed on the key terms.", "Usado para resumir o que foi decidido até o momento presente."],
     ],
-    grammarTip: "Dica prática: \"Shall we?\" no final de uma frase é uma forma bastante britânica e educada de confirmar uma ação conjunta — funciona muito bem para fechar reuniões ou acordos.",
+    grammarTip: "Dica prática: \"Shall we?\" no final de uma frase é uma forma bastante britânica e educada de confirmar uma ação conjunta, funciona muito bem para fechar reuniões ou acordos.",
     speakingQuestions: [
       "Describe a deal you're proud of closing. What made it go smoothly?",
       "How do you confirm final terms clearly before a deal is considered done?",
@@ -430,10 +430,10 @@ const themes = [
       "What's your comfort level asking directly, \"Are we good to move forward?\"",
     ],
     expressions: [
-      "\"So, to confirm the final terms...\" — para resumir antes de fechar.",
-      "\"Are we good to move forward?\" — pergunta direta de fechamento.",
-      "\"Let's shake on it.\" — fechamento caloroso e tradicional.",
-      "\"I'll get the paperwork over by...\" — para dar um próximo passo concreto.",
+      "\"So, to confirm the final terms...\", para resumir antes de fechar.",
+      "\"Are we good to move forward?\", pergunta direta de fechamento.",
+      "\"Let's shake on it.\", fechamento caloroso e tradicional.",
+      "\"I'll get the paperwork over by...\", para dar um próximo passo concreto.",
     ],
     exerciseSentences: [
       "Let's ______ the deal today if we can.",
@@ -469,13 +469,13 @@ const themes = [
     readingTitle: "Walking Away Is a Skill, Not a Failure",
     readingParagraphs: [
       "Many people treat walking away from a deal as the negotiation failing. In English, experienced negotiators frame it differently: walking away from the wrong deal is itself a successful outcome, not a loss.",
-      "The language for this tends to be calm and non-dramatic: \"I'm afraid those terms are a non-starter for us\" or \"we've decided to cut our losses here.\" Neither of these burns the relationship — they simply state a boundary clearly.",
+      "The language for this tends to be calm and non-dramatic: \"I'm afraid those terms are a non-starter for us\" or \"we've decided to cut our losses here.\" Neither of these burns the relationship, they simply state a boundary clearly.",
       "The most professional version of walking away also leaves the door open: \"This isn't the right fit right now, but we'd genuinely welcome revisiting this down the line.\" This turns a \"no\" into a pause rather than a permanent close, which matters if the relationship has future value.",
     ],
     audioFile: "audio/tema-39-walking-away-from-a-bad-deal.mp3",
     audioScript: [
       "\"So, where do we stand on the exclusivity clause?\"",
-      "\"I'm afraid that's a deal-breaker for us — it's a non-starter given our other partnerships. That said, we'd love to leave the door open for a different structure down the line.\"",
+      "\"I'm afraid that's a deal-breaker for us, it's a non-starter given our other partnerships. That said, we'd love to leave the door open for a different structure down the line.\"",
     ],
     audioFollowup: "Note que a recusa é firme (\"non-starter\", \"deal-breaker\") mas termina deixando a porta aberta para o futuro.",
     writingQuestions: [
@@ -487,10 +487,10 @@ const themes = [
     grammarIntro: "Recusar um acordo com educação depende de estruturas de recusa suave e de conectores de contraste.",
     grammarRows: [
       ["I'm afraid we can't...\n(recusa educada)", "I'm afraid we can't move forward with these terms.", "Forma educada e clara de recusar algo, muito comum em contextos formais."],
-      ["As much as I'd like to...\n(concessão antes da recusa)", "As much as I'd like to make this work, the terms don't align with our needs.", "Reconhece o desejo de aceitar antes de declarar a recusa — suaviza o \"não\"."],
+      ["As much as I'd like to...\n(concessão antes da recusa)", "As much as I'd like to make this work, the terms don't align with our needs.", "Reconhece o desejo de aceitar antes de declarar a recusa, suaviza o \"não\"."],
       ["That said\n(contraste)", "That said, we'd welcome revisiting this in the future.", "Usado para introduzir uma ideia que contrasta com o que foi dito antes, geralmente suavizando."],
     ],
-    grammarTip: "Dica prática: \"as much as I'd like to...\" é uma das formas mais elegantes de recusar algo em inglês — reconhece o desejo genuíno antes de dar o \"não\".",
+    grammarTip: "Dica prática: \"as much as I'd like to...\" é uma das formas mais elegantes de recusar algo em inglês, reconhece o desejo genuíno antes de dar o \"não\".",
     speakingQuestions: [
       "Describe a deal or offer you had to walk away from. What made it clear it was time?",
       "What red flags do you personally watch for before committing to something?",
@@ -504,10 +504,10 @@ const themes = [
       "How has your ability to walk away from a bad deal changed with experience?",
     ],
     expressions: [
-      "\"I'm afraid that's a non-starter for us.\" — recusa firme e educada.",
-      "\"That's a deal-breaker, unfortunately.\" — para nomear um limite claro.",
-      "\"We'd like to leave the door open, though.\" — para manter a relação viva.",
-      "\"No hard feelings — this just isn't the right fit.\" — fechamento gentil.",
+      "\"I'm afraid that's a non-starter for us.\", recusa firme e educada.",
+      "\"That's a deal-breaker, unfortunately.\", para nomear um limite claro.",
+      "\"We'd like to leave the door open, though.\", para manter a relação viva.",
+      "\"No hard feelings, this just isn't the right fit.\", fechamento gentil.",
     ],
     exerciseSentences: [
       "Sometimes the smartest move is to ______.",
@@ -542,16 +542,16 @@ const themes = [
     ],
     readingTitle: "The Best Persuasion Doesn't Feel Like Persuasion",
     readingParagraphs: [
-      "Pushy persuasion in English is easy to spot — and easy to resist. It relies on urgency, repetition, and pressure. The more effective, quieter form of persuasion relies on credibility and restraint: making a clear case once, then letting the other person sit with it.",
-      "\"I'll let the data speak for itself\" or \"I just wanted to plant the idea — no pressure to decide now\" are phrases that persuade precisely because they don't demand an immediate answer. This reduces resistance and often leads to a more genuine yes later.",
+      "Pushy persuasion in English is easy to spot, and easy to resist. It relies on urgency, repetition, and pressure. The more effective, quieter form of persuasion relies on credibility and restraint: making a clear case once, then letting the other person sit with it.",
+      "\"I'll let the data speak for itself\" or \"I just wanted to plant the idea, no pressure to decide now\" are phrases that persuade precisely because they don't demand an immediate answer. This reduces resistance and often leads to a more genuine yes later.",
       "Subtlety also shows up in restraint: not overstating benefits, acknowledging downsides honestly, and trusting that a well-built case doesn't need to be repeated three times to land. Ironically, the less pressure applied, the more persuasive the case tends to be.",
     ],
     audioFile: "audio/tema-40-persuading-without-being-pushy.mp3",
     audioScript: [
       "\"Have you considered moving the launch up a week?\"",
-      "\"I hadn't, actually.\" \"It might be worth thinking about — the data suggests earlier launches do better. No pressure though, I'll let you think it over.\"",
+      "\"I hadn't, actually.\" \"It might be worth thinking about, the data suggests earlier launches do better. No pressure though, I'll let you think it over.\"",
     ],
-    audioFollowup: "Note que a sugestão é feita, embasada em dados, e depois deixada em aberto — sem insistência.",
+    audioFollowup: "Note que a sugestão é feita, embasada em dados, e depois deixada em aberto, sem insistência.",
     writingQuestions: [
       "Describe a time you persuaded someone without applying pressure.",
       "What's a case you need to build right now, using data instead of opinion?",
@@ -578,10 +578,10 @@ const themes = [
       "What's your personal line between influencing and manipulating, if there is one?",
     ],
     expressions: [
-      "\"Have you considered...?\" — sugestão suave e aberta.",
-      "\"No pressure, just something to think about.\" — para reduzir a pressão da sugestão.",
-      "\"I'll let the data speak for itself.\" — persuasão baseada em evidência, não insistência.",
-      "\"I'll let you think it over.\" — fechamento respeitoso, sem cobrança.",
+      "\"Have you considered...?\", sugestão suave e aberta.",
+      "\"No pressure, just something to think about.\", para reduzir a pressão da sugestão.",
+      "\"I'll let the data speak for itself.\", persuasão baseada em evidência, não insistência.",
+      "\"I'll let you think it over.\", fechamento respeitoso, sem cobrança.",
     ],
     exerciseSentences: [
       "I don't want to come across as ______.",

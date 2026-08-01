@@ -1,4 +1,4 @@
-// Bloco 9 — Tecnologia e Inovação (Temas 65–72)
+// Bloco 9, Tecnologia e Inovação (Temas 65–72)
 const themes = [
   {
     num: 65,
@@ -7,7 +7,7 @@ const themes = [
     titleEn: "Talking About How AI Is Changing Your Job",
     titlePt: "Falando sobre como a IA está mudando seu trabalho",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "Abrindo o Bloco 9: falar sobre IA no trabalho, em inglês, é hoje uma das conversas mais comuns em qualquer área — e uma que exige nuance entre \"substituir\" e \"potencializar\".",
+    intro: "Abrindo o Bloco 9: falar sobre IA no trabalho, em inglês, é hoje uma das conversas mais comuns em qualquer área, e uma que exige nuance entre \"substituir\" e \"potencializar\".",
     vocab: [
       ["to automate", "automatizar", "We've automated most of the repetitive reporting."],
       ["to augment (not replace)", "potencializar (não substituir)", "AI augments my work, it doesn't replace the judgment calls."],
@@ -25,7 +25,7 @@ const themes = [
     readingTitle: "Augmentation, Not Just Automation",
     readingParagraphs: [
       "The most useful distinction in English conversations about AI at work is between automation and augmentation. Automation replaces a task entirely; augmentation makes a human faster or better at a task they still own. Most real workplace change right now sits closer to augmentation.",
-      "\"AI hasn't replaced the judgment calls in my job — it's augmented the repetitive parts, like first drafts and data summaries, so I can spend more time on the parts that actually need a human.\" This kind of sentence avoids both extremes: neither dismissing AI's impact nor exaggerating it into total job replacement.",
+      "\"AI hasn't replaced the judgment calls in my job, it's augmented the repetitive parts, like first drafts and data summaries, so I can spend more time on the parts that actually need a human.\" This kind of sentence avoids both extremes: neither dismissing AI's impact nor exaggerating it into total job replacement.",
       "There's also room, in English, to be honest about the skill shift this requires: \"I've had to get better at reviewing AI output critically, not just accepting it\" acknowledges a real learning curve without either panic or overconfidence.",
     ],
     audioFile: "audio/tema-65-ai-changing-your-job.mp3",
@@ -33,12 +33,12 @@ const themes = [
       "\"How has AI actually changed your day-to-day work?\"",
       "\"Honestly, it's augmented more than automated. I offload first drafts and repetitive summaries to it, but the judgment calls are still mine. The real skill shift has been learning to review its output critically.\"",
     ],
-    audioFollowup: "Note a distinção clara entre \"augmented\" e \"automated\" — o ponto central deste tema.",
+    audioFollowup: "Note a distinção clara entre \"augmented\" e \"automated\", o ponto central deste tema.",
     writingQuestions: [
       "How has AI changed your day-to-day work, specifically?",
       "What tasks have you offloaded to AI tools, and which ones do you still fully own?",
       "What's a skill shift you've had to make because of AI tools in your field?",
-      "How do you personally feel about the pace of change — excited, anxious, both?",
+      "How do you personally feel about the pace of change, excited, anxious, both?",
     ],
     grammarIntro: "Falar sobre mudanças em andamento causadas pela IA depende do Present Perfect Continuous e de estruturas de contraste.",
     grammarRows: [
@@ -46,12 +46,12 @@ const themes = [
       ["instead of\n(contraste augmentar vs. substituir)", "AI assists with drafts instead of replacing the writer entirely.", "Usado para contrastar duas possibilidades, deixando clara qual realmente ocorre."],
       ["likely to\n(previsão)", "This role is likely to change further over the next few years.", "Usado para fazer uma previsão moderada, sem soar como certeza absoluta."],
     ],
-    grammarTip: "Dica prática: \"augment\" e \"automate\" não são sinônimos em inglês de negócios — augment significa potencializar um trabalho humano; automate significa substituir uma tarefa inteira. Usar o termo certo muda o tom da conversa.",
+    grammarTip: "Dica prática: \"augment\" e \"automate\" não são sinônimos em inglês de negócios, augment significa potencializar um trabalho humano; automate significa substituir uma tarefa inteira. Usar o termo certo muda o tom da conversa.",
     speakingQuestions: [
       "How has AI changed your day-to-day work over the last year or two?",
       "What tasks have you offloaded to AI, and which do you still fully own yourself?",
       "What's a skill shift you've had to make because of AI tools in your field?",
-      "How do you feel about the pace of AI change — excited, anxious, or both?",
+      "How do you feel about the pace of AI change, excited, anxious, or both?",
       "What's a task you don't think AI will be able to do well anytime soon?",
       "How do you evaluate whether AI output is actually good enough to use?",
       "What's a productivity gain from AI you've genuinely felt, not just heard about?",
@@ -60,10 +60,10 @@ const themes = [
       "How has your relationship with learning new tools changed because of AI?",
     ],
     expressions: [
-      "\"It's augmented more than automated my work.\" — para nomear a distinção central.",
-      "\"I offload X, but Y is still mine.\" — para dividir tarefas entre humano e IA.",
-      "\"There's been a real skill shift toward...\" — para nomear uma nova exigência.",
-      "\"I've tried to embrace the change.\" — para uma postura equilibrada.",
+      "\"It's augmented more than automated my work.\", para nomear a distinção central.",
+      "\"I offload X, but Y is still mine.\", para dividir tarefas entre humano e IA.",
+      "\"There's been a real skill shift toward...\", para nomear uma nova exigência.",
+      "\"I've tried to embrace the change.\", para uma postura equilibrada.",
     ],
     exerciseSentences: [
       "We've ______ most of the repetitive reporting.",
@@ -98,16 +98,16 @@ const themes = [
     ],
     readingTitle: "New Tools Fail on Adoption, Not on Features",
     readingParagraphs: [
-      "Most failed software rollouts in English-speaking workplaces aren't blamed on the tool's features — they're blamed on adoption. A tool with great features that nobody uses is, functionally, a bad tool.",
-      "The vocabulary of adoption reflects this focus: \"buy-in,\" \"onboarding,\" \"workaround\" all describe the human side of a rollout, not the technical one. \"We got the integration working fine, but adoption's been slow — people keep finding workarounds to avoid learning the new flow\" is a very common kind of sentence in these conversations.",
+      "Most failed software rollouts in English-speaking workplaces aren't blamed on the tool's features, they're blamed on adoption. A tool with great features that nobody uses is, functionally, a bad tool.",
+      "The vocabulary of adoption reflects this focus: \"buy-in,\" \"onboarding,\" \"workaround\" all describe the human side of a rollout, not the technical one. \"We got the integration working fine, but adoption's been slow, people keep finding workarounds to avoid learning the new flow\" is a very common kind of sentence in these conversations.",
       "Successful rollouts tend to talk explicitly about reducing the learning curve and building buy-in early: \"We onboarded a few champions on each team first, which really helped adoption once we rolled it out more broadly.\" Naming this strategy shows an understanding that tools succeed or fail on people, not just code.",
     ],
     audioFile: "audio/tema-66-new-tools-and-software.mp3",
     audioScript: [
       "\"How's adoption going with the new project management tool?\"",
-      "\"Slower than I'd like, honestly — the integration works fine, but people keep finding workarounds. We're onboarding a few champions on each team to help build buy-in.\"",
+      "\"Slower than I'd like, honestly, the integration works fine, but people keep finding workarounds. We're onboarding a few champions on each team to help build buy-in.\"",
     ],
-    audioFollowup: "Note que o problema não é técnico (\"the integration works fine\") — é de adoção humana.",
+    audioFollowup: "Note que o problema não é técnico (\"the integration works fine\"), é de adoção humana.",
     writingQuestions: [
       "Describe a tool your team rolled out recently. How was adoption?",
       "What's a workaround people found instead of using a new tool properly?",
@@ -120,7 +120,7 @@ const themes = [
       ["used to... now\n(contraste temporal)", "We used to do this manually; now it's automated.", "Usado para contrastar uma prática antiga com a atual, de forma clara."],
       ["Causativo\n(get + objeto + to)", "We got the team to adopt the new workflow within a month.", "Usado para descrever o esforço de fazer outras pessoas realizarem uma ação."],
     ],
-    grammarTip: "Dica prática: \"used to... now\" é uma das formas mais naturais de mostrar evolução de processo em inglês — muito mais fluente do que tentar traduzir \"antigamente\" literalmente.",
+    grammarTip: "Dica prática: \"used to... now\" é uma das formas mais naturais de mostrar evolução de processo em inglês, muito mais fluente do que tentar traduzir \"antigamente\" literalmente.",
     speakingQuestions: [
       "Describe a new tool your team rolled out recently. How did adoption go?",
       "What's a workaround people found instead of properly using a new system?",
@@ -134,10 +134,10 @@ const themes = [
       "What's your process for evaluating a new tool before recommending it to your team?",
     ],
     expressions: [
-      "\"Adoption has been slower than expected.\" — para nomear o problema real.",
-      "\"People keep finding workarounds.\" — para descrever resistência sutil.",
-      "\"We're onboarding a few champions first.\" — estratégia comum de adoção.",
-      "\"It's a lot more user-friendly than the old system.\" — para comparar ferramentas.",
+      "\"Adoption has been slower than expected.\", para nomear o problema real.",
+      "\"People keep finding workarounds.\", para descrever resistência sutil.",
+      "\"We're onboarding a few champions first.\", estratégia comum de adoção.",
+      "\"It's a lot more user-friendly than the old system.\", para comparar ferramentas.",
     ],
     exerciseSentences: [
       "We ______ the new CRM last month.",
@@ -155,12 +155,12 @@ const themes = [
     titleEn: "Explaining a Technical Problem to a Non-Technical Person",
     titlePt: "Explicando um problema técnico para alguém não técnico",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "Explicar um bug ou problema técnico para alguém de negócios, em inglês, exige separar sintoma de causa e evitar jargão — reutilizando e aprofundando o que vimos no Tema 58.",
+    intro: "Explicar um bug ou problema técnico para alguém de negócios, em inglês, exige separar sintoma de causa e evitar jargão, reutilizando e aprofundando o que vimos no Tema 58.",
     vocab: [
       ["root cause", "causa raiz", "The root cause was a misconfigured server, not the code itself."],
       ["workaround", "solução temporária", "We have a workaround in place while we fix it properly."],
       ["to isolate (an issue)", "isolar (um problema)", "It took a while to isolate the actual issue."],
-      ["symptom vs cause", "sintoma vs. causa", "The slow loading was a symptom — the cause was a database issue."],
+      ["symptom vs cause", "sintoma vs. causa", "The slow loading was a symptom, the cause was a database issue."],
       ["technical debt", "dívida técnica", "This bug is partly the result of old technical debt."],
       ["bandwidth (system)", "capacidade (do sistema)", "The system doesn't have the bandwidth to handle that traffic yet."],
       ["bottleneck", "gargalo", "The database is the current bottleneck."],
@@ -172,14 +172,14 @@ const themes = [
     ],
     readingTitle: "Separate the Symptom From the Cause",
     readingParagraphs: [
-      "Non-technical stakeholders usually only see the symptom — the app was slow, the report was wrong — and technical explanations that jump straight into cause-level detail (server configs, database indexes) lose them immediately.",
+      "Non-technical stakeholders usually only see the symptom, the app was slow, the report was wrong, and technical explanations that jump straight into cause-level detail (server configs, database indexes) lose them immediately.",
       "A structure that works well in English: name the symptom in plain terms first (\"the checkout page was loading slowly for about twenty minutes\"), then the root cause in simplified language (\"that happened because one of our servers was handling more traffic than it could manage\"), then the fix, including any workaround already in place.",
       "It's also worth naming what's still uncertain honestly: \"we've patched it for now, but we're still investigating the root cause to prevent it from happening again\" is far more reassuring than pretending the fix is fully understood when it isn't.",
     ],
     audioFile: "audio/tema-67-explaining-a-technical-problem.mp3",
     audioScript: [
       "\"Why was checkout down for twenty minutes this morning?\"",
-      "\"The symptom was slow loading on checkout. The root cause was one server getting more traffic than it could handle — think of it like one cashier trying to serve a whole line alone. We've patched it, and a permanent fix is coming this week.\"",
+      "\"The symptom was slow loading on checkout. The root cause was one server getting more traffic than it could handle, think of it like one cashier trying to serve a whole line alone. We've patched it, and a permanent fix is coming this week.\"",
     ],
     audioFollowup: "Note a separação clara entre sintoma e causa, mais uma analogia simples para tornar tudo compreensível.",
     writingQuestions: [
@@ -192,9 +192,9 @@ const themes = [
     grammarRows: [
       ["The issue is that...", "The issue is that one server was overloaded.", "Estrutura direta para nomear o problema central, sem rodeios."],
       ["This happens because...\n(causa)", "This happens because the database wasn't indexed correctly.", "Conecta um sintoma observado à sua causa técnica, de forma simples."],
-      ["Think of it like...\n(analogia, reforço)", "Think of it like one cashier trying to serve a whole line alone.", "Reforça a explicação com uma analogia acessível — reutilizando a estrutura do Tema 58."],
+      ["Think of it like...\n(analogia, reforço)", "Think of it like one cashier trying to serve a whole line alone.", "Reforça a explicação com uma analogia acessível, reutilizando a estrutura do Tema 58."],
     ],
-    grammarTip: "Dica prática: sempre nomeie o sintoma antes da causa (\"the issue is that X happened, because Y\") — invertendo essa ordem, o público não técnico perde o fio da explicação rapidamente.",
+    grammarTip: "Dica prática: sempre nomeie o sintoma antes da causa (\"the issue is that X happened, because Y\"), invertendo essa ordem, o público não técnico perde o fio da explicação rapidamente.",
     speakingQuestions: [
       "Describe a technical problem you'd need to explain to a non-technical stakeholder.",
       "What's the difference between the symptom and the root cause in that situation?",
@@ -208,10 +208,10 @@ const themes = [
       "How do you handle a stakeholder who keeps pushing for more technical detail than needed?",
     ],
     expressions: [
-      "\"The issue is that...\" — para nomear o problema com clareza.",
-      "\"This happens because...\" — para conectar sintoma a causa.",
-      "\"We've patched it for now, and...\" — para comunicar solução temporária.",
-      "\"Think of it like...\" — reforço de analogia.",
+      "\"The issue is that...\", para nomear o problema com clareza.",
+      "\"This happens because...\", para conectar sintoma a causa.",
+      "\"We've patched it for now, and...\", para comunicar solução temporária.",
+      "\"Think of it like...\", reforço de analogia.",
     ],
     exerciseSentences: [
       "The ______ was a misconfigured server, not the code itself.",
@@ -229,7 +229,7 @@ const themes = [
     titleEn: "Talking About Cybersecurity and Privacy",
     titlePt: "Falando sobre cibersegurança e privacidade",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "Discutir segurança digital em inglês exige um vocabulário técnico específico, mas acessível — e uma postura equilibrada entre alarmismo e negligência.",
+    intro: "Discutir segurança digital em inglês exige um vocabulário técnico específico, mas acessível, e uma postura equilibrada entre alarmismo e negligência.",
     vocab: [
       ["data breach", "vazamento de dados", "The company disclosed a data breach last quarter."],
       ["to safeguard", "proteger / resguardar", "We've added new steps to safeguard customer data."],
@@ -247,15 +247,15 @@ const themes = [
     readingTitle: "Security Talk Needs Calm, Not Alarm",
     readingParagraphs: [
       "Conversations about cybersecurity in English tend to go one of two unhelpful directions: dismissing risk entirely, or reacting with alarm that shuts down clear thinking. The useful middle ground names the risk specifically and describes concrete mitigation, without exaggeration.",
-      "\"We identified a vulnerability, patched it within 24 hours, and there's no evidence any personal data was accessed\" is calm, specific, and reassuring without minimizing what happened. Compare that to \"there was a security issue but it's fine now\" — vague reassurance that actually reads as less trustworthy.",
+      "\"We identified a vulnerability, patched it within 24 hours, and there's no evidence any personal data was accessed\" is calm, specific, and reassuring without minimizing what happened. Compare that to \"there was a security issue but it's fine now\", vague reassurance that actually reads as less trustworthy.",
       "Precise vocabulary also signals competence here: distinguishing a vulnerability (a weakness) from a breach (an actual incident), and naming specific mitigations like encryption or two-factor authentication, rather than vague references to \"better security.\"",
     ],
     audioFile: "audio/tema-68-cybersecurity-and-privacy.mp3",
     audioScript: [
-      "\"I heard there was a security incident last week — how bad was it?\"",
+      "\"I heard there was a security incident last week, how bad was it?\"",
       "\"We identified a vulnerability and patched it within 24 hours. There's no evidence any personal data was accessed, but we've added two-factor authentication as an extra safeguard going forward.\"",
     ],
-    audioFollowup: "Note a precisão: \"vulnerability\", não \"breach\" — a distinção importa e transmite controle da situação.",
+    audioFollowup: "Note a precisão: \"vulnerability\", não \"breach\", a distinção importa e transmite controle da situação.",
     writingQuestions: [
       "Describe a cybersecurity practice you follow (or should follow) more consistently.",
       "What's the difference between a vulnerability and a breach, in your own words?",
@@ -268,7 +268,7 @@ const themes = [
       ["must / should\n(recomendação)", "You should enable two-factor authentication on all accounts.", "Usado para recomendar ou exigir uma prática de segurança."],
       ["Segundo condicional\n(cenário de risco)", "If a breach happened, we would notify users within 72 hours.", "Usado para descrever como você agiria diante de um cenário de risco hipotético."],
     ],
-    grammarTip: "Dica prática: \"vulnerability\" (uma fraqueza identificada) e \"breach\" (um incidente real) não são sinônimos — confundi-los em uma comunicação de segurança pode causar alarme desnecessário.",
+    grammarTip: "Dica prática: \"vulnerability\" (uma fraqueza identificada) e \"breach\" (um incidente real) não são sinônimos, confundi-los em uma comunicação de segurança pode causar alarme desnecessário.",
     speakingQuestions: [
       "What cybersecurity practice do you follow, or know you should follow more consistently?",
       "What's the difference between a vulnerability and a breach, in your understanding?",
@@ -282,10 +282,10 @@ const themes = [
       "What's a privacy practice you wish more companies actually followed?",
     ],
     expressions: [
-      "\"We identified a vulnerability and patched it.\" — comunicação calma e precisa.",
-      "\"There's no evidence that...\" — para tranquilizar com honestidade.",
-      "\"We've added this as an extra safeguard.\" — para mostrar mitigação concreta.",
-      "\"That's a growing threat industry-wide.\" — para contextualizar sem alarmismo.",
+      "\"We identified a vulnerability and patched it.\", comunicação calma e precisa.",
+      "\"There's no evidence that...\", para tranquilizar com honestidade.",
+      "\"We've added this as an extra safeguard.\", para mostrar mitigação concreta.",
+      "\"That's a growing threat industry-wide.\", para contextualizar sem alarmismo.",
     ],
     exerciseSentences: [
       "The company disclosed a ______ last quarter.",
@@ -321,15 +321,15 @@ const themes = [
     readingTitle: "The Future of Work Debate Needs Less Extremes",
     readingParagraphs: [
       "English-language debates about automation and the future of work tend to swing between two extremes: total job apocalypse, or confident dismissal that \"it'll all work out like it always has.\" Neither position handles the topic honestly.",
-      "A more grounded way to discuss this acknowledges both sides: \"Automation will render some roles obsolete, and displacement is a real concern — but new, emerging roles are also appearing, and reskilling matters more than it used to.\" This isn't fence-sitting; it's reflecting genuine complexity.",
+      "A more grounded way to discuss this acknowledges both sides: \"Automation will render some roles obsolete, and displacement is a real concern, but new, emerging roles are also appearing, and reskilling matters more than it used to.\" This isn't fence-sitting; it's reflecting genuine complexity.",
       "It's also useful to speak personally rather than only abstractly: \"I've had to upskill in areas I didn't expect, and job security now looks more like adaptability than tenure.\" This grounds a big, abstract topic in something concrete and credible.",
     ],
     audioFile: "audio/tema-69-automation-and-future-of-work.mp3",
     audioScript: [
       "\"Are you worried automation will replace your role eventually?\"",
-      "\"Some parts of it, maybe — the repetitive tasks are already going. But new, emerging roles are appearing too. I've focused more on upskilling than worrying about full displacement.\"",
+      "\"Some parts of it, maybe, the repetitive tasks are already going. But new, emerging roles are appearing too. I've focused more on upskilling than worrying about full displacement.\"",
     ],
-    audioFollowup: "Note o equilíbrio entre reconhecer o risco real e não cair em alarmismo — nem otimismo ingênuo.",
+    audioFollowup: "Note o equilíbrio entre reconhecer o risco real e não cair em alarmismo, nem otimismo ingênuo.",
     writingQuestions: [
       "What part of your job do you think is most likely to be automated eventually?",
       "What skill are you upskilling in to stay adaptable in your field?",
@@ -339,16 +339,16 @@ const themes = [
     grammarIntro: "Discutir o futuro do trabalho depende de estruturas de previsão no futuro e da voz passiva para descrever impactos amplos.",
     grammarRows: [
       ["will / going to\n(previsão)", "Many repetitive roles will be automated over the next decade.", "Usado para fazer previsões sobre tendências futuras de trabalho."],
-      ["the more X, the more Y", "The more automated a task is, the more valuable human judgment becomes.", "Conecta duas tendências que crescem juntas — muito usado em discussões futuras."],
+      ["the more X, the more Y", "The more automated a task is, the more valuable human judgment becomes.", "Conecta duas tendências que crescem juntas, muito usado em discussões futuras."],
       ["Voz passiva\n(impacto amplo)", "Many repetitive roles will be automated in the next few years.", "Usado para descrever um impacto amplo sem focar em quem especificamente causa a automação."],
     ],
-    grammarTip: "Dica prática: \"the more X, the more Y\" é ótima para discutir tendências futuras complexas — ambas as partes da frase usam comparativo (\"the more\", \"the less\", \"the better\").",
+    grammarTip: "Dica prática: \"the more X, the more Y\" é ótima para discutir tendências futuras complexas, ambas as partes da frase usam comparativo (\"the more\", \"the less\", \"the better\").",
     speakingQuestions: [
       "What part of your job do you think is most likely to be automated eventually?",
       "What skill are you actively upskilling in to stay adaptable in your field?",
       "How has your sense of job security changed over the last several years?",
       "What emerging role do you see appearing in your industry because of automation?",
-      "How do you personally feel about the pace of automation — hopeful, anxious, both?",
+      "How do you personally feel about the pace of automation, hopeful, anxious, both?",
       "What's a task you hope stays human, even if it could technically be automated?",
       "How should companies support workforce transitions responsibly, in your opinion?",
       "What's the difference between reskilling and upskilling, in your understanding?",
@@ -356,10 +356,10 @@ const themes = [
       "What advice would you give someone entering the workforce today, given all this change?",
     ],
     expressions: [
-      "\"That's real, but it's not the whole story.\" — para equilibrar um argumento extremo.",
-      "\"New, emerging roles are appearing too.\" — para contrabalançar preocupação com automação.",
-      "\"I've focused more on upskilling than worrying.\" — postura prática e pessoal.",
-      "\"Job security looks different now.\" — para reformular um conceito tradicional.",
+      "\"That's real, but it's not the whole story.\", para equilibrar um argumento extremo.",
+      "\"New, emerging roles are appearing too.\", para contrabalançar preocupação com automação.",
+      "\"I've focused more on upskilling than worrying.\", postura prática e pessoal.",
+      "\"Job security looks different now.\", para reformular um conceito tradicional.",
     ],
     exerciseSentences: [
       "______ has changed which skills are actually valuable.",
@@ -377,7 +377,7 @@ const themes = [
     titleEn: "Talking About Remote Work Technology",
     titlePt: "Falando sobre tecnologia de trabalho remoto",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "Diferente do Tema 23, que tratava da gestão de pessoas remotas, este tema foca na tecnologia em si — as ferramentas, seus problemas e a linguagem para descrevê-los.",
+    intro: "Diferente do Tema 23, que tratava da gestão de pessoas remotas, este tema foca na tecnologia em si, as ferramentas, seus problemas e a linguagem para descrevê-los.",
     vocab: [
       ["collaboration tool", "ferramenta de colaboração", "We rely on a handful of collaboration tools daily."],
       ["video conferencing", "videoconferência", "Video conferencing fatigue is a real thing by Friday."],
@@ -394,9 +394,9 @@ const themes = [
     ],
     readingTitle: "The Tools Aren't the Hard Part Anymore",
     readingParagraphs: [
-      "A few years ago, discussing remote work technology in English mostly meant troubleshooting basic problems: latency, connection drops, tools that didn't sync properly. Today, the tools themselves are largely reliable — the conversation has shifted to how well they integrate and how they're actually used.",
-      "\"Our tech stack is solid, but the real friction is switching between six different tools for one workflow\" is a very current kind of complaint — less about individual tool quality, more about integration and workflow design.",
-      "\"Video conferencing fatigue\" has also become a completely normal phrase, reflecting a shift from being grateful the tools work at all to being thoughtful about when and how much to use them — a distinctly modern remote-work conversation.",
+      "A few years ago, discussing remote work technology in English mostly meant troubleshooting basic problems: latency, connection drops, tools that didn't sync properly. Today, the tools themselves are largely reliable, the conversation has shifted to how well they integrate and how they're actually used.",
+      "\"Our tech stack is solid, but the real friction is switching between six different tools for one workflow\" is a very current kind of complaint, less about individual tool quality, more about integration and workflow design.",
+      "\"Video conferencing fatigue\" has also become a completely normal phrase, reflecting a shift from being grateful the tools work at all to being thoughtful about when and how much to use them, a distinctly modern remote-work conversation.",
     ],
     audioFile: "audio/tema-70-remote-work-technology.mp3",
     audioScript: [
@@ -416,7 +416,7 @@ const themes = [
       ["rely on + gerúndio", "We rely on syncing files automatically overnight.", "Usado para descrever dependência de um processo ou ferramenta específica."],
       ["unless\n(condição de falha)", "The workflow breaks down unless everything syncs properly.", "Usado para descrever uma condição necessária para que algo funcione."],
     ],
-    grammarTip: "Dica prática: \"rely on\" é sempre seguido de substantivo ou gerúndio (\"rely on this tool\", \"rely on syncing\") — nunca de infinitivo com \"to\".",
+    grammarTip: "Dica prática: \"rely on\" é sempre seguido de substantivo ou gerúndio (\"rely on this tool\", \"rely on syncing\"), nunca de infinitivo com \"to\".",
     speakingQuestions: [
       "Describe your current remote work tech stack. What works well, what doesn't?",
       "What's an integration between tools that has genuinely saved you time?",
@@ -430,10 +430,10 @@ const themes = [
       "What's your biggest frustration with remote work technology right now?",
     ],
     expressions: [
-      "\"Uptime's been great.\" — para elogiar a confiabilidade de uma ferramenta.",
-      "\"The main issue now is fatigue, not the tools.\" — para reformular o problema real.",
-      "\"That integration saves a lot of switching.\" — para elogiar fluxo entre ferramentas.",
-      "\"I spent the morning troubleshooting...\" — para descrever um problema técnico comum.",
+      "\"Uptime's been great.\", para elogiar a confiabilidade de uma ferramenta.",
+      "\"The main issue now is fatigue, not the tools.\", para reformular o problema real.",
+      "\"That integration saves a lot of switching.\", para elogiar fluxo entre ferramentas.",
+      "\"I spent the morning troubleshooting...\", para descrever um problema técnico comum.",
     ],
     exerciseSentences: [
       "We rely on a handful of ______ daily.",
@@ -451,7 +451,7 @@ const themes = [
     titleEn: "Debating the Pros and Cons of Social Media",
     titlePt: "Debatendo prós e contras das redes sociais",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "Redes sociais são um tema polarizado, ótimo para treinar argumentação equilibrada em inglês — apresentando dois lados de forma justa antes de posicionar sua opinião.",
+    intro: "Redes sociais são um tema polarizado, ótimo para treinar argumentação equilibrada em inglês, apresentando dois lados de forma justa antes de posicionar sua opinião.",
     vocab: [
       ["pros and cons", "prós e contras", "Let's weigh the pros and cons before deciding on a policy."],
       ["double-edged sword", "faca de dois gumes", "Social media is a bit of a double-edged sword for small businesses."],
@@ -469,8 +469,8 @@ const themes = [
     readingTitle: "A Balanced Argument Names Both Sides Fairly",
     readingParagraphs: [
       "Debating social media well in English means resisting the temptation to argue only one side, even when you have a strong opinion. A balanced argument names real benefits and real costs before landing on a position.",
-      "\"On one hand, social media has genuinely democratized who gets a platform — small creators can reach audiences that used to require a media company. On the other hand, the same algorithms that enable that reach also create echo chambers and reward misinformation.\" This structure shows real thinking, not just a slogan.",
-      "Personal framing also adds credibility: \"I've noticed my own screen time creeping up, and I've had to be intentional about disconnecting\" is more persuasive than abstract claims about \"society\" — it grounds the debate in lived experience.",
+      "\"On one hand, social media has genuinely democratized who gets a platform, small creators can reach audiences that used to require a media company. On the other hand, the same algorithms that enable that reach also create echo chambers and reward misinformation.\" This structure shows real thinking, not just a slogan.",
+      "Personal framing also adds credibility: \"I've noticed my own screen time creeping up, and I've had to be intentional about disconnecting\" is more persuasive than abstract claims about \"society\", it grounds the debate in lived experience.",
     ],
     audioFile: "audio/tema-71-pros-and-cons-of-social-media.mp3",
     audioScript: [
@@ -490,7 +490,7 @@ const themes = [
       ["While X can Y, it also Z\n(concessão)", "While social media can inform people, it can also spread misinformation fast.", "Reconhece um benefício antes de introduzir um custo relacionado."],
       ["it depends on", "It depends on how the platform is actually used.", "Usado para evitar uma generalização absoluta, reconhecendo variação de caso a caso."],
     ],
-    grammarTip: "Dica prática: \"it depends on...\" é uma ótima forma de evitar generalizações absolutas em um debate — mostra nuance sem parecer indeciso, desde que você complete a frase com uma condição específica.",
+    grammarTip: "Dica prática: \"it depends on...\" é uma ótima forma de evitar generalizações absolutas em um debate, mostra nuance sem parecer indeciso, desde que você complete a frase com uma condição específica.",
     speakingQuestions: [
       "What's one genuine benefit and one genuine cost of social media, in your experience?",
       "How has your relationship with screen time changed over the past few years?",
@@ -504,10 +504,10 @@ const themes = [
       "What would a healthier relationship with social media look like for you personally?",
     ],
     expressions: [
-      "\"On one hand... on the other hand...\" — estrutura de argumento equilibrado.",
-      "\"It depends on how it's used.\" — para evitar uma generalização absoluta.",
-      "\"That's a bit of a double-edged sword.\" — para nomear um benefício com custo embutido.",
-      "\"I've had to be intentional about...\" — para uma reflexão pessoal genuína.",
+      "\"On one hand... on the other hand...\", estrutura de argumento equilibrado.",
+      "\"It depends on how it's used.\", para evitar uma generalização absoluta.",
+      "\"That's a bit of a double-edged sword.\", para nomear um benefício com custo embutido.",
+      "\"I've had to be intentional about...\", para uma reflexão pessoal genuína.",
     ],
     exerciseSentences: [
       "Let's weigh the ______ before deciding on a policy.",
@@ -542,14 +542,14 @@ const themes = [
     ],
     readingTitle: "Disruption Is Rarely Sudden From the Inside",
     readingParagraphs: [
-      "From the outside, disruption often looks sudden — an incumbent industry collapses seemingly overnight. From the inside, in English business conversation, the more accurate description is usually a slow accumulation of small shifts that legacy players underestimated one at a time.",
-      "\"It wasn't one single innovation that disrupted us — it was a series of smaller shifts in customer expectations that we were slow to respond to\" is a more nuanced, more credible way to describe change than \"everything changed overnight.\"",
-      "Talking about staying ahead of the curve in English also tends to focus on process, not luck: \"We stay ahead by treating emerging trends as worth testing early, even before we're sure they'll matter\" — framing innovation as a discipline, not a lucky guess.",
+      "From the outside, disruption often looks sudden, an incumbent industry collapses seemingly overnight. From the inside, in English business conversation, the more accurate description is usually a slow accumulation of small shifts that legacy players underestimated one at a time.",
+      "\"It wasn't one single innovation that disrupted us, it was a series of smaller shifts in customer expectations that we were slow to respond to\" is a more nuanced, more credible way to describe change than \"everything changed overnight.\"",
+      "Talking about staying ahead of the curve in English also tends to focus on process, not luck: \"We stay ahead by treating emerging trends as worth testing early, even before we're sure they'll matter\", framing innovation as a discipline, not a lucky guess.",
     ],
     audioFile: "audio/tema-72-innovation-in-your-industry.mp3",
     audioScript: [
       "\"How has your industry been disrupted over the last few years?\"",
-      "\"It wasn't one big paradigm shift — it was a series of smaller market shifts that legacy players, including us, underestimated. Staying ahead of the curve now means testing emerging trends early, before we're sure they'll matter.\"",
+      "\"It wasn't one big paradigm shift, it was a series of smaller market shifts that legacy players, including us, underestimated. Staying ahead of the curve now means testing emerging trends early, before we're sure they'll matter.\"",
     ],
     audioFollowup: "Note que a disrupção é descrita como acúmulo gradual, não um evento único e súbito.",
     writingQuestions: [
@@ -564,7 +564,7 @@ const themes = [
       ["Comparativo\n(mais inovador que)", "This approach is far more innovative than what incumbents are doing.", "Usado para comparar diretamente o nível de inovação entre players."],
       ["Present Perfect\n(o que já mudou)", "The industry has shifted a lot in the last five years.", "Usado para resumir uma mudança acumulada até o momento presente."],
     ],
-    grammarTip: "Dica prática: use Present Continuous (\"is shifting\", \"is changing\") para tendências em curso, e Present Perfect (\"has shifted\", \"has changed\") para resumir o resultado acumulado até agora — a escolha certa evita ambiguidade sobre se a mudança já terminou ou está em andamento.",
+    grammarTip: "Dica prática: use Present Continuous (\"is shifting\", \"is changing\") para tendências em curso, e Present Perfect (\"has shifted\", \"has changed\") para resumir o resultado acumulado até agora, a escolha certa evita ambiguidade sobre se a mudança já terminou ou está em andamento.",
     speakingQuestions: [
       "Describe a disruption that has affected your industry in recent years.",
       "What's an emerging trend in your field that you think is worth watching closely?",
@@ -578,10 +578,10 @@ const themes = [
       "How do you evaluate whether a new technology is truly cutting-edge or just hype?",
     ],
     expressions: [
-      "\"It wasn't one big shift, it was a series of smaller ones.\" — para descrever disrupção com nuance.",
-      "\"That's an emerging trend worth watching.\" — para sinalizar atenção sem exagero.",
-      "\"We stay ahead by testing things early.\" — para descrever inovação como processo.",
-      "\"Legacy players are struggling to adapt.\" — para nomear resistência à mudança.",
+      "\"It wasn't one big shift, it was a series of smaller ones.\", para descrever disrupção com nuance.",
+      "\"That's an emerging trend worth watching.\", para sinalizar atenção sem exagero.",
+      "\"We stay ahead by testing things early.\", para descrever inovação como processo.",
+      "\"Legacy players are struggling to adapt.\", para nomear resistência à mudança.",
     ],
     exerciseSentences: [
       "This technology caused real ______ in how we operate.",

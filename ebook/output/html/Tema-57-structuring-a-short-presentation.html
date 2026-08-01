@@ -2,40 +2,45 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Tema 57 — Structuring a Short Presentation</title>
+<title>Tema 57: Structuring a Short Presentation</title>
 <style>
   
   @page {
     size: A4;
-    margin: 2.2cm 2cm 2.4cm 2cm;
-    @top-right { content: "English Speaking Practice — Nação Fluente"; font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
-    @bottom-center { content: "Bloco 8 — Comunicação e Apresentações   |   Página " counter(page); font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
+    margin: 1.9cm 2cm 2.1cm 2cm;
+    @top-right { content: "English Speaking Practice · Nação Fluente"; font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
+    @bottom-center { content: "Bloco 8 · Comunicação e Apresentações (Communication and Presentations)   |   Página " counter(page); font-size: 7.5pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
   }
   * { box-sizing: border-box; }
-  body { font-family: 'Helvetica', Arial, sans-serif; color: #444444; font-size: 10.5pt; line-height: 1.5; }
-  .cover { background: #1B3B57; color: #fff; padding: 22px 24px; border-radius: 4px; margin-bottom: 14px; }
-  .cover .eyebrow { color: #8fc4ec; font-weight: bold; font-size: 9.5pt; letter-spacing: 0.5px; margin-bottom: 6px; }
-  .cover h1 { font-size: 22pt; margin: 0 0 6px 0; color: #fff; }
-  .cover .subtitle { color: #C9D6E3; font-style: italic; font-size: 12pt; margin: 0; }
-  .meta { margin: 10px 0 14px 0; font-size: 10.5pt; }
+  body { font-family: 'Helvetica', Arial, sans-serif; color: #444444; font-size: 10.5pt; line-height: 1.42; }
+  .cover { background: #1B3B57; color: #fff; padding: 16px 18px; border-radius: 4px; margin-bottom: 10px; display: flex; align-items: center; gap: 16px; }
+  .cover .icon { width: 54px; height: 54px; flex: none; opacity: 0.92; }
+  .cover .eyebrow { color: #8fc4ec; font-weight: bold; font-size: 9pt; letter-spacing: 0.4px; margin-bottom: 4px; }
+  .cover .eyebrow .en { display: block; color: #6f93ad; font-weight: normal; font-style: italic; font-size: 7.5pt; letter-spacing: 0.2px; margin-top: 1px; }
+  .cover h1 { font-size: 19pt; margin: 0 0 3px 0; color: #fff; line-height: 1.12; }
+  .cover .subtitle { color: #C9D6E3; font-style: italic; font-size: 10.5pt; margin: 0; }
+  .meta { margin: 8px 0 10px 0; font-size: 10pt; }
   .meta b { color: #1B3B57; }
-  .intro { margin-bottom: 6px; }
-  h2.step { color: #fff; padding: 8px 12px; font-size: 12.5pt; margin: 22px 0 10px 0; border-radius: 3px; }
-  h2.step .tag { background: rgba(255,255,255,0.22); padding: 2px 8px; border-radius: 3px; font-size: 9.5pt; margin-right: 8px; }
-  table { width: 100%; border-collapse: collapse; margin: 8px 0 14px 0; font-size: 9.8pt; }
-  th { color: #fff; text-align: left; padding: 6px 8px; }
-  td { padding: 6px 8px; border-bottom: 1px solid #E3E9EF; vertical-align: top; }
+  .intro { margin-bottom: 4px; }
+  p { margin: 0 0 8px 0; }
+  h2.step { color: #fff; padding: 6px 10px; font-size: 11.5pt; margin: 16px 0 8px 0; border-radius: 3px; display: flex; align-items: center; }
+  h2.step .tag { background: rgba(255,255,255,0.22); padding: 2px 7px; border-radius: 3px; font-size: 8.5pt; margin-right: 8px; flex: none; }
+  h2.step .stitle { display: flex; flex-direction: column; line-height: 1.18; }
+  h2.step .stitle .en { font-weight: normal; font-style: italic; font-size: 8pt; opacity: 0.82; }
+  table { width: 100%; border-collapse: collapse; margin: 6px 0 10px 0; font-size: 9.5pt; }
+  th { color: #fff; text-align: left; padding: 5px 7px; }
+  td { padding: 5px 7px; border-bottom: 1px solid #E3E9EF; vertical-align: top; }
   .example { font-style: italic; }
-  .notebox { border-radius: 4px; padding: 10px 14px; margin: 10px 0 16px 0; border: 1px solid; }
-  .notebox .title { font-weight: bold; margin-bottom: 6px; }
-  .notebox p { margin: 3px 0; }
-  ol, ul { margin: 6px 0 14px 0; padding-left: 20px; }
-  ol li, ul li { margin-bottom: 7px; }
-  .lines { border-bottom: 1px solid #C9D6E3; height: 22px; margin-bottom: 6px; }
-  .expr-list { list-style: none; padding-left: 0; margin: 6px 0 14px 0; }
-  .expr-list li { margin-bottom: 6px; padding-left: 14px; position: relative; }
-  .gabarito { font-style: italic; color: #1B3B57; margin-top: -6px; }
-  .footer-note { text-align: center; font-weight: bold; color: #1B3B57; margin-top: 18px; font-size: 11pt; }
+  .notebox { border-radius: 4px; padding: 8px 12px; margin: 6px 0 10px 0; border: 1px solid; }
+  .notebox .title { font-weight: bold; margin-bottom: 4px; }
+  .notebox p { margin: 2px 0; }
+  ol, ul { margin: 4px 0 10px 0; padding-left: 19px; }
+  ol li, ul li { margin-bottom: 5px; }
+  .lines { border-bottom: 1px solid #C9D6E3; height: 17px; margin-bottom: 4px; }
+  .expr-list { list-style: none; padding-left: 0; margin: 4px 0 10px 0; }
+  .expr-list li { margin-bottom: 4px; padding-left: 14px; position: relative; }
+  .gabarito { font-style: italic; color: #1B3B57; margin-top: -4px; }
+  .footer-note { text-align: center; font-weight: bold; color: #1B3B57; margin-top: 12px; font-size: 10.5pt; }
 
   .s1 h2, .s1 .tag { background: #2E86C1; }
   .s1 th { background: #2E86C1; }
@@ -72,16 +77,19 @@
 
 <div class="chapter" id="tema-57">
 <div class="cover">
-  <div class="eyebrow">TEMA 57 &nbsp;·&nbsp; BLOCO 8 — COMUNICAÇÃO E APRESENTAÇÕES</div>
-  <h1>Structuring a Short Presentation</h1>
-  <p class="subtitle">Estruturando uma apresentação curta</p>
+  <img class="icon" src="file:///home/user/Claude/ebook/assets/icons/block-8.png">
+  <div>
+    <div class="eyebrow">TEMA 57 &nbsp;·&nbsp; BLOCO 8 &nbsp;·&nbsp; COMUNICAÇÃO E APRESENTAÇÕES<span class="en">THEME 57 · BLOCK 8 · COMMUNICATION AND PRESENTATIONS</span></div>
+    <h1>Structuring a Short Presentation</h1>
+    <p class="subtitle">Estruturando uma apresentação curta</p>
+  </div>
 </div>
 
 <div class="meta"><b>Tempo estimado:</b> 60–90 minutos, divididos ao longo da semana.</div>
 <p class="intro">Abrindo o Bloco 8: uma apresentação de 5 minutos malfeita em inglês soa perdida; uma bem estruturada soa segura mesmo com vocabulário simples. Este tema treina o esqueleto de qualquer apresentação curta.</p>
 
 <div class="s1">
-<h2 class="step"><span class="tag">ETAPA 1</span>Vocabulário Contextualizado</h2>
+<h2 class="step "><span class="tag">ETAPA 1</span><span class="stitle"><span class="pt">Vocabulário Contextualizado</span><span class="en">Contextualized Vocabulary</span></span></h2>
 <p>Estas palavras e expressões vão te ajudar a se expressar sobre este tema com mais precisão e naturalidade.</p>
 <table>
 <tr><th>Word / Expression</th><th>Tradução</th><th>Example Sentence</th></tr>
@@ -102,35 +110,35 @@
 </div>
 
 <div class="s2">
-<h2 class="step"><span class="tag">ETAPA 2</span>Leitura com Orientação de Estudo</h2>
+<h2 class="step "><span class="tag">ETAPA 2</span><span class="stitle"><span class="pt">Leitura com Orientação de Estudo</span><span class="en">Guided Reading</span></span></h2>
 <div class="notebox">
   <div class="title">Como ler este texto</div>
-  <p>1) Leia uma vez, rápido, só para captar a ideia geral — sem parar no que não entender.</p><p>2) Leia de novo e grife toda expressão da Etapa 1 que aparecer no texto.</p><p>3) Releia em voz alta, como se você estivesse contando essa história sobre você mesmo.</p>
+  <p>1) Leia uma vez, rápido, só para captar a ideia geral, sem parar no que não entender.</p><p>2) Leia de novo e grife toda expressão da Etapa 1 que aparecer no texto.</p><p>3) Releia em voz alta, como se você estivesse contando essa história sobre você mesmo.</p>
 </div>
 <p><b>"Structure Is What Makes Nervousness Invisible"</b></p>
-<p>A short presentation with a clear structure hides nervousness better than perfect grammar does. When the audience can predict where you're going next — opening, three points, close — small verbal stumbles barely register, because the shape of the talk carries it.</p><p>A reliable structure for a short presentation in English: a hook (why this matters), a signpost ("I'll cover three things today"), the content itself with clear transitions ("moving on to...", "that brings me to..."), and a close that repeats the one key message. Nothing complicated — just consistent.</p><p>The most common mistake isn't a lack of content, it's a lack of signposting: jumping between points without telling the audience you're moving on. "That covers the first point — now let's look at the second" costs one sentence and saves the audience from getting lost.</p>
+<p>A short presentation with a clear structure hides nervousness better than perfect grammar does. When the audience can predict where you're going next, opening, three points, close, small verbal stumbles barely register, because the shape of the talk carries it.</p><p>A reliable structure for a short presentation in English: a hook (why this matters), a signpost ("I'll cover three things today"), the content itself with clear transitions ("moving on to...", "that brings me to..."), and a close that repeats the one key message. Nothing complicated, just consistent.</p><p>The most common mistake isn't a lack of content, it's a lack of signposting: jumping between points without telling the audience you're moving on. "That covers the first point, now let's look at the second" costs one sentence and saves the audience from getting lost.</p>
 </div>
 
 <div class="s3">
-<h2 class="step"><span class="tag">ETAPA 3</span>Listening com Suporte em Áudio e Vídeo</h2>
+<h2 class="step "><span class="tag">ETAPA 3</span><span class="stitle"><span class="pt">Listening com Suporte em Áudio e Vídeo</span><span class="en">Guided Listening</span></span></h2>
 <p>Ouça o áudio deste tema (arquivo disponível para download na plataforma: <i>audio/tema-57-structuring-a-presentation.mp3</i>) com o roteiro abaixo. Primeiro sem ler, depois acompanhando o texto.</p>
 <div class="notebox">
   <div class="title">Roteiro do áudio (Audio Script)</div>
-  <p>"Today I'll cover three things: what changed, why it matters, and what we're doing next."</p><p>"That covers what changed — now let's move on to why it actually matters for the team. And to wrap up, here's the one thing I want you to remember."</p>
+  <p>"Today I'll cover three things: what changed, why it matters, and what we're doing next."</p><p>"That covers what changed, now let's move on to why it actually matters for the team. And to wrap up, here's the one thing I want you to remember."</p>
 </div>
-<p>Note o uso constante de signposting ("that covers X, now let's move on to Y") — isso guia o público sem esforço extra.</p>
+<p>Note o uso constante de signposting ("that covers X, now let's move on to Y"), isso guia o público sem esforço extra.</p>
 </div>
 
 <div class="s4">
-<h2 class="step"><span class="tag">ETAPA 4</span>Writing como Preparação para a Fala</h2>
-<p>Antes de falar, escreva. Use as perguntas abaixo como guia e escreva de 4 a 6 frases — não precisa ser perfeito, precisa existir no papel primeiro.</p>
+<h2 class="step "><span class="tag">ETAPA 4</span><span class="stitle"><span class="pt">Writing como Preparação para a Fala</span><span class="en">Writing Before Speaking</span></span></h2>
+<p>Antes de falar, escreva. Use as perguntas abaixo como guia e escreva de 4 a 6 frases: não precisa ser perfeito, precisa existir no papel primeiro.</p>
 <ol><li>Outline a 5-minute presentation you might need to give, using hook-body-close.</li><li>What's the one key message your presentation should leave people with?</li><li>Write two signposting sentences you could use to transition between points.</li><li>What opening hook could you use to grab attention in the first ten seconds?</li></ol>
 <p>Espaço para escrever:</p>
-<div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div>
+<div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div>
 </div>
 
 <div class="s5">
-<h2 class="step"><span class="tag">ETAPA 5</span>Gramática de Apoio Aplicada à Conversação</h2>
+<h2 class="step "><span class="tag">ETAPA 5</span><span class="stitle"><span class="pt">Gramática de Apoio Aplicada à Conversação</span><span class="en">Grammar for Conversation</span></span></h2>
 <p>Estruturar uma apresentação em inglês depende de conectores de sequência formais e de frases para sinalizar transições.</p>
 <table>
 <tr><th>Estrutura</th><th>Exemplo (EN)</th><th>Tradução (PT)</th></tr>
@@ -139,33 +147,33 @@
     <tr><td><b>By the end of this, you'll...</b><br>(expectativa)</td><td class="example">By the end of this, you'll understand our new process.</td><td>Usado na abertura para definir a expectativa do que a audiência vai levar.</td></tr>
     <tr><td><b>Let's + verbo</b><br>(transição/signpost)</td><td class="example">Let's move on to the second point.</td><td>Frase funcional para sinalizar transição entre seções da apresentação.</td></tr>
 </table>
-<p>Dica prática: use "that covers X, now let's move on to Y" toda vez que mudar de tópico — é uma fórmula simples que substitui a necessidade de transições elaboradas.</p>
+<p>Dica prática: use "that covers X, now let's move on to Y" toda vez que mudar de tópico, é uma fórmula simples que substitui a necessidade de transições elaboradas.</p>
 </div>
 
 <div class="s6">
-<h2 class="step"><span class="tag">ETAPA 6</span>Speaking — Perguntas Abertas</h2>
-<p>Responda em voz alta, gravando se possível. Não vale responder em uma frase só — use o que você escreveu na Etapa 4 como base, mas fale livremente.</p>
+<h2 class="step "><span class="tag">ETAPA 6</span><span class="stitle"><span class="pt">Speaking: Perguntas Abertas</span><span class="en">Open-Ended Speaking</span></span></h2>
+<p>Responda em voz alta, gravando se possível. Não vale responder em uma frase só: use o que você escreveu na Etapa 4 como base, mas fale livremente.</p>
 <ol><li>How do you usually structure a short presentation from start to finish?</li><li>What's an opening hook you could use for a presentation you might give soon?</li><li>How do you decide on the one key message a presentation should leave behind?</li><li>What's your approach to signposting transitions between points?</li><li>How do you keep a short presentation from feeling rushed or crammed?</li><li>What's a presentation structure that really worked well for you in the past?</li><li>How do you adjust your structure for a technical versus a non-technical audience?</li><li>What's the hardest part of structuring a presentation for you personally?</li><li>How do you decide what to cut when you have too much content and too little time?</li><li>What's a call to action you'd want to end a presentation with?</li></ol>
 <p><b>Expressões úteis para esta conversa:</b></p>
-<ul class="expr-list"><li>"Today I'll cover three things." — abertura clássica com estrutura.</li><li>"That covers X, now let's move on to Y." — transição funcional.</li><li>"To wrap up, here's the one thing I want you to remember." — fechamento forte.</li><li>"That brings me to my next point." — transição suave e natural.</li></ul>
+<ul class="expr-list"><li>"Today I'll cover three things.", abertura clássica com estrutura.</li><li>"That covers X, now let's move on to Y.", transição funcional.</li><li>"To wrap up, here's the one thing I want you to remember.", fechamento forte.</li><li>"That brings me to my next point.", transição suave e natural.</li></ul>
 </div>
 
 <div class="sx">
-<h2 class="step"><span class="tag">EXERCÍCIO</span>Complete com a Palavra Certa</h2>
+<h2 class="step "><span class="tag">EXERCÍCIO</span><span class="stitle"><span class="pt">Complete com a Palavra Certa</span><span class="en">Vocabulary Check</span></span></h2>
 <p>Complete cada frase com uma palavra ou expressão da Etapa 1. Gabarito ao final desta seção.</p>
 <ol><li>A clear ______ matters more than fancy vocabulary.</li><li>I always start with a quick opening ______.</li><li>Everything should support one ______.</li><li>______ helps the audience follow your structure.</li><li>Every presentation should end with a clear ______.</li></ol>
 <p class="gabarito">Gabarito: 1) structure   2) hook   3) key message   4) Signposting   5) call to action</p>
 </div>
 
 <div class="s7">
-<h2 class="step"><span class="tag">ETAPA 7</span>Autoavaliação de Performance</h2>
+<h2 class="step "><span class="tag">ETAPA 7</span><span class="stitle"><span class="pt">Autoavaliação de Performance</span><span class="en">Self-Assessment</span></span></h2>
 <p>Antes de marcar este tema como concluído, avalie honestamente como foi sua prática.</p>
 <table>
-<tr><th>Critério</th><th>Como foi?</th><th>Nota (1–5)</th></tr>
+<tr><th>Critério</th><th>Como foi?</th><th>Nota (1-5)</th></tr>
 <tr><td>Consegui usar o vocabulário novo sem parar para pensar</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Entendi o áudio/vídeo sem depender da transcrição</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Escrevi minhas respostas antes de falar</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Apliquei a estrutura gramatical da etapa 5 corretamente</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Sustentei minhas respostas por mais de 2 frases</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Me senti confiante ao falar sobre este tema</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 </table>
 <p>O que travou mais nesta conversa? O que você quer treinar de novo antes de seguir para o próximo tema?</p>
-<div class="lines"></div><div class="lines"></div><div class="lines"></div>
+<div class="lines"></div><div class="lines"></div>
 </div>
 
 <p class="footer-note">Marque este tema como concluído no seu Painel de Evolução e siga para o Tema 58.</p>

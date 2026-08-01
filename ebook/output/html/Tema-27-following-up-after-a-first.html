@@ -2,40 +2,45 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Tema 27 — Following Up After a First Meeting</title>
+<title>Tema 27: Following Up After a First Meeting</title>
 <style>
   
   @page {
     size: A4;
-    margin: 2.2cm 2cm 2.4cm 2cm;
-    @top-right { content: "English Speaking Practice — Nação Fluente"; font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
-    @bottom-center { content: "Bloco 4 — Networking e Relacionamentos Profissionais   |   Página " counter(page); font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
+    margin: 1.9cm 2cm 2.1cm 2cm;
+    @top-right { content: "English Speaking Practice · Nação Fluente"; font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
+    @bottom-center { content: "Bloco 4 · Networking e Relacionamentos Profissionais (Networking and Professional Relationships)   |   Página " counter(page); font-size: 7.5pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
   }
   * { box-sizing: border-box; }
-  body { font-family: 'Helvetica', Arial, sans-serif; color: #444444; font-size: 10.5pt; line-height: 1.5; }
-  .cover { background: #1B3B57; color: #fff; padding: 22px 24px; border-radius: 4px; margin-bottom: 14px; }
-  .cover .eyebrow { color: #8fc4ec; font-weight: bold; font-size: 9.5pt; letter-spacing: 0.5px; margin-bottom: 6px; }
-  .cover h1 { font-size: 22pt; margin: 0 0 6px 0; color: #fff; }
-  .cover .subtitle { color: #C9D6E3; font-style: italic; font-size: 12pt; margin: 0; }
-  .meta { margin: 10px 0 14px 0; font-size: 10.5pt; }
+  body { font-family: 'Helvetica', Arial, sans-serif; color: #444444; font-size: 10.5pt; line-height: 1.42; }
+  .cover { background: #1B3B57; color: #fff; padding: 16px 18px; border-radius: 4px; margin-bottom: 10px; display: flex; align-items: center; gap: 16px; }
+  .cover .icon { width: 54px; height: 54px; flex: none; opacity: 0.92; }
+  .cover .eyebrow { color: #8fc4ec; font-weight: bold; font-size: 9pt; letter-spacing: 0.4px; margin-bottom: 4px; }
+  .cover .eyebrow .en { display: block; color: #6f93ad; font-weight: normal; font-style: italic; font-size: 7.5pt; letter-spacing: 0.2px; margin-top: 1px; }
+  .cover h1 { font-size: 19pt; margin: 0 0 3px 0; color: #fff; line-height: 1.12; }
+  .cover .subtitle { color: #C9D6E3; font-style: italic; font-size: 10.5pt; margin: 0; }
+  .meta { margin: 8px 0 10px 0; font-size: 10pt; }
   .meta b { color: #1B3B57; }
-  .intro { margin-bottom: 6px; }
-  h2.step { color: #fff; padding: 8px 12px; font-size: 12.5pt; margin: 22px 0 10px 0; border-radius: 3px; }
-  h2.step .tag { background: rgba(255,255,255,0.22); padding: 2px 8px; border-radius: 3px; font-size: 9.5pt; margin-right: 8px; }
-  table { width: 100%; border-collapse: collapse; margin: 8px 0 14px 0; font-size: 9.8pt; }
-  th { color: #fff; text-align: left; padding: 6px 8px; }
-  td { padding: 6px 8px; border-bottom: 1px solid #E3E9EF; vertical-align: top; }
+  .intro { margin-bottom: 4px; }
+  p { margin: 0 0 8px 0; }
+  h2.step { color: #fff; padding: 6px 10px; font-size: 11.5pt; margin: 16px 0 8px 0; border-radius: 3px; display: flex; align-items: center; }
+  h2.step .tag { background: rgba(255,255,255,0.22); padding: 2px 7px; border-radius: 3px; font-size: 8.5pt; margin-right: 8px; flex: none; }
+  h2.step .stitle { display: flex; flex-direction: column; line-height: 1.18; }
+  h2.step .stitle .en { font-weight: normal; font-style: italic; font-size: 8pt; opacity: 0.82; }
+  table { width: 100%; border-collapse: collapse; margin: 6px 0 10px 0; font-size: 9.5pt; }
+  th { color: #fff; text-align: left; padding: 5px 7px; }
+  td { padding: 5px 7px; border-bottom: 1px solid #E3E9EF; vertical-align: top; }
   .example { font-style: italic; }
-  .notebox { border-radius: 4px; padding: 10px 14px; margin: 10px 0 16px 0; border: 1px solid; }
-  .notebox .title { font-weight: bold; margin-bottom: 6px; }
-  .notebox p { margin: 3px 0; }
-  ol, ul { margin: 6px 0 14px 0; padding-left: 20px; }
-  ol li, ul li { margin-bottom: 7px; }
-  .lines { border-bottom: 1px solid #C9D6E3; height: 22px; margin-bottom: 6px; }
-  .expr-list { list-style: none; padding-left: 0; margin: 6px 0 14px 0; }
-  .expr-list li { margin-bottom: 6px; padding-left: 14px; position: relative; }
-  .gabarito { font-style: italic; color: #1B3B57; margin-top: -6px; }
-  .footer-note { text-align: center; font-weight: bold; color: #1B3B57; margin-top: 18px; font-size: 11pt; }
+  .notebox { border-radius: 4px; padding: 8px 12px; margin: 6px 0 10px 0; border: 1px solid; }
+  .notebox .title { font-weight: bold; margin-bottom: 4px; }
+  .notebox p { margin: 2px 0; }
+  ol, ul { margin: 4px 0 10px 0; padding-left: 19px; }
+  ol li, ul li { margin-bottom: 5px; }
+  .lines { border-bottom: 1px solid #C9D6E3; height: 17px; margin-bottom: 4px; }
+  .expr-list { list-style: none; padding-left: 0; margin: 4px 0 10px 0; }
+  .expr-list li { margin-bottom: 4px; padding-left: 14px; position: relative; }
+  .gabarito { font-style: italic; color: #1B3B57; margin-top: -4px; }
+  .footer-note { text-align: center; font-weight: bold; color: #1B3B57; margin-top: 12px; font-size: 10.5pt; }
 
   .s1 h2, .s1 .tag { background: #2E86C1; }
   .s1 th { background: #2E86C1; }
@@ -72,16 +77,19 @@
 
 <div class="chapter" id="tema-27">
 <div class="cover">
-  <div class="eyebrow">TEMA 27 &nbsp;·&nbsp; BLOCO 4 — NETWORKING E RELACIONAMENTOS PROFISSIONAIS</div>
-  <h1>Following Up After a First Meeting</h1>
-  <p class="subtitle">Dando seguimento após um primeiro encontro</p>
+  <img class="icon" src="file:///home/user/Claude/ebook/assets/icons/block-4.png">
+  <div>
+    <div class="eyebrow">TEMA 27 &nbsp;·&nbsp; BLOCO 4 &nbsp;·&nbsp; NETWORKING E RELACIONAMENTOS PROFISSIONAIS<span class="en">THEME 27 · BLOCK 4 · NETWORKING AND PROFESSIONAL RELATIONSHIPS</span></div>
+    <h1>Following Up After a First Meeting</h1>
+    <p class="subtitle">Dando seguimento após um primeiro encontro</p>
+  </div>
 </div>
 
 <div class="meta"><b>Tempo estimado:</b> 60–90 minutos, divididos ao longo da semana.</div>
 <p class="intro">A maioria das conexões de networking morre no follow-up, não no encontro em si. Este tema ensina a linguagem certa para transformar um primeiro contato em uma relação de verdade.</p>
 
 <div class="s1">
-<h2 class="step"><span class="tag">ETAPA 1</span>Vocabulário Contextualizado</h2>
+<h2 class="step "><span class="tag">ETAPA 1</span><span class="stitle"><span class="pt">Vocabulário Contextualizado</span><span class="en">Contextualized Vocabulary</span></span></h2>
 <p>Estas palavras e expressões vão te ajudar a se expressar sobre este tema com mais precisão e naturalidade.</p>
 <table>
 <tr><th>Word / Expression</th><th>Tradução</th><th>Example Sentence</th></tr>
@@ -89,10 +97,10 @@
     <tr><td><b>follow-up email</b></td><td>e-mail de acompanhamento</td><td class="example">I try to send a follow-up email within 48 hours of meeting someone.</td></tr>
     <tr><td><b>to reconnect</b></td><td>retomar contato</td><td class="example">It was great to reconnect after so many years.</td></tr>
     <tr><td><b>touchpoint</b></td><td>ponto de contato</td><td class="example">A quick message is a low-effort touchpoint to stay on someone's radar.</td></tr>
-    <tr><td><b>to keep in touch</b></td><td>manter contato</td><td class="example">Let's keep in touch — I'll send you that article I mentioned.</td></tr>
+    <tr><td><b>to keep in touch</b></td><td>manter contato</td><td class="example">Let's keep in touch, I'll send you that article I mentioned.</td></tr>
     <tr><td><b>to circle back</b></td><td>retomar depois</td><td class="example">I'll circle back once I've had a chance to look into it.</td></tr>
     <tr><td><b>to nurture (a relationship)</b></td><td>cultivar (um relacionamento)</td><td class="example">Networking is really about nurturing relationships, not collecting contacts.</td></tr>
-    <tr><td><b>cold outreach</b></td><td>contato frio (sem conexão prévia)</td><td class="example">This isn't cold outreach — we actually met at the conference.</td></tr>
+    <tr><td><b>cold outreach</b></td><td>contato frio (sem conexão prévia)</td><td class="example">This isn't cold outreach, we actually met at the conference.</td></tr>
     <tr><td><b>warm intro</b></td><td>apresentação calorosa (com conexão)</td><td class="example">A warm intro is always more effective than a cold email.</td></tr>
     <tr><td><b>to stay on someone's radar</b></td><td>se manter na mente de alguém</td><td class="example">A short message every few months keeps you on their radar.</td></tr>
     <tr><td><b>to add value</b></td><td>agregar valor</td><td class="example">I try to add value before I ask for anything.</td></tr>
@@ -102,35 +110,35 @@
 </div>
 
 <div class="s2">
-<h2 class="step"><span class="tag">ETAPA 2</span>Leitura com Orientação de Estudo</h2>
+<h2 class="step "><span class="tag">ETAPA 2</span><span class="stitle"><span class="pt">Leitura com Orientação de Estudo</span><span class="en">Guided Reading</span></span></h2>
 <div class="notebox">
   <div class="title">Como ler este texto</div>
-  <p>1) Leia uma vez, rápido, só para captar a ideia geral — sem parar no que não entender.</p><p>2) Leia de novo e grife toda expressão da Etapa 1 que aparecer no texto.</p><p>3) Releia em voz alta, como se você estivesse contando essa história sobre você mesmo.</p>
+  <p>1) Leia uma vez, rápido, só para captar a ideia geral, sem parar no que não entender.</p><p>2) Leia de novo e grife toda expressão da Etapa 1 que aparecer no texto.</p><p>3) Releia em voz alta, como se você estivesse contando essa história sobre você mesmo.</p>
 </div>
 <p><b>"The Follow-Up Is the Actual Networking"</b></p>
-<p>Meeting someone interesting is easy. What separates a real professional relationship from a business card in a drawer is the follow-up — and most people either skip it entirely or send something so generic it barely registers.</p><p>A good follow-up message in English does three small things: references something specific from the conversation, adds a small piece of value (an article, an introduction, a relevant thought), and proposes a light next step without pressure. "It was great meeting you at the panel — that point about async hiring stuck with me. I came across this article that made me think of our chat. Would love to grab a virtual coffee sometime if you're open to it."</p><p>None of this requires charm — it requires specificity. "Great meeting you, let's stay in touch!" is forgettable. A follow-up that mentions one real detail from the conversation is what actually turns a touchpoint into a relationship.</p>
+<p>Meeting someone interesting is easy. What separates a real professional relationship from a business card in a drawer is the follow-up, and most people either skip it entirely or send something so generic it barely registers.</p><p>A good follow-up message in English does three small things: references something specific from the conversation, adds a small piece of value (an article, an introduction, a relevant thought), and proposes a light next step without pressure. "It was great meeting you at the panel, that point about async hiring stuck with me. I came across this article that made me think of our chat. Would love to grab a virtual coffee sometime if you're open to it."</p><p>None of this requires charm, it requires specificity. "Great meeting you, let's stay in touch!" is forgettable. A follow-up that mentions one real detail from the conversation is what actually turns a touchpoint into a relationship.</p>
 </div>
 
 <div class="s3">
-<h2 class="step"><span class="tag">ETAPA 3</span>Listening com Suporte em Áudio e Vídeo</h2>
+<h2 class="step "><span class="tag">ETAPA 3</span><span class="stitle"><span class="pt">Listening com Suporte em Áudio e Vídeo</span><span class="en">Guided Listening</span></span></h2>
 <p>Ouça o áudio deste tema (arquivo disponível para download na plataforma: <i>audio/tema-27-following-up.mp3</i>) com o roteiro abaixo. Primeiro sem ler, depois acompanhando o texto.</p>
 <div class="notebox">
   <div class="title">Roteiro do áudio (Audio Script)</div>
-  <p>"Hey Tom, it was great meeting you at the summit — that comment about scaling support teams really stuck with me."</p><p>"I actually came across this article that reminded me of our conversation. Would love to grab a virtual coffee sometime, no pressure at all."</p>
+  <p>"Hey Tom, it was great meeting you at the summit, that comment about scaling support teams really stuck with me."</p><p>"I actually came across this article that reminded me of our conversation. Would love to grab a virtual coffee sometime, no pressure at all."</p>
 </div>
-<p>Note que a mensagem menciona um detalhe específico da conversa antes de propor o próximo passo — isso é o que a torna memorável.</p>
+<p>Note que a mensagem menciona um detalhe específico da conversa antes de propor o próximo passo, isso é o que a torna memorável.</p>
 </div>
 
 <div class="s4">
-<h2 class="step"><span class="tag">ETAPA 4</span>Writing como Preparação para a Fala</h2>
-<p>Antes de falar, escreva. Use as perguntas abaixo como guia e escreva de 4 a 6 frases — não precisa ser perfeito, precisa existir no papel primeiro.</p>
+<h2 class="step "><span class="tag">ETAPA 4</span><span class="stitle"><span class="pt">Writing como Preparação para a Fala</span><span class="en">Writing Before Speaking</span></span></h2>
+<p>Antes de falar, escreva. Use as perguntas abaixo como guia e escreva de 4 a 6 frases: não precisa ser perfeito, precisa existir no papel primeiro.</p>
 <ol><li>Write a short follow-up message to someone you met at a recent event.</li><li>What's one specific detail from a real conversation you could reference in a follow-up?</li><li>How do you usually add value before asking someone for something?</li><li>What's your comfort level with following up multiple times if you don't hear back?</li></ol>
 <p>Espaço para escrever:</p>
-<div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div>
+<div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div>
 </div>
 
 <div class="s5">
-<h2 class="step"><span class="tag">ETAPA 5</span>Gramática de Apoio Aplicada à Conversação</h2>
+<h2 class="step "><span class="tag">ETAPA 5</span><span class="stitle"><span class="pt">Gramática de Apoio Aplicada à Conversação</span><span class="en">Grammar for Conversation</span></span></h2>
 <p>Mensagens de follow-up dependem de aberturas suaves no passado e propostas educadas de próximos passos.</p>
 <table>
 <tr><th>Estrutura</th><th>Exemplo (EN)</th><th>Tradução (PT)</th></tr>
@@ -139,33 +147,33 @@
     <tr><td><b>I'd love to + verbo</b><br>(proposta suave)</td><td class="example">I'd love to grab coffee sometime.</td><td>Usado para propor um próximo passo sem soar como uma exigência.</td></tr>
     <tr><td><b>Let me know if...</b><br>(abertura sem pressão)</td><td class="example">Let me know if you'd be up for a call next week.</td><td>Usado para deixar a decisão nas mãos da outra pessoa, sem parecer insistente.</td></tr>
 </table>
-<p>Dica prática: termine mensagens de follow-up com "let me know if..." ou "no pressure at all" — isso reduz a sensação de cobrança e aumenta a chance de resposta.</p>
+<p>Dica prática: termine mensagens de follow-up com "let me know if..." ou "no pressure at all", isso reduz a sensação de cobrança e aumenta a chance de resposta.</p>
 </div>
 
 <div class="s6">
-<h2 class="step"><span class="tag">ETAPA 6</span>Speaking — Perguntas Abertas</h2>
-<p>Responda em voz alta, gravando se possível. Não vale responder em uma frase só — use o que você escreveu na Etapa 4 como base, mas fale livremente.</p>
+<h2 class="step "><span class="tag">ETAPA 6</span><span class="stitle"><span class="pt">Speaking: Perguntas Abertas</span><span class="en">Open-Ended Speaking</span></span></h2>
+<p>Responda em voz alta, gravando se possível. Não vale responder em uma frase só: use o que você escreveu na Etapa 4 como base, mas fale livremente.</p>
 <ol><li>How do you usually follow up after meeting someone interesting at an event?</li><li>What's a specific detail from a conversation that made a follow-up message stronger?</li><li>How long do you typically wait before sending a follow-up message?</li><li>What do you do when someone doesn't respond to your first follow-up?</li><li>How do you add value in a follow-up without expecting something in return?</li><li>What's the difference between a warm intro and cold outreach, in your experience?</li><li>How do you keep a professional relationship alive after the initial follow-up?</li><li>What's a follow-up message you received that really stood out to you?</li><li>How do you decide which new contacts are worth actively nurturing?</li><li>What's your biggest challenge when it comes to following up consistently?</li></ol>
 <p><b>Expressões úteis para esta conversa:</b></p>
-<ul class="expr-list"><li>"It was great meeting you at..." — abertura clássica de follow-up.</li><li>"That point about X really stuck with me." — para mostrar que você prestou atenção.</li><li>"No pressure at all, but..." — para propor algo sem soar insistente.</li><li>"Just closing the loop on..." — para retomar uma conversa pendente.</li></ul>
+<ul class="expr-list"><li>"It was great meeting you at...", abertura clássica de follow-up.</li><li>"That point about X really stuck with me.", para mostrar que você prestou atenção.</li><li>"No pressure at all, but...", para propor algo sem soar insistente.</li><li>"Just closing the loop on...", para retomar uma conversa pendente.</li></ul>
 </div>
 
 <div class="sx">
-<h2 class="step"><span class="tag">EXERCÍCIO</span>Complete com a Palavra Certa</h2>
+<h2 class="step "><span class="tag">EXERCÍCIO</span><span class="stitle"><span class="pt">Complete com a Palavra Certa</span><span class="en">Vocabulary Check</span></span></h2>
 <p>Complete cada frase com uma palavra ou expressão da Etapa 1. Gabarito ao final desta seção.</p>
 <ol><li>I try to send a ______ within 48 hours of meeting someone.</li><li>A quick message is a low-effort ______ to stay on someone's radar.</li><li>Networking is really about ______ relationships, not collecting contacts.</li><li>A ______ is always more effective than a cold email.</li><li>I try to ______ before I ask for anything.</li></ol>
 <p class="gabarito">Gabarito: 1) follow-up email   2) touchpoint   3) nurturing   4) warm intro   5) add value</p>
 </div>
 
 <div class="s7">
-<h2 class="step"><span class="tag">ETAPA 7</span>Autoavaliação de Performance</h2>
+<h2 class="step "><span class="tag">ETAPA 7</span><span class="stitle"><span class="pt">Autoavaliação de Performance</span><span class="en">Self-Assessment</span></span></h2>
 <p>Antes de marcar este tema como concluído, avalie honestamente como foi sua prática.</p>
 <table>
-<tr><th>Critério</th><th>Como foi?</th><th>Nota (1–5)</th></tr>
+<tr><th>Critério</th><th>Como foi?</th><th>Nota (1-5)</th></tr>
 <tr><td>Consegui usar o vocabulário novo sem parar para pensar</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Entendi o áudio/vídeo sem depender da transcrição</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Escrevi minhas respostas antes de falar</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Apliquei a estrutura gramatical da etapa 5 corretamente</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Sustentei minhas respostas por mais de 2 frases</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Me senti confiante ao falar sobre este tema</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 </table>
 <p>O que travou mais nesta conversa? O que você quer treinar de novo antes de seguir para o próximo tema?</p>
-<div class="lines"></div><div class="lines"></div><div class="lines"></div>
+<div class="lines"></div><div class="lines"></div>
 </div>
 
 <p class="footer-note">Marque este tema como concluído no seu Painel de Evolução e siga para o Tema 28.</p>

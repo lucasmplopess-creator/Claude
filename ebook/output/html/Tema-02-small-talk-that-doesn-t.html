@@ -2,40 +2,45 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Tema 2 — Small Talk That Doesn't Feel Awkward</title>
+<title>Tema 2: Small Talk That Doesn't Feel Awkward</title>
 <style>
   
   @page {
     size: A4;
-    margin: 2.2cm 2cm 2.4cm 2cm;
-    @top-right { content: "English Speaking Practice — Nação Fluente"; font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
-    @bottom-center { content: "Bloco 1 — Fundamentos da Conversação   |   Página " counter(page); font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
+    margin: 1.9cm 2cm 2.1cm 2cm;
+    @top-right { content: "English Speaking Practice · Nação Fluente"; font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
+    @bottom-center { content: "Bloco 1 · Fundamentos da Conversação (Conversation Fundamentals)   |   Página " counter(page); font-size: 7.5pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
   }
   * { box-sizing: border-box; }
-  body { font-family: 'Helvetica', Arial, sans-serif; color: #444444; font-size: 10.5pt; line-height: 1.5; }
-  .cover { background: #1B3B57; color: #fff; padding: 22px 24px; border-radius: 4px; margin-bottom: 14px; }
-  .cover .eyebrow { color: #8fc4ec; font-weight: bold; font-size: 9.5pt; letter-spacing: 0.5px; margin-bottom: 6px; }
-  .cover h1 { font-size: 22pt; margin: 0 0 6px 0; color: #fff; }
-  .cover .subtitle { color: #C9D6E3; font-style: italic; font-size: 12pt; margin: 0; }
-  .meta { margin: 10px 0 14px 0; font-size: 10.5pt; }
+  body { font-family: 'Helvetica', Arial, sans-serif; color: #444444; font-size: 10.5pt; line-height: 1.42; }
+  .cover { background: #1B3B57; color: #fff; padding: 16px 18px; border-radius: 4px; margin-bottom: 10px; display: flex; align-items: center; gap: 16px; }
+  .cover .icon { width: 54px; height: 54px; flex: none; opacity: 0.92; }
+  .cover .eyebrow { color: #8fc4ec; font-weight: bold; font-size: 9pt; letter-spacing: 0.4px; margin-bottom: 4px; }
+  .cover .eyebrow .en { display: block; color: #6f93ad; font-weight: normal; font-style: italic; font-size: 7.5pt; letter-spacing: 0.2px; margin-top: 1px; }
+  .cover h1 { font-size: 19pt; margin: 0 0 3px 0; color: #fff; line-height: 1.12; }
+  .cover .subtitle { color: #C9D6E3; font-style: italic; font-size: 10.5pt; margin: 0; }
+  .meta { margin: 8px 0 10px 0; font-size: 10pt; }
   .meta b { color: #1B3B57; }
-  .intro { margin-bottom: 6px; }
-  h2.step { color: #fff; padding: 8px 12px; font-size: 12.5pt; margin: 22px 0 10px 0; border-radius: 3px; }
-  h2.step .tag { background: rgba(255,255,255,0.22); padding: 2px 8px; border-radius: 3px; font-size: 9.5pt; margin-right: 8px; }
-  table { width: 100%; border-collapse: collapse; margin: 8px 0 14px 0; font-size: 9.8pt; }
-  th { color: #fff; text-align: left; padding: 6px 8px; }
-  td { padding: 6px 8px; border-bottom: 1px solid #E3E9EF; vertical-align: top; }
+  .intro { margin-bottom: 4px; }
+  p { margin: 0 0 8px 0; }
+  h2.step { color: #fff; padding: 6px 10px; font-size: 11.5pt; margin: 16px 0 8px 0; border-radius: 3px; display: flex; align-items: center; }
+  h2.step .tag { background: rgba(255,255,255,0.22); padding: 2px 7px; border-radius: 3px; font-size: 8.5pt; margin-right: 8px; flex: none; }
+  h2.step .stitle { display: flex; flex-direction: column; line-height: 1.18; }
+  h2.step .stitle .en { font-weight: normal; font-style: italic; font-size: 8pt; opacity: 0.82; }
+  table { width: 100%; border-collapse: collapse; margin: 6px 0 10px 0; font-size: 9.5pt; }
+  th { color: #fff; text-align: left; padding: 5px 7px; }
+  td { padding: 5px 7px; border-bottom: 1px solid #E3E9EF; vertical-align: top; }
   .example { font-style: italic; }
-  .notebox { border-radius: 4px; padding: 10px 14px; margin: 10px 0 16px 0; border: 1px solid; }
-  .notebox .title { font-weight: bold; margin-bottom: 6px; }
-  .notebox p { margin: 3px 0; }
-  ol, ul { margin: 6px 0 14px 0; padding-left: 20px; }
-  ol li, ul li { margin-bottom: 7px; }
-  .lines { border-bottom: 1px solid #C9D6E3; height: 22px; margin-bottom: 6px; }
-  .expr-list { list-style: none; padding-left: 0; margin: 6px 0 14px 0; }
-  .expr-list li { margin-bottom: 6px; padding-left: 14px; position: relative; }
-  .gabarito { font-style: italic; color: #1B3B57; margin-top: -6px; }
-  .footer-note { text-align: center; font-weight: bold; color: #1B3B57; margin-top: 18px; font-size: 11pt; }
+  .notebox { border-radius: 4px; padding: 8px 12px; margin: 6px 0 10px 0; border: 1px solid; }
+  .notebox .title { font-weight: bold; margin-bottom: 4px; }
+  .notebox p { margin: 2px 0; }
+  ol, ul { margin: 4px 0 10px 0; padding-left: 19px; }
+  ol li, ul li { margin-bottom: 5px; }
+  .lines { border-bottom: 1px solid #C9D6E3; height: 17px; margin-bottom: 4px; }
+  .expr-list { list-style: none; padding-left: 0; margin: 4px 0 10px 0; }
+  .expr-list li { margin-bottom: 4px; padding-left: 14px; position: relative; }
+  .gabarito { font-style: italic; color: #1B3B57; margin-top: -4px; }
+  .footer-note { text-align: center; font-weight: bold; color: #1B3B57; margin-top: 12px; font-size: 10.5pt; }
 
   .s1 h2, .s1 .tag { background: #2E86C1; }
   .s1 th { background: #2E86C1; }
@@ -72,16 +77,19 @@
 
 <div class="chapter" id="tema-2">
 <div class="cover">
-  <div class="eyebrow">TEMA 2 &nbsp;·&nbsp; BLOCO 1 — FUNDAMENTOS DA CONVERSAÇÃO</div>
-  <h1>Small Talk That Doesn't Feel Awkward</h1>
-  <p class="subtitle">Small talk sem aquele clima estranho</p>
+  <img class="icon" src="file:///home/user/Claude/ebook/assets/icons/block-1.png">
+  <div>
+    <div class="eyebrow">TEMA 2 &nbsp;·&nbsp; BLOCO 1 &nbsp;·&nbsp; FUNDAMENTOS DA CONVERSAÇÃO<span class="en">THEME 2 · BLOCK 1 · CONVERSATION FUNDAMENTALS</span></div>
+    <h1>Small Talk That Doesn't Feel Awkward</h1>
+    <p class="subtitle">Small talk sem aquele clima estranho</p>
+  </div>
 </div>
 
 <div class="meta"><b>Tempo estimado:</b> 60–90 minutos, divididos ao longo da semana.</div>
-<p class="intro">Small talk é frequentemente o momento mais desconfortável para quem está aprendendo inglês — não porque falta vocabulário, mas porque falta um roteiro mental para os primeiros 60 segundos de qualquer conversa. Este tema te dá esse roteiro.</p>
+<p class="intro">Small talk é frequentemente o momento mais desconfortável para quem está aprendendo inglês, não porque falta vocabulário, mas porque falta um roteiro mental para os primeiros 60 segundos de qualquer conversa. Este tema te dá esse roteiro.</p>
 
 <div class="s1">
-<h2 class="step"><span class="tag">ETAPA 1</span>Vocabulário Contextualizado</h2>
+<h2 class="step "><span class="tag">ETAPA 1</span><span class="stitle"><span class="pt">Vocabulário Contextualizado</span><span class="en">Contextualized Vocabulary</span></span></h2>
 <p>Estas palavras e expressões vão te ajudar a se expressar sobre este tema com mais precisão e naturalidade.</p>
 <table>
 <tr><th>Word / Expression</th><th>Tradução</th><th>Example Sentence</th></tr>
@@ -91,10 +99,10 @@
     <tr><td><b>to make conversation</b></td><td>puxar assunto</td><td class="example">It can be hard to make conversation with someone you've just met.</td></tr>
     <tr><td><b>awkward silence</b></td><td>silêncio constrangedor</td><td class="example">There was an awkward silence after the question about salary.</td></tr>
     <tr><td><b>to keep the conversation going</b></td><td>manter a conversa fluindo</td><td class="example">Asking follow-up questions helps keep the conversation going.</td></tr>
-    <tr><td><b>common ground</b></td><td>ponto em comum</td><td class="example">We found some common ground — we both grew up in small towns.</td></tr>
+    <tr><td><b>common ground</b></td><td>ponto em comum</td><td class="example">We found some common ground, we both grew up in small towns.</td></tr>
     <tr><td><b>to break the ice</b></td><td>quebrar o gelo</td><td class="example">A good icebreaker really helps break the ice at networking events.</td></tr>
     <tr><td><b>chit-chat</b></td><td>papo furado / bate-papo casual</td><td class="example">I don't mind a bit of chit-chat before the meeting starts.</td></tr>
-    <tr><td><b>to wrap up (a conversation)</b></td><td>encerrar (uma conversa)</td><td class="example">Let's wrap this up — I have another call in five minutes.</td></tr>
+    <tr><td><b>to wrap up (a conversation)</b></td><td>encerrar (uma conversa)</td><td class="example">Let's wrap this up, I have another call in five minutes.</td></tr>
     <tr><td><b>filler question</b></td><td>pergunta de preenchimento</td><td class="example">"How's your week going?" is a classic filler question.</td></tr>
     <tr><td><b>casual</b></td><td>descontraído(a) / informal</td><td class="example">The tone at this event is pretty casual.</td></tr>
     <tr><td><b>to catch up</b></td><td>colocar o papo em dia</td><td class="example">It was great catching up with you after all these years.</td></tr>
@@ -102,70 +110,70 @@
 </div>
 
 <div class="s2">
-<h2 class="step"><span class="tag">ETAPA 2</span>Leitura com Orientação de Estudo</h2>
+<h2 class="step "><span class="tag">ETAPA 2</span><span class="stitle"><span class="pt">Leitura com Orientação de Estudo</span><span class="en">Guided Reading</span></span></h2>
 <div class="notebox">
   <div class="title">Como ler este texto</div>
-  <p>1) Leia uma vez, rápido, só para captar a ideia geral — sem parar no que não entender.</p><p>2) Leia de novo e grife toda expressão da Etapa 1 que aparecer no texto.</p><p>3) Releia em voz alta, como se você estivesse contando essa história sobre você mesmo.</p>
+  <p>1) Leia uma vez, rápido, só para captar a ideia geral, sem parar no que não entender.</p><p>2) Leia de novo e grife toda expressão da Etapa 1 que aparecer no texto.</p><p>3) Releia em voz alta, como se você estivesse contando essa história sobre você mesmo.</p>
 </div>
 <p><b>"Why Small Talk Isn't Actually About the Weather"</b></p>
-<p>For a lot of English learners, small talk feels like the hardest part of the language — harder than presentations, harder than negotiations. That's because small talk isn't really about content. Nobody actually cares about the weather. Small talk is a social signal: it says "I'm friendly, I'm safe to talk to, I'm willing to invest thirty seconds in you before we get to business."</p><p>Once you see small talk as a transition tool rather than a content delivery, it gets much easier. You don't need interesting things to say — you need a short list of low-stakes questions and reactions that keep the exchange moving until it's natural to either continue into something deeper or wrap up politely.</p><p>The people who are good at small talk aren't necessarily more interesting — they're just better at asking a genuine follow-up question and reacting with a real response instead of a flat "cool." That's a learnable skill, not a personality trait.</p>
+<p>For a lot of English learners, small talk feels like the hardest part of the language, harder than presentations, harder than negotiations. That's because small talk isn't really about content. Nobody actually cares about the weather. Small talk is a social signal: it says "I'm friendly, I'm safe to talk to, I'm willing to invest thirty seconds in you before we get to business."</p><p>Once you see small talk as a transition tool rather than a content delivery, it gets much easier. You don't need interesting things to say, you need a short list of low-stakes questions and reactions that keep the exchange moving until it's natural to either continue into something deeper or wrap up politely.</p><p>The people who are good at small talk aren't necessarily more interesting, they're just better at asking a genuine follow-up question and reacting with a real response instead of a flat "cool." That's a learnable skill, not a personality trait.</p>
 </div>
 
 <div class="s3">
-<h2 class="step"><span class="tag">ETAPA 3</span>Listening com Suporte em Áudio e Vídeo</h2>
+<h2 class="step "><span class="tag">ETAPA 3</span><span class="stitle"><span class="pt">Listening com Suporte em Áudio e Vídeo</span><span class="en">Guided Listening</span></span></h2>
 <p>Ouça o áudio deste tema (arquivo disponível para download na plataforma: <i>audio/tema-02-small-talk.mp3</i>) com o roteiro abaixo. Primeiro sem ler, depois acompanhando o texto.</p>
 <div class="notebox">
   <div class="title">Roteiro do áudio (Audio Script)</div>
-  <p>"Hey, I don't think we've met — I'm Laura, I'm with the design team."</p><p>"Oh nice to meet you, Laura, I'm Marcus, from finance. Is this your first time at one of these events?" "Yeah, actually! I was a bit nervous about the small talk part, if I'm honest." "Ha, same here. Anyway, how's your week going so far?"</p>
+  <p>"Hey, I don't think we've met, I'm Laura, I'm with the design team."</p><p>"Oh nice to meet you, Laura, I'm Marcus, from finance. Is this your first time at one of these events?" "Yeah, actually! I was a bit nervous about the small talk part, if I'm honest." "Ha, same here. Anyway, how's your week going so far?"</p>
 </div>
-<p>Repare como Marcus usa uma pergunta simples ("how's your week going") só para manter a conversa fluindo — não é uma pergunta profunda, é uma ponte.</p>
+<p>Repare como Marcus usa uma pergunta simples ("how's your week going") só para manter a conversa fluindo, não é uma pergunta profunda, é uma ponte.</p>
 </div>
 
 <div class="s4">
-<h2 class="step"><span class="tag">ETAPA 4</span>Writing como Preparação para a Fala</h2>
-<p>Antes de falar, escreva. Use as perguntas abaixo como guia e escreva de 4 a 6 frases — não precisa ser perfeito, precisa existir no papel primeiro.</p>
+<h2 class="step "><span class="tag">ETAPA 4</span><span class="stitle"><span class="pt">Writing como Preparação para a Fala</span><span class="en">Writing Before Speaking</span></span></h2>
+<p>Antes de falar, escreva. Use as perguntas abaixo como guia e escreva de 4 a 6 frases: não precisa ser perfeito, precisa existir no papel primeiro.</p>
 <ol><li>What's a small talk topic you always feel comfortable with, and one you dread?</li><li>How do you usually open a conversation with someone you've just met?</li><li>What's your go-to question when there's an awkward silence?</li><li>How do you gracefully end a conversation without seeming rude?</li></ol>
 <p>Espaço para escrever:</p>
-<div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div>
+<div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div>
 </div>
 
 <div class="s5">
-<h2 class="step"><span class="tag">ETAPA 5</span>Gramática de Apoio Aplicada à Conversação</h2>
+<h2 class="step "><span class="tag">ETAPA 5</span><span class="stitle"><span class="pt">Gramática de Apoio Aplicada à Conversação</span><span class="en">Grammar for Conversation</span></span></h2>
 <p>Small talk depende muito de alternar entre fatos gerais e o que está acontecendo agora. Essa é a base gramatical deste tema.</p>
 <table>
 <tr><th>Estrutura</th><th>Exemplo (EN)</th><th>Tradução (PT)</th></tr>
 
-    <tr><td><b>Present Simple</b><br>(fatos gerais/rotina)</td><td class="example">I work in finance.</td><td>Usado para fatos permanentes, sua profissão, sua rotina — informação estável sobre você.</td></tr>
-    <tr><td><b>Present Continuous</b><br>(temporário/atual)</td><td class="example">I'm actually working on a big project this month.</td><td>Usado para algo temporário, em andamento agora ou neste período — ótimo para small talk sobre o momento atual.</td></tr>
-    <tr><td><b>Reciprocal question</b><br>("How about you?")</td><td class="example">I've been pretty busy lately. How about you?</td><td>Devolve a pergunta sem repetir a frase inteira — mantém a conversa fluindo naturalmente.</td></tr>
+    <tr><td><b>Present Simple</b><br>(fatos gerais/rotina)</td><td class="example">I work in finance.</td><td>Usado para fatos permanentes, sua profissão, sua rotina, informação estável sobre você.</td></tr>
+    <tr><td><b>Present Continuous</b><br>(temporário/atual)</td><td class="example">I'm actually working on a big project this month.</td><td>Usado para algo temporário, em andamento agora ou neste período, ótimo para small talk sobre o momento atual.</td></tr>
+    <tr><td><b>Reciprocal question</b><br>("How about you?")</td><td class="example">I've been pretty busy lately. How about you?</td><td>Devolve a pergunta sem repetir a frase inteira, mantém a conversa fluindo naturalmente.</td></tr>
 </table>
 <p>Dica prática: sempre que você responder uma pergunta de small talk, devolva com "How about you? / And you?". Isso sozinho já resolve boa parte do desconforto do silêncio.</p>
 </div>
 
 <div class="s6">
-<h2 class="step"><span class="tag">ETAPA 6</span>Speaking — Perguntas Abertas</h2>
-<p>Responda em voz alta, gravando se possível. Não vale responder em uma frase só — use o que você escreveu na Etapa 4 como base, mas fale livremente.</p>
+<h2 class="step "><span class="tag">ETAPA 6</span><span class="stitle"><span class="pt">Speaking: Perguntas Abertas</span><span class="en">Open-Ended Speaking</span></span></h2>
+<p>Responda em voz alta, gravando se possível. Não vale responder em uma frase só: use o que você escreveu na Etapa 4 como base, mas fale livremente.</p>
 <ol><li>What's a small talk topic you always feel comfortable with, and one you always dread?</li><li>How do you usually open a conversation with someone you've just met?</li><li>What's your go-to question when there's an awkward silence?</li><li>How do you find common ground with someone from a completely different background?</li><li>What's a small talk habit from your culture that might confuse a foreigner?</li><li>How do you gracefully end a conversation without seeming rude?</li><li>Do you think small talk is a waste of time, or does it serve a real purpose? Why?</li><li>What's the most memorable small talk conversation you've had, and why?</li><li>How does your approach to small talk change between a formal event and a casual one?</li><li>If you could skip small talk entirely in professional settings, would you? Why or why not?</li></ol>
 <p><b>Expressões úteis para esta conversa:</b></p>
-<ul class="expr-list"><li>"Speaking of which..." — para mudar de assunto de forma natural.</li><li>"That reminds me..." — para pular para um assunto relacionado.</li><li>"Anyway, ..." — para retomar o fio ou encerrar um assunto.</li><li>"It was great catching up!" — para fechar a conversa de forma calorosa.</li></ul>
+<ul class="expr-list"><li>"Speaking of which...", para mudar de assunto de forma natural.</li><li>"That reminds me...", para pular para um assunto relacionado.</li><li>"Anyway, ...", para retomar o fio ou encerrar um assunto.</li><li>"It was great catching up!", para fechar a conversa de forma calorosa.</li></ul>
 </div>
 
 <div class="sx">
-<h2 class="step"><span class="tag">EXERCÍCIO</span>Complete com a Palavra Certa</h2>
+<h2 class="step "><span class="tag">EXERCÍCIO</span><span class="stitle"><span class="pt">Complete com a Palavra Certa</span><span class="en">Vocabulary Check</span></span></h2>
 <p>Complete cada frase com uma palavra ou expressão da Etapa 1. Gabarito ao final desta seção.</p>
-<ol><li>She always uses a joke as an ______ when meeting new clients.</li><li>There was an ______ after he asked about her divorce by mistake.</li><li>We found some ______ — we both grew up in small towns.</li><li>I don't mind a bit of ______ before getting into the real conversation.</li><li>Let's ______ this conversation — I have another meeting in five minutes.</li></ol>
+<ol><li>She always uses a joke as an ______ when meeting new clients.</li><li>There was an ______ after he asked about her divorce by mistake.</li><li>We found some ______, we both grew up in small towns.</li><li>I don't mind a bit of ______ before getting into the real conversation.</li><li>Let's ______ this conversation, I have another meeting in five minutes.</li></ol>
 <p class="gabarito">Gabarito: 1) icebreaker   2) awkward silence   3) common ground   4) chit-chat   5) wrap up</p>
 </div>
 
 <div class="s7">
-<h2 class="step"><span class="tag">ETAPA 7</span>Autoavaliação de Performance</h2>
+<h2 class="step "><span class="tag">ETAPA 7</span><span class="stitle"><span class="pt">Autoavaliação de Performance</span><span class="en">Self-Assessment</span></span></h2>
 <p>Antes de marcar este tema como concluído, avalie honestamente como foi sua prática.</p>
 <table>
-<tr><th>Critério</th><th>Como foi?</th><th>Nota (1–5)</th></tr>
+<tr><th>Critério</th><th>Como foi?</th><th>Nota (1-5)</th></tr>
 <tr><td>Consegui usar o vocabulário novo sem parar para pensar</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Entendi o áudio/vídeo sem depender da transcrição</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Escrevi minhas respostas antes de falar</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Apliquei a estrutura gramatical da etapa 5 corretamente</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Sustentei minhas respostas por mais de 2 frases</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Me senti confiante ao falar sobre este tema</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 </table>
 <p>O que travou mais nesta conversa? O que você quer treinar de novo antes de seguir para o próximo tema?</p>
-<div class="lines"></div><div class="lines"></div><div class="lines"></div>
+<div class="lines"></div><div class="lines"></div>
 </div>
 
 <p class="footer-note">Marque este tema como concluído no seu Painel de Evolução e siga para o Tema 3.</p>

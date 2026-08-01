@@ -1,4 +1,4 @@
-// Bloco 11 — Viagens e Contexto Internacional (Temas 81–88)
+// Bloco 11, Viagens e Contexto Internacional (Temas 81–88)
 const themes = [
   {
     num: 81,
@@ -7,7 +7,7 @@ const themes = [
     titleEn: "Checking In at a Hotel for Business",
     titlePt: "Fazendo check-in em um hotel a trabalho",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "Abrindo o Bloco 11: check-in de hotel é uma das interações mais previsíveis em viagens de negócios — e por isso, uma ótima oportunidade para dominar pedidos educados em inglês.",
+    intro: "Abrindo o Bloco 11: check-in de hotel é uma das interações mais previsíveis em viagens de negócios, e por isso, uma ótima oportunidade para dominar pedidos educados em inglês.",
     vocab: [
       ["reservation", "reserva", "I have a reservation under the company name."],
       ["check-in / check-out", "entrada / saída (hotel)", "What time is check-in and check-out?"],
@@ -25,15 +25,15 @@ const themes = [
     readingTitle: "Hotel Check-In Runs on a Predictable Script",
     readingParagraphs: [
       "Business hotel check-in follows one of the most predictable scripts in travel English, which makes it an easy place to build real fluency and confidence quickly. A short, polite exchange handles almost everything: confirming the reservation, clarifying billing, and making any special requests.",
-      "\"I have a reservation under [company name] — I believe we have a corporate rate. Incidentals will go on my personal card, please.\" This single exchange covers confirmation and billing clearly, avoiding a common source of confusion at checkout later.",
-      "Special requests work best framed politely but directly: \"Would it be possible to get a late checkout tomorrow?\" or \"Could I get a wake-up call for 6 a.m.?\" Front desk staff handle these requests constantly — there's no need to over-explain the reason behind them.",
+      "\"I have a reservation under [company name], I believe we have a corporate rate. Incidentals will go on my personal card, please.\" This single exchange covers confirmation and billing clearly, avoiding a common source of confusion at checkout later.",
+      "Special requests work best framed politely but directly: \"Would it be possible to get a late checkout tomorrow?\" or \"Could I get a wake-up call for 6 a.m.?\" Front desk staff handle these requests constantly, there's no need to over-explain the reason behind them.",
     ],
     audioFile: "audio/tema-81-checking-in-at-a-hotel.mp3",
     audioScript: [
-      "\"Hi, I have a reservation under Almeida — I believe it's under our corporate rate.\"",
+      "\"Hi, I have a reservation under Almeida, I believe it's under our corporate rate.\"",
       "\"Yes, I see it here. Will incidentals go on the same card?\" \"Actually, could you put those on my personal card instead? And would it be possible to get a late checkout tomorrow?\"",
     ],
-    audioFollowup: "Note a separação clara entre cartão corporativo (reserva) e pessoal (incidentais) — uma confusão comum evitada com uma frase simples.",
+    audioFollowup: "Note a separação clara entre cartão corporativo (reserva) e pessoal (incidentais), uma confusão comum evitada com uma frase simples.",
     writingQuestions: [
       "Write a short check-in script for a business hotel stay, including a special request.",
       "What amenities matter most to you on a business trip?",
@@ -60,10 +60,10 @@ const themes = [
       "What's your approach to tipping or interacting with hotel staff while traveling abroad?",
     ],
     expressions: [
-      "\"I have a reservation under...\" — abertura padrão de check-in.",
-      "\"Would it be possible to...?\" — pedido educado e formal.",
-      "\"Could you put that on my personal card instead?\" — para separar cobranças.",
-      "\"I just wanted to confirm my booking.\" — para checar detalhes com antecedência.",
+      "\"I have a reservation under...\", abertura padrão de check-in.",
+      "\"Would it be possible to...?\", pedido educado e formal.",
+      "\"Could you put that on my personal card instead?\", para separar cobranças.",
+      "\"I just wanted to confirm my booking.\", para checar detalhes com antecedência.",
     ],
     exerciseSentences: [
       "I have a ______ under the company name.",
@@ -81,7 +81,7 @@ const themes = [
     titleEn: "Handling Problems While Traveling",
     titlePt: "Lidando com problemas durante uma viagem",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "Voo atrasado, bagagem extraviada, conexão perdida — problemas de viagem exigem inglês calmo e assertivo sob pressão. Este tema prepara você para esses momentos.",
+    intro: "Voo atrasado, bagagem extraviada, conexão perdida, problemas de viagem exigem inglês calmo e assertivo sob pressão. Este tema prepara você para esses momentos.",
     vocab: [
       ["delayed flight", "voo atrasado", "My flight has been delayed by three hours."],
       ["to reschedule", "reagendar", "I need to reschedule my connecting flight."],
@@ -98,16 +98,16 @@ const themes = [
     ],
     readingTitle: "Calm, Specific Requests Get Better Results",
     readingParagraphs: [
-      "When something goes wrong while traveling, panic and vague frustration in English rarely produce results. Airline and hotel staff respond much better to calm, specific requests: \"My flight has been delayed and I now have a missed connection — could you help me get rebooked on the next available flight?\"",
+      "When something goes wrong while traveling, panic and vague frustration in English rarely produce results. Airline and hotel staff respond much better to calm, specific requests: \"My flight has been delayed and I now have a missed connection, could you help me get rebooked on the next available flight?\"",
       "Being clear about what you need, rather than just describing the problem, moves things forward faster: \"I understand it's not your fault, but I need an alternative arrangement for tonight, since my connection was missed\" states both empathy and a concrete need in one sentence.",
-      "It's also useful to know the vocabulary of your rights as a traveler — \"compensation,\" \"rerouting,\" \"travel insurance\" — even if you don't end up needing all of it. Knowing the words removes some of the panic itself.",
+      "It's also useful to know the vocabulary of your rights as a traveler, \"compensation,\" \"rerouting,\" \"travel insurance\", even if you don't end up needing all of it. Knowing the words removes some of the panic itself.",
     ],
     audioFile: "audio/tema-82-handling-travel-problems.mp3",
     audioScript: [
-      "\"My flight has been delayed and I now have a missed connection — could you help me get rebooked?\"",
+      "\"My flight has been delayed and I now have a missed connection, could you help me get rebooked?\"",
       "\"Let me check what's available.\" \"I understand it's not your fault, but I'd appreciate it if we could find something today, even if it means rerouting through another city.\"",
     ],
-    audioFollowup: "Note o tom calmo, mas específico — reconhecendo que não é culpa do atendente, e ainda assim pedindo uma solução concreta.",
+    audioFollowup: "Note o tom calmo, mas específico, reconhecendo que não é culpa do atendente, e ainda assim pedindo uma solução concreta.",
     writingQuestions: [
       "Describe a travel problem you've experienced (or could imagine) and how you'd handle it.",
       "What specific request would you make if your flight was delayed and you missed a connection?",
@@ -120,24 +120,24 @@ const themes = [
       ["Voz passiva\n(evento fora de controle)", "The flight was cancelled due to weather.", "Usado para descrever um evento sem atribuir culpa a uma pessoa específica."],
       ["I would appreciate it if...\n(pedido formal)", "I would appreciate it if we could resolve this today.", "Forma educada e formal de expressar uma necessidade durante um imprevisto."],
     ],
-    grammarTip: "Dica prática: \"my flight has been delayed\" (Present Perfect passivo) é mais preciso do que \"my flight is delayed\" — comunica que a situação começou e ainda está em curso.",
+    grammarTip: "Dica prática: \"my flight has been delayed\" (Present Perfect passivo) é mais preciso do que \"my flight is delayed\", comunica que a situação começou e ainda está em curso.",
     speakingQuestions: [
       "Describe a real or imagined travel problem and how you handled (or would handle) it.",
       "What specific request would you make if you missed a connection due to a delay?",
       "How do you stay calm during a frustrating travel situation in a second language?",
       "What's the most stressful travel problem you've ever faced?",
       "How do you decide when it's worth filing a formal complaint versus letting it go?",
-      "What's your approach to travel insurance — do you always get it, and why or why not?",
+      "What's your approach to travel insurance, do you always get it, and why or why not?",
       "How do you handle lost luggage while still needing to attend a business meeting?",
       "What's a time staff went above and beyond to help you during a travel problem?",
       "How do you communicate urgency without being rude to airline or hotel staff?",
       "What travel problem are you most prepared for, and which one worries you most?",
     ],
     expressions: [
-      "\"My flight has been delayed, and I now have a missed connection.\" — para reportar com clareza.",
-      "\"I understand it's not your fault, but...\" — para manter educação sob frustração.",
-      "\"I would appreciate it if we could...\" — pedido formal em situação de estresse.",
-      "\"Is there any alternative arrangement available?\" — para buscar soluções concretas.",
+      "\"My flight has been delayed, and I now have a missed connection.\", para reportar com clareza.",
+      "\"I understand it's not your fault, but...\", para manter educação sob frustração.",
+      "\"I would appreciate it if we could...\", pedido formal em situação de estresse.",
+      "\"Is there any alternative arrangement available?\", para buscar soluções concretas.",
     ],
     exerciseSentences: [
       "My flight has been ______ by three hours.",
@@ -181,7 +181,7 @@ const themes = [
       "\"Is this your first time in São Paulo?\"",
       "\"It is, actually! I'm still fighting some jet lag, but I'm excited to be here. Any recommendations for local cuisine before I head back?\"",
     ],
-    audioFollowup: "Note como a pergunta sobre a cidade abre espaço para uma resposta pessoal e uma recomendação — típico do small talk de viagem.",
+    audioFollowup: "Note como a pergunta sobre a cidade abre espaço para uma resposta pessoal e uma recomendação, típico do small talk de viagem.",
     writingQuestions: [
       "Describe a real or imagined business trip using vocabulary from this theme.",
       "What small talk openers do you usually use with someone you just met while traveling?",
@@ -194,7 +194,7 @@ const themes = [
       ["Comparativo\n(comparação entre lugares)", "This city is busier than I expected.", "Usado para comparar um lugar novo com expectativas ou outros lugares conhecidos."],
       ["How was your flight?\n(abertura formulaica) + follow-up", "How was your flight? Did you get any sleep?", "Abertura universal de viagem, seguida de uma pergunta de continuidade genuína."],
     ],
-    grammarTip: "Dica prática: \"How was your flight?\" é quase um ritual de abertura em contextos de viagem de negócios — sempre acompanhe com uma pergunta de continuidade genuína, não apenas espere um \"good, thanks\".",
+    grammarTip: "Dica prática: \"How was your flight?\" é quase um ritual de abertura em contextos de viagem de negócios, sempre acompanhe com uma pergunta de continuidade genuína, não apenas espere um \"good, thanks\".",
     speakingQuestions: [
       "How do you usually start small talk with someone you just met while traveling?",
       "How do you personally handle jet lag before an important meeting or dinner?",
@@ -208,10 +208,10 @@ const themes = [
       "What's a question about a city or place you love asking travelers about?",
     ],
     expressions: [
-      "\"Is this your first time in...?\" — abertura clássica de viagem.",
-      "\"How was your flight?\" — pergunta universal de viagem.",
-      "\"I'm still fighting some jet lag.\" — para humanizar a conversa antes dos negócios.",
-      "\"Any recommendations for...?\" — para pedir dicas locais com naturalidade.",
+      "\"Is this your first time in...?\", abertura clássica de viagem.",
+      "\"How was your flight?\", pergunta universal de viagem.",
+      "\"I'm still fighting some jet lag.\", para humanizar a conversa antes dos negócios.",
+      "\"Any recommendations for...?\", para pedir dicas locais com naturalidade.",
     ],
     exerciseSentences: [
       "This is my third ______ this quarter.",
@@ -229,7 +229,7 @@ const themes = [
     titleEn: "Ordering at a Business Dinner",
     titlePt: "Pedindo comida em um jantar de negócios",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "Um jantar de negócios tem etiqueta própria em inglês — desde pedir a comida até decidir quem paga a conta. Este tema cobre esse vocabulário social e prático.",
+    intro: "Um jantar de negócios tem etiqueta própria em inglês, desde pedir a comida até decidir quem paga a conta. Este tema cobre esse vocabulário social e prático.",
     vocab: [
       ["to make a reservation", "fazer uma reserva", "I made a reservation for four at 7 p.m."],
       ["dietary restriction", "restrição alimentar", "Do you have any dietary restrictions I should know about?"],
@@ -246,16 +246,16 @@ const themes = [
     ],
     readingTitle: "The Menu Is the Easy Part",
     readingParagraphs: [
-      "Ordering food at a business dinner in English is rarely the hard part — the harder part is the social choreography around it: who orders first, who suggests dishes, and who ultimately pays. Deferring gracefully is common: \"I'll defer to you, since you know the menu better\" shows respect without seeming indecisive.",
+      "Ordering food at a business dinner in English is rarely the hard part, the harder part is the social choreography around it: who orders first, who suggests dishes, and who ultimately pays. Deferring gracefully is common: \"I'll defer to you, since you know the menu better\" shows respect without seeming indecisive.",
       "Handling dietary restrictions smoothly matters too, especially in international settings: asking \"Do you have any dietary restrictions I should know about?\" before ordering for a group avoids an awkward moment later.",
       "The bill is its own small negotiation: \"I'll pick up the tab tonight\" is a common, generous way to settle it without an argument, especially when hosting. In more peer-level settings, \"should we just split it?\" is a completely normal, low-stakes way to resolve it.",
     ],
     audioFile: "audio/tema-84-ordering-at-a-business-dinner.mp3",
     audioScript: [
       "\"Do you have any dietary restrictions I should know about before we order?\"",
-      "\"No, I'm pretty flexible, thanks for asking. What would you recommend?\" \"The house specialty is supposed to be excellent — I'll have that, and let's get an appetizer to share.\"",
+      "\"No, I'm pretty flexible, thanks for asking. What would you recommend?\" \"The house specialty is supposed to be excellent, I'll have that, and let's get an appetizer to share.\"",
     ],
-    audioFollowup: "Note que a pergunta sobre restrição alimentar vem antes de sugerir pratos — uma cortesia importante em jantares de negócios internacionais.",
+    audioFollowup: "Note que a pergunta sobre restrição alimentar vem antes de sugerir pratos, uma cortesia importante em jantares de negócios internacionais.",
     writingQuestions: [
       "Write a short dialogue for ordering at a business dinner with an international client.",
       "How would you ask about dietary restrictions before ordering for a group?",
@@ -268,24 +268,24 @@ const themes = [
       ["Would you recommend...?", "Would you recommend the fish or the steak?", "Forma educada de pedir uma sugestão ao garçom ou a um anfitrião local."],
       ["I'd avoid... if you have...\n(condicional para restrição)", "I'd avoid anything with shellfish, if you have an alternative.", "Usado para comunicar uma restrição alimentar de forma educada e condicional."],
     ],
-    grammarTip: "Dica prática: \"I'll have...\" é a forma mais natural e comum de fazer um pedido em inglês em um restaurante — mais natural do que \"I want\" ou \"give me\", que soam abruptos.",
+    grammarTip: "Dica prática: \"I'll have...\" é a forma mais natural e comum de fazer um pedido em inglês em um restaurante, mais natural do que \"I want\" ou \"give me\", que soam abruptos.",
     speakingQuestions: [
       "Describe how you'd order at a business dinner with an international client.",
       "How would you ask about dietary restrictions before ordering for a group?",
       "How would you handle the bill at a dinner you're hosting for a client?",
       "What would you say to gracefully defer a menu decision to someone else?",
       "How does business dinner etiquette differ across the cultures you're familiar with?",
-      "What's your approach to toasting at a business dinner — do you feel comfortable doing it?",
+      "What's your approach to toasting at a business dinner, do you feel comfortable doing it?",
       "How do you handle a dinner where you don't recognize most of the menu?",
       "What's a memorable business dinner experience you've had, good or awkward?",
       "How do you navigate alcohol at a business dinner when you don't drink, or vice versa?",
       "What's the etiquette in your culture around who pays, and how does it compare to others?",
     ],
     expressions: [
-      "\"Do you have any dietary restrictions I should know about?\" — cortesia essencial em grupo.",
-      "\"What would you recommend?\" — pergunta natural ao garçom ou anfitrião.",
-      "\"I'll pick up the tab tonight.\" — para assumir a conta com generosidade.",
-      "\"I'll defer to you on this one.\" — para ceder uma decisão com educação.",
+      "\"Do you have any dietary restrictions I should know about?\", cortesia essencial em grupo.",
+      "\"What would you recommend?\", pergunta natural ao garçom ou anfitrião.",
+      "\"I'll pick up the tab tonight.\", para assumir a conta com generosidade.",
+      "\"I'll defer to you on this one.\", para ceder uma decisão com educação.",
     ],
     exerciseSentences: [
       "I made a ______ for four at 7 p.m.",
@@ -320,16 +320,16 @@ const themes = [
     ],
     readingTitle: "Scheduling Across Time Zones Needs Explicit Numbers",
     readingParagraphs: [
-      "Scheduling across time zones in English fails most often not because of vague language, but because of unstated assumptions — \"let's meet in the morning\" means something different in São Paulo than in Tokyo. The fix is always the same: state the actual time and time zone explicitly.",
+      "Scheduling across time zones in English fails most often not because of vague language, but because of unstated assumptions, \"let's meet in the morning\" means something different in São Paulo than in Tokyo. The fix is always the same: state the actual time and time zone explicitly.",
       "\"Would 9 a.m. your time work? That would be 9 p.m. mine.\" This single sentence removes all ambiguity, and it's worth the extra few words every time, especially with people you don't schedule with regularly.",
       "Acknowledging the inconvenience honestly also builds goodwill: \"I know this is a later hour for you, and I appreciate you making it work\" recognizes the cost the other side is bearing, which matters when time zone accommodation isn't evenly split over time.",
     ],
     audioFile: "audio/tema-85-time-zones-and-scheduling.mp3",
     audioScript: [
       "\"Would 9 a.m. your time work for the call? That would be 9 p.m. mine.\"",
-      "\"That works. I know it's a late hour for you, so thank you for making it work.\" \"No problem — let's just find a slot that rotates fairly over time.\"",
+      "\"That works. I know it's a late hour for you, so thank you for making it work.\" \"No problem, let's just find a slot that rotates fairly over time.\"",
     ],
-    audioFollowup: "Note a conversão explícita de horário (\"9 a.m. your time... 9 p.m. mine\") — o padrão que evita qualquer confusão.",
+    audioFollowup: "Note a conversão explícita de horário (\"9 a.m. your time... 9 p.m. mine\"), o padrão que evita qualquer confusão.",
     writingQuestions: [
       "Describe a scheduling challenge you've had (or could have) across time zones.",
       "How would you propose a meeting time that's fair to both sides over time?",
@@ -342,7 +342,7 @@ const themes = [
       ["That would be Y your time\n(conversão)", "That would be 9 p.m. my time.", "Usado para converter e esclarecer o horário no fuso da outra pessoa."],
       ["as long as\n(condição de sobreposição)", "We can make this work, as long as we rotate the inconvenient slot.", "Usado para estabelecer uma condição justa para agendamentos recorrentes."],
     ],
-    grammarTip: "Dica prática: sempre inclua o fuso horário explicitamente (\"9 a.m. your time\", \"9 p.m. mine\") — nunca assuma que \"morning\" ou \"afternoon\" será entendido da mesma forma pelos dois lados.",
+    grammarTip: "Dica prática: sempre inclua o fuso horário explicitamente (\"9 a.m. your time\", \"9 p.m. mine\"), nunca assuma que \"morning\" ou \"afternoon\" será entendido da mesma forma pelos dois lados.",
     speakingQuestions: [
       "Describe a scheduling challenge you've faced (or could face) across time zones.",
       "How would you propose a meeting time that's fair to both sides over time?",
@@ -356,10 +356,10 @@ const themes = [
       "What tools or habits help you coordinate across time zones effectively?",
     ],
     expressions: [
-      "\"Would 9 a.m. your time work?\" — proposta de horário clara e educada.",
-      "\"That would be Y my time.\" — para converter fuso horário com precisão.",
-      "\"I know this is a late hour for you.\" — para reconhecer o esforço do outro lado.",
-      "\"Let's rotate the inconvenient slot.\" — para justiça em agendamentos recorrentes.",
+      "\"Would 9 a.m. your time work?\", proposta de horário clara e educada.",
+      "\"That would be Y my time.\", para converter fuso horário com precisão.",
+      "\"I know this is a late hour for you.\", para reconhecer o esforço do outro lado.",
+      "\"Let's rotate the inconvenient slot.\", para justiça em agendamentos recorrentes.",
     ],
     exerciseSentences: [
       "We're in completely different ______, so this takes planning.",
@@ -394,16 +394,16 @@ const themes = [
     ],
     readingTitle: "The Same Gesture Doesn't Travel the Same Way",
     readingParagraphs: [
-      "A gesture, dress code, or level of punctuality that's completely normal at home can carry a very different meaning abroad — and English gives you specific, formal structures for naming these customs respectfully: \"it's customary to...,\" \"you're expected to...,\" \"it's considered rude to...\"",
+      "A gesture, dress code, or level of punctuality that's completely normal at home can carry a very different meaning abroad, and English gives you specific, formal structures for naming these customs respectfully: \"it's customary to...,\" \"you're expected to...,\" \"it's considered rude to...\"",
       "\"It's customary to exchange business cards with both hands here, and it's considered rude to write on someone's card in front of them.\" This kind of sentence names a specific custom clearly, without judgment, in a way locals and travelers both find genuinely useful.",
-      "Researching beforehand and asking directly when unsure both signal respect: \"I want to make sure I don't make a cultural faux pas — is there anything specific I should know before the meeting?\" is a welcomed question in almost any professional context, anywhere.",
+      "Researching beforehand and asking directly when unsure both signal respect: \"I want to make sure I don't make a cultural faux pas, is there anything specific I should know before the meeting?\" is a welcomed question in almost any professional context, anywhere.",
     ],
     audioFile: "audio/tema-86-cultural-etiquette-abroad.mp3",
     audioScript: [
       "\"Is there anything I should know before the meeting tomorrow, etiquette-wise?\"",
-      "\"Good question — it's customary to exchange business cards with both hands here, and punctuality is taken very seriously. It's considered rude to arrive even a few minutes late.\"",
+      "\"Good question, it's customary to exchange business cards with both hands here, and punctuality is taken very seriously. It's considered rude to arrive even a few minutes late.\"",
     ],
-    audioFollowup: "Note as três estruturas fixas usadas juntas: \"customary\", \"considered rude\" — vocabulário-chave deste tema.",
+    audioFollowup: "Note as três estruturas fixas usadas juntas: \"customary\", \"considered rude\", vocabulário-chave deste tema.",
     writingQuestions: [
       "Describe a cultural etiquette norm you've had to learn while traveling or working abroad.",
       "What's a gesture or custom that means something different in another culture you know?",
@@ -416,7 +416,7 @@ const themes = [
       ["You're expected to...", "You're expected to arrive a few minutes early.", "Usado para descrever uma expectativa social ou profissional específica."],
       ["It's considered rude to...", "It's considered rude to write on someone's business card.", "Usado para nomear um comportamento visto como falta de educação em um contexto específico."],
     ],
-    grammarTip: "Dica prática: essas três estruturas (\"it's customary to\", \"you're expected to\", \"it's considered rude to\") são praticamente intercambiáveis em formalidade — escolha com base no que você quer enfatizar: costume, expectativa ou ofensa.",
+    grammarTip: "Dica prática: essas três estruturas (\"it's customary to\", \"you're expected to\", \"it's considered rude to\") são praticamente intercambiáveis em formalidade, escolha com base no que você quer enfatizar: costume, expectativa ou ofensa.",
     speakingQuestions: [
       "Describe a cultural etiquette norm you've had to learn while traveling or working abroad.",
       "What's a gesture or custom that means something different in another culture you're aware of?",
@@ -430,10 +430,10 @@ const themes = [
       "What etiquette advice would you give someone visiting your country for business the first time?",
     ],
     expressions: [
-      "\"It's customary to...\" — para descrever um costume local.",
-      "\"You're expected to...\" — para nomear uma expectativa social.",
-      "\"It's considered rude to...\" — para alertar sobre um comportamento ofensivo.",
-      "\"Is there anything I should know, etiquette-wise?\" — pergunta preventiva e respeitosa.",
+      "\"It's customary to...\", para descrever um costume local.",
+      "\"You're expected to...\", para nomear uma expectativa social.",
+      "\"It's considered rude to...\", para alertar sobre um comportamento ofensivo.",
+      "\"Is there anything I should know, etiquette-wise?\", pergunta preventiva e respeitosa.",
     ],
     exerciseSentences: [
       "It's a local ______ to remove your shoes before entering.",
@@ -451,7 +451,7 @@ const themes = [
     titleEn: "Asking for Directions and Recommendations",
     titlePt: "Pedindo direções e recomendações",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "Pedir direções e recomendações em inglês, de forma natural e não robótica, é uma habilidade prática essencial para qualquer viagem — de negócios ou não.",
+    intro: "Pedir direções e recomendações em inglês, de forma natural e não robótica, é uma habilidade prática essencial para qualquer viagem, de negócios ou não.",
     vocab: [
       ["to ask for directions", "pedir informações / direções", "I had to ask for directions twice before finding the venue."],
       ["landmark", "ponto de referência", "The hotel is right next to a well-known landmark."],
@@ -466,11 +466,11 @@ const themes = [
       ["to look up (directions)", "pesquisar (direções)", "Let me look up directions on my phone."],
       ["rush hour", "horário de pico", "Avoid that route during rush hour if you can."],
     ],
-    readingTitle: "Locals Love Being Asked — If You Ask Well",
+    readingTitle: "Locals Love Being Asked, If You Ask Well",
     readingParagraphs: [
       "Asking for directions or recommendations in English works best with a light, specific request rather than a vague one. \"Excuse me, is this within walking distance, or should I grab a cab?\" gives the person something concrete to answer, unlike a broad \"how do I get around here?\"",
       "Asking for recommendations tends to get better, more personal answers with a slightly open question: \"any local tips for avoiding the crowds?\" or \"is there a hidden gem nearby you'd recommend?\" invites a more genuine answer than a generic \"what should I see?\"",
-      "It's also completely normal, and often appreciated, to admit you're lost plainly: \"I think we're a bit lost, honestly — could you point us toward [landmark]?\" Most people respond warmly to a direct, humble request like this.",
+      "It's also completely normal, and often appreciated, to admit you're lost plainly: \"I think we're a bit lost, honestly, could you point us toward [landmark]?\" Most people respond warmly to a direct, humble request like this.",
     ],
     audioFile: "audio/tema-87-asking-for-directions.mp3",
     audioScript: [
@@ -490,7 +490,7 @@ const themes = [
       ["Is it within walking distance?", "Is the venue within walking distance from here?", "Pergunta prática comum para avaliar a necessidade de transporte."],
       ["Superlativo\n(recomendação forte)", "What's the best place to get coffee around here?", "Usado para pedir a melhor opção possível dentro de uma categoria."],
     ],
-    grammarTip: "Dica prática: \"Could you point me to...?\" é mais natural do que traduzir literalmente \"pode me indicar\" — funciona tanto para lugares físicos quanto, informalmente, para informações em geral.",
+    grammarTip: "Dica prática: \"Could you point me to...?\" é mais natural do que traduzir literalmente \"pode me indicar\", funciona tanto para lugares físicos quanto, informalmente, para informações em geral.",
     speakingQuestions: [
       "Write and role-play a short dialogue asking a local for directions to a specific place.",
       "How would you ask for a recommendation that feels genuine, not generic?",
@@ -504,10 +504,10 @@ const themes = [
       "What's your approach to exploring somewhere off the beaten path safely?",
     ],
     expressions: [
-      "\"Excuse me, is this within walking distance?\" — pergunta prática e educada.",
-      "\"Any local tips for...?\" — para pedir recomendação genuína.",
-      "\"I think we're a bit lost, honestly.\" — forma direta e humilde de pedir ajuda.",
-      "\"Somewhere off the beaten path would be great.\" — para pedir algo autêntico, não turístico.",
+      "\"Excuse me, is this within walking distance?\", pergunta prática e educada.",
+      "\"Any local tips for...?\", para pedir recomendação genuína.",
+      "\"I think we're a bit lost, honestly.\", forma direta e humilde de pedir ajuda.",
+      "\"Somewhere off the beaten path would be great.\", para pedir algo autêntico, não turístico.",
     ],
     exerciseSentences: [
       "I had to ______ twice before finding the venue.",
@@ -525,7 +525,7 @@ const themes = [
     titleEn: "Debriefing a Trip with Colleagues",
     titlePt: "Fazendo o debriefing de uma viagem com colegas",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "Fechando o Bloco 11: resumir uma viagem de negócios para quem ficou — o que valeu a pena, o que não valeu, quais são os próximos passos — em inglês, é uma habilidade tão prática quanto qualquer outra deste bloco.",
+    intro: "Fechando o Bloco 11: resumir uma viagem de negócios para quem ficou, o que valeu a pena, o que não valeu, quais são os próximos passos, em inglês, é uma habilidade tão prática quanto qualquer outra deste bloco.",
     vocab: [
       ["debrief", "debriefing / relato pós-evento", "Let's do a quick debrief on how the trip went."],
       ["key takeaway", "principal aprendizado", "The key takeaway was that the client wants faster turnaround."],
@@ -542,8 +542,8 @@ const themes = [
     ],
     readingTitle: "A Good Trip Debrief Has a Shape",
     readingParagraphs: [
-      "Debriefing a business trip well in English follows a shape similar to summarizing a long discussion (Tema 61): a brief overall impression, the key takeaway, and concrete next steps — not a full chronological retelling of every meeting.",
-      "\"Overall, the trip was worthwhile — the key takeaway is the client wants faster turnaround, and I've got three follow-up actions I'll send over today.\" This gives colleagues everything useful in a few sentences, with more detail available if asked.",
+      "Debriefing a business trip well in English follows a shape similar to summarizing a long discussion (Tema 61): a brief overall impression, the key takeaway, and concrete next steps, not a full chronological retelling of every meeting.",
+      "\"Overall, the trip was worthwhile, the key takeaway is the client wants faster turnaround, and I've got three follow-up actions I'll send over today.\" This gives colleagues everything useful in a few sentences, with more detail available if asked.",
       "Being honest about logistics or things that didn't go smoothly, briefly, also adds credibility: \"the logistics were a bit rough, but the meetings themselves went really well\" separates the parts worth improving next time from the parts that actually mattered.",
     ],
     audioFile: "audio/tema-88-debriefing-a-trip.mp3",
@@ -551,7 +551,7 @@ const themes = [
       "\"How did the trip go overall?\"",
       "\"Overall, really worthwhile. The key takeaway is the client wants faster turnaround on deliverables. Logistics were a bit rough, but I'll send over the follow-up actions today.\"",
     ],
-    audioFollowup: "Note a estrutura enxuta: impressão geral, takeaway principal, e próximos passos — sem relato cronológico detalhado.",
+    audioFollowup: "Note a estrutura enxuta: impressão geral, takeaway principal, e próximos passos, sem relato cronológico detalhado.",
     writingQuestions: [
       "Debrief a real or imagined business trip in three or four sentences.",
       "What was the key takeaway from that trip?",
@@ -564,7 +564,7 @@ const themes = [
       ["Overall, ...\n(impressão geral)", "Overall, the trip exceeded expectations.", "Advérbio usado para introduzir uma avaliação geral antes dos detalhes."],
       ["It was worth it because...", "It was worth it because we closed the deal in person.", "Estrutura para justificar o valor de uma viagem com uma razão concreta."],
     ],
-    grammarTip: "Dica prática: comece qualquer debriefing de viagem com \"Overall, ...\" — isso dá ao ouvinte a conclusão antes dos detalhes, o que é exatamente o que a maioria das pessoas quer ouvir primeiro.",
+    grammarTip: "Dica prática: comece qualquer debriefing de viagem com \"Overall, ...\", isso dá ao ouvinte a conclusão antes dos detalhes, o que é exatamente o que a maioria das pessoas quer ouvir primeiro.",
     speakingQuestions: [
       "Debrief a real or imagined business trip for a colleague who couldn't attend.",
       "What was the key takeaway from that trip?",
@@ -578,10 +578,10 @@ const themes = [
       "What's your process for turning a trip debrief into concrete next steps?",
     ],
     expressions: [
-      "\"Overall, the trip was worthwhile.\" — abertura clássica de debriefing.",
-      "\"The key takeaway is...\" — para nomear o aprendizado central.",
-      "\"I'll send over the follow-up actions today.\" — para fechar com próximos passos.",
-      "\"Logistics were rough, but the meetings went well.\" — para separar o que importa do que não importa.",
+      "\"Overall, the trip was worthwhile.\", abertura clássica de debriefing.",
+      "\"The key takeaway is...\", para nomear o aprendizado central.",
+      "\"I'll send over the follow-up actions today.\", para fechar com próximos passos.",
+      "\"Logistics were rough, but the meetings went well.\", para separar o que importa do que não importa.",
     ],
     exerciseSentences: [
       "Let's do a quick ______ on how the trip went.",

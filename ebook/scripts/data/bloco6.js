@@ -1,4 +1,4 @@
-// Bloco 6 — Entrevistas e Recrutamento (Temas 41–48)
+// Bloco 6, Entrevistas e Recrutamento (Temas 41–48)
 const themes = [
   {
     num: 41,
@@ -7,7 +7,7 @@ const themes = [
     titleEn: "Answering \"Tell Me About Yourself\"",
     titlePt: "Respondendo \"fale sobre você\" em entrevistas",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "Abrindo o Bloco 6: diferente do Tema 1, que tratava de se apresentar de forma geral, este tema foca especificamente na versão de entrevista dessa pergunta — com uma fórmula estruturada de presente, passado e futuro.",
+    intro: "Abrindo o Bloco 6: diferente do Tema 1, que tratava de se apresentar de forma geral, este tema foca especificamente na versão de entrevista dessa pergunta, com uma fórmula estruturada de presente, passado e futuro.",
     vocab: [
       ["elevator pitch", "discurso rápido de apresentação", "I have a 30-second elevator pitch ready for interviews."],
       ["career summary", "resumo de carreira", "Start with a short career summary before going into detail."],
@@ -16,7 +16,7 @@ const themes = [
       ["to tailor (an answer)", "adaptar (uma resposta)", "I always tailor this answer to the specific role."],
       ["relevant experience", "experiência relevante", "I focus on the relevant experience for this particular job."],
       ["career highlight", "destaque da carreira", "One career highlight was leading the migration project."],
-      ["to keep it concise", "ser conciso(a)", "I try to keep it concise — under two minutes."],
+      ["to keep it concise", "ser conciso(a)", "I try to keep it concise, under two minutes."],
       ["present-past-future formula", "fórmula presente-passado-futuro", "I use the present-past-future formula for this question."],
       ["to steer the conversation", "direcionar a conversa", "I use this answer to steer the conversation toward my strengths."],
       ["key takeaway", "principal conclusão / mensagem-chave", "The key takeaway should be why I'm a fit for this role."],
@@ -24,14 +24,14 @@ const themes = [
     ],
     readingTitle: "The Formula Behind a Great Interview Answer",
     readingParagraphs: [
-      "\"Tell me about yourself\" is technically an open question, but in an interview it has an implicit structure that most strong answers follow: present, past, future. Where you are now, briefly how you got there, and where you're headed — specifically toward this role.",
-      "\"I currently work as a product manager focused on onboarding flows. Before that, I spent four years in customer support, which is actually where my interest in product started — I kept noticing the same friction points. Now I'm looking to bring that user-first perspective to a bigger product team, which is what drew me to this role.\"",
-      "Notice this answer is under 100 words, tailored to the specific job at the end, and never lists every job on the résumé. The interviewer already has the résumé — this answer's job is to connect the dots, not repeat them.",
+      "\"Tell me about yourself\" is technically an open question, but in an interview it has an implicit structure that most strong answers follow: present, past, future. Where you are now, briefly how you got there, and where you're headed, specifically toward this role.",
+      "\"I currently work as a product manager focused on onboarding flows. Before that, I spent four years in customer support, which is actually where my interest in product started, I kept noticing the same friction points. Now I'm looking to bring that user-first perspective to a bigger product team, which is what drew me to this role.\"",
+      "Notice this answer is under 100 words, tailored to the specific job at the end, and never lists every job on the résumé. The interviewer already has the résumé, this answer's job is to connect the dots, not repeat them.",
     ],
     audioFile: "audio/tema-41-tell-me-about-yourself.mp3",
     audioScript: [
       "\"So, tell me a bit about yourself.\"",
-      "\"Sure — I currently lead a small design team at a fintech startup. Before that, I spent three years as an individual contributor, which taught me a lot about what designers actually need from a manager. I'm looking to bring that perspective to a larger team, which is part of why this role caught my attention.\"",
+      "\"Sure, I currently lead a small design team at a fintech startup. Before that, I spent three years as an individual contributor, which taught me a lot about what designers actually need from a manager. I'm looking to bring that perspective to a larger team, which is part of why this role caught my attention.\"",
     ],
     audioFollowup: "Note a estrutura presente (o que faz agora) → passado (como chegou lá) → futuro (o que busca, conectado à vaga).",
     writingQuestions: [
@@ -44,9 +44,9 @@ const themes = [
     grammarRows: [
       ["Present Simple\n(cargo atual)", "I currently work as a product manager.", "Usado para descrever sua situação profissional atual, de forma estável."],
       ["Present Perfect\n(experiência relevante do passado)", "I've spent the last four years in customer support.", "Conecta uma experiência passada ao presente, sem fixar uma data exata."],
-      ["I'm looking to / I'd like to\n(direção futura)", "I'm looking to bring that perspective to a bigger team.", "Usado para apontar para onde você quer ir — e conectar isso à vaga em questão."],
+      ["I'm looking to / I'd like to\n(direção futura)", "I'm looking to bring that perspective to a bigger team.", "Usado para apontar para onde você quer ir, e conectar isso à vaga em questão."],
     ],
-    grammarTip: "Dica prática: termine sempre a resposta no futuro conectado à vaga específica — isso é o que transforma uma autobiografia genérica em uma resposta de entrevista estratégica.",
+    grammarTip: "Dica prática: termine sempre a resposta no futuro conectado à vaga específica, isso é o que transforma uma autobiografia genérica em uma resposta de entrevista estratégica.",
     speakingQuestions: [
       "Answer \"tell me about yourself\" as if you were in a real interview right now.",
       "What's a career highlight you'd want to include in this answer, and why?",
@@ -60,16 +60,16 @@ const themes = [
       "What's a version of this answer you'd give for a job outside your current field?",
     ],
     expressions: [
-      "\"I currently work as...\" — abertura clara no presente.",
-      "\"That's actually where my interest in X started.\" — para conectar passado a interesse atual.",
-      "\"I'm looking to bring that to...\" — para apontar para o futuro/vaga.",
-      "\"Which is part of why this role caught my attention.\" — fechamento estratégico.",
+      "\"I currently work as...\", abertura clara no presente.",
+      "\"That's actually where my interest in X started.\", para conectar passado a interesse atual.",
+      "\"I'm looking to bring that to...\", para apontar para o futuro/vaga.",
+      "\"Which is part of why this role caught my attention.\", fechamento estratégico.",
     ],
     exerciseSentences: [
       "I have a 30-second ______ ready for interviews.",
       "I always ______ this answer to the specific role.",
       "One career ______ was leading the migration project.",
-      "I try to keep it ______ — under two minutes.",
+      "I try to keep it ______, under two minutes.",
       "You want to ______ the interviewer in the first ten seconds.",
     ],
     exerciseAnswers: "Gabarito: 1) elevator pitch   2) tailor   3) highlight   4) concise   5) hook",
@@ -98,9 +98,9 @@ const themes = [
     ],
     readingTitle: "Numbers Make Achievements Believable",
     readingParagraphs: [
-      "\"I led a successful project\" is forgettable. \"I spearheaded a redesign that increased 30-day retention by 18%, ahead of schedule\" is memorable — because it's specific, measurable, and shows exactly what \"successful\" meant.",
-      "The STAR method — Situation, Task, Action, Result — gives English speakers a reliable shape for this kind of answer: briefly set the scene, name what needed to happen, describe what you specifically did, and close with a quantified result. Numbers don't need to be exact to the decimal — \"roughly 20%\" is completely acceptable and still far more convincing than no number at all.",
-      "The best achievement stories also share credit appropriately: \"I attribute a lot of that success to the team I built\" doesn't diminish your role — said well, it actually makes the achievement sound more credible, because leading people to a result is itself a skill.",
+      "\"I led a successful project\" is forgettable. \"I spearheaded a redesign that increased 30-day retention by 18%, ahead of schedule\" is memorable, because it's specific, measurable, and shows exactly what \"successful\" meant.",
+      "The STAR method, Situation, Task, Action, Result, gives English speakers a reliable shape for this kind of answer: briefly set the scene, name what needed to happen, describe what you specifically did, and close with a quantified result. Numbers don't need to be exact to the decimal, \"roughly 20%\" is completely acceptable and still far more convincing than no number at all.",
+      "The best achievement stories also share credit appropriately: \"I attribute a lot of that success to the team I built\" doesn't diminish your role, said well, it actually makes the achievement sound more credible, because leading people to a result is itself a skill.",
     ],
     audioFile: "audio/tema-42-biggest-achievement.mp3",
     audioScript: [
@@ -120,7 +120,7 @@ const themes = [
       ["by + número/porcentagem", "We increased retention by 18%.", "Usado para quantificar precisamente o impacto de uma ação."],
       ["as a result\n(conector causal)", "As a result, we hit the target ahead of schedule.", "Conecta a ação tomada ao resultado alcançado, de forma clara e formal."],
     ],
-    grammarTip: "Dica prática: sempre que possível, use \"by + número\" para quantificar o resultado (\"increased by 18%\", \"reduced by half\") — isso é o que transforma uma afirmação vaga em uma conquista concreta.",
+    grammarTip: "Dica prática: sempre que possível, use \"by + número\" para quantificar o resultado (\"increased by 18%\", \"reduced by half\"), isso é o que transforma uma afirmação vaga em uma conquista concreta.",
     speakingQuestions: [
       "What would you say is your biggest professional achievement, using the STAR method?",
       "What measurable result are you most proud of in your career so far?",
@@ -134,10 +134,10 @@ const themes = [
       "How has your idea of what counts as a \"big achievement\" changed over your career?",
     ],
     expressions: [
-      "\"I spearheaded...\" — para abrir uma conquista de forma ativa e forte.",
-      "\"As a result, we...\" — para conectar ação a resultado.",
-      "\"I attribute a lot of that to...\" — para dividir o crédito com elegância.",
-      "\"That's probably my standout project.\" — para nomear a conquista com confiança.",
+      "\"I spearheaded...\", para abrir uma conquista de forma ativa e forte.",
+      "\"As a result, we...\", para conectar ação a resultado.",
+      "\"I attribute a lot of that to...\", para dividir o crédito com elegância.",
+      "\"That's probably my standout project.\", para nomear a conquista com confiança.",
     ],
     exerciseSentences: [
       "This is probably my proudest ______ so far.",
@@ -155,7 +155,7 @@ const themes = [
     titleEn: "Explaining a Gap in Your Resume",
     titlePt: "Explicando uma lacuna no currículo",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "Explicar um período fora do mercado de trabalho, em inglês, exige um tom tranquilo e direto — sem se desculpar excessivamente nem esconder informação.",
+    intro: "Explicar um período fora do mercado de trabalho, em inglês, exige um tom tranquilo e direto, sem se desculpar excessivamente nem esconder informação.",
     vocab: [
       ["employment gap", "lacuna no currículo / período sem emprego", "I have about an eight-month employment gap on my resume."],
       ["career break", "pausa na carreira", "I took a career break to care for a family member."],
@@ -167,7 +167,7 @@ const themes = [
       ["to be candid about", "ser transparente sobre", "I try to just be candid about it rather than avoid the topic."],
       ["to bounce back", "se recuperar / voltar com força", "I've bounced back with a clear sense of direction."],
       ["transition period", "período de transição", "I think of it as a transition period, not a gap in ambition."],
-      ["to stay proactive", "se manter proativo(a)", "I stayed proactive during that time — freelancing and learning."],
+      ["to stay proactive", "se manter proativo(a)", "I stayed proactive during that time, freelancing and learning."],
       ["to address (a gap)", "abordar / explicar (uma lacuna)", "I'd rather address the gap directly than let it go unexplained."],
     ],
     readingTitle: "A Gap Doesn't Need an Apology",
@@ -178,10 +178,10 @@ const themes = [
     ],
     audioFile: "audio/tema-43-explaining-a-gap.mp3",
     audioScript: [
-      "\"I noticed a gap of about a year on your resume — can you tell me more about that?\"",
-      "\"Sure, happy to. I took a career break for family caregiving. During that time, I stayed proactive — I did some freelance consulting and completed a certification. I'm ready to fully re-enter the workforce now.\"",
+      "\"I noticed a gap of about a year on your resume, can you tell me more about that?\"",
+      "\"Sure, happy to. I took a career break for family caregiving. During that time, I stayed proactive, I did some freelance consulting and completed a certification. I'm ready to fully re-enter the workforce now.\"",
     ],
-    audioFollowup: "Note que a resposta é breve, factual, e termina apontando para frente — sem se alongar em justificativas.",
+    audioFollowup: "Note que a resposta é breve, factual, e termina apontando para frente, sem se alongar em justificativas.",
     writingQuestions: [
       "How would you briefly explain any gaps in your own professional history?",
       "What did you do during that time that shows you stayed proactive?",
@@ -208,17 +208,17 @@ const themes = [
       "What's your honest opinion on how much a gap should matter in hiring decisions?",
     ],
     expressions: [
-      "\"I'd rather be upfront about it.\" — para introduzir uma explicação honesta.",
-      "\"During that time, I...\" — para mostrar produtividade durante o período.",
-      "\"I'm ready to fully re-enter the workforce now.\" — fechamento forte e positivo.",
-      "\"That's a fair question.\" — para acolher a pergunta sem desconforto.",
+      "\"I'd rather be upfront about it.\", para introduzir uma explicação honesta.",
+      "\"During that time, I...\", para mostrar produtividade durante o período.",
+      "\"I'm ready to fully re-enter the workforce now.\", fechamento forte e positivo.",
+      "\"That's a fair question.\", para acolher a pergunta sem desconforto.",
     ],
     exerciseSentences: [
       "I have about an eight-month ______ on my resume.",
       "I took a ______ to care for a family member.",
       "I used part of that time to ______ in data analysis.",
       "I try to just ______ it rather than avoid the topic.",
-      "I stayed ______ during that time — freelancing and learning.",
+      "I stayed ______ during that time, freelancing and learning.",
     ],
     exerciseAnswers: "Gabarito: 1) employment gap   2) career break   3) upskill   4) be candid about   5) proactive",
   },
@@ -242,18 +242,18 @@ const themes = [
       ["takeaway", "aprendizado / conclusão", "The takeaway from that experience shaped how I lead now."],
       ["to reflect on", "refletir sobre", "I've had time to reflect on that experience since then."],
       ["concrete example", "exemplo concreto", "They're looking for a concrete example, not a general statement."],
-      ["to generalize", "generalizar", "Try not to generalize — be specific about one situation."],
+      ["to generalize", "generalizar", "Try not to generalize, be specific about one situation."],
     ],
     readingTitle: "Behavioral Questions Punish Vague Answers",
     readingParagraphs: [
-      "\"Tell me about a time you dealt with conflict\" is not an invitation to describe your general philosophy on conflict. It's a request for one specific, real situation — and answers that generalize instead of narrating tend to fall flat, even when the ideas behind them are good.",
+      "\"Tell me about a time you dealt with conflict\" is not an invitation to describe your general philosophy on conflict. It's a request for one specific, real situation, and answers that generalize instead of narrating tend to fall flat, even when the ideas behind them are good.",
       "The STAR structure works especially well here because it forces specificity: Situation (brief context), Task (what needed to happen), Action (what you specifically did), Result (what happened, ideally quantified or clearly observable). Skipping straight to \"what I usually do\" skips the part that actually answers the question.",
-      "Ending with a genuine takeaway — what you learned or would do differently — often matters as much as the story itself. It shows reflection, not just execution, which is frequently what these questions are really testing.",
+      "Ending with a genuine takeaway, what you learned or would do differently, often matters as much as the story itself. It shows reflection, not just execution, which is frequently what these questions are really testing.",
     ],
     audioFile: "audio/tema-44-behavioral-interview-questions.mp3",
     audioScript: [
       "\"Tell me about a time you had to manage a conflict on your team.\"",
-      "\"Sure — there was a situation where two team members disagreed on approach for weeks. I sat down with each of them separately first, then together, to find the root cause. As a result, we agreed on a hybrid approach, and the takeaway for me was to address tension earlier next time.\"",
+      "\"Sure, there was a situation where two team members disagreed on approach for weeks. I sat down with each of them separately first, then together, to find the root cause. As a result, we agreed on a hybrid approach, and the takeaway for me was to address tension earlier next time.\"",
     ],
     audioFollowup: "Note a estrutura STAR completa, terminando com um aprendizado genuíno (\"the takeaway for me was...\").",
     writingQuestions: [
@@ -282,10 +282,10 @@ const themes = [
       "Tell me about a time you took initiative without being asked.",
     ],
     expressions: [
-      "\"There was a situation where...\" — abertura clássica de resposta STAR.",
-      "\"The way I handled it was...\" — para introduzir a ação central.",
-      "\"As a result, we...\" — para conectar ação a resultado.",
-      "\"What I learned from that was...\" — para fechar com um takeaway claro.",
+      "\"There was a situation where...\", abertura clássica de resposta STAR.",
+      "\"The way I handled it was...\", para introduzir a ação central.",
+      "\"As a result, we...\", para conectar ação a resultado.",
+      "\"What I learned from that was...\", para fechar com um takeaway claro.",
     ],
     exerciseSentences: [
       "Behavioral questions always start with \"tell me about a ______...\"",
@@ -320,16 +320,16 @@ const themes = [
     ],
     readingTitle: "The Questions You Ask Are Also Being Evaluated",
     readingParagraphs: [
-      "Candidates often treat \"do you have any questions?\" as a formality to survive, asking something generic like \"what's the culture like?\" In reality, this moment is one of the few in an interview where you're fully in control of the topic — and interviewers notice.",
+      "Candidates often treat \"do you have any questions?\" as a formality to survive, asking something generic like \"what's the culture like?\" In reality, this moment is one of the few in an interview where you're fully in control of the topic, and interviewers notice.",
       "Insightful questions tend to probe for real information: \"What does success look like in this role after six months?\" or \"How does the team typically handle disagreement on priorities?\" These reveal more than surface-level culture questions, and they subtly signal that you're thinking seriously about the fit, not just trying to get an offer.",
-      "It's also completely appropriate to gauge for red flags here: a vague or uncomfortable answer to \"how has this role's turnover looked recently?\" tells you something real. Asking sharp questions isn't aggressive — it shows you're evaluating the job as seriously as they're evaluating you.",
+      "It's also completely appropriate to gauge for red flags here: a vague or uncomfortable answer to \"how has this role's turnover looked recently?\" tells you something real. Asking sharp questions isn't aggressive, it shows you're evaluating the job as seriously as they're evaluating you.",
     ],
     audioFile: "audio/tema-45-asking-smart-questions.mp3",
     audioScript: [
       "\"Do you have any questions for us?\"",
-      "\"Yes, actually — what does success look like in this role after the first six months? And separately, how would you describe how the team handles disagreement on priorities?\"",
+      "\"Yes, actually, what does success look like in this role after the first six months? And separately, how would you describe how the team handles disagreement on priorities?\"",
     ],
-    audioFollowup: "Note que as duas perguntas vão além do superficial — uma sobre expectativas concretas, outra sobre dinâmica real de equipe.",
+    audioFollowup: "Note que as duas perguntas vão além do superficial, uma sobre expectativas concretas, outra sobre dinâmica real de equipe.",
     writingQuestions: [
       "Write three smart questions you could ask in your next interview.",
       "What's a question that would help you gauge company culture beyond the surface?",
@@ -342,7 +342,7 @@ const themes = [
       ["What does X look like?", "What does the onboarding process look like for this team?", "Estrutura muito natural para perguntar sobre processos ou expectativas."],
       ["How would you describe...?", "How would you describe the team dynamics right now?", "Convida o entrevistador a dar uma resposta mais pessoal e reveladora."],
     ],
-    grammarTip: "Dica prática: \"What does X look like?\" é uma das perguntas mais versáteis em inglês profissional — funciona para processos, culturas, expectativas e quase qualquer tema abstrato.",
+    grammarTip: "Dica prática: \"What does X look like?\" é uma das perguntas mais versáteis em inglês profissional, funciona para processos, culturas, expectativas e quase qualquer tema abstrato.",
     speakingQuestions: [
       "What questions would you ask an interviewer to really gauge team dynamics?",
       "How would you ask about growth opportunities without sounding overly ambitious?",
@@ -356,10 +356,10 @@ const themes = [
       "How would your questions differ for a startup versus a large established company?",
     ],
     expressions: [
-      "\"What does success look like in this role after six months?\" — pergunta forte e concreta.",
-      "\"How would you describe...?\" — para convidar uma resposta pessoal.",
-      "\"I wanted to get a sense of...\" — para justificar o motivo da pergunta.",
-      "\"That's really helpful context, thank you.\" — para fechar bem após uma resposta.",
+      "\"What does success look like in this role after six months?\", pergunta forte e concreta.",
+      "\"How would you describe...?\", para convidar uma resposta pessoal.",
+      "\"I wanted to get a sense of...\", para justificar o motivo da pergunta.",
+      "\"That's really helpful context, thank you.\", para fechar bem após uma resposta.",
     ],
     exerciseSentences: [
       "This is your chance to ______ a bit and ask questions.",
@@ -394,14 +394,14 @@ const themes = [
     ],
     readingTitle: "Give a Range, Not a Number",
     readingParagraphs: [
-      "\"What are your salary expectations?\" feels like a trap because it seems to demand a single number — one that could either undersell you or price you out. In English, the accepted way to answer without pinning yourself down is to give a researched range: \"Based on my research on the market rate, I'd expect somewhere in the range of X to Y, depending on the full compensation package.\"",
-      "This answer does three things: shows you did your homework, gives flexibility, and reminds the interviewer that base salary isn't the whole picture — benefits, bonus, and equity matter too. It also invites them to share their range first if you'd rather not lead.",
-      "If a number lands below expectations, negotiating calmly rather than accepting or refusing immediately tends to work best: \"I appreciate the offer — would there be flexibility to move closer to X, given my experience with Y?\" Confidence here comes from research, not bravado.",
+      "\"What are your salary expectations?\" feels like a trap because it seems to demand a single number, one that could either undersell you or price you out. In English, the accepted way to answer without pinning yourself down is to give a researched range: \"Based on my research on the market rate, I'd expect somewhere in the range of X to Y, depending on the full compensation package.\"",
+      "This answer does three things: shows you did your homework, gives flexibility, and reminds the interviewer that base salary isn't the whole picture, benefits, bonus, and equity matter too. It also invites them to share their range first if you'd rather not lead.",
+      "If a number lands below expectations, negotiating calmly rather than accepting or refusing immediately tends to work best: \"I appreciate the offer, would there be flexibility to move closer to X, given my experience with Y?\" Confidence here comes from research, not bravado.",
     ],
     audioFile: "audio/tema-46-salary-expectations.mp3",
     audioScript: [
       "\"What are your salary expectations for this role?\"",
-      "\"Based on my research on the market rate, I'd expect somewhere in the range of 9 to 11 thousand, depending on the full compensation package — benefits and bonus included.\"",
+      "\"Based on my research on the market rate, I'd expect somewhere in the range of 9 to 11 thousand, depending on the full compensation package, benefits and bonus included.\"",
     ],
     audioFollowup: "Note que a resposta dá uma faixa, embasada em pesquisa, e menciona explicitamente que o pacote completo importa, não só o salário base.",
     writingQuestions: [
@@ -416,7 +416,7 @@ const themes = [
       ["depending on\n(condição)", "That depends on the full compensation package.", "Usado para condicionar uma resposta a fatores ainda não conhecidos."],
       ["I'd be open to...\n(flexibilidade)", "I'd be open to a lower base if the equity is strong.", "Usado para sinalizar disposição a negociar, sem parecer desesperado."],
     ],
-    grammarTip: "Dica prática: sempre que possível, dê uma faixa (\"somewhere in the range of X to Y\") em vez de um número fixo — isso preserva espaço de negociação sem parecer evasivo.",
+    grammarTip: "Dica prática: sempre que possível, dê uma faixa (\"somewhere in the range of X to Y\") em vez de um número fixo, isso preserva espaço de negociação sem parecer evasivo.",
     speakingQuestions: [
       "How would you answer \"what are your salary expectations\" in an upcoming interview?",
       "What research do you do before entering a salary conversation?",
@@ -430,10 +430,10 @@ const themes = [
       "What advice would you give someone nervous about negotiating their first job offer?",
     ],
     expressions: [
-      "\"Based on my research on the market rate...\" — para embasar sua resposta.",
-      "\"Somewhere in the range of X to Y.\" — para dar flexibilidade sem se comprometer.",
-      "\"That depends on the full package.\" — para lembrar que salário não é tudo.",
-      "\"Would there be flexibility to...?\" — para negociar com educação.",
+      "\"Based on my research on the market rate...\", para embasar sua resposta.",
+      "\"Somewhere in the range of X to Y.\", para dar flexibilidade sem se comprometer.",
+      "\"That depends on the full package.\", para lembrar que salário não é tudo.",
+      "\"Would there be flexibility to...?\", para negociar com educação.",
     ],
     exerciseSentences: [
       "What are your ______ for this role?",
@@ -455,7 +455,7 @@ const themes = [
     vocab: [
       ["to be drawn to", "se sentir atraído(a) por", "I'm genuinely drawn to the mission behind this product."],
       ["alignment (values/mission)", "alinhamento (de valores/missão)", "There's real alignment between my values and the company's."],
-      ["genuine interest", "interesse genuíno", "This isn't just a generic answer — it's genuine interest."],
+      ["genuine interest", "interesse genuíno", "This isn't just a generic answer, it's genuine interest."],
       ["to resonate with", "ressoar com / fazer sentido para", "Your approach to customer support really resonates with me."],
       ["growth potential", "potencial de crescimento", "The growth potential here is part of what excites me."],
       ["to connect the dots", "conectar as ideias", "Let me connect the dots between my background and this role."],
@@ -468,14 +468,14 @@ const themes = [
     ],
     readingTitle: "Generic Answers Are the Easiest to Spot",
     readingParagraphs: [
-      "\"I want to work here because it's a great company with great people\" could be said about almost any company — and interviewers hear it constantly. A compelling answer connects something specific about the company to something specific about you.",
-      "\"What draws me to this role is the ownership over the whole onboarding funnel — in my current job, I only see a slice of it, and I've always wanted to own a problem end to end. That's part of why this stood out compared to other roles I've looked at.\" This shows research, genuine motivation, and a direct comparison to the current situation.",
+      "\"I want to work here because it's a great company with great people\" could be said about almost any company, and interviewers hear it constantly. A compelling answer connects something specific about the company to something specific about you.",
+      "\"What draws me to this role is the ownership over the whole onboarding funnel, in my current job, I only see a slice of it, and I've always wanted to own a problem end to end. That's part of why this stood out compared to other roles I've looked at.\" This shows research, genuine motivation, and a direct comparison to the current situation.",
       "It also helps to be specific about growth potential and mission alignment rather than generic enthusiasm: naming an actual product decision, value, or approach the company took that genuinely resonated with you is far more convincing than \"I love the culture.\"",
     ],
     audioFile: "audio/tema-47-why-you-want-this-job.mp3",
     audioScript: [
       "\"Why do you want to work here specifically?\"",
-      "\"Honestly, what draws me to this role is the ownership over the full onboarding funnel — unlike my current role, where I only see a slice of it. Your recent shift toward async-first support also really resonates with how I like to work.\"",
+      "\"Honestly, what draws me to this role is the ownership over the full onboarding funnel, unlike my current role, where I only see a slice of it. Your recent shift toward async-first support also really resonates with how I like to work.\"",
     ],
     audioFollowup: "Note que a resposta cita algo específico da empresa (async-first support) em vez de elogios genéricos.",
     writingQuestions: [
@@ -490,7 +490,7 @@ const themes = [
       ["Unlike my current role, ...\n(comparação)", "Unlike my current role, this position offers end-to-end ownership.", "Usado para comparar diretamente a vaga atual com a oportunidade em questão."],
       ["The reason I'm excited about this is...\n+ gerúndio", "The reason I'm excited about this is being able to own a problem fully.", "Introduz a motivação central de forma pessoal e específica."],
     ],
-    grammarTip: "Dica prática: use \"unlike my current role...\" para criar contraste específico — isso imediatamente torna a resposta mais concreta do que um elogio genérico à empresa.",
+    grammarTip: "Dica prática: use \"unlike my current role...\" para criar contraste específico, isso imediatamente torna a resposta mais concreta do que um elogio genérico à empresa.",
     speakingQuestions: [
       "Why do you want this specific job, beyond generic reasons like \"good culture\"?",
       "How does this opportunity compare to what you have in your current role?",
@@ -504,10 +504,10 @@ const themes = [
       "How do you know if there's genuine cultural fit before accepting an offer?",
     ],
     expressions: [
-      "\"What draws me to this role is...\" — abertura específica e direta.",
-      "\"Unlike my current role, ...\" — para criar contraste concreto.",
-      "\"That really resonates with how I like to work.\" — para mostrar alinhamento genuíno.",
-      "\"That's part of why this stood out to me.\" — fechamento natural e convincente.",
+      "\"What draws me to this role is...\", abertura específica e direta.",
+      "\"Unlike my current role, ...\", para criar contraste concreto.",
+      "\"That really resonates with how I like to work.\", para mostrar alinhamento genuíno.",
+      "\"That's part of why this stood out to me.\", fechamento natural e convincente.",
     ],
     exerciseSentences: [
       "I'm genuinely ______ the mission behind this product.",
@@ -525,7 +525,7 @@ const themes = [
     titleEn: "Following Up After an Interview",
     titlePt: "Dando seguimento após uma entrevista",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "Fechando o Bloco 6: a mensagem de agradecimento e os follow-ups depois de uma entrevista têm uma linguagem própria em inglês — curta, específica, e sem soar ansiosa.",
+    intro: "Fechando o Bloco 6: a mensagem de agradecimento e os follow-ups depois de uma entrevista têm uma linguagem própria em inglês, curta, específica, e sem soar ansiosa.",
     vocab: [
       ["thank-you note", "mensagem de agradecimento", "I always send a thank-you note within 24 hours."],
       ["to reiterate (interest)", "reiterar (interesse)", "I wanted to reiterate my interest in the role."],
@@ -542,14 +542,14 @@ const themes = [
     ],
     readingTitle: "The Follow-Up Says as Much as the Interview",
     readingParagraphs: [
-      "A short, specific thank-you note after an interview does more work than most candidates realize. \"Thank you for the conversation today — I especially enjoyed hearing about the team's approach to async work, and it reinforced my interest in the role\" references something real, which makes it memorable rather than generic.",
-      "When follow-up silence stretches longer than expected, the English for checking in politely stays light and brief: \"I wanted to check in on the status of the process — happy to provide anything else that would help with a decision.\" This shows continued interest without pressure or impatience.",
+      "A short, specific thank-you note after an interview does more work than most candidates realize. \"Thank you for the conversation today, I especially enjoyed hearing about the team's approach to async work, and it reinforced my interest in the role\" references something real, which makes it memorable rather than generic.",
+      "When follow-up silence stretches longer than expected, the English for checking in politely stays light and brief: \"I wanted to check in on the status of the process, happy to provide anything else that would help with a decision.\" This shows continued interest without pressure or impatience.",
       "If real radio silence continues past a stated timeline, one more graceful follow-up is appropriate, but repeated messages usually do more harm than good. \"I understand these decisions take time\" is a useful phrase for showing patience while still keeping the door open.",
     ],
     audioFile: "audio/tema-48-following-up-after-interview.mp3",
     audioScript: [
-      "\"Hi Sandra, thank you again for the conversation yesterday — I especially enjoyed hearing about the team's roadmap, and it reinforced my interest in the role.\"",
-      "\"Just wanted to check in on next steps whenever it's convenient — happy to provide anything else in the meantime.\"",
+      "\"Hi Sandra, thank you again for the conversation yesterday, I especially enjoyed hearing about the team's roadmap, and it reinforced my interest in the role.\"",
+      "\"Just wanted to check in on next steps whenever it's convenient, happy to provide anything else in the meantime.\"",
     ],
     audioFollowup: "Note que a mensagem menciona um detalhe específico da entrevista antes de perguntar sobre próximos passos, sem soar ansiosa.",
     writingQuestions: [
@@ -564,7 +564,7 @@ const themes = [
       ["just wanted to\n(suavizador)", "I just wanted to check in on the status of the process.", "Suaviza o pedido, deixando o tom leve e não urgente."],
       ["Please let me know if...", "Please let me know if there's anything else I can provide.", "Frase de fechamento educada, que oferece ajuda sem parecer ansiosa."],
     ],
-    grammarTip: "Dica prática: \"I just wanted to...\" é a estrutura perfeita para follow-ups — reduz a formalidade e a pressão da mensagem, mantendo o tom leve.",
+    grammarTip: "Dica prática: \"I just wanted to...\" é a estrutura perfeita para follow-ups, reduz a formalidade e a pressão da mensagem, mantendo o tom leve.",
     speakingQuestions: [
       "How do you usually follow up after an interview that went well?",
       "What specific detail from a recent conversation could make your follow-up memorable?",
@@ -578,10 +578,10 @@ const themes = [
       "How do you close the loop gracefully if you've decided to withdraw from a process?",
     ],
     expressions: [
-      "\"Thank you again for the conversation.\" — abertura padrão e calorosa.",
-      "\"It reinforced my interest in the role.\" — para expressar entusiasmo genuíno.",
-      "\"Just wanted to check in on next steps.\" — follow-up leve e educado.",
-      "\"Happy to provide anything else that would help.\" — para se mostrar disponível sem pressionar.",
+      "\"Thank you again for the conversation.\", abertura padrão e calorosa.",
+      "\"It reinforced my interest in the role.\", para expressar entusiasmo genuíno.",
+      "\"Just wanted to check in on next steps.\", follow-up leve e educado.",
+      "\"Happy to provide anything else that would help.\", para se mostrar disponível sem pressionar.",
     ],
     exerciseSentences: [
       "I always send a ______ within 24 hours.",

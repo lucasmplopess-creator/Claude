@@ -2,40 +2,45 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Tema 99 — Talking About Overcoming Challenges</title>
+<title>Tema 99: Talking About Overcoming Challenges</title>
 <style>
   
   @page {
     size: A4;
-    margin: 2.2cm 2cm 2.4cm 2cm;
-    @top-right { content: "English Speaking Practice — Nação Fluente"; font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
-    @bottom-center { content: "Bloco 13 — Desenvolvimento Pessoal e Mindset   |   Página " counter(page); font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
+    margin: 1.9cm 2cm 2.1cm 2cm;
+    @top-right { content: "English Speaking Practice · Nação Fluente"; font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
+    @bottom-center { content: "Bloco 13 · Desenvolvimento Pessoal e Mindset (Personal Development and Mindset)   |   Página " counter(page); font-size: 7.5pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
   }
   * { box-sizing: border-box; }
-  body { font-family: 'Helvetica', Arial, sans-serif; color: #444444; font-size: 10.5pt; line-height: 1.5; }
-  .cover { background: #1B3B57; color: #fff; padding: 22px 24px; border-radius: 4px; margin-bottom: 14px; }
-  .cover .eyebrow { color: #8fc4ec; font-weight: bold; font-size: 9.5pt; letter-spacing: 0.5px; margin-bottom: 6px; }
-  .cover h1 { font-size: 22pt; margin: 0 0 6px 0; color: #fff; }
-  .cover .subtitle { color: #C9D6E3; font-style: italic; font-size: 12pt; margin: 0; }
-  .meta { margin: 10px 0 14px 0; font-size: 10.5pt; }
+  body { font-family: 'Helvetica', Arial, sans-serif; color: #444444; font-size: 10.5pt; line-height: 1.42; }
+  .cover { background: #1B3B57; color: #fff; padding: 16px 18px; border-radius: 4px; margin-bottom: 10px; display: flex; align-items: center; gap: 16px; }
+  .cover .icon { width: 54px; height: 54px; flex: none; opacity: 0.92; }
+  .cover .eyebrow { color: #8fc4ec; font-weight: bold; font-size: 9pt; letter-spacing: 0.4px; margin-bottom: 4px; }
+  .cover .eyebrow .en { display: block; color: #6f93ad; font-weight: normal; font-style: italic; font-size: 7.5pt; letter-spacing: 0.2px; margin-top: 1px; }
+  .cover h1 { font-size: 19pt; margin: 0 0 3px 0; color: #fff; line-height: 1.12; }
+  .cover .subtitle { color: #C9D6E3; font-style: italic; font-size: 10.5pt; margin: 0; }
+  .meta { margin: 8px 0 10px 0; font-size: 10pt; }
   .meta b { color: #1B3B57; }
-  .intro { margin-bottom: 6px; }
-  h2.step { color: #fff; padding: 8px 12px; font-size: 12.5pt; margin: 22px 0 10px 0; border-radius: 3px; }
-  h2.step .tag { background: rgba(255,255,255,0.22); padding: 2px 8px; border-radius: 3px; font-size: 9.5pt; margin-right: 8px; }
-  table { width: 100%; border-collapse: collapse; margin: 8px 0 14px 0; font-size: 9.8pt; }
-  th { color: #fff; text-align: left; padding: 6px 8px; }
-  td { padding: 6px 8px; border-bottom: 1px solid #E3E9EF; vertical-align: top; }
+  .intro { margin-bottom: 4px; }
+  p { margin: 0 0 8px 0; }
+  h2.step { color: #fff; padding: 6px 10px; font-size: 11.5pt; margin: 16px 0 8px 0; border-radius: 3px; display: flex; align-items: center; }
+  h2.step .tag { background: rgba(255,255,255,0.22); padding: 2px 7px; border-radius: 3px; font-size: 8.5pt; margin-right: 8px; flex: none; }
+  h2.step .stitle { display: flex; flex-direction: column; line-height: 1.18; }
+  h2.step .stitle .en { font-weight: normal; font-style: italic; font-size: 8pt; opacity: 0.82; }
+  table { width: 100%; border-collapse: collapse; margin: 6px 0 10px 0; font-size: 9.5pt; }
+  th { color: #fff; text-align: left; padding: 5px 7px; }
+  td { padding: 5px 7px; border-bottom: 1px solid #E3E9EF; vertical-align: top; }
   .example { font-style: italic; }
-  .notebox { border-radius: 4px; padding: 10px 14px; margin: 10px 0 16px 0; border: 1px solid; }
-  .notebox .title { font-weight: bold; margin-bottom: 6px; }
-  .notebox p { margin: 3px 0; }
-  ol, ul { margin: 6px 0 14px 0; padding-left: 20px; }
-  ol li, ul li { margin-bottom: 7px; }
-  .lines { border-bottom: 1px solid #C9D6E3; height: 22px; margin-bottom: 6px; }
-  .expr-list { list-style: none; padding-left: 0; margin: 6px 0 14px 0; }
-  .expr-list li { margin-bottom: 6px; padding-left: 14px; position: relative; }
-  .gabarito { font-style: italic; color: #1B3B57; margin-top: -6px; }
-  .footer-note { text-align: center; font-weight: bold; color: #1B3B57; margin-top: 18px; font-size: 11pt; }
+  .notebox { border-radius: 4px; padding: 8px 12px; margin: 6px 0 10px 0; border: 1px solid; }
+  .notebox .title { font-weight: bold; margin-bottom: 4px; }
+  .notebox p { margin: 2px 0; }
+  ol, ul { margin: 4px 0 10px 0; padding-left: 19px; }
+  ol li, ul li { margin-bottom: 5px; }
+  .lines { border-bottom: 1px solid #C9D6E3; height: 17px; margin-bottom: 4px; }
+  .expr-list { list-style: none; padding-left: 0; margin: 4px 0 10px 0; }
+  .expr-list li { margin-bottom: 4px; padding-left: 14px; position: relative; }
+  .gabarito { font-style: italic; color: #1B3B57; margin-top: -4px; }
+  .footer-note { text-align: center; font-weight: bold; color: #1B3B57; margin-top: 12px; font-size: 10.5pt; }
 
   .s1 h2, .s1 .tag { background: #2E86C1; }
   .s1 th { background: #2E86C1; }
@@ -72,16 +77,19 @@
 
 <div class="chapter" id="tema-99">
 <div class="cover">
-  <div class="eyebrow">TEMA 99 &nbsp;·&nbsp; BLOCO 13 — DESENVOLVIMENTO PESSOAL E MINDSET</div>
-  <h1>Talking About Overcoming Challenges</h1>
-  <p class="subtitle">Falando sobre superação de desafios</p>
+  <img class="icon" src="file:///home/user/Claude/ebook/assets/icons/block-13.png">
+  <div>
+    <div class="eyebrow">TEMA 99 &nbsp;·&nbsp; BLOCO 13 &nbsp;·&nbsp; DESENVOLVIMENTO PESSOAL E MINDSET<span class="en">THEME 99 · BLOCK 13 · PERSONAL DEVELOPMENT AND MINDSET</span></div>
+    <h1>Talking About Overcoming Challenges</h1>
+    <p class="subtitle">Falando sobre superação de desafios</p>
+  </div>
 </div>
 
 <div class="meta"><b>Tempo estimado:</b> 60–90 minutos, divididos ao longo da semana.</div>
 <p class="intro">Contar uma história de superação em inglês, sem soar nem dramático demais nem superficial, exige a mesma estrutura narrativa vista no Tema 13 (fracasso), agora aplicada a desafios pessoais maiores.</p>
 
 <div class="s1">
-<h2 class="step"><span class="tag">ETAPA 1</span>Vocabulário Contextualizado</h2>
+<h2 class="step "><span class="tag">ETAPA 1</span><span class="stitle"><span class="pt">Vocabulário Contextualizado</span><span class="en">Contextualized Vocabulary</span></span></h2>
 <p>Estas palavras e expressões vão te ajudar a se expressar sobre este tema com mais precisão e naturalidade.</p>
 <table>
 <tr><th>Word / Expression</th><th>Tradução</th><th>Example Sentence</th></tr>
@@ -102,35 +110,35 @@
 </div>
 
 <div class="s2">
-<h2 class="step"><span class="tag">ETAPA 2</span>Leitura com Orientação de Estudo</h2>
+<h2 class="step "><span class="tag">ETAPA 2</span><span class="stitle"><span class="pt">Leitura com Orientação de Estudo</span><span class="en">Guided Reading</span></span></h2>
 <div class="notebox">
   <div class="title">Como ler este texto</div>
-  <p>1) Leia uma vez, rápido, só para captar a ideia geral — sem parar no que não entender.</p><p>2) Leia de novo e grife toda expressão da Etapa 1 que aparecer no texto.</p><p>3) Releia em voz alta, como se você estivesse contando essa história sobre você mesmo.</p>
+  <p>1) Leia uma vez, rápido, só para captar a ideia geral, sem parar no que não entender.</p><p>2) Leia de novo e grife toda expressão da Etapa 1 que aparecer no texto.</p><p>3) Releia em voz alta, como se você estivesse contando essa história sobre você mesmo.</p>
 </div>
 <p><b>"The Turnaround Matters More Than the Struggle"</b></p>
 <p>Stories of overcoming challenges in English tend to spend less time dwelling on the difficulty itself and more on the specific turning point that led to a breakthrough: "the breakthrough came when I finally asked for help" says more than a long description of how hard things were.</p><p>Naming where strength came from also adds depth: "I drew strength from people who'd been through something similar" acknowledges that overcoming a challenge is rarely a purely solo effort, even when the challenge itself was deeply personal.</p><p>It's also fine, and often more powerful, to admit the challenge changed you rather than claiming it made everything better: "I wouldn't wish that period on anyone, but I'm more resilient because of it" holds both truths at once, honestly.</p>
 </div>
 
 <div class="s3">
-<h2 class="step"><span class="tag">ETAPA 3</span>Listening com Suporte em Áudio e Vídeo</h2>
+<h2 class="step "><span class="tag">ETAPA 3</span><span class="stitle"><span class="pt">Listening com Suporte em Áudio e Vídeo</span><span class="en">Guided Listening</span></span></h2>
 <p>Ouça o áudio deste tema (arquivo disponível para download na plataforma: <i>audio/tema-99-overcoming-challenges.mp3</i>) com o roteiro abaixo. Primeiro sem ler, depois acompanhando o texto.</p>
 <div class="notebox">
   <div class="title">Roteiro do áudio (Audio Script)</div>
-  <p>"What's the biggest challenge you've had to overcome?"</p><p>"Honestly, a really difficult period a few years ago — I felt like I'd hit rock bottom at one point. The breakthrough came when I finally asked for help instead of pushing through alone."</p>
+  <p>"What's the biggest challenge you've had to overcome?"</p><p>"Honestly, a really difficult period a few years ago, I felt like I'd hit rock bottom at one point. The breakthrough came when I finally asked for help instead of pushing through alone."</p>
 </div>
 <p>Note que o ponto de virada ("the breakthrough came when...") é o centro da resposta, não apenas a descrição da dificuldade.</p>
 </div>
 
 <div class="s4">
-<h2 class="step"><span class="tag">ETAPA 4</span>Writing como Preparação para a Fala</h2>
-<p>Antes de falar, escreva. Use as perguntas abaixo como guia e escreva de 4 a 6 frases — não precisa ser perfeito, precisa existir no papel primeiro.</p>
+<h2 class="step "><span class="tag">ETAPA 4</span><span class="stitle"><span class="pt">Writing como Preparação para a Fala</span><span class="en">Writing Before Speaking</span></span></h2>
+<p>Antes de falar, escreva. Use as perguntas abaixo como guia e escreva de 4 a 6 frases: não precisa ser perfeito, precisa existir no papel primeiro.</p>
 <ol><li>Describe a real challenge you've overcome, focusing on the turning point.</li><li>Where did you draw strength from during that period?</li><li>What did that challenge teach you that you still carry with you?</li><li>How did you know things had genuinely turned around?</li></ol>
 <p>Espaço para escrever:</p>
-<div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div>
+<div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div>
 </div>
 
 <div class="s5">
-<h2 class="step"><span class="tag">ETAPA 5</span>Gramática de Apoio Aplicada à Conversação</h2>
+<h2 class="step "><span class="tag">ETAPA 5</span><span class="stitle"><span class="pt">Gramática de Apoio Aplicada à Conversação</span><span class="en">Grammar for Conversation</span></span></h2>
 <p>Contar uma história de superação depende do Simple Past para narrativa e de estruturas fixas para nomear o ponto de virada.</p>
 <table>
 <tr><th>Estrutura</th><th>Exemplo (EN)</th><th>Tradução (PT)</th></tr>
@@ -139,33 +147,33 @@
     <tr><td><b>What got me through was...</b></td><td class="example">What got me through was leaning on close friends.</td><td>Estrutura fixa para nomear o que sustentou a pessoa durante o desafio.</td></tr>
     <tr><td><b>Present Perfect</b><br>(impacto duradouro)</td><td class="example">I've become a lot more resilient because of it.</td><td>Usado para conectar um evento passado a uma mudança que dura até hoje.</td></tr>
 </table>
-<p>Dica prática: "what got me through was..." é uma estrutura poderosa e muito natural para nomear a fonte de força durante um desafio — funciona tanto para pessoas quanto para hábitos ou crenças.</p>
+<p>Dica prática: "what got me through was..." é uma estrutura poderosa e muito natural para nomear a fonte de força durante um desafio, funciona tanto para pessoas quanto para hábitos ou crenças.</p>
 </div>
 
 <div class="s6">
-<h2 class="step"><span class="tag">ETAPA 6</span>Speaking — Perguntas Abertas</h2>
-<p>Responda em voz alta, gravando se possível. Não vale responder em uma frase só — use o que você escreveu na Etapa 4 como base, mas fale livremente.</p>
+<h2 class="step "><span class="tag">ETAPA 6</span><span class="stitle"><span class="pt">Speaking: Perguntas Abertas</span><span class="en">Open-Ended Speaking</span></span></h2>
+<p>Responda em voz alta, gravando se possível. Não vale responder em uma frase só: use o que você escreveu na Etapa 4 como base, mas fale livremente.</p>
 <ol><li>Describe a real challenge you've overcome, focusing on the turning point.</li><li>Where did you draw strength from during that difficult period?</li><li>What did that challenge teach you that you still carry with you today?</li><li>How did you know things had genuinely turned around for you?</li><li>What's the difference between pushing through and actually overcoming something?</li><li>How has a past challenge changed how you handle adversity now?</li><li>What's a setback that, in hindsight, led somewhere better than you expected?</li><li>How do you support someone else going through something you've already overcome?</li><li>What role has resilience played in your life story, in your own words?</li><li>What would you tell someone currently in the middle of a hard challenge?</li></ol>
 <p><b>Expressões úteis para esta conversa:</b></p>
-<ul class="expr-list"><li>"I felt like I'd hit rock bottom at one point." — para descrever o momento mais difícil.</li><li>"The breakthrough came when..." — para nomear o ponto de virada.</li><li>"What got me through was..." — para nomear a fonte de força.</li><li>"I'm more resilient because of it." — para fechar com um aprendizado duradouro.</li></ul>
+<ul class="expr-list"><li>"I felt like I'd hit rock bottom at one point.", para descrever o momento mais difícil.</li><li>"The breakthrough came when...", para nomear o ponto de virada.</li><li>"What got me through was...", para nomear a fonte de força.</li><li>"I'm more resilient because of it.", para fechar com um aprendizado duradouro.</li></ul>
 </div>
 
 <div class="sx">
-<h2 class="step"><span class="tag">EXERCÍCIO</span>Complete com a Palavra Certa</h2>
+<h2 class="step "><span class="tag">EXERCÍCIO</span><span class="stitle"><span class="pt">Complete com a Palavra Certa</span><span class="en">Vocabulary Check</span></span></h2>
 <p>Complete cada frase com uma palavra ou expressão da Etapa 1. Gabarito ao final desta seção.</p>
 <ol><li>That was probably the biggest ______ of my adult life.</li><li>There was one ______ after another that year.</li><li>I felt like I'd ______ at one point.</li><li>The ______ came when I finally asked for help.</li><li>I drew ______ people who'd been through something similar.</li></ol>
 <p class="gabarito">Gabarito: 1) challenge   2) obstacle   3) hit rock bottom   4) breakthrough   5) strength from</p>
 </div>
 
 <div class="s7">
-<h2 class="step"><span class="tag">ETAPA 7</span>Autoavaliação de Performance</h2>
+<h2 class="step "><span class="tag">ETAPA 7</span><span class="stitle"><span class="pt">Autoavaliação de Performance</span><span class="en">Self-Assessment</span></span></h2>
 <p>Antes de marcar este tema como concluído, avalie honestamente como foi sua prática.</p>
 <table>
-<tr><th>Critério</th><th>Como foi?</th><th>Nota (1–5)</th></tr>
+<tr><th>Critério</th><th>Como foi?</th><th>Nota (1-5)</th></tr>
 <tr><td>Consegui usar o vocabulário novo sem parar para pensar</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Entendi o áudio/vídeo sem depender da transcrição</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Escrevi minhas respostas antes de falar</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Apliquei a estrutura gramatical da etapa 5 corretamente</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Sustentei minhas respostas por mais de 2 frases</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Me senti confiante ao falar sobre este tema</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 </table>
 <p>O que travou mais nesta conversa? O que você quer treinar de novo antes de seguir para o próximo tema?</p>
-<div class="lines"></div><div class="lines"></div><div class="lines"></div>
+<div class="lines"></div><div class="lines"></div>
 </div>
 
 <p class="footer-note">Marque este tema como concluído no seu Painel de Evolução e siga para o Tema 100.</p>

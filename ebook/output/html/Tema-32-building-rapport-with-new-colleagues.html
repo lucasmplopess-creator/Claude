@@ -2,40 +2,45 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Tema 32 — Building Rapport with New Colleagues</title>
+<title>Tema 32: Building Rapport with New Colleagues</title>
 <style>
   
   @page {
     size: A4;
-    margin: 2.2cm 2cm 2.4cm 2cm;
-    @top-right { content: "English Speaking Practice — Nação Fluente"; font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
-    @bottom-center { content: "Bloco 4 — Networking e Relacionamentos Profissionais   |   Página " counter(page); font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
+    margin: 1.9cm 2cm 2.1cm 2cm;
+    @top-right { content: "English Speaking Practice · Nação Fluente"; font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
+    @bottom-center { content: "Bloco 4 · Networking e Relacionamentos Profissionais (Networking and Professional Relationships)   |   Página " counter(page); font-size: 7.5pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
   }
   * { box-sizing: border-box; }
-  body { font-family: 'Helvetica', Arial, sans-serif; color: #444444; font-size: 10.5pt; line-height: 1.5; }
-  .cover { background: #1B3B57; color: #fff; padding: 22px 24px; border-radius: 4px; margin-bottom: 14px; }
-  .cover .eyebrow { color: #8fc4ec; font-weight: bold; font-size: 9.5pt; letter-spacing: 0.5px; margin-bottom: 6px; }
-  .cover h1 { font-size: 22pt; margin: 0 0 6px 0; color: #fff; }
-  .cover .subtitle { color: #C9D6E3; font-style: italic; font-size: 12pt; margin: 0; }
-  .meta { margin: 10px 0 14px 0; font-size: 10.5pt; }
+  body { font-family: 'Helvetica', Arial, sans-serif; color: #444444; font-size: 10.5pt; line-height: 1.42; }
+  .cover { background: #1B3B57; color: #fff; padding: 16px 18px; border-radius: 4px; margin-bottom: 10px; display: flex; align-items: center; gap: 16px; }
+  .cover .icon { width: 54px; height: 54px; flex: none; opacity: 0.92; }
+  .cover .eyebrow { color: #8fc4ec; font-weight: bold; font-size: 9pt; letter-spacing: 0.4px; margin-bottom: 4px; }
+  .cover .eyebrow .en { display: block; color: #6f93ad; font-weight: normal; font-style: italic; font-size: 7.5pt; letter-spacing: 0.2px; margin-top: 1px; }
+  .cover h1 { font-size: 19pt; margin: 0 0 3px 0; color: #fff; line-height: 1.12; }
+  .cover .subtitle { color: #C9D6E3; font-style: italic; font-size: 10.5pt; margin: 0; }
+  .meta { margin: 8px 0 10px 0; font-size: 10pt; }
   .meta b { color: #1B3B57; }
-  .intro { margin-bottom: 6px; }
-  h2.step { color: #fff; padding: 8px 12px; font-size: 12.5pt; margin: 22px 0 10px 0; border-radius: 3px; }
-  h2.step .tag { background: rgba(255,255,255,0.22); padding: 2px 8px; border-radius: 3px; font-size: 9.5pt; margin-right: 8px; }
-  table { width: 100%; border-collapse: collapse; margin: 8px 0 14px 0; font-size: 9.8pt; }
-  th { color: #fff; text-align: left; padding: 6px 8px; }
-  td { padding: 6px 8px; border-bottom: 1px solid #E3E9EF; vertical-align: top; }
+  .intro { margin-bottom: 4px; }
+  p { margin: 0 0 8px 0; }
+  h2.step { color: #fff; padding: 6px 10px; font-size: 11.5pt; margin: 16px 0 8px 0; border-radius: 3px; display: flex; align-items: center; }
+  h2.step .tag { background: rgba(255,255,255,0.22); padding: 2px 7px; border-radius: 3px; font-size: 8.5pt; margin-right: 8px; flex: none; }
+  h2.step .stitle { display: flex; flex-direction: column; line-height: 1.18; }
+  h2.step .stitle .en { font-weight: normal; font-style: italic; font-size: 8pt; opacity: 0.82; }
+  table { width: 100%; border-collapse: collapse; margin: 6px 0 10px 0; font-size: 9.5pt; }
+  th { color: #fff; text-align: left; padding: 5px 7px; }
+  td { padding: 5px 7px; border-bottom: 1px solid #E3E9EF; vertical-align: top; }
   .example { font-style: italic; }
-  .notebox { border-radius: 4px; padding: 10px 14px; margin: 10px 0 16px 0; border: 1px solid; }
-  .notebox .title { font-weight: bold; margin-bottom: 6px; }
-  .notebox p { margin: 3px 0; }
-  ol, ul { margin: 6px 0 14px 0; padding-left: 20px; }
-  ol li, ul li { margin-bottom: 7px; }
-  .lines { border-bottom: 1px solid #C9D6E3; height: 22px; margin-bottom: 6px; }
-  .expr-list { list-style: none; padding-left: 0; margin: 6px 0 14px 0; }
-  .expr-list li { margin-bottom: 6px; padding-left: 14px; position: relative; }
-  .gabarito { font-style: italic; color: #1B3B57; margin-top: -6px; }
-  .footer-note { text-align: center; font-weight: bold; color: #1B3B57; margin-top: 18px; font-size: 11pt; }
+  .notebox { border-radius: 4px; padding: 8px 12px; margin: 6px 0 10px 0; border: 1px solid; }
+  .notebox .title { font-weight: bold; margin-bottom: 4px; }
+  .notebox p { margin: 2px 0; }
+  ol, ul { margin: 4px 0 10px 0; padding-left: 19px; }
+  ol li, ul li { margin-bottom: 5px; }
+  .lines { border-bottom: 1px solid #C9D6E3; height: 17px; margin-bottom: 4px; }
+  .expr-list { list-style: none; padding-left: 0; margin: 4px 0 10px 0; }
+  .expr-list li { margin-bottom: 4px; padding-left: 14px; position: relative; }
+  .gabarito { font-style: italic; color: #1B3B57; margin-top: -4px; }
+  .footer-note { text-align: center; font-weight: bold; color: #1B3B57; margin-top: 12px; font-size: 10.5pt; }
 
   .s1 h2, .s1 .tag { background: #2E86C1; }
   .s1 th { background: #2E86C1; }
@@ -72,16 +77,19 @@
 
 <div class="chapter" id="tema-32">
 <div class="cover">
-  <div class="eyebrow">TEMA 32 &nbsp;·&nbsp; BLOCO 4 — NETWORKING E RELACIONAMENTOS PROFISSIONAIS</div>
-  <h1>Building Rapport with New Colleagues</h1>
-  <p class="subtitle">Criando proximidade com novos colegas</p>
+  <img class="icon" src="file:///home/user/Claude/ebook/assets/icons/block-4.png">
+  <div>
+    <div class="eyebrow">TEMA 32 &nbsp;·&nbsp; BLOCO 4 &nbsp;·&nbsp; NETWORKING E RELACIONAMENTOS PROFISSIONAIS<span class="en">THEME 32 · BLOCK 4 · NETWORKING AND PROFESSIONAL RELATIONSHIPS</span></div>
+    <h1>Building Rapport with New Colleagues</h1>
+    <p class="subtitle">Criando proximidade com novos colegas</p>
+  </div>
 </div>
 
 <div class="meta"><b>Tempo estimado:</b> 60–90 minutos, divididos ao longo da semana.</div>
-<p class="intro">Fechando o Bloco 4: construir rapport com colegas novos é um processo gradual, e falar sobre esse processo em inglês — o desconforto inicial, os pequenos momentos de conexão — é o que fecha este bloco.</p>
+<p class="intro">Fechando o Bloco 4: construir rapport com colegas novos é um processo gradual, e falar sobre esse processo em inglês, o desconforto inicial, os pequenos momentos de conexão, é o que fecha este bloco.</p>
 
 <div class="s1">
-<h2 class="step"><span class="tag">ETAPA 1</span>Vocabulário Contextualizado</h2>
+<h2 class="step "><span class="tag">ETAPA 1</span><span class="stitle"><span class="pt">Vocabulário Contextualizado</span><span class="en">Contextualized Vocabulary</span></span></h2>
 <p>Estas palavras e expressões vão te ajudar a se expressar sobre este tema com mais precisão e naturalidade.</p>
 <table>
 <tr><th>Word / Expression</th><th>Tradução</th><th>Example Sentence</th></tr>
@@ -92,7 +100,7 @@
     <tr><td><b>to fit in</b></td><td>se encaixar</td><td class="example">It took me a while to feel like I fit in with the team.</td></tr>
     <tr><td><b>onboarding</b></td><td>integração / processo de entrada</td><td class="example">Onboarding is a great window to start building relationships.</td></tr>
     <tr><td><b>to feel like an outsider</b></td><td>se sentir de fora</td><td class="example">I felt like an outsider for the first month, honestly.</td></tr>
-    <tr><td><b>to build trust gradually</b></td><td>construir confiança aos poucos</td><td class="example">Trust builds gradually — you can't force it in week one.</td></tr>
+    <tr><td><b>to build trust gradually</b></td><td>construir confiança aos poucos</td><td class="example">Trust builds gradually, you can't force it in week one.</td></tr>
     <tr><td><b>shared experience</b></td><td>experiência compartilhada</td><td class="example">Surviving that chaotic launch together was a shared experience that bonded us.</td></tr>
     <tr><td><b>to bond over</b></td><td>criar conexão por meio de</td><td class="example">We bonded over our shared love of terrible reality TV.</td></tr>
     <tr><td><b>workplace friendship</b></td><td>amizade no trabalho</td><td class="example">Some of my closest workplace friendships started with small talk.</td></tr>
@@ -102,35 +110,35 @@
 </div>
 
 <div class="s2">
-<h2 class="step"><span class="tag">ETAPA 2</span>Leitura com Orientação de Estudo</h2>
+<h2 class="step "><span class="tag">ETAPA 2</span><span class="stitle"><span class="pt">Leitura com Orientação de Estudo</span><span class="en">Guided Reading</span></span></h2>
 <div class="notebox">
   <div class="title">Como ler este texto</div>
-  <p>1) Leia uma vez, rápido, só para captar a ideia geral — sem parar no que não entender.</p><p>2) Leia de novo e grife toda expressão da Etapa 1 que aparecer no texto.</p><p>3) Releia em voz alta, como se você estivesse contando essa história sobre você mesmo.</p>
+  <p>1) Leia uma vez, rápido, só para captar a ideia geral, sem parar no que não entender.</p><p>2) Leia de novo e grife toda expressão da Etapa 1 que aparecer no texto.</p><p>3) Releia em voz alta, como se você estivesse contando essa história sobre você mesmo.</p>
 </div>
 <p><b>"Rapport Isn't Built in One Conversation"</b></p>
-<p>New employees often expect rapport to happen quickly — a good first conversation, and suddenly you belong. In reality, most genuine workplace relationships build gradually, through small, repeated, low-stakes interactions rather than one big bonding moment.</p><p>The English that describes this process reflects that gradual nature: "it took a few weeks to really build rapport," "trust builds gradually," "we didn't really click until we worked on a project together." None of these imply failure — they describe a completely normal timeline.</p><p>It also helps to actively look for small bonding moments rather than waiting for one big connection: a shared interest mentioned in passing, a joke that lands, a shared frustration during a rough week. These small moments, repeated over time, are usually what "hitting it off" actually looks like in practice.</p>
+<p>New employees often expect rapport to happen quickly, a good first conversation, and suddenly you belong. In reality, most genuine workplace relationships build gradually, through small, repeated, low-stakes interactions rather than one big bonding moment.</p><p>The English that describes this process reflects that gradual nature: "it took a few weeks to really build rapport," "trust builds gradually," "we didn't really click until we worked on a project together." None of these imply failure, they describe a completely normal timeline.</p><p>It also helps to actively look for small bonding moments rather than waiting for one big connection: a shared interest mentioned in passing, a joke that lands, a shared frustration during a rough week. These small moments, repeated over time, are usually what "hitting it off" actually looks like in practice.</p>
 </div>
 
 <div class="s3">
-<h2 class="step"><span class="tag">ETAPA 3</span>Listening com Suporte em Áudio e Vídeo</h2>
+<h2 class="step "><span class="tag">ETAPA 3</span><span class="stitle"><span class="pt">Listening com Suporte em Áudio e Vídeo</span><span class="en">Guided Listening</span></span></h2>
 <p>Ouça o áudio deste tema (arquivo disponível para download na plataforma: <i>audio/tema-32-building-rapport.mp3</i>) com o roteiro abaixo. Primeiro sem ler, depois acompanhando o texto.</p>
 <div class="notebox">
   <div class="title">Roteiro do áudio (Audio Script)</div>
-  <p>"How's it going with the new team?"</p><p>"Good, honestly — it took a few weeks to feel like I fit in, but we hit it off once we bonded over how chaotic the onboarding process was. Trust builds gradually, but it's getting there."</p>
+  <p>"How's it going with the new team?"</p><p>"Good, honestly, it took a few weeks to feel like I fit in, but we hit it off once we bonded over how chaotic the onboarding process was. Trust builds gradually, but it's getting there."</p>
 </div>
 <p>Note que a resposta normaliza um processo gradual ("it took a few weeks") em vez de esperar conexão instantânea.</p>
 </div>
 
 <div class="s4">
-<h2 class="step"><span class="tag">ETAPA 4</span>Writing como Preparação para a Fala</h2>
-<p>Antes de falar, escreva. Use as perguntas abaixo como guia e escreva de 4 a 6 frases — não precisa ser perfeito, precisa existir no papel primeiro.</p>
+<h2 class="step "><span class="tag">ETAPA 4</span><span class="stitle"><span class="pt">Writing como Preparação para a Fala</span><span class="en">Writing Before Speaking</span></span></h2>
+<p>Antes de falar, escreva. Use as perguntas abaixo como guia e escreva de 4 a 6 frases: não precisa ser perfeito, precisa existir no papel primeiro.</p>
 <ol><li>Describe how you've built rapport with a team you joined recently (or in the past).</li><li>What's a shared experience that bonded you with a colleague unexpectedly?</li><li>How long does it usually take for you to feel like you fit in with a new team?</li><li>What's a small moment that helped you build trust with someone at work?</li></ol>
 <p>Espaço para escrever:</p>
-<div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div>
+<div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div>
 </div>
 
 <div class="s5">
-<h2 class="step"><span class="tag">ETAPA 5</span>Gramática de Apoio Aplicada à Conversação</h2>
+<h2 class="step "><span class="tag">ETAPA 5</span><span class="stitle"><span class="pt">Gramática de Apoio Aplicada à Conversação</span><span class="en">Grammar for Conversation</span></span></h2>
 <p>Descrever um processo gradual de construção de relacionamento exige estruturas específicas de tempo e progresso contínuo.</p>
 <table>
 <tr><th>Estrutura</th><th>Exemplo (EN)</th><th>Tradução (PT)</th></tr>
@@ -139,33 +147,33 @@
     <tr><td><b>Present Continuous</b><br>(ajuste em andamento)</td><td class="example">I'm still getting to know everyone.</td><td>Usado para descrever um processo de adaptação que ainda está acontecendo.</td></tr>
     <tr><td><b>to bond over + substantivo/gerúndio</b></td><td class="example">We bonded over our shared love of hiking.</td><td>Usado para descrever o que especificamente criou conexão entre duas pessoas.</td></tr>
 </table>
-<p>Dica prática: depois de "bond over", use um substantivo ou verbo com -ing ("bond over hiking", "bond over complaining about Mondays") — nunca o infinitivo com "to".</p>
+<p>Dica prática: depois de "bond over", use um substantivo ou verbo com -ing ("bond over hiking", "bond over complaining about Mondays"), nunca o infinitivo com "to".</p>
 </div>
 
 <div class="s6">
-<h2 class="step"><span class="tag">ETAPA 6</span>Speaking — Perguntas Abertas</h2>
-<p>Responda em voz alta, gravando se possível. Não vale responder em uma frase só — use o que você escreveu na Etapa 4 como base, mas fale livremente.</p>
+<h2 class="step "><span class="tag">ETAPA 6</span><span class="stitle"><span class="pt">Speaking: Perguntas Abertas</span><span class="en">Open-Ended Speaking</span></span></h2>
+<p>Responda em voz alta, gravando se possível. Não vale responder em uma frase só: use o que você escreveu na Etapa 4 como base, mas fale livremente.</p>
 <ol><li>How do you typically build rapport when joining a new team?</li><li>Describe a shared experience that unexpectedly bonded you with a colleague.</li><li>How long does it usually take you to feel like you truly fit in somewhere new?</li><li>What's a small moment that helped build trust between you and a new colleague?</li><li>How do you handle feeling like an outsider during the first weeks at a new job?</li><li>What common interests have helped you connect with coworkers in the past?</li><li>How is building rapport with a remote team different from doing it in person?</li><li>What's a workplace friendship that started in an unexpected way?</li><li>How do you balance being friendly with still needing to earn credibility on a new team?</li><li>What advice would you give someone starting a new job about building relationships?</li></ol>
 <p><b>Expressões úteis para esta conversa:</b></p>
-<ul class="expr-list"><li>"We really hit it off." — para descrever uma conexão rápida e genuína.</li><li>"It took a while, but we got there." — para normalizar um processo gradual.</li><li>"We bonded over..." — para nomear o que criou a conexão.</li><li>"I'm still getting to know everyone." — resposta honesta sobre adaptação em andamento.</li></ul>
+<ul class="expr-list"><li>"We really hit it off.", para descrever uma conexão rápida e genuína.</li><li>"It took a while, but we got there.", para normalizar um processo gradual.</li><li>"We bonded over...", para nomear o que criou a conexão.</li><li>"I'm still getting to know everyone.", resposta honesta sobre adaptação em andamento.</li></ul>
 </div>
 
 <div class="sx">
-<h2 class="step"><span class="tag">EXERCÍCIO</span>Complete com a Palavra Certa</h2>
+<h2 class="step "><span class="tag">EXERCÍCIO</span><span class="stitle"><span class="pt">Complete com a Palavra Certa</span><span class="en">Vocabulary Check</span></span></h2>
 <p>Complete cada frase com uma palavra ou expressão da Etapa 1. Gabarito ao final desta seção.</p>
 <ol><li>We ______ immediately during onboarding.</li><li>It took me a while to feel like I ______ with the team.</li><li>I felt like ______ for the first month, honestly.</li><li>Surviving that chaotic launch together was a ______ that bonded us.</li><li>I felt like I had to ______ on such an experienced team.</li></ol>
 <p class="gabarito">Gabarito: 1) hit it off   2) fit in   3) an outsider   4) shared experience   5) earn my place</p>
 </div>
 
 <div class="s7">
-<h2 class="step"><span class="tag">ETAPA 7</span>Autoavaliação de Performance</h2>
+<h2 class="step "><span class="tag">ETAPA 7</span><span class="stitle"><span class="pt">Autoavaliação de Performance</span><span class="en">Self-Assessment</span></span></h2>
 <p>Antes de marcar este tema como concluído, avalie honestamente como foi sua prática.</p>
 <table>
-<tr><th>Critério</th><th>Como foi?</th><th>Nota (1–5)</th></tr>
+<tr><th>Critério</th><th>Como foi?</th><th>Nota (1-5)</th></tr>
 <tr><td>Consegui usar o vocabulário novo sem parar para pensar</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Entendi o áudio/vídeo sem depender da transcrição</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Escrevi minhas respostas antes de falar</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Apliquei a estrutura gramatical da etapa 5 corretamente</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Sustentei minhas respostas por mais de 2 frases</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Me senti confiante ao falar sobre este tema</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 </table>
 <p>O que travou mais nesta conversa? O que você quer treinar de novo antes de seguir para o próximo tema?</p>
-<div class="lines"></div><div class="lines"></div><div class="lines"></div>
+<div class="lines"></div><div class="lines"></div>
 </div>
 
 <p class="footer-note">Marque este tema como concluído no seu Painel de Evolução e siga para o Tema 33.</p>

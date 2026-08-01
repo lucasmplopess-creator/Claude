@@ -1,4 +1,4 @@
-// Bloco 8 — Comunicação e Apresentações (Temas 57–64)
+// Bloco 8, Comunicação e Apresentações (Temas 57–64)
 const themes = [
   {
     num: 57,
@@ -24,16 +24,16 @@ const themes = [
     ],
     readingTitle: "Structure Is What Makes Nervousness Invisible",
     readingParagraphs: [
-      "A short presentation with a clear structure hides nervousness better than perfect grammar does. When the audience can predict where you're going next — opening, three points, close — small verbal stumbles barely register, because the shape of the talk carries it.",
-      "A reliable structure for a short presentation in English: a hook (why this matters), a signpost (\"I'll cover three things today\"), the content itself with clear transitions (\"moving on to...\", \"that brings me to...\"), and a close that repeats the one key message. Nothing complicated — just consistent.",
-      "The most common mistake isn't a lack of content, it's a lack of signposting: jumping between points without telling the audience you're moving on. \"That covers the first point — now let's look at the second\" costs one sentence and saves the audience from getting lost.",
+      "A short presentation with a clear structure hides nervousness better than perfect grammar does. When the audience can predict where you're going next, opening, three points, close, small verbal stumbles barely register, because the shape of the talk carries it.",
+      "A reliable structure for a short presentation in English: a hook (why this matters), a signpost (\"I'll cover three things today\"), the content itself with clear transitions (\"moving on to...\", \"that brings me to...\"), and a close that repeats the one key message. Nothing complicated, just consistent.",
+      "The most common mistake isn't a lack of content, it's a lack of signposting: jumping between points without telling the audience you're moving on. \"That covers the first point, now let's look at the second\" costs one sentence and saves the audience from getting lost.",
     ],
     audioFile: "audio/tema-57-structuring-a-presentation.mp3",
     audioScript: [
       "\"Today I'll cover three things: what changed, why it matters, and what we're doing next.\"",
-      "\"That covers what changed — now let's move on to why it actually matters for the team. And to wrap up, here's the one thing I want you to remember.\"",
+      "\"That covers what changed, now let's move on to why it actually matters for the team. And to wrap up, here's the one thing I want you to remember.\"",
     ],
-    audioFollowup: "Note o uso constante de signposting (\"that covers X, now let's move on to Y\") — isso guia o público sem esforço extra.",
+    audioFollowup: "Note o uso constante de signposting (\"that covers X, now let's move on to Y\"), isso guia o público sem esforço extra.",
     writingQuestions: [
       "Outline a 5-minute presentation you might need to give, using hook-body-close.",
       "What's the one key message your presentation should leave people with?",
@@ -46,7 +46,7 @@ const themes = [
       ["By the end of this, you'll...\n(expectativa)", "By the end of this, you'll understand our new process.", "Usado na abertura para definir a expectativa do que a audiência vai levar."],
       ["Let's + verbo\n(transição/signpost)", "Let's move on to the second point.", "Frase funcional para sinalizar transição entre seções da apresentação."],
     ],
-    grammarTip: "Dica prática: use \"that covers X, now let's move on to Y\" toda vez que mudar de tópico — é uma fórmula simples que substitui a necessidade de transições elaboradas.",
+    grammarTip: "Dica prática: use \"that covers X, now let's move on to Y\" toda vez que mudar de tópico, é uma fórmula simples que substitui a necessidade de transições elaboradas.",
     speakingQuestions: [
       "How do you usually structure a short presentation from start to finish?",
       "What's an opening hook you could use for a presentation you might give soon?",
@@ -60,10 +60,10 @@ const themes = [
       "What's a call to action you'd want to end a presentation with?",
     ],
     expressions: [
-      "\"Today I'll cover three things.\" — abertura clássica com estrutura.",
-      "\"That covers X, now let's move on to Y.\" — transição funcional.",
-      "\"To wrap up, here's the one thing I want you to remember.\" — fechamento forte.",
-      "\"That brings me to my next point.\" — transição suave e natural.",
+      "\"Today I'll cover three things.\", abertura clássica com estrutura.",
+      "\"That covers X, now let's move on to Y.\", transição funcional.",
+      "\"To wrap up, here's the one thing I want you to remember.\", fechamento forte.",
+      "\"That brings me to my next point.\", transição suave e natural.",
     ],
     exerciseSentences: [
       "A clear ______ matters more than fancy vocabulary.",
@@ -81,7 +81,7 @@ const themes = [
     titleEn: "Explaining Complex Ideas Simply",
     titlePt: "Explicando ideias complexas de forma simples",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "Simplificar uma ideia complexa em inglês — sem soar condescendente nem perder precisão — depende de analogias e de uma estrutura específica de linguagem simples.",
+    intro: "Simplificar uma ideia complexa em inglês, sem soar condescendente nem perder precisão, depende de analogias e de uma estrutura específica de linguagem simples.",
     vocab: [
       ["to simplify", "simplificar", "I try to simplify without losing the important nuance."],
       ["analogy", "analogia", "A good analogy makes a technical idea click instantly."],
@@ -98,16 +98,16 @@ const themes = [
     ],
     readingTitle: "A Good Analogy Does the Heavy Lifting",
     readingParagraphs: [
-      "Explaining something technical in a second language is doubly hard — you're translating both the concept and the words. The shortcut that works in English, regardless of your vocabulary level, is analogy: connecting an unfamiliar idea to something the listener already understands.",
-      "\"Think of an API like a waiter in a restaurant — you don't go into the kitchen yourself, you tell the waiter what you want, and they bring it back.\" This explains a technical concept with zero jargon, using something completely familiar.",
-      "The risk on the other end is oversimplifying to the point of being wrong. The goal isn't to remove all complexity — it's to distill it down to what actually matters for this audience, in this moment, and be ready to add more depth if someone asks.",
+      "Explaining something technical in a second language is doubly hard, you're translating both the concept and the words. The shortcut that works in English, regardless of your vocabulary level, is analogy: connecting an unfamiliar idea to something the listener already understands.",
+      "\"Think of an API like a waiter in a restaurant, you don't go into the kitchen yourself, you tell the waiter what you want, and they bring it back.\" This explains a technical concept with zero jargon, using something completely familiar.",
+      "The risk on the other end is oversimplifying to the point of being wrong. The goal isn't to remove all complexity, it's to distill it down to what actually matters for this audience, in this moment, and be ready to add more depth if someone asks.",
     ],
     audioFile: "audio/tema-58-explaining-complex-ideas.mp3",
     audioScript: [
       "\"Can you explain what a firewall actually does?\"",
-      "\"Sure — think of it like a security guard at a building entrance. It checks everyone trying to come in and decides who's allowed and who isn't. In simple terms, it filters traffic based on rules you set.\"",
+      "\"Sure, think of it like a security guard at a building entrance. It checks everyone trying to come in and decides who's allowed and who isn't. In simple terms, it filters traffic based on rules you set.\"",
     ],
-    audioFollowup: "Note a estrutura \"think of it like...\" seguida de \"in simple terms\" — uma combinação poderosa para simplificar.",
+    audioFollowup: "Note a estrutura \"think of it like...\" seguida de \"in simple terms\", uma combinação poderosa para simplificar.",
     writingQuestions: [
       "Pick a complex idea from your field and explain it using a simple analogy.",
       "How do you adjust technical depth depending on who's listening?",
@@ -120,7 +120,7 @@ const themes = [
       ["In simple terms, ...", "In simple terms, it filters traffic based on rules.", "Introduz uma explicação simplificada, sinalizando que o jargão foi removido."],
       ["Put simply, ...", "Put simply, this tool saves time by automating repetitive tasks.", "Alternativa a \"in simple terms\", igualmente comum para simplificar uma ideia."],
     ],
-    grammarTip: "Dica prática: sempre que usar uma analogia, feche com \"in simple terms\" ou \"put simply\" para reforçar a simplificação — a combinação das duas estruturas é muito eficaz.",
+    grammarTip: "Dica prática: sempre que usar uma analogia, feche com \"in simple terms\" ou \"put simply\" para reforçar a simplificação, a combinação das duas estruturas é muito eficaz.",
     speakingQuestions: [
       "Explain a complex idea from your field using a simple analogy.",
       "How do you adjust your explanation depending on how technical the audience is?",
@@ -134,10 +134,10 @@ const themes = [
       "What's the risk of using too many analogies in a single explanation?",
     ],
     expressions: [
-      "\"Think of it like...\" — para introduzir uma analogia.",
-      "\"In simple terms, ...\" — para sinalizar uma explicação simplificada.",
-      "\"Put simply, ...\" — alternativa direta e eficaz.",
-      "\"Does that make sense so far?\" — para checar compreensão no meio da explicação.",
+      "\"Think of it like...\", para introduzir uma analogia.",
+      "\"In simple terms, ...\", para sinalizar uma explicação simplificada.",
+      "\"Put simply, ...\", alternativa direta e eficaz.",
+      "\"Does that make sense so far?\", para checar compreensão no meio da explicação.",
     ],
     exerciseSentences: [
       "I try to ______ without losing the important nuance.",
@@ -155,7 +155,7 @@ const themes = [
     titleEn: "Handling Questions After a Presentation",
     titlePt: "Lidando com perguntas após uma apresentação",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "A sessão de perguntas é onde muitas apresentações bem preparadas desmoronam — porque não há roteiro. Este tema treina a linguagem para lidar com qualquer pergunta com confiança.",
+    intro: "A sessão de perguntas é onde muitas apresentações bem preparadas desmoronam, porque não há roteiro. Este tema treina a linguagem para lidar com qualquer pergunta com confiança.",
     vocab: [
       ["Q&A", "sessão de perguntas e respostas", "We'll leave ten minutes for Q&A at the end."],
       ["to field a question", "responder a uma pergunta (na hora)", "She fielded some tough questions really well."],
@@ -173,13 +173,13 @@ const themes = [
     readingTitle: "You Don't Need to Have Every Answer",
     readingParagraphs: [
       "The fear of Q&A usually comes from an unspoken assumption: that a good presenter must have an answer for everything. In practice, confidently saying \"I don't know, but I'll find out and follow up\" is far more credible than an invented or rambling answer.",
-      "A simple structure handles almost any question: acknowledge it, repeat or rephrase it briefly to confirm understanding (and buy a few seconds), then answer directly. \"Great question — so if I understand correctly, you're asking whether this scales to larger teams? Yes, and here's how.\"",
-      "For genuinely off-topic or overly detailed questions, redirecting gracefully keeps the session on track: \"That's a bit outside today's scope, but let's circle back after the session.\" This isn't dismissive — it protects everyone else's time while still respecting the question.",
+      "A simple structure handles almost any question: acknowledge it, repeat or rephrase it briefly to confirm understanding (and buy a few seconds), then answer directly. \"Great question, so if I understand correctly, you're asking whether this scales to larger teams? Yes, and here's how.\"",
+      "For genuinely off-topic or overly detailed questions, redirecting gracefully keeps the session on track: \"That's a bit outside today's scope, but let's circle back after the session.\" This isn't dismissive, it protects everyone else's time while still respecting the question.",
     ],
     audioFile: "audio/tema-59-handling-questions.mp3",
     audioScript: [
       "\"How does this scale for teams larger than fifty people?\"",
-      "\"Great question — so if I understand correctly, you're asking whether the process holds up at scale? Honestly, I don't have hard data on fifty-plus teams yet, but I'll follow up with what I find.\"",
+      "\"Great question, so if I understand correctly, you're asking whether the process holds up at scale? Honestly, I don't have hard data on fifty-plus teams yet, but I'll follow up with what I find.\"",
     ],
     audioFollowup: "Note que a pessoa parafraseia a pergunta antes de responder, e admite abertamente o que não sabe.",
     writingQuestions: [
@@ -191,10 +191,10 @@ const themes = [
     grammarIntro: "Responder perguntas ao vivo depende de frases fixas de abertura, adiamento honesto e paráfrase.",
     grammarRows: [
       ["That's a great question, and...", "That's a great question, and here's how I'd answer it.", "Abertura padrão que valida a pergunta e ganha um instante para organizar a resposta."],
-      ["Let me get back to you on that.", "I don't have that data handy — let me get back to you on that.", "Forma honesta e profissional de adiar uma resposta sem improvisar."],
-      ["So if I understand correctly, you're asking...\n(paráfrase)", "So if I understand correctly, you're asking about scalability?", "Repete a pergunta com suas palavras — confirma entendimento e ganha tempo."],
+      ["Let me get back to you on that.", "I don't have that data handy, let me get back to you on that.", "Forma honesta e profissional de adiar uma resposta sem improvisar."],
+      ["So if I understand correctly, you're asking...\n(paráfrase)", "So if I understand correctly, you're asking about scalability?", "Repete a pergunta com suas palavras, confirma entendimento e ganha tempo."],
     ],
-    grammarTip: "Dica prática: parafrasear a pergunta (\"so if I understand correctly...\") não é enrolação — é uma técnica legítima usada por apresentadores experientes para garantir clareza e ganhar segundos para pensar.",
+    grammarTip: "Dica prática: parafrasear a pergunta (\"so if I understand correctly...\") não é enrolação, é uma técnica legítima usada por apresentadores experientes para garantir clareza e ganhar segundos para pensar.",
     speakingQuestions: [
       "What's a tough question you've received after a presentation? How did you handle it?",
       "How do you respond confidently when you genuinely don't know an answer?",
@@ -208,10 +208,10 @@ const themes = [
       "How has your comfort with live Q&A changed with experience?",
     ],
     expressions: [
-      "\"That's a great question, and...\" — abertura segura para qualquer pergunta.",
-      "\"Let me get back to you on that.\" — forma honesta de adiar uma resposta.",
-      "\"So if I understand correctly, you're asking...\" — paráfrase que ganha tempo.",
-      "\"That's a bit outside today's scope, but let's circle back.\" — redirecionamento educado.",
+      "\"That's a great question, and...\", abertura segura para qualquer pergunta.",
+      "\"Let me get back to you on that.\", forma honesta de adiar uma resposta.",
+      "\"So if I understand correctly, you're asking...\", paráfrase que ganha tempo.",
+      "\"That's a bit outside today's scope, but let's circle back.\", redirecionamento educado.",
     ],
     exerciseSentences: [
       "We'll leave ten minutes for ______ at the end.",
@@ -233,7 +233,7 @@ const themes = [
     vocab: [
       ["step-by-step", "passo a passo", "Let me walk you through this step-by-step."],
       ["to walk someone through", "explicar passo a passo para alguém", "I'll walk you through the whole process."],
-      ["sequence", "sequência", "The sequence matters here — don't skip step two."],
+      ["sequence", "sequência", "The sequence matters here, don't skip step two."],
       ["prerequisite", "pré-requisito", "Make sure you've met the prerequisites before starting."],
       ["to clarify", "esclarecer", "Let me clarify that last step before we continue."],
       ["ambiguous", "ambíguo(a)", "That instruction was a bit ambiguous, so people did it differently."],
@@ -246,16 +246,16 @@ const themes = [
     ],
     readingTitle: "Ambiguity Is the Enemy of Good Instructions",
     readingParagraphs: [
-      "Most confusion around instructions in English doesn't come from complex vocabulary — it comes from ambiguous sequencing. \"Update the file and send it to the team\" leaves open whether to send before or after review, whether \"the team\" means everyone or just the lead.",
+      "Most confusion around instructions in English doesn't come from complex vocabulary, it comes from ambiguous sequencing. \"Update the file and send it to the team\" leaves open whether to send before or after review, whether \"the team\" means everyone or just the lead.",
       "Clear instructions in English almost always use explicit sequencing words: \"First, update the file. Once you've done that, get sign-off from your lead. Only after sign-off, send it to the full team.\" This removes every possible misreading.",
       "Building in a checkpoint also prevents small errors from compounding: \"After step three, double-check that the numbers match the report before moving on\" catches mistakes early, rather than after the whole process is done.",
     ],
     audioFile: "audio/tema-60-giving-instructions.mp3",
     audioScript: [
       "\"Can you walk me through how to submit the expense report?\"",
-      "\"Sure — first, fill out the form with your receipts attached. Once you've done that, submit it to your manager for approval. After approval, finance processes it within five business days.\"",
+      "\"Sure, first, fill out the form with your receipts attached. Once you've done that, submit it to your manager for approval. After approval, finance processes it within five business days.\"",
     ],
-    audioFollowup: "Note a sequência explícita: \"first\", \"once you've done that\", \"after\" — sem espaço para ambiguidade.",
+    audioFollowup: "Note a sequência explícita: \"first\", \"once you've done that\", \"after\", sem espaço para ambiguidade.",
     writingQuestions: [
       "Write step-by-step instructions for a task you know well.",
       "What's a checkpoint you could build in to catch mistakes early?",
@@ -268,7 +268,7 @@ const themes = [
       ["Once you've + particípio, ...\n(sequência condicional)", "Once you've submitted the form, wait for approval.", "Usado para indicar que uma ação só deve ocorrer depois que outra foi concluída."],
       ["Voz passiva\n(descrição de processo)", "The form is reviewed before it's approved.", "Usado para descrever um processo de forma neutra, sem focar em quem executa cada etapa."],
     ],
-    grammarTip: "Dica prática: \"once you've + particípio\" é a estrutura mais confiável para eliminar ambiguidade de sequência — deixa claríssimo que uma etapa depende da conclusão da anterior.",
+    grammarTip: "Dica prática: \"once you've + particípio\" é a estrutura mais confiável para eliminar ambiguidade de sequência, deixa claríssimo que uma etapa depende da conclusão da anterior.",
     speakingQuestions: [
       "Walk me through the steps of a task you know really well, as if teaching someone new.",
       "What's a checkpoint you'd build into a process to catch mistakes early?",
@@ -282,10 +282,10 @@ const themes = [
       "How do written instructions differ from spoken ones, in your experience?",
     ],
     expressions: [
-      "\"Let me walk you through this step-by-step.\" — abertura clássica de instrução.",
-      "\"Once you've done that, ...\" — para sequenciar etapas com clareza.",
-      "\"Just to clarify...\" — para eliminar ambiguidade no meio da explicação.",
-      "\"Make sure to double-check before...\" — para reforçar um ponto crítico.",
+      "\"Let me walk you through this step-by-step.\", abertura clássica de instrução.",
+      "\"Once you've done that, ...\", para sequenciar etapas com clareza.",
+      "\"Just to clarify...\", para eliminar ambiguidade no meio da explicação.",
+      "\"Make sure to double-check before...\", para reforçar um ponto crítico.",
     ],
     exerciseSentences: [
       "Let me walk you through this ______.",
@@ -320,14 +320,14 @@ const themes = [
     ],
     readingTitle: "A Good Summary Removes, It Doesn't Just Shorten",
     readingParagraphs: [
-      "A weak summary just says everything faster. A strong summary in English makes real choices about what mattered and cuts the rest entirely: \"To sum up, we discussed three options, but it really boils down to a resourcing issue — we need one more engineer or a longer timeline.\"",
+      "A weak summary just says everything faster. A strong summary in English makes real choices about what mattered and cuts the rest entirely: \"To sum up, we discussed three options, but it really boils down to a resourcing issue, we need one more engineer or a longer timeline.\"",
       "This kind of summary distills, not just condenses. It identifies the main thread running through an hour of tangents and disagreement, and states it as a single, clear sentence, followed by concrete next steps if there are any.",
-      "Ending with explicit action items — who does what, by when — turns a summary from a recap into something useful: \"Two action items: Marcus checks headcount by Friday, and we revisit the timeline Monday.\" Without this, even a great summary can still leave a meeting feeling unfinished.",
+      "Ending with explicit action items, who does what, by when, turns a summary from a recap into something useful: \"Two action items: Marcus checks headcount by Friday, and we revisit the timeline Monday.\" Without this, even a great summary can still leave a meeting feeling unfinished.",
     ],
     audioFile: "audio/tema-61-summarizing-a-discussion.mp3",
     audioScript: [
       "\"Can you sum up where we landed after all that back and forth?\"",
-      "\"Sure — to sum up, it really boils down to a resourcing issue. Two action items: Marcus checks headcount by Friday, and we revisit the timeline Monday.\"",
+      "\"Sure, to sum up, it really boils down to a resourcing issue. Two action items: Marcus checks headcount by Friday, and we revisit the timeline Monday.\"",
     ],
     audioFollowup: "Note que o resumo identifica a essência do problema (\"boils down to\") antes de listar os próximos passos.",
     writingQuestions: [
@@ -342,7 +342,7 @@ const themes = [
       ["Present Perfect\n(o que foi coberto)", "We've covered three main points today.", "Usado para revisar o que foi discutido até o momento presente."],
       ["The main takeaway is...", "The main takeaway is that we need more time, not more people.", "Estrutura direta para nomear a conclusão central da discussão."],
     ],
-    grammarTip: "Dica prática: \"it boils down to...\" é uma expressão idiomática extremamente útil para resumir uma discussão complexa em uma única causa central — muito usada em reuniões de negócios.",
+    grammarTip: "Dica prática: \"it boils down to...\" é uma expressão idiomática extremamente útil para resumir uma discussão complexa em uma única causa central, muito usada em reuniões de negócios.",
     speakingQuestions: [
       "Summarize a long meeting or discussion you were part of recently, in three sentences.",
       "What's the main thread that usually runs beneath a messy discussion, once you find it?",
@@ -356,10 +356,10 @@ const themes = [
       "What's your process for distilling a long document or conversation into a TL;DR?",
     ],
     expressions: [
-      "\"To sum up, ...\" — abertura clássica de resumo.",
-      "\"It really boils down to...\" — para nomear a essência de uma discussão complexa.",
-      "\"The main takeaway is...\" — para fechar com a conclusão central.",
-      "\"Two action items: ...\" — para transformar resumo em próximos passos.",
+      "\"To sum up, ...\", abertura clássica de resumo.",
+      "\"It really boils down to...\", para nomear a essência de uma discussão complexa.",
+      "\"The main takeaway is...\", para fechar com a conclusão central.",
+      "\"Two action items: ...\", para transformar resumo em próximos passos.",
     ],
     exerciseSentences: [
       "Let's ______ the main points before we finish.",
@@ -392,18 +392,18 @@ const themes = [
       ["to extrapolate", "extrapolar", "It's risky to extrapolate too much from just one quarter."],
       ["at a glance", "rapidamente / de relance", "At a glance, the numbers look strong."],
     ],
-    readingTitle: "Data Doesn't Speak for Itself — You Do",
+    readingTitle: "Data Doesn't Speak for Itself, You Do",
     readingParagraphs: [
       "A chart full of numbers means very little until someone names what matters in it. Presenting data well in English usually means picking one or two data points to highlight, rather than describing every line on the slide.",
       "The vocabulary of trends does a lot of work here: \"spiked,\" \"plateaued,\" \"trending upward\" convey shape and direction instantly, far more efficiently than \"the number went up and then it stayed about the same.\" Precision in this vocabulary makes data commentary sound confident.",
-      "It's also worth being honest about what the data doesn't show: \"there's a correlation here, though I wouldn't call it causation yet\" or \"that spike looks like an outlier — let's not extrapolate too much from one data point.\" This kind of caution actually builds more credibility than overselling a trend.",
+      "It's also worth being honest about what the data doesn't show: \"there's a correlation here, though I wouldn't call it causation yet\" or \"that spike looks like an outlier, let's not extrapolate too much from one data point.\" This kind of caution actually builds more credibility than overselling a trend.",
     ],
     audioFile: "audio/tema-62-presenting-data-and-trends.mp3",
     audioScript: [
       "\"Walk me through what's happening with engagement this quarter.\"",
-      "\"Sure — at a glance, it's a clear upward trend, up about 12% year-over-year. There was a spike in March tied to the campaign, but it's since plateaued at a higher baseline than before.\"",
+      "\"Sure, at a glance, it's a clear upward trend, up about 12% year-over-year. There was a spike in March tied to the campaign, but it's since plateaued at a higher baseline than before.\"",
     ],
-    audioFollowup: "Note o uso preciso de \"spike\", \"plateaued\" e \"year-over-year\" — vocabulário específico que substitui descrições vagas.",
+    audioFollowup: "Note o uso preciso de \"spike\", \"plateaued\" e \"year-over-year\", vocabulário específico que substitui descrições vagas.",
     writingQuestions: [
       "Describe a trend from your work using at least three vocabulary words from this theme.",
       "What's a data point you'd want to highlight in your next presentation, and why?",
@@ -416,7 +416,7 @@ const themes = [
       ["Comparativo\n(higher/lower than)", "Engagement is higher than it was last quarter.", "Usado para comparar diretamente dois pontos de dados."],
       ["compared to", "Revenue is up 12% compared to last year.", "Usado para estabelecer o ponto de referência de uma comparação."],
     ],
-    grammarTip: "Dica prática: \"year-over-year\" (geralmente abreviado \"YoY\") é o termo padrão em inglês de negócios para comparar um período com o mesmo período do ano anterior — muito mais natural do que traduzir \"ano a ano\" literalmente.",
+    grammarTip: "Dica prática: \"year-over-year\" (geralmente abreviado \"YoY\") é o termo padrão em inglês de negócios para comparar um período com o mesmo período do ano anterior, muito mais natural do que traduzir \"ano a ano\" literalmente.",
     speakingQuestions: [
       "Describe a trend from your work in the last quarter, using precise vocabulary.",
       "What's a data point you'd want to highlight in a presentation, and why that one?",
@@ -430,10 +430,10 @@ const themes = [
       "What's your go-to way of making a chart understandable to a non-technical audience?",
     ],
     expressions: [
-      "\"At a glance, ...\" — para introduzir uma leitura rápida dos dados.",
-      "\"That's up/down X% year-over-year.\" — comparação padrão em negócios.",
-      "\"That looks like an outlier, not a trend.\" — para calibrar expectativas.",
-      "\"I want to highlight this particular data point.\" — para guiar a atenção do público.",
+      "\"At a glance, ...\", para introduzir uma leitura rápida dos dados.",
+      "\"That's up/down X% year-over-year.\", comparação padrão em negócios.",
+      "\"That looks like an outlier, not a trend.\", para calibrar expectativas.",
+      "\"I want to highlight this particular data point.\", para guiar a atenção do público.",
     ],
     exerciseSentences: [
       "The overall ______ is positive, despite last month's dip.",
@@ -451,7 +451,7 @@ const themes = [
     titleEn: "Speaking Persuasively in Public",
     titlePt: "Falando de forma persuasiva em público",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "Falar de forma persuasiva em público usa recursos retóricos específicos em inglês — perguntas retóricas, repetição estrutural, pausas — que soam naturais uma vez praticados.",
+    intro: "Falar de forma persuasiva em público usa recursos retóricos específicos em inglês, perguntas retóricas, repetição estrutural, pausas, que soam naturais uma vez praticados.",
     vocab: [
       ["rhetorical question", "pergunta retórica", "I like to open with a rhetorical question."],
       ["to captivate", "cativar", "A good story captivates the room instantly."],
@@ -469,7 +469,7 @@ const themes = [
     readingTitle: "Persuasive Speech Has a Rhythm, Not Just Content",
     readingParagraphs: [
       "The difference between a persuasive speaker and a merely informative one, in English, often comes down to rhythm rather than content. Rhetorical questions (\"How many of us have felt this?\") pull the audience into the argument instead of just delivering it to them.",
-      "The rule of three — grouping ideas in threes — is one of the most reliable tools in English persuasive speech: \"Faster. Simpler. Better.\" It's memorable because of its structure, not necessarily its content, and it works in almost any context, from a pitch to a toast.",
+      "The rule of three, grouping ideas in threes, is one of the most reliable tools in English persuasive speech: \"Faster. Simpler. Better.\" It's memorable because of its structure, not necessarily its content, and it works in almost any context, from a pitch to a toast.",
       "Pausing for effect right before or after a key point is another underused tool: silence draws attention precisely because it interrupts the expected rhythm of speech. Combined with a clear, direct call to action at the end, these tools turn information into persuasion.",
     ],
     audioFile: "audio/tema-63-speaking-persuasively.mp3",
@@ -490,7 +490,7 @@ const themes = [
       ["Regra dos três\n(paralelismo)", "Faster, simpler, better.", "Agrupar ideias em três, com estrutura paralela, torna a frase mais memorável."],
       ["Imperativo\n(chamada à ação)", "Join us in making this change.", "Usado para fechar um discurso persuasivo com uma ação clara e direta."],
     ],
-    grammarTip: "Dica prática: na regra dos três, mantenha a mesma estrutura gramatical nas três partes (\"Faster, simpler, better\" — todos adjetivos) — misturar estruturas quebra o efeito de paralelismo.",
+    grammarTip: "Dica prática: na regra dos três, mantenha a mesma estrutura gramatical nas três partes (\"Faster, simpler, better\", todos adjetivos), misturar estruturas quebra o efeito de paralelismo.",
     speakingQuestions: [
       "What's a topic you feel strongly enough about to give a persuasive talk on?",
       "Write and deliver a rhetorical question to open that talk.",
@@ -504,10 +504,10 @@ const themes = [
       "How has your confidence speaking persuasively in public changed over time?",
     ],
     expressions: [
-      "\"How many of us have...?\" — pergunta retórica de abertura.",
-      "\"Faster, simpler, better.\" — exemplo de regra dos três.",
-      "\"That's exactly why I'm asking you to...\" — chamada para ação natural.",
-      "\"Let that sink in for a second.\" — para reforçar uma pausa proposital.",
+      "\"How many of us have...?\", pergunta retórica de abertura.",
+      "\"Faster, simpler, better.\", exemplo de regra dos três.",
+      "\"That's exactly why I'm asking you to...\", chamada para ação natural.",
+      "\"Let that sink in for a second.\", para reforçar uma pausa proposital.",
     ],
     exerciseSentences: [
       "I like to open with a ______.",
@@ -525,7 +525,7 @@ const themes = [
     titleEn: "Recovering from a Mistake While Speaking",
     titlePt: "Se recuperando de um erro ao falar em público",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "Fechando o Bloco 8: perder a linha de raciocínio, gaguejar ou errar um dado em público é normal — o que separa quem parece amador de quem parece experiente é exclusivamente a recuperação.",
+    intro: "Fechando o Bloco 8: perder a linha de raciocínio, gaguejar ou errar um dado em público é normal, o que separa quem parece amador de quem parece experiente é exclusivamente a recuperação.",
     vocab: [
       ["slip-up", "deslize", "That was a small slip-up, nothing serious."],
       ["to stumble over (words)", "gaguejar / tropeçar nas palavras", "I stumbled over my words a bit at the start."],
@@ -540,16 +540,16 @@ const themes = [
       ["to apologize briefly", "se desculpar rapidamente", "I apologized briefly and moved on without dwelling on it."],
       ["to keep going", "continuar", "The best thing to do is just keep going."],
     ],
-    readingTitle: "Nobody Remembers the Slip-Up — They Remember the Recovery",
+    readingTitle: "Nobody Remembers the Slip-Up, They Remember the Recovery",
     readingParagraphs: [
-      "Every public speaker, in every language, stumbles occasionally — loses a word, mixes up a number, forgets a slide. What audiences actually remember isn't the mistake; it's whether the speaker recovered smoothly or spiraled.",
-      "The English for recovering gracefully is short and low-drama: \"Let me back up for a second,\" \"Sorry, wrong number — it's actually 40%, not 4%,\" \"Let me regroup for a moment.\" None of these require a long apology; a brief acknowledgment and moving on is almost always the right amount.",
-      "For a total loss of train of thought, it's completely acceptable to pause openly: \"Give me a second — I want to make sure I say this clearly.\" This kind of composed pause, rather than filling the silence with panic, reads as confidence, not failure.",
+      "Every public speaker, in every language, stumbles occasionally, loses a word, mixes up a number, forgets a slide. What audiences actually remember isn't the mistake; it's whether the speaker recovered smoothly or spiraled.",
+      "The English for recovering gracefully is short and low-drama: \"Let me back up for a second,\" \"Sorry, wrong number, it's actually 40%, not 4%,\" \"Let me regroup for a moment.\" None of these require a long apology; a brief acknowledgment and moving on is almost always the right amount.",
+      "For a total loss of train of thought, it's completely acceptable to pause openly: \"Give me a second, I want to make sure I say this clearly.\" This kind of composed pause, rather than filling the silence with panic, reads as confidence, not failure.",
     ],
     audioFile: "audio/tema-64-recovering-from-a-mistake.mp3",
     audioScript: [
-      "\"...and revenue grew by 4% — sorry, let me back up, that's actually 40%, not 4%. Big difference.\"",
-      "\"Anyway — give me a second, I lost my train of thought there for a moment. Right, so, back to the roadmap.\"",
+      "\"...and revenue grew by 4%, sorry, let me back up, that's actually 40%, not 4%. Big difference.\"",
+      "\"Anyway, give me a second, I lost my train of thought there for a moment. Right, so, back to the roadmap.\"",
     ],
     audioFollowup: "Note como o erro é corrigido rapidamente, sem drama, e a fala continua sem grandes desculpas.",
     writingQuestions: [
@@ -560,11 +560,11 @@ const themes = [
     ],
     grammarIntro: "Recuperar-se de um erro ao falar reutiliza estruturas de autocorreção (Bloco 1) aplicadas especificamente a apresentações públicas.",
     grammarRows: [
-      ["Let me back up for a second.", "Let me back up for a second — I misspoke earlier.", "Frase padrão para voltar e corrigir algo dito incorretamente."],
+      ["Let me back up for a second.", "Let me back up for a second, I misspoke earlier.", "Frase padrão para voltar e corrigir algo dito incorretamente."],
       ["I'm just going to...\n(recomposição)", "I'm just going to take a breath and continue.", "Usado para narrar brevemente sua própria recomposição, de forma natural."],
       ["Let's try that again.", "Let's try that last part again.", "Frase simples e eficaz para recomeçar um trecho sem constrangimento."],
     ],
-    grammarTip: "Dica prática: \"let me back up for a second\" é universalmente aceito em inglês para corrigir qualquer erro em uma fala — funciona tanto para um número errado quanto para uma ideia mal formulada.",
+    grammarTip: "Dica prática: \"let me back up for a second\" é universalmente aceito em inglês para corrigir qualquer erro em uma fala, funciona tanto para um número errado quanto para uma ideia mal formulada.",
     speakingQuestions: [
       "Describe a time you made a visible mistake while speaking in public. What happened?",
       "What would you say if you completely lost your train of thought mid-sentence?",
@@ -578,10 +578,10 @@ const themes = [
       "How has your relationship with mistakes while speaking changed with experience?",
     ],
     expressions: [
-      "\"Let me back up for a second.\" — para corrigir algo dito incorretamente.",
-      "\"Give me a second, I lost my train of thought.\" — pausa honesta e tranquila.",
-      "\"Let's try that again.\" — para recomeçar sem drama.",
-      "\"Anyway, back to...\" — para retomar o fio da apresentação.",
+      "\"Let me back up for a second.\", para corrigir algo dito incorretamente.",
+      "\"Give me a second, I lost my train of thought.\", pausa honesta e tranquila.",
+      "\"Let's try that again.\", para recomeçar sem drama.",
+      "\"Anyway, back to...\", para retomar o fio da apresentação.",
     ],
     exerciseSentences: [
       "That was a small ______, nothing serious.",

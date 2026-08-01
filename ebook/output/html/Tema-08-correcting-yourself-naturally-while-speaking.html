@@ -2,40 +2,45 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Tema 8 — Correcting Yourself Naturally While Speaking</title>
+<title>Tema 8: Correcting Yourself Naturally While Speaking</title>
 <style>
   
   @page {
     size: A4;
-    margin: 2.2cm 2cm 2.4cm 2cm;
-    @top-right { content: "English Speaking Practice — Nação Fluente"; font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
-    @bottom-center { content: "Bloco 1 — Fundamentos da Conversação   |   Página " counter(page); font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
+    margin: 1.9cm 2cm 2.1cm 2cm;
+    @top-right { content: "English Speaking Practice · Nação Fluente"; font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
+    @bottom-center { content: "Bloco 1 · Fundamentos da Conversação (Conversation Fundamentals)   |   Página " counter(page); font-size: 7.5pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
   }
   * { box-sizing: border-box; }
-  body { font-family: 'Helvetica', Arial, sans-serif; color: #444444; font-size: 10.5pt; line-height: 1.5; }
-  .cover { background: #1B3B57; color: #fff; padding: 22px 24px; border-radius: 4px; margin-bottom: 14px; }
-  .cover .eyebrow { color: #8fc4ec; font-weight: bold; font-size: 9.5pt; letter-spacing: 0.5px; margin-bottom: 6px; }
-  .cover h1 { font-size: 22pt; margin: 0 0 6px 0; color: #fff; }
-  .cover .subtitle { color: #C9D6E3; font-style: italic; font-size: 12pt; margin: 0; }
-  .meta { margin: 10px 0 14px 0; font-size: 10.5pt; }
+  body { font-family: 'Helvetica', Arial, sans-serif; color: #444444; font-size: 10.5pt; line-height: 1.42; }
+  .cover { background: #1B3B57; color: #fff; padding: 16px 18px; border-radius: 4px; margin-bottom: 10px; display: flex; align-items: center; gap: 16px; }
+  .cover .icon { width: 54px; height: 54px; flex: none; opacity: 0.92; }
+  .cover .eyebrow { color: #8fc4ec; font-weight: bold; font-size: 9pt; letter-spacing: 0.4px; margin-bottom: 4px; }
+  .cover .eyebrow .en { display: block; color: #6f93ad; font-weight: normal; font-style: italic; font-size: 7.5pt; letter-spacing: 0.2px; margin-top: 1px; }
+  .cover h1 { font-size: 19pt; margin: 0 0 3px 0; color: #fff; line-height: 1.12; }
+  .cover .subtitle { color: #C9D6E3; font-style: italic; font-size: 10.5pt; margin: 0; }
+  .meta { margin: 8px 0 10px 0; font-size: 10pt; }
   .meta b { color: #1B3B57; }
-  .intro { margin-bottom: 6px; }
-  h2.step { color: #fff; padding: 8px 12px; font-size: 12.5pt; margin: 22px 0 10px 0; border-radius: 3px; }
-  h2.step .tag { background: rgba(255,255,255,0.22); padding: 2px 8px; border-radius: 3px; font-size: 9.5pt; margin-right: 8px; }
-  table { width: 100%; border-collapse: collapse; margin: 8px 0 14px 0; font-size: 9.8pt; }
-  th { color: #fff; text-align: left; padding: 6px 8px; }
-  td { padding: 6px 8px; border-bottom: 1px solid #E3E9EF; vertical-align: top; }
+  .intro { margin-bottom: 4px; }
+  p { margin: 0 0 8px 0; }
+  h2.step { color: #fff; padding: 6px 10px; font-size: 11.5pt; margin: 16px 0 8px 0; border-radius: 3px; display: flex; align-items: center; }
+  h2.step .tag { background: rgba(255,255,255,0.22); padding: 2px 7px; border-radius: 3px; font-size: 8.5pt; margin-right: 8px; flex: none; }
+  h2.step .stitle { display: flex; flex-direction: column; line-height: 1.18; }
+  h2.step .stitle .en { font-weight: normal; font-style: italic; font-size: 8pt; opacity: 0.82; }
+  table { width: 100%; border-collapse: collapse; margin: 6px 0 10px 0; font-size: 9.5pt; }
+  th { color: #fff; text-align: left; padding: 5px 7px; }
+  td { padding: 5px 7px; border-bottom: 1px solid #E3E9EF; vertical-align: top; }
   .example { font-style: italic; }
-  .notebox { border-radius: 4px; padding: 10px 14px; margin: 10px 0 16px 0; border: 1px solid; }
-  .notebox .title { font-weight: bold; margin-bottom: 6px; }
-  .notebox p { margin: 3px 0; }
-  ol, ul { margin: 6px 0 14px 0; padding-left: 20px; }
-  ol li, ul li { margin-bottom: 7px; }
-  .lines { border-bottom: 1px solid #C9D6E3; height: 22px; margin-bottom: 6px; }
-  .expr-list { list-style: none; padding-left: 0; margin: 6px 0 14px 0; }
-  .expr-list li { margin-bottom: 6px; padding-left: 14px; position: relative; }
-  .gabarito { font-style: italic; color: #1B3B57; margin-top: -6px; }
-  .footer-note { text-align: center; font-weight: bold; color: #1B3B57; margin-top: 18px; font-size: 11pt; }
+  .notebox { border-radius: 4px; padding: 8px 12px; margin: 6px 0 10px 0; border: 1px solid; }
+  .notebox .title { font-weight: bold; margin-bottom: 4px; }
+  .notebox p { margin: 2px 0; }
+  ol, ul { margin: 4px 0 10px 0; padding-left: 19px; }
+  ol li, ul li { margin-bottom: 5px; }
+  .lines { border-bottom: 1px solid #C9D6E3; height: 17px; margin-bottom: 4px; }
+  .expr-list { list-style: none; padding-left: 0; margin: 4px 0 10px 0; }
+  .expr-list li { margin-bottom: 4px; padding-left: 14px; position: relative; }
+  .gabarito { font-style: italic; color: #1B3B57; margin-top: -4px; }
+  .footer-note { text-align: center; font-weight: bold; color: #1B3B57; margin-top: 12px; font-size: 10.5pt; }
 
   .s1 h2, .s1 .tag { background: #2E86C1; }
   .s1 th { background: #2E86C1; }
@@ -72,29 +77,32 @@
 
 <div class="chapter" id="tema-8">
 <div class="cover">
-  <div class="eyebrow">TEMA 8 &nbsp;·&nbsp; BLOCO 1 — FUNDAMENTOS DA CONVERSAÇÃO</div>
-  <h1>Correcting Yourself Naturally While Speaking</h1>
-  <p class="subtitle">Se corrigindo naturalmente enquanto fala</p>
+  <img class="icon" src="file:///home/user/Claude/ebook/assets/icons/block-1.png">
+  <div>
+    <div class="eyebrow">TEMA 8 &nbsp;·&nbsp; BLOCO 1 &nbsp;·&nbsp; FUNDAMENTOS DA CONVERSAÇÃO<span class="en">THEME 8 · BLOCK 1 · CONVERSATION FUNDAMENTALS</span></div>
+    <h1>Correcting Yourself Naturally While Speaking</h1>
+    <p class="subtitle">Se corrigindo naturalmente enquanto fala</p>
+  </div>
 </div>
 
 <div class="meta"><b>Tempo estimado:</b> 60–90 minutos, divididos ao longo da semana.</div>
-<p class="intro">Fechando o Bloco 1: se corrigir no meio de uma frase, em inglês, sem parecer que você não sabe falar. Essa é uma das diferenças mais claras entre quem parece iniciante e quem parece fluente — e é puramente uma questão de técnica.</p>
+<p class="intro">Fechando o Bloco 1: se corrigir no meio de uma frase, em inglês, sem parecer que você não sabe falar. Essa é uma das diferenças mais claras entre quem parece iniciante e quem parece fluente, e é puramente uma questão de técnica.</p>
 
 <div class="s1">
-<h2 class="step"><span class="tag">ETAPA 1</span>Vocabulário Contextualizado</h2>
+<h2 class="step "><span class="tag">ETAPA 1</span><span class="stitle"><span class="pt">Vocabulário Contextualizado</span><span class="en">Contextualized Vocabulary</span></span></h2>
 <p>Estas palavras e expressões vão te ajudar a se expressar sobre este tema com mais precisão e naturalidade.</p>
 <table>
 <tr><th>Word / Expression</th><th>Tradução</th><th>Example Sentence</th></tr>
 
     <tr><td><b>to correct yourself</b></td><td>se corrigir</td><td class="example">Good speakers correct themselves constantly, without losing confidence.</td></tr>
-    <tr><td><b>or rather</b></td><td>ou melhor</td><td class="example">We grew by 10% — or rather, 12%, I just remembered.</td></tr>
+    <tr><td><b>or rather</b></td><td>ou melhor</td><td class="example">We grew by 10%, or rather, 12%, I just remembered.</td></tr>
     <tr><td><b>what I meant was</b></td><td>o que eu quis dizer foi</td><td class="example">What I meant was, we should wait until Friday, not cancel entirely.</td></tr>
-    <tr><td><b>to rephrase</b></td><td>reformular</td><td class="example">Sorry, let me rephrase that — it came out wrong.</td></tr>
+    <tr><td><b>to rephrase</b></td><td>reformular</td><td class="example">Sorry, let me rephrase that, it came out wrong.</td></tr>
     <tr><td><b>slip of the tongue</b></td><td>deslize / erro de fala</td><td class="example">That was just a slip of the tongue, I meant "invoice," not "receipt."</td></tr>
     <tr><td><b>to backtrack</b></td><td>voltar atrás</td><td class="example">After realizing his mistake, he had to backtrack on his previous statement.</td></tr>
     <tr><td><b>self-correction</b></td><td>autocorreção</td><td class="example">Good self-correction actually makes you sound more careful, not less confident.</td></tr>
     <tr><td><b>to clarify</b></td><td>esclarecer</td><td class="example">Just to clarify, I meant next week, not this week.</td></tr>
-    <tr><td><b>I misspoke</b></td><td>eu me expressei mal</td><td class="example">I think I misspoke earlier — the deadline is Friday, not Monday.</td></tr>
+    <tr><td><b>I misspoke</b></td><td>eu me expressei mal</td><td class="example">I think I misspoke earlier, the deadline is Friday, not Monday.</td></tr>
     <tr><td><b>to catch a mistake</b></td><td>perceber um erro</td><td class="example">I caught the mistake right after I said it.</td></tr>
     <tr><td><b>on second thought</b></td><td>pensando melhor</td><td class="example">On second thought, let's push the meeting to Thursday.</td></tr>
     <tr><td><b>to circle back</b></td><td>retomar depois</td><td class="example">Let's circle back to that point later in the meeting.</td></tr>
@@ -102,70 +110,70 @@
 </div>
 
 <div class="s2">
-<h2 class="step"><span class="tag">ETAPA 2</span>Leitura com Orientação de Estudo</h2>
+<h2 class="step "><span class="tag">ETAPA 2</span><span class="stitle"><span class="pt">Leitura com Orientação de Estudo</span><span class="en">Guided Reading</span></span></h2>
 <div class="notebox">
   <div class="title">Como ler este texto</div>
-  <p>1) Leia uma vez, rápido, só para captar a ideia geral — sem parar no que não entender.</p><p>2) Leia de novo e grife toda expressão da Etapa 1 que aparecer no texto.</p><p>3) Releia em voz alta, como se você estivesse contando essa história sobre você mesmo.</p>
+  <p>1) Leia uma vez, rápido, só para captar a ideia geral, sem parar no que não entender.</p><p>2) Leia de novo e grife toda expressão da Etapa 1 que aparecer no texto.</p><p>3) Releia em voz alta, como se você estivesse contando essa história sobre você mesmo.</p>
 </div>
 <p><b>"Native Speakers Correct Themselves All the Time"</b></p>
-<p>There's a myth that fluent speakers rarely make mistakes. Listen to any unscripted interview and you'll hear the opposite: native speakers misspeak constantly, and they fix it in real time, mid-sentence, without stopping the flow of the conversation. "We grew by — or rather, 12%, sorry, I misspoke."</p><p>For English learners, a mistake often triggers a full stop: apologizing, going quiet, restarting the whole sentence. That's what makes an error sound like a big deal. The fix isn't avoiding mistakes — it's normalizing the correction with a short, standard phrase and moving on.</p><p>"Or rather," "what I meant was," "sorry, let me rephrase that" — these three phrases cover almost every self-correction you'll ever need. Once they're automatic, a small mistake stops being a moment of panic and becomes just... part of talking.</p>
+<p>There's a myth that fluent speakers rarely make mistakes. Listen to any unscripted interview and you'll hear the opposite: native speakers misspeak constantly, and they fix it in real time, mid-sentence, without stopping the flow of the conversation. "We grew by, or rather, 12%, sorry, I misspoke."</p><p>For English learners, a mistake often triggers a full stop: apologizing, going quiet, restarting the whole sentence. That's what makes an error sound like a big deal. The fix isn't avoiding mistakes, it's normalizing the correction with a short, standard phrase and moving on.</p><p>"Or rather," "what I meant was," "sorry, let me rephrase that", these three phrases cover almost every self-correction you'll ever need. Once they're automatic, a small mistake stops being a moment of panic and becomes just... part of talking.</p>
 </div>
 
 <div class="s3">
-<h2 class="step"><span class="tag">ETAPA 3</span>Listening com Suporte em Áudio e Vídeo</h2>
+<h2 class="step "><span class="tag">ETAPA 3</span><span class="stitle"><span class="pt">Listening com Suporte em Áudio e Vídeo</span><span class="en">Guided Listening</span></span></h2>
 <p>Ouça o áudio deste tema (arquivo disponível para download na plataforma: <i>audio/tema-08-correcting-yourself.mp3</i>) com o roteiro abaixo. Primeiro sem ler, depois acompanhando o texto.</p>
 <div class="notebox">
   <div class="title">Roteiro do áudio (Audio Script)</div>
-  <p>"So the client signed on Tuesday — or rather, Wednesday, sorry, I misspoke. What I meant was, the contract went out Tuesday and they signed the next day."</p><p>"Got it, that makes sense. On second thought, maybe we should circle back to the payment terms too."</p>
+  <p>"So the client signed on Tuesday, or rather, Wednesday, sorry, I misspoke. What I meant was, the contract went out Tuesday and they signed the next day."</p><p>"Got it, that makes sense. On second thought, maybe we should circle back to the payment terms too."</p>
 </div>
-<p>Note como a correção acontece sem drama: "or rather", "sorry, I misspoke", "what I meant was" — três frases curtas, e a conversa segue.</p>
+<p>Note como a correção acontece sem drama: "or rather", "sorry, I misspoke", "what I meant was", três frases curtas, e a conversa segue.</p>
 </div>
 
 <div class="s4">
-<h2 class="step"><span class="tag">ETAPA 4</span>Writing como Preparação para a Fala</h2>
-<p>Antes de falar, escreva. Use as perguntas abaixo como guia e escreva de 4 a 6 frases — não precisa ser perfeito, precisa existir no papel primeiro.</p>
+<h2 class="step "><span class="tag">ETAPA 4</span><span class="stitle"><span class="pt">Writing como Preparação para a Fala</span><span class="en">Writing Before Speaking</span></span></h2>
+<p>Antes de falar, escreva. Use as perguntas abaixo como guia e escreva de 4 a 6 frases: não precisa ser perfeito, precisa existir no papel primeiro.</p>
 <ol><li>What's a mistake you commonly make in English that you've learned to self-correct?</li><li>Describe a situation where you had to backtrack on something you said.</li><li>What's a time you misspoke and it caused some confusion? How did you fix it?</li><li>How does self-correcting in real time affect how confident you sound, in your opinion?</li></ol>
 <p>Espaço para escrever:</p>
-<div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div>
+<div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div>
 </div>
 
 <div class="s5">
-<h2 class="step"><span class="tag">ETAPA 5</span>Gramática de Apoio Aplicada à Conversação</h2>
-<p>Autocorreção em inglês tem frases próprias e fixas — dominar essas três resolve praticamente qualquer deslize de fala.</p>
+<h2 class="step "><span class="tag">ETAPA 5</span><span class="stitle"><span class="pt">Gramática de Apoio Aplicada à Conversação</span><span class="en">Grammar for Conversation</span></span></h2>
+<p>Autocorreção em inglês tem frases próprias e fixas, dominar essas três resolve praticamente qualquer deslize de fala.</p>
 <table>
 <tr><th>Estrutura</th><th>Exemplo (EN)</th><th>Tradução (PT)</th></tr>
 
-    <tr><td><b>Substituir uma palavra</b><br>(or rather)</td><td class="example">We grew by 10% — or rather, 12%, I just remembered.</td><td>Usado para trocar uma informação errada por uma correta, no meio da frase.</td></tr>
+    <tr><td><b>Substituir uma palavra</b><br>(or rather)</td><td class="example">We grew by 10%, or rather, 12%, I just remembered.</td><td>Usado para trocar uma informação errada por uma correta, no meio da frase.</td></tr>
     <tr><td><b>Esclarecer o que quis dizer</b><br>(what I meant was)</td><td class="example">What I meant was, we should wait until Friday.</td><td>Usado depois de uma frase que saiu confusa ou mal formulada.</td></tr>
     <tr><td><b>Revisar uma opinião</b><br>(on second thought)</td><td class="example">On second thought, let's push the meeting to Thursday.</td><td>Usado para mudar de ideia no meio da fala, de forma natural.</td></tr>
 </table>
-<p>Dica prática: quando errar, não pare a frase nem peça desculpas demais — use "or rather" ou "what I meant was" e continue. A fluência está na recuperação, não na ausência de erro.</p>
+<p>Dica prática: quando errar, não pare a frase nem peça desculpas demais, use "or rather" ou "what I meant was" e continue. A fluência está na recuperação, não na ausência de erro.</p>
 </div>
 
 <div class="s6">
-<h2 class="step"><span class="tag">ETAPA 6</span>Speaking — Perguntas Abertas</h2>
-<p>Responda em voz alta, gravando se possível. Não vale responder em uma frase só — use o que você escreveu na Etapa 4 como base, mas fale livremente.</p>
-<ol><li>Tell me about your week, and if you say something wrong, correct yourself naturally in English.</li><li>What's a mistake you commonly make in English that you've learned to self-correct?</li><li>How do you feel when you catch yourself making a mistake mid-sentence?</li><li>Describe a situation where you had to backtrack on something you said.</li><li>What's the difference between correcting yourself and over-apologizing for small mistakes?</li><li>How do native speakers you've heard correct themselves — what phrases do they use?</li><li>Tell me about a decision you made and later said "on second thought" about.</li><li>How do you recover gracefully after a slip of the tongue in a professional meeting?</li><li>What's a time you misspoke and it caused some confusion? How did you fix it?</li><li>How does self-correcting in real time affect how confident you sound, in your opinion?</li></ol>
+<h2 class="step "><span class="tag">ETAPA 6</span><span class="stitle"><span class="pt">Speaking: Perguntas Abertas</span><span class="en">Open-Ended Speaking</span></span></h2>
+<p>Responda em voz alta, gravando se possível. Não vale responder em uma frase só: use o que você escreveu na Etapa 4 como base, mas fale livremente.</p>
+<ol><li>Tell me about your week, and if you say something wrong, correct yourself naturally in English.</li><li>What's a mistake you commonly make in English that you've learned to self-correct?</li><li>How do you feel when you catch yourself making a mistake mid-sentence?</li><li>Describe a situation where you had to backtrack on something you said.</li><li>What's the difference between correcting yourself and over-apologizing for small mistakes?</li><li>How do native speakers you've heard correct themselves, what phrases do they use?</li><li>Tell me about a decision you made and later said "on second thought" about.</li><li>How do you recover gracefully after a slip of the tongue in a professional meeting?</li><li>What's a time you misspoke and it caused some confusion? How did you fix it?</li><li>How does self-correcting in real time affect how confident you sound, in your opinion?</li></ol>
 <p><b>Expressões úteis para esta conversa:</b></p>
-<ul class="expr-list"><li>"Or rather, ..." — para substituir uma informação errada.</li><li>"What I meant to say was..." — para esclarecer algo confuso.</li><li>"Sorry, let me rephrase that." — para reformular sem drama.</li><li>"On second thought, ..." — para revisar uma opinião em tempo real.</li></ul>
+<ul class="expr-list"><li>"Or rather, ...", para substituir uma informação errada.</li><li>"What I meant to say was...", para esclarecer algo confuso.</li><li>"Sorry, let me rephrase that.", para reformular sem drama.</li><li>"On second thought, ...", para revisar uma opinião em tempo real.</li></ul>
 </div>
 
 <div class="sx">
-<h2 class="step"><span class="tag">EXERCÍCIO</span>Complete com a Palavra Certa</h2>
+<h2 class="step "><span class="tag">EXERCÍCIO</span><span class="stitle"><span class="pt">Complete com a Palavra Certa</span><span class="en">Vocabulary Check</span></span></h2>
 <p>Complete cada frase com uma palavra ou expressão da Etapa 1. Gabarito ao final desta seção.</p>
-<ol><li>I think I ______ earlier — the deadline is Friday, not Monday.</li><li>Let's ______ to that point later in the meeting.</li><li>That was just a ______, I meant to say "invoice," not "receipt."</li><li>Good ______ actually makes you sound more careful, not less confident.</li><li>After realizing his mistake, he had to ______ on his previous statement.</li></ol>
+<ol><li>I think I ______ earlier, the deadline is Friday, not Monday.</li><li>Let's ______ to that point later in the meeting.</li><li>That was just a ______, I meant to say "invoice," not "receipt."</li><li>Good ______ actually makes you sound more careful, not less confident.</li><li>After realizing his mistake, he had to ______ on his previous statement.</li></ol>
 <p class="gabarito">Gabarito: 1) misspoke   2) circle back   3) slip of the tongue   4) self-correction   5) backtrack</p>
 </div>
 
 <div class="s7">
-<h2 class="step"><span class="tag">ETAPA 7</span>Autoavaliação de Performance</h2>
+<h2 class="step "><span class="tag">ETAPA 7</span><span class="stitle"><span class="pt">Autoavaliação de Performance</span><span class="en">Self-Assessment</span></span></h2>
 <p>Antes de marcar este tema como concluído, avalie honestamente como foi sua prática.</p>
 <table>
-<tr><th>Critério</th><th>Como foi?</th><th>Nota (1–5)</th></tr>
+<tr><th>Critério</th><th>Como foi?</th><th>Nota (1-5)</th></tr>
 <tr><td>Consegui usar o vocabulário novo sem parar para pensar</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Entendi o áudio/vídeo sem depender da transcrição</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Escrevi minhas respostas antes de falar</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Apliquei a estrutura gramatical da etapa 5 corretamente</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Sustentei minhas respostas por mais de 2 frases</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Me senti confiante ao falar sobre este tema</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 </table>
 <p>O que travou mais nesta conversa? O que você quer treinar de novo antes de seguir para o próximo tema?</p>
-<div class="lines"></div><div class="lines"></div><div class="lines"></div>
+<div class="lines"></div><div class="lines"></div>
 </div>
 
 <p class="footer-note">Marque este tema como concluído no seu Painel de Evolução e siga para o Tema 9.</p>

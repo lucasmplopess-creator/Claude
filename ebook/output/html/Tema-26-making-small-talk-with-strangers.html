@@ -2,40 +2,45 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Tema 26 — Making Small Talk with Strangers</title>
+<title>Tema 26: Making Small Talk with Strangers</title>
 <style>
   
   @page {
     size: A4;
-    margin: 2.2cm 2cm 2.4cm 2cm;
-    @top-right { content: "English Speaking Practice — Nação Fluente"; font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
-    @bottom-center { content: "Bloco 4 — Networking e Relacionamentos Profissionais   |   Página " counter(page); font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
+    margin: 1.9cm 2cm 2.1cm 2cm;
+    @top-right { content: "English Speaking Practice · Nação Fluente"; font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
+    @bottom-center { content: "Bloco 4 · Networking e Relacionamentos Profissionais (Networking and Professional Relationships)   |   Página " counter(page); font-size: 7.5pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
   }
   * { box-sizing: border-box; }
-  body { font-family: 'Helvetica', Arial, sans-serif; color: #444444; font-size: 10.5pt; line-height: 1.5; }
-  .cover { background: #1B3B57; color: #fff; padding: 22px 24px; border-radius: 4px; margin-bottom: 14px; }
-  .cover .eyebrow { color: #8fc4ec; font-weight: bold; font-size: 9.5pt; letter-spacing: 0.5px; margin-bottom: 6px; }
-  .cover h1 { font-size: 22pt; margin: 0 0 6px 0; color: #fff; }
-  .cover .subtitle { color: #C9D6E3; font-style: italic; font-size: 12pt; margin: 0; }
-  .meta { margin: 10px 0 14px 0; font-size: 10.5pt; }
+  body { font-family: 'Helvetica', Arial, sans-serif; color: #444444; font-size: 10.5pt; line-height: 1.42; }
+  .cover { background: #1B3B57; color: #fff; padding: 16px 18px; border-radius: 4px; margin-bottom: 10px; display: flex; align-items: center; gap: 16px; }
+  .cover .icon { width: 54px; height: 54px; flex: none; opacity: 0.92; }
+  .cover .eyebrow { color: #8fc4ec; font-weight: bold; font-size: 9pt; letter-spacing: 0.4px; margin-bottom: 4px; }
+  .cover .eyebrow .en { display: block; color: #6f93ad; font-weight: normal; font-style: italic; font-size: 7.5pt; letter-spacing: 0.2px; margin-top: 1px; }
+  .cover h1 { font-size: 19pt; margin: 0 0 3px 0; color: #fff; line-height: 1.12; }
+  .cover .subtitle { color: #C9D6E3; font-style: italic; font-size: 10.5pt; margin: 0; }
+  .meta { margin: 8px 0 10px 0; font-size: 10pt; }
   .meta b { color: #1B3B57; }
-  .intro { margin-bottom: 6px; }
-  h2.step { color: #fff; padding: 8px 12px; font-size: 12.5pt; margin: 22px 0 10px 0; border-radius: 3px; }
-  h2.step .tag { background: rgba(255,255,255,0.22); padding: 2px 8px; border-radius: 3px; font-size: 9.5pt; margin-right: 8px; }
-  table { width: 100%; border-collapse: collapse; margin: 8px 0 14px 0; font-size: 9.8pt; }
-  th { color: #fff; text-align: left; padding: 6px 8px; }
-  td { padding: 6px 8px; border-bottom: 1px solid #E3E9EF; vertical-align: top; }
+  .intro { margin-bottom: 4px; }
+  p { margin: 0 0 8px 0; }
+  h2.step { color: #fff; padding: 6px 10px; font-size: 11.5pt; margin: 16px 0 8px 0; border-radius: 3px; display: flex; align-items: center; }
+  h2.step .tag { background: rgba(255,255,255,0.22); padding: 2px 7px; border-radius: 3px; font-size: 8.5pt; margin-right: 8px; flex: none; }
+  h2.step .stitle { display: flex; flex-direction: column; line-height: 1.18; }
+  h2.step .stitle .en { font-weight: normal; font-style: italic; font-size: 8pt; opacity: 0.82; }
+  table { width: 100%; border-collapse: collapse; margin: 6px 0 10px 0; font-size: 9.5pt; }
+  th { color: #fff; text-align: left; padding: 5px 7px; }
+  td { padding: 5px 7px; border-bottom: 1px solid #E3E9EF; vertical-align: top; }
   .example { font-style: italic; }
-  .notebox { border-radius: 4px; padding: 10px 14px; margin: 10px 0 16px 0; border: 1px solid; }
-  .notebox .title { font-weight: bold; margin-bottom: 6px; }
-  .notebox p { margin: 3px 0; }
-  ol, ul { margin: 6px 0 14px 0; padding-left: 20px; }
-  ol li, ul li { margin-bottom: 7px; }
-  .lines { border-bottom: 1px solid #C9D6E3; height: 22px; margin-bottom: 6px; }
-  .expr-list { list-style: none; padding-left: 0; margin: 6px 0 14px 0; }
-  .expr-list li { margin-bottom: 6px; padding-left: 14px; position: relative; }
-  .gabarito { font-style: italic; color: #1B3B57; margin-top: -6px; }
-  .footer-note { text-align: center; font-weight: bold; color: #1B3B57; margin-top: 18px; font-size: 11pt; }
+  .notebox { border-radius: 4px; padding: 8px 12px; margin: 6px 0 10px 0; border: 1px solid; }
+  .notebox .title { font-weight: bold; margin-bottom: 4px; }
+  .notebox p { margin: 2px 0; }
+  ol, ul { margin: 4px 0 10px 0; padding-left: 19px; }
+  ol li, ul li { margin-bottom: 5px; }
+  .lines { border-bottom: 1px solid #C9D6E3; height: 17px; margin-bottom: 4px; }
+  .expr-list { list-style: none; padding-left: 0; margin: 4px 0 10px 0; }
+  .expr-list li { margin-bottom: 4px; padding-left: 14px; position: relative; }
+  .gabarito { font-style: italic; color: #1B3B57; margin-top: -4px; }
+  .footer-note { text-align: center; font-weight: bold; color: #1B3B57; margin-top: 12px; font-size: 10.5pt; }
 
   .s1 h2, .s1 .tag { background: #2E86C1; }
   .s1 th { background: #2E86C1; }
@@ -72,16 +77,19 @@
 
 <div class="chapter" id="tema-26">
 <div class="cover">
-  <div class="eyebrow">TEMA 26 &nbsp;·&nbsp; BLOCO 4 — NETWORKING E RELACIONAMENTOS PROFISSIONAIS</div>
-  <h1>Making Small Talk with Strangers</h1>
-  <p class="subtitle">Puxando conversa com estranhos</p>
+  <img class="icon" src="file:///home/user/Claude/ebook/assets/icons/block-4.png">
+  <div>
+    <div class="eyebrow">TEMA 26 &nbsp;·&nbsp; BLOCO 4 &nbsp;·&nbsp; NETWORKING E RELACIONAMENTOS PROFISSIONAIS<span class="en">THEME 26 · BLOCK 4 · NETWORKING AND PROFESSIONAL RELATIONSHIPS</span></div>
+    <h1>Making Small Talk with Strangers</h1>
+    <p class="subtitle">Puxando conversa com estranhos</p>
+  </div>
 </div>
 
 <div class="meta"><b>Tempo estimado:</b> 60–90 minutos, divididos ao longo da semana.</div>
 <p class="intro">Diferente do Tema 2, que tratava da mecânica geral de small talk, este tema foca em um momento específico e desconfortável: se aproximar de pessoas completamente desconhecidas, sozinho, em um evento.</p>
 
 <div class="s1">
-<h2 class="step"><span class="tag">ETAPA 1</span>Vocabulário Contextualizado</h2>
+<h2 class="step "><span class="tag">ETAPA 1</span><span class="stitle"><span class="pt">Vocabulário Contextualizado</span><span class="en">Contextualized Vocabulary</span></span></h2>
 <p>Estas palavras e expressões vão te ajudar a se expressar sobre este tema com mais precisão e naturalidade.</p>
 <table>
 <tr><th>Word / Expression</th><th>Tradução</th><th>Example Sentence</th></tr>
@@ -96,41 +104,41 @@
     <tr><td><b>group dynamics</b></td><td>dinâmica de grupo</td><td class="example">Reading group dynamics helps you know when it's okay to jump in.</td></tr>
     <tr><td><b>wallflower</b></td><td>pessoa tímida que fica à parte</td><td class="example">I used to be a total wallflower at these events.</td></tr>
     <tr><td><b>to feel out of place</b></td><td>se sentir deslocado(a)</td><td class="example">I felt a bit out of place at first, being the only one from my industry.</td></tr>
-    <tr><td><b>to blend in</b></td><td>se misturar / passar despercebido(a)</td><td class="example">I didn't want to just blend in — I wanted to actually connect.</td></tr>
+    <tr><td><b>to blend in</b></td><td>se misturar / passar despercebido(a)</td><td class="example">I didn't want to just blend in, I wanted to actually connect.</td></tr>
     <tr><td><b>mutual acquaintance</b></td><td>conhecido em comum</td><td class="example">We found out we had a mutual acquaintance, which broke the ice.</td></tr>
 </table>
 </div>
 
 <div class="s2">
-<h2 class="step"><span class="tag">ETAPA 2</span>Leitura com Orientação de Estudo</h2>
+<h2 class="step "><span class="tag">ETAPA 2</span><span class="stitle"><span class="pt">Leitura com Orientação de Estudo</span><span class="en">Guided Reading</span></span></h2>
 <div class="notebox">
   <div class="title">Como ler este texto</div>
-  <p>1) Leia uma vez, rápido, só para captar a ideia geral — sem parar no que não entender.</p><p>2) Leia de novo e grife toda expressão da Etapa 1 que aparecer no texto.</p><p>3) Releia em voz alta, como se você estivesse contando essa história sobre você mesmo.</p>
+  <p>1) Leia uma vez, rápido, só para captar a ideia geral, sem parar no que não entender.</p><p>2) Leia de novo e grife toda expressão da Etapa 1 que aparecer no texto.</p><p>3) Releia em voz alta, como se você estivesse contando essa história sobre você mesmo.</p>
 </div>
 <p><b>"Everyone Feels a Little Out of Place"</b></p>
-<p>One of the most reassuring truths about networking events is that almost everyone feels a bit like a wallflower at some point — even people who look completely at ease. That awkward hover before approaching a group is nearly universal; it's just rarely talked about.</p><p>In English, there are a few low-risk ways to break into a group: making eye contact and smiling as you approach, waiting for a natural pause, and opening with something simple like "Mind if I join?" or "Is this a good conversation to jump into?" Groups are almost always more welcoming than they seem from the outside.</p><p>It's also useful to target people standing alone first — someone lingering near the food table is often just as relieved as you are to have someone start a conversation. Approaching them is usually far less intimidating than breaking into an already-flowing group.</p>
+<p>One of the most reassuring truths about networking events is that almost everyone feels a bit like a wallflower at some point, even people who look completely at ease. That awkward hover before approaching a group is nearly universal; it's just rarely talked about.</p><p>In English, there are a few low-risk ways to break into a group: making eye contact and smiling as you approach, waiting for a natural pause, and opening with something simple like "Mind if I join?" or "Is this a good conversation to jump into?" Groups are almost always more welcoming than they seem from the outside.</p><p>It's also useful to target people standing alone first, someone lingering near the food table is often just as relieved as you are to have someone start a conversation. Approaching them is usually far less intimidating than breaking into an already-flowing group.</p>
 </div>
 
 <div class="s3">
-<h2 class="step"><span class="tag">ETAPA 3</span>Listening com Suporte em Áudio e Vídeo</h2>
+<h2 class="step "><span class="tag">ETAPA 3</span><span class="stitle"><span class="pt">Listening com Suporte em Áudio e Vídeo</span><span class="en">Guided Listening</span></span></h2>
 <p>Ouça o áudio deste tema (arquivo disponível para download na plataforma: <i>audio/tema-26-small-talk-with-strangers.mp3</i>) com o roteiro abaixo. Primeiro sem ler, depois acompanhando o texto.</p>
 <div class="notebox">
   <div class="title">Roteiro do áudio (Audio Script)</div>
-  <p>"Mind if I join? I saw you standing here and figured I'd say hi."</p><p>"Please, join — I was actually feeling a bit out of place, to be honest." "Ha, same here. Is this your first time at one of these events?"</p>
+  <p>"Mind if I join? I saw you standing here and figured I'd say hi."</p><p>"Please, join, I was actually feeling a bit out of place, to be honest." "Ha, same here. Is this your first time at one of these events?"</p>
 </div>
-<p>Note que os dois admitem se sentir deslocados — isso, paradoxalmente, quebra o gelo rapidamente.</p>
+<p>Note que os dois admitem se sentir deslocados, isso, paradoxalmente, quebra o gelo rapidamente.</p>
 </div>
 
 <div class="s4">
-<h2 class="step"><span class="tag">ETAPA 4</span>Writing como Preparação para a Fala</h2>
-<p>Antes de falar, escreva. Use as perguntas abaixo como guia e escreva de 4 a 6 frases — não precisa ser perfeito, precisa existir no papel primeiro.</p>
+<h2 class="step "><span class="tag">ETAPA 4</span><span class="stitle"><span class="pt">Writing como Preparação para a Fala</span><span class="en">Writing Before Speaking</span></span></h2>
+<p>Antes de falar, escreva. Use as perguntas abaixo como guia e escreva de 4 a 6 frases: não precisa ser perfeito, precisa existir no papel primeiro.</p>
 <ol><li>What's your usual strategy for approaching someone you don't know at an event?</li><li>Describe a time you successfully broke into a group conversation.</li><li>What's a conversation opener you feel comfortable using with total strangers?</li><li>How do you usually excuse yourself gracefully from a conversation to meet others?</li></ol>
 <p>Espaço para escrever:</p>
-<div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div>
+<div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div>
 </div>
 
 <div class="s5">
-<h2 class="step"><span class="tag">ETAPA 5</span>Gramática de Apoio Aplicada à Conversação</h2>
+<h2 class="step "><span class="tag">ETAPA 5</span><span class="stitle"><span class="pt">Gramática de Apoio Aplicada à Conversação</span><span class="en">Grammar for Conversation</span></span></h2>
 <p>Se aproximar de estranhos de forma educada depende de pedidos suaves e perguntas baseadas em observação.</p>
 <table>
 <tr><th>Estrutura</th><th>Exemplo (EN)</th><th>Tradução (PT)</th></tr>
@@ -139,33 +147,33 @@
     <tr><td><b>What brings you to...?</b></td><td class="example">What brings you to this event?</td><td>Pergunta clássica de abertura, focada no motivo da presença da pessoa.</td></tr>
     <tr><td><b>Present Continuous</b><br>(comentário baseado em observação)</td><td class="example">You guys seem to be having a great conversation.</td><td>Usado para comentar o que você observa no momento, como forma natural de se aproximar.</td></tr>
 </table>
-<p>Dica prática: depois de "Would you mind if...", use o verbo no passado ("if I joined", não "if I join") — é uma regra fixa dessa estrutura educada, mesmo se tratando do presente/futuro.</p>
+<p>Dica prática: depois de "Would you mind if...", use o verbo no passado ("if I joined", não "if I join"), é uma regra fixa dessa estrutura educada, mesmo se tratando do presente/futuro.</p>
 </div>
 
 <div class="s6">
-<h2 class="step"><span class="tag">ETAPA 6</span>Speaking — Perguntas Abertas</h2>
-<p>Responda em voz alta, gravando se possível. Não vale responder em uma frase só — use o que você escreveu na Etapa 4 como base, mas fale livremente.</p>
+<h2 class="step "><span class="tag">ETAPA 6</span><span class="stitle"><span class="pt">Speaking: Perguntas Abertas</span><span class="en">Open-Ended Speaking</span></span></h2>
+<p>Responda em voz alta, gravando se possível. Não vale responder em uma frase só: use o que você escreveu na Etapa 4 como base, mas fale livremente.</p>
 <ol><li>What's your usual approach to breaking into a group conversation at an event?</li><li>How do you decide who to approach when you don't know anyone in the room?</li><li>What's a conversation opener that has worked well for you with strangers?</li><li>Describe a time you felt completely out of place at an event. What did you do?</li><li>How do you read group dynamics before deciding to join a conversation?</li><li>What's the most awkward networking moment you've experienced?</li><li>How has your comfort with approaching strangers changed over time?</li><li>What do you do when a conversation with a stranger just isn't clicking?</li><li>How do you gracefully exit a conversation to meet other people at an event?</li><li>What advice would you give someone who considers themselves a total wallflower?</li></ol>
 <p><b>Expressões úteis para esta conversa:</b></p>
-<ul class="expr-list"><li>"Mind if I join?" — forma casual e direta de se juntar a um grupo.</li><li>"Is this your first time at one of these?" — pergunta segura e universal.</li><li>"I was actually feeling a bit out of place too." — para criar conexão instantânea.</li><li>"I don't want to interrupt, but..." — para se aproximar com educação.</li></ul>
+<ul class="expr-list"><li>"Mind if I join?", forma casual e direta de se juntar a um grupo.</li><li>"Is this your first time at one of these?", pergunta segura e universal.</li><li>"I was actually feeling a bit out of place too.", para criar conexão instantânea.</li><li>"I don't want to interrupt, but...", para se aproximar com educação.</li></ul>
 </div>
 
 <div class="sx">
-<h2 class="step"><span class="tag">EXERCÍCIO</span>Complete com a Palavra Certa</h2>
+<h2 class="step "><span class="tag">EXERCÍCIO</span><span class="stitle"><span class="pt">Complete com a Palavra Certa</span><span class="en">Vocabulary Check</span></span></h2>
 <p>Complete cada frase com uma palavra ou expressão da Etapa 1. Gabarito ao final desta seção.</p>
 <ol><li>______ a group that's already talking can feel intimidating.</li><li>I noticed him ______ near the snack table, so I went to say hi.</li><li>______ first makes approaching much easier.</li><li>I used to be a total ______ at these events.</li><li>We found out we had a ______, which broke the ice.</li></ol>
 <p class="gabarito">Gabarito: 1) Breaking into   2) lingering   3) Making eye contact   4) wallflower   5) mutual acquaintance</p>
 </div>
 
 <div class="s7">
-<h2 class="step"><span class="tag">ETAPA 7</span>Autoavaliação de Performance</h2>
+<h2 class="step "><span class="tag">ETAPA 7</span><span class="stitle"><span class="pt">Autoavaliação de Performance</span><span class="en">Self-Assessment</span></span></h2>
 <p>Antes de marcar este tema como concluído, avalie honestamente como foi sua prática.</p>
 <table>
-<tr><th>Critério</th><th>Como foi?</th><th>Nota (1–5)</th></tr>
+<tr><th>Critério</th><th>Como foi?</th><th>Nota (1-5)</th></tr>
 <tr><td>Consegui usar o vocabulário novo sem parar para pensar</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Entendi o áudio/vídeo sem depender da transcrição</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Escrevi minhas respostas antes de falar</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Apliquei a estrutura gramatical da etapa 5 corretamente</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Sustentei minhas respostas por mais de 2 frases</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Me senti confiante ao falar sobre este tema</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 </table>
 <p>O que travou mais nesta conversa? O que você quer treinar de novo antes de seguir para o próximo tema?</p>
-<div class="lines"></div><div class="lines"></div><div class="lines"></div>
+<div class="lines"></div><div class="lines"></div>
 </div>
 
 <p class="footer-note">Marque este tema como concluído no seu Painel de Evolução e siga para o Tema 27.</p>

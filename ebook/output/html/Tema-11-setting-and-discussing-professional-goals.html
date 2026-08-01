@@ -2,40 +2,45 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Tema 11 — Setting and Discussing Professional Goals</title>
+<title>Tema 11: Setting and Discussing Professional Goals</title>
 <style>
   
   @page {
     size: A4;
-    margin: 2.2cm 2cm 2.4cm 2cm;
-    @top-right { content: "English Speaking Practice — Nação Fluente"; font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
-    @bottom-center { content: "Bloco 2 — Carreira e Desenvolvimento Profissional   |   Página " counter(page); font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
+    margin: 1.9cm 2cm 2.1cm 2cm;
+    @top-right { content: "English Speaking Practice · Nação Fluente"; font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
+    @bottom-center { content: "Bloco 2 · Carreira e Desenvolvimento Profissional (Career and Professional Development)   |   Página " counter(page); font-size: 7.5pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
   }
   * { box-sizing: border-box; }
-  body { font-family: 'Helvetica', Arial, sans-serif; color: #444444; font-size: 10.5pt; line-height: 1.5; }
-  .cover { background: #1B3B57; color: #fff; padding: 22px 24px; border-radius: 4px; margin-bottom: 14px; }
-  .cover .eyebrow { color: #8fc4ec; font-weight: bold; font-size: 9.5pt; letter-spacing: 0.5px; margin-bottom: 6px; }
-  .cover h1 { font-size: 22pt; margin: 0 0 6px 0; color: #fff; }
-  .cover .subtitle { color: #C9D6E3; font-style: italic; font-size: 12pt; margin: 0; }
-  .meta { margin: 10px 0 14px 0; font-size: 10.5pt; }
+  body { font-family: 'Helvetica', Arial, sans-serif; color: #444444; font-size: 10.5pt; line-height: 1.42; }
+  .cover { background: #1B3B57; color: #fff; padding: 16px 18px; border-radius: 4px; margin-bottom: 10px; display: flex; align-items: center; gap: 16px; }
+  .cover .icon { width: 54px; height: 54px; flex: none; opacity: 0.92; }
+  .cover .eyebrow { color: #8fc4ec; font-weight: bold; font-size: 9pt; letter-spacing: 0.4px; margin-bottom: 4px; }
+  .cover .eyebrow .en { display: block; color: #6f93ad; font-weight: normal; font-style: italic; font-size: 7.5pt; letter-spacing: 0.2px; margin-top: 1px; }
+  .cover h1 { font-size: 19pt; margin: 0 0 3px 0; color: #fff; line-height: 1.12; }
+  .cover .subtitle { color: #C9D6E3; font-style: italic; font-size: 10.5pt; margin: 0; }
+  .meta { margin: 8px 0 10px 0; font-size: 10pt; }
   .meta b { color: #1B3B57; }
-  .intro { margin-bottom: 6px; }
-  h2.step { color: #fff; padding: 8px 12px; font-size: 12.5pt; margin: 22px 0 10px 0; border-radius: 3px; }
-  h2.step .tag { background: rgba(255,255,255,0.22); padding: 2px 8px; border-radius: 3px; font-size: 9.5pt; margin-right: 8px; }
-  table { width: 100%; border-collapse: collapse; margin: 8px 0 14px 0; font-size: 9.8pt; }
-  th { color: #fff; text-align: left; padding: 6px 8px; }
-  td { padding: 6px 8px; border-bottom: 1px solid #E3E9EF; vertical-align: top; }
+  .intro { margin-bottom: 4px; }
+  p { margin: 0 0 8px 0; }
+  h2.step { color: #fff; padding: 6px 10px; font-size: 11.5pt; margin: 16px 0 8px 0; border-radius: 3px; display: flex; align-items: center; }
+  h2.step .tag { background: rgba(255,255,255,0.22); padding: 2px 7px; border-radius: 3px; font-size: 8.5pt; margin-right: 8px; flex: none; }
+  h2.step .stitle { display: flex; flex-direction: column; line-height: 1.18; }
+  h2.step .stitle .en { font-weight: normal; font-style: italic; font-size: 8pt; opacity: 0.82; }
+  table { width: 100%; border-collapse: collapse; margin: 6px 0 10px 0; font-size: 9.5pt; }
+  th { color: #fff; text-align: left; padding: 5px 7px; }
+  td { padding: 5px 7px; border-bottom: 1px solid #E3E9EF; vertical-align: top; }
   .example { font-style: italic; }
-  .notebox { border-radius: 4px; padding: 10px 14px; margin: 10px 0 16px 0; border: 1px solid; }
-  .notebox .title { font-weight: bold; margin-bottom: 6px; }
-  .notebox p { margin: 3px 0; }
-  ol, ul { margin: 6px 0 14px 0; padding-left: 20px; }
-  ol li, ul li { margin-bottom: 7px; }
-  .lines { border-bottom: 1px solid #C9D6E3; height: 22px; margin-bottom: 6px; }
-  .expr-list { list-style: none; padding-left: 0; margin: 6px 0 14px 0; }
-  .expr-list li { margin-bottom: 6px; padding-left: 14px; position: relative; }
-  .gabarito { font-style: italic; color: #1B3B57; margin-top: -6px; }
-  .footer-note { text-align: center; font-weight: bold; color: #1B3B57; margin-top: 18px; font-size: 11pt; }
+  .notebox { border-radius: 4px; padding: 8px 12px; margin: 6px 0 10px 0; border: 1px solid; }
+  .notebox .title { font-weight: bold; margin-bottom: 4px; }
+  .notebox p { margin: 2px 0; }
+  ol, ul { margin: 4px 0 10px 0; padding-left: 19px; }
+  ol li, ul li { margin-bottom: 5px; }
+  .lines { border-bottom: 1px solid #C9D6E3; height: 17px; margin-bottom: 4px; }
+  .expr-list { list-style: none; padding-left: 0; margin: 4px 0 10px 0; }
+  .expr-list li { margin-bottom: 4px; padding-left: 14px; position: relative; }
+  .gabarito { font-style: italic; color: #1B3B57; margin-top: -4px; }
+  .footer-note { text-align: center; font-weight: bold; color: #1B3B57; margin-top: 12px; font-size: 10.5pt; }
 
   .s1 h2, .s1 .tag { background: #2E86C1; }
   .s1 th { background: #2E86C1; }
@@ -72,23 +77,26 @@
 
 <div class="chapter" id="tema-11">
 <div class="cover">
-  <div class="eyebrow">TEMA 11 &nbsp;·&nbsp; BLOCO 2 — CARREIRA E DESENVOLVIMENTO PROFISSIONAL</div>
-  <h1>Setting and Discussing Professional Goals</h1>
-  <p class="subtitle">Definindo e discutindo metas profissionais</p>
+  <img class="icon" src="file:///home/user/Claude/ebook/assets/icons/block-2.png">
+  <div>
+    <div class="eyebrow">TEMA 11 &nbsp;·&nbsp; BLOCO 2 &nbsp;·&nbsp; CARREIRA E DESENVOLVIMENTO PROFISSIONAL<span class="en">THEME 11 · BLOCK 2 · CAREER AND PROFESSIONAL DEVELOPMENT</span></div>
+    <h1>Setting and Discussing Professional Goals</h1>
+    <p class="subtitle">Definindo e discutindo metas profissionais</p>
+  </div>
 </div>
 
 <div class="meta"><b>Tempo estimado:</b> 60–90 minutos, divididos ao longo da semana.</div>
 <p class="intro">Falar sobre metas de forma vaga ("I want to grow") não convence ninguém. Este tema treina como estruturar metas profissionais em inglês de forma específica e mensurável.</p>
 
 <div class="s1">
-<h2 class="step"><span class="tag">ETAPA 1</span>Vocabulário Contextualizado</h2>
+<h2 class="step "><span class="tag">ETAPA 1</span><span class="stitle"><span class="pt">Vocabulário Contextualizado</span><span class="en">Contextualized Vocabulary</span></span></h2>
 <p>Estas palavras e expressões vão te ajudar a se expressar sobre este tema com mais precisão e naturalidade.</p>
 <table>
 <tr><th>Word / Expression</th><th>Tradução</th><th>Example Sentence</th></tr>
 
     <tr><td><b>goal</b></td><td>meta</td><td class="example">My main goal this year is to move into a leadership role.</td></tr>
     <tr><td><b>to set a goal</b></td><td>estabelecer uma meta</td><td class="example">We set a goal to increase revenue by 20% this quarter.</td></tr>
-    <tr><td><b>short-term / long-term</b></td><td>curto prazo / longo prazo</td><td class="example">That's more of a long-term goal — I don't expect it this year.</td></tr>
+    <tr><td><b>short-term / long-term</b></td><td>curto prazo / longo prazo</td><td class="example">That's more of a long-term goal, I don't expect it this year.</td></tr>
     <tr><td><b>milestone</b></td><td>marco</td><td class="example">Getting certified was an important milestone toward that goal.</td></tr>
     <tr><td><b>to fall behind</b></td><td>ficar para trás / atrasar</td><td class="example">We fell behind on that goal after the reorg.</td></tr>
     <tr><td><b>on track</b></td><td>no caminho certo</td><td class="example">We're on track to hit our targets this quarter.</td></tr>
@@ -102,70 +110,70 @@
 </div>
 
 <div class="s2">
-<h2 class="step"><span class="tag">ETAPA 2</span>Leitura com Orientação de Estudo</h2>
+<h2 class="step "><span class="tag">ETAPA 2</span><span class="stitle"><span class="pt">Leitura com Orientação de Estudo</span><span class="en">Guided Reading</span></span></h2>
 <div class="notebox">
   <div class="title">Como ler este texto</div>
-  <p>1) Leia uma vez, rápido, só para captar a ideia geral — sem parar no que não entender.</p><p>2) Leia de novo e grife toda expressão da Etapa 1 que aparecer no texto.</p><p>3) Releia em voz alta, como se você estivesse contando essa história sobre você mesmo.</p>
+  <p>1) Leia uma vez, rápido, só para captar a ideia geral, sem parar no que não entender.</p><p>2) Leia de novo e grife toda expressão da Etapa 1 que aparecer no texto.</p><p>3) Releia em voz alta, como se você estivesse contando essa história sobre você mesmo.</p>
 </div>
 <p><b>"Why "I Want to Grow" Isn't a Goal"</b></p>
-<p>"I want to grow professionally" sounds like a goal, but it isn't one — it's a direction. A real goal has an edge to it: something specific enough that you could tell, clearly, whether you hit it or not. "I want to lead a team of five by next year" is a goal. "I want to grow" is a wish.</p><p>In English, professional goals are usually discussed with a mix of future forms and time markers: "By the end of the year, I want to have finished my certification." "I'm going to take on more ownership this quarter." These small grammar choices — by, by the end of, going to — do a lot of the work of making a goal sound concrete.</p><p>Discussing goals well also means being honest about being on track or falling behind — vague optimism ("it's going okay") is far less convincing than a specific status: "We're on track for two of the three milestones, but behind on the third."</p>
+<p>"I want to grow professionally" sounds like a goal, but it isn't one, it's a direction. A real goal has an edge to it: something specific enough that you could tell, clearly, whether you hit it or not. "I want to lead a team of five by next year" is a goal. "I want to grow" is a wish.</p><p>In English, professional goals are usually discussed with a mix of future forms and time markers: "By the end of the year, I want to have finished my certification." "I'm going to take on more ownership this quarter." These small grammar choices, by, by the end of, going to, do a lot of the work of making a goal sound concrete.</p><p>Discussing goals well also means being honest about being on track or falling behind, vague optimism ("it's going okay") is far less convincing than a specific status: "We're on track for two of the three milestones, but behind on the third."</p>
 </div>
 
 <div class="s3">
-<h2 class="step"><span class="tag">ETAPA 3</span>Listening com Suporte em Áudio e Vídeo</h2>
+<h2 class="step "><span class="tag">ETAPA 3</span><span class="stitle"><span class="pt">Listening com Suporte em Áudio e Vídeo</span><span class="en">Guided Listening</span></span></h2>
 <p>Ouça o áudio deste tema (arquivo disponível para download na plataforma: <i>audio/tema-11-professional-goals.mp3</i>) com o roteiro abaixo. Primeiro sem ler, depois acompanhando o texto.</p>
 <div class="notebox">
   <div class="title">Roteiro do áudio (Audio Script)</div>
-  <p>"What's your main professional goal for this year?"</p><p>"By the end of the year, I want to have moved into a team lead role. It's a bit of a stretch goal, honestly, but I've set some smaller milestones to stay on track — starting with leading one project end-to-end this quarter."</p>
+  <p>"What's your main professional goal for this year?"</p><p>"By the end of the year, I want to have moved into a team lead role. It's a bit of a stretch goal, honestly, but I've set some smaller milestones to stay on track, starting with leading one project end-to-end this quarter."</p>
 </div>
 <p>Note o uso de "by the end of the year" + Future Perfect ("want to have moved") para dar um prazo claro à meta.</p>
 </div>
 
 <div class="s4">
-<h2 class="step"><span class="tag">ETAPA 4</span>Writing como Preparação para a Fala</h2>
-<p>Antes de falar, escreva. Use as perguntas abaixo como guia e escreva de 4 a 6 frases — não precisa ser perfeito, precisa existir no papel primeiro.</p>
+<h2 class="step "><span class="tag">ETAPA 4</span><span class="stitle"><span class="pt">Writing como Preparação para a Fala</span><span class="en">Writing Before Speaking</span></span></h2>
+<p>Antes de falar, escreva. Use as perguntas abaixo como guia e escreva de 4 a 6 frases: não precisa ser perfeito, precisa existir no papel primeiro.</p>
 <ol><li>What's your main professional goal for this year, specifically?</li><li>What milestones will show you're on track toward that goal?</li><li>What's a stretch goal you have that feels a little uncomfortable to say out loud?</li><li>What's a goal you've fallen behind on, and why?</li></ol>
 <p>Espaço para escrever:</p>
-<div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div>
+<div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div>
 </div>
 
 <div class="s5">
-<h2 class="step"><span class="tag">ETAPA 5</span>Gramática de Apoio Aplicada à Conversação</h2>
+<h2 class="step "><span class="tag">ETAPA 5</span><span class="stitle"><span class="pt">Gramática de Apoio Aplicada à Conversação</span><span class="en">Grammar for Conversation</span></span></h2>
 <p>Falar sobre metas em inglês depende de escolher a forma de futuro certa. Essas três estruturas cobrem praticamente todos os casos.</p>
 <table>
 <tr><th>Estrutura</th><th>Exemplo (EN)</th><th>Tradução (PT)</th></tr>
 
-    <tr><td><b>going to</b><br>(planos/intenções)</td><td class="example">I'm going to apply for a leadership role next year.</td><td>Usado para planos já decididos, com intenção clara — não uma decisão espontânea.</td></tr>
+    <tr><td><b>going to</b><br>(planos/intenções)</td><td class="example">I'm going to apply for a leadership role next year.</td><td>Usado para planos já decididos, com intenção clara, não uma decisão espontânea.</td></tr>
     <tr><td><b>will</b><br>(decisões espontâneas/previsões)</td><td class="example">I think I'll focus more on networking this quarter.</td><td>Usado para decisões tomadas na hora ou previsões, sem um plano fixo anterior.</td></tr>
     <tr><td><b>Future Perfect</b><br>(will have + particípio)</td><td class="example">By the end of the year, I will have finished my certification.</td><td>Usado para uma ação que estará concluída até um prazo específico no futuro.</td></tr>
 </table>
-<p>Dica prática: sempre que você disser uma meta com prazo ("by the end of the year", "by Q3"), use Future Perfect ("I will have + particípio") em vez de Simple Future — soa muito mais preciso.</p>
+<p>Dica prática: sempre que você disser uma meta com prazo ("by the end of the year", "by Q3"), use Future Perfect ("I will have + particípio") em vez de Simple Future, soa muito mais preciso.</p>
 </div>
 
 <div class="s6">
-<h2 class="step"><span class="tag">ETAPA 6</span>Speaking — Perguntas Abertas</h2>
-<p>Responda em voz alta, gravando se possível. Não vale responder em uma frase só — use o que você escreveu na Etapa 4 como base, mas fale livremente.</p>
+<h2 class="step "><span class="tag">ETAPA 6</span><span class="stitle"><span class="pt">Speaking: Perguntas Abertas</span><span class="en">Open-Ended Speaking</span></span></h2>
+<p>Responda em voz alta, gravando se possível. Não vale responder em uma frase só: use o que você escreveu na Etapa 4 como base, mas fale livremente.</p>
 <ol><li>What's your main professional goal for this year, and why that one?</li><li>How do you usually track whether you're on track or falling behind on a goal?</li><li>What's a stretch goal you've set for yourself that scares you a little?</li><li>Describe a milestone you achieved recently that you're proud of.</li><li>How do your short-term goals connect to your long-term career vision?</li><li>What's a goal you had to abandon or change? What happened?</li><li>How do you prioritize when you have multiple professional goals at once?</li><li>What benchmark do you use to know if you're doing well in your career?</li><li>Who helps hold you accountable to your professional goals?</li><li>If you had to pick just one goal to accomplish this quarter, what would it be?</li></ol>
 <p><b>Expressões úteis para esta conversa:</b></p>
-<ul class="expr-list"><li>"By the end of the quarter, I want to..." — para introduzir uma meta com prazo.</li><li>"I'm on track for..." — para reportar progresso positivo.</li><li>"I've fallen a bit behind on..." — para admitir atraso sem soar derrotista.</li><li>"That's more of a stretch goal." — para sinalizar uma meta ambiciosa e incerta.</li></ul>
+<ul class="expr-list"><li>"By the end of the quarter, I want to...", para introduzir uma meta com prazo.</li><li>"I'm on track for...", para reportar progresso positivo.</li><li>"I've fallen a bit behind on...", para admitir atraso sem soar derrotista.</li><li>"That's more of a stretch goal.", para sinalizar uma meta ambiciosa e incerta.</li></ul>
 </div>
 
 <div class="sx">
-<h2 class="step"><span class="tag">EXERCÍCIO</span>Complete com a Palavra Certa</h2>
+<h2 class="step "><span class="tag">EXERCÍCIO</span><span class="stitle"><span class="pt">Complete com a Palavra Certa</span><span class="en">Vocabulary Check</span></span></h2>
 <p>Complete cada frase com uma palavra ou expressão da Etapa 1. Gabarito ao final desta seção.</p>
 <ol><li>We ______ a goal to increase revenue by 20% this quarter.</li><li>We fell ______ on that goal after the reorg.</li><li>We're ______ to hit our targets this quarter.</li><li>Doubling our client base is more of a ______ goal.</li><li>I've got a rough ______ for how I want to get there.</li></ol>
 <p class="gabarito">Gabarito: 1) set   2) behind   3) on track   4) stretch   5) roadmap</p>
 </div>
 
 <div class="s7">
-<h2 class="step"><span class="tag">ETAPA 7</span>Autoavaliação de Performance</h2>
+<h2 class="step "><span class="tag">ETAPA 7</span><span class="stitle"><span class="pt">Autoavaliação de Performance</span><span class="en">Self-Assessment</span></span></h2>
 <p>Antes de marcar este tema como concluído, avalie honestamente como foi sua prática.</p>
 <table>
-<tr><th>Critério</th><th>Como foi?</th><th>Nota (1–5)</th></tr>
+<tr><th>Critério</th><th>Como foi?</th><th>Nota (1-5)</th></tr>
 <tr><td>Consegui usar o vocabulário novo sem parar para pensar</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Entendi o áudio/vídeo sem depender da transcrição</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Escrevi minhas respostas antes de falar</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Apliquei a estrutura gramatical da etapa 5 corretamente</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Sustentei minhas respostas por mais de 2 frases</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Me senti confiante ao falar sobre este tema</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 </table>
 <p>O que travou mais nesta conversa? O que você quer treinar de novo antes de seguir para o próximo tema?</p>
-<div class="lines"></div><div class="lines"></div><div class="lines"></div>
+<div class="lines"></div><div class="lines"></div>
 </div>
 
 <p class="footer-note">Marque este tema como concluído no seu Painel de Evolução e siga para o Tema 12.</p>

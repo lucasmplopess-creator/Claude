@@ -2,40 +2,45 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Tema 19 — Managing Conflict Within a Team</title>
+<title>Tema 19: Managing Conflict Within a Team</title>
 <style>
   
   @page {
     size: A4;
-    margin: 2.2cm 2cm 2.4cm 2cm;
-    @top-right { content: "English Speaking Practice — Nação Fluente"; font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
-    @bottom-center { content: "Bloco 3 — Liderança e Gestão de Equipes   |   Página " counter(page); font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
+    margin: 1.9cm 2cm 2.1cm 2cm;
+    @top-right { content: "English Speaking Practice · Nação Fluente"; font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
+    @bottom-center { content: "Bloco 3 · Liderança e Gestão de Equipes (Leadership and Team Management)   |   Página " counter(page); font-size: 7.5pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
   }
   * { box-sizing: border-box; }
-  body { font-family: 'Helvetica', Arial, sans-serif; color: #444444; font-size: 10.5pt; line-height: 1.5; }
-  .cover { background: #1B3B57; color: #fff; padding: 22px 24px; border-radius: 4px; margin-bottom: 14px; }
-  .cover .eyebrow { color: #8fc4ec; font-weight: bold; font-size: 9.5pt; letter-spacing: 0.5px; margin-bottom: 6px; }
-  .cover h1 { font-size: 22pt; margin: 0 0 6px 0; color: #fff; }
-  .cover .subtitle { color: #C9D6E3; font-style: italic; font-size: 12pt; margin: 0; }
-  .meta { margin: 10px 0 14px 0; font-size: 10.5pt; }
+  body { font-family: 'Helvetica', Arial, sans-serif; color: #444444; font-size: 10.5pt; line-height: 1.42; }
+  .cover { background: #1B3B57; color: #fff; padding: 16px 18px; border-radius: 4px; margin-bottom: 10px; display: flex; align-items: center; gap: 16px; }
+  .cover .icon { width: 54px; height: 54px; flex: none; opacity: 0.92; }
+  .cover .eyebrow { color: #8fc4ec; font-weight: bold; font-size: 9pt; letter-spacing: 0.4px; margin-bottom: 4px; }
+  .cover .eyebrow .en { display: block; color: #6f93ad; font-weight: normal; font-style: italic; font-size: 7.5pt; letter-spacing: 0.2px; margin-top: 1px; }
+  .cover h1 { font-size: 19pt; margin: 0 0 3px 0; color: #fff; line-height: 1.12; }
+  .cover .subtitle { color: #C9D6E3; font-style: italic; font-size: 10.5pt; margin: 0; }
+  .meta { margin: 8px 0 10px 0; font-size: 10pt; }
   .meta b { color: #1B3B57; }
-  .intro { margin-bottom: 6px; }
-  h2.step { color: #fff; padding: 8px 12px; font-size: 12.5pt; margin: 22px 0 10px 0; border-radius: 3px; }
-  h2.step .tag { background: rgba(255,255,255,0.22); padding: 2px 8px; border-radius: 3px; font-size: 9.5pt; margin-right: 8px; }
-  table { width: 100%; border-collapse: collapse; margin: 8px 0 14px 0; font-size: 9.8pt; }
-  th { color: #fff; text-align: left; padding: 6px 8px; }
-  td { padding: 6px 8px; border-bottom: 1px solid #E3E9EF; vertical-align: top; }
+  .intro { margin-bottom: 4px; }
+  p { margin: 0 0 8px 0; }
+  h2.step { color: #fff; padding: 6px 10px; font-size: 11.5pt; margin: 16px 0 8px 0; border-radius: 3px; display: flex; align-items: center; }
+  h2.step .tag { background: rgba(255,255,255,0.22); padding: 2px 7px; border-radius: 3px; font-size: 8.5pt; margin-right: 8px; flex: none; }
+  h2.step .stitle { display: flex; flex-direction: column; line-height: 1.18; }
+  h2.step .stitle .en { font-weight: normal; font-style: italic; font-size: 8pt; opacity: 0.82; }
+  table { width: 100%; border-collapse: collapse; margin: 6px 0 10px 0; font-size: 9.5pt; }
+  th { color: #fff; text-align: left; padding: 5px 7px; }
+  td { padding: 5px 7px; border-bottom: 1px solid #E3E9EF; vertical-align: top; }
   .example { font-style: italic; }
-  .notebox { border-radius: 4px; padding: 10px 14px; margin: 10px 0 16px 0; border: 1px solid; }
-  .notebox .title { font-weight: bold; margin-bottom: 6px; }
-  .notebox p { margin: 3px 0; }
-  ol, ul { margin: 6px 0 14px 0; padding-left: 20px; }
-  ol li, ul li { margin-bottom: 7px; }
-  .lines { border-bottom: 1px solid #C9D6E3; height: 22px; margin-bottom: 6px; }
-  .expr-list { list-style: none; padding-left: 0; margin: 6px 0 14px 0; }
-  .expr-list li { margin-bottom: 6px; padding-left: 14px; position: relative; }
-  .gabarito { font-style: italic; color: #1B3B57; margin-top: -6px; }
-  .footer-note { text-align: center; font-weight: bold; color: #1B3B57; margin-top: 18px; font-size: 11pt; }
+  .notebox { border-radius: 4px; padding: 8px 12px; margin: 6px 0 10px 0; border: 1px solid; }
+  .notebox .title { font-weight: bold; margin-bottom: 4px; }
+  .notebox p { margin: 2px 0; }
+  ol, ul { margin: 4px 0 10px 0; padding-left: 19px; }
+  ol li, ul li { margin-bottom: 5px; }
+  .lines { border-bottom: 1px solid #C9D6E3; height: 17px; margin-bottom: 4px; }
+  .expr-list { list-style: none; padding-left: 0; margin: 4px 0 10px 0; }
+  .expr-list li { margin-bottom: 4px; padding-left: 14px; position: relative; }
+  .gabarito { font-style: italic; color: #1B3B57; margin-top: -4px; }
+  .footer-note { text-align: center; font-weight: bold; color: #1B3B57; margin-top: 12px; font-size: 10.5pt; }
 
   .s1 h2, .s1 .tag { background: #2E86C1; }
   .s1 th { background: #2E86C1; }
@@ -72,16 +77,19 @@
 
 <div class="chapter" id="tema-19">
 <div class="cover">
-  <div class="eyebrow">TEMA 19 &nbsp;·&nbsp; BLOCO 3 — LIDERANÇA E GESTÃO DE EQUIPES</div>
-  <h1>Managing Conflict Within a Team</h1>
-  <p class="subtitle">Gerenciando conflitos dentro de um time</p>
+  <img class="icon" src="file:///home/user/Claude/ebook/assets/icons/block-3.png">
+  <div>
+    <div class="eyebrow">TEMA 19 &nbsp;·&nbsp; BLOCO 3 &nbsp;·&nbsp; LIDERANÇA E GESTÃO DE EQUIPES<span class="en">THEME 19 · BLOCK 3 · LEADERSHIP AND TEAM MANAGEMENT</span></div>
+    <h1>Managing Conflict Within a Team</h1>
+    <p class="subtitle">Gerenciando conflitos dentro de um time</p>
+  </div>
 </div>
 
 <div class="meta"><b>Tempo estimado:</b> 60–90 minutos, divididos ao longo da semana.</div>
-<p class="intro">Mediar conflito em inglês exige um vocabulário próprio — mais formal e cuidadoso do que o das outras conversas do dia a dia. Este tema prepara você para essas conversas difíceis.</p>
+<p class="intro">Mediar conflito em inglês exige um vocabulário próprio, mais formal e cuidadoso do que o das outras conversas do dia a dia. Este tema prepara você para essas conversas difíceis.</p>
 
 <div class="s1">
-<h2 class="step"><span class="tag">ETAPA 1</span>Vocabulário Contextualizado</h2>
+<h2 class="step "><span class="tag">ETAPA 1</span><span class="stitle"><span class="pt">Vocabulário Contextualizado</span><span class="en">Contextualized Vocabulary</span></span></h2>
 <p>Estas palavras e expressões vão te ajudar a se expressar sobre este tema com mais precisão e naturalidade.</p>
 <table>
 <tr><th>Word / Expression</th><th>Tradução</th><th>Example Sentence</th></tr>
@@ -93,7 +101,7 @@
     <tr><td><b>to clear the air</b></td><td>esclarecer / resolver mal-entendidos</td><td class="example">We had a conversation just to clear the air.</td></tr>
     <tr><td><b>common ground</b></td><td>ponto em comum</td><td class="example">Once we found common ground, the conversation got much easier.</td></tr>
     <tr><td><b>to de-escalate</b></td><td>diminuir a tensão / acalmar</td><td class="example">My first move is always to de-escalate before problem-solving.</td></tr>
-    <tr><td><b>root cause</b></td><td>causa raiz</td><td class="example">The root cause wasn't the deadline — it was unclear roles.</td></tr>
+    <tr><td><b>root cause</b></td><td>causa raiz</td><td class="example">The root cause wasn't the deadline, it was unclear roles.</td></tr>
     <tr><td><b>to hold someone accountable</b></td><td>responsabilizar alguém</td><td class="example">Part of my job is holding people accountable, kindly but clearly.</td></tr>
     <tr><td><b>to smooth things over</b></td><td>aplacar / suavizar</td><td class="example">I tried to smooth things over before the client noticed.</td></tr>
     <tr><td><b>at odds</b></td><td>em desacordo / em conflito</td><td class="example">The two departments have been at odds for months.</td></tr>
@@ -102,70 +110,70 @@
 </div>
 
 <div class="s2">
-<h2 class="step"><span class="tag">ETAPA 2</span>Leitura com Orientação de Estudo</h2>
+<h2 class="step "><span class="tag">ETAPA 2</span><span class="stitle"><span class="pt">Leitura com Orientação de Estudo</span><span class="en">Guided Reading</span></span></h2>
 <div class="notebox">
   <div class="title">Como ler este texto</div>
-  <p>1) Leia uma vez, rápido, só para captar a ideia geral — sem parar no que não entender.</p><p>2) Leia de novo e grife toda expressão da Etapa 1 que aparecer no texto.</p><p>3) Releia em voz alta, como se você estivesse contando essa história sobre você mesmo.</p>
+  <p>1) Leia uma vez, rápido, só para captar a ideia geral, sem parar no que não entender.</p><p>2) Leia de novo e grife toda expressão da Etapa 1 que aparecer no texto.</p><p>3) Releia em voz alta, como se você estivesse contando essa história sobre você mesmo.</p>
 </div>
 <p><b>"Conflict Doesn't Resolve Itself"</b></p>
-<p>Many new managers avoid team conflict in English simply because the vocabulary feels risky — one wrong word and a difficult conversation can feel like an accusation. But avoiding the conversation almost never de-escalates tension; it just delays it, usually until it's worse.</p><p>The language that works best in these conversations separates the person from the problem: "I've noticed some tension between you two — can we talk about the root cause?" rather than "You two need to stop fighting." Naming the pattern, not the people, keeps the conversation from feeling like blame.</p><p>Good conflict conversations in English also tend to end with something concrete — not just "let's clear the air," but a specific agreement: who does what differently next time. Without that, the tension often resurfaces within a few weeks.</p>
+<p>Many new managers avoid team conflict in English simply because the vocabulary feels risky, one wrong word and a difficult conversation can feel like an accusation. But avoiding the conversation almost never de-escalates tension; it just delays it, usually until it's worse.</p><p>The language that works best in these conversations separates the person from the problem: "I've noticed some tension between you two, can we talk about the root cause?" rather than "You two need to stop fighting." Naming the pattern, not the people, keeps the conversation from feeling like blame.</p><p>Good conflict conversations in English also tend to end with something concrete, not just "let's clear the air," but a specific agreement: who does what differently next time. Without that, the tension often resurfaces within a few weeks.</p>
 </div>
 
 <div class="s3">
-<h2 class="step"><span class="tag">ETAPA 3</span>Listening com Suporte em Áudio e Vídeo</h2>
+<h2 class="step "><span class="tag">ETAPA 3</span><span class="stitle"><span class="pt">Listening com Suporte em Áudio e Vídeo</span><span class="en">Guided Listening</span></span></h2>
 <p>Ouça o áudio deste tema (arquivo disponível para download na plataforma: <i>audio/tema-19-managing-conflict.mp3</i>) com o roteiro abaixo. Primeiro sem ler, depois acompanhando o texto.</p>
 <div class="notebox">
   <div class="title">Roteiro do áudio (Audio Script)</div>
-  <p>"I wanted to check in — I've noticed some tension between you and Alex lately."</p><p>"Yeah, honestly, it's been building for a while." "Can we talk about the root cause? I'd rather address it now than let it become a bigger issue."</p>
+  <p>"I wanted to check in, I've noticed some tension between you and Alex lately."</p><p>"Yeah, honestly, it's been building for a while." "Can we talk about the root cause? I'd rather address it now than let it become a bigger issue."</p>
 </div>
 <p>Note que o líder nomeia o padrão ("tension"), não a pessoa, e convida a uma conversa sobre a causa raiz, não sobre culpa.</p>
 </div>
 
 <div class="s4">
-<h2 class="step"><span class="tag">ETAPA 4</span>Writing como Preparação para a Fala</h2>
-<p>Antes de falar, escreva. Use as perguntas abaixo como guia e escreva de 4 a 6 frases — não precisa ser perfeito, precisa existir no papel primeiro.</p>
+<h2 class="step "><span class="tag">ETAPA 4</span><span class="stitle"><span class="pt">Writing como Preparação para a Fala</span><span class="en">Writing Before Speaking</span></span></h2>
+<p>Antes de falar, escreva. Use as perguntas abaixo como guia e escreva de 4 a 6 frases: não precisa ser perfeito, precisa existir no papel primeiro.</p>
 <ol><li>Describe a conflict you've had to mediate or navigate on a team.</li><li>What was the root cause of that conflict, once you dug into it?</li><li>How do you usually de-escalate a tense conversation?</li><li>What's a conflict you avoided addressing that you regret not handling sooner?</li></ol>
 <p>Espaço para escrever:</p>
-<div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div>
+<div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div>
 </div>
 
 <div class="s5">
-<h2 class="step"><span class="tag">ETAPA 5</span>Gramática de Apoio Aplicada à Conversação</h2>
+<h2 class="step "><span class="tag">ETAPA 5</span><span class="stitle"><span class="pt">Gramática de Apoio Aplicada à Conversação</span><span class="en">Grammar for Conversation</span></span></h2>
 <p>Relatar conversas de conflito frequentemente exige o discurso indireto (reported speech) e estruturas de conselho retrospectivo.</p>
 <table>
 <tr><th>Estrutura</th><th>Exemplo (EN)</th><th>Tradução (PT)</th></tr>
 
-    <tr><td><b>Reported speech</b><br>(discurso indireto)</td><td class="example">He told me he felt the workload wasn't fair.</td><td>Usado para relatar o que alguém disse, sem citação direta — muito comum ao descrever um conflito.</td></tr>
+    <tr><td><b>Reported speech</b><br>(discurso indireto)</td><td class="example">He told me he felt the workload wasn't fair.</td><td>Usado para relatar o que alguém disse, sem citação direta, muito comum ao descrever um conflito.</td></tr>
     <tr><td><b>should have + particípio</b><br>(conselho retrospectivo)</td><td class="example">I should have addressed this sooner.</td><td>Usado para refletir sobre algo que deveria ter sido feito diferente no passado.</td></tr>
     <tr><td><b>Condicional de prevenção</b><br>(if... will)</td><td class="example">If we don't address this now, it'll get worse.</td><td>Usado para alertar sobre uma consequência futura provável se nada for feito.</td></tr>
 </table>
-<p>Dica prática: no reported speech, o tempo verbal geralmente "volta" um passo ("I feel" vira "he said he felt") — mas se o fato ainda é verdade agora, também é aceitável manter o tempo original.</p>
+<p>Dica prática: no reported speech, o tempo verbal geralmente "volta" um passo ("I feel" vira "he said he felt"), mas se o fato ainda é verdade agora, também é aceitável manter o tempo original.</p>
 </div>
 
 <div class="s6">
-<h2 class="step"><span class="tag">ETAPA 6</span>Speaking — Perguntas Abertas</h2>
-<p>Responda em voz alta, gravando se possível. Não vale responder em uma frase só — use o que você escreveu na Etapa 4 como base, mas fale livremente.</p>
+<h2 class="step "><span class="tag">ETAPA 6</span><span class="stitle"><span class="pt">Speaking: Perguntas Abertas</span><span class="en">Open-Ended Speaking</span></span></h2>
+<p>Responda em voz alta, gravando se possível. Não vale responder em uma frase só: use o que você escreveu na Etapa 4 como base, mas fale livremente.</p>
 <ol><li>Describe a conflict within a team that you had to help resolve.</li><li>How do you usually approach the root cause instead of just the symptoms?</li><li>What's your go-to strategy for de-escalating a tense conversation?</li><li>How do you hold someone accountable without damaging the relationship?</li><li>Describe a time you had to mediate between two people who were at odds.</li><li>What's a conflict you avoided addressing, and what happened as a result?</li><li>How do cultural differences affect how conflict is handled on international teams?</li><li>What's the difference between clearing the air and actually resolving something?</li><li>How do you know when a conflict needs to be escalated to HR or above?</li><li>What have you learned about conflict that you wish you knew earlier in your career?</li></ol>
 <p><b>Expressões úteis para esta conversa:</b></p>
-<ul class="expr-list"><li>"I've noticed some tension around..." — para abrir a conversa sem acusar.</li><li>"Can we talk about the root cause?" — para ir além dos sintomas do conflito.</li><li>"I'd rather address this now than later." — para justificar a conversa difícil.</li><li>"Let's find some common ground here." — para redirecionar a conversa para solução.</li></ul>
+<ul class="expr-list"><li>"I've noticed some tension around...", para abrir a conversa sem acusar.</li><li>"Can we talk about the root cause?", para ir além dos sintomas do conflito.</li><li>"I'd rather address this now than later.", para justificar a conversa difícil.</li><li>"Let's find some common ground here.", para redirecionar a conversa para solução.</li></ul>
 </div>
 
 <div class="sx">
-<h2 class="step"><span class="tag">EXERCÍCIO</span>Complete com a Palavra Certa</h2>
+<h2 class="step "><span class="tag">EXERCÍCIO</span><span class="stitle"><span class="pt">Complete com a Palavra Certa</span><span class="en">Vocabulary Check</span></span></h2>
 <p>Complete cada frase com uma palavra ou expressão da Etapa 1. Gabarito ao final desta seção.</p>
-<ol><li>I had to ______ a disagreement between two senior engineers.</li><li>The ______ wasn't the deadline — it was unclear roles.</li><li>The two departments have been ______ for months.</li><li>We managed to ______ it without involving HR.</li><li>My first move is always to ______ before problem-solving.</li></ol>
+<ol><li>I had to ______ a disagreement between two senior engineers.</li><li>The ______ wasn't the deadline, it was unclear roles.</li><li>The two departments have been ______ for months.</li><li>We managed to ______ it without involving HR.</li><li>My first move is always to ______ before problem-solving.</li></ol>
 <p class="gabarito">Gabarito: 1) mediate   2) root cause   3) at odds   4) resolve   5) de-escalate</p>
 </div>
 
 <div class="s7">
-<h2 class="step"><span class="tag">ETAPA 7</span>Autoavaliação de Performance</h2>
+<h2 class="step "><span class="tag">ETAPA 7</span><span class="stitle"><span class="pt">Autoavaliação de Performance</span><span class="en">Self-Assessment</span></span></h2>
 <p>Antes de marcar este tema como concluído, avalie honestamente como foi sua prática.</p>
 <table>
-<tr><th>Critério</th><th>Como foi?</th><th>Nota (1–5)</th></tr>
+<tr><th>Critério</th><th>Como foi?</th><th>Nota (1-5)</th></tr>
 <tr><td>Consegui usar o vocabulário novo sem parar para pensar</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Entendi o áudio/vídeo sem depender da transcrição</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Escrevi minhas respostas antes de falar</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Apliquei a estrutura gramatical da etapa 5 corretamente</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Sustentei minhas respostas por mais de 2 frases</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Me senti confiante ao falar sobre este tema</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 </table>
 <p>O que travou mais nesta conversa? O que você quer treinar de novo antes de seguir para o próximo tema?</p>
-<div class="lines"></div><div class="lines"></div><div class="lines"></div>
+<div class="lines"></div><div class="lines"></div>
 </div>
 
 <p class="footer-note">Marque este tema como concluído no seu Painel de Evolução e siga para o Tema 20.</p>

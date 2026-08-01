@@ -1,4 +1,4 @@
-// Bloco 10 — Finanças e Negócios (Temas 73–80)
+// Bloco 10, Finanças e Negócios (Temas 73–80)
 const themes = [
   {
     num: 73,
@@ -26,14 +26,14 @@ const themes = [
     readingParagraphs: [
       "\"We did well this quarter\" says almost nothing on its own in English business conversation. Real performance discussions pair a number with context: \"revenue grew 18% quarter-over-quarter, though we faced some headwinds from rising costs that kept margins thin.\"",
       "Distinguishing top-line from bottom-line matters here: strong top-line growth (revenue) doesn't automatically mean a healthy bottom line (profit) if costs grew just as fast. Being precise about which one you're discussing avoids a common and costly misunderstanding.",
-      "Explaining underperformance honestly, without either excuse-making or excessive alarm, also matters: \"we fell short of the target by about 5%, mostly due to headwinds we didn't fully anticipate — here's what we're adjusting.\" This is direct, factual, and forward-looking.",
+      "Explaining underperformance honestly, without either excuse-making or excessive alarm, also matters: \"we fell short of the target by about 5%, mostly due to headwinds we didn't fully anticipate, here's what we're adjusting.\" This is direct, factual, and forward-looking.",
     ],
     audioFile: "audio/tema-73-company-performance.mp3",
     audioScript: [
       "\"How did we do this quarter overall?\"",
-      "\"Top-line growth was solid — revenue was up 18% quarter-over-quarter. But we faced some headwinds on costs, so the bottom line didn't move as much as we'd hoped.\"",
+      "\"Top-line growth was solid, revenue was up 18% quarter-over-quarter. But we faced some headwinds on costs, so the bottom line didn't move as much as we'd hoped.\"",
     ],
-    audioFollowup: "Note a distinção clara entre \"top-line growth\" e \"bottom line\" — um ponto central deste tema.",
+    audioFollowup: "Note a distinção clara entre \"top-line growth\" e \"bottom line\", um ponto central deste tema.",
     writingQuestions: [
       "Describe your team or company's recent performance using at least three vocabulary words.",
       "What's the difference between top-line and bottom-line performance, in your own words?",
@@ -46,7 +46,7 @@ const themes = [
       ["Comparativo\n(higher/lower than expected)", "Revenue was higher than expected this quarter.", "Usado para comparar um resultado real com uma expectativa ou período anterior."],
       ["compared to / versus", "Revenue is up 18% compared to last quarter.", "Usado para estabelecer o ponto de comparação de um resultado."],
     ],
-    grammarTip: "Dica prática: \"quarter-over-quarter\" (QoQ) e \"year-over-year\" (YoY) são os dois padrões mais comuns para comparar desempenho em inglês de negócios — escolha o período certo para a comparação que você quer fazer.",
+    grammarTip: "Dica prática: \"quarter-over-quarter\" (QoQ) e \"year-over-year\" (YoY) são os dois padrões mais comuns para comparar desempenho em inglês de negócios, escolha o período certo para a comparação que você quer fazer.",
     speakingQuestions: [
       "How would you describe your team or company's performance this year so far?",
       "What's the difference between top-line and bottom-line performance, in practice?",
@@ -60,10 +60,10 @@ const themes = [
       "How has the way you talk about performance changed as you've gained seniority?",
     ],
     expressions: [
-      "\"Top-line growth was solid, but...\" — para separar receita de lucro.",
-      "\"We're facing some headwinds on...\" — para nomear obstáculos com neutralidade.",
-      "\"We fell short of the target by...\" — para reportar resultado abaixo do esperado.",
-      "\"Here's what we're adjusting.\" — para fechar com uma ação concreta.",
+      "\"Top-line growth was solid, but...\", para separar receita de lucro.",
+      "\"We're facing some headwinds on...\", para nomear obstáculos com neutralidade.",
+      "\"We fell short of the target by...\", para reportar resultado abaixo do esperado.",
+      "\"Here's what we're adjusting.\", para fechar com uma ação concreta.",
     ],
     exerciseSentences: [
       "______ grew 18% this quarter.",
@@ -98,8 +98,8 @@ const themes = [
     ],
     readingTitle: "Budget Conversations Are About Trade-offs, Not Just Numbers",
     readingParagraphs: [
-      "A budget conversation in English rarely succeeds by just listing numbers — it succeeds by making trade-offs explicit. \"We can allocate more to marketing, but that means trimming the training budget\" makes a constraint visible instead of pretending everything can be funded at once.",
-      "Justifying a cost well tends to connect it to a clear outcome, not just a category: \"this line item isn't discretionary — it directly supports the retention numbers we committed to.\" This distinguishes essential spending from nice-to-have spending in a way that's persuasive, not just defensive.",
+      "A budget conversation in English rarely succeeds by just listing numbers, it succeeds by making trade-offs explicit. \"We can allocate more to marketing, but that means trimming the training budget\" makes a constraint visible instead of pretending everything can be funded at once.",
+      "Justifying a cost well tends to connect it to a clear outcome, not just a category: \"this line item isn't discretionary, it directly supports the retention numbers we committed to.\" This distinguishes essential spending from nice-to-have spending in a way that's persuasive, not just defensive.",
       "When cuts are necessary, being specific about the reasoning helps preserve trust: \"we trimmed discretionary spending, not the roles supporting client delivery\" shows there was a real strategy behind the cuts, not just an across-the-board reaction to pressure.",
     ],
     audioFile: "audio/tema-74-discussing-a-budget.mp3",
@@ -107,7 +107,7 @@ const themes = [
       "\"Can we get more budget allocated to the design team next quarter?\"",
       "\"We could reallocate from the discretionary line, but that means trimming the events budget. I'd need to justify the trade-off to finance with a clear reason.\"",
     ],
-    audioFollowup: "Note que a resposta não é um \"não\" simples — é um trade-off explícito que precisa ser justificado.",
+    audioFollowup: "Note que a resposta não é um \"não\" simples, é um trade-off explícito que precisa ser justificado.",
     writingQuestions: [
       "Describe a budget trade-off you've had to make or witness recently.",
       "How would you justify a cost that isn't strictly necessary but adds real value?",
@@ -120,7 +120,7 @@ const themes = [
       ["have to / can't\n(restrição orçamentária)", "We can't approve this without cutting somewhere else.", "Usado para expressar uma restrição financeira real de forma direta."],
       ["Future\n(planejamento)", "We'll allocate more to marketing next quarter.", "Usado para comunicar decisões de planejamento orçamentário futuro."],
     ],
-    grammarTip: "Dica prática: \"over/under budget by [porcentagem ou valor]\" é a forma mais precisa e comum de reportar a situação de um orçamento — sempre inclua o número, não apenas a direção.",
+    grammarTip: "Dica prática: \"over/under budget by [porcentagem ou valor]\" é a forma mais precisa e comum de reportar a situação de um orçamento, sempre inclua o número, não apenas a direção.",
     speakingQuestions: [
       "Describe a budget trade-off you've had to make or witness recently.",
       "How would you justify a cost that isn't strictly necessary but adds real value?",
@@ -134,10 +134,10 @@ const themes = [
       "How has your relationship with budgeting changed as your responsibilities have grown?",
     ],
     expressions: [
-      "\"We're over/under budget by...\" — para reportar status orçamentário com precisão.",
-      "\"That means trimming somewhere else.\" — para nomear um trade-off.",
-      "\"I'd need to justify that with a clear ROI.\" — para embasar um pedido de gasto.",
-      "\"We kept a contingency fund for this.\" — para mostrar planejamento prévio.",
+      "\"We're over/under budget by...\", para reportar status orçamentário com precisão.",
+      "\"That means trimming somewhere else.\", para nomear um trade-off.",
+      "\"I'd need to justify that with a clear ROI.\", para embasar um pedido de gasto.",
+      "\"We kept a contingency fund for this.\", para mostrar planejamento prévio.",
     ],
     exerciseSentences: [
       "We're finalizing next year's ______ this week.",
@@ -174,14 +174,14 @@ const themes = [
     readingParagraphs: [
       "Explaining an investment decision well in English almost always names both sides explicitly: the upside if it works, and the downside if it doesn't. \"The upside is significant if adoption grows as projected; the downside is limited because we capped our initial exposure\" shows the reasoning, not just the conclusion.",
       "Distinguishing a long-term play from a quick win also matters for setting expectations: framing something correctly upfront (\"this is a long-term play, we don't expect ROI for at least two years\") prevents disappointment from a mismatched timeline later.",
-      "Due diligence language signals rigor without needing deep financial jargon: \"we did our due diligence — looked at the valuation, ran risk-adjusted scenarios, and decided the upside justified the exposure.\" This shows a decision was reasoned, not impulsive.",
+      "Due diligence language signals rigor without needing deep financial jargon: \"we did our due diligence, looked at the valuation, ran risk-adjusted scenarios, and decided the upside justified the exposure.\" This shows a decision was reasoned, not impulsive.",
     ],
     audioFile: "audio/tema-75-explaining-an-investment-decision.mp3",
     audioScript: [
       "\"Why did we decide to invest in this new market?\"",
-      "\"We did our due diligence and saw real upside if adoption grows as projected. The downside is limited since we capped our exposure — it's more of a long-term play than a quick win.\"",
+      "\"We did our due diligence and saw real upside if adoption grows as projected. The downside is limited since we capped our exposure, it's more of a long-term play than a quick win.\"",
     ],
-    audioFollowup: "Note que a explicação nomeia upside, downside e o horizonte de tempo — os três elementos centrais de uma decisão de investimento bem explicada.",
+    audioFollowup: "Note que a explicação nomeia upside, downside e o horizonte de tempo, os três elementos centrais de uma decisão de investimento bem explicada.",
     writingQuestions: [
       "Describe an investment decision (personal or professional) you've made or considered.",
       "What was the upside and downside you weighed before deciding?",
@@ -194,7 +194,7 @@ const themes = [
       ["the upside is... the downside is...", "The upside is significant; the downside is limited.", "Estrutura fixa para apresentar os dois lados de uma decisão de investimento."],
       ["expected to\n(projeção)", "This is expected to break even within 18 months.", "Usado para comunicar uma projeção financeira de forma formal."],
     ],
-    grammarTip: "Dica prática: sempre que explicar um investimento, apresente upside e downside na mesma resposta — isso demonstra raciocínio equilibrado, essencial em conversas financeiras em inglês.",
+    grammarTip: "Dica prática: sempre que explicar um investimento, apresente upside e downside na mesma resposta, isso demonstra raciocínio equilibrado, essencial em conversas financeiras em inglês.",
     speakingQuestions: [
       "Describe an investment decision, personal or professional, that you've made or considered.",
       "What was the upside and downside you weighed before deciding?",
@@ -208,10 +208,10 @@ const themes = [
       "What would you tell someone about to make their first serious investment decision?",
     ],
     expressions: [
-      "\"We did our due diligence before committing.\" — para mostrar rigor na decisão.",
-      "\"The upside is X; the downside is Y.\" — estrutura central de explicação de investimento.",
-      "\"This is more of a long-term play.\" — para calibrar expectativas de prazo.",
-      "\"We capped our exposure to limit the downside.\" — para mostrar mitigação de risco.",
+      "\"We did our due diligence before committing.\", para mostrar rigor na decisão.",
+      "\"The upside is X; the downside is Y.\", estrutura central de explicação de investimento.",
+      "\"This is more of a long-term play.\", para calibrar expectativas de prazo.",
+      "\"We capped our exposure to limit the downside.\", para mostrar mitigação de risco.",
     ],
     exerciseSentences: [
       "The ______ on this project should be clear within a year.",
@@ -255,7 +255,7 @@ const themes = [
       "\"What's the biggest trend you're seeing in the market right now?\"",
       "\"There's a clear shift in demand toward more affordable options. We're gaining traction there, but the competitive landscape is getting crowded, so it won't be easy to hold market share.\"",
     ],
-    audioFollowup: "Note que a resposta nomeia a tendência e imediatamente equilibra com um desafio real — sem exagero nem pessimismo.",
+    audioFollowup: "Note que a resposta nomeia a tendência e imediatamente equilibra com um desafio real, sem exagero nem pessimismo.",
     writingQuestions: [
       "Describe a market trend you've observed in your industry recently.",
       "What's a niche market or emerging market you think is worth watching?",
@@ -268,7 +268,7 @@ const themes = [
       ["increasingly\n(advérbio de tendência)", "Customers are increasingly price-sensitive.", "Usado para enfatizar que uma característica está se intensificando ao longo do tempo."],
       ["Comparativo\n(posição de mercado)", "This segment is growing faster than the rest of the market.", "Usado para comparar o desempenho de um segmento em relação a outro."],
     ],
-    grammarTip: "Dica prática: \"increasingly\" é um advérbio muito usado em análises de mercado para mostrar uma tendência que se intensifica — \"increasingly price-sensitive\", \"increasingly competitive\", etc.",
+    grammarTip: "Dica prática: \"increasingly\" é um advérbio muito usado em análises de mercado para mostrar uma tendência que se intensifica, \"increasingly price-sensitive\", \"increasingly competitive\", etc.",
     speakingQuestions: [
       "Describe a market trend you've observed in your industry recently.",
       "What's a niche or emerging market you think is worth watching closely?",
@@ -282,10 +282,10 @@ const themes = [
       "What trend do you think will matter most in your industry five years from now?",
     ],
     expressions: [
-      "\"There's a clear shift in demand toward...\" — para nomear uma tendência com precisão.",
-      "\"We're gaining traction, but...\" — para equilibrar otimismo com realismo.",
-      "\"The competitive landscape is getting crowded.\" — para descrever concorrência crescente.",
-      "\"That's more of a niche than a mainstream shift.\" — para calibrar o alcance de uma tendência.",
+      "\"There's a clear shift in demand toward...\", para nomear uma tendência com precisão.",
+      "\"We're gaining traction, but...\", para equilibrar otimismo com realismo.",
+      "\"The competitive landscape is getting crowded.\", para descrever concorrência crescente.",
+      "\"That's more of a niche than a mainstream shift.\", para calibrar o alcance de uma tendência.",
     ],
     exerciseSentences: [
       "This ______ has been building for a couple of years.",
@@ -320,7 +320,7 @@ const themes = [
     ],
     readingTitle: "Uncertainty Doesn't Mean No Decision Can Be Made",
     readingParagraphs: [
-      "Discussing risk in English well means resisting two temptations: pretending certainty that doesn't exist, or using uncertainty as an excuse to avoid deciding at all. \"There's real uncertainty here, but we've mapped the worst-case scenario and it's one we can absorb\" does both — acknowledges risk and still moves forward.",
+      "Discussing risk in English well means resisting two temptations: pretending certainty that doesn't exist, or using uncertainty as an excuse to avoid deciding at all. \"There's real uncertainty here, but we've mapped the worst-case scenario and it's one we can absorb\" does both, acknowledges risk and still moves forward.",
       "Precise vocabulary distinguishes types of risk-handling: hedging (reducing exposure to a specific risk), mitigating (reducing the likelihood or impact of a risk), and simply accepting a calculated risk knowingly. Conflating these terms muddies a risk conversation quickly.",
       "\"In the event that\" is a formal, useful structure for naming contingencies without dwelling on them: \"in the event that demand drops, we have a contingency plan to scale back within thirty days.\" This shows preparation without projecting excessive worry.",
     ],
@@ -329,7 +329,7 @@ const themes = [
       "\"Are you worried about the uncertainty in this market right now?\"",
       "\"There's real volatility, sure. But we've mapped the worst-case scenario, and our exposure is limited. This was a calculated risk, not a reckless one.\"",
     ],
-    audioFollowup: "Note que a incerteza é reconhecida, mas acompanhada de mitigação concreta — não vira desculpa para paralisia.",
+    audioFollowup: "Note que a incerteza é reconhecida, mas acompanhada de mitigação concreta, não vira desculpa para paralisia.",
     writingQuestions: [
       "Describe a decision you made (or need to make) under real uncertainty.",
       "What's the worst-case scenario in that situation, and is it something you could absorb?",
@@ -342,7 +342,7 @@ const themes = [
       ["might / could\n(possibilidade de risco)", "This could backfire if the market shifts suddenly.", "Usado para reconhecer um risco real sem tratá-lo como certeza."],
       ["just in case", "We kept extra budget aside, just in case.", "Forma mais informal e comum de justificar uma medida preventiva."],
     ],
-    grammarTip: "Dica prática: \"in the event that\" é mais formal que \"if\" — use-a em contextos de negócios mais sérios, como planos de contingência e relatórios de risco.",
+    grammarTip: "Dica prática: \"in the event that\" é mais formal que \"if\", use-a em contextos de negócios mais sérios, como planos de contingência e relatórios de risco.",
     speakingQuestions: [
       "Describe a decision you made, or need to make, under real uncertainty.",
       "What's the worst-case scenario in that situation, and could you absorb it?",
@@ -356,10 +356,10 @@ const themes = [
       "What's a time volatility in your industry caught you off guard?",
     ],
     expressions: [
-      "\"There's real uncertainty here, but...\" — para reconhecer risco sem paralisar.",
-      "\"We've mapped the worst-case scenario.\" — para mostrar preparação.",
-      "\"This is a calculated risk, not a reckless one.\" — para diferenciar risco ponderado de imprudência.",
-      "\"In the event that X happens, we'll...\" — para apresentar um plano de contingência.",
+      "\"There's real uncertainty here, but...\", para reconhecer risco sem paralisar.",
+      "\"We've mapped the worst-case scenario.\", para mostrar preparação.",
+      "\"This is a calculated risk, not a reckless one.\", para diferenciar risco ponderado de imprudência.",
+      "\"In the event that X happens, we'll...\", para apresentar um plano de contingência.",
     ],
     exerciseSentences: [
       "There's real ______ about how the market will respond.",
@@ -394,16 +394,16 @@ const themes = [
     ],
     readingTitle: "A Business Model Is a Simple Sentence, Not a Diagram",
     readingParagraphs: [
-      "A business model explained well in English fits in one or two sentences: who the customer is, what value you provide, and how you make money from it. \"We sell subscription software to small business owners who need simple accounting — we make money through monthly fees, not one-time sales.\"",
+      "A business model explained well in English fits in one or two sentences: who the customer is, what value you provide, and how you make money from it. \"We sell subscription software to small business owners who need simple accounting, we make money through monthly fees, not one-time sales.\"",
       "Being specific about the revenue stream and cost structure shows real understanding, not just a pitch: \"our margins are thin per unit, but the unit economics work because retention is high, so customer lifetime value is strong.\"",
-      "It's also useful to be honest about what isn't fully solved yet: \"we haven't fully figured out how to monetize the free tier\" is a common, credible admission — business models evolve, and pretending otherwise sounds less trustworthy than acknowledging the open question.",
+      "It's also useful to be honest about what isn't fully solved yet: \"we haven't fully figured out how to monetize the free tier\" is a common, credible admission, business models evolve, and pretending otherwise sounds less trustworthy than acknowledging the open question.",
     ],
     audioFile: "audio/tema-78-explaining-a-business-model.mp3",
     audioScript: [
       "\"Can you explain your business model in a sentence or two?\"",
-      "\"Sure — we sell subscription software to small business owners, and we make money through monthly fees. Margins are thin per unit, but the unit economics work because retention is really high.\"",
+      "\"Sure, we sell subscription software to small business owners, and we make money through monthly fees. Margins are thin per unit, but the unit economics work because retention is really high.\"",
     ],
-    audioFollowup: "Note a estrutura enxuta: cliente-alvo, proposta de valor, e como o dinheiro é feito — tudo em poucas frases.",
+    audioFollowup: "Note a estrutura enxuta: cliente-alvo, proposta de valor, e como o dinheiro é feito, tudo em poucas frases.",
     writingQuestions: [
       "Explain your company's (or a company you admire's) business model in two sentences.",
       "What's the main revenue stream, and how does it actually make money?",
@@ -416,7 +416,7 @@ const themes = [
       ["make money by/from + gerúndio", "We make money by charging a monthly subscription fee.", "Estrutura direta para explicar como uma empresa gera receita."],
       ["Voz passiva\n(estrutura de custo/receita)", "Costs are mostly driven by infrastructure, not headcount.", "Usado para descrever a estrutura de custos de forma neutra e objetiva."],
     ],
-    grammarTip: "Dica prática: \"make money by/from + gerúndio\" é a estrutura mais direta para explicar monetização em inglês — evite se perder em detalhes técnicos antes de nomear a fonte de receita principal.",
+    grammarTip: "Dica prática: \"make money by/from + gerúndio\" é a estrutura mais direta para explicar monetização em inglês, evite se perder em detalhes técnicos antes de nomear a fonte de receita principal.",
     speakingQuestions: [
       "Explain your company's (or a company you admire's) business model in two sentences.",
       "What's the main revenue stream, and how exactly does it generate money?",
@@ -430,10 +430,10 @@ const themes = [
       "How do subscription-based models differ from one-time-purchase models, in your view?",
     ],
     expressions: [
-      "\"We make money by...\" — para explicar monetização de forma direta.",
-      "\"Margins are thin, but volume makes up for it.\" — para explicar unit economics.",
-      "\"We haven't fully figured out how to...\" — para admitir uma lacuna honestamente.",
-      "\"Our target customer is X, not Y.\" — para definir cliente-alvo com precisão.",
+      "\"We make money by...\", para explicar monetização de forma direta.",
+      "\"Margins are thin, but volume makes up for it.\", para explicar unit economics.",
+      "\"We haven't fully figured out how to...\", para admitir uma lacuna honestamente.",
+      "\"Our target customer is X, not Y.\", para definir cliente-alvo com precisão.",
     ],
     exerciseSentences: [
       "We have two main ______: subscriptions and ads.",
@@ -468,14 +468,14 @@ const themes = [
     ],
     readingTitle: "Startup Language Assumes Uncertainty by Default",
     readingParagraphs: [
-      "Startup vocabulary in English carries an assumption most corporate vocabulary doesn't: that things might not work. \"Runway,\" \"burn rate,\" and \"pivot\" all describe operating under real uncertainty, not stable, predictable growth — and normalizing that uncertainty in language is part of startup culture.",
-      "\"We didn't have product-market fit until our second version\" is a completely normal, even respected thing to say — pivoting isn't treated as failure, it's treated as expected iteration. This reframing matters for how founders talk about setbacks.",
+      "Startup vocabulary in English carries an assumption most corporate vocabulary doesn't: that things might not work. \"Runway,\" \"burn rate,\" and \"pivot\" all describe operating under real uncertainty, not stable, predictable growth, and normalizing that uncertainty in language is part of startup culture.",
+      "\"We didn't have product-market fit until our second version\" is a completely normal, even respected thing to say, pivoting isn't treated as failure, it's treated as expected iteration. This reframing matters for how founders talk about setbacks.",
       "Precision also matters when discussing funding: \"bootstrapped\" (self-funded) and \"raised funding\" (outside investment) describe very different financial and ownership situations, and conflating them in conversation misrepresents a company's actual position.",
     ],
     audioFile: "audio/tema-79-startups-and-entrepreneurship.mp3",
     audioScript: [
       "\"How's the startup going? Are you bootstrapped or have you raised funding?\"",
-      "\"We stayed bootstrapped for the first two years, but we're raising now — we have about eight months of runway, and we didn't have real product-market fit until we pivoted last year.\"",
+      "\"We stayed bootstrapped for the first two years, but we're raising now, we have about eight months of runway, and we didn't have real product-market fit until we pivoted last year.\"",
     ],
     audioFollowup: "Note que o pivô é mencionado com naturalidade, não como um fracasso a ser escondido.",
     writingQuestions: [
@@ -490,7 +490,7 @@ const themes = [
       ["to bet on + substantivo/gerúndio", "We bet on solving this problem before anyone else did.", "Usado para descrever uma aposta estratégica arriscada, mas intencional."],
       ["Segundo condicional\n(cenário hipotético de funding)", "If we raised more funding, we'd hire faster.", "Usado para discutir um cenário hipotético relacionado a decisões de investimento."],
     ],
-    grammarTip: "Dica prática: \"bootstrapped\" e \"raised funding\" descrevem situações financeiras opostas — confundir os dois termos muda completamente o significado da frase em uma conversa sobre startups.",
+    grammarTip: "Dica prática: \"bootstrapped\" e \"raised funding\" descrevem situações financeiras opostas, confundir os dois termos muda completamente o significado da frase em uma conversa sobre startups.",
     speakingQuestions: [
       "Describe a startup you admire and its journey, using vocabulary from this theme.",
       "What's a pivot, in a startup or your own career, that turned out to be the right move?",
@@ -504,10 +504,10 @@ const themes = [
       "What would you need to see before betting on your own idea and going all in?",
     ],
     expressions: [
-      "\"We stayed bootstrapped for a while.\" — para descrever autofinanciamento.",
-      "\"We have about X months of runway.\" — para comunicar situação financeira com precisão.",
-      "\"We didn't have product-market fit until...\" — para normalizar iteração.",
-      "\"That pivot ended up saving the company.\" — para reformular um erro como aprendizado.",
+      "\"We stayed bootstrapped for a while.\", para descrever autofinanciamento.",
+      "\"We have about X months of runway.\", para comunicar situação financeira com precisão.",
+      "\"We didn't have product-market fit until...\", para normalizar iteração.",
+      "\"That pivot ended up saving the company.\", para reformular um erro como aprendizado.",
     ],
     exerciseSentences: [
       "We stayed ______ for the first two years.",
@@ -525,7 +525,7 @@ const themes = [
     titleEn: "Discussing Economic News",
     titlePt: "Discutindo notícias econômicas",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "Fechando o Bloco 10: comentar notícias econômicas em inglês — inflação, juros, recessão — de forma informada, sem soar como um texto decorado de jornal, é o fechamento deste bloco.",
+    intro: "Fechando o Bloco 10: comentar notícias econômicas em inglês, inflação, juros, recessão, de forma informada, sem soar como um texto decorado de jornal, é o fechamento deste bloco.",
     vocab: [
       ["inflation", "inflação", "Inflation has cooled off a bit from last year's peak."],
       ["interest rate", "taxa de juros", "The central bank raised interest rates again this month."],
@@ -564,7 +564,7 @@ const themes = [
       ["Voz passiva\n(ação de política econômica)", "Interest rates were raised again this month.", "Usado para descrever uma decisão de política econômica de forma neutra."],
       ["expected to\n(previsão econômica)", "GDP growth is expected to slow next quarter.", "Usado para comunicar uma previsão econômica de forma formal."],
     ],
-    grammarTip: "Dica prática: \"rates were raised\" (voz passiva) é mais comum do que \"they raised rates\" em notícias econômicas — o foco está na ação e no seu efeito, não em quem especificamente a executou.",
+    grammarTip: "Dica prática: \"rates were raised\" (voz passiva) é mais comum do que \"they raised rates\" em notícias econômicas, o foco está na ação e no seu efeito, não em quem especificamente a executou.",
     speakingQuestions: [
       "Summarize a recent piece of economic news and how it affects you or your organization.",
       "What's the difference between a recession and a sector-specific downturn, for you?",
@@ -578,10 +578,10 @@ const themes = [
       "What would you do differently financially if a downturn seemed imminent?",
     ],
     expressions: [
-      "\"Inflation's cooled off, but...\" — para nomear uma mudança sem simplificar demais.",
-      "\"Given the tightening monetary policy, we've...\" — para conectar macro a decisão concreta.",
-      "\"The economic outlook is mixed, honestly.\" — para evitar previsão excessivamente confiante.",
-      "\"We're built to weather a downturn.\" — para comunicar resiliência organizacional.",
+      "\"Inflation's cooled off, but...\", para nomear uma mudança sem simplificar demais.",
+      "\"Given the tightening monetary policy, we've...\", para conectar macro a decisão concreta.",
+      "\"The economic outlook is mixed, honestly.\", para evitar previsão excessivamente confiante.",
+      "\"We're built to weather a downturn.\", para comunicar resiliência organizacional.",
     ],
     exerciseSentences: [
       "______ has cooled off a bit from last year's peak.",

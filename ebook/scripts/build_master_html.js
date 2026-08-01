@@ -1,8 +1,9 @@
 const fs = require("fs");
 const path = require("path");
-const { renderChapterBody, chapterCss, esc } = require("./lib/render-html");
+const { renderChapterBody, chapterCss, esc, iconPath } = require("./lib/render-html");
 const { READING_GUIDE, SELF_ASSESS_CRITERIA } = require("./lib/constants");
 const palette = require("./lib/palette");
+const { BLOCK_EN } = require("./lib/translations");
 
 const BLOCK_TAGLINES = {
   1: "A base para qualquer conversa em inglês.",
@@ -23,40 +24,43 @@ const BLOCK_TAGLINES = {
 const blocks = [];
 for (let i = 1; i <= 13; i++) {
   const { themes } = require(`./data/bloco${i}`);
-  blocks.push({ num: i, name: themes[0].blockName, tagline: BLOCK_TAGLINES[i], themes });
+  blocks.push({ num: i, name: themes[0].blockName, nameEn: BLOCK_EN[i], tagline: BLOCK_TAGLINES[i], themes });
 }
 
 const masterCss = `
   @page {
     size: A4;
-    margin: 2.2cm 2cm 2.4cm 2cm;
-    @top-right { content: "English Speaking Practice — Nação Fluente"; font-size: 8pt; color: #${palette.lightGrey}; font-family: 'Helvetica', Arial, sans-serif; }
+    margin: 1.9cm 2cm 2.1cm 2cm;
+    @top-right { content: "English Speaking Practice · Nação Fluente"; font-size: 8pt; color: #${palette.lightGrey}; font-family: 'Helvetica', Arial, sans-serif; }
     @bottom-center { content: "Página " counter(page); font-size: 8pt; color: #${palette.lightGrey}; font-family: 'Helvetica', Arial, sans-serif; }
   }
   @page cover { margin: 0; @top-right { content: none; } @bottom-center { content: none; } }
-  @page nofooter { margin: 2.2cm 2cm 2.4cm 2cm; @bottom-center { content: none; } }
+  @page nofooter { margin: 1.9cm 2cm 2.1cm 2cm; @bottom-center { content: none; } }
   @page divider { margin: 0; @top-right { content: none; } @bottom-center { content: none; } }
 
   .cover-page { page: cover; margin: 0; padding: 0; width: 21cm; height: 29.7cm; overflow: hidden; }
   .cover-page img { width: 100%; height: 100%; display: block; object-fit: cover; }
 
   .fm { page: nofooter; }
-  .fm h1.booktitle { font-size: 30pt; color: #${palette.cover}; margin: 0 0 4px 0; }
-  .fm .subtitle-line { font-size: 14pt; color: #${palette.step6}; font-style: italic; margin-bottom: 26px; }
-  .fm h2 { background: #${palette.cover}; color: #fff; padding: 8px 14px; font-size: 13pt; border-radius: 3px; margin: 26px 0 12px 0; }
-  .fm p { margin: 0 0 10px 0; }
-  .fm ul { margin: 6px 0 16px 0; padding-left: 22px; }
-  .fm li { margin-bottom: 6px; }
-  .fm table { width: 100%; border-collapse: collapse; margin: 10px 0 20px 0; font-size: 9.8pt; }
-  .fm th { background: #${palette.cover}; color: #fff; text-align: left; padding: 7px 10px; }
-  .fm td { padding: 7px 10px; border-bottom: 1px solid #E3E9EF; }
+  .fm h1.booktitle { font-size: 28pt; color: #${palette.cover}; margin: 0 0 2px 0; }
+  .fm .subtitle-line { font-size: 13pt; color: #${palette.step6}; font-style: italic; margin-bottom: 18px; }
+  .fm h2 { background: #${palette.cover}; color: #fff; padding: 6px 12px; font-size: 12pt; border-radius: 3px; margin: 16px 0 4px 0; }
+  .fm h2 .en { display: block; font-weight: normal; font-style: italic; font-size: 8.5pt; color: #8fc4ec; margin-top: 1px; }
+  .fm p { margin: 0 0 7px 0; }
+  .fm ul { margin: 4px 0 10px 0; padding-left: 20px; }
+  .fm li { margin-bottom: 4px; }
+  .fm table { width: 100%; border-collapse: collapse; margin: 6px 0 12px 0; font-size: 9.5pt; }
+  .fm th { background: #${palette.cover}; color: #fff; text-align: left; padding: 6px 9px; }
+  .fm td { padding: 6px 9px; border-bottom: 1px solid #E3E9EF; }
 
   .toc-page { page: nofooter; page-break-before: always; }
-  .toc-page h1 { font-size: 22pt; color: #${palette.cover}; margin-bottom: 22px; }
-  .toc-row { display: flex; align-items: baseline; text-decoration: none; color: #${palette.grey}; margin-bottom: 10px; font-size: 11.5pt; }
+  .toc-page h1 { font-size: 20pt; color: #${palette.cover}; margin-bottom: 2px; }
+  .toc-page .h1en { font-style: italic; color: #${palette.step6}; font-size: 11pt; margin-bottom: 18px; }
+  .toc-row { display: flex; align-items: baseline; text-decoration: none; color: #${palette.grey}; margin-bottom: 3px; font-size: 11pt; }
   .toc-row .t { white-space: nowrap; font-weight: bold; color: #${palette.cover}; }
   .toc-row .fill { flex: 1; border-bottom: 1px dotted #C9D6E3; margin: 0 8px; transform: translateY(-4px); }
   .toc-row::after { content: target-counter(attr(href), page); font-weight: bold; color: #${palette.cover}; }
+  .toc-en { font-style: italic; color: #97A6B5; font-size: 8.5pt; margin: 0 0 10px 0; }
 
   .divider-page {
     page: divider;
@@ -64,14 +68,17 @@ const masterCss = `
     background: #${palette.cover};
     color: #fff;
     width: 21cm; height: 29.7cm;
-    padding: 3.2cm 2.4cm;
+    padding: 3cm 2.4cm;
     box-sizing: border-box;
   }
-  .divider-page .eyebrow { color: #8fc4ec; letter-spacing: 3px; font-weight: bold; font-size: 12pt; }
-  .divider-page h1 { font-size: 40pt; margin: 10px 0 6px 0; }
-  .divider-page .tagline { font-style: italic; color: #C9D6E3; font-size: 14pt; margin-bottom: 40px; }
-  .divider-page .drow { display: flex; align-items: baseline; text-decoration: none; color: #EAF3FA; margin-bottom: 16px; font-size: 12pt; }
-  .divider-page .drow .num { display: inline-block; width: 34px; color: #8fc4ec; font-weight: bold; }
+  .divider-page .dtop { display: flex; align-items: center; gap: 18px; margin-bottom: 8px; }
+  .divider-page .dtop img { width: 56px; height: 56px; opacity: 0.9; }
+  .divider-page .eyebrow { color: #8fc4ec; letter-spacing: 3px; font-weight: bold; font-size: 11pt; }
+  .divider-page h1 { font-size: 34pt; margin: 6px 0 2px 0; }
+  .divider-page .nameEn { font-style: italic; color: #8fc4ec; font-size: 15pt; margin-bottom: 6px; }
+  .divider-page .tagline { font-style: italic; color: #C9D6E3; font-size: 13pt; margin-bottom: 30px; }
+  .divider-page .drow { display: flex; align-items: baseline; text-decoration: none; color: #EAF3FA; margin-bottom: 13px; font-size: 11.5pt; }
+  .divider-page .drow .num { display: inline-block; width: 32px; color: #8fc4ec; font-weight: bold; }
   .divider-page .drow .fill { flex: 1; border-bottom: 1px dotted rgba(255,255,255,0.35); margin: 0 8px; transform: translateY(-4px); }
   .divider-page .drow::after { content: target-counter(attr(href), page); font-weight: bold; color: #fff; }
 `;
@@ -79,10 +86,11 @@ const masterCss = `
 function tocPage() {
   const rows = blocks.map(b => `
     <a class="toc-row" href="#bloco-${b.num}">
-      <span class="t">Bloco ${b.num} — ${esc(b.name)}</span>
+      <span class="t">Bloco ${b.num}: ${esc(b.name)}</span>
       <span class="fill"></span>
-    </a>`).join("");
-  return `<div class="toc-page"><h1>Sumário</h1>${rows}</div>`;
+    </a>
+    <div class="toc-en">Block ${b.num}: ${esc(b.nameEn)}</div>`).join("");
+  return `<div class="toc-page"><h1>Sumário</h1><div class="h1en">Table of Contents</div>${rows}</div>`;
 }
 
 function dividerPage(block) {
@@ -93,8 +101,12 @@ function dividerPage(block) {
       <span class="fill"></span>
     </a>`).join("");
   return `<div class="divider-page" id="bloco-${block.num}">
-    <div class="eyebrow">BLOCO ${block.num} DE 13</div>
+    <div class="dtop">
+      <img src="${iconPath(block.num)}">
+      <div class="eyebrow">BLOCO ${block.num} DE 13 · BLOCK ${block.num} OF 13</div>
+    </div>
     <h1>${esc(block.name)}</h1>
+    <div class="nameEn">${esc(block.nameEn)}</div>
     <div class="tagline">${esc(block.tagline)}</div>
     ${rows}
   </div>`;
@@ -103,25 +115,25 @@ function dividerPage(block) {
 const frontMatterHtml = `
 <div class="fm">
   <h1 class="booktitle">English Speaking Practice</h1>
-  <div class="subtitle-line">Treino de Conversação — Nação Fluente</div>
+  <div class="subtitle-line">Treino de Conversação · Nação Fluente</div>
 
-  <h2>Boas-vindas</h2>
-  <p>Você já consegue ler um texto em inglês. Já assiste vídeo com legenda e entende boa parte do que se fala. Mas na hora de abrir a boca — numa reunião, numa entrevista, numa conversa de corredor com um estrangeiro — trava.</p>
+  <h2>Boas-vindas<span class="en">Welcome</span></h2>
+  <p>Você já consegue ler um texto em inglês. Já assiste vídeo com legenda e entende boa parte do que se fala. Mas na hora de abrir a boca (numa reunião, numa entrevista, numa conversa de corredor com um estrangeiro) trava.</p>
   <p>O <b>English Speaking Practice</b> foi criado para resolver exatamente isso: um protocolo semanal de estudo que leva você, toda semana, de um tema relevante do mundo real até uma conversa sustentada em inglês, com argumento, opinião e confiança.</p>
 
-  <h2>Para quem é este material</h2>
-  <p>Para quem já lê e assiste conteúdo em inglês em nível intermediário, mas trava na hora de falar, argumentar e sustentar opiniões — especialmente em contextos profissionais e sociais adultos.</p>
+  <h2>Para quem é este material<span class="en">Who this book is for</span></h2>
+  <p>Para quem já lê e assiste conteúdo em inglês em nível intermediário, mas trava na hora de falar, argumentar e sustentar opiniões, especialmente em contextos profissionais e sociais adultos.</p>
 
-  <h2>Como funciona: o sistema guiado em 7 etapas</h2>
-  <p><b>Etapa 1 — Vocabulário contextualizado.</b> As palavras certas, aplicadas ao contexto do tema da semana.</p>
-  <p><b>Etapa 2 — Leitura com orientação de estudo.</b> Um texto curto e denso, com orientações de leitura ativa.</p>
-  <p><b>Etapa 3 — Listening com suporte em áudio e vídeo.</b> Treino de ouvido com roteiro de apoio.</p>
-  <p><b>Etapa 4 — Writing como preparação para a fala.</b> Organize suas ideias no papel antes de falar.</p>
-  <p><b>Etapa 5 — Gramática de apoio aplicada à conversação.</b> A estrutura certa para o tema da semana.</p>
-  <p><b>Etapa 6 — Speaking com perguntas abertas.</b> O coração do método — além do "yes" e do "no".</p>
-  <p><b>Etapa 7 — Autoavaliação de performance.</b> Registro do que travou e do que fluiu.</p>
+  <h2>Como funciona: o sistema guiado em 7 etapas<span class="en">How it works: the 7-step guided system</span></h2>
+  <p><b>Etapa 1: Vocabulário contextualizado.</b> As palavras certas, aplicadas ao contexto do tema da semana.</p>
+  <p><b>Etapa 2: Leitura com orientação de estudo.</b> Um texto curto e denso, com orientações de leitura ativa.</p>
+  <p><b>Etapa 3: Listening com suporte em áudio e vídeo.</b> Treino de ouvido com roteiro de apoio.</p>
+  <p><b>Etapa 4: Writing como preparação para a fala.</b> Organize suas ideias no papel antes de falar.</p>
+  <p><b>Etapa 5: Gramática de apoio aplicada à conversação.</b> A estrutura certa para o tema da semana.</p>
+  <p><b>Etapa 6: Speaking com perguntas abertas.</b> O coração do método: além do "yes" e do "no".</p>
+  <p><b>Etapa 7: Autoavaliação de performance.</b> Registro do que travou e do que fluiu.</p>
 
-  <h2>O que você vai encontrar neste livro</h2>
+  <h2>O que você vai encontrar neste livro<span class="en">What you'll find in this book</span></h2>
   <ul>
     <li>104 temas relevantes do mundo profissional, organizados em 13 blocos temáticos;</li>
     <li>Mais de 1.200 tópicos de discussão e perguntas de speaking;</li>
@@ -131,14 +143,14 @@ const frontMatterHtml = `
     <li>Painel de autoavaliação em cada tema.</li>
   </ul>
 
-  <h2>Cronograma sugerido de estudos</h2>
+  <h2>Cronograma sugerido de estudos<span class="en">Suggested study schedule</span></h2>
   <table>
     <tr><th>Semanas</th><th>Foco</th><th>Blocos</th></tr>
-    <tr><td>1–8</td><td>Base de conversação, carreira e liderança</td><td>1, 2, 3</td></tr>
-    <tr><td>9–16</td><td>Networking, negociação e entrevistas</td><td>4, 5, 6</td></tr>
-    <tr><td>17–24</td><td>Cultura corporativa e comunicação</td><td>7, 8</td></tr>
-    <tr><td>25–32</td><td>Tecnologia, finanças e viagens</td><td>9, 10, 11</td></tr>
-    <tr><td>33–39</td><td>Vida social, atualidades e mindset</td><td>12, 13</td></tr>
+    <tr><td>1 a 8</td><td>Base de conversação, carreira e liderança</td><td>1, 2, 3</td></tr>
+    <tr><td>9 a 16</td><td>Networking, negociação e entrevistas</td><td>4, 5, 6</td></tr>
+    <tr><td>17 a 24</td><td>Cultura corporativa e comunicação</td><td>7, 8</td></tr>
+    <tr><td>25 a 32</td><td>Tecnologia, finanças e viagens</td><td>9, 10, 11</td></tr>
+    <tr><td>33 a 39</td><td>Vida social, atualidades e mindset</td><td>12, 13</td></tr>
   </table>
   <p>Um tema por semana, na ordem que fizer mais sentido para você. Marque cada tema concluído e siga em frente.</p>
 </div>
@@ -160,7 +172,7 @@ function main() {
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>English Speaking Practice — Nação Fluente</title>
+<title>English Speaking Practice · Nação Fluente</title>
 <style>${chapterCss("")}${masterCss}</style>
 </head>
 <body>

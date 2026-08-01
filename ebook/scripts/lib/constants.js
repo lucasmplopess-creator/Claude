@@ -1,5 +1,5 @@
 const READING_GUIDE = [
-  "1) Leia uma vez, rápido, só para captar a ideia geral — sem parar no que não entender.",
+  "1) Leia uma vez, rápido, só para captar a ideia geral, sem parar no que não entender.",
   "2) Leia de novo e grife toda expressão da Etapa 1 que aparecer no texto.",
   "3) Releia em voz alta, como se você estivesse contando essa história sobre você mesmo.",
 ];

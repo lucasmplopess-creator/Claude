@@ -1,4 +1,4 @@
-// Bloco 12 — Vida Social e Atualidades (Temas 89–96)
+// Bloco 12, Vida Social e Atualidades (Temas 89–96)
 const themes = [
   {
     num: 89,
@@ -7,7 +7,7 @@ const themes = [
     titleEn: "Discussing Current Events",
     titlePt: "Discutindo notícias atuais",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "Abrindo o Bloco 12: comentar notícias atuais em inglês, com fontes e nuance, é uma habilidade social valiosa — e diferente de apenas repetir uma manchete.",
+    intro: "Abrindo o Bloco 12: comentar notícias atuais em inglês, com fontes e nuance, é uma habilidade social valiosa, e diferente de apenas repetir uma manchete.",
     vocab: [
       ["current events", "atualidades / eventos atuais", "I try to stay reasonably informed on current events."],
       ["headline", "manchete", "The headline didn't really capture the full story."],
@@ -26,14 +26,14 @@ const themes = [
     readingParagraphs: [
       "Discussing current events well in English usually involves a small habit of caution: distinguishing a headline from the full story, and a developing story from a settled one. \"This is still developing, so I'd hold off on strong conclusions\" is a common, respected way to comment on breaking news.",
       "Naming sources explicitly also adds credibility to a discussion: \"According to a couple of different outlets I trust, this happened because...\" shows you're engaging with information critically, not just repeating whatever appeared first in your feed.",
-      "It's also fine, in English conversation, to admit limited engagement: \"I haven't followed that story closely enough to have a strong opinion\" is a completely acceptable, honest response — far better than pretending to know more than you do.",
+      "It's also fine, in English conversation, to admit limited engagement: \"I haven't followed that story closely enough to have a strong opinion\" is a completely acceptable, honest response, far better than pretending to know more than you do.",
     ],
     audioFile: "audio/tema-89-discussing-current-events.mp3",
     audioScript: [
       "\"Did you see what happened with the merger announcement?\"",
       "\"I saw the headline, but it's still a developing story, so I'd hold off on conclusions. According to a couple of sources I trust, there's more to it than what's been reported so far.\"",
     ],
-    audioFollowup: "Note a cautela: \"still a developing story\", \"according to sources I trust\" — nuance em vez de afirmações precipitadas.",
+    audioFollowup: "Note a cautela: \"still a developing story\", \"according to sources I trust\", nuance em vez de afirmações precipitadas.",
     writingQuestions: [
       "Describe a current event you've followed recently, and what you actually know versus assume.",
       "How do you personally decide which sources to trust for news?",
@@ -46,7 +46,7 @@ const themes = [
       ["According to...\n(fonte)", "According to a few reliable sources, the deal fell through.", "Usado para atribuir uma informação a uma fonte específica, sem afirmá-la como fato absoluto."],
       ["Reported speech\n(\"Reports suggest that...\")", "Reports suggest that talks are ongoing.", "Usado para relatar o que está sendo divulgado sem assumir total certeza."],
     ],
-    grammarTip: "Dica prática: \"reports suggest that...\" é uma forma elegante de comentar uma notícia sem se comprometer com ela como verdade absoluta — muito usada em jornalismo e conversas cautelosas sobre atualidades.",
+    grammarTip: "Dica prática: \"reports suggest that...\" é uma forma elegante de comentar uma notícia sem se comprometer com ela como verdade absoluta, muito usada em jornalismo e conversas cautelosas sobre atualidades.",
     speakingQuestions: [
       "Describe a current event you've followed recently, being clear about what you know versus assume.",
       "How do you personally decide which news sources to trust?",
@@ -60,10 +60,10 @@ const themes = [
       "What's your approach when friends or family share news you believe is biased or inaccurate?",
     ],
     expressions: [
-      "\"This is still a developing story.\" — para evitar conclusões precipitadas.",
-      "\"According to a few sources I trust...\" — para atribuir uma informação com cuidado.",
-      "\"I haven't followed that closely enough to say.\" — resposta honesta e aceitável.",
-      "\"That headline didn't quite capture it.\" — para nuançar uma manchete simplista.",
+      "\"This is still a developing story.\", para evitar conclusões precipitadas.",
+      "\"According to a few sources I trust...\", para atribuir uma informação com cuidado.",
+      "\"I haven't followed that closely enough to say.\", resposta honesta e aceitável.",
+      "\"That headline didn't quite capture it.\", para nuançar uma manchete simplista.",
     ],
     exerciseSentences: [
       "I try to stay reasonably informed on ______.",
@@ -100,14 +100,14 @@ const themes = [
     readingParagraphs: [
       "Talking about books, movies, and series in English involves a small social contract: enthusiasm without giving anything away. \"Without giving anything away, the ending completely changed how I saw the whole story\" builds excitement while respecting the other person's experience.",
       "Opinions land better with specificity than with a simple \"I loved it\": \"the character development in the second half really pulled me in, even though the pacing was slow at first\" gives the listener something to actually respond to, rather than just agreeing or disagreeing.",
-      "It's also completely normal, and often a fun conversation, to disagree about something \"overrated\" or \"underrated\" — this kind of light disagreement is one of the easiest, lowest-stakes ways to practice opinion and persuasion vocabulary in a casual setting.",
+      "It's also completely normal, and often a fun conversation, to disagree about something \"overrated\" or \"underrated\", this kind of light disagreement is one of the easiest, lowest-stakes ways to practice opinion and persuasion vocabulary in a casual setting.",
     ],
     audioFile: "audio/tema-90-books-movies-and-series.mp3",
     audioScript: [
       "\"Have you finished that series yet?\"",
-      "\"Just did, actually — without giving anything away, that finale was gripping. The character development this season was way better than the first.\"",
+      "\"Just did, actually, without giving anything away, that finale was gripping. The character development this season was way better than the first.\"",
     ],
-    audioFollowup: "Note a frase \"without giving anything away\" antes de qualquer opinião sobre o enredo — uma cortesia padrão nesse tipo de conversa.",
+    audioFollowup: "Note a frase \"without giving anything away\" antes de qualquer opinião sobre o enredo, uma cortesia padrão nesse tipo de conversa.",
     writingQuestions: [
       "Recommend a book, movie, or series without giving away any spoilers.",
       "What's a movie or show you think is overrated, and why?",
@@ -120,7 +120,7 @@ const themes = [
       ["Comparativo\n(livro vs. filme/série)", "The adaptation was better than the book, in my opinion.", "Usado para comparar diretamente duas versões de uma mesma história."],
       ["without giving anything away", "Without giving anything away, the ending surprised me.", "Frase fixa para introduzir uma opinião sem revelar detalhes da trama."],
     ],
-    grammarTip: "Dica prática: \"without giving anything away\" é praticamente obrigatória antes de qualquer comentário sobre enredo em inglês — sinaliza respeito por quem ainda não assistiu ou leu.",
+    grammarTip: "Dica prática: \"without giving anything away\" é praticamente obrigatória antes de qualquer comentário sobre enredo em inglês, sinaliza respeito por quem ainda não assistiu ou leu.",
     speakingQuestions: [
       "Recommend a book, movie, or series to me without giving away any spoilers.",
       "What's a movie or show you think is overrated, and what do you think is missing?",
@@ -134,10 +134,10 @@ const themes = [
       "What's a story that stayed with you long after you finished it? Why?",
     ],
     expressions: [
-      "\"Without giving anything away...\" — cortesia antes de comentar o enredo.",
-      "\"I'd definitely recommend it.\" — recomendação direta e simples.",
-      "\"That's a bit overrated, honestly.\" — opinião casual sobre algo popular.",
-      "\"The ending completely changed how I saw it.\" — para gerar interesse sem spoiler.",
+      "\"Without giving anything away...\", cortesia antes de comentar o enredo.",
+      "\"I'd definitely recommend it.\", recomendação direta e simples.",
+      "\"That's a bit overrated, honestly.\", opinião casual sobre algo popular.",
+      "\"The ending completely changed how I saw it.\", para gerar interesse sem spoiler.",
     ],
     exerciseSentences: [
       "The ______ got a bit slow in the middle, honestly.",
@@ -155,7 +155,7 @@ const themes = [
     titleEn: "Debating a Controversial Topic Respectfully",
     titlePt: "Debatendo um tema polêmico com respeito",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "Debater um tema polêmico em inglês, mantendo a relação intacta, reutiliza e aprofunda o vocabulário de discordância educada visto no Tema 4 — agora aplicado a temas de verdade sensíveis.",
+    intro: "Debater um tema polêmico em inglês, mantendo a relação intacta, reutiliza e aprofunda o vocabulário de discordância educada visto no Tema 4, agora aplicado a temas de verdade sensíveis.",
     vocab: [
       ["controversial", "polêmico(a)", "This is a controversial topic, so let's keep it respectful."],
       ["to see both sides", "ver os dois lados", "I try to see both sides before forming an opinion."],
@@ -174,14 +174,14 @@ const themes = [
     readingParagraphs: [
       "Debating a genuinely controversial topic well in English shares the DNA of Tema 4's polite disagreement, but with extra care: hot-button issues carry more emotional weight, so acknowledgment matters even more before contrast. \"I understand why this is sensitive, and I respectfully disagree, but I do see your point about...\"",
       "Naming the goal explicitly also helps: \"I'm not trying to change your mind necessarily, I just want to understand your reasoning\" reframes a heated topic as exploration rather than combat, which tends to keep the conversation civil.",
-      "Conceding a specific point, even while disagreeing overall, is one of the most disarming moves in a heated debate: \"I'll concede that point — you're right that it's more complicated than I made it sound\" doesn't weaken your position; it usually makes the rest of your argument more credible.",
+      "Conceding a specific point, even while disagreeing overall, is one of the most disarming moves in a heated debate: \"I'll concede that point, you're right that it's more complicated than I made it sound\" doesn't weaken your position; it usually makes the rest of your argument more credible.",
     ],
     audioFile: "audio/tema-91-debating-a-controversial-topic.mp3",
     audioScript: [
       "\"I know this is a hot-button issue, but I have to respectfully disagree with you on this.\"",
-      "\"That's fair — I'm curious why, though.\" \"I'll concede your point about the data being mixed, but overall I still see it differently. Can we at least agree the topic deserves more nuance than most headlines give it?\"",
+      "\"That's fair, I'm curious why, though.\" \"I'll concede your point about the data being mixed, but overall I still see it differently. Can we at least agree the topic deserves more nuance than most headlines give it?\"",
     ],
-    audioFollowup: "Note que a discordância vem com uma concessão específica antes de reafirmar a posição — isso mantém o debate civilizado.",
+    audioFollowup: "Note que a discordância vem com uma concessão específica antes de reafirmar a posição, isso mantém o debate civilizado.",
     writingQuestions: [
       "Describe a controversial topic where you can genuinely see both sides.",
       "What's a point you'd be willing to concede in a debate you feel strongly about?",
@@ -191,10 +191,10 @@ const themes = [
     grammarIntro: "Debater com respeito reutiliza estruturas do Tema 4, reforçadas com suavizadores extras adequados a temas sensíveis.",
     grammarRows: [
       ["I understand this is sensitive, but...", "I understand this is sensitive, but I see it differently.", "Reconhece o peso emocional do tema antes de introduzir uma discordância."],
-      ["I see where you're coming from, but...", "I see where you're coming from, but I'd push back on one part.", "Reconhece o raciocínio do outro antes de contrastar — reforço do Tema 4."],
+      ["I see where you're coming from, but...", "I see where you're coming from, but I'd push back on one part.", "Reconhece o raciocínio do outro antes de contrastar, reforço do Tema 4."],
       ["That's a fair point, even though I don't fully agree.", "That's a fair point, even though I don't fully agree with the conclusion.", "Concede parcialmente sem abandonar a própria posição."],
     ],
-    grammarTip: "Dica prática: em temas sensíveis, adicione \"I understand this is sensitive\" antes de qualquer discordância — esse reconhecimento extra faz muita diferença em como a discordância é recebida.",
+    grammarTip: "Dica prática: em temas sensíveis, adicione \"I understand this is sensitive\" antes de qualquer discordância, esse reconhecimento extra faz muita diferença em como a discordância é recebida.",
     speakingQuestions: [
       "Describe a controversial topic where you can genuinely see both sides.",
       "What's a point you'd be willing to concede in a debate you feel strongly about?",
@@ -208,10 +208,10 @@ const themes = [
       "What's your personal rule for when to walk away from a debate entirely?",
     ],
     expressions: [
-      "\"I understand this is sensitive, but...\" — reconhecimento antes da discordância.",
-      "\"I have to respectfully disagree.\" — discordância clara e educada.",
-      "\"I'll concede that point, but...\" — para ceder parcialmente sem perder a posição.",
-      "\"Can we at least agree that...?\" — para buscar um ponto em comum mínimo.",
+      "\"I understand this is sensitive, but...\", reconhecimento antes da discordância.",
+      "\"I have to respectfully disagree.\", discordância clara e educada.",
+      "\"I'll concede that point, but...\", para ceder parcialmente sem perder a posição.",
+      "\"Can we at least agree that...?\", para buscar um ponto em comum mínimo.",
     ],
     exerciseSentences: [
       "This is a ______ topic, so let's keep it respectful.",
@@ -246,14 +246,14 @@ const themes = [
     ],
     readingTitle: "Wellness Talk Has Gotten More Honest",
     readingParagraphs: [
-      "English conversations about health and wellness have shifted noticeably toward honesty over the last decade — mental health, burnout, and self-care are now discussed casually, not just clinically. \"I burned out pretty badly a couple of years ago, and it changed how I think about work-life balance\" is a normal, accepted thing to share socially.",
+      "English conversations about health and wellness have shifted noticeably toward honesty over the last decade, mental health, burnout, and self-care are now discussed casually, not just clinically. \"I burned out pretty badly a couple of years ago, and it changed how I think about work-life balance\" is a normal, accepted thing to share socially.",
       "This topic also tends to be personal rather than prescriptive: \"self-care looks different for everyone\" is a common, respected framing that avoids implying there's one correct wellness routine everyone should follow.",
-      "Talking about ongoing habits — sleep hygiene, working out, unwinding — usually uses the Present Perfect Continuous to show recent effort: \"I've been trying to prioritize sleep more,\" which signals genuine, ongoing change rather than a finished, one-time fix.",
+      "Talking about ongoing habits, sleep hygiene, working out, unwinding, usually uses the Present Perfect Continuous to show recent effort: \"I've been trying to prioritize sleep more,\" which signals genuine, ongoing change rather than a finished, one-time fix.",
     ],
     audioFile: "audio/tema-92-health-and-wellness.mp3",
     audioScript: [
       "\"How have you been taking care of yourself lately?\"",
-      "\"Honestly, I've been trying to prioritize sleep more — my sleep hygiene was pretty bad for a while. I burned out a couple of years ago, so I take this stuff more seriously now.\"",
+      "\"Honestly, I've been trying to prioritize sleep more, my sleep hygiene was pretty bad for a while. I burned out a couple of years ago, so I take this stuff more seriously now.\"",
     ],
     audioFollowup: "Note o tom pessoal e honesto, sem soar clínico ou como um discurso motivacional genérico.",
     writingQuestions: [
@@ -268,7 +268,7 @@ const themes = [
       ["Imperativo\n(conselho)", "Try to disconnect for at least an hour before bed.", "Usado para dar um conselho direto de bem-estar, de forma gentil."],
       ["should\n(recomendação)", "You should really see a doctor about that.", "Usado para recomendar uma ação de forma direta, mas não impositiva."],
     ],
-    grammarTip: "Dica prática: \"I've been trying to...\" é mais honesto e humano do que \"I do...\" para hábitos de saúde ainda em construção — reconhece esforço sem fingir perfeição.",
+    grammarTip: "Dica prática: \"I've been trying to...\" é mais honesto e humano do que \"I do...\" para hábitos de saúde ainda em construção, reconhece esforço sem fingir perfeição.",
     speakingQuestions: [
       "Describe a wellness habit you've been trying to build recently.",
       "What does self-care actually look like for you, specifically, not just in theory?",
@@ -282,10 +282,10 @@ const themes = [
       "What advice would you give someone showing early signs of burnout?",
     ],
     expressions: [
-      "\"I've been trying to prioritize...\" — para mostrar esforço genuíno e recente.",
-      "\"Self-care looks different for everyone.\" — para evitar prescrever uma única forma.",
-      "\"I burned out a couple of years ago.\" — abertura honesta sobre saúde mental.",
-      "\"I take this stuff more seriously now.\" — para mostrar mudança de prioridade.",
+      "\"I've been trying to prioritize...\", para mostrar esforço genuíno e recente.",
+      "\"Self-care looks different for everyone.\", para evitar prescrever uma única forma.",
+      "\"I burned out a couple of years ago.\", abertura honesta sobre saúde mental.",
+      "\"I take this stuff more seriously now.\", para mostrar mudança de prioridade.",
     ],
     exerciseSentences: [
       "______ has become a real priority for me this year.",
@@ -303,7 +303,7 @@ const themes = [
     titleEn: "Discussing Hobbies and Free Time",
     titlePt: "Discutindo hobbies e tempo livre",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "Falar sobre hobbies em inglês é uma das conversas sociais mais leves e recorrentes — e uma ótima oportunidade para praticar fluência sem pressão profissional.",
+    intro: "Falar sobre hobbies em inglês é uma das conversas sociais mais leves e recorrentes, e uma ótima oportunidade para praticar fluência sem pressão profissional.",
     vocab: [
       ["hobby", "hobby / passatempo", "Photography has been my main hobby for years."],
       ["to unwind", "relaxar", "Gardening is how I unwind on weekends."],
@@ -322,12 +322,12 @@ const themes = [
     readingParagraphs: [
       "Talking about hobbies in English is one of the lowest-pressure, most naturally engaging small talk topics available, because it invites genuine enthusiasm rather than rehearsed professional answers. \"I've always been into old films\" opens the door to a much richer conversation than most work-related small talk.",
       "The vocabulary here allows for real specificity: distinguishing a \"pastime\" (casual, ongoing) from a \"weekend project\" (finite, hands-on) or a \"niche interest\" (unusual, deeply personal) helps paint a more vivid picture than just saying \"I like a lot of things.\"",
-      "\"I picked up woodworking during the pandemic\" is also a very common, natural way to talk about when and why a hobby started — pairing a specific trigger with an ongoing interest, rather than a vague \"I've always liked it.\"",
+      "\"I picked up woodworking during the pandemic\" is also a very common, natural way to talk about when and why a hobby started, pairing a specific trigger with an ongoing interest, rather than a vague \"I've always liked it.\"",
     ],
     audioFile: "audio/tema-93-hobbies-and-free-time.mp3",
     audioScript: [
       "\"Do you have any hobbies outside of work?\"",
-      "\"I picked up woodworking during the pandemic, actually — it's become a real hands-on way to de-stress. I try to make time for it most weekends.\"",
+      "\"I picked up woodworking during the pandemic, actually, it's become a real hands-on way to de-stress. I try to make time for it most weekends.\"",
     ],
     audioFollowup: "Note como a resposta nomeia quando o hobby começou, por que funciona para a pessoa, e como ela prioriza tempo para ele.",
     writingQuestions: [
@@ -342,7 +342,7 @@ const themes = [
       ["Present Perfect + for\n(duração)", "I've been doing this for about five years.", "Usado para indicar há quanto tempo você pratica um hobby, até o presente."],
       ["whenever I get the chance", "I read whenever I get the chance.", "Usado para indicar frequência informal, sem um horário fixo."],
     ],
-    grammarTip: "Dica prática: \"to be into\" é seguido de substantivo ou gerúndio (\"into photography\", \"into hiking\"), nunca de infinitivo — um erro comum é tentar usar \"to be into to do something\".",
+    grammarTip: "Dica prática: \"to be into\" é seguido de substantivo ou gerúndio (\"into photography\", \"into hiking\"), nunca de infinitivo, um erro comum é tentar usar \"to be into to do something\".",
     speakingQuestions: [
       "Describe a hobby you have, or wish you had more time for, including how it started.",
       "What niche interest do you have that tends to surprise people?",
@@ -356,10 +356,10 @@ const themes = [
       "What hobby would you love to pick up if time and money weren't an issue?",
     ],
     expressions: [
-      "\"I've always been into...\" — para expressar interesse genuíno de longa data.",
-      "\"I picked that up during...\" — para contextualizar quando um hobby começou.",
-      "\"I try to make time for it, even on busy weeks.\" — para mostrar prioridade real.",
-      "\"It's a pretty niche interest, but I love it.\" — para introduzir algo incomum com confiança.",
+      "\"I've always been into...\", para expressar interesse genuíno de longa data.",
+      "\"I picked that up during...\", para contextualizar quando um hobby começou.",
+      "\"I try to make time for it, even on busy weeks.\", para mostrar prioridade real.",
+      "\"It's a pretty niche interest, but I love it.\", para introduzir algo incomum com confiança.",
     ],
     exerciseSentences: [
       "Photography has been my main ______ for years.",
@@ -395,15 +395,15 @@ const themes = [
     readingTitle: "Warmth Without Oversharing",
     readingParagraphs: [
       "Talking about family in English in a mixed professional-social setting involves a light balance: warmth without full disclosure. \"We're pretty close, though like any family we've had our ups and downs\" is honest without opening a door you might not want to walk through in a casual conversation.",
-      "Specific, positive vocabulary — \"quality time,\" \"unconditional support,\" \"leaning on someone\" — allows genuine warmth without requiring detailed personal history. You can describe a relationship's quality without narrating its full story.",
+      "Specific, positive vocabulary, \"quality time,\" \"unconditional support,\" \"leaning on someone\", allows genuine warmth without requiring detailed personal history. You can describe a relationship's quality without narrating its full story.",
       "It's also completely normal to acknowledge complexity briefly and move on: \"we grew apart for a while, but we've reconnected\" names something real without inviting further questions unless you want to share more.",
     ],
     audioFile: "audio/tema-94-family-and-relationships.mp3",
     audioScript: [
       "\"Are you close with your family?\"",
-      "\"Pretty close, yeah — though like any family, we've had our ups and downs. We grew apart for a while when I moved abroad, but we've really reconnected since.\"",
+      "\"Pretty close, yeah, though like any family, we've had our ups and downs. We grew apart for a while when I moved abroad, but we've really reconnected since.\"",
     ],
-    audioFollowup: "Note o equilíbrio entre calor e discrição — a resposta é honesta sem se estender demais.",
+    audioFollowup: "Note o equilíbrio entre calor e discrição, a resposta é honesta sem se estender demais.",
     writingQuestions: [
       "Describe your family dynamic in a few warm but appropriately general sentences.",
       "Who do you lean on most during difficult times, and why?",
@@ -416,7 +416,7 @@ const themes = [
       ["The older I get, the more...", "The older I get, the more I appreciate my family.", "Usado para expressar uma reflexão pessoal que evolui com o tempo."],
       ["Present Perfect\n(histórico de relacionamento)", "We've grown a lot closer over the years.", "Usado para descrever a evolução de um relacionamento até o presente."],
     ],
-    grammarTip: "Dica prática: \"the older I get, the more...\" é uma estrutura reflexiva muito natural e calorosa para falar de família — funciona bem em conversas sociais mais íntimas.",
+    grammarTip: "Dica prática: \"the older I get, the more...\" é uma estrutura reflexiva muito natural e calorosa para falar de família, funciona bem em conversas sociais mais íntimas.",
     speakingQuestions: [
       "Describe your family dynamic in a few warm, appropriately general sentences.",
       "Who do you lean on most during difficult times, and why that person?",
@@ -430,10 +430,10 @@ const themes = [
       "What have you learned about relationships from watching your own family growing up?",
     ],
     expressions: [
-      "\"We're pretty close, though we've had our ups and downs.\" — resposta calorosa e honesta.",
-      "\"We grew apart for a while, but reconnected.\" — para nomear complexidade com discrição.",
-      "\"I really lean on them during hard times.\" — para expressar apoio genuíno.",
-      "\"We try to protect quality time.\" — para mostrar prioridade familiar.",
+      "\"We're pretty close, though we've had our ups and downs.\", resposta calorosa e honesta.",
+      "\"We grew apart for a while, but reconnected.\", para nomear complexidade com discrição.",
+      "\"I really lean on them during hard times.\", para expressar apoio genuíno.",
+      "\"We try to protect quality time.\", para mostrar prioridade familiar.",
     ],
     exerciseSentences: [
       "My ______ gets together a couple of times a year.",
@@ -469,13 +469,13 @@ const themes = [
     readingTitle: "Conviction and Openness Aren't Opposites",
     readingParagraphs: [
       "Talking about social issues in English well means holding two things at once: genuine conviction and openness to other perspectives. \"I feel strongly that this policy needs to change, though I recognize reasonable people disagree on the best approach\" states a position clearly without dismissing disagreement.",
-      "\"Regardless of where you stand on this\" is a useful opener for finding shared ground before diving into a more specific opinion — it signals you're aware the topic is contested, without abandoning your own view.",
+      "\"Regardless of where you stand on this\" is a useful opener for finding shared ground before diving into a more specific opinion, it signals you're aware the topic is contested, without abandoning your own view.",
       "It's also fine to admit when neutrality doesn't feel honest: \"I don't think I can stay neutral on this one\" is a respected, direct way to signal you have a real position, without necessarily starting a confrontation.",
     ],
     audioFile: "audio/tema-95-opinion-on-social-issues.mp3",
     audioScript: [
       "\"Where do you stand on this issue?\"",
-      "\"Honestly, I don't think I can stay neutral — I feel strongly that we need real policy change here. Regardless of where you stand, I think we can agree awareness alone isn't enough.\"",
+      "\"Honestly, I don't think I can stay neutral, I feel strongly that we need real policy change here. Regardless of where you stand, I think we can agree awareness alone isn't enough.\"",
     ],
     audioFollowup: "Note a posição clara (\"I feel strongly\") acompanhada de uma ponte para quem pensa diferente (\"regardless of where you stand\").",
     writingQuestions: [
@@ -490,7 +490,7 @@ const themes = [
       ["Regardless of where you stand on this, ...", "Regardless of where you stand on this, the data is concerning.", "Usado para introduzir um ponto que deveria ser aceito independentemente da posição da pessoa."],
       ["I try to stay open, but...", "I try to stay open, but I do have a strong opinion here.", "Equilibra abertura ao diálogo com uma posição pessoal genuína."],
     ],
-    grammarTip: "Dica prática: \"regardless of where you stand on this\" é uma ponte excelente antes de um ponto que você quer que seja aceito por todos os lados de um debate — reduz a resistência inicial do ouvinte.",
+    grammarTip: "Dica prática: \"regardless of where you stand on this\" é uma ponte excelente antes de um ponto que você quer que seja aceito por todos os lados de um debate, reduz a resistência inicial do ouvinte.",
     speakingQuestions: [
       "What's a social issue you feel strongly about, and why does it matter to you personally?",
       "How do you advocate for that issue in your own life, even in small, everyday ways?",
@@ -504,10 +504,10 @@ const themes = [
       "What's a form of activism, big or small, that you find genuinely effective?",
     ],
     expressions: [
-      "\"I feel strongly that...\" — abertura direta e convicta.",
-      "\"Regardless of where you stand on this...\" — ponte para diferentes opiniões.",
-      "\"I don't think I can stay neutral on this one.\" — para assumir uma posição com honestidade.",
-      "\"I try to stay open, but...\" — para equilibrar convicção e abertura.",
+      "\"I feel strongly that...\", abertura direta e convicta.",
+      "\"Regardless of where you stand on this...\", ponte para diferentes opiniões.",
+      "\"I don't think I can stay neutral on this one.\", para assumir uma posição com honestidade.",
+      "\"I try to stay open, but...\", para equilibrar convicção e abertura.",
     ],
     exerciseSentences: [
       "This is a ______ I care a lot about.",
@@ -525,7 +525,7 @@ const themes = [
     titleEn: "Talking About Plans for the Weekend or Vacation",
     titlePt: "Falando sobre planos de fim de semana ou férias",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "Fechando o Bloco 12: falar sobre planos futuros de lazer é talvez a conversa social mais frequente de todas em inglês — e uma ótima forma de fechar o bloco em um tom leve.",
+    intro: "Fechando o Bloco 12: falar sobre planos futuros de lazer é talvez a conversa social mais frequente de todas em inglês, e uma ótima forma de fechar o bloco em um tom leve.",
     vocab: [
       ["getaway", "escapada / viagem curta", "We're planning a quick getaway next month."],
       ["to look forward to", "estar animado(a) para", "I'm really looking forward to some time off."],
@@ -543,13 +543,13 @@ const themes = [
     readingTitle: "Weekend Plans Are Small Talk's Reliable Fallback",
     readingParagraphs: [
       "\"Any plans for the weekend?\" might be the single most common small talk question in English, precisely because it's low-stakes and universally relevant. A good answer gives a small, specific detail rather than a flat \"not much.\"",
-      "\"I'm looking forward to a long weekend getaway — nothing fancy, just some downtime by the coast\" gives the other person something to respond to, and often opens into a longer conversation about travel or relaxation.",
-      "It's also fine, and common, to have no plans and say so warmly: \"Honestly, I haven't made any plans — just looking forward to some proper downtime at home\" is a completely normal, relatable answer that doesn't need embellishing.",
+      "\"I'm looking forward to a long weekend getaway, nothing fancy, just some downtime by the coast\" gives the other person something to respond to, and often opens into a longer conversation about travel or relaxation.",
+      "It's also fine, and common, to have no plans and say so warmly: \"Honestly, I haven't made any plans, just looking forward to some proper downtime at home\" is a completely normal, relatable answer that doesn't need embellishing.",
     ],
     audioFile: "audio/tema-96-plans-for-the-weekend.mp3",
     audioScript: [
       "\"Any plans for the long weekend?\"",
-      "\"We just booked a quick getaway, actually — nothing fancy, just a day trip to the coast and some proper downtime. How about you?\"",
+      "\"We just booked a quick getaway, actually, nothing fancy, just a day trip to the coast and some proper downtime. How about you?\"",
     ],
     audioFollowup: "Note que a resposta é específica (\"day trip to the coast\") e termina devolvendo a pergunta, mantendo a conversa fluindo.",
     writingQuestions: [
@@ -564,7 +564,7 @@ const themes = [
       ["looking forward to + gerúndio", "I'm looking forward to finally relaxing.", "Usado para expressar expectativa positiva sobre algo futuro."],
       ["haven't decided yet, but...", "We haven't decided yet, but we're leaning toward a staycation.", "Usado para comunicar indecisão de forma leve e aberta."],
     ],
-    grammarTip: "Dica prática: depois de \"looking forward to\", use sempre o gerúndio (\"looking forward to relaxing\", não \"to relax\") — um erro muito comum entre falantes de português.",
+    grammarTip: "Dica prática: depois de \"looking forward to\", use sempre o gerúndio (\"looking forward to relaxing\", não \"to relax\"), um erro muito comum entre falantes de português.",
     speakingQuestions: [
       "What are your real or ideal plans for an upcoming weekend or vacation?",
       "What's on your bucket list that you haven't gotten around to yet?",
@@ -578,10 +578,10 @@ const themes = [
       "What's a place still on your bucket list, and what's stopping you from going?",
     ],
     expressions: [
-      "\"Any plans for the weekend?\" — pergunta universal de small talk.",
-      "\"I'm really looking forward to...\" — para expressar expectativa positiva.",
-      "\"Nothing fancy, just...\" — para descrever planos simples com charme.",
-      "\"We haven't decided yet, but...\" — para responder com leveza mesmo sem plano fechado.",
+      "\"Any plans for the weekend?\", pergunta universal de small talk.",
+      "\"I'm really looking forward to...\", para expressar expectativa positiva.",
+      "\"Nothing fancy, just...\", para descrever planos simples com charme.",
+      "\"We haven't decided yet, but...\", para responder com leveza mesmo sem plano fechado.",
     ],
     exerciseSentences: [
       "We're planning a quick ______ next month.",

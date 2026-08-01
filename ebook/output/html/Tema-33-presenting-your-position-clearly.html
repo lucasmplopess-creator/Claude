@@ -2,40 +2,45 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Tema 33 — Presenting Your Position Clearly</title>
+<title>Tema 33: Presenting Your Position Clearly</title>
 <style>
   
   @page {
     size: A4;
-    margin: 2.2cm 2cm 2.4cm 2cm;
-    @top-right { content: "English Speaking Practice — Nação Fluente"; font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
-    @bottom-center { content: "Bloco 5 — Negociação e Persuasão   |   Página " counter(page); font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
+    margin: 1.9cm 2cm 2.1cm 2cm;
+    @top-right { content: "English Speaking Practice · Nação Fluente"; font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
+    @bottom-center { content: "Bloco 5 · Negociação e Persuasão (Negotiation and Persuasion)   |   Página " counter(page); font-size: 7.5pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
   }
   * { box-sizing: border-box; }
-  body { font-family: 'Helvetica', Arial, sans-serif; color: #444444; font-size: 10.5pt; line-height: 1.5; }
-  .cover { background: #1B3B57; color: #fff; padding: 22px 24px; border-radius: 4px; margin-bottom: 14px; }
-  .cover .eyebrow { color: #8fc4ec; font-weight: bold; font-size: 9.5pt; letter-spacing: 0.5px; margin-bottom: 6px; }
-  .cover h1 { font-size: 22pt; margin: 0 0 6px 0; color: #fff; }
-  .cover .subtitle { color: #C9D6E3; font-style: italic; font-size: 12pt; margin: 0; }
-  .meta { margin: 10px 0 14px 0; font-size: 10.5pt; }
+  body { font-family: 'Helvetica', Arial, sans-serif; color: #444444; font-size: 10.5pt; line-height: 1.42; }
+  .cover { background: #1B3B57; color: #fff; padding: 16px 18px; border-radius: 4px; margin-bottom: 10px; display: flex; align-items: center; gap: 16px; }
+  .cover .icon { width: 54px; height: 54px; flex: none; opacity: 0.92; }
+  .cover .eyebrow { color: #8fc4ec; font-weight: bold; font-size: 9pt; letter-spacing: 0.4px; margin-bottom: 4px; }
+  .cover .eyebrow .en { display: block; color: #6f93ad; font-weight: normal; font-style: italic; font-size: 7.5pt; letter-spacing: 0.2px; margin-top: 1px; }
+  .cover h1 { font-size: 19pt; margin: 0 0 3px 0; color: #fff; line-height: 1.12; }
+  .cover .subtitle { color: #C9D6E3; font-style: italic; font-size: 10.5pt; margin: 0; }
+  .meta { margin: 8px 0 10px 0; font-size: 10pt; }
   .meta b { color: #1B3B57; }
-  .intro { margin-bottom: 6px; }
-  h2.step { color: #fff; padding: 8px 12px; font-size: 12.5pt; margin: 22px 0 10px 0; border-radius: 3px; }
-  h2.step .tag { background: rgba(255,255,255,0.22); padding: 2px 8px; border-radius: 3px; font-size: 9.5pt; margin-right: 8px; }
-  table { width: 100%; border-collapse: collapse; margin: 8px 0 14px 0; font-size: 9.8pt; }
-  th { color: #fff; text-align: left; padding: 6px 8px; }
-  td { padding: 6px 8px; border-bottom: 1px solid #E3E9EF; vertical-align: top; }
+  .intro { margin-bottom: 4px; }
+  p { margin: 0 0 8px 0; }
+  h2.step { color: #fff; padding: 6px 10px; font-size: 11.5pt; margin: 16px 0 8px 0; border-radius: 3px; display: flex; align-items: center; }
+  h2.step .tag { background: rgba(255,255,255,0.22); padding: 2px 7px; border-radius: 3px; font-size: 8.5pt; margin-right: 8px; flex: none; }
+  h2.step .stitle { display: flex; flex-direction: column; line-height: 1.18; }
+  h2.step .stitle .en { font-weight: normal; font-style: italic; font-size: 8pt; opacity: 0.82; }
+  table { width: 100%; border-collapse: collapse; margin: 6px 0 10px 0; font-size: 9.5pt; }
+  th { color: #fff; text-align: left; padding: 5px 7px; }
+  td { padding: 5px 7px; border-bottom: 1px solid #E3E9EF; vertical-align: top; }
   .example { font-style: italic; }
-  .notebox { border-radius: 4px; padding: 10px 14px; margin: 10px 0 16px 0; border: 1px solid; }
-  .notebox .title { font-weight: bold; margin-bottom: 6px; }
-  .notebox p { margin: 3px 0; }
-  ol, ul { margin: 6px 0 14px 0; padding-left: 20px; }
-  ol li, ul li { margin-bottom: 7px; }
-  .lines { border-bottom: 1px solid #C9D6E3; height: 22px; margin-bottom: 6px; }
-  .expr-list { list-style: none; padding-left: 0; margin: 6px 0 14px 0; }
-  .expr-list li { margin-bottom: 6px; padding-left: 14px; position: relative; }
-  .gabarito { font-style: italic; color: #1B3B57; margin-top: -6px; }
-  .footer-note { text-align: center; font-weight: bold; color: #1B3B57; margin-top: 18px; font-size: 11pt; }
+  .notebox { border-radius: 4px; padding: 8px 12px; margin: 6px 0 10px 0; border: 1px solid; }
+  .notebox .title { font-weight: bold; margin-bottom: 4px; }
+  .notebox p { margin: 2px 0; }
+  ol, ul { margin: 4px 0 10px 0; padding-left: 19px; }
+  ol li, ul li { margin-bottom: 5px; }
+  .lines { border-bottom: 1px solid #C9D6E3; height: 17px; margin-bottom: 4px; }
+  .expr-list { list-style: none; padding-left: 0; margin: 4px 0 10px 0; }
+  .expr-list li { margin-bottom: 4px; padding-left: 14px; position: relative; }
+  .gabarito { font-style: italic; color: #1B3B57; margin-top: -4px; }
+  .footer-note { text-align: center; font-weight: bold; color: #1B3B57; margin-top: 12px; font-size: 10.5pt; }
 
   .s1 h2, .s1 .tag { background: #2E86C1; }
   .s1 th { background: #2E86C1; }
@@ -72,16 +77,19 @@
 
 <div class="chapter" id="tema-33">
 <div class="cover">
-  <div class="eyebrow">TEMA 33 &nbsp;·&nbsp; BLOCO 5 — NEGOCIAÇÃO E PERSUASÃO</div>
-  <h1>Presenting Your Position Clearly</h1>
-  <p class="subtitle">Apresentando sua posição com clareza</p>
+  <img class="icon" src="file:///home/user/Claude/ebook/assets/icons/block-5.png">
+  <div>
+    <div class="eyebrow">TEMA 33 &nbsp;·&nbsp; BLOCO 5 &nbsp;·&nbsp; NEGOCIAÇÃO E PERSUASÃO<span class="en">THEME 33 · BLOCK 5 · NEGOTIATION AND PERSUASION</span></div>
+    <h1>Presenting Your Position Clearly</h1>
+    <p class="subtitle">Apresentando sua posição com clareza</p>
+  </div>
 </div>
 
 <div class="meta"><b>Tempo estimado:</b> 60–90 minutos, divididos ao longo da semana.</div>
 <p class="intro">Abrindo o Bloco 5: antes de negociar, você precisa conseguir declarar sua posição sem ambiguidade. Este tema treina a linguagem de deixar claro o que você quer, o que você precisa, e por quê.</p>
 
 <div class="s1">
-<h2 class="step"><span class="tag">ETAPA 1</span>Vocabulário Contextualizado</h2>
+<h2 class="step "><span class="tag">ETAPA 1</span><span class="stitle"><span class="pt">Vocabulário Contextualizado</span><span class="en">Contextualized Vocabulary</span></span></h2>
 <p>Estas palavras e expressões vão te ajudar a se expressar sobre este tema com mais precisão e naturalidade.</p>
 <table>
 <tr><th>Word / Expression</th><th>Tradução</th><th>Example Sentence</th></tr>
@@ -102,70 +110,70 @@
 </div>
 
 <div class="s2">
-<h2 class="step"><span class="tag">ETAPA 2</span>Leitura com Orientação de Estudo</h2>
+<h2 class="step "><span class="tag">ETAPA 2</span><span class="stitle"><span class="pt">Leitura com Orientação de Estudo</span><span class="en">Guided Reading</span></span></h2>
 <div class="notebox">
   <div class="title">Como ler este texto</div>
-  <p>1) Leia uma vez, rápido, só para captar a ideia geral — sem parar no que não entender.</p><p>2) Leia de novo e grife toda expressão da Etapa 1 que aparecer no texto.</p><p>3) Releia em voz alta, como se você estivesse contando essa história sobre você mesmo.</p>
+  <p>1) Leia uma vez, rápido, só para captar a ideia geral, sem parar no que não entender.</p><p>2) Leia de novo e grife toda expressão da Etapa 1 que aparecer no texto.</p><p>3) Releia em voz alta, como se você estivesse contando essa história sobre você mesmo.</p>
 </div>
 <p><b>"Clarity Beats Cleverness in a Negotiation"</b></p>
-<p>A common mistake in negotiations is trying to sound clever instead of clear. In English, a strong opening position doesn't hide behind vague language — it lays out exactly what matters and why, in plain terms: "Our bottom line is a 90-day window. Quality standards are non-negotiable. Everything else is open for discussion."</p><p>Being upfront about priorities, oddly, often creates more room to negotiate, not less. When the other side knows what's truly fixed versus flexible, they can propose creative trade-offs instead of guessing where the real limits are.</p><p>Framing matters as much as content. The same position — "we need a lower price" — lands very differently framed as "we're looking for a partnership that works long-term for both sides" rather than a one-time discount request.</p>
+<p>A common mistake in negotiations is trying to sound clever instead of clear. In English, a strong opening position doesn't hide behind vague language, it lays out exactly what matters and why, in plain terms: "Our bottom line is a 90-day window. Quality standards are non-negotiable. Everything else is open for discussion."</p><p>Being upfront about priorities, oddly, often creates more room to negotiate, not less. When the other side knows what's truly fixed versus flexible, they can propose creative trade-offs instead of guessing where the real limits are.</p><p>Framing matters as much as content. The same position, "we need a lower price", lands very differently framed as "we're looking for a partnership that works long-term for both sides" rather than a one-time discount request.</p>
 </div>
 
 <div class="s3">
-<h2 class="step"><span class="tag">ETAPA 3</span>Listening com Suporte em Áudio e Vídeo</h2>
+<h2 class="step "><span class="tag">ETAPA 3</span><span class="stitle"><span class="pt">Listening com Suporte em Áudio e Vídeo</span><span class="en">Guided Listening</span></span></h2>
 <p>Ouça o áudio deste tema (arquivo disponível para download na plataforma: <i>audio/tema-33-presenting-your-position.mp3</i>) com o roteiro abaixo. Primeiro sem ler, depois acompanhando o texto.</p>
 <div class="notebox">
   <div class="title">Roteiro do áudio (Audio Script)</div>
-  <p>"Before we get into numbers, let me lay out our position."</p><p>"Go ahead." "Our bottom line is the 90-day timeline — that's non-negotiable. Pricing and scope, though, we have real flexibility on. I wanted to be upfront about that from the start."</p>
+  <p>"Before we get into numbers, let me lay out our position."</p><p>"Go ahead." "Our bottom line is the 90-day timeline, that's non-negotiable. Pricing and scope, though, we have real flexibility on. I wanted to be upfront about that from the start."</p>
 </div>
-<p>Note como a pessoa separa claramente o que é inegociável do que tem flexibilidade — isso orienta toda a negociação que vem depois.</p>
+<p>Note como a pessoa separa claramente o que é inegociável do que tem flexibilidade, isso orienta toda a negociação que vem depois.</p>
 </div>
 
 <div class="s4">
-<h2 class="step"><span class="tag">ETAPA 4</span>Writing como Preparação para a Fala</h2>
-<p>Antes de falar, escreva. Use as perguntas abaixo como guia e escreva de 4 a 6 frases — não precisa ser perfeito, precisa existir no papel primeiro.</p>
+<h2 class="step "><span class="tag">ETAPA 4</span><span class="stitle"><span class="pt">Writing como Preparação para a Fala</span><span class="en">Writing Before Speaking</span></span></h2>
+<p>Antes de falar, escreva. Use as perguntas abaixo como guia e escreva de 4 a 6 frases: não precisa ser perfeito, precisa existir no papel primeiro.</p>
 <ol><li>What's a position you need to present clearly in an upcoming negotiation?</li><li>What's non-negotiable for you in that situation, and what's flexible?</li><li>How would you frame your position to sound like a partnership, not a demand?</li><li>What leverage do you have in a negotiation you're currently facing?</li></ol>
 <p>Espaço para escrever:</p>
-<div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div>
+<div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div>
 </div>
 
 <div class="s5">
-<h2 class="step"><span class="tag">ETAPA 5</span>Gramática de Apoio Aplicada à Conversação</h2>
+<h2 class="step "><span class="tag">ETAPA 5</span><span class="stitle"><span class="pt">Gramática de Apoio Aplicada à Conversação</span><span class="en">Grammar for Conversation</span></span></h2>
 <p>Declarar uma posição de forma formal e clara depende de estruturas específicas para necessidades, desejos e justificativas.</p>
 <table>
 <tr><th>Estrutura</th><th>Exemplo (EN)</th><th>Tradução (PT)</th></tr>
 
     <tr><td><b>Our position is that...</b></td><td class="example">Our position is that the timeline needs to stay fixed.</td><td>Forma direta e formal de declarar uma postura em uma negociação.</td></tr>
-    <tr><td><b>What we need / what we'd like</b><br>(necessidade vs desejo)</td><td class="example">What we need is a firm deadline; what we'd like is more budget flexibility.</td><td>Distingue claramente entre exigências e preferências — fundamental em negociação.</td></tr>
+    <tr><td><b>What we need / what we'd like</b><br>(necessidade vs desejo)</td><td class="example">What we need is a firm deadline; what we'd like is more budget flexibility.</td><td>Distingue claramente entre exigências e preferências, fundamental em negociação.</td></tr>
     <tr><td><b>given that</b><br>(justificativa)</td><td class="example">Given that timelines are tight, we'd need a faster decision.</td><td>Usado para justificar uma posição com base em um fato already conhecido.</td></tr>
 </table>
 <p>Dica prática: separar "what we need" de "what we'd like" na mesma frase é uma das formas mais eficazes de comunicar prioridades em uma negociação em inglês.</p>
 </div>
 
 <div class="s6">
-<h2 class="step"><span class="tag">ETAPA 6</span>Speaking — Perguntas Abertas</h2>
-<p>Responda em voz alta, gravando se possível. Não vale responder em uma frase só — use o que você escreveu na Etapa 4 como base, mas fale livremente.</p>
-<ol><li>How would you lay out your position at the start of an important negotiation?</li><li>What's something that's a bottom line for you — completely non-negotiable?</li><li>How do you frame a tough ask so it sounds like a partnership, not a demand?</li><li>What leverage do you typically bring into a negotiation?</li><li>How honest do you tend to be about your priorities early in a negotiation?</li><li>Describe a time being upfront about your position actually helped you.</li><li>How do you handle it when the other side won't clearly state their position?</li><li>What's the risk of laying out your position too early in a conversation?</li><li>How do cultural norms affect how directly people state their position, in your experience?</li><li>What's a position you've had to soften over time after further conversation?</li></ol>
+<h2 class="step "><span class="tag">ETAPA 6</span><span class="stitle"><span class="pt">Speaking: Perguntas Abertas</span><span class="en">Open-Ended Speaking</span></span></h2>
+<p>Responda em voz alta, gravando se possível. Não vale responder em uma frase só: use o que você escreveu na Etapa 4 como base, mas fale livremente.</p>
+<ol><li>How would you lay out your position at the start of an important negotiation?</li><li>What's something that's a bottom line for you, completely non-negotiable?</li><li>How do you frame a tough ask so it sounds like a partnership, not a demand?</li><li>What leverage do you typically bring into a negotiation?</li><li>How honest do you tend to be about your priorities early in a negotiation?</li><li>Describe a time being upfront about your position actually helped you.</li><li>How do you handle it when the other side won't clearly state their position?</li><li>What's the risk of laying out your position too early in a conversation?</li><li>How do cultural norms affect how directly people state their position, in your experience?</li><li>What's a position you've had to soften over time after further conversation?</li></ol>
 <p><b>Expressões úteis para esta conversa:</b></p>
-<ul class="expr-list"><li>"Let me lay out our position." — abertura clara para uma negociação.</li><li>"That's a bottom line for us." — para marcar algo como inegociável.</li><li>"I wanted to be upfront about that." — para reforçar transparência.</li><li>"Here's where we have some flexibility." — para abrir espaço de negociação.</li></ul>
+<ul class="expr-list"><li>"Let me lay out our position.", abertura clara para uma negociação.</li><li>"That's a bottom line for us.", para marcar algo como inegociável.</li><li>"I wanted to be upfront about that.", para reforçar transparência.</li><li>"Here's where we have some flexibility.", para abrir espaço de negociação.</li></ul>
 </div>
 
 <div class="sx">
-<h2 class="step"><span class="tag">EXERCÍCIO</span>Complete com a Palavra Certa</h2>
+<h2 class="step "><span class="tag">EXERCÍCIO</span><span class="stitle"><span class="pt">Complete com a Palavra Certa</span><span class="en">Vocabulary Check</span></span></h2>
 <p>Complete cada frase com uma palavra ou expressão da Etapa 1. Gabarito ao final desta seção.</p>
 <ol><li>Let me ______ the three main points of our proposal.</li><li>Our ______ is a 90-day implementation window.</li><li>The quality standards are ______ for us.</li><li>We have some ______ here given the timeline pressure they're under.</li><li>I'd rather be ______ about our constraints now.</li></ol>
 <p class="gabarito">Gabarito: 1) lay out   2) bottom line   3) non-negotiable   4) leverage   5) upfront</p>
 </div>
 
 <div class="s7">
-<h2 class="step"><span class="tag">ETAPA 7</span>Autoavaliação de Performance</h2>
+<h2 class="step "><span class="tag">ETAPA 7</span><span class="stitle"><span class="pt">Autoavaliação de Performance</span><span class="en">Self-Assessment</span></span></h2>
 <p>Antes de marcar este tema como concluído, avalie honestamente como foi sua prática.</p>
 <table>
-<tr><th>Critério</th><th>Como foi?</th><th>Nota (1–5)</th></tr>
+<tr><th>Critério</th><th>Como foi?</th><th>Nota (1-5)</th></tr>
 <tr><td>Consegui usar o vocabulário novo sem parar para pensar</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Entendi o áudio/vídeo sem depender da transcrição</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Escrevi minhas respostas antes de falar</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Apliquei a estrutura gramatical da etapa 5 corretamente</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Sustentei minhas respostas por mais de 2 frases</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Me senti confiante ao falar sobre este tema</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 </table>
 <p>O que travou mais nesta conversa? O que você quer treinar de novo antes de seguir para o próximo tema?</p>
-<div class="lines"></div><div class="lines"></div><div class="lines"></div>
+<div class="lines"></div><div class="lines"></div>
 </div>
 
 <p class="footer-note">Marque este tema como concluído no seu Painel de Evolução e siga para o Tema 34.</p>

@@ -2,40 +2,45 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Tema 88 — Debriefing a Trip with Colleagues</title>
+<title>Tema 88: Debriefing a Trip with Colleagues</title>
 <style>
   
   @page {
     size: A4;
-    margin: 2.2cm 2cm 2.4cm 2cm;
-    @top-right { content: "English Speaking Practice — Nação Fluente"; font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
-    @bottom-center { content: "Bloco 11 — Viagens e Contexto Internacional   |   Página " counter(page); font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
+    margin: 1.9cm 2cm 2.1cm 2cm;
+    @top-right { content: "English Speaking Practice · Nação Fluente"; font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
+    @bottom-center { content: "Bloco 11 · Viagens e Contexto Internacional (Travel and International Context)   |   Página " counter(page); font-size: 7.5pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
   }
   * { box-sizing: border-box; }
-  body { font-family: 'Helvetica', Arial, sans-serif; color: #444444; font-size: 10.5pt; line-height: 1.5; }
-  .cover { background: #1B3B57; color: #fff; padding: 22px 24px; border-radius: 4px; margin-bottom: 14px; }
-  .cover .eyebrow { color: #8fc4ec; font-weight: bold; font-size: 9.5pt; letter-spacing: 0.5px; margin-bottom: 6px; }
-  .cover h1 { font-size: 22pt; margin: 0 0 6px 0; color: #fff; }
-  .cover .subtitle { color: #C9D6E3; font-style: italic; font-size: 12pt; margin: 0; }
-  .meta { margin: 10px 0 14px 0; font-size: 10.5pt; }
+  body { font-family: 'Helvetica', Arial, sans-serif; color: #444444; font-size: 10.5pt; line-height: 1.42; }
+  .cover { background: #1B3B57; color: #fff; padding: 16px 18px; border-radius: 4px; margin-bottom: 10px; display: flex; align-items: center; gap: 16px; }
+  .cover .icon { width: 54px; height: 54px; flex: none; opacity: 0.92; }
+  .cover .eyebrow { color: #8fc4ec; font-weight: bold; font-size: 9pt; letter-spacing: 0.4px; margin-bottom: 4px; }
+  .cover .eyebrow .en { display: block; color: #6f93ad; font-weight: normal; font-style: italic; font-size: 7.5pt; letter-spacing: 0.2px; margin-top: 1px; }
+  .cover h1 { font-size: 19pt; margin: 0 0 3px 0; color: #fff; line-height: 1.12; }
+  .cover .subtitle { color: #C9D6E3; font-style: italic; font-size: 10.5pt; margin: 0; }
+  .meta { margin: 8px 0 10px 0; font-size: 10pt; }
   .meta b { color: #1B3B57; }
-  .intro { margin-bottom: 6px; }
-  h2.step { color: #fff; padding: 8px 12px; font-size: 12.5pt; margin: 22px 0 10px 0; border-radius: 3px; }
-  h2.step .tag { background: rgba(255,255,255,0.22); padding: 2px 8px; border-radius: 3px; font-size: 9.5pt; margin-right: 8px; }
-  table { width: 100%; border-collapse: collapse; margin: 8px 0 14px 0; font-size: 9.8pt; }
-  th { color: #fff; text-align: left; padding: 6px 8px; }
-  td { padding: 6px 8px; border-bottom: 1px solid #E3E9EF; vertical-align: top; }
+  .intro { margin-bottom: 4px; }
+  p { margin: 0 0 8px 0; }
+  h2.step { color: #fff; padding: 6px 10px; font-size: 11.5pt; margin: 16px 0 8px 0; border-radius: 3px; display: flex; align-items: center; }
+  h2.step .tag { background: rgba(255,255,255,0.22); padding: 2px 7px; border-radius: 3px; font-size: 8.5pt; margin-right: 8px; flex: none; }
+  h2.step .stitle { display: flex; flex-direction: column; line-height: 1.18; }
+  h2.step .stitle .en { font-weight: normal; font-style: italic; font-size: 8pt; opacity: 0.82; }
+  table { width: 100%; border-collapse: collapse; margin: 6px 0 10px 0; font-size: 9.5pt; }
+  th { color: #fff; text-align: left; padding: 5px 7px; }
+  td { padding: 5px 7px; border-bottom: 1px solid #E3E9EF; vertical-align: top; }
   .example { font-style: italic; }
-  .notebox { border-radius: 4px; padding: 10px 14px; margin: 10px 0 16px 0; border: 1px solid; }
-  .notebox .title { font-weight: bold; margin-bottom: 6px; }
-  .notebox p { margin: 3px 0; }
-  ol, ul { margin: 6px 0 14px 0; padding-left: 20px; }
-  ol li, ul li { margin-bottom: 7px; }
-  .lines { border-bottom: 1px solid #C9D6E3; height: 22px; margin-bottom: 6px; }
-  .expr-list { list-style: none; padding-left: 0; margin: 6px 0 14px 0; }
-  .expr-list li { margin-bottom: 6px; padding-left: 14px; position: relative; }
-  .gabarito { font-style: italic; color: #1B3B57; margin-top: -6px; }
-  .footer-note { text-align: center; font-weight: bold; color: #1B3B57; margin-top: 18px; font-size: 11pt; }
+  .notebox { border-radius: 4px; padding: 8px 12px; margin: 6px 0 10px 0; border: 1px solid; }
+  .notebox .title { font-weight: bold; margin-bottom: 4px; }
+  .notebox p { margin: 2px 0; }
+  ol, ul { margin: 4px 0 10px 0; padding-left: 19px; }
+  ol li, ul li { margin-bottom: 5px; }
+  .lines { border-bottom: 1px solid #C9D6E3; height: 17px; margin-bottom: 4px; }
+  .expr-list { list-style: none; padding-left: 0; margin: 4px 0 10px 0; }
+  .expr-list li { margin-bottom: 4px; padding-left: 14px; position: relative; }
+  .gabarito { font-style: italic; color: #1B3B57; margin-top: -4px; }
+  .footer-note { text-align: center; font-weight: bold; color: #1B3B57; margin-top: 12px; font-size: 10.5pt; }
 
   .s1 h2, .s1 .tag { background: #2E86C1; }
   .s1 th { background: #2E86C1; }
@@ -72,16 +77,19 @@
 
 <div class="chapter" id="tema-88">
 <div class="cover">
-  <div class="eyebrow">TEMA 88 &nbsp;·&nbsp; BLOCO 11 — VIAGENS E CONTEXTO INTERNACIONAL</div>
-  <h1>Debriefing a Trip with Colleagues</h1>
-  <p class="subtitle">Fazendo o debriefing de uma viagem com colegas</p>
+  <img class="icon" src="file:///home/user/Claude/ebook/assets/icons/block-11.png">
+  <div>
+    <div class="eyebrow">TEMA 88 &nbsp;·&nbsp; BLOCO 11 &nbsp;·&nbsp; VIAGENS E CONTEXTO INTERNACIONAL<span class="en">THEME 88 · BLOCK 11 · TRAVEL AND INTERNATIONAL CONTEXT</span></div>
+    <h1>Debriefing a Trip with Colleagues</h1>
+    <p class="subtitle">Fazendo o debriefing de uma viagem com colegas</p>
+  </div>
 </div>
 
 <div class="meta"><b>Tempo estimado:</b> 60–90 minutos, divididos ao longo da semana.</div>
-<p class="intro">Fechando o Bloco 11: resumir uma viagem de negócios para quem ficou — o que valeu a pena, o que não valeu, quais são os próximos passos — em inglês, é uma habilidade tão prática quanto qualquer outra deste bloco.</p>
+<p class="intro">Fechando o Bloco 11: resumir uma viagem de negócios para quem ficou, o que valeu a pena, o que não valeu, quais são os próximos passos, em inglês, é uma habilidade tão prática quanto qualquer outra deste bloco.</p>
 
 <div class="s1">
-<h2 class="step"><span class="tag">ETAPA 1</span>Vocabulário Contextualizado</h2>
+<h2 class="step "><span class="tag">ETAPA 1</span><span class="stitle"><span class="pt">Vocabulário Contextualizado</span><span class="en">Contextualized Vocabulary</span></span></h2>
 <p>Estas palavras e expressões vão te ajudar a se expressar sobre este tema com mais precisão e naturalidade.</p>
 <table>
 <tr><th>Word / Expression</th><th>Tradução</th><th>Example Sentence</th></tr>
@@ -102,35 +110,35 @@
 </div>
 
 <div class="s2">
-<h2 class="step"><span class="tag">ETAPA 2</span>Leitura com Orientação de Estudo</h2>
+<h2 class="step "><span class="tag">ETAPA 2</span><span class="stitle"><span class="pt">Leitura com Orientação de Estudo</span><span class="en">Guided Reading</span></span></h2>
 <div class="notebox">
   <div class="title">Como ler este texto</div>
-  <p>1) Leia uma vez, rápido, só para captar a ideia geral — sem parar no que não entender.</p><p>2) Leia de novo e grife toda expressão da Etapa 1 que aparecer no texto.</p><p>3) Releia em voz alta, como se você estivesse contando essa história sobre você mesmo.</p>
+  <p>1) Leia uma vez, rápido, só para captar a ideia geral, sem parar no que não entender.</p><p>2) Leia de novo e grife toda expressão da Etapa 1 que aparecer no texto.</p><p>3) Releia em voz alta, como se você estivesse contando essa história sobre você mesmo.</p>
 </div>
 <p><b>"A Good Trip Debrief Has a Shape"</b></p>
-<p>Debriefing a business trip well in English follows a shape similar to summarizing a long discussion (Tema 61): a brief overall impression, the key takeaway, and concrete next steps — not a full chronological retelling of every meeting.</p><p>"Overall, the trip was worthwhile — the key takeaway is the client wants faster turnaround, and I've got three follow-up actions I'll send over today." This gives colleagues everything useful in a few sentences, with more detail available if asked.</p><p>Being honest about logistics or things that didn't go smoothly, briefly, also adds credibility: "the logistics were a bit rough, but the meetings themselves went really well" separates the parts worth improving next time from the parts that actually mattered.</p>
+<p>Debriefing a business trip well in English follows a shape similar to summarizing a long discussion (Tema 61): a brief overall impression, the key takeaway, and concrete next steps, not a full chronological retelling of every meeting.</p><p>"Overall, the trip was worthwhile, the key takeaway is the client wants faster turnaround, and I've got three follow-up actions I'll send over today." This gives colleagues everything useful in a few sentences, with more detail available if asked.</p><p>Being honest about logistics or things that didn't go smoothly, briefly, also adds credibility: "the logistics were a bit rough, but the meetings themselves went really well" separates the parts worth improving next time from the parts that actually mattered.</p>
 </div>
 
 <div class="s3">
-<h2 class="step"><span class="tag">ETAPA 3</span>Listening com Suporte em Áudio e Vídeo</h2>
+<h2 class="step "><span class="tag">ETAPA 3</span><span class="stitle"><span class="pt">Listening com Suporte em Áudio e Vídeo</span><span class="en">Guided Listening</span></span></h2>
 <p>Ouça o áudio deste tema (arquivo disponível para download na plataforma: <i>audio/tema-88-debriefing-a-trip.mp3</i>) com o roteiro abaixo. Primeiro sem ler, depois acompanhando o texto.</p>
 <div class="notebox">
   <div class="title">Roteiro do áudio (Audio Script)</div>
   <p>"How did the trip go overall?"</p><p>"Overall, really worthwhile. The key takeaway is the client wants faster turnaround on deliverables. Logistics were a bit rough, but I'll send over the follow-up actions today."</p>
 </div>
-<p>Note a estrutura enxuta: impressão geral, takeaway principal, e próximos passos — sem relato cronológico detalhado.</p>
+<p>Note a estrutura enxuta: impressão geral, takeaway principal, e próximos passos, sem relato cronológico detalhado.</p>
 </div>
 
 <div class="s4">
-<h2 class="step"><span class="tag">ETAPA 4</span>Writing como Preparação para a Fala</h2>
-<p>Antes de falar, escreva. Use as perguntas abaixo como guia e escreva de 4 a 6 frases — não precisa ser perfeito, precisa existir no papel primeiro.</p>
+<h2 class="step "><span class="tag">ETAPA 4</span><span class="stitle"><span class="pt">Writing como Preparação para a Fala</span><span class="en">Writing Before Speaking</span></span></h2>
+<p>Antes de falar, escreva. Use as perguntas abaixo como guia e escreva de 4 a 6 frases: não precisa ser perfeito, precisa existir no papel primeiro.</p>
 <ol><li>Debrief a real or imagined business trip in three or four sentences.</li><li>What was the key takeaway from that trip?</li><li>What follow-up actions would come out of it?</li><li>What lessons learned would you carry into the next trip?</li></ol>
 <p>Espaço para escrever:</p>
-<div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div>
+<div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div>
 </div>
 
 <div class="s5">
-<h2 class="step"><span class="tag">ETAPA 5</span>Gramática de Apoio Aplicada à Conversação</h2>
+<h2 class="step "><span class="tag">ETAPA 5</span><span class="stitle"><span class="pt">Gramática de Apoio Aplicada à Conversação</span><span class="en">Grammar for Conversation</span></span></h2>
 <p>Fazer o debriefing de uma viagem depende do Present Perfect para o retorno recente e de advérbios de impressão geral.</p>
 <table>
 <tr><th>Estrutura</th><th>Exemplo (EN)</th><th>Tradução (PT)</th></tr>
@@ -139,33 +147,33 @@
     <tr><td><b>Overall, ...</b><br>(impressão geral)</td><td class="example">Overall, the trip exceeded expectations.</td><td>Advérbio usado para introduzir uma avaliação geral antes dos detalhes.</td></tr>
     <tr><td><b>It was worth it because...</b></td><td class="example">It was worth it because we closed the deal in person.</td><td>Estrutura para justificar o valor de uma viagem com uma razão concreta.</td></tr>
 </table>
-<p>Dica prática: comece qualquer debriefing de viagem com "Overall, ..." — isso dá ao ouvinte a conclusão antes dos detalhes, o que é exatamente o que a maioria das pessoas quer ouvir primeiro.</p>
+<p>Dica prática: comece qualquer debriefing de viagem com "Overall, ...", isso dá ao ouvinte a conclusão antes dos detalhes, o que é exatamente o que a maioria das pessoas quer ouvir primeiro.</p>
 </div>
 
 <div class="s6">
-<h2 class="step"><span class="tag">ETAPA 6</span>Speaking — Perguntas Abertas</h2>
-<p>Responda em voz alta, gravando se possível. Não vale responder em uma frase só — use o que você escreveu na Etapa 4 como base, mas fale livremente.</p>
+<h2 class="step "><span class="tag">ETAPA 6</span><span class="stitle"><span class="pt">Speaking: Perguntas Abertas</span><span class="en">Open-Ended Speaking</span></span></h2>
+<p>Responda em voz alta, gravando se possível. Não vale responder em uma frase só: use o que você escreveu na Etapa 4 como base, mas fale livremente.</p>
 <ol><li>Debrief a real or imagined business trip for a colleague who couldn't attend.</li><li>What was the key takeaway from that trip?</li><li>What follow-up actions would come out of it, and who owns them?</li><li>What lessons learned would you carry into your next business trip?</li><li>How do you decide what to include versus leave out in a trip debrief?</li><li>What's a trip that was worthwhile despite rough logistics? What made it worth it?</li><li>How do you measure the ROI of a business trip, formally or informally?</li><li>What's a trip debrief you gave (or received) that was particularly useful?</li><li>How honest should a debrief be about parts of the trip that didn't go well?</li><li>What's your process for turning a trip debrief into concrete next steps?</li></ol>
 <p><b>Expressões úteis para esta conversa:</b></p>
-<ul class="expr-list"><li>"Overall, the trip was worthwhile." — abertura clássica de debriefing.</li><li>"The key takeaway is..." — para nomear o aprendizado central.</li><li>"I'll send over the follow-up actions today." — para fechar com próximos passos.</li><li>"Logistics were rough, but the meetings went well." — para separar o que importa do que não importa.</li></ul>
+<ul class="expr-list"><li>"Overall, the trip was worthwhile.", abertura clássica de debriefing.</li><li>"The key takeaway is...", para nomear o aprendizado central.</li><li>"I'll send over the follow-up actions today.", para fechar com próximos passos.</li><li>"Logistics were rough, but the meetings went well.", para separar o que importa do que não importa.</li></ul>
 </div>
 
 <div class="sx">
-<h2 class="step"><span class="tag">EXERCÍCIO</span>Complete com a Palavra Certa</h2>
+<h2 class="step "><span class="tag">EXERCÍCIO</span><span class="stitle"><span class="pt">Complete com a Palavra Certa</span><span class="en">Vocabulary Check</span></span></h2>
 <p>Complete cada frase com uma palavra ou expressão da Etapa 1. Gabarito ao final desta seção.</p>
 <ol><li>Let's do a quick ______ on how the trip went.</li><li>The ______ was that the client wants faster turnaround.</li><li>There are a few ______ from the trip.</li><li>The ______ were a bit rough, but the meetings went well.</li><li>The deal we closed easily ______ the trip.</li></ol>
 <p class="gabarito">Gabarito: 1) debrief   2) key takeaway   3) follow-up actions   4) logistics   5) justifies</p>
 </div>
 
 <div class="s7">
-<h2 class="step"><span class="tag">ETAPA 7</span>Autoavaliação de Performance</h2>
+<h2 class="step "><span class="tag">ETAPA 7</span><span class="stitle"><span class="pt">Autoavaliação de Performance</span><span class="en">Self-Assessment</span></span></h2>
 <p>Antes de marcar este tema como concluído, avalie honestamente como foi sua prática.</p>
 <table>
-<tr><th>Critério</th><th>Como foi?</th><th>Nota (1–5)</th></tr>
+<tr><th>Critério</th><th>Como foi?</th><th>Nota (1-5)</th></tr>
 <tr><td>Consegui usar o vocabulário novo sem parar para pensar</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Entendi o áudio/vídeo sem depender da transcrição</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Escrevi minhas respostas antes de falar</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Apliquei a estrutura gramatical da etapa 5 corretamente</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Sustentei minhas respostas por mais de 2 frases</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Me senti confiante ao falar sobre este tema</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 </table>
 <p>O que travou mais nesta conversa? O que você quer treinar de novo antes de seguir para o próximo tema?</p>
-<div class="lines"></div><div class="lines"></div><div class="lines"></div>
+<div class="lines"></div><div class="lines"></div>
 </div>
 
 <p class="footer-note">Marque este tema como concluído no seu Painel de Evolução e siga para o Tema 89.</p>

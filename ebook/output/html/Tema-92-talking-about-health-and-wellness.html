@@ -2,40 +2,45 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Tema 92 — Talking About Health and Wellness</title>
+<title>Tema 92: Talking About Health and Wellness</title>
 <style>
   
   @page {
     size: A4;
-    margin: 2.2cm 2cm 2.4cm 2cm;
-    @top-right { content: "English Speaking Practice — Nação Fluente"; font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
-    @bottom-center { content: "Bloco 12 — Vida Social e Atualidades   |   Página " counter(page); font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
+    margin: 1.9cm 2cm 2.1cm 2cm;
+    @top-right { content: "English Speaking Practice · Nação Fluente"; font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
+    @bottom-center { content: "Bloco 12 · Vida Social e Atualidades (Social Life and Current Events)   |   Página " counter(page); font-size: 7.5pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
   }
   * { box-sizing: border-box; }
-  body { font-family: 'Helvetica', Arial, sans-serif; color: #444444; font-size: 10.5pt; line-height: 1.5; }
-  .cover { background: #1B3B57; color: #fff; padding: 22px 24px; border-radius: 4px; margin-bottom: 14px; }
-  .cover .eyebrow { color: #8fc4ec; font-weight: bold; font-size: 9.5pt; letter-spacing: 0.5px; margin-bottom: 6px; }
-  .cover h1 { font-size: 22pt; margin: 0 0 6px 0; color: #fff; }
-  .cover .subtitle { color: #C9D6E3; font-style: italic; font-size: 12pt; margin: 0; }
-  .meta { margin: 10px 0 14px 0; font-size: 10.5pt; }
+  body { font-family: 'Helvetica', Arial, sans-serif; color: #444444; font-size: 10.5pt; line-height: 1.42; }
+  .cover { background: #1B3B57; color: #fff; padding: 16px 18px; border-radius: 4px; margin-bottom: 10px; display: flex; align-items: center; gap: 16px; }
+  .cover .icon { width: 54px; height: 54px; flex: none; opacity: 0.92; }
+  .cover .eyebrow { color: #8fc4ec; font-weight: bold; font-size: 9pt; letter-spacing: 0.4px; margin-bottom: 4px; }
+  .cover .eyebrow .en { display: block; color: #6f93ad; font-weight: normal; font-style: italic; font-size: 7.5pt; letter-spacing: 0.2px; margin-top: 1px; }
+  .cover h1 { font-size: 19pt; margin: 0 0 3px 0; color: #fff; line-height: 1.12; }
+  .cover .subtitle { color: #C9D6E3; font-style: italic; font-size: 10.5pt; margin: 0; }
+  .meta { margin: 8px 0 10px 0; font-size: 10pt; }
   .meta b { color: #1B3B57; }
-  .intro { margin-bottom: 6px; }
-  h2.step { color: #fff; padding: 8px 12px; font-size: 12.5pt; margin: 22px 0 10px 0; border-radius: 3px; }
-  h2.step .tag { background: rgba(255,255,255,0.22); padding: 2px 8px; border-radius: 3px; font-size: 9.5pt; margin-right: 8px; }
-  table { width: 100%; border-collapse: collapse; margin: 8px 0 14px 0; font-size: 9.8pt; }
-  th { color: #fff; text-align: left; padding: 6px 8px; }
-  td { padding: 6px 8px; border-bottom: 1px solid #E3E9EF; vertical-align: top; }
+  .intro { margin-bottom: 4px; }
+  p { margin: 0 0 8px 0; }
+  h2.step { color: #fff; padding: 6px 10px; font-size: 11.5pt; margin: 16px 0 8px 0; border-radius: 3px; display: flex; align-items: center; }
+  h2.step .tag { background: rgba(255,255,255,0.22); padding: 2px 7px; border-radius: 3px; font-size: 8.5pt; margin-right: 8px; flex: none; }
+  h2.step .stitle { display: flex; flex-direction: column; line-height: 1.18; }
+  h2.step .stitle .en { font-weight: normal; font-style: italic; font-size: 8pt; opacity: 0.82; }
+  table { width: 100%; border-collapse: collapse; margin: 6px 0 10px 0; font-size: 9.5pt; }
+  th { color: #fff; text-align: left; padding: 5px 7px; }
+  td { padding: 5px 7px; border-bottom: 1px solid #E3E9EF; vertical-align: top; }
   .example { font-style: italic; }
-  .notebox { border-radius: 4px; padding: 10px 14px; margin: 10px 0 16px 0; border: 1px solid; }
-  .notebox .title { font-weight: bold; margin-bottom: 6px; }
-  .notebox p { margin: 3px 0; }
-  ol, ul { margin: 6px 0 14px 0; padding-left: 20px; }
-  ol li, ul li { margin-bottom: 7px; }
-  .lines { border-bottom: 1px solid #C9D6E3; height: 22px; margin-bottom: 6px; }
-  .expr-list { list-style: none; padding-left: 0; margin: 6px 0 14px 0; }
-  .expr-list li { margin-bottom: 6px; padding-left: 14px; position: relative; }
-  .gabarito { font-style: italic; color: #1B3B57; margin-top: -6px; }
-  .footer-note { text-align: center; font-weight: bold; color: #1B3B57; margin-top: 18px; font-size: 11pt; }
+  .notebox { border-radius: 4px; padding: 8px 12px; margin: 6px 0 10px 0; border: 1px solid; }
+  .notebox .title { font-weight: bold; margin-bottom: 4px; }
+  .notebox p { margin: 2px 0; }
+  ol, ul { margin: 4px 0 10px 0; padding-left: 19px; }
+  ol li, ul li { margin-bottom: 5px; }
+  .lines { border-bottom: 1px solid #C9D6E3; height: 17px; margin-bottom: 4px; }
+  .expr-list { list-style: none; padding-left: 0; margin: 4px 0 10px 0; }
+  .expr-list li { margin-bottom: 4px; padding-left: 14px; position: relative; }
+  .gabarito { font-style: italic; color: #1B3B57; margin-top: -4px; }
+  .footer-note { text-align: center; font-weight: bold; color: #1B3B57; margin-top: 12px; font-size: 10.5pt; }
 
   .s1 h2, .s1 .tag { background: #2E86C1; }
   .s1 th { background: #2E86C1; }
@@ -72,16 +77,19 @@
 
 <div class="chapter" id="tema-92">
 <div class="cover">
-  <div class="eyebrow">TEMA 92 &nbsp;·&nbsp; BLOCO 12 — VIDA SOCIAL E ATUALIDADES</div>
-  <h1>Talking About Health and Wellness</h1>
-  <p class="subtitle">Falando sobre saúde e bem-estar</p>
+  <img class="icon" src="file:///home/user/Claude/ebook/assets/icons/block-12.png">
+  <div>
+    <div class="eyebrow">TEMA 92 &nbsp;·&nbsp; BLOCO 12 &nbsp;·&nbsp; VIDA SOCIAL E ATUALIDADES<span class="en">THEME 92 · BLOCK 12 · SOCIAL LIFE AND CURRENT EVENTS</span></div>
+    <h1>Talking About Health and Wellness</h1>
+    <p class="subtitle">Falando sobre saúde e bem-estar</p>
+  </div>
 </div>
 
 <div class="meta"><b>Tempo estimado:</b> 60–90 minutos, divididos ao longo da semana.</div>
 <p class="intro">Falar sobre saúde e bem-estar em inglês, de forma pessoal e não clínica, é uma conversa social cada vez mais comum. Este tema treina esse vocabulário cotidiano.</p>
 
 <div class="s1">
-<h2 class="step"><span class="tag">ETAPA 1</span>Vocabulário Contextualizado</h2>
+<h2 class="step "><span class="tag">ETAPA 1</span><span class="stitle"><span class="pt">Vocabulário Contextualizado</span><span class="en">Contextualized Vocabulary</span></span></h2>
 <p>Estas palavras e expressões vão te ajudar a se expressar sobre este tema com mais precisão e naturalidade.</p>
 <table>
 <tr><th>Word / Expression</th><th>Tradução</th><th>Example Sentence</th></tr>
@@ -102,35 +110,35 @@
 </div>
 
 <div class="s2">
-<h2 class="step"><span class="tag">ETAPA 2</span>Leitura com Orientação de Estudo</h2>
+<h2 class="step "><span class="tag">ETAPA 2</span><span class="stitle"><span class="pt">Leitura com Orientação de Estudo</span><span class="en">Guided Reading</span></span></h2>
 <div class="notebox">
   <div class="title">Como ler este texto</div>
-  <p>1) Leia uma vez, rápido, só para captar a ideia geral — sem parar no que não entender.</p><p>2) Leia de novo e grife toda expressão da Etapa 1 que aparecer no texto.</p><p>3) Releia em voz alta, como se você estivesse contando essa história sobre você mesmo.</p>
+  <p>1) Leia uma vez, rápido, só para captar a ideia geral, sem parar no que não entender.</p><p>2) Leia de novo e grife toda expressão da Etapa 1 que aparecer no texto.</p><p>3) Releia em voz alta, como se você estivesse contando essa história sobre você mesmo.</p>
 </div>
 <p><b>"Wellness Talk Has Gotten More Honest"</b></p>
-<p>English conversations about health and wellness have shifted noticeably toward honesty over the last decade — mental health, burnout, and self-care are now discussed casually, not just clinically. "I burned out pretty badly a couple of years ago, and it changed how I think about work-life balance" is a normal, accepted thing to share socially.</p><p>This topic also tends to be personal rather than prescriptive: "self-care looks different for everyone" is a common, respected framing that avoids implying there's one correct wellness routine everyone should follow.</p><p>Talking about ongoing habits — sleep hygiene, working out, unwinding — usually uses the Present Perfect Continuous to show recent effort: "I've been trying to prioritize sleep more," which signals genuine, ongoing change rather than a finished, one-time fix.</p>
+<p>English conversations about health and wellness have shifted noticeably toward honesty over the last decade, mental health, burnout, and self-care are now discussed casually, not just clinically. "I burned out pretty badly a couple of years ago, and it changed how I think about work-life balance" is a normal, accepted thing to share socially.</p><p>This topic also tends to be personal rather than prescriptive: "self-care looks different for everyone" is a common, respected framing that avoids implying there's one correct wellness routine everyone should follow.</p><p>Talking about ongoing habits, sleep hygiene, working out, unwinding, usually uses the Present Perfect Continuous to show recent effort: "I've been trying to prioritize sleep more," which signals genuine, ongoing change rather than a finished, one-time fix.</p>
 </div>
 
 <div class="s3">
-<h2 class="step"><span class="tag">ETAPA 3</span>Listening com Suporte em Áudio e Vídeo</h2>
+<h2 class="step "><span class="tag">ETAPA 3</span><span class="stitle"><span class="pt">Listening com Suporte em Áudio e Vídeo</span><span class="en">Guided Listening</span></span></h2>
 <p>Ouça o áudio deste tema (arquivo disponível para download na plataforma: <i>audio/tema-92-health-and-wellness.mp3</i>) com o roteiro abaixo. Primeiro sem ler, depois acompanhando o texto.</p>
 <div class="notebox">
   <div class="title">Roteiro do áudio (Audio Script)</div>
-  <p>"How have you been taking care of yourself lately?"</p><p>"Honestly, I've been trying to prioritize sleep more — my sleep hygiene was pretty bad for a while. I burned out a couple of years ago, so I take this stuff more seriously now."</p>
+  <p>"How have you been taking care of yourself lately?"</p><p>"Honestly, I've been trying to prioritize sleep more, my sleep hygiene was pretty bad for a while. I burned out a couple of years ago, so I take this stuff more seriously now."</p>
 </div>
 <p>Note o tom pessoal e honesto, sem soar clínico ou como um discurso motivacional genérico.</p>
 </div>
 
 <div class="s4">
-<h2 class="step"><span class="tag">ETAPA 4</span>Writing como Preparação para a Fala</h2>
-<p>Antes de falar, escreva. Use as perguntas abaixo como guia e escreva de 4 a 6 frases — não precisa ser perfeito, precisa existir no papel primeiro.</p>
+<h2 class="step "><span class="tag">ETAPA 4</span><span class="stitle"><span class="pt">Writing como Preparação para a Fala</span><span class="en">Writing Before Speaking</span></span></h2>
+<p>Antes de falar, escreva. Use as perguntas abaixo como guia e escreva de 4 a 6 frases: não precisa ser perfeito, precisa existir no papel primeiro.</p>
 <ol><li>Describe a wellness habit you've been trying to build recently.</li><li>What does self-care actually look like for you, specifically?</li><li>Have you ever experienced burnout? What changed afterward, if anything?</li><li>How do you personally unwind after a stressful day or week?</li></ol>
 <p>Espaço para escrever:</p>
-<div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div>
+<div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div>
 </div>
 
 <div class="s5">
-<h2 class="step"><span class="tag">ETAPA 5</span>Gramática de Apoio Aplicada à Conversação</h2>
+<h2 class="step "><span class="tag">ETAPA 5</span><span class="stitle"><span class="pt">Gramática de Apoio Aplicada à Conversação</span><span class="en">Grammar for Conversation</span></span></h2>
 <p>Falar sobre saúde e bem-estar depende do Present Perfect Continuous para hábitos recentes e de imperativos para conselhos.</p>
 <table>
 <tr><th>Estrutura</th><th>Exemplo (EN)</th><th>Tradução (PT)</th></tr>
@@ -139,33 +147,33 @@
     <tr><td><b>Imperativo</b><br>(conselho)</td><td class="example">Try to disconnect for at least an hour before bed.</td><td>Usado para dar um conselho direto de bem-estar, de forma gentil.</td></tr>
     <tr><td><b>should</b><br>(recomendação)</td><td class="example">You should really see a doctor about that.</td><td>Usado para recomendar uma ação de forma direta, mas não impositiva.</td></tr>
 </table>
-<p>Dica prática: "I've been trying to..." é mais honesto e humano do que "I do..." para hábitos de saúde ainda em construção — reconhece esforço sem fingir perfeição.</p>
+<p>Dica prática: "I've been trying to..." é mais honesto e humano do que "I do..." para hábitos de saúde ainda em construção, reconhece esforço sem fingir perfeição.</p>
 </div>
 
 <div class="s6">
-<h2 class="step"><span class="tag">ETAPA 6</span>Speaking — Perguntas Abertas</h2>
-<p>Responda em voz alta, gravando se possível. Não vale responder em uma frase só — use o que você escreveu na Etapa 4 como base, mas fale livremente.</p>
+<h2 class="step "><span class="tag">ETAPA 6</span><span class="stitle"><span class="pt">Speaking: Perguntas Abertas</span><span class="en">Open-Ended Speaking</span></span></h2>
+<p>Responda em voz alta, gravando se possível. Não vale responder em uma frase só: use o que você escreveu na Etapa 4 como base, mas fale livremente.</p>
 <ol><li>Describe a wellness habit you've been trying to build recently.</li><li>What does self-care actually look like for you, specifically, not just in theory?</li><li>Have you ever experienced burnout? What changed for you afterward?</li><li>How do you personally unwind after a stressful day or week?</li><li>How open are you, culturally or personally, about discussing mental health?</li><li>What's a wellness trend you're skeptical of, and why?</li><li>How do you balance preventive care with just dealing with problems as they come up?</li><li>What's the hardest part of maintaining good sleep hygiene for you?</li><li>How has your definition of wellness changed as you've gotten older?</li><li>What advice would you give someone showing early signs of burnout?</li></ol>
 <p><b>Expressões úteis para esta conversa:</b></p>
-<ul class="expr-list"><li>"I've been trying to prioritize..." — para mostrar esforço genuíno e recente.</li><li>"Self-care looks different for everyone." — para evitar prescrever uma única forma.</li><li>"I burned out a couple of years ago." — abertura honesta sobre saúde mental.</li><li>"I take this stuff more seriously now." — para mostrar mudança de prioridade.</li></ul>
+<ul class="expr-list"><li>"I've been trying to prioritize...", para mostrar esforço genuíno e recente.</li><li>"Self-care looks different for everyone.", para evitar prescrever uma única forma.</li><li>"I burned out a couple of years ago.", abertura honesta sobre saúde mental.</li><li>"I take this stuff more seriously now.", para mostrar mudança de prioridade.</li></ul>
 </div>
 
 <div class="sx">
-<h2 class="step"><span class="tag">EXERCÍCIO</span>Complete com a Palavra Certa</h2>
+<h2 class="step "><span class="tag">EXERCÍCIO</span><span class="stitle"><span class="pt">Complete com a Palavra Certa</span><span class="en">Vocabulary Check</span></span></h2>
 <p>Complete cada frase com uma palavra ou expressão da Etapa 1. Gabarito ao final desta seção.</p>
 <ol><li>______ has become a real priority for me this year.</li><li>I've become a lot more open about ______ lately.</li><li>My ______ has improved a lot since I cut back on screens.</li><li>I ______ pretty badly a couple of years ago.</li><li>A full weekend off really helps me ______.</li></ol>
 <p class="gabarito">Gabarito: 1) Wellness   2) mental health   3) sleep hygiene   4) burned out   5) recharge</p>
 </div>
 
 <div class="s7">
-<h2 class="step"><span class="tag">ETAPA 7</span>Autoavaliação de Performance</h2>
+<h2 class="step "><span class="tag">ETAPA 7</span><span class="stitle"><span class="pt">Autoavaliação de Performance</span><span class="en">Self-Assessment</span></span></h2>
 <p>Antes de marcar este tema como concluído, avalie honestamente como foi sua prática.</p>
 <table>
-<tr><th>Critério</th><th>Como foi?</th><th>Nota (1–5)</th></tr>
+<tr><th>Critério</th><th>Como foi?</th><th>Nota (1-5)</th></tr>
 <tr><td>Consegui usar o vocabulário novo sem parar para pensar</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Entendi o áudio/vídeo sem depender da transcrição</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Escrevi minhas respostas antes de falar</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Apliquei a estrutura gramatical da etapa 5 corretamente</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Sustentei minhas respostas por mais de 2 frases</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Me senti confiante ao falar sobre este tema</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 </table>
 <p>O que travou mais nesta conversa? O que você quer treinar de novo antes de seguir para o próximo tema?</p>
-<div class="lines"></div><div class="lines"></div><div class="lines"></div>
+<div class="lines"></div><div class="lines"></div>
 </div>
 
 <p class="footer-note">Marque este tema como concluído no seu Painel de Evolução e siga para o Tema 93.</p>

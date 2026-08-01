@@ -1,4 +1,4 @@
-// Bloco 13 — Desenvolvimento Pessoal e Mindset (Temas 97–104)
+// Bloco 13, Desenvolvimento Pessoal e Mindset (Temas 97–104)
 const themes = [
   {
     num: 97,
@@ -24,14 +24,14 @@ const themes = [
     ],
     readingTitle: "Growth Is Usually Incremental, Not Dramatic",
     readingParagraphs: [
-      "Personal growth stories in English often get flattened into dramatic before-and-after narratives — but real growth, described honestly, tends to sound more incremental: \"it wasn't one big transformation, it was a lot of small, uncomfortable moments that added up.\"",
-      "\"I used to avoid conflict entirely; now I still don't love it, but I don't avoid it anymore\" is a more credible way to describe change than claiming to have become a completely different person. Growth rarely erases a tendency — it usually just changes your relationship to it.",
-      "Naming a specific turning point, paired with what actually changed afterward, gives a growth story substance: \"that year was a turning point — I started reflecting on my reactions instead of just having them,\" rather than a vague \"I've grown a lot.\"",
+      "Personal growth stories in English often get flattened into dramatic before-and-after narratives, but real growth, described honestly, tends to sound more incremental: \"it wasn't one big transformation, it was a lot of small, uncomfortable moments that added up.\"",
+      "\"I used to avoid conflict entirely; now I still don't love it, but I don't avoid it anymore\" is a more credible way to describe change than claiming to have become a completely different person. Growth rarely erases a tendency, it usually just changes your relationship to it.",
+      "Naming a specific turning point, paired with what actually changed afterward, gives a growth story substance: \"that year was a turning point, I started reflecting on my reactions instead of just having them,\" rather than a vague \"I've grown a lot.\"",
     ],
     audioFile: "audio/tema-97-personal-growth.mp3",
     audioScript: [
       "\"How would you say you've grown the most in the last few years?\"",
-      "\"Honestly, it's been incremental progress more than one big shift. I used to avoid conflict entirely — now I still don't love it, but I don't run from it anymore.\"",
+      "\"Honestly, it's been incremental progress more than one big shift. I used to avoid conflict entirely, now I still don't love it, but I don't run from it anymore.\"",
     ],
     audioFollowup: "Note a honestidade: crescimento como processo gradual, não uma transformação repentina e completa.",
     writingQuestions: [
@@ -46,7 +46,7 @@ const themes = [
       ["I used to... now I...\n(contraste temporal)", "I used to avoid conflict; now I face it directly.", "Usado para contrastar quem você era com quem você é agora."],
       ["The person I am today...", "The person I am today wouldn't have taken that risk before.", "Estrutura reflexiva para afirmar quem você se tornou."],
     ],
-    grammarTip: "Dica prática: \"I used to... now I...\" é a estrutura mais natural e poderosa para contar uma história de crescimento pessoal em inglês — simples, mas extremamente eficaz.",
+    grammarTip: "Dica prática: \"I used to... now I...\" é a estrutura mais natural e poderosa para contar uma história de crescimento pessoal em inglês, simples, mas extremamente eficaz.",
     speakingQuestions: [
       "How would you say you've grown the most in the last few years?",
       "What's something about yourself you've had to unlearn?",
@@ -60,10 +60,10 @@ const themes = [
       "What would you tell your younger self about how growth actually happens?",
     ],
     expressions: [
-      "\"It's been incremental progress, not one big shift.\" — para descrever crescimento realista.",
-      "\"I used to X; now I Y.\" — estrutura clássica de contraste pessoal.",
-      "\"That was a real turning point for me.\" — para nomear um momento decisivo.",
-      "\"I've had to unlearn a lot.\" — para reconhecer mudança de crenças antigas.",
+      "\"It's been incremental progress, not one big shift.\", para descrever crescimento realista.",
+      "\"I used to X; now I Y.\", estrutura clássica de contraste pessoal.",
+      "\"That was a real turning point for me.\", para nomear um momento decisivo.",
+      "\"I've had to unlearn a lot.\", para reconhecer mudança de crenças antigas.",
     ],
     exerciseSentences: [
       "______ hasn't always been comfortable for me.",
@@ -98,16 +98,16 @@ const themes = [
     ],
     readingTitle: "Consistency Beats Motivation",
     readingParagraphs: [
-      "Conversations about productivity in English have shifted, in recent years, away from motivation and toward systems — the idea that consistency, not willpower, is what actually builds a lasting habit. \"Consistency matters more than intensity\" is a very common, well-regarded framing.",
-      "\"Habit stacking\" — attaching a new habit to an already established one — is a widely used concept and term: \"I stack meditation onto my morning coffee, so I don't have to rely on remembering.\" Naming specific systems like this makes a productivity conversation sound practical, not just aspirational.",
+      "Conversations about productivity in English have shifted, in recent years, away from motivation and toward systems, the idea that consistency, not willpower, is what actually builds a lasting habit. \"Consistency matters more than intensity\" is a very common, well-regarded framing.",
+      "\"Habit stacking\", attaching a new habit to an already established one, is a widely used concept and term: \"I stack meditation onto my morning coffee, so I don't have to rely on remembering.\" Naming specific systems like this makes a productivity conversation sound practical, not just aspirational.",
       "It's also normal and honest to talk about falling off track: \"I fell off track for a couple of weeks after traveling, but I've gotten back into it\" reflects reality far more than pretending a habit, once built, never wavers.",
     ],
     audioFile: "audio/tema-98-habits-and-productivity.mp3",
     audioScript: [
       "\"How do you stay so consistent with your morning routine?\"",
-      "\"Honestly, habit stacking helped a lot — I attach it to something I already do, like coffee. I do fall off track sometimes, especially when traveling, but I've gotten better at getting back on quickly.\"",
+      "\"Honestly, habit stacking helped a lot, I attach it to something I already do, like coffee. I do fall off track sometimes, especially when traveling, but I've gotten better at getting back on quickly.\"",
     ],
-    audioFollowup: "Note a honestidade sobre falhas ocasionais (\"I do fall off track sometimes\") — isso torna a resposta mais crível.",
+    audioFollowup: "Note a honestidade sobre falhas ocasionais (\"I do fall off track sometimes\"), isso torna a resposta mais crível.",
     writingQuestions: [
       "Describe a habit you've successfully built, and how you built it.",
       "What's a habit you've struggled to stick to, and why do you think that is?",
@@ -134,10 +134,10 @@ const themes = [
       "What's one small habit that had a surprisingly big impact on your life?",
     ],
     expressions: [
-      "\"Consistency matters more than intensity.\" — princípio central de produtividade.",
-      "\"I stack this onto something I already do.\" — para explicar habit stacking.",
-      "\"I do fall off track sometimes.\" — honestidade sobre imperfeição.",
-      "\"The key to this is starting small.\" — para compartilhar uma lição prática.",
+      "\"Consistency matters more than intensity.\", princípio central de produtividade.",
+      "\"I stack this onto something I already do.\", para explicar habit stacking.",
+      "\"I do fall off track sometimes.\", honestidade sobre imperfeição.",
+      "\"The key to this is starting small.\", para compartilhar uma lição prática.",
     ],
     exerciseSentences: [
       "This ______ took months to actually stick.",
@@ -179,7 +179,7 @@ const themes = [
     audioFile: "audio/tema-99-overcoming-challenges.mp3",
     audioScript: [
       "\"What's the biggest challenge you've had to overcome?\"",
-      "\"Honestly, a really difficult period a few years ago — I felt like I'd hit rock bottom at one point. The breakthrough came when I finally asked for help instead of pushing through alone.\"",
+      "\"Honestly, a really difficult period a few years ago, I felt like I'd hit rock bottom at one point. The breakthrough came when I finally asked for help instead of pushing through alone.\"",
     ],
     audioFollowup: "Note que o ponto de virada (\"the breakthrough came when...\") é o centro da resposta, não apenas a descrição da dificuldade.",
     writingQuestions: [
@@ -194,7 +194,7 @@ const themes = [
       ["What got me through was...", "What got me through was leaning on close friends.", "Estrutura fixa para nomear o que sustentou a pessoa durante o desafio."],
       ["Present Perfect\n(impacto duradouro)", "I've become a lot more resilient because of it.", "Usado para conectar um evento passado a uma mudança que dura até hoje."],
     ],
-    grammarTip: "Dica prática: \"what got me through was...\" é uma estrutura poderosa e muito natural para nomear a fonte de força durante um desafio — funciona tanto para pessoas quanto para hábitos ou crenças.",
+    grammarTip: "Dica prática: \"what got me through was...\" é uma estrutura poderosa e muito natural para nomear a fonte de força durante um desafio, funciona tanto para pessoas quanto para hábitos ou crenças.",
     speakingQuestions: [
       "Describe a real challenge you've overcome, focusing on the turning point.",
       "Where did you draw strength from during that difficult period?",
@@ -208,10 +208,10 @@ const themes = [
       "What would you tell someone currently in the middle of a hard challenge?",
     ],
     expressions: [
-      "\"I felt like I'd hit rock bottom at one point.\" — para descrever o momento mais difícil.",
-      "\"The breakthrough came when...\" — para nomear o ponto de virada.",
-      "\"What got me through was...\" — para nomear a fonte de força.",
-      "\"I'm more resilient because of it.\" — para fechar com um aprendizado duradouro.",
+      "\"I felt like I'd hit rock bottom at one point.\", para descrever o momento mais difícil.",
+      "\"The breakthrough came when...\", para nomear o ponto de virada.",
+      "\"What got me through was...\", para nomear a fonte de força.",
+      "\"I'm more resilient because of it.\", para fechar com um aprendizado duradouro.",
     ],
     exerciseSentences: [
       "That was probably the biggest ______ of my adult life.",
@@ -247,7 +247,7 @@ const themes = [
     readingTitle: "Values Are Proven, Not Just Stated",
     readingParagraphs: [
       "Describing personal values in English convincingly requires the same discipline as describing company values (Tema 52): a real example where the value cost something, not just a list of admirable-sounding words.",
-      "\"Integrity is a core value for me — it showed up clearly when I had to tell a client something they didn't want to hear, even though it risked the relationship.\" This proves the value through action, rather than simply naming it.",
+      "\"Integrity is a core value for me, it showed up clearly when I had to tell a client something they didn't want to hear, even though it risked the relationship.\" This proves the value through action, rather than simply naming it.",
       "It's also worth being honest about tension between values: \"loyalty and honesty sometimes pull in different directions for me, and I don't always get the balance right\" is more credible than presenting a perfectly resolved value system.",
     ],
     audioFile: "audio/tema-100-describing-your-values.mp3",
@@ -268,7 +268,7 @@ const themes = [
       ["I stand for...", "I stand for treating people with respect, always.", "Estrutura direta e forte para afirmar um valor central."],
       ["no matter what\n(concessão)", "I won't compromise on this, no matter what.", "Usado para reforçar um princípio que se mantém mesmo diante de pressão."],
     ],
-    grammarTip: "Dica prática: \"no matter what\" é uma forma poderosa de reforçar um valor inegociável — funciona bem no final de uma frase para dar ênfase.",
+    grammarTip: "Dica prática: \"no matter what\" é uma forma poderosa de reforçar um valor inegociável, funciona bem no final de uma frase para dar ênfase.",
     speakingQuestions: [
       "What's a core value of yours, proven by a specific example, not just a statement?",
       "What's something you consider non-negotiable, even under real pressure?",
@@ -282,10 +282,10 @@ const themes = [
       "How do you handle it when someone close to you doesn't share one of your core values?",
     ],
     expressions: [
-      "\"That's a core value for me, and here's how it's shown up.\" — para provar um valor com exemplo.",
-      "\"That's non-negotiable for me.\" — para afirmar um limite claro.",
-      "\"I try to walk the talk, even when it's hard.\" — para reforçar coerência entre valor e ação.",
-      "\"I don't always get the balance right.\" — para admitir tensão entre valores com honestidade.",
+      "\"That's a core value for me, and here's how it's shown up.\", para provar um valor com exemplo.",
+      "\"That's non-negotiable for me.\", para afirmar um limite claro.",
+      "\"I try to walk the talk, even when it's hard.\", para reforçar coerência entre valor e ação.",
+      "\"I don't always get the balance right.\", para admitir tensão entre valores com honestidade.",
     ],
     exerciseSentences: [
       "Honesty is a ______ for me, even when it's inconvenient.",
@@ -303,7 +303,7 @@ const themes = [
     titleEn: "Talking About Stress and How You Handle It",
     titlePt: "Falando sobre estresse e como lidar com ele",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "Falar sobre estresse em inglês, de forma honesta e prática, exige nomear tanto o problema quanto o que realmente ajuda — não apenas dizer \"eu fico estressado\".",
+    intro: "Falar sobre estresse em inglês, de forma honesta e prática, exige nomear tanto o problema quanto o que realmente ajuda, não apenas dizer \"eu fico estressado\".",
     vocab: [
       ["stress", "estresse", "Stress hits me most during tight deadlines."],
       ["stressor", "fator estressante", "Unclear expectations are a bigger stressor for me than workload."],
@@ -321,7 +321,7 @@ const themes = [
     readingTitle: "What Helps Matters More Than What Stresses You",
     readingParagraphs: [
       "Talking about stress in English productively usually moves quickly past naming the stressor and into what actually helps: \"deadlines are my biggest stressor, but what helps me is breaking things into smaller pieces the moment I start feeling overwhelmed.\"",
-      "Being specific about a coping mechanism, rather than a vague \"I try to relax,\" makes the conversation more useful and more credible: \"journaling has become my main coping mechanism — it's less about writing well and more about getting it out of my head.\"",
+      "Being specific about a coping mechanism, rather than a vague \"I try to relax,\" makes the conversation more useful and more credible: \"journaling has become my main coping mechanism, it's less about writing well and more about getting it out of my head.\"",
       "It's also honest, and increasingly normal in English conversation, to acknowledge when stress tips into something more serious: \"there was a period where it was closer to burnout than normal stress, and that's when I finally asked for help.\"",
     ],
     audioFile: "audio/tema-101-stress-and-how-you-handle-it.mp3",
@@ -329,7 +329,7 @@ const themes = [
       "\"How do you usually handle stress during a busy period?\"",
       "\"Honestly, deadlines are my biggest stressor. What helps me is breaking things into smaller pieces the moment I start feeling overwhelmed, and making time to decompress at the end of the day.\"",
     ],
-    audioFollowup: "Note que a resposta nomeia o estressor específico e, mais importante, o que realmente ajuda — não fica só na queixa.",
+    audioFollowup: "Note que a resposta nomeia o estressor específico e, mais importante, o que realmente ajuda, não fica só na queixa.",
     writingQuestions: [
       "What's your biggest stressor, specifically, not just \"work\" in general?",
       "What genuinely helps you cope when you're feeling overwhelmed?",
@@ -356,10 +356,10 @@ const themes = [
       "What would you tell a friend who seems close to burnout right now?",
     ],
     expressions: [
-      "\"That's my biggest stressor, honestly.\" — para nomear o estressor com precisão.",
-      "\"What helps me is...\" — para compartilhar uma estratégia concreta.",
-      "\"I've been feeling pretty overwhelmed lately.\" — abertura honesta sobre o estado emocional.",
-      "\"That's when I finally asked for help.\" — para marcar um momento de virada.",
+      "\"That's my biggest stressor, honestly.\", para nomear o estressor com precisão.",
+      "\"What helps me is...\", para compartilhar uma estratégia concreta.",
+      "\"I've been feeling pretty overwhelmed lately.\", abertura honesta sobre o estado emocional.",
+      "\"That's when I finally asked for help.\", para marcar um momento de virada.",
     ],
     exerciseSentences: [
       "______ hits me most during tight deadlines.",
@@ -377,7 +377,7 @@ const themes = [
     titleEn: "Discussing Long-Term Life Goals",
     titlePt: "Discutindo metas de vida de longo prazo",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "Diferente do Tema 11 (metas profissionais), este tema foca em metas de vida mais amplas — como você quer viver, não apenas o que quer conquistar no trabalho.",
+    intro: "Diferente do Tema 11 (metas profissionais), este tema foca em metas de vida mais amplas, como você quer viver, não apenas o que quer conquistar no trabalho.",
     vocab: [
       ["long-term goal", "meta de longo prazo", "One of my long-term goals is to live somewhere quieter eventually."],
       ["life goal", "meta de vida", "That's been a life goal of mine since I was young."],
@@ -394,16 +394,16 @@ const themes = [
     ],
     readingTitle: "Long-Term Goals Need Room to Breathe",
     readingParagraphs: [
-      "Life goals discussed in English don't need the same precision as professional goals (Tema 11) — in fact, overly rigid five-year plans often sound less credible than a clear direction with room to adapt: \"I don't have a fixed plan, more of a direction — somewhere quieter, more time for the things that matter.\"",
+      "Life goals discussed in English don't need the same precision as professional goals (Tema 11), in fact, overly rigid five-year plans often sound less credible than a clear direction with room to adapt: \"I don't have a fixed plan, more of a direction, somewhere quieter, more time for the things that matter.\"",
       "\"I've had to redefine what success actually means to me\" is a very common and respected way to introduce a long-term goal that's shifted from external markers (title, money) toward something more personal like fulfillment or purpose.",
       "Talking about legacy or aspiration, even vaguely, adds depth without requiring certainty: \"that's more of an aspiration than a concrete plan right now\" is a completely acceptable way to share something meaningful that isn't fully mapped out yet.",
     ],
     audioFile: "audio/tema-102-long-term-life-goals.mp3",
     audioScript: [
       "\"Where do you see yourself in ten years?\"",
-      "\"Honestly, I don't have a rigid plan — more of a direction. I've had to redefine what success means to me, and fulfillment matters a lot more now than it used to.\"",
+      "\"Honestly, I don't have a rigid plan, more of a direction. I've had to redefine what success means to me, and fulfillment matters a lot more now than it used to.\"",
     ],
-    audioFollowup: "Note que a resposta evita um plano rígido e foca em direção e valores — mais autêntico do que uma lista de marcos fixos.",
+    audioFollowup: "Note que a resposta evita um plano rígido e foca em direção e valores, mais autêntico do que uma lista de marcos fixos.",
     writingQuestions: [
       "Where do you see yourself in ten years, in terms of direction rather than a fixed plan?",
       "How have you redefined what success means to you over time?",
@@ -416,7 +416,7 @@ const themes = [
       ["I envision myself + gerúndio", "I envision myself working more independently by then.", "Usado para descrever uma visão pessoal de longo prazo de forma vívida."],
       ["Ultimately, ...", "Ultimately, I just want to feel like my time mattered.", "Usado para introduzir a conclusão ou o objetivo mais profundo por trás de metas menores."],
     ],
-    grammarTip: "Dica prática: \"I envision myself + gerúndio\" é uma estrutura mais vívida e pessoal do que \"I want to\" para descrever metas de longo prazo — pinta um cenário, não apenas um desejo.",
+    grammarTip: "Dica prática: \"I envision myself + gerúndio\" é uma estrutura mais vívida e pessoal do que \"I want to\" para descrever metas de longo prazo, pinta um cenário, não apenas um desejo.",
     speakingQuestions: [
       "Where do you see yourself in ten years, in terms of direction rather than a fixed plan?",
       "How have you redefined what success means to you over the years?",
@@ -430,10 +430,10 @@ const themes = [
       "What would you regret not pursuing if you looked back on your life from the end of it?",
     ],
     expressions: [
-      "\"I don't have a rigid plan, more of a direction.\" — para descrever metas de vida sem rigidez.",
-      "\"I've had to redefine what success means to me.\" — para introduzir uma mudança de valores.",
-      "\"That's more of an aspiration than a plan.\" — para compartilhar algo ainda não totalmente definido.",
-      "\"Ultimately, I just want...\" — para chegar ao propósito por trás de uma meta.",
+      "\"I don't have a rigid plan, more of a direction.\", para descrever metas de vida sem rigidez.",
+      "\"I've had to redefine what success means to me.\", para introduzir uma mudança de valores.",
+      "\"That's more of an aspiration than a plan.\", para compartilhar algo ainda não totalmente definido.",
+      "\"Ultimately, I just want...\", para chegar ao propósito por trás de uma meta.",
     ],
     exerciseSentences: [
       "One of my ______ is to live somewhere quieter eventually.",
@@ -451,7 +451,7 @@ const themes = [
     titleEn: "Talking About What Confidence Means to You",
     titlePt: "Falando sobre o que confiança significa para você",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "Depois de 102 temas praticando falar com mais confiança, este tema pede que você defina o que confiança realmente significa para você — indo além do clichê de \"acreditar em si mesmo\".",
+    intro: "Depois de 102 temas praticando falar com mais confiança, este tema pede que você defina o que confiança realmente significa para você, indo além do clichê de \"acreditar em si mesmo\".",
     vocab: [
       ["confidence", "confiança", "Confidence isn't the absence of doubt, for me."],
       ["self-assurance", "autoconfiança", "Self-assurance has grown a lot through practice, not luck."],
@@ -459,7 +459,7 @@ const themes = [
       ["imposter syndrome", "síndrome do impostor", "Imposter syndrome still shows up occasionally, even now."],
       ["to trust yourself", "confiar em si mesmo(a)", "Learning to trust myself took longer than learning any skill."],
       ["insecurity", "insegurança", "That insecurity used to hold me back from speaking up."],
-      ["self-doubt", "autodúvida", "Some self-doubt is normal — it's what you do with it that matters."],
+      ["self-doubt", "autodúvida", "Some self-doubt is normal, it's what you do with it that matters."],
       ["to earn confidence", "conquistar confiança", "I earned this confidence through repetition, not a mindset shift."],
       ["humility", "humildade", "Real confidence includes humility, not arrogance."],
       ["quiet confidence", "confiança discreta", "I admire quiet confidence more than loud bravado."],
@@ -469,15 +469,15 @@ const themes = [
     readingTitle: "Confidence Is Built, Not Found",
     readingParagraphs: [
       "After dozens of themes practicing spoken English, it's worth naming what confidence actually is, in English, beyond the cliché of \"believing in yourself.\" A more honest definition: confidence is less about the absence of doubt, and more about acting despite it.",
-      "\"I earned this confidence through repetition, not some mindset shift\" reflects how confidence usually works in practice — it's built through doing the uncomfortable thing enough times that it stops feeling as uncomfortable, not through a single moment of realization.",
-      "\"Quiet confidence\" — steady, without needing to prove itself loudly — is often described as more durable than the louder, more performative kind. And importantly, confidence doesn't require the disappearance of self-doubt; it just means self-doubt no longer gets the final vote.",
+      "\"I earned this confidence through repetition, not some mindset shift\" reflects how confidence usually works in practice, it's built through doing the uncomfortable thing enough times that it stops feeling as uncomfortable, not through a single moment of realization.",
+      "\"Quiet confidence\", steady, without needing to prove itself loudly, is often described as more durable than the louder, more performative kind. And importantly, confidence doesn't require the disappearance of self-doubt; it just means self-doubt no longer gets the final vote.",
     ],
     audioFile: "audio/tema-103-what-confidence-means-to-you.mp3",
     audioScript: [
       "\"What does confidence actually mean to you, after everything you've worked on?\"",
-      "\"Honestly, it's not the absence of self-doubt — it's not letting the doubt have the final vote. I earned this confidence through repetition, not some sudden mindset shift.\"",
+      "\"Honestly, it's not the absence of self-doubt, it's not letting the doubt have the final vote. I earned this confidence through repetition, not some sudden mindset shift.\"",
     ],
-    audioFollowup: "Note a definição pessoal e madura de confiança — não um clichê, mas uma reflexão genuína após prática real.",
+    audioFollowup: "Note a definição pessoal e madura de confiança, não um clichê, mas uma reflexão genuína após prática real.",
     writingQuestions: [
       "What does confidence actually mean to you, in your own words?",
       "Describe a moment you \"faked it till you made it,\" and what happened afterward.",
@@ -490,7 +490,7 @@ const themes = [
       ["The more I..., the more...", "The more I practice speaking up, the more natural it feels.", "Usado para descrever como a prática repetida gera confiança ao longo do tempo."],
       ["Present Simple\n(definição pessoal)", "Confidence isn't the absence of doubt.", "Usado para fazer uma afirmação geral e pessoal sobre um conceito abstrato."],
     ],
-    grammarTip: "Dica prática: \"to me, X means...\" é uma estrutura simples e poderosa para compartilhar uma definição pessoal de qualquer conceito abstrato — confiança, sucesso, felicidade, e por aí vai.",
+    grammarTip: "Dica prática: \"to me, X means...\" é uma estrutura simples e poderosa para compartilhar uma definição pessoal de qualquer conceito abstrato, confiança, sucesso, felicidade, e por aí vai.",
     speakingQuestions: [
       "What does confidence actually mean to you, in your own words?",
       "Describe a moment you had to \"fake it till you made it.\" What happened afterward?",
@@ -504,10 +504,10 @@ const themes = [
       "What's one thing you're more confident about now than you were 104 themes ago?",
     ],
     expressions: [
-      "\"To me, confidence means...\" — para introduzir uma definição pessoal.",
-      "\"It's not the absence of doubt.\" — para reformular um clichê comum.",
-      "\"I earned this through repetition, not a mindset shift.\" — para valorizar prática sobre sorte.",
-      "\"Self-doubt doesn't get the final vote.\" — frase de fechamento poderosa sobre confiança.",
+      "\"To me, confidence means...\", para introduzir uma definição pessoal.",
+      "\"It's not the absence of doubt.\", para reformular um clichê comum.",
+      "\"I earned this through repetition, not a mindset shift.\", para valorizar prática sobre sorte.",
+      "\"Self-doubt doesn't get the final vote.\", frase de fechamento poderosa sobre confiança.",
     ],
     exerciseSentences: [
       "______ isn't the absence of doubt, for me.",
@@ -524,11 +524,11 @@ const themes = [
     blockName: "Desenvolvimento Pessoal e Mindset",
     titleEn: "Reflecting on Your English Learning Journey",
     titlePt: "Refletindo sobre sua jornada de aprendizado de inglês",
-    estimatedTime: "60–90 minutos, sem pressa — este é o seu último tema.",
-    intro: "Este é o Tema 104, o último do English Speaking Practice. Depois de 13 blocos e mais de 100 temas, este encontro final não é sobre aprender algo novo — é sobre olhar para trás e nomear o quanto você mudou. Use este tema para encerrar o ciclo com a mesma estrutura de sempre, mas com um assunto diferente de todos os outros: você mesmo, e sua jornada com o inglês.",
+    estimatedTime: "60–90 minutos, sem pressa, este é o seu último tema.",
+    intro: "Este é o Tema 104, o último do English Speaking Practice. Depois de 13 blocos e mais de 100 temas, este encontro final não é sobre aprender algo novo, é sobre olhar para trás e nomear o quanto você mudou. Use este tema para encerrar o ciclo com a mesma estrutura de sempre, mas com um assunto diferente de todos os outros: você mesmo, e sua jornada com o inglês.",
     vocab: [
       ["language journey", "jornada de aprendizado de idioma", "My language journey hasn't been a straight line."],
-      ["fluency", "fluência", "Fluency isn't perfection — I understand that differently now."],
+      ["fluency", "fluência", "Fluency isn't perfection, I understand that differently now."],
       ["comfort zone", "zona de conforto", "This whole book lived outside my comfort zone, honestly."],
       ["to make progress", "progredir", "I've made real progress, even when it didn't feel like it week to week."],
       ["plateau", "estabilização (após crescimento)", "I hit a plateau a few times, but pushed through anyway."],
@@ -537,21 +537,21 @@ const themes = [
       ["to look back on", "olhar para trás / relembrar", "Looking back on Tema 1, I can already hear the difference."],
       ["proud moment", "momento de orgulho", "Finishing this book is a genuine proud moment."],
       ["milestone", "marco", "Each theme was its own small milestone."],
-      ["lifelong learning", "aprendizado contínuo", "Language is lifelong learning — this book is a chapter, not the end."],
+      ["lifelong learning", "aprendizado contínuo", "Language is lifelong learning, this book is a chapter, not the end."],
       ["to keep pushing forward", "continuar seguindo em frente", "The plan now is just to keep pushing forward, one conversation at a time."],
     ],
-    readingTitle: "You Didn't Arrive — You Built a Habit",
+    readingTitle: "You Didn't Arrive, You Built a Habit",
     readingParagraphs: [
-      "There's no finish line in language learning, and this last theme isn't pretending there is one. What's real, after 104 themes, is that you've built something more durable than a single skill: a habit of practicing speaking, deliberately, week after week — vocabulary, reading, listening, writing, grammar, speaking, and honest self-assessment, every single time.",
-      "If you look back at your very first self-assessment from Tema 1, you'll likely notice something: the questions that used to make you pause now come more easily. Not because English got easier — because you got more practiced at reaching for it under pressure. That's fluency, in the way that actually matters day to day.",
-      "This isn't the end of your English, it's the end of this specific structure. Whatever comes next — real conversations, new work challenges, conversations with AI, conversations with strangers — you now have seven tools you didn't have before: how to build vocabulary in context, how to read and listen actively, how to write before you speak, how to use grammar as a tool instead of a fear, how to ask better questions, how to keep a conversation open with follow-ups, and how to honestly assess your own progress. Keep using all seven — not just when you're studying, but every time you speak.",
+      "There's no finish line in language learning, and this last theme isn't pretending there is one. What's real, after 104 themes, is that you've built something more durable than a single skill: a habit of practicing speaking, deliberately, week after week, vocabulary, reading, listening, writing, grammar, speaking, and honest self-assessment, every single time.",
+      "If you look back at your very first self-assessment from Tema 1, you'll likely notice something: the questions that used to make you pause now come more easily. Not because English got easier, because you got more practiced at reaching for it under pressure. That's fluency, in the way that actually matters day to day.",
+      "This isn't the end of your English, it's the end of this specific structure. Whatever comes next, real conversations, new work challenges, conversations with AI, conversations with strangers, you now have seven tools you didn't have before: how to build vocabulary in context, how to read and listen actively, how to write before you speak, how to use grammar as a tool instead of a fear, how to ask better questions, how to keep a conversation open with follow-ups, and how to honestly assess your own progress. Keep using all seven, not just when you're studying, but every time you speak.",
     ],
     audioFile: "audio/tema-104-reflecting-on-your-journey.mp3",
     audioScript: [
       "\"How do you feel, looking back at your English journey through this whole book?\"",
-      "\"Honestly, proud — it wasn't a straight line, I hit a few plateaus, but I kept pushing forward. Looking back on Tema 1, I can hear the difference. This isn't the end, it's just the end of this structure.\"",
+      "\"Honestly, proud, it wasn't a straight line, I hit a few plateaus, but I kept pushing forward. Looking back on Tema 1, I can hear the difference. This isn't the end, it's just the end of this structure.\"",
     ],
-    audioFollowup: "Este é o seu momento de gravar essa mesma resposta, mas com suas próprias palavras — sobre a sua jornada real através deste livro.",
+    audioFollowup: "Este é o seu momento de gravar essa mesma resposta, mas com suas próprias palavras, sobre a sua jornada real através deste livro.",
     writingQuestions: [
       "Looking back at Tema 1, what's the biggest difference you notice in how you speak now?",
       "What was your biggest breakthrough moment across these 104 themes?",
@@ -560,11 +560,11 @@ const themes = [
     ],
     grammarIntro: "Refletir sobre uma jornada de aprendizado depende do Present Perfect para o percurso completo e de estruturas reflexivas de fechamento.",
     grammarRows: [
-      ["Present Perfect\n(\"I've come a long way\")", "I've come a long way since Tema 1.", "Usado para resumir uma jornada inteira até o momento presente — a estrutura perfeita para encerrar este livro."],
+      ["Present Perfect\n(\"I've come a long way\")", "I've come a long way since Tema 1.", "Usado para resumir uma jornada inteira até o momento presente, a estrutura perfeita para encerrar este livro."],
       ["Looking back, ...", "Looking back, the writing step made the biggest difference.", "Abertura reflexiva clássica para revisar uma experiência passada como um todo."],
       ["I still have room to grow, but...", "I still have room to grow, but I'm proud of how far I've come.", "Estrutura equilibrada que reconhece progresso contínuo sem fingir perfeição."],
     ],
-    grammarTip: "Dica prática final: \"I've come a long way\" é provavelmente a frase mais apropriada para você dizer em voz alta agora, sobre si mesmo, em inglês. Diga-a de verdade — você chegou até o Tema 104.",
+    grammarTip: "Dica prática final: \"I've come a long way\" é provavelmente a frase mais apropriada para você dizer em voz alta agora, sobre si mesmo, em inglês. Diga-a de verdade, você chegou até o Tema 104.",
     speakingQuestions: [
       "Looking back at Tema 1, what's the biggest difference you notice in how you speak now?",
       "What was your single biggest breakthrough moment across these 104 themes?",
@@ -578,10 +578,10 @@ const themes = [
       "If you recorded yourself answering this question, what would future-you want to hear?",
     ],
     expressions: [
-      "\"I've come a long way since Tema 1.\" — a frase de encerramento deste livro.",
-      "\"It wasn't a straight line, but I kept pushing forward.\" — para reconhecer o percurso real.",
-      "\"This isn't the end, it's just the end of this structure.\" — para abrir espaço para o que vem depois.",
-      "\"I still have room to grow, but I'm proud of how far I've come.\" — fechamento equilibrado e honesto.",
+      "\"I've come a long way since Tema 1.\", a frase de encerramento deste livro.",
+      "\"It wasn't a straight line, but I kept pushing forward.\", para reconhecer o percurso real.",
+      "\"This isn't the end, it's just the end of this structure.\", para abrir espaço para o que vem depois.",
+      "\"I still have room to grow, but I'm proud of how far I've come.\", fechamento equilibrado e honesto.",
     ],
     exerciseSentences: [
       "My ______ hasn't been a straight line.",

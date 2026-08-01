@@ -1,4 +1,4 @@
-// Bloco 7 — Cultura Corporativa e Diversidade (Temas 49–56)
+// Bloco 7, Cultura Corporativa e Diversidade (Temas 49–56)
 const themes = [
   {
     num: 49,
@@ -10,7 +10,7 @@ const themes = [
     intro: "Abrindo o Bloco 7: descrever seu ambiente de trabalho ideal em inglês, com especificidade em vez de clichês (\"eu gosto de um ambiente colaborativo\"), é o que diferencia uma resposta genérica de uma autêntica.",
     vocab: [
       ["work environment", "ambiente de trabalho", "I do my best work in a fairly quiet work environment."],
-      ["autonomy", "autonomia", "Autonomy matters a lot to me — I don't like being micromanaged."],
+      ["autonomy", "autonomia", "Autonomy matters a lot to me, I don't like being micromanaged."],
       ["structured vs flexible", "estruturado vs. flexível", "I prefer a structured schedule over a fully flexible one."],
       ["collaborative", "colaborativo(a)", "I thrive in a collaborative environment with lots of feedback."],
       ["fast-paced", "de ritmo acelerado", "I actually enjoy a fast-paced environment more than a slow one."],
@@ -24,16 +24,16 @@ const themes = [
     ],
     readingTitle: "\"A Good Culture\" Means Different Things to Different People",
     readingParagraphs: [
-      "\"I like a collaborative, fast-paced environment\" is one of the most repeated, least informative answers in professional English — mostly because almost everyone claims to want the same three things, regardless of whether it's actually true for them.",
+      "\"I like a collaborative, fast-paced environment\" is one of the most repeated, least informative answers in professional English, mostly because almost everyone claims to want the same three things, regardless of whether it's actually true for them.",
       "A more useful answer names a specific condition under which you do your best work: \"I do my best work when priorities are clear but I have autonomy over how to get there. Micromanagement is probably my biggest dealbreaker.\" This gives a real signal, not a buzzword.",
       "It also helps to describe environments comparatively: \"I thrive more in high-trust, fast-moving teams than in highly structured, process-heavy ones.\" Naming a preference relative to its opposite makes the answer sound like self-knowledge, not a rehearsed line.",
     ],
     audioFile: "audio/tema-49-ideal-work-environment.mp3",
     audioScript: [
       "\"What kind of work environment do you thrive in?\"",
-      "\"I do my best work when priorities are clear, but I have real autonomy over how I get there. Micromanagement is probably my biggest dealbreaker — I function much better in high-trust environments.\"",
+      "\"I do my best work when priorities are clear, but I have real autonomy over how I get there. Micromanagement is probably my biggest dealbreaker, I function much better in high-trust environments.\"",
     ],
-    audioFollowup: "Note que a resposta é específica e até nomeia um \"dealbreaker\" — isso soa muito mais autêntico do que elogios genéricos.",
+    audioFollowup: "Note que a resposta é específica e até nomeia um \"dealbreaker\", isso soa muito mais autêntico do que elogios genéricos.",
     writingQuestions: [
       "Describe the specific conditions under which you do your best work.",
       "What's a dealbreaker for you in a work environment?",
@@ -46,7 +46,7 @@ const themes = [
       ["I do my best work when...\n(condição)", "I do my best work when priorities are clear.", "Estrutura condicional que especifica exatamente o que você precisa para funcionar bem."],
       ["Comparativo\n(preferência relativa)", "I thrive more in autonomous teams than in tightly managed ones.", "Usado para comparar diretamente duas condições opostas de trabalho."],
     ],
-    grammarTip: "Dica prática: \"I do my best work when...\" é mais forte do que \"I like...\" — condiciona sua performance a um fator específico, o que soa mais autoconsciente.",
+    grammarTip: "Dica prática: \"I do my best work when...\" é mais forte do que \"I like...\", condiciona sua performance a um fator específico, o que soa mais autoconsciente.",
     speakingQuestions: [
       "Describe the specific conditions under which you do your absolute best work.",
       "What's a dealbreaker for you when it comes to a work environment?",
@@ -60,14 +60,14 @@ const themes = [
       "What trade-off would you be willing to accept to work somewhere close to ideal?",
     ],
     expressions: [
-      "\"I do my best work when...\" — para especificar condições ideais.",
-      "\"That's probably my biggest dealbreaker.\" — para nomear um limite claro.",
-      "\"I thrive more in X than in Y.\" — para comparar preferências.",
-      "\"I function best with...\" — para descrever necessidades práticas.",
+      "\"I do my best work when...\", para especificar condições ideais.",
+      "\"That's probably my biggest dealbreaker.\", para nomear um limite claro.",
+      "\"I thrive more in X than in Y.\", para comparar preferências.",
+      "\"I function best with...\", para descrever necessidades práticas.",
     ],
     exerciseSentences: [
       "I do my best work in a fairly quiet ______.",
-      "______ matters a lot to me — I don't like being micromanaged.",
+      "______ matters a lot to me, I don't like being micromanaged.",
       "I ______ in environments where ownership is clear.",
       "______ is probably my biggest dealbreaker.",
       "I've done my best work in ______ environments.",
@@ -81,7 +81,7 @@ const themes = [
     titleEn: "Talking About Diversity and Inclusion",
     titlePt: "Falando sobre diversidade e inclusão",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "Diversidade e inclusão são temas que exigem vocabulário preciso em inglês — termos genéricos ou mal escolhidos podem soar superficiais ou até ofensivos. Este tema constrói essa precisão.",
+    intro: "Diversidade e inclusão são temas que exigem vocabulário preciso em inglês, termos genéricos ou mal escolhidos podem soar superficiais ou até ofensivos. Este tema constrói essa precisão.",
     vocab: [
       ["diversity", "diversidade", "Diversity alone doesn't guarantee inclusion."],
       ["inclusion", "inclusão", "Inclusion is about whether people actually feel they belong."],
@@ -99,13 +99,13 @@ const themes = [
     readingTitle: "Diversity Without Inclusion Doesn't Work",
     readingParagraphs: [
       "One of the most important distinctions in this topic, in English, is between diversity and inclusion: diversity is who is in the room; inclusion is whether they feel safe speaking in it. A team can be demographically diverse and still not inclusive if certain voices are consistently talked over or overlooked.",
-      "Precise language matters here more than in most topics — \"underrepresented,\" \"equity\" (not equality), and \"systemic\" all carry specific meanings that generic phrases like \"we treat everyone the same\" tend to miss entirely. Equity, specifically, means giving different people what they specifically need, not identical treatment.",
+      "Precise language matters here more than in most topics, \"underrepresented,\" \"equity\" (not equality), and \"systemic\" all carry specific meanings that generic phrases like \"we treat everyone the same\" tend to miss entirely. Equity, specifically, means giving different people what they specifically need, not identical treatment.",
       "Real allyship, in this context, is described as active, not passive: \"amplifying voices,\" \"calling in\" a colleague, \"advocating\" for someone in a room they're not in. The language of allyship is verbs, not just stated values.",
     ],
     audioFile: "audio/tema-50-diversity-and-inclusion.mp3",
     audioScript: [
       "\"How does your team think about diversity and inclusion?\"",
-      "\"We try to separate the two, honestly. Diversity is about who's in the room — inclusion is about whether they feel safe speaking up. We focus a lot on the second part, fostering belonging, not just hiring numbers.\"",
+      "\"We try to separate the two, honestly. Diversity is about who's in the room, inclusion is about whether they feel safe speaking up. We focus a lot on the second part, fostering belonging, not just hiring numbers.\"",
     ],
     audioFollowup: "Note que a resposta distingue claramente diversidade de inclusão, em vez de tratá-las como sinônimos.",
     writingQuestions: [
@@ -120,7 +120,7 @@ const themes = [
       ["regardless of\n(concessão)", "Everyone should have a voice, regardless of title.", "Usado para afirmar um princípio que se aplica independentemente de uma condição."],
       ["Gerúndio como sujeito", "Creating an inclusive environment takes ongoing effort.", "Usado para fazer afirmações gerais sobre um processo ou prática contínua."],
     ],
-    grammarTip: "Dica prática: prefira \"equity\", não \"equality\", quando o tema for justiça baseada em necessidade — são conceitos diferentes e a confusão entre eles é comum entre falantes não-nativos.",
+    grammarTip: "Dica prática: prefira \"equity\", não \"equality\", quando o tema for justiça baseada em necessidade, são conceitos diferentes e a confusão entre eles é comum entre falantes não-nativos.",
     speakingQuestions: [
       "What's the difference between diversity and inclusion, in your understanding?",
       "How would you describe real allyship in a workplace, beyond just stated values?",
@@ -134,10 +134,10 @@ const themes = [
       "How has your understanding of DEI topics evolved over the years?",
     ],
     expressions: [
-      "\"Diversity is who's in the room; inclusion is who feels safe speaking.\" — distinção-chave.",
-      "\"That's more of a systemic issue than an individual one.\" — para enquadrar um problema.",
-      "\"Real allyship means acting, not just agreeing.\" — para reforçar ação sobre discurso.",
-      "\"We're working on fostering belonging, not just numbers.\" — para ir além de métricas.",
+      "\"Diversity is who's in the room; inclusion is who feels safe speaking.\", distinção-chave.",
+      "\"That's more of a systemic issue than an individual one.\", para enquadrar um problema.",
+      "\"Real allyship means acting, not just agreeing.\", para reforçar ação sobre discurso.",
+      "\"We're working on fostering belonging, not just numbers.\", para ir além de métricas.",
     ],
     exerciseSentences: [
       "______ alone doesn't guarantee inclusion.",
@@ -155,7 +155,7 @@ const themes = [
     titleEn: "Navigating Cultural Differences at Work",
     titlePt: "Navegando diferenças culturais no trabalho",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "Trabalhar com pessoas de culturas diferentes exige generalizações cuidadosas em inglês — reconhecer padrões culturais sem cair em estereótipos. Este tema treina esse equilíbrio.",
+    intro: "Trabalhar com pessoas de culturas diferentes exige generalizações cuidadosas em inglês, reconhecer padrões culturais sem cair em estereótipos. Este tema treina esse equilíbrio.",
     vocab: [
       ["cultural norms", "normas culturais", "Cultural norms around feedback vary a lot between countries."],
       ["direct vs indirect communication", "comunicação direta vs. indireta", "Some cultures favor direct communication, others indirect."],
@@ -170,18 +170,18 @@ const themes = [
       ["cross-cultural", "intercultural", "Cross-cultural teams need extra intentionality around communication."],
       ["assumption", "suposição", "I try to check my assumptions before reacting."],
     ],
-    readingTitle: "Cultural Generalizations Are Useful — Carefully",
+    readingTitle: "Cultural Generalizations Are Useful, Carefully",
     readingParagraphs: [
       "Talking about cultural differences in English requires a specific kind of care: generalizations can be useful (\"this culture tends to favor indirect feedback\") but need to be held loosely, as tendencies, not rules about individuals.",
-      "The safest language hedges appropriately: \"tend to,\" \"in my experience,\" \"generally speaking\" — all signal that you're describing a pattern, not a fixed truth about every person from that background. \"It's not that they're being evasive, it's that direct criticism just isn't the norm there\" reframes a misunderstanding as cultural, not personal.",
-      "It also helps to name your own missteps honestly: \"I misread the silence as agreement — that was a faux pas on my part, not theirs.\" Owning your own cultural blind spot, rather than blaming the other culture for confusion, tends to build more trust on cross-cultural teams.",
+      "The safest language hedges appropriately: \"tend to,\" \"in my experience,\" \"generally speaking\", all signal that you're describing a pattern, not a fixed truth about every person from that background. \"It's not that they're being evasive, it's that direct criticism just isn't the norm there\" reframes a misunderstanding as cultural, not personal.",
+      "It also helps to name your own missteps honestly: \"I misread the silence as agreement, that was a faux pas on my part, not theirs.\" Owning your own cultural blind spot, rather than blaming the other culture for confusion, tends to build more trust on cross-cultural teams.",
     ],
     audioFile: "audio/tema-51-navigating-cultural-differences.mp3",
     audioScript: [
       "\"I noticed the team went quiet when I asked for direct feedback on the proposal.\"",
-      "\"That tracks, actually — in my experience, this team tends to give feedback more indirectly. It's not that they disagree, it's that direct criticism in a group setting isn't really the norm here.\"",
+      "\"That tracks, actually, in my experience, this team tends to give feedback more indirectly. It's not that they disagree, it's that direct criticism in a group setting isn't really the norm here.\"",
     ],
-    audioFollowup: "Note o uso de \"tend to\" e \"it's not that X, it's that Y\" — generalizações cuidadosas, não afirmações absolutas.",
+    audioFollowup: "Note o uso de \"tend to\" e \"it's not that X, it's that Y\", generalizações cuidadosas, não afirmações absolutas.",
     writingQuestions: [
       "Describe a cultural misunderstanding you've experienced or witnessed at work.",
       "What's a cultural norm you've had to adapt to in a professional setting?",
@@ -194,7 +194,7 @@ const themes = [
       ["It's not that X, it's that Y", "It's not that they disagree, it's that criticism isn't given directly here.", "Usado para reformular um mal-entendido, trocando julgamento por contexto."],
       ["What's normal in one culture isn't necessarily in another", "What's normal in one culture isn't necessarily in another.", "Estrutura comparativa útil para introduzir diferenças culturais sem hierarquizá-las."],
     ],
-    grammarTip: "Dica prática: sempre que fizer uma generalização cultural, use \"tend to\" ou \"in my experience\" — isso marca a frase como observação, não como regra fixa sobre um grupo inteiro de pessoas.",
+    grammarTip: "Dica prática: sempre que fizer uma generalização cultural, use \"tend to\" ou \"in my experience\", isso marca a frase como observação, não como regra fixa sobre um grupo inteiro de pessoas.",
     speakingQuestions: [
       "Describe a cultural misunderstanding you've experienced or witnessed at work.",
       "What's a cultural norm around communication you've had to adapt to?",
@@ -208,10 +208,10 @@ const themes = [
       "What advice would you give someone about to join a highly multicultural team?",
     ],
     expressions: [
-      "\"In my experience, this culture tends to...\" — generalização cuidadosa.",
-      "\"It's not that X, it's that Y.\" — para reformular um mal-entendido.",
-      "\"That was a faux pas on my part.\" — para assumir um erro cultural com humildade.",
-      "\"I try to check my assumptions first.\" — para mostrar abertura cultural.",
+      "\"In my experience, this culture tends to...\", generalização cuidadosa.",
+      "\"It's not that X, it's that Y.\", para reformular um mal-entendido.",
+      "\"That was a faux pas on my part.\", para assumir um erro cultural com humildade.",
+      "\"I try to check my assumptions first.\", para mostrar abertura cultural.",
     ],
     exerciseSentences: [
       "______ around feedback vary a lot between countries.",
@@ -246,14 +246,14 @@ const themes = [
     ],
     readingTitle: "Values Are Revealed in Hard Decisions, Not Easy Ones",
     readingParagraphs: [
-      "Anyone can list values that sound good on a wall. What separates authentic values from lip service, in English conversation, is describing a moment when living by a value actually cost something — time, money, or convenience.",
-      "\"We say we prioritize quality over speed. That was tested last year when we delayed a launch by a month because the data wasn't solid enough — that's when I actually believed it was a real value, not just a poster.\" This kind of example does more than restating the value itself.",
+      "Anyone can list values that sound good on a wall. What separates authentic values from lip service, in English conversation, is describing a moment when living by a value actually cost something, time, money, or convenience.",
+      "\"We say we prioritize quality over speed. That was tested last year when we delayed a launch by a month because the data wasn't solid enough, that's when I actually believed it was a real value, not just a poster.\" This kind of example does more than restating the value itself.",
       "It's also useful, in English, to acknowledge trade-offs between values honestly rather than pretending they never conflict: \"Transparency and speed sometimes pull in different directions, and we don't always get the balance right.\" This honesty tends to sound far more credible than claiming perfect alignment.",
     ],
     audioFile: "audio/tema-52-discussing-company-values.mp3",
     audioScript: [
       "\"How would you describe your company's actual values, not just what's on the website?\"",
-      "\"Honestly, quality over speed is a real one — we delayed a launch by a month last year because the data wasn't solid, which cost us. That's when I knew it wasn't just lip service.\"",
+      "\"Honestly, quality over speed is a real one, we delayed a launch by a month last year because the data wasn't solid, which cost us. That's when I knew it wasn't just lip service.\"",
     ],
     audioFollowup: "Note que a credibilidade vem de um exemplo concreto de custo real, não da simples repetição do valor.",
     writingQuestions: [
@@ -268,7 +268,7 @@ const themes = [
       ["rather than\n(trade-off entre valores)", "We chose to delay the launch rather than compromise on quality.", "Usado para mostrar uma escolha feita entre dois valores em conflito."],
       ["The way we X reflects Y", "The way we handled that delay reflects our real priorities.", "Conecta uma ação concreta a um valor mais amplo que ela revela."],
     ],
-    grammarTip: "Dica prática: \"rather than\" é ideal para mostrar que um valor foi escolhido às custas de outro — isso é o que torna um valor crível, em vez de decorativo.",
+    grammarTip: "Dica prática: \"rather than\" é ideal para mostrar que um valor foi escolhido às custas de outro, isso é o que torna um valor crível, em vez de decorativo.",
     speakingQuestions: [
       "Describe a moment when a company value was genuinely tested by a hard decision.",
       "What's a stated value at your workplace that you're skeptical is actually real?",
@@ -282,10 +282,10 @@ const themes = [
       "What's a value you personally hold that sometimes conflicts with business priorities?",
     ],
     expressions: [
-      "\"That's when I knew it wasn't just lip service.\" — para validar um valor com um exemplo real.",
-      "\"We chose X rather than Y.\" — para mostrar um trade-off concreto entre valores.",
-      "\"That reflects our real priorities.\" — para conectar ação a valor.",
-      "\"We don't always get the balance right, honestly.\" — para reconhecer limites com autenticidade.",
+      "\"That's when I knew it wasn't just lip service.\", para validar um valor com um exemplo real.",
+      "\"We chose X rather than Y.\", para mostrar um trade-off concreto entre valores.",
+      "\"That reflects our real priorities.\", para conectar ação a valor.",
+      "\"We don't always get the balance right, honestly.\", para reconhecer limites com autenticidade.",
     ],
     exerciseSentences: [
       "Our ______ are posted everywhere, but do we live by them?",
@@ -303,7 +303,7 @@ const themes = [
     titleEn: "Talking About Ethics in Business",
     titlePt: "Falando sobre ética nos negócios",
     estimatedTime: "60–90 minutos, divididos ao longo da semana.",
-    intro: "Discutir dilemas éticos em inglês exige cuidado — nem moralismo excessivo, nem relativismo confortável demais. Este tema treina a linguagem de dilemas reais no ambiente corporativo.",
+    intro: "Discutir dilemas éticos em inglês exige cuidado, nem moralismo excessivo, nem relativismo confortável demais. Este tema treina a linguagem de dilemas reais no ambiente corporativo.",
     vocab: [
       ["ethical dilemma", "dilema ético", "This is a classic ethical dilemma with no perfect answer."],
       ["conflict of interest", "conflito de interesses", "I disclosed the conflict of interest before the meeting."],
@@ -320,16 +320,16 @@ const themes = [
     ],
     readingTitle: "Ethics Shows Up in the Gray Areas",
     readingParagraphs: [
-      "Business ethics conversations in English rarely involve obvious villains — the interesting cases are gray areas, where reasonable people disagree, and every option has some cost. \"This is a real gray area\" is a common, honest way to open a discussion instead of pretending there's an easy answer.",
+      "Business ethics conversations in English rarely involve obvious villains, the interesting cases are gray areas, where reasonable people disagree, and every option has some cost. \"This is a real gray area\" is a common, honest way to open a discussion instead of pretending there's an easy answer.",
       "A useful structure for talking through an ethical dilemma states the tension directly: \"On one hand, disclosing this could hurt the deal. On the other, not disclosing it is a real integrity issue.\" Naming both sides shows you're actually reasoning through it, not just picking the safe answer.",
-      "It also matters to distinguish compliance from ethics explicitly: \"This is technically compliant, but I'm not sure it's actually the right thing to do\" is a common, respected distinction in English business conversation — legal isn't automatically the same as ethical.",
+      "It also matters to distinguish compliance from ethics explicitly: \"This is technically compliant, but I'm not sure it's actually the right thing to do\" is a common, respected distinction in English business conversation, legal isn't automatically the same as ethical.",
     ],
     audioFile: "audio/tema-53-ethics-in-business.mp3",
     audioScript: [
       "\"What would you do if you found out a close vendor relationship was a conflict of interest?\"",
-      "\"I'd disclose it immediately, even if it's technically a gray area. Compliance isn't the same as integrity — I'd rather draw the line early than cut corners later.\"",
+      "\"I'd disclose it immediately, even if it's technically a gray area. Compliance isn't the same as integrity, I'd rather draw the line early than cut corners later.\"",
     ],
-    audioFollowup: "Note a distinção explícita entre \"compliance\" e \"integrity\" — um ponto central desse tema.",
+    audioFollowup: "Note a distinção explícita entre \"compliance\" e \"integrity\", um ponto central desse tema.",
     writingQuestions: [
       "Describe an ethical gray area you've encountered (or could imagine) at work.",
       "What's the difference between being compliant and being ethical, in your view?",
@@ -342,7 +342,7 @@ const themes = [
       ["Segundo condicional\n(dilema hipotético)", "If I found out about a conflict of interest, I would disclose it immediately.", "Usado para discutir como você agiria em uma situação hipotética, mas plausível."],
       ["even if\n(concessão)", "I'd draw the line even if it cost us the deal.", "Usado para afirmar um princípio que se mantém mesmo diante de uma consequência negativa."],
     ],
-    grammarTip: "Dica prática: \"ought to\" é mais formal e carrega mais peso moral do que \"should\" — use-o quando quiser enfatizar uma obrigação ética, não apenas uma recomendação prática.",
+    grammarTip: "Dica prática: \"ought to\" é mais formal e carrega mais peso moral do que \"should\", use-o quando quiser enfatizar uma obrigação ética, não apenas uma recomendação prática.",
     speakingQuestions: [
       "Describe an ethical gray area you've encountered or could imagine facing at work.",
       "What's the difference between being compliant and being genuinely ethical?",
@@ -356,10 +356,10 @@ const themes = [
       "What would you do if your manager asked you to do something you considered unethical?",
     ],
     expressions: [
-      "\"This is a real gray area, honestly.\" — para introduzir um dilema sem simplificá-lo.",
-      "\"That's technically compliant, but...\" — para distinguir legalidade de ética.",
-      "\"I'd rather draw the line early.\" — para afirmar um limite ético com firmeza.",
-      "\"On one hand... on the other...\" — para apresentar os dois lados de um dilema.",
+      "\"This is a real gray area, honestly.\", para introduzir um dilema sem simplificá-lo.",
+      "\"That's technically compliant, but...\", para distinguir legalidade de ética.",
+      "\"I'd rather draw the line early.\", para afirmar um limite ético com firmeza.",
+      "\"On one hand... on the other...\", para apresentar os dois lados de um dilema.",
     ],
     exerciseSentences: [
       "This is a classic ______ with no perfect answer.",
@@ -394,14 +394,14 @@ const themes = [
     ],
     readingTitle: "Addressing Impact Without Assuming Intent",
     readingParagraphs: [
-      "Microaggressions are hard to address partly because they're often unintentional, which makes direct confrontation feel disproportionate — but staying silent lets the pattern continue. The English language that handles this well separates intent from impact explicitly.",
+      "Microaggressions are hard to address partly because they're often unintentional, which makes direct confrontation feel disproportionate, but staying silent lets the pattern continue. The English language that handles this well separates intent from impact explicitly.",
       "\"I don't think you meant it this way, but when you said that, it came across as dismissive of my experience\" acknowledges good intent while still naming the real effect. This is far more likely to be heard than an accusation, without requiring the person harmed to pretend it didn't matter.",
-      "Naming a pattern, rather than reacting to a single moment in isolation, is also useful: \"This is actually the second time this month my idea's been credited to someone else — I wanted to name that pattern.\" This shifts the conversation from a one-off misunderstanding to something worth actually addressing.",
+      "Naming a pattern, rather than reacting to a single moment in isolation, is also useful: \"This is actually the second time this month my idea's been credited to someone else, I wanted to name that pattern.\" This shifts the conversation from a one-off misunderstanding to something worth actually addressing.",
     ],
     audioFile: "audio/tema-54-handling-microaggressions.mp3",
     audioScript: [
       "\"Hey, can I mention something? When you redirected my question to David earlier, it came across like you assumed he'd know better.\"",
-      "\"Oh, I didn't mean it that way at all.\" \"I don't think you meant it that way — I just wanted to name it, because it's actually happened a couple of times.\"",
+      "\"Oh, I didn't mean it that way at all.\" \"I don't think you meant it that way, I just wanted to name it, because it's actually happened a couple of times.\"",
     ],
     audioFollowup: "Note que a pessoa separa intenção de impacto e nomeia um padrão, em vez de reagir a um único momento isolado.",
     writingQuestions: [
@@ -416,7 +416,7 @@ const themes = [
       ["When you said X, it came across as Y\n(I-statement)", "When you said that, it came across as dismissive of my experience.", "Estrutura neutra que descreve o impacto sem acusar diretamente a intenção."],
       ["It might be worth noting that...", "It might be worth noting that this has happened a few times.", "Introduz uma observação delicada sobre um padrão, de forma suave."],
     ],
-    grammarTip: "Dica prática: comece sempre separando intenção de impacto (\"I don't think you meant it, but...\") — isso reduz a defensividade da outra pessoa e aumenta a chance de ser realmente ouvido.",
+    grammarTip: "Dica prática: comece sempre separando intenção de impacto (\"I don't think you meant it, but...\"), isso reduz a defensividade da outra pessoa e aumenta a chance de ser realmente ouvido.",
     speakingQuestions: [
       "Describe a microaggression you've witnessed or experienced, and how it was handled.",
       "How would you address a pattern of behavior without sounding like you're overreacting?",
@@ -430,10 +430,10 @@ const themes = [
       "How has your ability to name these moments changed as you've gained experience?",
     ],
     expressions: [
-      "\"I don't think you meant it this way, but...\" — para separar intenção de impacto.",
-      "\"It came across as...\" — para descrever o efeito sem acusar diretamente.",
-      "\"I wanted to name that pattern.\" — para elevar um momento isolado a um padrão.",
-      "\"I appreciate you hearing me out on this.\" — para fechar a conversa com gentileza.",
+      "\"I don't think you meant it this way, but...\", para separar intenção de impacto.",
+      "\"It came across as...\", para descrever o efeito sem acusar diretamente.",
+      "\"I wanted to name that pattern.\", para elevar um momento isolado a um padrão.",
+      "\"I appreciate you hearing me out on this.\", para fechar a conversa com gentileza.",
     ],
     exerciseSentences: [
       "That comment was a subtle ______, even if unintentional.",
@@ -454,13 +454,13 @@ const themes = [
     intro: "Ajustar seu estilo de comunicação conforme a cultura do interlocutor é uma habilidade avançada de inglês profissional. Este tema treina a linguagem de calibrar tom, diretividade e formalidade.",
     vocab: [
       ["communication style", "estilo de comunicação", "My communication style shifts depending on the audience."],
-      ["high-context / low-context", "alto contexto / baixo contexto", "Some cultures are more high-context — a lot is left unsaid."],
+      ["high-context / low-context", "alto contexto / baixo contexto", "Some cultures are more high-context, a lot is left unsaid."],
       ["directness", "diretividade", "Directness is valued much more in some cultures than others."],
       ["to read between the lines", "ler nas entrelinhas", "You have to read between the lines more in high-context cultures."],
       ["tone", "tom", "I adjust my tone quite a bit depending on who I'm talking to."],
       ["to soften (a message)", "suavizar (uma mensagem)", "I tend to soften direct feedback more with some audiences."],
       ["cultural nuance", "nuance cultural", "There's a cultural nuance here that's easy to miss."],
-      ["small talk norms", "normas de conversa fiada", "Small talk norms vary a lot — some cultures skip it almost entirely."],
+      ["small talk norms", "normas de conversa fiada", "Small talk norms vary a lot, some cultures skip it almost entirely."],
       ["formality", "formalidade", "The level of formality expected here surprised me at first."],
       ["to adjust register", "ajustar o registro (formal/informal)", "I adjust my register significantly between clients and close colleagues."],
       ["nonverbal cues", "sinais não-verbais", "Nonverbal cues can mean very different things across cultures."],
@@ -468,16 +468,16 @@ const themes = [
     ],
     readingTitle: "There's No Single Correct Communication Style",
     readingParagraphs: [
-      "One useful distinction in this topic is between high-context and low-context communication: low-context cultures tend to say things explicitly, while high-context cultures rely more on shared understanding, tone, and what's left unsaid. Neither is better — but confusion happens when someone expects the other style.",
+      "One useful distinction in this topic is between high-context and low-context communication: low-context cultures tend to say things explicitly, while high-context cultures rely more on shared understanding, tone, and what's left unsaid. Neither is better, but confusion happens when someone expects the other style.",
       "In English, describing this adaptation sounds like calibration, not compromise of identity: \"I tend to be pretty direct by default, but I've learned to soften feedback more and read between the lines more with teams that communicate indirectly.\"",
-      "Formality and small talk norms are two of the most commonly misjudged areas — assuming everyone wants the same amount of warm-up before business, or the same level of formality in email, is a frequent source of unintended friction on international teams.",
+      "Formality and small talk norms are two of the most commonly misjudged areas, assuming everyone wants the same amount of warm-up before business, or the same level of formality in email, is a frequent source of unintended friction on international teams.",
     ],
     audioFile: "audio/tema-55-adapting-communication-style.mp3",
     audioScript: [
       "\"You seem more formal in emails with the Tokyo team than with the New York one.\"",
-      "\"Yeah, I try to calibrate based on the audience — more formal register and less direct feedback with Tokyo, more casual and direct with New York. It's less about being different people, more about reading the room.\"",
+      "\"Yeah, I try to calibrate based on the audience, more formal register and less direct feedback with Tokyo, more casual and direct with New York. It's less about being different people, more about reading the room.\"",
     ],
-    audioFollowup: "Note o uso de \"calibrate\" e \"reading the room\" — expressões-chave para esse tipo de adaptação consciente.",
+    audioFollowup: "Note o uso de \"calibrate\" e \"reading the room\", expressões-chave para esse tipo de adaptação consciente.",
     writingQuestions: [
       "How does your communication style change depending on who you're talking to?",
       "Describe a time you had to soften or sharpen your directness for a specific audience.",
@@ -490,7 +490,7 @@ const themes = [
       ["depending on who I'm talking to", "My tone changes depending on who I'm talking to.", "Usado para indicar que um comportamento varia conforme o interlocutor."],
       ["I try to calibrate...\nbased on...", "I try to calibrate my directness based on the room.", "Estrutura natural para descrever ajuste consciente de comportamento."],
     ],
-    grammarTip: "Dica prática: \"reading the room\" é uma expressão idiomática muito útil para descrever a habilidade de perceber o tom certo antes de falar — funciona bem em qualquer contexto de adaptação cultural.",
+    grammarTip: "Dica prática: \"reading the room\" é uma expressão idiomática muito útil para descrever a habilidade de perceber o tom certo antes de falar, funciona bem em qualquer contexto de adaptação cultural.",
     speakingQuestions: [
       "How does your communication style change depending on who you're talking to?",
       "Describe a time you had to soften your directness for a specific audience.",
@@ -504,10 +504,10 @@ const themes = [
       "How has working across cultures changed your default communication style overall?",
     ],
     expressions: [
-      "\"I try to calibrate based on the audience.\" — para descrever ajuste consciente.",
-      "\"It's more about reading the room.\" — para explicar adaptação sem perder autenticidade.",
-      "\"You have to read between the lines here.\" — para culturas de alto contexto.",
-      "\"I tend to soften that a bit with...\" — para suavizar feedback conforme o público.",
+      "\"I try to calibrate based on the audience.\", para descrever ajuste consciente.",
+      "\"It's more about reading the room.\", para explicar adaptação sem perder autenticidade.",
+      "\"You have to read between the lines here.\", para culturas de alto contexto.",
+      "\"I tend to soften that a bit with...\", para suavizar feedback conforme o público.",
     ],
     exerciseSentences: [
       "My ______ shifts depending on the audience.",
@@ -544,12 +544,12 @@ const themes = [
     readingParagraphs: [
       "Conversations about generational differences at work easily slide into stereotype: \"Gen Z doesn't want to work hard\" or \"older employees resist all change.\" These generalizations rarely hold up to scrutiny and tend to shut down cross-generational conversation rather than open it.",
       "A more useful English framing treats generational patterns as trends shaped by circumstances, not fixed personality traits: \"Younger employees entering the workforce during economic uncertainty tend to prioritize stability differently than those who started in a boom\" explains a pattern without moralizing about who's \"right.\"",
-      "Bridging generational gaps well often relies on mentorship flowing in both directions: younger employees often have technical fluency worth teaching, while more experienced employees often have institutional and relational knowledge worth passing on. Naming this explicitly — \"mentorship goes both ways here\" — helps flatten unhelpful hierarchy around who has something to teach.",
+      "Bridging generational gaps well often relies on mentorship flowing in both directions: younger employees often have technical fluency worth teaching, while more experienced employees often have institutional and relational knowledge worth passing on. Naming this explicitly, \"mentorship goes both ways here\", helps flatten unhelpful hierarchy around who has something to teach.",
     ],
     audioFile: "audio/tema-56-generational-differences.mp3",
     audioScript: [
       "\"Do you think there's a real generational gap on your team?\"",
-      "\"There's definitely a gap in expectations around feedback and flexibility, but I try not to stereotype it. Mentorship here actually goes both ways — the younger folks teach us tools, we help with the relationship side.\"",
+      "\"There's definitely a gap in expectations around feedback and flexibility, but I try not to stereotype it. Mentorship here actually goes both ways, the younger folks teach us tools, we help with the relationship side.\"",
     ],
     audioFollowup: "Note que a resposta reconhece diferenças reais sem generalizar de forma pejorativa, e destaca a mentoria como via de mão dupla.",
     writingQuestions: [
@@ -564,7 +564,7 @@ const themes = [
       ["It's easy to assume..., but...", "It's easy to assume younger employees lack work ethic, but that's rarely the full picture.", "Usado para nomear e desafiar um estereótipo comum, de forma respeitosa."],
       ["generally speaking\n(ressalva)", "Generally speaking, expectations around flexibility have shifted a lot.", "Marca a frase como uma tendência geral, não uma regra absoluta."],
     ],
-    grammarTip: "Dica prática: \"generally speaking\" é uma ressalva rápida e muito usada antes de qualquer generalização sobre grupos de pessoas — sinaliza consciência de que há exceções.",
+    grammarTip: "Dica prática: \"generally speaking\" é uma ressalva rápida e muito usada antes de qualquer generalização sobre grupos de pessoas, sinaliza consciência de que há exceções.",
     speakingQuestions: [
       "What's a generational difference in expectations you've observed at your workplace?",
       "How do you avoid stereotyping when discussing generational gaps at work?",
@@ -578,10 +578,10 @@ const themes = [
       "What values do you think stay consistent across generations, despite surface differences?",
     ],
     expressions: [
-      "\"Generally speaking, ...\" — ressalva antes de uma generalização.",
-      "\"It's easy to assume X, but...\" — para desafiar um estereótipo com respeito.",
-      "\"Mentorship here goes both ways.\" — para valorizar troca intergeracional.",
-      "\"That's more about circumstances than generation, honestly.\" — para reenquadrar um padrão.",
+      "\"Generally speaking, ...\", ressalva antes de uma generalização.",
+      "\"It's easy to assume X, but...\", para desafiar um estereótipo com respeito.",
+      "\"Mentorship here goes both ways.\", para valorizar troca intergeracional.",
+      "\"That's more about circumstances than generation, honestly.\", para reenquadrar um padrão.",
     ],
     exerciseSentences: [
       "There's a real ______ in how feedback is expected here.",

@@ -2,40 +2,45 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>Tema 50 — Talking About Diversity and Inclusion</title>
+<title>Tema 50: Talking About Diversity and Inclusion</title>
 <style>
   
   @page {
     size: A4;
-    margin: 2.2cm 2cm 2.4cm 2cm;
-    @top-right { content: "English Speaking Practice — Nação Fluente"; font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
-    @bottom-center { content: "Bloco 7 — Cultura Corporativa e Diversidade   |   Página " counter(page); font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
+    margin: 1.9cm 2cm 2.1cm 2cm;
+    @top-right { content: "English Speaking Practice · Nação Fluente"; font-size: 8pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
+    @bottom-center { content: "Bloco 7 · Cultura Corporativa e Diversidade (Corporate Culture and Diversity)   |   Página " counter(page); font-size: 7.5pt; color: #8C9AA8; font-family: 'Helvetica', Arial, sans-serif; }
   }
   * { box-sizing: border-box; }
-  body { font-family: 'Helvetica', Arial, sans-serif; color: #444444; font-size: 10.5pt; line-height: 1.5; }
-  .cover { background: #1B3B57; color: #fff; padding: 22px 24px; border-radius: 4px; margin-bottom: 14px; }
-  .cover .eyebrow { color: #8fc4ec; font-weight: bold; font-size: 9.5pt; letter-spacing: 0.5px; margin-bottom: 6px; }
-  .cover h1 { font-size: 22pt; margin: 0 0 6px 0; color: #fff; }
-  .cover .subtitle { color: #C9D6E3; font-style: italic; font-size: 12pt; margin: 0; }
-  .meta { margin: 10px 0 14px 0; font-size: 10.5pt; }
+  body { font-family: 'Helvetica', Arial, sans-serif; color: #444444; font-size: 10.5pt; line-height: 1.42; }
+  .cover { background: #1B3B57; color: #fff; padding: 16px 18px; border-radius: 4px; margin-bottom: 10px; display: flex; align-items: center; gap: 16px; }
+  .cover .icon { width: 54px; height: 54px; flex: none; opacity: 0.92; }
+  .cover .eyebrow { color: #8fc4ec; font-weight: bold; font-size: 9pt; letter-spacing: 0.4px; margin-bottom: 4px; }
+  .cover .eyebrow .en { display: block; color: #6f93ad; font-weight: normal; font-style: italic; font-size: 7.5pt; letter-spacing: 0.2px; margin-top: 1px; }
+  .cover h1 { font-size: 19pt; margin: 0 0 3px 0; color: #fff; line-height: 1.12; }
+  .cover .subtitle { color: #C9D6E3; font-style: italic; font-size: 10.5pt; margin: 0; }
+  .meta { margin: 8px 0 10px 0; font-size: 10pt; }
   .meta b { color: #1B3B57; }
-  .intro { margin-bottom: 6px; }
-  h2.step { color: #fff; padding: 8px 12px; font-size: 12.5pt; margin: 22px 0 10px 0; border-radius: 3px; }
-  h2.step .tag { background: rgba(255,255,255,0.22); padding: 2px 8px; border-radius: 3px; font-size: 9.5pt; margin-right: 8px; }
-  table { width: 100%; border-collapse: collapse; margin: 8px 0 14px 0; font-size: 9.8pt; }
-  th { color: #fff; text-align: left; padding: 6px 8px; }
-  td { padding: 6px 8px; border-bottom: 1px solid #E3E9EF; vertical-align: top; }
+  .intro { margin-bottom: 4px; }
+  p { margin: 0 0 8px 0; }
+  h2.step { color: #fff; padding: 6px 10px; font-size: 11.5pt; margin: 16px 0 8px 0; border-radius: 3px; display: flex; align-items: center; }
+  h2.step .tag { background: rgba(255,255,255,0.22); padding: 2px 7px; border-radius: 3px; font-size: 8.5pt; margin-right: 8px; flex: none; }
+  h2.step .stitle { display: flex; flex-direction: column; line-height: 1.18; }
+  h2.step .stitle .en { font-weight: normal; font-style: italic; font-size: 8pt; opacity: 0.82; }
+  table { width: 100%; border-collapse: collapse; margin: 6px 0 10px 0; font-size: 9.5pt; }
+  th { color: #fff; text-align: left; padding: 5px 7px; }
+  td { padding: 5px 7px; border-bottom: 1px solid #E3E9EF; vertical-align: top; }
   .example { font-style: italic; }
-  .notebox { border-radius: 4px; padding: 10px 14px; margin: 10px 0 16px 0; border: 1px solid; }
-  .notebox .title { font-weight: bold; margin-bottom: 6px; }
-  .notebox p { margin: 3px 0; }
-  ol, ul { margin: 6px 0 14px 0; padding-left: 20px; }
-  ol li, ul li { margin-bottom: 7px; }
-  .lines { border-bottom: 1px solid #C9D6E3; height: 22px; margin-bottom: 6px; }
-  .expr-list { list-style: none; padding-left: 0; margin: 6px 0 14px 0; }
-  .expr-list li { margin-bottom: 6px; padding-left: 14px; position: relative; }
-  .gabarito { font-style: italic; color: #1B3B57; margin-top: -6px; }
-  .footer-note { text-align: center; font-weight: bold; color: #1B3B57; margin-top: 18px; font-size: 11pt; }
+  .notebox { border-radius: 4px; padding: 8px 12px; margin: 6px 0 10px 0; border: 1px solid; }
+  .notebox .title { font-weight: bold; margin-bottom: 4px; }
+  .notebox p { margin: 2px 0; }
+  ol, ul { margin: 4px 0 10px 0; padding-left: 19px; }
+  ol li, ul li { margin-bottom: 5px; }
+  .lines { border-bottom: 1px solid #C9D6E3; height: 17px; margin-bottom: 4px; }
+  .expr-list { list-style: none; padding-left: 0; margin: 4px 0 10px 0; }
+  .expr-list li { margin-bottom: 4px; padding-left: 14px; position: relative; }
+  .gabarito { font-style: italic; color: #1B3B57; margin-top: -4px; }
+  .footer-note { text-align: center; font-weight: bold; color: #1B3B57; margin-top: 12px; font-size: 10.5pt; }
 
   .s1 h2, .s1 .tag { background: #2E86C1; }
   .s1 th { background: #2E86C1; }
@@ -72,16 +77,19 @@
 
 <div class="chapter" id="tema-50">
 <div class="cover">
-  <div class="eyebrow">TEMA 50 &nbsp;·&nbsp; BLOCO 7 — CULTURA CORPORATIVA E DIVERSIDADE</div>
-  <h1>Talking About Diversity and Inclusion</h1>
-  <p class="subtitle">Falando sobre diversidade e inclusão</p>
+  <img class="icon" src="file:///home/user/Claude/ebook/assets/icons/block-7.png">
+  <div>
+    <div class="eyebrow">TEMA 50 &nbsp;·&nbsp; BLOCO 7 &nbsp;·&nbsp; CULTURA CORPORATIVA E DIVERSIDADE<span class="en">THEME 50 · BLOCK 7 · CORPORATE CULTURE AND DIVERSITY</span></div>
+    <h1>Talking About Diversity and Inclusion</h1>
+    <p class="subtitle">Falando sobre diversidade e inclusão</p>
+  </div>
 </div>
 
 <div class="meta"><b>Tempo estimado:</b> 60–90 minutos, divididos ao longo da semana.</div>
-<p class="intro">Diversidade e inclusão são temas que exigem vocabulário preciso em inglês — termos genéricos ou mal escolhidos podem soar superficiais ou até ofensivos. Este tema constrói essa precisão.</p>
+<p class="intro">Diversidade e inclusão são temas que exigem vocabulário preciso em inglês, termos genéricos ou mal escolhidos podem soar superficiais ou até ofensivos. Este tema constrói essa precisão.</p>
 
 <div class="s1">
-<h2 class="step"><span class="tag">ETAPA 1</span>Vocabulário Contextualizado</h2>
+<h2 class="step "><span class="tag">ETAPA 1</span><span class="stitle"><span class="pt">Vocabulário Contextualizado</span><span class="en">Contextualized Vocabulary</span></span></h2>
 <p>Estas palavras e expressões vão te ajudar a se expressar sobre este tema com mais precisão e naturalidade.</p>
 <table>
 <tr><th>Word / Expression</th><th>Tradução</th><th>Example Sentence</th></tr>
@@ -102,35 +110,35 @@
 </div>
 
 <div class="s2">
-<h2 class="step"><span class="tag">ETAPA 2</span>Leitura com Orientação de Estudo</h2>
+<h2 class="step "><span class="tag">ETAPA 2</span><span class="stitle"><span class="pt">Leitura com Orientação de Estudo</span><span class="en">Guided Reading</span></span></h2>
 <div class="notebox">
   <div class="title">Como ler este texto</div>
-  <p>1) Leia uma vez, rápido, só para captar a ideia geral — sem parar no que não entender.</p><p>2) Leia de novo e grife toda expressão da Etapa 1 que aparecer no texto.</p><p>3) Releia em voz alta, como se você estivesse contando essa história sobre você mesmo.</p>
+  <p>1) Leia uma vez, rápido, só para captar a ideia geral, sem parar no que não entender.</p><p>2) Leia de novo e grife toda expressão da Etapa 1 que aparecer no texto.</p><p>3) Releia em voz alta, como se você estivesse contando essa história sobre você mesmo.</p>
 </div>
 <p><b>"Diversity Without Inclusion Doesn't Work"</b></p>
-<p>One of the most important distinctions in this topic, in English, is between diversity and inclusion: diversity is who is in the room; inclusion is whether they feel safe speaking in it. A team can be demographically diverse and still not inclusive if certain voices are consistently talked over or overlooked.</p><p>Precise language matters here more than in most topics — "underrepresented," "equity" (not equality), and "systemic" all carry specific meanings that generic phrases like "we treat everyone the same" tend to miss entirely. Equity, specifically, means giving different people what they specifically need, not identical treatment.</p><p>Real allyship, in this context, is described as active, not passive: "amplifying voices," "calling in" a colleague, "advocating" for someone in a room they're not in. The language of allyship is verbs, not just stated values.</p>
+<p>One of the most important distinctions in this topic, in English, is between diversity and inclusion: diversity is who is in the room; inclusion is whether they feel safe speaking in it. A team can be demographically diverse and still not inclusive if certain voices are consistently talked over or overlooked.</p><p>Precise language matters here more than in most topics, "underrepresented," "equity" (not equality), and "systemic" all carry specific meanings that generic phrases like "we treat everyone the same" tend to miss entirely. Equity, specifically, means giving different people what they specifically need, not identical treatment.</p><p>Real allyship, in this context, is described as active, not passive: "amplifying voices," "calling in" a colleague, "advocating" for someone in a room they're not in. The language of allyship is verbs, not just stated values.</p>
 </div>
 
 <div class="s3">
-<h2 class="step"><span class="tag">ETAPA 3</span>Listening com Suporte em Áudio e Vídeo</h2>
+<h2 class="step "><span class="tag">ETAPA 3</span><span class="stitle"><span class="pt">Listening com Suporte em Áudio e Vídeo</span><span class="en">Guided Listening</span></span></h2>
 <p>Ouça o áudio deste tema (arquivo disponível para download na plataforma: <i>audio/tema-50-diversity-and-inclusion.mp3</i>) com o roteiro abaixo. Primeiro sem ler, depois acompanhando o texto.</p>
 <div class="notebox">
   <div class="title">Roteiro do áudio (Audio Script)</div>
-  <p>"How does your team think about diversity and inclusion?"</p><p>"We try to separate the two, honestly. Diversity is about who's in the room — inclusion is about whether they feel safe speaking up. We focus a lot on the second part, fostering belonging, not just hiring numbers."</p>
+  <p>"How does your team think about diversity and inclusion?"</p><p>"We try to separate the two, honestly. Diversity is about who's in the room, inclusion is about whether they feel safe speaking up. We focus a lot on the second part, fostering belonging, not just hiring numbers."</p>
 </div>
 <p>Note que a resposta distingue claramente diversidade de inclusão, em vez de tratá-las como sinônimos.</p>
 </div>
 
 <div class="s4">
-<h2 class="step"><span class="tag">ETAPA 4</span>Writing como Preparação para a Fala</h2>
-<p>Antes de falar, escreva. Use as perguntas abaixo como guia e escreva de 4 a 6 frases — não precisa ser perfeito, precisa existir no papel primeiro.</p>
+<h2 class="step "><span class="tag">ETAPA 4</span><span class="stitle"><span class="pt">Writing como Preparação para a Fala</span><span class="en">Writing Before Speaking</span></span></h2>
+<p>Antes de falar, escreva. Use as perguntas abaixo como guia e escreva de 4 a 6 frases: não precisa ser perfeito, precisa existir no papel primeiro.</p>
 <ol><li>What's the difference between diversity and inclusion, in your own words?</li><li>What does real allyship look like in a workplace, beyond stated values?</li><li>Describe a systemic barrier you've observed (not an individual one).</li><li>How would you describe your workplace's approach to fostering belonging?</li></ol>
 <p>Espaço para escrever:</p>
-<div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div>
+<div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div><div class="lines"></div>
 </div>
 
 <div class="s5">
-<h2 class="step"><span class="tag">ETAPA 5</span>Gramática de Apoio Aplicada à Conversação</h2>
+<h2 class="step "><span class="tag">ETAPA 5</span><span class="stitle"><span class="pt">Gramática de Apoio Aplicada à Conversação</span><span class="en">Grammar for Conversation</span></span></h2>
 <p>Falar sobre diversidade e inclusão frequentemente exige a voz passiva para descrever questões sistêmicas e o gerúndio como sujeito para generalizações.</p>
 <table>
 <tr><th>Estrutura</th><th>Exemplo (EN)</th><th>Tradução (PT)</th></tr>
@@ -139,33 +147,33 @@
     <tr><td><b>regardless of</b><br>(concessão)</td><td class="example">Everyone should have a voice, regardless of title.</td><td>Usado para afirmar um princípio que se aplica independentemente de uma condição.</td></tr>
     <tr><td><b>Gerúndio como sujeito</b></td><td class="example">Creating an inclusive environment takes ongoing effort.</td><td>Usado para fazer afirmações gerais sobre um processo ou prática contínua.</td></tr>
 </table>
-<p>Dica prática: prefira "equity", não "equality", quando o tema for justiça baseada em necessidade — são conceitos diferentes e a confusão entre eles é comum entre falantes não-nativos.</p>
+<p>Dica prática: prefira "equity", não "equality", quando o tema for justiça baseada em necessidade, são conceitos diferentes e a confusão entre eles é comum entre falantes não-nativos.</p>
 </div>
 
 <div class="s6">
-<h2 class="step"><span class="tag">ETAPA 6</span>Speaking — Perguntas Abertas</h2>
-<p>Responda em voz alta, gravando se possível. Não vale responder em uma frase só — use o que você escreveu na Etapa 4 como base, mas fale livremente.</p>
+<h2 class="step "><span class="tag">ETAPA 6</span><span class="stitle"><span class="pt">Speaking: Perguntas Abertas</span><span class="en">Open-Ended Speaking</span></span></h2>
+<p>Responda em voz alta, gravando se possível. Não vale responder em uma frase só: use o que você escreveu na Etapa 4 como base, mas fale livremente.</p>
 <ol><li>What's the difference between diversity and inclusion, in your understanding?</li><li>How would you describe real allyship in a workplace, beyond just stated values?</li><li>What's a systemic barrier you've observed in a professional environment?</li><li>How does representation at the leadership level affect a company's culture?</li><li>What role does unconscious bias play in everyday workplace decisions, in your view?</li><li>How comfortable are you discussing DEI topics in English versus your native language?</li><li>What's an example of inclusive language that's become more common recently?</li><li>How do you personally try to amplify voices that might otherwise go unheard?</li><li>What's the risk of treating diversity numbers as the only measure of progress?</li><li>How has your understanding of DEI topics evolved over the years?</li></ol>
 <p><b>Expressões úteis para esta conversa:</b></p>
-<ul class="expr-list"><li>"Diversity is who's in the room; inclusion is who feels safe speaking." — distinção-chave.</li><li>"That's more of a systemic issue than an individual one." — para enquadrar um problema.</li><li>"Real allyship means acting, not just agreeing." — para reforçar ação sobre discurso.</li><li>"We're working on fostering belonging, not just numbers." — para ir além de métricas.</li></ul>
+<ul class="expr-list"><li>"Diversity is who's in the room; inclusion is who feels safe speaking.", distinção-chave.</li><li>"That's more of a systemic issue than an individual one.", para enquadrar um problema.</li><li>"Real allyship means acting, not just agreeing.", para reforçar ação sobre discurso.</li><li>"We're working on fostering belonging, not just numbers.", para ir além de métricas.</li></ul>
 </div>
 
 <div class="sx">
-<h2 class="step"><span class="tag">EXERCÍCIO</span>Complete com a Palavra Certa</h2>
+<h2 class="step "><span class="tag">EXERCÍCIO</span><span class="stitle"><span class="pt">Complete com a Palavra Certa</span><span class="en">Vocabulary Check</span></span></h2>
 <p>Complete cada frase com uma palavra ou expressão da Etapa 1. Gabarito ao final desta seção.</p>
 <ol><li>______ alone doesn't guarantee inclusion.</li><li>We're working to support ______ groups in tech.</li><li>Unconscious ______ affects hiring more than people realize.</li><li>Real ______ means acting, not just agreeing in private.</li><li>Some of these barriers are ______, not individual.</li></ol>
 <p class="gabarito">Gabarito: 1) Diversity   2) underrepresented   3) bias   4) allyship   5) systemic</p>
 </div>
 
 <div class="s7">
-<h2 class="step"><span class="tag">ETAPA 7</span>Autoavaliação de Performance</h2>
+<h2 class="step "><span class="tag">ETAPA 7</span><span class="stitle"><span class="pt">Autoavaliação de Performance</span><span class="en">Self-Assessment</span></span></h2>
 <p>Antes de marcar este tema como concluído, avalie honestamente como foi sua prática.</p>
 <table>
-<tr><th>Critério</th><th>Como foi?</th><th>Nota (1–5)</th></tr>
+<tr><th>Critério</th><th>Como foi?</th><th>Nota (1-5)</th></tr>
 <tr><td>Consegui usar o vocabulário novo sem parar para pensar</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Entendi o áudio/vídeo sem depender da transcrição</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Escrevi minhas respostas antes de falar</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Apliquei a estrutura gramatical da etapa 5 corretamente</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Sustentei minhas respostas por mais de 2 frases</td><td>&nbsp;</td><td>&nbsp;</td></tr><tr><td>Me senti confiante ao falar sobre este tema</td><td>&nbsp;</td><td>&nbsp;</td></tr>
 </table>
 <p>O que travou mais nesta conversa? O que você quer treinar de novo antes de seguir para o próximo tema?</p>
-<div class="lines"></div><div class="lines"></div><div class="lines"></div>
+<div class="lines"></div><div class="lines"></div>
 </div>
 
 <p class="footer-note">Marque este tema como concluído no seu Painel de Evolução e siga para o Tema 51.</p>
