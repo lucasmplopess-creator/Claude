@@ -193,7 +193,7 @@ function buildChapterDoc(theme, guide, criteria) {
           bodyText("O que travou mais nesta conversa? O que você quer treinar de novo antes de seguir para o próximo tema?"),
           ...writingLines(3),
 
-          new Paragraph({ spacing: { before: 300 }, alignment: AlignmentType.CENTER, children: [new TextRun({ text: `Marque este tema como concluído no seu Painel de Evolução e siga para o Tema ${theme.num + 1}.`, bold: true, color: p.cover, size: 21, font: FONT })] }),
+          new Paragraph({ spacing: { before: 300 }, alignment: AlignmentType.CENTER, children: [new TextRun({ text: theme.num >= 104 ? "Parabéns — você concluiu os 104 temas do English Speaking Practice. Volte a qualquer tema sempre que quiser revisar." : `Marque este tema como concluído no seu Painel de Evolução e siga para o Tema ${theme.num + 1}.`, bold: true, color: p.cover, size: 21, font: FONT })] }),
         ],
       },
     ],

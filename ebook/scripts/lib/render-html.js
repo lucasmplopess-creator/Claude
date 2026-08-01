@@ -181,7 +181,7 @@ ${criteria.map(c => `<tr><td>${esc(c)}</td><td>&nbsp;</td><td>&nbsp;</td></tr>`)
 ${lines(3)}
 </div>
 
-<p class="footer-note">Marque este tema como concluído no seu Painel de Evolução e siga para o Tema ${theme.num + 1}.</p>
+<p class="footer-note">${theme.num >= 104 ? "Parabéns — você concluiu os 104 temas do English Speaking Practice. Volte a qualquer tema sempre que quiser revisar." : `Marque este tema como concluído no seu Painel de Evolução e siga para o Tema ${theme.num + 1}.`}</p>
 
 </body>
 </html>
