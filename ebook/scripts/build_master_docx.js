@@ -3,12 +3,13 @@ const path = require("path");
 const {
   Document, Packer, Paragraph, TextRun, HeadingLevel, ImageRun,
   Header, Footer, PageNumber, AlignmentType, ShadingType, Table, TableRow, TableCell,
-  WidthType, TableOfContents, VerticalAlign,
+  WidthType, TableOfContents, VerticalAlign, BorderStyle,
 } = require("docx");
 const { buildChapterContent, FONT, getIcon } = require("./lib/render-docx");
 const { READING_GUIDE, SELF_ASSESS_CRITERIA } = require("./lib/constants");
 const palette = require("./lib/palette");
 const { BLOCK_EN } = require("./lib/translations");
+const { CATEGORIES, ANNEX_NOTE_PT, ANNEX_NOTE_EN } = require("./lib/annex-data");
 
 const BLOCK_TAGLINES = {
   1: "A base para qualquer conversa em inglês.",
@@ -84,6 +85,37 @@ function dividerBlock(block) {
   });
 }
 
+function annexSection() {
+  const children = [
+    hiddenHeading(HeadingLevel.HEADING_1, "Anexo: Aplicativos e Sites para Praticar Inglês (Appendix: Apps and Websites to Practice English)"),
+    new Paragraph({ pageBreakBefore: true, spacing: { after: 2 }, children: [new TextRun({ text: "Anexo: Aplicativos e Sites para Praticar Inglês", bold: true, color: palette.cover, size: 34, font: FONT })] }),
+    new Paragraph({ spacing: { after: 140 }, children: [new TextRun({ text: "Appendix: Apps and Websites to Practice English", italics: true, color: palette.step6, size: 20, font: FONT })] }),
+    fmPara("Uma seleção de ferramentas gratuitas ou com versão gratuita para complementar sua prática de inglês além deste livro, organizadas por categoria."),
+  ];
+  for (const cat of CATEGORIES) {
+    children.push(fmHeading(cat.pt, cat.en));
+    for (const it of cat.items) {
+      children.push(new Paragraph({
+        spacing: { after: 90, line: 264 },
+        children: [
+          new TextRun({ text: it.name, bold: true, color: palette.cover, size: 20, font: FONT }),
+          new TextRun({ text: `  ${it.url}`, color: palette.step3, size: 17, font: FONT }),
+          new TextRun({ text: it.desc, color: palette.grey, size: 20, font: FONT, break: 1 }),
+        ],
+      }));
+    }
+  }
+  children.push(new Paragraph({
+    spacing: { before: 160 },
+    border: { left: { color: palette.step5, space: 6, style: BorderStyle.SINGLE, size: 8 } },
+    children: [
+      new TextRun({ text: ANNEX_NOTE_PT, italics: true, color: palette.grey, size: 18, font: FONT }),
+      new TextRun({ text: ANNEX_NOTE_EN, italics: true, color: palette.grey, size: 18, font: FONT, break: 1 }),
+    ],
+  }));
+  return children;
+}
+
 async function main() {
   const coverBuffer = fs.readFileSync(path.join(__dirname, "..", "assets", "cover.png"));
 
@@ -119,6 +151,7 @@ async function main() {
       }));
     }
   }
+  bodyChildren.push(...annexSection());
 
   const doc = new Document({
     numbering: {

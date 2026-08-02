@@ -4,6 +4,7 @@ const { renderChapterBody, chapterCss, esc, iconPath } = require("./lib/render-h
 const { READING_GUIDE, SELF_ASSESS_CRITERIA } = require("./lib/constants");
 const palette = require("./lib/palette");
 const { BLOCK_EN } = require("./lib/translations");
+const { CATEGORIES, ANNEX_NOTE_PT, ANNEX_NOTE_EN } = require("./lib/annex-data");
 
 const BLOCK_TAGLINES = {
   1: "A base para qualquer conversa em inglês.",
@@ -81,6 +82,18 @@ const masterCss = `
   .divider-page .drow .num { display: inline-block; width: 32px; color: #8fc4ec; font-weight: bold; }
   .divider-page .drow .fill { flex: 1; border-bottom: 1px dotted rgba(255,255,255,0.35); margin: 0 8px; transform: translateY(-4px); }
   .divider-page .drow::after { content: target-counter(attr(href), page); font-weight: bold; color: #fff; }
+
+  .annex-page { page: nofooter; page-break-before: always; }
+  .annex-page h1 { font-size: 22pt; color: #${palette.cover}; margin-bottom: 2px; }
+  .annex-page .h1en { font-style: italic; color: #${palette.step6}; font-size: 11pt; margin-bottom: 6px; }
+  .annex-page .annex-intro { font-size: 10pt; color: #${palette.grey}; margin-bottom: 16px; }
+  .annex-cat { background: #${palette.cover}; color: #fff; padding: 6px 12px; font-size: 12pt; border-radius: 3px; margin: 14px 0 4px 0; }
+  .annex-cat .en { display: block; font-weight: normal; font-style: italic; font-size: 8.5pt; color: #8fc4ec; margin-top: 1px; }
+  .annex-item { margin: 0 0 8px 0; padding-left: 2px; font-size: 10pt; }
+  .annex-item .name { font-weight: bold; color: #${palette.cover}; }
+  .annex-item .url { color: #${palette.step3}; font-size: 9pt; margin-left: 6px; }
+  .annex-item .desc { display: block; color: #${palette.grey}; margin-top: 1px; }
+  .annex-note { margin-top: 14px; font-size: 9pt; font-style: italic; color: #${palette.grey}; border-left: 3px solid #${palette.step5}; padding-left: 10px; }
 `;
 
 function tocPage() {
@@ -90,7 +103,31 @@ function tocPage() {
       <span class="fill"></span>
     </a>
     <div class="toc-en">Block ${b.num}: ${esc(b.nameEn)}</div>`).join("");
-  return `<div class="toc-page"><h1>Sumário</h1><div class="h1en">Table of Contents</div>${rows}</div>`;
+  const annexRow = `
+    <a class="toc-row" href="#anexo">
+      <span class="t">Anexo: Aplicativos e Sites para Praticar Inglês</span>
+      <span class="fill"></span>
+    </a>
+    <div class="toc-en">Appendix: Apps and Websites to Practice English</div>`;
+  return `<div class="toc-page"><h1>Sumário</h1><div class="h1en">Table of Contents</div>${rows}${annexRow}</div>`;
+}
+
+function annexPage() {
+  const cats = CATEGORIES.map(cat => {
+    const items = cat.items.map(it => `
+      <div class="annex-item">
+        <span class="name">${esc(it.name)}</span><span class="url">${esc(it.url)}</span>
+        <span class="desc">${esc(it.desc)}</span>
+      </div>`).join("");
+    return `<div class="annex-cat">${esc(cat.pt)}<span class="en">${esc(cat.en)}</span></div>${items}`;
+  }).join("");
+  return `<div class="annex-page" id="anexo">
+    <h1>Anexo: Aplicativos e Sites para Praticar Inglês</h1>
+    <div class="h1en">Appendix: Apps and Websites to Practice English</div>
+    <p class="annex-intro">Uma seleção de ferramentas gratuitas ou com versão gratuita para complementar sua prática de inglês além deste livro, organizadas por categoria.</p>
+    ${cats}
+    <p class="annex-note">${esc(ANNEX_NOTE_PT)}<br>${esc(ANNEX_NOTE_EN)}</p>
+  </div>`;
 }
 
 function dividerPage(block) {
@@ -167,6 +204,7 @@ function main() {
       parts.push(renderChapterBody(theme, READING_GUIDE, SELF_ASSESS_CRITERIA));
     }
   }
+  parts.push(annexPage());
 
   const html = `<!DOCTYPE html>
 <html lang="pt-BR">

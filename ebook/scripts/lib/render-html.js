@@ -1,6 +1,7 @@
 const path = require("path");
 const palette = require("./palette");
 const { STEP_EN, BLOCK_EN } = require("./translations");
+const { audioVariants } = require("./audio-text");
 
 function esc(s) {
   return String(s);
@@ -104,6 +105,7 @@ function chapterCss(pageRule) {
 
 function renderChapterBody(theme, guide, criteria, opts = {}) {
   const blockEn = BLOCK_EN[theme.block] || "";
+  const audio = audioVariants(theme);
   return `
 <div class="chapter" id="tema-${theme.num}"${opts.pageBreak === false ? "" : ' style="page-break-before: always;"'}>
 <div class="cover">
@@ -125,6 +127,7 @@ ${stepHeader("", "ETAPA 1", "Vocabulário Contextualizado", STEP_EN[1])}
 <tr><th>Word / Expression</th><th>Tradução</th><th>Example Sentence</th></tr>
 ${rows(theme.vocab)}
 </table>
+<p>Áudio com a pronúncia de cada palavra e seu exemplo (arquivo para download na plataforma: <i>${esc(audio.vocabulario.file)}</i>). Ouça e repita em voz alta.</p>
 </div>
 
 <div class="s2">
@@ -135,6 +138,7 @@ ${stepHeader("", "ETAPA 2", "Leitura com Orientação de Estudo", STEP_EN[2])}
 </div>
 <p><b>"${esc(theme.readingTitle)}"</b></p>
 ${theme.readingParagraphs.map(p => `<p>${esc(p)}</p>`).join("")}
+<p>Áudio com a narração deste texto (arquivo para download na plataforma: <i>${esc(audio.leitura.file)}</i>). Ouça acompanhando a leitura, depois sem olhar para o texto.</p>
 </div>
 
 <div class="s3">
@@ -171,6 +175,7 @@ ${stepHeader("", "ETAPA 6", "Speaking: Perguntas Abertas", STEP_EN[6])}
 ${ol(theme.speakingQuestions)}
 <p><b>Expressões úteis para esta conversa:</b></p>
 ${exprList(theme.expressions)}
+<p>Áudio com a pronúncia de cada expressão (arquivo para download na plataforma: <i>${esc(audio.expressoes.file)}</i>).</p>
 </div>
 
 <div class="sx">

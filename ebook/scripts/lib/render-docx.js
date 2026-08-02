@@ -7,6 +7,7 @@ const {
 } = require("docx");
 const palette = require("./palette");
 const { STEP_EN, BLOCK_EN } = require("./translations");
+const { audioVariants } = require("./audio-text");
 
 const FONT = "Calibri";
 const GREY = palette.grey;
@@ -130,6 +131,7 @@ function writingLines(n) {
 function buildChapterContent(theme, guide, criteria, opts = {}) {
   const p = palette;
   const blockEn = BLOCK_EN[theme.block] || "";
+  const audio = audioVariants(theme);
   return [
           ...(opts.withHeading ? [new Paragraph({
             heading: opts.headingLevel || HeadingLevel.HEADING_2,
@@ -169,11 +171,13 @@ function buildChapterContent(theme, guide, criteria, opts = {}) {
           stepLabel(1, "Vocabulário Contextualizado", STEP_EN[1], p.step1),
           bodyText("Estas palavras e expressões vão te ajudar a se expressar sobre este tema com mais precisão e naturalidade."),
           vocabTable(theme.vocab, p.step1),
+          bodyText(`Áudio com a pronúncia de cada palavra e seu exemplo (arquivo para download na plataforma: ${audio.vocabulario.file}). Ouça e repita em voz alta.`, { italics: true }),
 
           stepLabel(2, "Leitura com Orientação de Estudo", STEP_EN[2], p.step2),
           noteBox("Como ler este texto", guide, p.step2, "E9F5F1"),
           bodyText(`"${theme.readingTitle}"`, { bold: false, italics: false }),
           ...theme.readingParagraphs.map(t => bodyText(t)),
+          bodyText(`Áudio com a narração deste texto (arquivo para download na plataforma: ${audio.leitura.file}). Ouça acompanhando a leitura, depois sem olhar para o texto.`, { italics: true }),
 
           stepLabel(3, "Listening com Suporte em Áudio e Vídeo", STEP_EN[3], p.step3),
           bodyText(`Ouça o áudio deste tema (arquivo disponível para download na plataforma: ${theme.audioFile}) com o roteiro abaixo. Primeiro sem ler, depois acompanhando o texto.`),
@@ -196,6 +200,7 @@ function buildChapterContent(theme, guide, criteria, opts = {}) {
           ...theme.speakingQuestions.map(q => numbered(q, "question-list")),
           bodyText("Expressões úteis para esta conversa:"),
           ...theme.expressions.map(e => exprItem(e)),
+          bodyText(`Áudio com a pronúncia de cada expressão (arquivo para download na plataforma: ${audio.expressoes.file}).`, { italics: true }),
 
           stepLabel("EX", "Complete com a Palavra Certa", STEP_EN.EX, p.exercise),
           bodyText("Complete cada frase com uma palavra ou expressão da Etapa 1. Gabarito ao final desta seção."),
