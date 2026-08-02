@@ -89,7 +89,7 @@ async function main() {
 
   const bodyChildren = [
     new Paragraph({ children: [new TextRun({ text: "English Speaking Practice", bold: true, color: palette.cover, size: 58, font: FONT })] }),
-    new Paragraph({ spacing: { after: 200 }, children: [new TextRun({ text: "Treino de Conversação · Nação Fluente", italics: true, color: palette.step6, size: 27, font: FONT })] }),
+    new Paragraph({ spacing: { after: 200 }, children: [new TextRun({ text: "Treino de Conversação", italics: true, color: palette.step6, size: 27, font: FONT })] }),
 
     fmHeading("Boas-vindas", "Welcome"),
     fmPara("Você já consegue ler um texto em inglês. Já assiste vídeo com legenda e entende boa parte do que se fala. Mas na hora de abrir a boca (numa reunião, numa entrevista, numa conversa de corredor com um estrangeiro) trava."),
@@ -140,7 +140,7 @@ async function main() {
       },
       {
         properties: { page: { size: { width: 11906, height: 16838 }, margin: { top: 800, bottom: 800, left: 1000, right: 1000 } } },
-        headers: { default: new Header({ children: [new Paragraph({ alignment: AlignmentType.RIGHT, children: [new TextRun({ text: "English Speaking Practice · Nação Fluente", color: palette.lightGrey, size: 16, font: FONT })] })] }) },
+        headers: { default: new Header({ children: [new Paragraph({ alignment: AlignmentType.RIGHT, children: [new TextRun({ text: "English Speaking Practice", color: palette.lightGrey, size: 16, font: FONT })] })] }) },
         footers: { default: new Footer({ children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [
           new TextRun({ text: "Página ", color: palette.lightGrey, size: 16, font: FONT }),
           new TextRun({ children: [PageNumber.CURRENT], color: palette.lightGrey, size: 16, font: FONT }),

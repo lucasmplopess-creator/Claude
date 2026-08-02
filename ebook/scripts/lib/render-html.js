@@ -202,7 +202,7 @@ function renderChapterHtml(theme, guide, criteria) {
   @page {
     size: A4;
     margin: 1.9cm 2cm 2.1cm 2cm;
-    @top-right { content: "English Speaking Practice · Nação Fluente"; font-size: 8pt; color: #${palette.lightGrey}; font-family: 'Helvetica', Arial, sans-serif; }
+    @top-right { content: "English Speaking Practice"; font-size: 8pt; color: #${palette.lightGrey}; font-family: 'Helvetica', Arial, sans-serif; }
     @bottom-center { content: "Bloco ${theme.block} · ${esc(theme.blockName)} (${blockEn})   |   Página " counter(page); font-size: 7.5pt; color: #${palette.lightGrey}; font-family: 'Helvetica', Arial, sans-serif; }
   }`;
   return `<!DOCTYPE html>

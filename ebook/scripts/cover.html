@@ -14,191 +14,296 @@
 
   body {
     position: relative;
-    background: linear-gradient(165deg, #0D2035 0%, #14304B 42%, #1B3B57 72%, #1F4463 100%);
+    background: linear-gradient(180deg, #081733 0%, #0E2864 30%, #16388B 55%, #1C4CB0 78%, #2A5FC4 100%);
     font-family: 'WorkSans', sans-serif;
   }
 
-  /* subtle diagonal stripe texture, top-right corner */
-  .stripes {
-    position: absolute;
-    top: 0; right: 0;
-    width: 720px; height: 720px;
-    opacity: 0.10;
-    background-image: repeating-linear-gradient(45deg, #ffffff 0px, #ffffff 2px, transparent 2px, transparent 34px);
-    -webkit-mask-image: radial-gradient(circle at top right, black 0%, black 35%, transparent 72%);
-    mask-image: radial-gradient(circle at top right, black 0%, black 35%, transparent 72%);
-  }
+  .vignette { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 34%, rgba(72,124,214,0.35) 0%, rgba(8,23,51,0) 55%); }
 
-  /* soft ambient glow behind headline */
-  .glow {
-    position: absolute;
-    top: 560px; left: 50%;
-    transform: translateX(-50%);
-    width: 1900px; height: 1900px;
-    background: radial-gradient(circle, rgba(111,179,224,0.32) 0%, rgba(111,179,224,0.10) 32%, rgba(20,48,75,0) 62%);
+  /* Union Jack ribbon, top-left */
+  .flag-wrap {
+    position: absolute; top: -140px; left: -260px; width: 900px; height: 620px;
+    transform: rotate(-24deg);
+    filter: drop-shadow(0 30px 40px rgba(0,0,0,0.45));
   }
+  .flag-clip { width: 900px; height: 460px; overflow: hidden; border-radius: 0 0 26px 0; }
+  .flag-clip svg { display: block; width: 100%; height: 100%; }
+  .flag-fold { position: absolute; inset: 0; background: linear-gradient(115deg, rgba(0,0,0,0.30) 0%, rgba(0,0,0,0) 18%, rgba(255,255,255,0.10) 34%, rgba(0,0,0,0) 55%, rgba(0,0,0,0.28) 100%); }
 
-  /* brand row */
-  .brand {
-    position: absolute; top: 108px; left: 130px; right: 130px;
-    display: flex; align-items: center; justify-content: space-between;
+  /* top-right badge */
+  .badge {
+    position: absolute; top: 96px; right: 110px;
+    background: linear-gradient(180deg, #E23B3B 0%, #C8102E 100%);
+    color: #fff; padding: 20px 34px 20px 26px; border-radius: 999px;
+    display: flex; align-items: center; gap: 12px;
+    box-shadow: 0 10px 24px rgba(200,16,46,0.45);
+    font-family: 'WorkSans'; font-weight: 700; font-size: 26px; letter-spacing: 1px; text-transform: uppercase;
   }
-  .brand .mark { display: flex; align-items: center; gap: 18px; }
-  .brand .dot { width: 30px; height: 30px; border-radius: 50%; background: #6FB3E0; box-shadow: 0 0 0 7px rgba(111,179,224,0.18); }
-  .brand .name { font-family: 'WorkSans'; font-weight: 700; letter-spacing: 3px; font-size: 30px; color: #EAF3FA; text-transform: uppercase; }
-  .brand .badge {
-    font-family: 'WorkSans'; font-weight: 700; font-size: 20px; letter-spacing: 2px; color: #0D2035;
-    background: #6FB3E0; padding: 12px 26px; border-radius: 999px; text-transform: uppercase;
-  }
+  .badge svg { width: 34px; height: 34px; flex: none; }
 
-  /* eyebrow */
   .eyebrow {
-    position: absolute; top: 322px; left: 130px; right: 130px; text-align: center;
-    font-family: 'WorkSans'; font-weight: 700; letter-spacing: 6px; font-size: 26px;
-    color: #8FC4EC; text-transform: uppercase;
+    position: absolute; top: 258px; left: 130px; right: 130px; text-align: center;
+    font-family: 'WorkSans'; font-weight: 700; letter-spacing: 6px; font-size: 25px;
+    color: #CBDCFA; text-transform: uppercase;
   }
 
-  /* title block */
-  .titleblock { position: absolute; top: 420px; left: 100px; right: 100px; text-align: center; }
+  .titleblock { position: absolute; top: 336px; left: 90px; right: 90px; text-align: center; }
   .titleblock h1 {
     font-family: 'BigShoulders'; font-weight: 700; color: #FFFFFF;
-    font-size: 220px; line-height: 0.92; letter-spacing: 1px;
+    font-size: 226px; line-height: 0.90; letter-spacing: 1px;
     text-transform: uppercase;
+    text-shadow: 0 10px 26px rgba(0,0,0,0.35);
   }
-  .titleblock h1 .accent { color: #6FB3E0; }
-  .titleblock .pt {
-    margin-top: 34px; font-family: 'WorkSans'; font-style: italic; font-weight: 400;
-    font-size: 52px; color: #C9D6E3;
-  }
+  .titleblock h1 .accent { color: #E5273A; }
 
-  /* hook line */
+  .subtitle-row { display: flex; align-items: center; justify-content: center; gap: 26px; margin-top: 26px; }
+  .subtitle-row .bar { width: 90px; height: 4px; background: #E5273A; border-radius: 2px; }
+  .subtitle-row .pt { font-family: 'WorkSans'; font-style: italic; font-weight: 400; font-size: 56px; color: #F2F6FF; }
+
   .hook {
-    position: absolute; top: 1220px; left: 260px; right: 260px; text-align: center;
-    font-family: 'WorkSans'; font-weight: 400; font-size: 40px; line-height: 1.45; color: #EAF3FA;
+    position: absolute; top: 1188px; left: 260px; right: 260px; text-align: center;
+    font-family: 'WorkSans'; font-weight: 400; font-size: 40px; line-height: 1.45; color: #F2F6FF;
   }
   .hook b { font-weight: 700; color: #FFFFFF; }
 
-  /* benefits row */
   .benefits {
-    position: absolute; top: 1420px; left: 130px; right: 130px;
-    display: flex; justify-content: center; gap: 70px;
+    position: absolute; top: 1330px; left: 130px; right: 130px;
+    display: flex; justify-content: center; align-items: center; gap: 0;
   }
-  .benefits .b { display: flex; align-items: center; gap: 16px; }
-  .benefits .b .check {
-    width: 44px; height: 44px; border-radius: 50%; background: rgba(111,179,224,0.16);
-    border: 1.5px solid #6FB3E0; flex: none;
+  .benefits .b { display: flex; align-items: center; gap: 18px; padding: 0 44px; }
+  .benefits .sep { width: 2px; height: 74px; background: rgba(255,255,255,0.22); }
+  .benefits .badgeicon {
+    width: 70px; height: 70px; border-radius: 50%; flex: none;
+    background: linear-gradient(180deg, #E23B3B 0%, #C8102E 100%);
     display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 8px 18px rgba(200,16,46,0.4);
   }
-  .benefits .b .check svg { width: 22px; height: 22px; }
-  .benefits .b span.txt { font-family: 'WorkSans'; font-weight: 700; font-size: 26px; color: #EAF3FA; letter-spacing: 0.2px; }
-
-  .divider { position: absolute; top: 1580px; left: 260px; right: 260px; height: 1px; background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(143,196,236,0.45) 50%, rgba(255,255,255,0) 100%); }
+  .benefits .badgeicon svg { width: 34px; height: 34px; }
+  .benefits .txt { font-family: 'WorkSans'; font-weight: 700; font-size: 26px; color: #FFFFFF; line-height: 1.2; max-width: 220px; }
 
   /* skyline */
-  .skyline { position: absolute; bottom: 620px; left: 0; right: 0; height: 460px; }
-  .bldg { position: absolute; bottom: 0; background: linear-gradient(180deg, #16324C 0%, #0E2033 100%); }
-  .bldg .win { position: absolute; width: 10px; height: 14px; background: rgba(143, 196, 236, 0.55); }
+  .skyline { position: absolute; bottom: 470px; left: 0; right: 0; height: 620px; overflow: hidden; }
+  .skyline .glow { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(28,76,176,0) 0%, rgba(232,110,60,0.20) 55%, rgba(232,86,45,0.38) 100%); }
+  .skyline .sun { position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); width: 620px; height: 620px; border-radius: 50%; background: radial-gradient(circle, rgba(255,158,90,0.55) 0%, rgba(255,120,60,0.28) 40%, rgba(255,120,60,0) 70%); }
+  .bldg { position: absolute; bottom: 0; background: linear-gradient(180deg, #142E5C 0%, #0A1B3D 100%); }
+  .bldg .win { position: absolute; width: 9px; height: 13px; background: rgba(255,196,140,0.55); }
+  .river { position: absolute; bottom: 0; left: 0; right: 0; height: 90px; background: linear-gradient(180deg, rgba(28,76,176,0.55) 0%, rgba(10,27,61,0.85) 100%); }
 
-  /* value strip */
+  /* stats strip */
   .strip {
-    position: absolute; bottom: 300px; left: 130px; right: 130px;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(143,196,236,0.35);
-    border-radius: 22px;
-    padding: 46px 60px;
+    position: absolute; bottom: 260px; left: 130px; right: 130px;
+    background: linear-gradient(180deg, #0E2B63 0%, #0A2354 100%);
+    border: 1px solid rgba(255,255,255,0.14);
+    border-radius: 26px;
+    padding: 42px 30px;
     display: flex; justify-content: space-between; align-items: center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
   }
-  .strip .item { display: flex; flex-direction: column; align-items: center; text-align: center; flex: 1; }
-  .strip .item .num { font-family: 'Outfit'; font-weight: 700; font-size: 68px; color: #FFFFFF; }
-  .strip .item .lbl { font-family: 'WorkSans'; font-weight: 400; font-size: 24px; color: #C9D6E3; margin-top: 8px; letter-spacing: 0.5px; }
-  .strip .sep { width: 1px; height: 90px; background: rgba(255,255,255,0.18); }
+  .strip .item { display: flex; flex-direction: column; align-items: center; text-align: center; flex: 1; gap: 8px; }
+  .strip .item svg { width: 46px; height: 46px; }
+  .strip .item .num { font-family: 'Outfit'; font-weight: 700; font-size: 62px; color: #FFFFFF; }
+  .strip .item .lbl { font-family: 'WorkSans'; font-weight: 400; font-size: 21px; color: #B9CBEF; letter-spacing: 0.4px; line-height: 1.25; }
+  .strip .sep { width: 1px; height: 100px; background: rgba(255,255,255,0.16); }
 
-  /* footer tagline */
   .footer {
-    position: absolute; bottom: 120px; left: 130px; right: 130px; text-align: center;
-    font-family: 'WorkSans'; font-weight: 700; font-size: 28px; letter-spacing: 1px; color: #8FC4EC;
+    position: absolute; bottom: 110px; left: 130px; right: 130px; text-align: center;
+    font-family: 'WorkSans'; font-weight: 700; font-size: 27px; letter-spacing: 1.5px; color: #E5273A;
+    text-transform: uppercase;
   }
 </style>
 </head>
 <body>
 
-  <div class="stripes"></div>
-  <div class="glow"></div>
+  <div class="vignette"></div>
 
-  <div class="brand">
-    <div class="mark">
-      <div class="dot"></div>
-      <div class="name">Nação Fluente</div>
+  <div class="flag-wrap">
+    <div class="flag-clip">
+      <svg viewBox="0 0 120 60" preserveAspectRatio="xMidYMid slice">
+        <rect width="120" height="60" fill="#00205B"/>
+        <g stroke="#FFFFFF" stroke-width="13">
+          <line x1="0" y1="0" x2="120" y2="60"/>
+          <line x1="120" y1="0" x2="0" y2="60"/>
+        </g>
+        <g stroke="#C8102E" stroke-width="5">
+          <line x1="0" y1="0" x2="120" y2="60"/>
+          <line x1="120" y1="0" x2="0" y2="60"/>
+        </g>
+        <rect x="0" y="22" width="120" height="16" fill="#FFFFFF"/>
+        <rect x="52" y="0" width="16" height="60" fill="#FFFFFF"/>
+        <rect x="0" y="26" width="120" height="8" fill="#C8102E"/>
+        <rect x="56" y="0" width="8" height="60" fill="#C8102E"/>
+      </svg>
+      <div class="flag-fold"></div>
     </div>
-    <div class="badge">E-book completo</div>
+  </div>
+
+  <div class="badge">
+    <svg viewBox="0 0 24 24" fill="none"><path d="M4 5.5C4 4.67 4.67 4 5.5 4H11v16H5.5A1.5 1.5 0 0 1 4 18.5v-13Z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/><path d="M20 5.5C20 4.67 19.33 4 18.5 4H13v16h5.5a1.5 1.5 0 0 0 1.5-1.5v-13Z" stroke="#fff" stroke-width="1.6" stroke-linejoin="round"/></svg>
+    E-book completo
   </div>
 
   <div class="eyebrow">Protocolo Semanal de Inglês para Profissionais</div>
 
   <div class="titleblock">
     <h1>English<br><span class="accent">Speaking</span><br>Practice</h1>
-    <div class="pt">Treino de Conversação</div>
+    <div class="subtitle-row"><div class="bar"></div><div class="pt">Treino de Conversação</div><div class="bar"></div></div>
   </div>
 
-  <div class="hook">Destrave conversas reais em inglês, mesmo que você ainda <b>trave na hora de falar.</b></div>
+  <div class="hook">Destrave conversas reais em inglês, <b>mesmo que você ainda trave na hora de falar.</b></div>
 
   <div class="benefits">
-    <div class="b"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#6FB3E0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="txt">Sem depender de professor</span></div>
-    <div class="b"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#6FB3E0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="txt">Pratique também com IA</span></div>
-    <div class="b"><div class="check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#6FB3E0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="txt">Cronograma pronto pra seguir</span></div>
+    <div class="b">
+      <div class="badgeicon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.4" stroke="#fff" stroke-width="1.8"/><path d="M5 20c0-3.6 3.1-6 7-6s7 2.4 7 6" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+      <div class="txt">Sem depender<br>de professor</div>
+    </div>
+    <div class="sep"></div>
+    <div class="b">
+      <div class="badgeicon"><svg viewBox="0 0 24 24" fill="none"><rect x="5" y="9" width="14" height="10" rx="2.4" stroke="#fff" stroke-width="1.8"/><path d="M12 9V5.5" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="4.3" r="1.2" fill="#fff"/><circle cx="9" cy="14" r="1.3" fill="#fff"/><circle cx="15" cy="14" r="1.3" fill="#fff"/><path d="M2.6 12.5h2.4M19 12.5h2.4" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+      <div class="txt">Pratique<br>também com IA</div>
+    </div>
+    <div class="sep"></div>
+    <div class="b">
+      <div class="badgeicon"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="15" rx="2" stroke="#fff" stroke-width="1.8"/><path d="M4 9.5h16" stroke="#fff" stroke-width="1.8"/><path d="M8 3v3.4M16 3v3.4" stroke="#fff" stroke-width="1.8" stroke-linecap="round"/><circle cx="8.2" cy="13" r="1" fill="#fff"/><circle cx="12" cy="13" r="1" fill="#fff"/><circle cx="8.2" cy="16.3" r="1" fill="#fff"/></svg></div>
+      <div class="txt">Cronograma<br>pronto pra seguir</div>
+    </div>
   </div>
 
-  <div class="divider"></div>
-
-  <div class="skyline" id="skyline"></div>
+  <div class="skyline" id="skyline">
+    <div class="sun"></div>
+    <div class="glow"></div>
+  </div>
 
   <div class="strip">
-    <div class="item"><div class="num">104</div><div class="lbl">TEMAS PROFISSIONAIS</div></div>
+    <div class="item">
+      <svg viewBox="0 0 100 100" fill="none"><path d="M20 25 h60 a8 8 0 0 1 8 8 v28 a8 8 0 0 1 -8 8 H45 l-15 14 v-14 H20 a8 8 0 0 1 -8 -8 V33 a8 8 0 0 1 8 -8 Z" stroke="#B9CBEF" stroke-width="5" stroke-linejoin="round"/><circle cx="34" cy="47" r="3.4" fill="#B9CBEF"/><circle cx="50" cy="47" r="3.4" fill="#B9CBEF"/><circle cx="66" cy="47" r="3.4" fill="#B9CBEF"/></svg>
+      <div class="num">104</div><div class="lbl">TEMAS<br>PROFISSIONAIS</div>
+    </div>
     <div class="sep"></div>
-    <div class="item"><div class="num">430+</div><div class="lbl">PÁGINAS DE PRÁTICA</div></div>
+    <div class="item">
+      <svg viewBox="0 0 100 100" fill="none"><path d="M50 26 C42 20 28 18 18 20 v52 c10 -2 24 0 32 6 C58 72 72 70 82 72 V20 C72 18 58 20 50 26 Z" stroke="#B9CBEF" stroke-width="5" stroke-linejoin="round"/><path d="M50 26 V78" stroke="#B9CBEF" stroke-width="5"/></svg>
+      <div class="num">430+</div><div class="lbl">PÁGINAS<br>DE PRÁTICA</div>
+    </div>
     <div class="sep"></div>
-    <div class="item"><div class="num">7</div><div class="lbl">ETAPAS GUIADAS</div></div>
+    <div class="item">
+      <svg viewBox="0 0 100 100" fill="none"><path d="M15 80 h16 v-16 h16 v-16 h16 v-16 h16" stroke="#B9CBEF" stroke-width="5.5" stroke-linejoin="round" stroke-linecap="round"/><path d="M79 20 v14 h-14" stroke="#B9CBEF" stroke-width="5.5" stroke-linejoin="round" stroke-linecap="round"/></svg>
+      <div class="num">7</div><div class="lbl">ETAPAS<br>GUIADAS</div>
+    </div>
     <div class="sep"></div>
-    <div class="item"><div class="num">416</div><div class="lbl">ÁUDIOS PARA TREINO</div></div>
+    <div class="item">
+      <svg viewBox="0 0 100 100" fill="none"><path d="M22 55 V46 a28 28 0 0 1 56 0 v9" stroke="#B9CBEF" stroke-width="5.5" stroke-linecap="round"/><rect x="14" y="52" width="16" height="24" rx="7" stroke="#B9CBEF" stroke-width="5.5"/><rect x="70" y="52" width="16" height="24" rx="7" stroke="#B9CBEF" stroke-width="5.5"/></svg>
+      <div class="num">416</div><div class="lbl">ÁUDIOS<br>PARA TREINO</div>
+    </div>
   </div>
 
-  <div class="footer">MÉTODO ESTRUTURADO · PRÁTICA AUTÔNOMA · RESULTADOS REAIS</div>
+  <div class="footer">Método Estruturado · Prática Autônoma · Resultados Reais</div>
 
 <script>
-  // Build a skyline silhouette procedurally
   const skyline = document.getElementById('skyline');
   const W = 2000;
-  let x = -20;
-  const heights = [180,260,140,320,200,380,150,420,240,300,170,350,220,400,180,290,160,340,210,260,190,310,150];
-  const widths  = [110,90,130,80,120,70,140,90,110,85,125,75,115,95,130,80,120,90,105,100,115,85,120];
-  let i = 0;
-  while (x < W + 20) {
-    const h = heights[i % heights.length];
-    const w = widths[i % widths.length];
+
+  function addBuilding(x, w, h, opts) {
     const b = document.createElement('div');
     b.className = 'bldg';
     b.style.left = x + 'px';
     b.style.width = w + 'px';
     b.style.height = h + 'px';
-    // windows grid
+    if (opts && opts.zIndex) b.style.zIndex = opts.zIndex;
     const cols = Math.max(2, Math.floor(w / 24));
     const rows = Math.max(3, Math.floor(h / 30));
     for (let c = 0; c < cols; c++) {
       for (let r = 0; r < rows; r++) {
-        if (Math.random() < 0.55) {
+        if (Math.random() < 0.5) {
           const win = document.createElement('div');
           win.className = 'win';
           win.style.left = (10 + c * 24) + 'px';
           win.style.bottom = (14 + r * 28) + 'px';
-          win.style.opacity = (0.35 + Math.random() * 0.5).toFixed(2);
+          win.style.opacity = (0.3 + Math.random() * 0.5).toFixed(2);
           b.appendChild(win);
         }
       }
     }
     skyline.appendChild(b);
-    x += w + 6;
+  }
+
+  // generic fill buildings
+  let x = -20;
+  const heights = [120,160,100,180,140,200,110,190,150,170,130,185,145,175,120,165,135,155];
+  const widths  = [100,85,120,80,105,75,125,85,100,80,115,75,105,90,120,80,110,90];
+  let i = 0;
+  while (x < W + 20) {
+    const h = heights[i % heights.length];
+    const w = widths[i % widths.length];
+    addBuilding(x, w, h);
+    x += w + 8;
     i++;
   }
+
+  // Big Ben (clock tower)
+  const ben = document.createElement('div');
+  ben.style.position = 'absolute';
+  ben.style.bottom = '0';
+  ben.style.left = '760px';
+  ben.style.width = '90px';
+  ben.style.height = '480px';
+  ben.style.zIndex = '5';
+  ben.innerHTML = `
+    <svg viewBox="0 0 90 480" width="90" height="480" style="position:absolute;bottom:0;">
+      <rect x="30" y="60" width="30" height="420" fill="#0A1B3D"/>
+      <rect x="22" y="40" width="46" height="26" fill="#0A1B3D"/>
+      <polygon points="45,0 20,42 70,42" fill="#0A1B3D"/>
+      <circle cx="45" cy="58" r="15" fill="#0E2B63" stroke="#FFC48C" stroke-width="3"/>
+      <line x1="45" y1="58" x2="45" y2="48" stroke="#FFC48C" stroke-width="2.5" stroke-linecap="round"/>
+      <line x1="45" y1="58" x2="52" y2="58" stroke="#FFC48C" stroke-width="2.5" stroke-linecap="round"/>
+      <rect x="24" y="90" width="42" height="380" fill="#0A1B3D"/>
+      <rect x="34" y="90" width="4" height="380" fill="#132D5C"/>
+      <rect x="52" y="90" width="4" height="380" fill="#132D5C"/>
+    </svg>`;
+  skyline.appendChild(ben);
+
+  // London Eye (ferris wheel)
+  const eye = document.createElement('div');
+  eye.style.position = 'absolute';
+  eye.style.bottom = '0';
+  eye.style.left = '1020px';
+  eye.style.width = '340px';
+  eye.style.height = '340px';
+  eye.style.zIndex = '4';
+  let spokes = '';
+  for (let a = 0; a < 360; a += 30) {
+    const rad = a * Math.PI / 180;
+    const x2 = 170 + 130 * Math.cos(rad);
+    const y2 = 170 + 130 * Math.sin(rad);
+    spokes += `<line x1="170" y1="170" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" stroke="#16388B" stroke-width="3"/>`;
+  }
+  eye.innerHTML = `
+    <svg viewBox="0 0 340 340" width="340" height="340" style="position:absolute;bottom:0;">
+      <line x1="130" y1="340" x2="170" y2="200" stroke="#0A1B3D" stroke-width="6"/>
+      <line x1="210" y1="340" x2="170" y2="200" stroke="#0A1B3D" stroke-width="6"/>
+      <circle cx="170" cy="170" r="130" fill="none" stroke="#0A1B3D" stroke-width="9"/>
+      ${spokes}
+      <circle cx="170" cy="170" r="12" fill="#0A1B3D"/>
+    </svg>`;
+  skyline.appendChild(eye);
+
+  // The Shard
+  const shard = document.createElement('div');
+  shard.style.position = 'absolute';
+  shard.style.bottom = '0';
+  shard.style.left = '1420px';
+  shard.style.width = '160px';
+  shard.style.height = '600px';
+  shard.style.zIndex = '5';
+  shard.innerHTML = `
+    <svg viewBox="0 0 160 600" width="160" height="600" style="position:absolute;bottom:0;">
+      <polygon points="80,0 40,90 120,90 " fill="#0A1B3D"/>
+      <polygon points="40,90 120,90 128,600 32,600" fill="#0A1B3D"/>
+      <polygon points="80,0 60,90 80,600" fill="#132D5C" opacity="0.55"/>
+    </svg>`;
+  skyline.appendChild(shard);
+
+  const river = document.createElement('div');
+  river.className = 'river';
+  skyline.appendChild(river);
 </script>
 
 </body>

@@ -31,7 +31,7 @@ const masterCss = `
   @page {
     size: A4;
     margin: 1.9cm 2cm 2.1cm 2cm;
-    @top-right { content: "English Speaking Practice · Nação Fluente"; font-size: 8pt; color: #${palette.lightGrey}; font-family: 'Helvetica', Arial, sans-serif; }
+    @top-right { content: "English Speaking Practice"; font-size: 8pt; color: #${palette.lightGrey}; font-family: 'Helvetica', Arial, sans-serif; }
     @bottom-center { content: "Página " counter(page); font-size: 8pt; color: #${palette.lightGrey}; font-family: 'Helvetica', Arial, sans-serif; }
   }
   @page cover { margin: 0; @top-right { content: none; } @bottom-center { content: none; } }
@@ -115,7 +115,7 @@ function dividerPage(block) {
 const frontMatterHtml = `
 <div class="fm">
   <h1 class="booktitle">English Speaking Practice</h1>
-  <div class="subtitle-line">Treino de Conversação · Nação Fluente</div>
+  <div class="subtitle-line">Treino de Conversação</div>
 
   <h2>Boas-vindas<span class="en">Welcome</span></h2>
   <p>Você já consegue ler um texto em inglês. Já assiste vídeo com legenda e entende boa parte do que se fala. Mas na hora de abrir a boca (numa reunião, numa entrevista, numa conversa de corredor com um estrangeiro) trava.</p>
@@ -172,7 +172,7 @@ function main() {
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<title>English Speaking Practice · Nação Fluente</title>
+<title>English Speaking Practice</title>
 <style>${chapterCss("")}${masterCss}</style>
 </head>
 <body>

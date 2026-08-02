@@ -224,7 +224,7 @@ function buildChapterDoc(theme, guide, criteria) {
     sections: [
       {
         properties: { page: { size: { width: 11906, height: 16838 }, margin: { top: 800, bottom: 800, left: 1000, right: 1000 } } },
-        headers: { default: new Header({ children: [new Paragraph({ alignment: AlignmentType.RIGHT, children: [new TextRun({ text: "English Speaking Practice · Nação Fluente", color: p.lightGrey, size: 16, font: FONT })] })] }) },
+        headers: { default: new Header({ children: [new Paragraph({ alignment: AlignmentType.RIGHT, children: [new TextRun({ text: "English Speaking Practice", color: p.lightGrey, size: 16, font: FONT })] })] }) },
         footers: { default: new Footer({ children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [
           new TextRun({ text: `Bloco ${theme.block} · ${theme.blockName}   |   Página `, color: p.lightGrey, size: 16, font: FONT }),
           new TextRun({ children: [PageNumber.CURRENT], color: p.lightGrey, size: 16, font: FONT }),

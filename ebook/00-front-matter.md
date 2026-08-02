@@ -1,5 +1,5 @@
 # English Speaking Practice
-## Treino de Conversação | Nação Fluente
+## Treino de Conversação
 
 ---
 
