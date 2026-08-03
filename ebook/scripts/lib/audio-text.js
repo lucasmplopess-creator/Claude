@@ -34,18 +34,24 @@ function expressionsText(theme) {
   return lines.join("\n");
 }
 
+const AUDIO_BASE_URL = "https://raw.githubusercontent.com/lucasmplopess-creator/Claude/claude/ebook-english-speaking-practice-klm091/ebook";
+
 function audioBase(theme) {
   return theme.audioFile.replace(/^audio\//, "").replace(/\.mp3$/, "");
+}
+
+function variant(file, text) {
+  return { file, text, url: `${AUDIO_BASE_URL}/${file}` };
 }
 
 function audioVariants(theme) {
   const base = audioBase(theme);
   return {
-    vocabulario: { file: `audio/${base}-vocabulario.mp3`, text: vocabText(theme) },
-    leitura: { file: `audio/${base}-leitura.mp3`, text: readingText(theme) },
-    dialogo: { file: `audio/${base}.mp3`, text: dialogueText(theme) },
-    expressoes: { file: `audio/${base}-expressoes.mp3`, text: expressionsText(theme) },
+    vocabulario: variant(`audio/${base}-vocabulario.mp3`, vocabText(theme)),
+    leitura: variant(`audio/${base}-leitura.mp3`, readingText(theme)),
+    dialogo: variant(`audio/${base}.mp3`, dialogueText(theme)),
+    expressoes: variant(`audio/${base}-expressoes.mp3`, expressionsText(theme)),
   };
 }
 
-module.exports = { audioVariants, audioBase };
+module.exports = { audioVariants, audioBase, AUDIO_BASE_URL };

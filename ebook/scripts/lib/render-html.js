@@ -33,6 +33,10 @@ function lines(n) {
   return Array.from({ length: n }).map(() => `<div class="lines"></div>`).join("");
 }
 
+function audioLink(label, url) {
+  return `<p class="audio-link"><a href="${esc(url)}">&#9654; ${esc(label)}</a></p>`;
+}
+
 function stepHeader(cls, tag, pt, en) {
   return `<h2 class="step ${cls}"><span class="tag">${tag}</span><span class="stitle"><span class="pt">${esc(pt)}</span><span class="en">${esc(en)}</span></span></h2>`;
 }
@@ -69,6 +73,8 @@ function chapterCss(pageRule) {
   .expr-list { list-style: none; padding-left: 0; margin: 4px 0 10px 0; }
   .expr-list li { margin-bottom: 4px; padding-left: 14px; position: relative; }
   .gabarito { font-style: italic; color: #${palette.cover}; margin-top: -4px; }
+  .audio-link { margin: 0 0 10px 0; }
+  .audio-link a { display: inline-block; background: #${palette.cover}; color: #fff; text-decoration: none; padding: 5px 12px; border-radius: 14px; font-size: 9.5pt; font-weight: bold; }
   .footer-note { text-align: center; font-weight: bold; color: #${palette.cover}; margin-top: 12px; font-size: 10.5pt; }
 
   .s1 h2, .s1 .tag { background: #${palette.step1}; }
@@ -127,7 +133,8 @@ ${stepHeader("", "ETAPA 1", "Vocabulário Contextualizado", STEP_EN[1])}
 <tr><th>Word / Expression</th><th>Tradução</th><th>Example Sentence</th></tr>
 ${rows(theme.vocab)}
 </table>
-<p>Áudio com a pronúncia de cada palavra e seu exemplo (arquivo para download na plataforma: <i>${esc(audio.vocabulario.file)}</i>). Ouça e repita em voz alta.</p>
+<p>Áudio com a pronúncia de cada palavra e seu exemplo. Clique no link abaixo para ouvir e repita em voz alta.</p>
+${audioLink("Ouvir o vocabulário deste tema", audio.vocabulario.url)}
 </div>
 
 <div class="s2">
@@ -138,12 +145,14 @@ ${stepHeader("", "ETAPA 2", "Leitura com Orientação de Estudo", STEP_EN[2])}
 </div>
 <p><b>"${esc(theme.readingTitle)}"</b></p>
 ${theme.readingParagraphs.map(p => `<p>${esc(p)}</p>`).join("")}
-<p>Áudio com a narração deste texto (arquivo para download na plataforma: <i>${esc(audio.leitura.file)}</i>). Ouça acompanhando a leitura, depois sem olhar para o texto.</p>
+<p>Áudio com a narração deste texto. Ouça acompanhando a leitura, depois sem olhar para o texto.</p>
+${audioLink("Ouvir a leitura deste tema", audio.leitura.url)}
 </div>
 
 <div class="s3">
 ${stepHeader("", "ETAPA 3", "Listening com Suporte em Áudio e Vídeo", STEP_EN[3])}
-<p>Ouça o áudio deste tema (arquivo disponível para download na plataforma: <i>${esc(theme.audioFile)}</i>) com o roteiro abaixo. Primeiro sem ler, depois acompanhando o texto.</p>
+<p>Ouça o áudio deste tema com o roteiro abaixo. Primeiro sem ler, depois acompanhando o texto.</p>
+${audioLink("Ouvir o diálogo deste tema", audio.dialogo.url)}
 <div class="notebox">
   <div class="title">Roteiro do áudio (Audio Script)</div>
   ${theme.audioScript.map(l => `<p>${esc(l)}</p>`).join("")}
@@ -175,7 +184,8 @@ ${stepHeader("", "ETAPA 6", "Speaking: Perguntas Abertas", STEP_EN[6])}
 ${ol(theme.speakingQuestions)}
 <p><b>Expressões úteis para esta conversa:</b></p>
 ${exprList(theme.expressions)}
-<p>Áudio com a pronúncia de cada expressão (arquivo para download na plataforma: <i>${esc(audio.expressoes.file)}</i>).</p>
+<p>Áudio com a pronúncia de cada expressão.</p>
+${audioLink("Ouvir as expressões deste tema", audio.expressoes.url)}
 </div>
 
 <div class="sx">
