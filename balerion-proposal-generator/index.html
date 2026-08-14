@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Gerador de Propostas — Balerion Drinks</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<div class="app">
+  <header class="app-header">
+    <h1>🍸 Gerador de Propostas <span>Balerion Drinks</span></h1>
+    <p>Preencha os dados do cliente e gere o arquivo HTML da proposta comercial, pronto para enviar.</p>
+  </header>
+
+  <div class="app-body">
+    <form id="proposalForm" class="form-panel">
+      <label>
+        Nome do Cliente
+        <input type="text" id="nome" placeholder="Ex: João Silva" required>
+      </label>
+
+      <label>
+        Data do Evento
+        <input type="date" id="dataEvento" required>
+      </label>
+
+      <label>
+        Local do Evento
+        <input type="text" id="local" placeholder="Ex: Santa Rita do Passa Quatro" required>
+      </label>
+
+      <label>
+        Número de Convidados
+        <input type="number" id="convidados" min="1" placeholder="Ex: 112" required>
+      </label>
+
+      <label>
+        Tipo de Evento
+        <select id="tipoEvento" required>
+          <option value="Evento Social">Evento Social</option>
+          <option value="Evento Corporativo">Evento Corporativo</option>
+          <option value="Casamento">Casamento</option>
+          <option value="Aniversário">Aniversário</option>
+        </select>
+      </label>
+
+      <div class="actions">
+        <button type="submit" class="btn-primary">Gerar Proposta</button>
+        <button type="button" id="downloadBtn" class="btn-secondary" disabled>⬇ Baixar HTML</button>
+      </div>
+
+      <p class="hint">As fotos aparecem como placeholders — troque os arquivos em <code>assets/images/</code> (nomes indicados em cada quadro) quando estiverem prontos.</p>
+    </form>
+
+    <div class="preview-panel">
+      <div class="preview-toolbar">Pré-visualização</div>
+      <iframe id="preview" title="Pré-visualização da proposta"></iframe>
+    </div>
+  </div>
+</div>
+
+<script src="template.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
