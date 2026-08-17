@@ -493,25 +493,16 @@ body::before{
 .bal-brand:hover .bal-logo{filter:drop-shadow(0 0 10px rgba(200,164,93,.6))}
 
 /* ============================================================
-   LABAREDAS DE FUNDO · fogueira ambiente fixa na base da tela
+   FOGO DE VERDADE · simulação de chama (canvas) na base da tela
    ============================================================ */
-.bal-flames-bg{position:fixed;left:0;right:0;bottom:0;height:160px;pointer-events:none;z-index:0;overflow:visible}
-.bal-flames-bg .base-glow{position:absolute;inset:0;
-  background:linear-gradient(0deg, rgba(200,90,20,.4) 0%, rgba(140,40,15,.18) 45%, transparent 100%)}
-.bal-flames-bg i{position:absolute;bottom:0;width:var(--w,32px);height:var(--h,60px);
-  border-radius:50% 50% 50% 50%/60% 60% 40% 40%;
-  background:radial-gradient(circle at 50% 78%, #FFDE9E 0%, #F3A63C 30%, #C8621F 56%, #7C1F1F 76%, transparent 90%);
-  filter:blur(1px);opacity:.8;transform-origin:bottom center;animation:flameSway ease-in-out infinite}
-@keyframes flameSway{
-  0%,100%{transform:scaleY(1) scaleX(1) skewX(0deg)}
-  25%{transform:scaleY(1.18) scaleX(.9) skewX(-5deg)}
-  50%{transform:scaleY(.88) scaleX(1.06) skewX(4deg)}
-  75%{transform:scaleY(1.1) scaleX(.95) skewX(-3deg)}
-}
+#bal-fire-canvas{position:fixed;left:0;right:0;bottom:0;width:100%;height:240px;pointer-events:none;
+  z-index:0;mix-blend-mode:screen;filter:blur(1.4px) saturate(1.3);image-rendering:auto}
+@media(max-width:720px){#bal-fire-canvas{height:160px}}
 
 @media (prefers-reduced-motion: reduce){
   .bal-reveal{opacity:1;transform:none;transition:none}
-  .bal-embers-bg span,.bal-flames-bg i,.bal-navlink.active{animation:none !important;transition:none !important}
+  .bal-embers-bg span,.bal-navlink.active{animation:none !important;transition:none !important}
+  #bal-fire-canvas{display:none}
 }
 </style>
 </head>
@@ -2077,23 +2068,84 @@ window.BAL_EMBEDDED_STYLE = document.querySelector('style') ? document.querySele
     }
     document.body.appendChild(bg);
 
-    /* labaredas subindo, fixas na base da tela */
-    var flames = document.createElement('div');
-    flames.className = 'bal-flames-bg';
-    var glow = document.createElement('div');
-    glow.className = 'base-glow';
-    flames.appendChild(glow);
-    var n = 16;
-    for (var j = 0; j < n; j++) {
-      var fl = document.createElement('i');
-      fl.style.left = (j * (100 / n) + (Math.random() * 4 - 2)) + '%';
-      fl.style.setProperty('--h', (46 + Math.random() * 44) + 'px');
-      fl.style.setProperty('--w', (26 + Math.random() * 18) + 'px');
-      fl.style.animationDuration = (2.1 + Math.random() * 1.6) + 's';
-      fl.style.animationDelay = (Math.random() * -2) + 's';
-      flames.appendChild(fl);
+    /* fogo de verdade: simulação de chama por difusão de calor (canvas) */
+    startFireSim();
+  }
+
+  function startFireSim() {
+    var canvas = document.createElement('canvas');
+    canvas.id = 'bal-fire-canvas';
+    canvas.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(canvas);
+    var ctx = canvas.getContext('2d');
+
+    var W = 200, H = 64;
+    canvas.width = W; canvas.height = H;
+
+    /* paleta na identidade Balerion: tinta > marsala > vinho > dourado > quase-branco */
+    var stops = [
+      [5, 5, 5, 0],
+      [40, 12, 12, 40],
+      [90, 31, 43, 150],
+      [139, 30, 36, 215],
+      [168, 60, 28, 245],
+      [200, 98, 31, 255],
+      [200, 164, 93, 255],
+      [228, 197, 131, 255],
+      [255, 246, 220, 255]
+    ];
+    var PAL = 64;
+    var palette = [];
+    for (var i = 0; i < PAL; i++) {
+      var t = (i / (PAL - 1)) * (stops.length - 1);
+      var seg = Math.min(stops.length - 2, Math.floor(t));
+      var lt = t - seg;
+      var a0 = stops[seg], a1 = stops[seg + 1];
+      palette.push([
+        a0[0] + (a1[0] - a0[0]) * lt,
+        a0[1] + (a1[1] - a0[1]) * lt,
+        a0[2] + (a1[2] - a0[2]) * lt,
+        a0[3] + (a1[3] - a0[3]) * lt
+      ]);
     }
-    document.body.appendChild(flames);
+
+    var fire = new Uint8Array(W * H);
+    for (var x0 = 0; x0 < W; x0++) fire[(H - 1) * W + x0] = PAL - 1;
+
+    var img = ctx.createImageData(W, H);
+
+    function step() {
+      for (var x = 0; x < W; x++) {
+        for (var y = 1; y < H; y++) {
+          var src = y * W + x;
+          var rand = (Math.random() * 3) | 0;
+          var dstX = x + (1 - rand);
+          if (dstX < 0) dstX = 0; else if (dstX >= W) dstX = W - 1;
+          var v = fire[src] - rand;
+          fire[(y - 1) * W + dstX] = v > 0 ? v : 0;
+        }
+      }
+      for (var x1 = 0; x1 < W; x1++) {
+        fire[(H - 1) * W + x1] = (Math.random() < 0.05) ? (PAL - 1) - ((Math.random() * 8) | 0) : (PAL - 1);
+      }
+    }
+
+    function render() {
+      var data = img.data;
+      for (var p = 0; p < W * H; p++) {
+        var c = palette[fire[p]];
+        var o = p * 4;
+        data[o] = c[0]; data[o + 1] = c[1]; data[o + 2] = c[2]; data[o + 3] = c[3];
+      }
+      ctx.putImageData(img, 0, 0);
+    }
+
+    var last = 0;
+    function loop(t) {
+      if (!last || t - last > 42) { step(); render(); last = t; }
+      requestAnimationFrame(loop);
+    }
+    requestAnimationFrame(loop);
   }
 
   function onReady() { revealCards(); }
