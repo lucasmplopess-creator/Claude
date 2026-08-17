@@ -249,4 +249,19 @@ A planilha já vem com uma linha de exemplo preenchida em cada aba (dados de ago
 
 Para adicionar um novo mês na aba Indicadores, duplique a linha de exemplo e ajuste apenas o texto do mês e as datas dentro das fórmulas SUMIFS/COUNTIFS.
 
-Antes de seguir para a Etapa 5 (planilha de estoque), confirme se a estrutura da planilha financeira está aprovada ou se algo precisa de ajuste.
+Estrutura da planilha financeira aprovada.
+
+---
+
+## Etapa 5: Planilha de estoque
+
+Arquivo gerado: `lumos3d-controle-estoque.xlsx` (nesta mesma pasta).
+
+| Aba | Colunas | Função |
+|---|---|---|
+| Matéria-prima | Tipo de filamento/resina, Cor, Quantidade (g ou ml), Custo por kg/litro, Ponto de reposição, Status | Controle de estoque de insumo, com aviso automático de "Repor" quando a quantidade atinge o ponto de reposição |
+| Produtos prontos | Nome, Quantidade disponível, Custo de produção, Preço de venda, Margem, Valor total em estoque | Controle de peças já produzidas, com margem e valor total investido em estoque calculados automaticamente |
+
+A planilha já vem com uma linha de exemplo preenchida em cada aba, usando PLA e PETG (os materiais definidos no diagnóstico) e os mesmos produtos citados na planilha financeira, para manter as duas planilhas consistentes entre si. Células em azul são as que você edita, Status, Margem e Valor total em estoque são calculados por fórmula.
+
+Antes de seguir para a Etapa 6 (planilha de compras), confirme se a estrutura da planilha de estoque está aprovada ou se algo precisa de ajuste.
