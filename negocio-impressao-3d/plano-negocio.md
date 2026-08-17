@@ -105,4 +105,129 @@ Embalagem em papel kraft ou caixa branca fosca, com o símbolo do cubo estampado
 
 "Logotipo horizontal completo para a marca Lumos 3D. À esquerda, o símbolo de um cubo isométrico em transição de wireframe para sólido, na cor roxo profundo (#2D1B4E), com uma faísca de luz dourada (#FFC93C) no ponto de transição. À direita do símbolo, o nome 'Lumos 3D' em tipografia sans-serif geométrica arredondada, peso bold, com 'Lumos' em roxo profundo (#2D1B4E) e '3D' em dourado elétrico (#FFC93C) para destaque. Abaixo do nome, em fonte mais fina e menor, na cor cinza grafite (#3A3A3A), a frase 'Ideias que ganham forma'. Fundo branco ou off-white liso (#F7F5F2), sem elementos decorativos extras. Estilo flat design vetorial, visual profissional e ao mesmo tempo acessível e amigável. Iluminação plana e uniforme em toda a peça, com brilho suave apenas no ponto de luz do símbolo. Enquadramento horizontal, proporção 16:9, logotipo centralizado com margem de respiro generosa nas laterais, alta resolução, adequado para cabeçalho de site, capa de redes sociais e etiqueta de embalagem."
 
-Antes de seguir para a Etapa 3 (site), confirme se o conceito de identidade visual está aprovado ou se algo precisa de ajuste.
+Identidade visual aprovada.
+
+---
+
+## Etapa 3: Site
+
+### Sitemap
+
+| Página | Objetivo | Elementos principais |
+|---|---|---|
+| Home | Apresentar a marca e converter em orçamento ou catálogo | Hero, selos de confiança, como funciona resumido, destaques do catálogo, depoimentos, CTA final |
+| Sobre | Gerar confiança e conexão com a marca | História, diferencial de produção, valores |
+| Catálogo | Mostrar o que pode ser produzido | Categorias de produtos, exemplos, nota sobre personalização |
+| Como funciona | Reduzir dúvida sobre o processo de compra | Passo a passo do pedido até a entrega |
+| Orçamento personalizado | Capturar o lead e iniciar a venda | Formulário guiado, prazo de resposta, garantias |
+| Contato | Oferecer canal direto para dúvidas | WhatsApp, Instagram, e-mail, horário de atendimento |
+
+### Copy da Home
+
+**Hero**
+Título: Sua ideia, impressa em 3D e pronta para presentear
+Subtítulo: A Lumos 3D transforma qualquer ideia em brinde personalizado, com produção própria e entrega para todo o Brasil.
+Botões: Fazer meu orçamento | Ver catálogo
+
+**Selos de confiança** (bloco logo abaixo do hero)
+Produção própria, sem intermediário
+Entrega para todo o Brasil
+Personalização 100% sob medida
+Atendimento direto pelo WhatsApp
+
+**Como funciona (resumo)**
+Título: Do pedido ao presente em 4 passos
+1. Você envia sua ideia ou escolhe um modelo do catálogo
+2. Você recebe o orçamento em até 24 horas
+3. A peça é produzida e enviada com todo cuidado
+4. Você recebe em casa, pronta para presentear ou usar
+Botão: Quero fazer meu orçamento
+
+**Destaques do catálogo**
+Título: O que a Lumos 3D já produziu
+Texto de apoio: Brindes corporativos, presentes personalizados, itens de decoração e peças para datas comemorativas, tudo impresso sob demanda.
+Botão: Ver catálogo completo
+
+**Prova social**
+Título: Quem já recebeu, aprovou
+Bloco reservado para 3 depoimentos de clientes com nome, cidade e foto do produto recebido.
+
+**CTA final**
+Título: Sua ideia já pode virar realidade
+Subtítulo: Envie sua ideia agora e receba o orçamento sem compromisso.
+Botão: Fazer meu orçamento
+
+### Copy da página Sobre
+
+Título: A Lumos 3D nasceu para dar forma a ideias
+Texto: A Lumos 3D é uma empresa de impressão 3D especializada em brindes personalizados. Trabalhamos com produção própria, do primeiro esboço até a peça final, para garantir qualidade e prazo em cada pedido, seja uma unidade ou um lote fechado para empresa.
+
+Nosso nome vem da ideia de acender uma ideia e dar forma a ela. É exatamente isso que fazemos todos os dias, transformar um pedido em um objeto físico que representa quem pediu.
+
+Título secundário: Por que escolher a Lumos 3D
+Produção própria, sem terceirizar a impressão
+Atendimento direto com quem produz sua peça
+Personalização real, não apenas troca de nome ou cor
+Entrega para todo o Brasil com acompanhamento do pedido
+
+### Copy da página Catálogo
+
+Título: Escolha um modelo ou peça o seu
+Texto de apoio: Os itens abaixo são exemplos do que já produzimos. Se você tem uma ideia diferente, é só nos chamar e fazemos um orçamento personalizado.
+
+| Categoria | Exemplos | Indicado para |
+|---|---|---|
+| Brindes corporativos | Chaveiros, porta cartões, troféus personalizados | Empresas, eventos, brindes de fim de ano |
+| Presentes personalizados | Nome em 3D, luminárias, porta retratos | Aniversários, datas comemorativas, presentes únicos |
+| Decoração | Vasos, organizadores, peças decorativas | Casa, escritório, ambientes comerciais |
+| Itens sob encomenda | Peças a partir de referência enviada pelo cliente | Ideias específicas, protótipos simples, projetos exclusivos |
+
+Nota final: Todos os itens podem ser personalizados em cor, tamanho e texto. Não encontrou o que procurava? Envie sua ideia e fazemos um orçamento sob medida.
+Botão: Quero um orçamento personalizado
+
+### Copy da página Como funciona
+
+Título: Do pedido até a sua casa
+Subtítulo: Um processo simples, para você acompanhar cada etapa sem dor de cabeça.
+
+| Etapa | O que acontece | Prazo estimado |
+|---|---|---|
+| 1. Envio da ideia | Você descreve o que precisa ou escolhe um modelo do catálogo | Imediato |
+| 2. Orçamento | Você recebe valor e prazo de produção | Até 24 horas |
+| 3. Aprovação e pagamento | Você confirma o pedido e realiza o pagamento | Assim que aprovar |
+| 4. Produção | A peça é impressa e finalizada com acabamento manual | De acordo com o item, informado no orçamento |
+| 5. Envio | A peça é embalada e enviada com código de rastreio | Após conclusão da produção |
+
+Texto final: Durante todo o processo você tem contato direto pelo WhatsApp para tirar dúvidas ou acompanhar o andamento do seu pedido.
+
+### Copy da página Orçamento personalizado
+
+Título: Vamos dar forma à sua ideia
+Subtítulo: Preencha os campos abaixo e receba seu orçamento em até 24 horas, sem compromisso.
+
+Campos sugeridos do formulário:
+Nome completo
+WhatsApp
+E-mail
+Descrição da ideia ou anexo de referência
+Quantidade desejada
+Prazo desejado para entrega
+
+Texto de apoio abaixo do formulário: Quanto mais detalhes você enviar, mais preciso é o orçamento. Se tiver uma imagem de referência, pode anexar aqui.
+Botão: Enviar meu pedido de orçamento
+
+Texto de garantia: Sem compromisso de compra. Você só paga se aprovar o orçamento.
+
+### Copy da página Contato
+
+Título: Fale com a Lumos 3D
+Subtítulo: Prefere falar direto com a gente? Escolha o canal que preferir.
+
+WhatsApp: atendimento rápido para orçamento e dúvidas
+Instagram: @lumos3d, acompanhe bastidores de produção e novidades
+E-mail: para propostas corporativas e parcerias
+
+Horário de atendimento: segunda a sexta, das 9h às 18h
+Texto final: Respondemos o mais rápido possível. Pedidos feitos fora do horário de atendimento são respondidos no próximo dia útil.
+
+Antes de seguir para a Etapa 4 (planilha de controle financeiro), confirme se a copy do site está aprovada ou se algo precisa de ajuste.
