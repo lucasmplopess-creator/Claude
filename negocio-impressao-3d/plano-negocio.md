@@ -37,4 +37,25 @@ Critérios usados na seleção: curto, fácil de pronunciar e digitar, compatív
 
 Para posicionamento acessível e alto volume com atuação nacional, os três nomes mais fortes são **Printtá** (sonoro, memorável, fácil em áudio/vídeo), **BrindaMake** (mais descritivo, ajuda em busca orgânica) e **Camada Criativa** (mais diferenciado, menos concorrência de nome).
 
+### Segunda leva: nomes com mais conexão direta com o processo de impressão 3D
+
+Esta lista usa termos reais do universo da impressão 3D (camada, filamento, extrusão, fatiamento, eixo Z, bico quente) como base do trocadilho ou da referência, priorizando som fácil de repetir e de escrever de cabeça.
+
+| Nome | Estilo | Por que funciona |
+|---|---|---|
+| Impressa | Trocadilho inteligente | Soa quase igual a "empresa", mas vem direto de "imprimir", nome curto, fácil de escrever e memorizar, funciona muito bem falado em vídeo |
+| PLAy | Trocadilho visual | Junta o nome do filamento mais usado em FDM (PLA) com "play", nome curto e gráfico, ótimo para logo com destaque nas letras PLA |
+| Fatiado | Referência técnica criativa | Vem de "fatiar" o modelo no software antes de imprimir (slicing), termo pouco explorado por concorrentes, soa gostoso e inusitado, fácil de lembrar |
+| Extrusa | Referência técnica com som próprio | Vem de "extrusão", o processo central da impressão FDM, soa como nome próprio, curto e fácil de pronunciar |
+| Camada a Camada | Descritivo e rítmico | Descreve literalmente como a peça nasce na impressora, a repetição da frase ajuda na fixação de memória, boa para slogan também |
+| Eixo Z | Técnico e nerd | Referência ao eixo de altura da impressora 3D, nome curto e diferente de tudo no mercado, gera curiosidade em quem não conhece o termo |
+| Bico Quente | Gíria de maker | "Bico quente" é como makers chamam o hotend da impressora, nome descontraído, humano e fácil de lembrar por ser inesperado |
+| Retração Zero | Trocadilho técnico | "Retração" é um ajuste real de impressão, e "zero" reforça a ideia de peça sem erro e sem fio solto, nome com duplo sentido de qualidade |
+| Filamenta | Trocadilho com filamento | Soa como nome próprio feminino, vem direto de "filamento" (a matéria-prima), fácil de falar e de lembrar |
+| ImprimeJá | Direto e urgente | Comunica rapidez de entrega junto com o verbo do processo, bom para quem busca literalmente "imprimir" em pesquisas |
+
+### Recomendação atualizada
+
+Os três nomes com melhor equilíbrio entre conexão com impressão 3D, memorização e som de marca comercial são **Impressa** (trocadilho forte e nome de empresa de verdade), **Fatiado** (mais criativo e diferenciado, ninguém mais usa) e **PLAy** (visual, ótimo para logo e identidade gráfica).
+
 Antes de seguir para a Etapa 2 (identidade visual), confirme qual nome será usado ou se prefere ajustar alguma opção da lista.
