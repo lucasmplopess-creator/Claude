@@ -264,4 +264,22 @@ Arquivo gerado: `lumos3d-controle-estoque.xlsx` (nesta mesma pasta).
 
 A planilha já vem com uma linha de exemplo preenchida em cada aba, usando PLA e PETG (os materiais definidos no diagnóstico) e os mesmos produtos citados na planilha financeira, para manter as duas planilhas consistentes entre si. Células em azul são as que você edita, Status, Margem e Valor total em estoque são calculados por fórmula.
 
-Antes de seguir para a Etapa 6 (planilha de compras), confirme se a estrutura da planilha de estoque está aprovada ou se algo precisa de ajuste.
+Estrutura da planilha de estoque aprovada.
+
+---
+
+## Etapa 6: Planilha de compras
+
+Arquivo gerado: `lumos3d-controle-compras.xlsx` (nesta mesma pasta).
+
+| Aba | Colunas | Função |
+|---|---|---|
+| Fornecedores | Nome, Contato, Prazo de entrega, Forma de pagamento | Cadastro dos fornecedores de material, embalagem e manutenção |
+| Pedidos | Data, Item, Quantidade, Valor, Status | Acompanhamento de cada pedido feito, do envio até a entrega |
+| Previsão de reposição | Material, Estoque atual, Consumo médio mensal, Dias restantes, Data prevista para repor, Quantidade sugerida, Alerta | Estimativa de quando cada material vai acabar e quanto comprar, com base no consumo médio informado |
+
+Como a previsão de reposição depende de números que vivem na planilha de estoque (arquivo separado), o modelo evita link direto entre arquivos, que quebra facilmente ao reabrir em outro computador. Em vez disso, você copia o Estoque atual da aba Matéria-prima da planilha de estoque para esta aba sempre que fizer a contagem, e o consumo médio mensal, também editável, para calcular Dias restantes, Data prevista para repor e Quantidade sugerida de compra (baseada em cobrir 2 meses de consumo). Quando os dias restantes caem para 15 ou menos, a coluna Alerta muda para "Comprar agora".
+
+O exemplo já mostra a consistência entre as três planilhas, o PETG Cinza aparece com estoque baixo na planilha de estoque e já tem um pedido de reposição em andamento na aba Pedidos.
+
+Antes de seguir para a Etapa 7 (precificação), confirme se a estrutura da planilha de compras está aprovada ou se algo precisa de ajuste.
