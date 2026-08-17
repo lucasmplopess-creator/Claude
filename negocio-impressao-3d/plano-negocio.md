@@ -230,4 +230,23 @@ E-mail: para propostas corporativas e parcerias
 Horário de atendimento: segunda a sexta, das 9h às 18h
 Texto final: Respondemos o mais rápido possível. Pedidos feitos fora do horário de atendimento são respondidos no próximo dia útil.
 
-Antes de seguir para a Etapa 4 (planilha de controle financeiro), confirme se a copy do site está aprovada ou se algo precisa de ajuste.
+Copy do site aprovada.
+
+---
+
+## Etapa 4: Planilha de controle financeiro
+
+Arquivo gerado: `lumos3d-controle-financeiro.xlsx` (nesta mesma pasta).
+
+| Aba | Colunas | Função |
+|---|---|---|
+| Vendas | Data, Produto, Valor, Forma de pagamento, Cliente | Registro de cada venda realizada |
+| Despesas | Data, Categoria, Valor, Fornecedor | Registro de cada saída de caixa |
+| Fluxo de caixa | Data, Entradas, Saídas, Saldo | Entradas e saídas somadas automaticamente por data (fórmula SUMIFS puxando das abas Vendas e Despesas), com saldo acumulado dia a dia |
+| Indicadores | Mês, Faturamento, Despesas, Ticket médio, Margem | Painel calculado automaticamente a partir das abas Vendas e Despesas, mês a mês |
+
+A planilha já vem com uma linha de exemplo preenchida em cada aba (dados de agosto/2026) para mostrar o formato esperado. Células em azul são as que você edita, o restante é calculado por fórmula e atualiza sozinho conforme novas linhas de venda e despesa são adicionadas.
+
+Para adicionar um novo mês na aba Indicadores, duplique a linha de exemplo e ajuste apenas o texto do mês e as datas dentro das fórmulas SUMIFS/COUNTIFS.
+
+Antes de seguir para a Etapa 5 (planilha de estoque), confirme se a estrutura da planilha financeira está aprovada ou se algo precisa de ajuste.
