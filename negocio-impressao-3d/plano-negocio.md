@@ -282,4 +282,44 @@ Como a previsão de reposição depende de números que vivem na planilha de est
 
 O exemplo já mostra a consistência entre as três planilhas, o PETG Cinza aparece com estoque baixo na planilha de estoque e já tem um pedido de reposição em andamento na aba Pedidos.
 
-Antes de seguir para a Etapa 7 (precificação), confirme se a estrutura da planilha de compras está aprovada ou se algo precisa de ajuste.
+Estrutura da planilha de compras aprovada.
+
+---
+
+## Etapa 7: Precificação
+
+Arquivo gerado: `lumos3d-precificacao.xlsx` (nesta mesma pasta).
+
+| Aba | Função |
+|---|---|
+| Calculadora | Formulário único para calcular o custo e o preço sugerido de qualquer peça nova, a partir dos dados que você digitar |
+| Exemplos aplicados | A mesma fórmula já aplicada aos 5 produtos do catálogo, comparando o preço sugerido com o preço hoje praticado |
+
+**Como o cálculo funciona:**
+
+| Componente | Fórmula |
+|---|---|
+| Custo de material | Peso da peça (kg) × preço do filamento por kg |
+| Custo de energia | Tempo de impressão (h) × potência da impressora (kW) × custo do kWh |
+| Depreciação do equipamento | (Valor do equipamento ÷ vida útil estimada em horas) × tempo de impressão da peça |
+| Mão de obra e acabamento | Valor informado por peça |
+| Custo total por peça | Soma dos quatro itens acima |
+| Preço sugerido | Custo total ÷ (1 − margem de lucro desejada) |
+
+O preço sugerido usa divisão pela margem, e não multiplicação, para que a margem informada corresponda ao percentual de lucro sobre o preço final de venda, não sobre o custo.
+
+**Premissas assumidas nos exemplos** (ajustáveis na planilha): impressora FDM de R$ 1.800,00 com vida útil estimada de 5.000 horas de uso, consumo médio de 0,15 kW e custo de energia de R$ 0,75 por kWh, valores de referência para o orçamento inicial informado no diagnóstico.
+
+**Resultado da comparação com o mercado (preço hoje praticado, o mesmo valor usado na planilha de vendas):**
+
+| Produto | Custo total | Preço sugerido (margem mínima) | Preço praticado | Situação |
+|---|---|---|---|---|
+| Chaveiro personalizado | R$ 4,58 | R$ 7,64 | R$ 25,00 | Competitivo, margem real acima da mínima |
+| Kit brinde corporativo (50 un) | R$ 224,08 | R$ 344,73 | R$ 950,00 | Competitivo, margem real acima da mínima |
+| Luminária com nome | R$ 33,54 | R$ 55,91 | R$ 89,90 | Competitivo, margem real acima da mínima |
+| Porta retrato personalizado | R$ 11,10 | R$ 18,50 | R$ 45,00 | Competitivo, margem real acima da mínima |
+| Troféu personalizado (10 un) | R$ 116,65 | R$ 179,45 | R$ 320,00 | Competitivo, margem real acima da mínima |
+
+Os preços já praticados ficam acima do preço sugerido de margem mínima em todos os itens, sinal de que a precificação atual do catálogo está saudável mesmo com posicionamento acessível.
+
+Antes de seguir para a Etapa 8 (plano de conteúdo), confirme se a calculadora de precificação está aprovada ou se algo precisa de ajuste.
