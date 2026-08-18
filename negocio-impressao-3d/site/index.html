@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lumos 3D — Plano de Negócio</title>
+<meta name="description" content="Plano completo da Lumos 3D: marca, identidade visual, site, planilhas de gestão, precificação e conteúdo.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'%3E%3Cpolygon points='100,20 160,55 100,90 40,55' fill='%232D1B4E'/%3E%3Cpolygon points='40,55 100,90 100,160 40,125' fill='%233D2568'/%3E%3Cpolygon points='160,55 100,90 100,160 160,125' fill='%232D1B4E'/%3E%3Ccircle cx='100' cy='55' r='10' fill='%23FFC93C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* ============ TOKENS ============ */
+  :root{
+    --bg:#F7F5F2;
+    --surface:#FFFFFF;
+    --surface-2:#EFEAE2;
+    --text:#211A2E;
+    --text-secondary:#3A3A3A;
+    --text-muted:#6B6475;
+    --border:rgba(45,27,78,0.14);
+    --border-strong:rgba(45,27,78,0.28);
+
+    --brand-purple:#2D1B4E;
+    --brand-purple-2:#3D2568;
+    --brand-gold:#FFC93C;
+    --brand-gold-ink:#3A2600;
+    --brand-lilac:#C9B8E8;
+    --brand-lilac-ink:#3A2E5C;
+    --tagline-color:#3A2E5C;
+
+    --success:#1E7A46;
+    --success-bg:#E3F3E8;
+    --warning:#B4460E;
+    --warning-bg:#FCE9DD;
+    --info:#3D5A9C;
+    --info-bg:#E7ECF8;
+
+    --sidebar-bg:#20123B;
+    --sidebar-bg-2:#2D1B4E;
+    --sidebar-text:#F1ECFA;
+    --sidebar-text-muted:#B6A9D6;
+    --sidebar-active:#FFC93C;
+    --sidebar-active-ink:#221200;
+
+    --font-display:'Poppins', 'Segoe UI', system-ui, sans-serif;
+    --font-body:'Inter', 'Segoe UI', system-ui, sans-serif;
+    --font-mono:'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+
+    --shadow-sm: 0 1px 2px rgba(33,26,46,0.06), 0 1px 1px rgba(33,26,46,0.04);
+    --shadow-md: 0 8px 24px rgba(33,26,46,0.10), 0 2px 6px rgba(33,26,46,0.06);
+    --radius: 14px;
+    --radius-sm: 8px;
+  }
+
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#140D22;
+      --surface:#1D1530;
+      --surface-2:#251A3B;
+      --text:#F1ECFA;
+      --text-secondary:#D9D2E8;
+      --text-muted:#9C8FBB;
+      --border:rgba(201,184,232,0.16);
+      --border-strong:rgba(201,184,232,0.30);
+      --tagline-color:#D9D2E8;
+
+      --success:#5FCE8E;
+      --success-bg:#123825;
+      --warning:#F0975B;
+      --warning-bg:#3A2312;
+      --info:#8FA8E6;
+      --info-bg:#182640;
+
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.30);
+      --shadow-md: 0 12px 28px rgba(0,0,0,0.45);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#140D22;
+    --surface:#1D1530;
+    --surface-2:#251A3B;
+    --text:#F1ECFA;
+    --text-secondary:#D9D2E8;
+    --text-muted:#9C8FBB;
+    --border:rgba(201,184,232,0.16);
+    --border-strong:rgba(201,184,232,0.30);
+    --tagline-color:#D9D2E8;
+
+    --success:#5FCE8E;
+    --success-bg:#123825;
+    --warning:#F0975B;
+    --warning-bg:#3A2312;
+    --info:#8FA8E6;
+    --info-bg:#182640;
+
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.30);
+    --shadow-md: 0 12px 28px rgba(0,0,0,0.45);
+  }
+
+  /* ============ RESET / BASE ============ */
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--text-secondary);
+    font-family:var(--font-body);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:var(--font-display);
+    color:var(--text);
+    margin:0 0 .5em 0;
+    text-wrap:balance;
+    letter-spacing:-0.01em;
+  }
+  p{ margin:0 0 1em 0; max-width:65ch; }
+  a{ color:inherit; }
+  img,svg{ max-width:100%; display:block; }
+  button{ font-family:inherit; }
+  ::selection{ background:var(--brand-gold); color:var(--brand-gold-ink); }
+  .visually-hidden{
+    position:absolute; width:1px; height:1px; overflow:hidden;
+    clip:rect(0 0 0 0); white-space:nowrap; border:0; padding:0; margin:-1px;
+  }
+  .skip-link{
+    position:absolute; left:1rem; top:-4rem; background:var(--brand-gold); color:var(--brand-gold-ink);
+    padding:.6rem 1rem; border-radius:var(--radius-sm); z-index:200; transition:top .2s ease; font-weight:600;
+  }
+  .skip-link:focus{ top:1rem; }
+  :focus-visible{ outline:3px solid var(--brand-gold); outline-offset:2px; }
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; }
+  }
+
+  .mono{ font-family:var(--font-mono); font-variant-numeric:tabular-nums; }
+  .eyebrow{
+    font-family:var(--font-mono); font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--text-muted); font-weight:600;
+  }
+
+  /* ============ APP SHELL ============ */
+  .app{ display:flex; min-height:100vh; }
+
+  /* ---- Sidebar (fixed brand rail, theme-invariant) ---- */
+  .sidebar{
+    width:272px; flex:0 0 272px;
+    background:linear-gradient(180deg, var(--sidebar-bg-2) 0%, var(--sidebar-bg) 100%);
+    color:var(--sidebar-text);
+    position:fixed; top:0; left:0; bottom:0;
+    display:flex; flex-direction:column;
+    z-index:100;
+    border-right:1px solid rgba(255,255,255,0.06);
+  }
+  .sidebar-head{
+    padding:1.6rem 1.4rem 1.1rem;
+    display:flex; align-items:center; gap:.7rem;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .mark-mini{ width:34px; height:34px; flex:0 0 34px; }
+  .wordmark-sm{ font-family:var(--font-display); font-weight:800; font-size:1.05rem; letter-spacing:-0.01em; color:var(--sidebar-text); }
+  .wordmark-sm .gold{ color:var(--brand-gold); }
+  .sidebar-tagline{
+    padding:.9rem 1.4rem; font-size:.8rem; color:var(--sidebar-text-muted); font-style:italic;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  nav.stages{ flex:1; overflow-y:auto; padding:.6rem .6rem 1rem; }
+  .stage-btn{
+    width:100%; display:flex; align-items:center; gap:.7rem;
+    background:transparent; border:none; color:var(--sidebar-text-muted);
+    text-align:left; padding:.6rem .7rem; border-radius:10px; cursor:pointer;
+    font-family:var(--font-body); font-size:.87rem; font-weight:500;
+    position:relative; margin:1px 0;
+    transition:background .15s ease, color .15s ease;
+  }
+  .stage-btn .num{
+    font-family:var(--font-mono); font-size:.68rem; font-weight:600; color:var(--sidebar-text-muted);
+    width:22px; flex:0 0 22px;
+  }
+  .stage-btn:hover{ background:rgba(255,255,255,0.06); color:var(--sidebar-text); }
+  .stage-btn[aria-current="true"]{
+    background:rgba(255,201,60,0.14); color:var(--sidebar-text); font-weight:600;
+  }
+  .stage-btn[aria-current="true"] .num{ color:var(--brand-gold); }
+  .stage-btn[aria-current="true"]::before{
+    content:""; position:absolute; left:-6px; top:8px; bottom:8px; width:3px;
+    background:var(--brand-gold); border-radius:2px;
+  }
+  .sidebar-foot{
+    padding:.9rem 1.4rem 1.2rem; font-size:.72rem; color:var(--sidebar-text-muted);
+    border-top:1px solid rgba(255,255,255,0.08);
+  }
+
+  .sidebar-toggle{
+    display:none; position:fixed; top:.8rem; left:.8rem; z-index:150;
+    background:var(--sidebar-bg-2); color:var(--sidebar-text); border:1px solid rgba(255,255,255,0.18);
+    border-radius:10px; padding:.55rem .7rem; font-size:1rem; cursor:pointer; box-shadow:var(--shadow-md);
+  }
+  .sidebar-scrim{ display:none; }
+
+  /* ---- Main ---- */
+  main{
+    margin-left:272px; flex:1; min-width:0;
+    padding:0;
+  }
+  .section{ display:none; padding:3rem clamp(1.25rem, 4vw, 3.5rem) 5rem; max-width:1180px; }
+  .section.active{ display:block; animation:fade-in .25s ease; }
+  @keyframes fade-in{ from{ opacity:0; transform:translateY(6px);} to{opacity:1; transform:none;} }
+
+  .section-head{ margin-bottom:2.2rem; }
+  .section-head .eyebrow{ margin-bottom:.5rem; }
+  .section-head h2{ font-size:clamp(1.6rem, 3vw, 2.2rem); }
+  .section-head .lede{ color:var(--text-muted); max-width:62ch; }
+
+  .card{
+    background:var(--surface); border:1px solid var(--border); border-radius:var(--radius);
+    padding:1.4rem 1.5rem; box-shadow:var(--shadow-sm);
+  }
+  .grid{ display:grid; gap:1rem; }
+  .grid-2{ grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); }
+  .grid-3{ grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); }
+  .grid-4{ grid-template-columns:repeat(auto-fit, minmax(180px,1fr)); }
+
+  table{ border-collapse:collapse; width:100%; font-size:.88rem; }
+  thead th{
+    text-align:left; font-family:var(--font-mono); font-size:.68rem; letter-spacing:.08em; text-transform:uppercase;
+    color:var(--text-muted); font-weight:600; padding:.5rem .7rem; border-bottom:1px solid var(--border-strong);
+  }
+  tbody td{ padding:.6rem .7rem; border-bottom:1px solid var(--border); color:var(--text-secondary); }
+  tbody tr:last-child td{ border-bottom:none; }
+  .table-wrap{ overflow-x:auto; border:1px solid var(--border); border-radius:var(--radius); background:var(--surface); }
+  .table-wrap table{ min-width:520px; }
+
+  .pill{
+    display:inline-flex; align-items:center; gap:.35rem; font-size:.72rem; font-weight:600;
+    padding:.22rem .6rem; border-radius:99px; white-space:nowrap; font-family:var(--font-mono); letter-spacing:.02em;
+  }
+  .pill.ok{ background:var(--success-bg); color:var(--success); }
+  .pill.warn{ background:var(--warning-bg); color:var(--warning); }
+  .pill.info{ background:var(--info-bg); color:var(--info); }
+  .pill::before{ content:""; width:6px; height:6px; border-radius:99px; background:currentColor; }
+
+  .tag{
+    display:inline-block; font-size:.76rem; font-weight:600; padding:.3rem .7rem; border-radius:99px;
+    background:var(--brand-lilac); color:var(--brand-lilac-ink); font-family:var(--font-body);
+  }
+
+  /* ============ HOME ============ */
+  .hero{
+    position:relative; border-radius:20px; overflow:hidden; padding:3.2rem clamp(1.5rem,4vw,3.5rem);
+    background:
+      radial-gradient(circle at 18px 18px, var(--border) 1.5px, transparent 1.5px) 0 0/26px 26px,
+      var(--surface);
+    border:1px solid var(--border);
+    margin-bottom:2.4rem;
+  }
+  .hero-inner{ display:flex; align-items:center; gap:2.6rem; flex-wrap:wrap; }
+  .mark-hero{ width:132px; flex:0 0 132px; }
+  .hero-copy{ flex:1 1 380px; min-width:280px; }
+  .hero h1{
+    font-size:clamp(2.1rem, 5vw, 3.4rem); font-weight:800; line-height:1.02; margin-bottom:.4rem;
+  }
+  .hero h1 .gold{ color:var(--brand-gold); }
+  .hero .tagline{
+    font-family:var(--font-display); font-weight:600; font-size:1.15rem; color:var(--tagline-color);
+    margin-bottom:1rem;
+  }
+  .hero .desc{ color:var(--text-muted); max-width:56ch; }
+  .chip-row{ display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1.1rem; }
+  .chip{
+    font-size:.78rem; font-weight:600; padding:.35rem .75rem; border-radius:99px;
+    background:var(--surface-2); border:1px solid var(--border); color:var(--text-secondary);
+  }
+
+  .layerbar{ display:flex; gap:4px; margin-top:2.2rem; }
+  .layerbar .layer{
+    flex:1; height:14px; border-radius:4px; background:var(--brand-purple); position:relative; cursor:default;
+    transition:transform .15s ease;
+  }
+  :root[data-theme="dark"] .layerbar .layer{ background:var(--brand-lilac); }
+  .layerbar .layer:last-child{ background:var(--brand-gold); }
+  .layerbar .layer:hover{ transform:scaleY(1.35); }
+  .layerbar-caption{ display:flex; justify-content:space-between; margin-top:.5rem; font-size:.72rem; color:var(--text-muted); font-family:var(--font-mono); }
+
+  .stat-row{ margin-top:2.6rem; }
+  .stat-tile{
+    background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1.1rem 1.3rem;
+  }
+  .stat-tile .n{ font-family:var(--font-mono); font-size:1.9rem; font-weight:700; color:var(--text); font-variant-numeric:tabular-nums; }
+  .stat-tile .n .gold{ color:var(--brand-gold); }
+  .stat-tile .l{ font-size:.78rem; color:var(--text-muted); margin-top:.2rem; }
+
+  /* ============ DIAGNÓSTICO ============ */
+  .diag-item{ display:flex; flex-direction:column; gap:.3rem; }
+  .diag-item .q{ font-family:var(--font-mono); font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; color:var(--text-muted); }
+  .diag-item .a{ font-family:var(--font-display); font-weight:600; color:var(--text); font-size:1.02rem; }
+
+  /* ============ NOME ============ */
+  .wordmark-xl{ font-family:var(--font-display); font-weight:800; font-size:clamp(2.6rem,7vw,4.6rem); line-height:1; letter-spacing:-0.02em; color:var(--text); }
+  .wordmark-xl .gold{ color:var(--brand-gold); }
+  .tagline-xl{ font-family:var(--font-display); font-weight:600; font-size:1.3rem; color:var(--text-muted); margin-top:.4rem; }
+  details.alt-names{ margin-top:1.6rem; }
+  details.alt-names summary{
+    cursor:pointer; font-weight:600; color:var(--text); list-style:none; display:flex; align-items:center; gap:.4rem;
+  }
+  details.alt-names summary::-webkit-details-marker{ display:none; }
+  details.alt-names summary::before{ content:"▸"; color:var(--brand-gold); transition:transform .15s ease; }
+  details.alt-names[open] summary::before{ transform:rotate(90deg); }
+  .alt-name-list{ display:flex; flex-wrap:wrap; gap:.5rem; margin-top:.9rem; }
+
+  /* ============ IDENTIDADE ============ */
+  .swatch{
+    border-radius:var(--radius); overflow:hidden; border:1px solid var(--border); background:var(--surface);
+  }
+  .swatch .fill{ height:78px; }
+  .swatch .meta{ padding:.7rem .9rem; }
+  .swatch .meta .name{ font-weight:700; color:var(--text); font-size:.9rem; }
+  .swatch .meta .hex{ font-family:var(--font-mono); font-size:.76rem; color:var(--text-muted); }
+  .swatch .meta .use{ font-size:.78rem; color:var(--text-muted); margin-top:.2rem; }
+
+  .type-specimen .sample-display{ font-family:var(--font-display); font-weight:800; font-size:2.4rem; color:var(--text); line-height:1.05; }
+  .type-specimen .sample-body{ font-family:var(--font-body); color:var(--text-secondary); max-width:60ch; }
+  .type-specimen .sample-mono{ font-family:var(--font-mono); font-size:.85rem; color:var(--text-muted); }
+  .type-role{ font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--text-muted); font-family:var(--font-mono); margin-bottom:.3rem; }
+
+  .prompt-card{
+    background:var(--surface-2); border:1px solid var(--border); border-radius:var(--radius); padding:1.1rem 1.3rem;
+  }
+  .prompt-card .label{ font-family:var(--font-mono); font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; color:var(--brand-purple); font-weight:700; margin-bottom:.5rem; }
+  :root[data-theme="dark"] .prompt-card .label{ color:var(--brand-lilac); }
+  .prompt-card p{ font-family:var(--font-mono); font-size:.82rem; line-height:1.65; color:var(--text-secondary); max-width:none; }
+  .copy-btn{
+    margin-top:.7rem; font-family:var(--font-mono); font-size:.72rem; font-weight:600; letter-spacing:.03em;
+    background:var(--surface); border:1px solid var(--border-strong); color:var(--text); padding:.4rem .8rem;
+    border-radius:8px; cursor:pointer; display:inline-flex; align-items:center; gap:.4rem;
+  }
+  .copy-btn:hover{ border-color:var(--brand-gold); }
+
+  /* ============ SITE ============ */
+  .sitemap-tree{ display:flex; flex-wrap:wrap; gap:.6rem; margin-bottom:2rem; }
+  .sitemap-node{
+    font-size:.82rem; font-weight:600; padding:.5rem .9rem; border-radius:10px; background:var(--surface);
+    border:1px solid var(--border); color:var(--text-secondary);
+  }
+  .sitemap-node.root{ background:var(--brand-purple); color:#fff; border-color:var(--brand-purple); }
+  details.page-copy{
+    background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); margin-bottom:.8rem; overflow:hidden;
+  }
+  details.page-copy summary{
+    cursor:pointer; list-style:none; padding:1rem 1.3rem; font-family:var(--font-display); font-weight:700; color:var(--text);
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  details.page-copy summary::-webkit-details-marker{ display:none; }
+  details.page-copy summary .chevron{ color:var(--brand-gold); transition:transform .15s ease; }
+  details.page-copy[open] summary .chevron{ transform:rotate(90deg); }
+  details.page-copy .body{ padding:0 1.3rem 1.3rem; border-top:1px solid var(--border); }
+  details.page-copy .body h4{ font-size:.95rem; margin-top:1rem; }
+  details.page-copy .body .microcopy{ font-size:.85rem; color:var(--text-muted); }
+
+  /* ============ FINANCEIRO / ESTOQUE / COMPRAS ============ */
+  .kpi-tile{
+    background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1.2rem 1.3rem;
+  }
+  .kpi-tile .n{ font-family:var(--font-mono); font-size:1.7rem; font-weight:700; color:var(--text); }
+  .kpi-tile .l{ font-size:.78rem; color:var(--text-muted); margin-top:.15rem; }
+  .kpi-tile .delta{ font-size:.72rem; font-weight:600; margin-top:.4rem; }
+  .kpi-tile .delta.pos{ color:var(--success); }
+
+  .file-note{
+    display:flex; align-items:center; gap:.6rem; font-size:.82rem; color:var(--text-muted);
+    background:var(--surface-2); border:1px dashed var(--border-strong); border-radius:var(--radius-sm);
+    padding:.6rem .9rem; margin-top:1rem;
+  }
+  .file-note .mono{ color:var(--text-secondary); font-weight:600; }
+
+  .stock-card{ display:flex; flex-direction:column; gap:.5rem; }
+  .stock-card .head{ display:flex; justify-content:space-between; align-items:flex-start; gap:.6rem; }
+  .stock-card .title{ font-family:var(--font-display); font-weight:700; color:var(--text); }
+  .stock-card .meta-row{ display:flex; justify-content:space-between; font-size:.82rem; color:var(--text-muted); }
+  .stock-card .meta-row .v{ font-family:var(--font-mono); color:var(--text-secondary); font-weight:600; }
+  .bar-track{ height:8px; border-radius:99px; background:var(--surface-2); overflow:hidden; margin-top:.2rem; }
+  .bar-fill{ height:100%; background:var(--brand-gold); border-radius:99px; }
+
+  .supplier-card{ display:flex; flex-direction:column; gap:.35rem; }
+  .supplier-card .name{ font-family:var(--font-display); font-weight:700; color:var(--text); }
+  .supplier-card .row{ font-size:.82rem; color:var(--text-muted); display:flex; gap:.4rem; }
+  .supplier-card .row .k{ font-family:var(--font-mono); font-size:.68rem; text-transform:uppercase; letter-spacing:.05em; color:var(--text-muted); min-width:88px; }
+  .supplier-card .row .v{ color:var(--text-secondary); }
+
+  /* ============ PRECIFICAÇÃO ============ */
+  .calc-wrap{ display:grid; grid-template-columns:minmax(280px,1fr) minmax(280px,1fr); gap:1.6rem; align-items:start; }
+  @media (max-width:820px){ .calc-wrap{ grid-template-columns:1fr; } }
+  .field{ display:flex; flex-direction:column; gap:.3rem; margin-bottom:.9rem; }
+  .field label{ font-size:.78rem; font-weight:600; color:var(--text-secondary); }
+  .field .unit{ font-size:.72rem; color:var(--text-muted); font-weight:400; }
+  .field input{
+    font-family:var(--font-mono); font-size:.95rem; padding:.55rem .7rem; border-radius:8px;
+    border:1px solid var(--border-strong); background:var(--surface); color:var(--text);
+  }
+  .field input:focus{ border-color:var(--brand-gold); }
+  .calc-result{ position:sticky; top:1.6rem; }
+  .result-line{ display:flex; justify-content:space-between; padding:.55rem 0; border-bottom:1px solid var(--border); font-size:.88rem; }
+  .result-line:last-of-type{ border-bottom:none; }
+  .result-line .k{ color:var(--text-muted); }
+  .result-line .v{ font-family:var(--font-mono); font-weight:600; color:var(--text); }
+  .result-total{
+    display:flex; justify-content:space-between; align-items:baseline; margin-top:.6rem; padding-top:1rem;
+    border-top:2px solid var(--brand-gold);
+  }
+  .result-total .k{ font-family:var(--font-display); font-weight:700; color:var(--text); }
+  .result-total .v{ font-family:var(--font-mono); font-weight:800; font-size:1.5rem; color:var(--text); }
+  .situacao-pill{ margin-top:1rem; }
+
+  .receipt-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:1rem; margin-top:1rem; }
+  .receipt{
+    background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1.1rem 1.2rem;
+    font-family:var(--font-mono); font-size:.82rem;
+  }
+  .receipt .p-name{ font-family:var(--font-display); font-size:.95rem; font-weight:700; color:var(--text); margin-bottom:.6rem; }
+  .receipt .r-line{ display:flex; justify-content:space-between; padding:.25rem 0; color:var(--text-muted); border-bottom:1px dashed var(--border); }
+  .receipt .r-line.total{ color:var(--text); font-weight:700; border-bottom:none; border-top:1px solid var(--border-strong); margin-top:.3rem; padding-top:.5rem; }
+
+  /* ============ CONTEÚDO 30 DIAS ============ */
+  .filter-row{ display:flex; flex-wrap:wrap; gap:.5rem; margin-bottom:1.6rem; }
+  .filter-btn{
+    font-family:var(--font-body); font-size:.82rem; font-weight:600; padding:.5rem 1rem; border-radius:99px;
+    border:1px solid var(--border-strong); background:var(--surface); color:var(--text-secondary); cursor:pointer;
+  }
+  .filter-btn[aria-pressed="true"]{ background:var(--brand-purple); color:#fff; border-color:var(--brand-purple); }
+  :root[data-theme="dark"] .filter-btn[aria-pressed="true"]{ background:var(--brand-lilac); color:#241546; border-color:var(--brand-lilac); }
+  .content-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1rem; }
+  .content-card{ display:flex; flex-direction:column; gap:.55rem; }
+  .content-card .top-row{ display:flex; justify-content:space-between; align-items:center; }
+  .content-card .day{ font-family:var(--font-mono); font-size:.72rem; color:var(--text-muted); font-weight:700; }
+  .content-card .hook{ font-family:var(--font-display); font-weight:700; color:var(--text); font-size:.98rem; line-height:1.3; }
+  .content-card .field-line{ font-size:.8rem; color:var(--text-muted); }
+  .content-card .field-line b{ color:var(--text-secondary); font-weight:600; }
+  .content-card[hidden]{ display:none; }
+  .week-heading{ margin:2.2rem 0 1rem; font-family:var(--font-mono); font-size:.78rem; text-transform:uppercase; letter-spacing:.1em; color:var(--text-muted); border-bottom:1px solid var(--border); padding-bottom:.4rem; }
+  .week-heading:first-of-type{ margin-top:0; }
+
+  footer.site-foot{
+    margin-top:3rem; padding-top:1.6rem; border-top:1px solid var(--border);
+    font-size:.8rem; color:var(--text-muted); display:flex; justify-content:space-between; flex-wrap:wrap; gap:.5rem;
+  }
+
+  @media (max-width: 900px){
+    .sidebar{ transform:translateX(-100%); transition:transform .25s ease; box-shadow:var(--shadow-md); }
+    .sidebar.open{ transform:translateX(0); }
+    main{ margin-left:0; }
+    .sidebar-toggle{ display:inline-flex; align-items:center; gap:.4rem; }
+    .sidebar-scrim.open{
+      display:block; position:fixed; inset:0; background:rgba(0,0,0,0.45); z-index:90;
+    }
+    .section{ padding-top:4.6rem; }
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Pular para o conteúdo</a>
+
+<button class="sidebar-toggle" id="sidebarToggle" aria-expanded="false" aria-controls="sidebar">
+  <span aria-hidden="true">☰</span> Etapas
+</button>
+<div class="sidebar-scrim" id="scrim"></div>
+
+<div class="app">
+  <aside class="sidebar" id="sidebar" aria-label="Etapas do plano">
+    <div class="sidebar-head">
+      <svg class="mark-mini" viewBox="0 0 200 200" aria-hidden="true">
+        <polygon points="100,20 160,55 100,90 40,55" fill="#8B78BE"/>
+        <polygon points="40,55 100,90 100,160 40,125" fill="#F1ECFA"/>
+        <polygon points="160,55 100,90 100,160 160,125" fill="#8B78BE"/>
+        <circle cx="100" cy="55" r="9" fill="#FFC93C"/>
+      </svg>
+      <span class="wordmark-sm">Lumos<span class="gold">3D</span></span>
+    </div>
+    <div class="sidebar-tagline">"Ideias que ganham forma."</div>
+    <nav class="stages" id="stageNav">
+      <button class="stage-btn" data-target="home" aria-current="true"><span class="num">00</span> Visão geral</button>
+      <button class="stage-btn" data-target="diagnostico"><span class="num">01</span> Diagnóstico</button>
+      <button class="stage-btn" data-target="nome"><span class="num">02</span> Nome &amp; marca</button>
+      <button class="stage-btn" data-target="identidade"><span class="num">03</span> Identidade visual</button>
+      <button class="stage-btn" data-target="site"><span class="num">04</span> Site</button>
+      <button class="stage-btn" data-target="financeiro"><span class="num">05</span> Financeiro</button>
+      <button class="stage-btn" data-target="estoque"><span class="num">06</span> Estoque</button>
+      <button class="stage-btn" data-target="compras"><span class="num">07</span> Compras</button>
+      <button class="stage-btn" data-target="precificacao"><span class="num">08</span> Precificação</button>
+      <button class="stage-btn" data-target="conteudo"><span class="num">09</span> Conteúdo (30d)</button>
+    </nav>
+    <div class="sidebar-foot">Brindes personalizados · impressão 3D FDM<br>Atuação nacional, online</div>
+  </aside>
+
+  <main id="main-content">
+
+    <!-- ============ 00 HOME ============ -->
+    <section class="section active" id="home" aria-labelledby="home-h">
+      <div class="hero">
+        <div class="hero-inner">
+          <svg class="mark-hero" id="brandHero" viewBox="0 0 200 200" role="img" aria-label="Símbolo Lumos 3D, um cubo em transição de estrutura para forma sólida com uma faísca dourada">
+            <g class="wire" fill="none" stroke="var(--brand-purple)" stroke-width="2.5" stroke-linejoin="round">
+              <polygon points="100,20 160,55 100,90 40,55"/>
+              <polygon points="40,55 100,90 100,160 40,125"/>
+              <polygon points="160,55 100,90 100,160 160,125"/>
+            </g>
+            <g class="solid">
+              <polygon points="100,20 160,55 100,90 40,55" fill="#2D1B4E"/>
+              <polygon points="40,55 100,90 100,160 40,125" fill="#3D2568"/>
+              <polygon points="160,55 100,90 100,160 160,125" fill="#241748"/>
+            </g>
+            <circle class="spark" cx="100" cy="55" r="11" fill="#FFC93C"/>
+          </svg>
+          <div class="hero-copy">
+            <h1 id="home-h">Lumos<span class="gold">3D</span></h1>
+            <p class="tagline">Ideias que ganham forma.</p>
+            <p class="desc">Plano de negócio completo para uma marca de impressão 3D de brindes personalizados, montado camada por camada: da marca ao site, das planilhas de gestão ao calendário de conteúdo.</p>
+            <div class="chip-row">
+              <span class="chip">Brindes personalizados</span>
+              <span class="chip">Acessível e alto volume</span>
+              <span class="chip">FDM · PLA/PETG</span>
+              <span class="chip">Brasil todo, online</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="layerbar" id="layerbar" aria-hidden="true">
+          <div class="layer" title="Diagnóstico"></div>
+          <div class="layer" title="Nome"></div>
+          <div class="layer" title="Identidade visual"></div>
+          <div class="layer" title="Site"></div>
+          <div class="layer" title="Financeiro"></div>
+          <div class="layer" title="Estoque"></div>
+          <div class="layer" title="Compras"></div>
+          <div class="layer" title="Precificação"></div>
+          <div class="layer" title="Conteúdo"></div>
+        </div>
+        <div class="layerbar-caption"><span>Camada 01 · diagnóstico</span><span>Camada 09 · conteúdo, plano completo</span></div>
+      </div>
+
+      <div class="grid grid-4 stat-row">
+        <div class="stat-tile"><div class="n">10</div><div class="l">etapas concluídas</div></div>
+        <div class="stat-tile"><div class="n">4</div><div class="l">planilhas .xlsx com fórmulas</div></div>
+        <div class="stat-tile"><div class="n">5</div><div class="l">produtos já precificados</div></div>
+        <div class="stat-tile"><div class="n"><span class="gold">30</span></div><div class="l">dias de conteúdo pronto</div></div>
+      </div>
+
+      <div class="card" style="margin-top:1.6rem;">
+        <h3 style="margin-bottom:.6rem;">Como este plano foi construído</h3>
+        <p style="color:var(--text-muted);">Assim como uma peça em uma impressora FDM, o plano da Lumos 3D foi levantado camada por camada: primeiro o diagnóstico do negócio, depois a marca, a identidade visual e o site, em seguida as planilhas de gestão (financeiro, estoque e compras), a precificação e, por fim, o calendário de conteúdo. Use o menu à esquerda para navegar por qualquer camada.</p>
+      </div>
+    </section>
+
+    <!-- ============ 01 DIAGNÓSTICO ============ -->
+    <section class="section" id="diagnostico" aria-labelledby="diag-h">
+      <div class="section-head">
+        <div class="eyebrow">Camada 01</div>
+        <h2 id="diag-h">Diagnóstico</h2>
+        <p class="lede">O ponto de partida de todo o resto do plano, as respostas que definem produto, preço, canal e alcance.</p>
+      </div>
+      <div class="grid grid-2">
+        <div class="card diag-item"><span class="q">Nicho principal</span><span class="a">Brindes personalizados</span></div>
+        <div class="card diag-item"><span class="q">Posicionamento</span><span class="a">Acessível e alto volume</span></div>
+        <div class="card diag-item"><span class="q">Impressoras e materiais</span><span class="a">FDM (filamento), PLA/PETG como base</span></div>
+        <div class="card diag-item"><span class="q">Orçamento inicial</span><span class="a">R$ 3.000 a R$ 8.000</span></div>
+        <div class="card diag-item"><span class="q">Canais de venda</span><span class="a">Site próprio, Instagram, Shopee/Mercado Livre, encomendas locais</span></div>
+        <div class="card diag-item"><span class="q">Preferência de nome/visual</span><span class="a">Livre, a definir pelo consultor</span></div>
+        <div class="card diag-item"><span class="q">Região de atuação</span><span class="a">Brasil todo, online</span></div>
+      </div>
+      <p style="margin-top:1.4rem; color:var(--text-muted);">Esse diagnóstico define o fio condutor de todas as camadas seguintes: marca acessível, produção em volume via FDM, comunicação nacional e presença multicanal.</p>
+    </section>
+
+    <!-- ============ 02 NOME ============ -->
+    <section class="section" id="nome" aria-labelledby="nome-h">
+      <div class="section-head">
+        <div class="eyebrow">Camada 02</div>
+        <h2 id="nome-h">Nome &amp; marca</h2>
+        <p class="lede">O nome escolhido pelo cliente, e o raciocínio por trás dele.</p>
+      </div>
+      <div class="card" style="padding:2rem 2.2rem;">
+        <div class="wordmark-xl">Lumos<span class="gold">3D</span></div>
+        <div class="tagline-xl">"Ideias que ganham forma."</div>
+        <p style="margin-top:1.2rem; max-width:60ch;">"Lumos" remete a luz e ao momento em que uma ideia se acende, o "3D" ancora o nome no processo de impressão, e o slogan fecha o conceito ao descrever exatamente o que a marca faz: transformar uma ideia em objeto físico. Nome curto, fácil de falar, com boa disponibilidade de domínio <span class="mono">lumos3d.com.br</span> e <span class="mono">@lumos3d</span> no Instagram.</p>
+
+        <details class="alt-names">
+          <summary>Outras 19 opções de nome consideradas antes da escolha final</summary>
+          <div class="alt-name-list">
+            <span class="tag">Camada Criativa</span><span class="tag">Printtá</span><span class="tag">BrindaMake</span>
+            <span class="tag">3D na Caixa</span><span class="tag">Molda Brindes</span><span class="tag">Print &amp; Presente</span>
+            <span class="tag">Fábrica de Brinde</span><span class="tag">Camada Extra</span><span class="tag">PrintBrinde</span>
+            <span class="tag">Oficina 3D Brindes</span><span class="tag">Impressa</span><span class="tag">PLAy</span>
+            <span class="tag">Fatiado</span><span class="tag">Extrusa</span><span class="tag">Camada a Camada</span>
+            <span class="tag">Eixo Z</span><span class="tag">Bico Quente</span><span class="tag">Retração Zero</span>
+            <span class="tag">Filamenta</span><span class="tag">ImprimeJá</span>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ============ 03 IDENTIDADE VISUAL ============ -->
+    <section class="section" id="identidade" aria-labelledby="id-h">
+      <div class="section-head">
+        <div class="eyebrow">Camada 03</div>
+        <h2 id="id-h">Identidade visual</h2>
+        <p class="lede">A ideia central: uma forma que começa como linha, a ideia ainda no papel, e termina como volume sólido iluminado por um ponto de luz dourada.</p>
+      </div>
+
+      <h3>Paleta de cores</h3>
+      <div class="grid grid-4" style="margin-bottom:2.2rem;">
+        <div class="swatch"><div class="fill" style="background:#2D1B4E;"></div><div class="meta"><div class="name">Roxo profundo</div><div class="hex">#2D1B4E</div><div class="use">Marca, textos de destaque</div></div></div>
+        <div class="swatch"><div class="fill" style="background:#FFC93C;"></div><div class="meta"><div class="name">Dourado elétrico</div><div class="hex">#FFC93C</div><div class="use">Destaque, CTA, "a luz"</div></div></div>
+        <div class="swatch"><div class="fill" style="background:#F7F5F2; border-bottom:1px solid var(--border);"></div><div class="meta"><div class="name">Off-white</div><div class="hex">#F7F5F2</div><div class="use">Fundo neutro principal</div></div></div>
+        <div class="swatch"><div class="fill" style="background:#3A3A3A;"></div><div class="meta"><div class="name">Cinza grafite</div><div class="hex">#3A3A3A</div><div class="use">Texto de apoio</div></div></div>
+        <div class="swatch"><div class="fill" style="background:#C9B8E8;"></div><div class="meta"><div class="name">Lilás claro</div><div class="hex">#C9B8E8</div><div class="use">Apoio e decoração</div></div></div>
+      </div>
+
+      <div class="grid type-specimen" style="grid-template-columns:1fr 1.2fr; gap:2rem; align-items:start; margin-bottom:2.4rem;">
+        <div>
+          <h3>Tipografia</h3>
+          <div class="type-role">Display · Poppins Bold</div>
+          <div class="sample-display">Aa Lumos</div>
+          <p style="margin-top:1rem;" class="type-role">Corpo de texto · Inter</p>
+          <p class="sample-body">Cada peça que sai da Lumos 3D começa como uma linha e termina como objeto, camada por camada.</p>
+          <p class="type-role">Dados e código · JetBrains Mono</p>
+          <p class="sample-mono">custo_total = material + energia + depreciação + mão_de_obra</p>
+        </div>
+        <div class="card">
+          <h3 style="margin-bottom:1rem;">Símbolo</h3>
+          <svg viewBox="0 0 200 200" style="max-width:220px; margin:0 auto;" role="img" aria-label="Cubo em transição de wireframe para sólido com faísca dourada">
+            <g fill="none" stroke="var(--brand-purple)" stroke-width="2.5" stroke-linejoin="round">
+              <polygon points="100,20 160,55 100,90 40,55"/>
+              <polygon points="40,55 100,90 100,160 40,125"/>
+              <polygon points="160,55 100,90 100,160 160,125"/>
+            </g>
+            <polygon points="40,55 100,90 100,160 40,125" fill="#3D2568" opacity="0.9"/>
+            <circle cx="100" cy="55" r="10" fill="#FFC93C"/>
+          </svg>
+          <p style="text-align:center; color:var(--text-muted); margin-top:.8rem; margin-bottom:0;">Cubo em wireframe se transformando em cubo sólido, com uma faísca dourada no ponto de transição.</p>
+        </div>
+      </div>
+
+      <h3>Prompts de imagem prontos para gerador de IA</h3>
+      <div class="grid grid-2">
+        <div class="prompt-card">
+          <div class="label">Prompt 1 · símbolo isolado</div>
+          <p>Ícone minimalista de logotipo para a marca Lumos 3D, empresa de impressão 3D de brindes personalizados. Composição centralizada, fundo liso off-white (#F7F5F2), sem nenhum texto ou letra, apenas o símbolo. O símbolo é um cubo isométrico que começa como wireframe, linhas finas na cor roxo profundo (#2D1B4E), e se transforma progressivamente em um cubo sólido preenchido na mesma cor, com uma pequena faísca de luz dourada (#FFC93C) brilhando exatamente no ponto de transição. Estilo flat design vetorial, moderno e minimalista, sem sombras realistas. Enquadramento quadrado, proporção 1:1, alta resolução.</p>
+          <button class="copy-btn" data-copy-target="p1">Copiar prompt</button>
+        </div>
+        <div class="prompt-card">
+          <div class="label">Prompt 2 · logotipo horizontal completo</div>
+          <p>Logotipo horizontal completo para a marca Lumos 3D. À esquerda, o símbolo do cubo isométrico em transição de wireframe para sólido, com faísca dourada. À direita, o nome "Lumos 3D" em tipografia sans-serif geométrica arredondada, bold, com "Lumos" em roxo profundo (#2D1B4E) e "3D" em dourado elétrico (#FFC93C). Abaixo, em cinza grafite, a frase "Ideias que ganham forma". Fundo off-white liso (#F7F5F2), estilo flat design vetorial. Enquadramento horizontal, proporção 16:9, alta resolução.</p>
+          <button class="copy-btn" data-copy-target="p2">Copiar prompt</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 04 SITE ============ -->
+    <section class="section" id="site" aria-labelledby="site-h">
+      <div class="section-head">
+        <div class="eyebrow">Camada 04</div>
+        <h2 id="site-h">Site</h2>
+        <p class="lede">Sitemap e copy completo do site de vendas da Lumos 3D (site próprio, distinto deste painel de plano de negócio).</p>
+      </div>
+
+      <div class="sitemap-tree">
+        <span class="sitemap-node root">lumos3d.com.br</span>
+        <span class="sitemap-node">Home</span><span class="sitemap-node">Sobre</span><span class="sitemap-node">Catálogo</span>
+        <span class="sitemap-node">Como funciona</span><span class="sitemap-node">Orçamento personalizado</span><span class="sitemap-node">Contato</span>
+      </div>
+
+      <details class="page-copy" open>
+        <summary>Home <span class="chevron" aria-hidden="true">▸</span></summary>
+        <div class="body">
+          <h4>Hero</h4>
+          <p><b>Título:</b> Sua ideia, impressa em 3D e pronta para presentear<br><b>Subtítulo:</b> A Lumos 3D transforma qualquer ideia em brinde personalizado, com produção própria e entrega para todo o Brasil.<br><b>Botões:</b> Fazer meu orçamento · Ver catálogo</p>
+          <h4>Selos de confiança</h4>
+          <p>Produção própria, sem intermediário · Entrega para todo o Brasil · Personalização 100% sob medida · Atendimento direto pelo WhatsApp</p>
+          <h4>Como funciona (resumo)</h4>
+          <p>1. Você envia sua ideia ou escolhe um modelo do catálogo. 2. Você recebe o orçamento em até 24 horas. 3. A peça é produzida e enviada com todo cuidado. 4. Você recebe em casa, pronta para presentear ou usar.</p>
+          <h4>CTA final</h4>
+          <p>Sua ideia já pode virar realidade. Envie sua ideia agora e receba o orçamento sem compromisso.</p>
+        </div>
+      </details>
+
+      <details class="page-copy">
+        <summary>Sobre <span class="chevron" aria-hidden="true">▸</span></summary>
+        <div class="body">
+          <p>A Lumos 3D nasceu para dar forma a ideias. Trabalhamos com produção própria, do primeiro esboço até a peça final, para garantir qualidade e prazo em cada pedido, seja uma unidade ou um lote fechado para empresa.</p>
+          <p>Nosso nome vem da ideia de acender uma ideia e dar forma a ela. É exatamente isso que fazemos todos os dias, transformar um pedido em um objeto físico que representa quem pediu.</p>
+          <h4>Por que escolher a Lumos 3D</h4>
+          <p>Produção própria, sem terceirizar a impressão · Atendimento direto com quem produz sua peça · Personalização real, não apenas troca de nome ou cor · Entrega para todo o Brasil com acompanhamento do pedido</p>
+        </div>
+      </details>
+
+      <details class="page-copy">
+        <summary>Catálogo <span class="chevron" aria-hidden="true">▸</span></summary>
+        <div class="body">
+          <p>Escolha um modelo ou peça o seu. Os itens abaixo são exemplos do que já produzimos.</p>
+          <div class="table-wrap" style="margin-top:.8rem;">
+            <table>
+              <thead><tr><th>Categoria</th><th>Exemplos</th><th>Indicado para</th></tr></thead>
+              <tbody>
+                <tr><td>Brindes corporativos</td><td>Chaveiros, porta cartões, troféus</td><td>Empresas, eventos, fim de ano</td></tr>
+                <tr><td>Presentes personalizados</td><td>Nome em 3D, luminárias, porta retratos</td><td>Aniversários, datas comemorativas</td></tr>
+                <tr><td>Decoração</td><td>Vasos, organizadores, peças decorativas</td><td>Casa, escritório</td></tr>
+                <tr><td>Itens sob encomenda</td><td>Peças a partir de referência do cliente</td><td>Ideias específicas, projetos exclusivos</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <details class="page-copy">
+        <summary>Como funciona <span class="chevron" aria-hidden="true">▸</span></summary>
+        <div class="body">
+          <div class="table-wrap" style="margin-top:.8rem;">
+            <table>
+              <thead><tr><th>Etapa</th><th>O que acontece</th><th>Prazo</th></tr></thead>
+              <tbody>
+                <tr><td>1. Envio da ideia</td><td>Descrição ou modelo do catálogo</td><td>Imediato</td></tr>
+                <tr><td>2. Orçamento</td><td>Valor e prazo de produção</td><td>Até 24 horas</td></tr>
+                <tr><td>3. Aprovação e pagamento</td><td>Confirmação do pedido</td><td>Assim que aprovar</td></tr>
+                <tr><td>4. Produção</td><td>Impressão e acabamento manual</td><td>Conforme o item</td></tr>
+                <tr><td>5. Envio</td><td>Embalagem e código de rastreio</td><td>Após produção</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </details>
+
+      <details class="page-copy">
+        <summary>Orçamento personalizado <span class="chevron" aria-hidden="true">▸</span></summary>
+        <div class="body">
+          <p><b>Título:</b> Vamos dar forma à sua ideia<br><b>Subtítulo:</b> Preencha os campos abaixo e receba seu orçamento em até 24 horas, sem compromisso.</p>
+          <p class="microcopy">Campos do formulário: nome completo, WhatsApp, e-mail, descrição da ideia ou anexo de referência, quantidade desejada, prazo desejado.</p>
+          <p><b>Garantia:</b> Sem compromisso de compra. Você só paga se aprovar o orçamento.</p>
+        </div>
+      </details>
+
+      <details class="page-copy">
+        <summary>Contato <span class="chevron" aria-hidden="true">▸</span></summary>
+        <div class="body">
+          <p>WhatsApp: atendimento rápido para orçamento e dúvidas · Instagram: @lumos3d · E-mail: propostas corporativas e parcerias</p>
+          <p>Horário de atendimento: segunda a sexta, das 9h às 18h. Pedidos fora do horário são respondidos no próximo dia útil.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- ============ 05 FINANCEIRO ============ -->
+    <section class="section" id="financeiro" aria-labelledby="fin-h">
+      <div class="section-head">
+        <div class="eyebrow">Camada 05</div>
+        <h2 id="fin-h">Financeiro</h2>
+        <p class="lede">Planilha com fórmulas reais (SUMIFS, saldo acumulado), aqui exibida com os dados de exemplo já calculados.</p>
+      </div>
+
+      <div class="grid grid-4">
+        <div class="kpi-tile"><div class="n">R$ 1.429,90</div><div class="l">Faturamento (ago/2026)</div></div>
+        <div class="kpi-tile"><div class="n">R$ 1.055,00</div><div class="l">Despesas (ago/2026)</div></div>
+        <div class="kpi-tile"><div class="n">R$ 285,98</div><div class="l">Ticket médio</div><div class="delta pos">5 vendas no mês</div></div>
+        <div class="kpi-tile"><div class="n">26,2%</div><div class="l">Margem</div></div>
+      </div>
+
+      <h3 style="margin-top:2rem;">Fluxo de caixa (saldo acumulado por fórmula)</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Data</th><th>Entradas</th><th>Saídas</th><th>Saldo</th></tr></thead>
+          <tbody>
+            <tr><td>01/08</td><td class="mono">R$ 0,00</td><td class="mono">R$ 480,00</td><td class="mono">−R$ 480,00</td></tr>
+            <tr><td>03/08</td><td class="mono">R$ 25,00</td><td class="mono">R$ 0,00</td><td class="mono">−R$ 455,00</td></tr>
+            <tr><td>04/08</td><td class="mono">R$ 0,00</td><td class="mono">R$ 210,00</td><td class="mono">−R$ 665,00</td></tr>
+            <tr><td>05/08</td><td class="mono">R$ 950,00</td><td class="mono">R$ 0,00</td><td class="mono">R$ 285,00</td></tr>
+            <tr><td>06/08</td><td class="mono">R$ 0,00</td><td class="mono">R$ 95,00</td><td class="mono">R$ 190,00</td></tr>
+            <tr><td>08/08</td><td class="mono">R$ 89,90</td><td class="mono">R$ 0,00</td><td class="mono">R$ 279,90</td></tr>
+            <tr><td>10/08</td><td class="mono">R$ 0,00</td><td class="mono">R$ 150,00</td><td class="mono">R$ 129,90</td></tr>
+            <tr><td>12/08</td><td class="mono">R$ 45,00</td><td class="mono">R$ 0,00</td><td class="mono">R$ 174,90</td></tr>
+            <tr><td>15/08</td><td class="mono">R$ 320,00</td><td class="mono">R$ 120,00</td><td class="mono">R$ 374,90</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="file-note"><span aria-hidden="true">📄</span> Arquivo completo com abas Vendas, Despesas, Fluxo de caixa e Indicadores: <span class="mono">lumos3d-controle-financeiro.xlsx</span></div>
+    </section>
+
+    <!-- ============ 06 ESTOQUE ============ -->
+    <section class="section" id="estoque" aria-labelledby="est-h">
+      <div class="section-head">
+        <div class="eyebrow">Camada 06</div>
+        <h2 id="est-h">Estoque</h2>
+        <p class="lede">Matéria-prima com alerta automático de reposição, e produtos prontos com margem calculada.</p>
+      </div>
+
+      <h3>Matéria-prima</h3>
+      <div class="grid grid-3">
+        <div class="card stock-card"><div class="head"><span class="title">PLA Branco</span><span class="pill ok">OK</span></div><div class="meta-row"><span>Estoque</span><span class="v">2.500 g</span></div><div class="meta-row"><span>Custo/kg</span><span class="v">R$ 89,90</span></div><div class="meta-row"><span>Ponto reposição</span><span class="v">500 g</span></div></div>
+        <div class="card stock-card"><div class="head"><span class="title">PLA Preto</span><span class="pill ok">OK</span></div><div class="meta-row"><span>Estoque</span><span class="v">1.800 g</span></div><div class="meta-row"><span>Custo/kg</span><span class="v">R$ 89,90</span></div><div class="meta-row"><span>Ponto reposição</span><span class="v">500 g</span></div></div>
+        <div class="card stock-card"><div class="head"><span class="title">PLA Dourado</span><span class="pill ok">OK</span></div><div class="meta-row"><span>Estoque</span><span class="v">600 g</span></div><div class="meta-row"><span>Custo/kg</span><span class="v">R$ 99,90</span></div><div class="meta-row"><span>Ponto reposição</span><span class="v">300 g</span></div></div>
+        <div class="card stock-card"><div class="head"><span class="title">PETG Transparente</span><span class="pill ok">OK</span></div><div class="meta-row"><span>Estoque</span><span class="v">1.200 g</span></div><div class="meta-row"><span>Custo/kg</span><span class="v">R$ 109,90</span></div><div class="meta-row"><span>Ponto reposição</span><span class="v">400 g</span></div></div>
+        <div class="card stock-card"><div class="head"><span class="title">PETG Cinza</span><span class="pill warn">Repor</span></div><div class="meta-row"><span>Estoque</span><span class="v">300 g</span></div><div class="meta-row"><span>Custo/kg</span><span class="v">R$ 109,90</span></div><div class="meta-row"><span>Ponto reposição</span><span class="v">400 g</span></div></div>
+      </div>
+
+      <h3 style="margin-top:2rem;">Produtos prontos</h3>
+      <div class="grid grid-3">
+        <div class="card stock-card"><span class="title">Chaveiro personalizado</span><div class="meta-row"><span>Disponível</span><span class="v">40 un</span></div><div class="meta-row"><span>Margem</span><span class="v">68,0%</span></div><div class="bar-track"><div class="bar-fill" style="width:68%;"></div></div></div>
+        <div class="card stock-card"><span class="title">Kit brinde corporativo (50 un)</span><div class="meta-row"><span>Disponível</span><span class="v">3 kits</span></div><div class="meta-row"><span>Margem</span><span class="v">34,7%</span></div><div class="bar-track"><div class="bar-fill" style="width:34.7%;"></div></div></div>
+        <div class="card stock-card"><span class="title">Luminária com nome</span><div class="meta-row"><span>Disponível</span><span class="v">12 un</span></div><div class="meta-row"><span>Margem</span><span class="v">64,4%</span></div><div class="bar-track"><div class="bar-fill" style="width:64.4%;"></div></div></div>
+        <div class="card stock-card"><span class="title">Porta retrato personalizado</span><div class="meta-row"><span>Disponível</span><span class="v">20 un</span></div><div class="meta-row"><span>Margem</span><span class="v">66,7%</span></div><div class="bar-track"><div class="bar-fill" style="width:66.7%;"></div></div></div>
+        <div class="card stock-card"><span class="title">Troféu personalizado (10 un)</span><div class="meta-row"><span>Disponível</span><span class="v">2 kits</span></div><div class="meta-row"><span>Margem</span><span class="v">34,4%</span></div><div class="bar-track"><div class="bar-fill" style="width:34.4%;"></div></div></div>
+      </div>
+      <div class="file-note"><span aria-hidden="true">📄</span> Arquivo completo: <span class="mono">lumos3d-controle-estoque.xlsx</span></div>
+    </section>
+
+    <!-- ============ 07 COMPRAS ============ -->
+    <section class="section" id="compras" aria-labelledby="comp-h">
+      <div class="section-head">
+        <div class="eyebrow">Camada 07</div>
+        <h2 id="comp-h">Compras</h2>
+        <p class="lede">Fornecedores, pedidos em andamento e previsão de reposição baseada em consumo médio.</p>
+      </div>
+
+      <h3>Fornecedores</h3>
+      <div class="grid grid-2">
+        <div class="card supplier-card"><span class="name">Fornecedor Filamentos BR</span><div class="row"><span class="k">Prazo</span><span class="v">3 dias úteis</span></div><div class="row"><span class="k">Pagamento</span><span class="v">Pix ou boleto</span></div></div>
+        <div class="card supplier-card"><span class="name">Papelaria Kraft</span><div class="row"><span class="k">Prazo</span><span class="v">2 dias úteis</span></div><div class="row"><span class="k">Pagamento</span><span class="v">Pix</span></div></div>
+        <div class="card supplier-card"><span class="name">Assistência Técnica 3D</span><div class="row"><span class="k">Prazo</span><span class="v">1 dia útil (local)</span></div><div class="row"><span class="k">Pagamento</span><span class="v">Pix ou dinheiro</span></div></div>
+        <div class="card supplier-card"><span class="name">Ferramentaria Bicos e Peças</span><div class="row"><span class="k">Prazo</span><span class="v">5 dias úteis</span></div><div class="row"><span class="k">Pagamento</span><span class="v">Cartão de crédito</span></div></div>
+      </div>
+
+      <h3 style="margin-top:2rem;">Pedidos</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Data</th><th>Item</th><th>Qtd.</th><th>Valor</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td>05/08</td><td>Embalagens kraft (100 un)</td><td class="mono">2</td><td class="mono">R$ 180,00</td><td><span class="pill ok">Entregue</span></td></tr>
+            <tr><td>10/08</td><td>PLA Dourado 1kg</td><td class="mono">2</td><td class="mono">R$ 199,80</td><td><span class="pill ok">Entregue</span></td></tr>
+            <tr><td>16/08</td><td>PETG Cinza 1kg</td><td class="mono">3</td><td class="mono">R$ 329,70</td><td><span class="pill info">Aguardando</span></td></tr>
+            <tr><td>17/08</td><td>Bico 0.4mm (kit)</td><td class="mono">1</td><td class="mono">R$ 45,00</td><td><span class="pill info">Enviado</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 style="margin-top:2rem;">Previsão de reposição</h3>
+      <div class="grid grid-3">
+        <div class="card stock-card"><div class="head"><span class="title">PLA Branco</span><span class="pill ok">OK</span></div><div class="meta-row"><span>Dias restantes</span><span class="v">94</span></div></div>
+        <div class="card stock-card"><div class="head"><span class="title">PLA Preto</span><span class="pill ok">OK</span></div><div class="meta-row"><span>Dias restantes</span><span class="v">90</span></div></div>
+        <div class="card stock-card"><div class="head"><span class="title">PLA Dourado</span><span class="pill ok">OK</span></div><div class="meta-row"><span>Dias restantes</span><span class="v">72</span></div></div>
+        <div class="card stock-card"><div class="head"><span class="title">PETG Transparente</span><span class="pill ok">OK</span></div><div class="meta-row"><span>Dias restantes</span><span class="v">90</span></div></div>
+        <div class="card stock-card"><div class="head"><span class="title">PETG Cinza</span><span class="pill warn">Repor em breve</span></div><div class="meta-row"><span>Dias restantes</span><span class="v">26</span></div></div>
+      </div>
+      <div class="file-note"><span aria-hidden="true">📄</span> Arquivo completo: <span class="mono">lumos3d-controle-compras.xlsx</span></div>
+    </section>
+
+    <!-- ============ 08 PRECIFICAÇÃO ============ -->
+    <section class="section" id="precificacao" aria-labelledby="prec-h">
+      <div class="section-head">
+        <div class="eyebrow">Camada 08</div>
+        <h2 id="prec-h">Precificação</h2>
+        <p class="lede">Calculadora ao vivo, os mesmos números da planilha, calculados aqui em tempo real enquanto você digita.</p>
+      </div>
+
+      <div class="calc-wrap">
+        <div>
+          <div class="field"><label for="c-peso">Peso da peça <span class="unit">(g)</span></label><input type="number" id="c-peso" value="60" min="0" step="1"></div>
+          <div class="field"><label for="c-precokg">Preço do filamento <span class="unit">(R$/kg)</span></label><input type="number" id="c-precokg" value="89.90" min="0" step="0.01"></div>
+          <div class="field"><label for="c-tempo">Tempo de impressão <span class="unit">(horas)</span></label><input type="number" id="c-tempo" value="1.5" min="0" step="0.1"></div>
+          <div class="field"><label for="c-potencia">Potência da impressora <span class="unit">(kW)</span></label><input type="number" id="c-potencia" value="0.15" min="0" step="0.01"></div>
+          <div class="field"><label for="c-kwh">Custo do kWh <span class="unit">(R$)</span></label><input type="number" id="c-kwh" value="0.75" min="0" step="0.01"></div>
+          <div class="field"><label for="c-equip">Valor do equipamento <span class="unit">(R$)</span></label><input type="number" id="c-equip" value="1800" min="0" step="10"></div>
+          <div class="field"><label for="c-vida">Vida útil do equipamento <span class="unit">(horas)</span></label><input type="number" id="c-vida" value="5000" min="1" step="100"></div>
+          <div class="field"><label for="c-mo">Mão de obra e acabamento <span class="unit">(R$)</span></label><input type="number" id="c-mo" value="5" min="0" step="0.5"></div>
+          <div class="field"><label for="c-margem">Margem de lucro desejada <span class="unit">(%)</span></label><input type="number" id="c-margem" value="40" min="0" max="95" step="1"></div>
+          <div class="field"><label for="c-mercado">Preço de mercado <span class="unit">(R$, para comparar)</span></label><input type="number" id="c-mercado" value="45" min="0" step="0.5"></div>
+        </div>
+
+        <div class="card calc-result">
+          <h3 style="margin-bottom:.8rem;">Resultado</h3>
+          <div class="result-line"><span class="k">Custo de material</span><span class="v mono" id="r-material">R$ 0,00</span></div>
+          <div class="result-line"><span class="k">Custo de energia</span><span class="v mono" id="r-energia">R$ 0,00</span></div>
+          <div class="result-line"><span class="k">Depreciação do equipamento</span><span class="v mono" id="r-deprec">R$ 0,00</span></div>
+          <div class="result-line"><span class="k">Mão de obra e acabamento</span><span class="v mono" id="r-mo">R$ 0,00</span></div>
+          <div class="result-total"><span class="k">Custo total</span><span class="v mono" id="r-total">R$ 0,00</span></div>
+          <div class="result-line" style="margin-top:.6rem;"><span class="k">Preço sugerido</span><span class="v mono" id="r-sugerido">R$ 0,00</span></div>
+          <div class="result-line"><span class="k">Diferença vs. mercado</span><span class="v mono" id="r-dif">R$ 0,00</span></div>
+          <div class="situacao-pill"><span class="pill ok" id="r-situacao">Competitivo</span></div>
+        </div>
+      </div>
+
+      <h3 style="margin-top:2.4rem;">Exemplos aplicados ao catálogo</h3>
+      <div class="receipt-grid">
+        <div class="receipt"><div class="p-name">Chaveiro personalizado</div><div class="r-line"><span>Custo total</span><span>R$ 4,58</span></div><div class="r-line"><span>Preço sugerido</span><span>R$ 7,64</span></div><div class="r-line total"><span>Preço praticado</span><span>R$ 25,00</span></div></div>
+        <div class="receipt"><div class="p-name">Kit brinde corporativo</div><div class="r-line"><span>Custo total</span><span>R$ 224,08</span></div><div class="r-line"><span>Preço sugerido</span><span>R$ 344,73</span></div><div class="r-line total"><span>Preço praticado</span><span>R$ 950,00</span></div></div>
+        <div class="receipt"><div class="p-name">Luminária com nome</div><div class="r-line"><span>Custo total</span><span>R$ 33,54</span></div><div class="r-line"><span>Preço sugerido</span><span>R$ 55,91</span></div><div class="r-line total"><span>Preço praticado</span><span>R$ 89,90</span></div></div>
+        <div class="receipt"><div class="p-name">Porta retrato</div><div class="r-line"><span>Custo total</span><span>R$ 11,10</span></div><div class="r-line"><span>Preço sugerido</span><span>R$ 18,50</span></div><div class="r-line total"><span>Preço praticado</span><span>R$ 45,00</span></div></div>
+        <div class="receipt"><div class="p-name">Troféu personalizado</div><div class="r-line"><span>Custo total</span><span>R$ 116,65</span></div><div class="r-line"><span>Preço sugerido</span><span>R$ 179,45</span></div><div class="r-line total"><span>Preço praticado</span><span>R$ 320,00</span></div></div>
+      </div>
+      <div class="file-note"><span aria-hidden="true">📄</span> Calculadora completa: <span class="mono">lumos3d-precificacao.xlsx</span></div>
+    </section>
+
+    <!-- ============ 09 CONTEÚDO ============ -->
+    <section class="section" id="conteudo" aria-labelledby="cont-h">
+      <div class="section-head">
+        <div class="eyebrow">Camada 09</div>
+        <h2 id="cont-h">Conteúdo (30 dias)</h2>
+        <p class="lede">13 dias de bastidores, 12 de produtos prontos, 5 de prova social. Filtre por tipo para focar em uma frente.</p>
+      </div>
+
+      <div class="filter-row" id="filterRow">
+        <button class="filter-btn" data-filter="all" aria-pressed="true">Todos (30)</button>
+        <button class="filter-btn" data-filter="Bastidores" aria-pressed="false">Bastidores (13)</button>
+        <button class="filter-btn" data-filter="Produto" aria-pressed="false">Produto pronto (12)</button>
+        <button class="filter-btn" data-filter="Prova" aria-pressed="false">Prova social (5)</button>
+      </div>
+
+      <div class="content-grid" id="contentGrid">
+        <!-- cards injected by JS from CONTENT_DATA -->
+      </div>
+    </section>
+
+    <footer class="site-foot">
+      <span>Lumos 3D · plano de negócio</span>
+      <span>Diagnóstico → Nome → Identidade → Site → Financeiro → Estoque → Compras → Precificação → Conteúdo</span>
+    </footer>
+  </main>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- Sidebar nav / section switching ---------- */
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('.stage-btn'));
+  var sections = Array.prototype.slice.call(document.querySelectorAll('.section'));
+
+  function showSection(id){
+    sections.forEach(function(s){ s.classList.toggle('active', s.id === id); });
+    buttons.forEach(function(b){ b.setAttribute('aria-current', b.dataset.target === id ? 'true' : 'false'); });
+    var main = document.getElementById('main-content');
+    if(main){ main.scrollTo({top:0, behavior:'auto'}); }
+    closeSidebarMobile();
+  }
+  buttons.forEach(function(b){
+    b.addEventListener('click', function(){ showSection(b.dataset.target); });
+  });
+
+  /* ---------- Mobile sidebar toggle ---------- */
+  var sidebar = document.getElementById('sidebar');
+  var toggle = document.getElementById('sidebarToggle');
+  var scrim = document.getElementById('scrim');
+  function openSidebarMobile(){
+    sidebar.classList.add('open'); scrim.classList.add('open'); toggle.setAttribute('aria-expanded','true');
+  }
+  function closeSidebarMobile(){
+    sidebar.classList.remove('open'); scrim.classList.remove('open'); toggle.setAttribute('aria-expanded','false');
+  }
+  toggle.addEventListener('click', function(){
+    sidebar.classList.contains('open') ? closeSidebarMobile() : openSidebarMobile();
+  });
+  scrim.addEventListener('click', closeSidebarMobile);
+
+  /* ---------- Copy buttons ---------- */
+  var PROMPTS = {
+    p1: document.querySelector('[data-copy-target="p1"]').previousElementSibling.textContent,
+    p2: document.querySelector('[data-copy-target="p2"]').previousElementSibling.textContent
+  };
+  document.querySelectorAll('.copy-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var text = PROMPTS[btn.dataset.copyTarget] || '';
+      var original = btn.textContent;
+      function done(ok){ btn.textContent = ok ? 'Copiado ✓' : 'Selecione e copie'; setTimeout(function(){ btn.textContent = original; }, 1800); }
+      if(navigator.clipboard && navigator.clipboard.writeText){
+        navigator.clipboard.writeText(text).then(function(){ done(true); }).catch(function(){ done(false); });
+      } else { done(false); }
+    });
+  });
+
+  /* ---------- Pricing calculator ---------- */
+  var ids = ['peso','precokg','tempo','potencia','kwh','equip','vida','mo','margem','mercado'];
+  var inputs = {};
+  ids.forEach(function(k){ inputs[k] = document.getElementById('c-' + k); });
+
+  function fmtBRL(n){
+    if(!isFinite(n)) n = 0;
+    return 'R$ ' + n.toLocaleString('pt-BR', {minimumFractionDigits:2, maximumFractionDigits:2});
+  }
+
+  function recalc(){
+    var peso = parseFloat(inputs.peso.value) || 0;
+    var precoKg = parseFloat(inputs.precokg.value) || 0;
+    var tempo = parseFloat(inputs.tempo.value) || 0;
+    var potencia = parseFloat(inputs.potencia.value) || 0;
+    var kwh = parseFloat(inputs.kwh.value) || 0;
+    var equip = parseFloat(inputs.equip.value) || 0;
+    var vida = parseFloat(inputs.vida.value) || 1;
+    var mo = parseFloat(inputs.mo.value) || 0;
+    var margem = (parseFloat(inputs.margem.value) || 0) / 100;
+    var mercado = parseFloat(inputs.mercado.value) || 0;
+
+    var material = (peso/1000) * precoKg;
+    var energia = tempo * potencia * kwh;
+    var deprec = (equip/vida) * tempo;
+    var total = material + energia + deprec + mo;
+    var sugerido = margem < 1 ? total / (1 - margem) : 0;
+    var dif = sugerido - mercado;
+
+    document.getElementById('r-material').textContent = fmtBRL(material);
+    document.getElementById('r-energia').textContent = fmtBRL(energia);
+    document.getElementById('r-deprec').textContent = fmtBRL(deprec);
+    document.getElementById('r-mo').textContent = fmtBRL(mo);
+    document.getElementById('r-total').textContent = fmtBRL(total);
+    document.getElementById('r-sugerido').textContent = fmtBRL(sugerido);
+    document.getElementById('r-dif').textContent = (dif >= 0 ? '+' : '−') + fmtBRL(Math.abs(dif));
+
+    var pill = document.getElementById('r-situacao');
+    if(sugerido <= mercado){
+      pill.textContent = 'Competitivo em relação ao mercado';
+      pill.className = 'pill ok';
+    } else {
+      pill.textContent = 'Acima do mercado, revisar custo ou margem';
+      pill.className = 'pill warn';
+    }
+  }
+  ids.forEach(function(k){ inputs[k].addEventListener('input', recalc); });
+  recalc();
+
+  /* ---------- 30-day content plan ---------- */
+  var CONTENT_DATA = [
+   {d:1,w:1,t:'Bastidores',h:'Isso aqui ainda não é nada. Em 40 minutos vira um brinde inteiro.',l:'Timelapse completo de um chaveiro personalizado sendo impresso do zero, camada por camada.',v:'Timelapse com câmera fixa acima da impressora, acelerado.',c:'Segue aqui pra acompanhar os bastidores de cada peça.'},
+   {d:2,w:1,t:'Produto',h:'O chaveiro que mais vendemos esse mês tem um segredo simples.',l:'100% personalizável, leve e resistente. A partir de R$ 25, envio para todo o Brasil.',v:'Foto still do chaveiro, boa luz natural, 2-3 cores ao lado.',c:'Manda mensagem no direct com sua ideia e recebe o orçamento hoje.'},
+   {d:3,w:1,t:'Bastidores',h:'Trocar o filamento parece bobo, mas é aqui que a mágica de verdade começa.',l:'Trocamos a bobina para um dourado novo. Dezenas de cores de PLA e PETG disponíveis.',v:'Vídeo da troca da bobina, close no rolo da cor nova.',c:'Comenta aqui qual cor você quer ver em um produto novo.'},
+   {d:4,w:1,t:'Prova',h:'Mensagens assim são o motivo de a gente continuar fazendo isso.',l:'Print de cliente que pediu um kit de brindes para o aniversário da empresa dele.',v:'Print de WhatsApp (autorizado) com o produto ao fundo.',c:'Se você já comprou com a gente, manda seu feedback no direct.'},
+   {d:5,w:1,t:'Produto',h:'Ela mandou só uma foto de referência. Olha o que virou.',l:'Do desenho enviado pelo cliente até a peça pronta na mesa.',v:'Imagem dividida: referência de um lado, peça pronta do outro.',c:'Envie sua ideia pelo link na bio e receba um orçamento personalizado.'},
+   {d:6,w:1,t:'Bastidores',h:'Esse é o momento que a gente mais gosta em todo o processo.',l:'A peça sai da mesa ainda quente. É aqui que a ideia vira objeto de verdade.',v:'Câmera lenta da peça sendo removida da mesa de impressão.',c:'Salva esse post pra lembrar de pedir o seu.'},
+   {d:7,w:1,t:'Produto',h:'Mesmo molde, oito cores diferentes. Qual combina mais com você?',l:'Esse porta retrato sai em qualquer cor de filamento disponível.',v:'Grade com o mesmo produto em várias cores lado a lado.',c:'Comenta o número da cor que você mais gostou.'},
+
+   {d:8,w:2,t:'Bastidores',h:'A impressora faz 80% do trabalho. O resto é na mão.',l:'Remover suporte, lixar cantos e conferir detalhe. Esse cuidado separa um brinde bem feito de um qualquer.',v:'Vídeo do acabamento manual (alicate, lixa).',c:'Segue pra ver o antes e depois desse acabamento no próximo post.'},
+   {d:9,w:2,t:'Produto',h:'Foi assim que esse kit de brindes corporativos chegou pra empresa que pediu.',l:'50 chaveiros com a logo do cliente, embalados individualmente.',v:'Vídeo estilo unboxing abrindo a caixa do pedido corporativo.',c:'Sua empresa também vai ter evento em breve? Chama a gente pro orçamento.'},
+   {d:10,w:2,t:'Bastidores',h:'Todo pedido sai daqui embalado com o mesmo cuidado, seja um ou cinquenta.',l:'Etiqueta, adesivo de lacre e cartãozinho de agradecimento.',v:'Processo de embalagem final antes do envio.',c:'Já recebeu um pedido nosso? Marca a gente nos stories.'},
+   {d:11,w:2,t:'Prova',h:'Adoramos quando o cliente manda foto usando o produto no dia a dia.',l:'Essa luminária já faz parte da decoração do quarto dela.',v:'Repost de foto/story enviado por cliente (com autorização).',c:'Marca a Lumos 3D nas suas fotos, seu post pode aparecer aqui.'},
+   {d:12,w:2,t:'Produto',h:'Apaga a luz do quarto e olha o que acontece.',l:'A luminária com nome fica ainda mais bonita no escuro, iluminada por dentro.',v:'Foto/vídeo em ambiente escuro, luminária acesa.',c:'Manda o nome que você quer ver iluminado e a gente te passa o orçamento.'},
+   {d:13,w:2,t:'Bastidores',h:'Nem toda impressão dá certo de primeira, e tá tudo bem.',l:'Peça descolou da mesa no meio da impressão. Erro faz parte do processo.',v:'Foto/vídeo de uma falha de impressão real.',c:'Comenta se você já teve algum perrengue assim em algum projeto.'},
+   {d:14,w:2,t:'Produto',h:'Chega mais perto pra ver o nível de detalhe dessa peça.',l:'Acabamento cuidadoso, sem rebarba, sem imperfeição visível.',v:'Foto macro da textura e acabamento de um produto pronto.',c:'Segue o perfil pra ver mais detalhes assim toda semana.'},
+
+   {d:15,w:3,t:'Bastidores',h:'Um dia inteiro de produção aqui na Lumos 3D, resumido em 30 segundos.',l:'Do primeiro pedido da manhã até a última caixa que sai pro correio.',v:'Reel em sequência rápida do dia de produção.',c:'Fica de olho no story de hoje pra ver os bastidores ao vivo.'},
+   {d:16,w:3,t:'Produto',h:'Muita gente pergunta o tamanho real. Aqui está.',l:'Porta chaves na palma da mão, pequeno e fácil de carregar.',v:'Foto do produto na mão, mostrando escala real.',c:'Ficou com dúvida de tamanho em outro produto? Pergunta aqui.'},
+   {d:17,w:3,t:'Bastidores',h:'Cor nova chegando, e a curiosidade bateu antes mesmo de imprimir o pedido.',l:'Testamos cores novas numa peça pequena antes de usar em pedido de cliente.',v:'Teste de cor nova em peça de teste pequena.',c:'Vota aqui, gostou dessa cor nova ou prefere as clássicas?'},
+   {d:18,w:3,t:'Prova',h:'Deixamos a cliente contar como foi a experiência com a gente.',l:'Ela pediu 80 brindes para o evento de fim de ano da empresa dela.',v:'Vídeo curto de depoimento com o produto ao fundo.',c:'Quer um depoimento assim sobre o seu pedido? Faz o seu e conta pra gente.'},
+   {d:19,w:3,t:'Produto',h:'Três lugares onde esse porta retrato personalizado fica perfeito.',l:'Estante, mesa de trabalho ou presente pra alguém especial.',v:'Foto do porta retrato em diferentes ambientes da casa.',c:'Salva esse post pra não esquecer de pedir o seu depois.'},
+   {d:20,w:3,t:'Bastidores',h:'Se você já se perguntou como guardamos tanta cor de filamento, aqui está a resposta.',l:'Cada rolo identificado por tipo e cor, organizado pra facilitar o pedido novo.',v:'Foto/vídeo do estoque de filamentos organizado.',c:'Comenta se você também gosta de ver bastidor de organização assim.'},
+   {d:21,w:3,t:'Produto',h:'Todo evento merece um troféu que ninguém mais tem igual.',l:'Troféu personalizado para uma competição interna de empresa parceira.',v:'Foto do troféu montado em uma mesa de premiação.',c:'Vai ter evento em breve? Chama a gente pro orçamento do troféu.'},
+
+   {d:22,w:4,t:'Bastidores',h:'Antes de qualquer peça ser impressa, ela passa por essa etapa aqui.',l:'Ajuste de escala, encaixe e tempo estimado antes de mandar pra fila de impressão.',v:'Tela do software de fatiamento com o modelo 3D.',c:'Quem aí também trabalha com modelagem 3D? Comenta aqui.'},
+   {d:23,w:4,t:'Produto',h:'Um catálogo inteiro cabe numa única prateleira.',l:'Chaveiro, porta retrato, luminária e troféu, tudo produzido aqui.',v:'Foto still com vários produtos do catálogo organizados juntos.',c:'Qual desses você levaria pra casa? Comenta o número.'},
+   {d:24,w:4,t:'Bastidores',h:'Um chaveiro leva 30 minutos. Um kit de 50 leva o dia inteiro.',l:'O prazo de cada orçamento é calculado com cuidado, pra não prometer o que não dá pra cumprir.',v:'Vídeo comparativo: peça pequena vs. lote grande.',c:'Manda sua ideia pra gente calcular o prazo certinho do seu pedido.'},
+   {d:25,w:4,t:'Prova',h:'Do orçamento até a mesa do evento, em menos de dez dias.',l:'100 brindes personalizados entregues dentro do prazo combinado.',v:'Foto composta: estoque na Lumos 3D e depois na mesa do evento.',c:'Precisa de brinde pro seu próximo evento? Fala com a gente com antecedência.'},
+   {d:26,w:4,t:'Produto',h:'Presente pronto pra entregar, sem precisar embrulhar nada.',l:'Combo com porta retrato, cartão e embalagem já prontos pra presentear.',v:'Foto do combo completo montado.',c:'Manda mensagem e monta seu combo personalizado.'},
+   {d:27,w:4,t:'Bastidores',h:'Impressora bem cuidada é peça bem feita.',l:'Limpeza do bico e calibração da mesa antes de voltar a produzir.',v:'Vídeo/foto da rotina de manutenção da impressora.',c:'Segue aqui pra continuar acompanhando os bastidores da produção.'},
+   {d:28,w:4,t:'Produto',h:'Um brilho a mais em qualquer peça, literalmente.',l:'Detalhes em filamento dourado, combina com aniversário e fim de ano.',v:'Foto de peça com detalhe dourado, boa luz destacando o brilho.',c:'Quer esse detalhe dourado no seu pedido? Fala com a gente.'},
+
+   {d:29,w:5,t:'Bastidores',h:'Quando o pedido é grande, a organização também precisa ser.',l:'Separar, conferir e embalar 200 peças de uma vez pede um processo diferente.',v:'Organização e embalagem de um pedido corporativo em volume.',c:'Sua empresa precisa de brinde em volume? Chama a gente pra montar a proposta.'},
+   {d:30,w:5,t:'Prova',h:'Foi assim que fechamos o mês por aqui.',l:'Compilado de tudo que saiu da Lumos 3D nas últimas semanas. Obrigado a cada cliente.',v:'Reel compilado com clipes curtos de pedidos entregues no mês.',c:'Se você foi um desses clientes, deixa seu comentário aqui embaixo.'}
+  ];
+
+  var TYPE_LABEL = {Bastidores:'Bastidores', Produto:'Produto pronto', Prova:'Prova social'};
+  var grid = document.getElementById('contentGrid');
+  var lastWeek = 0;
+  CONTENT_DATA.forEach(function(item){
+    if(item.w !== lastWeek){
+      lastWeek = item.w;
+      var heading = document.createElement('div');
+      heading.className = 'week-heading';
+      heading.style.gridColumn = '1 / -1';
+      heading.textContent = (lastWeek <= 4 ? 'Semana ' + lastWeek : 'Dias finais');
+      grid.appendChild(heading);
+    }
+    var card = document.createElement('div');
+    card.className = 'card content-card';
+    card.dataset.type = item.t;
+    card.innerHTML =
+      '<div class="top-row"><span class="day">Dia ' + item.d + '</span><span class="pill ' + (item.t === 'Bastidores' ? 'info' : item.t === 'Produto' ? 'ok' : 'warn') + '">' + TYPE_LABEL[item.t] + '</span></div>' +
+      '<div class="hook">' + item.h + '</div>' +
+      '<div class="field-line"><b>Legenda:</b> ' + item.l + '</div>' +
+      '<div class="field-line"><b>Visual:</b> ' + item.v + '</div>' +
+      '<div class="field-line"><b>CTA:</b> ' + item.c + '</div>';
+    grid.appendChild(card);
+  });
+
+  var filterBtns = Array.prototype.slice.call(document.querySelectorAll('#filterRow .filter-btn'));
+  filterBtns.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      filterBtns.forEach(function(b){ b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+      var f = btn.dataset.filter;
+      document.querySelectorAll('.content-card').forEach(function(card){
+        card.hidden = (f !== 'all' && card.dataset.type !== f);
+      });
+      document.querySelectorAll('.week-heading').forEach(function(h){ h.hidden = false; });
+    });
+  });
+
+})();
+</script>
+</body>
+</html>
