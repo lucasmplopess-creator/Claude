@@ -8,9 +8,15 @@
 </head>
 <body>
 
+<div class="bg-decor" aria-hidden="true">
+  <div class="bg-stripes"></div>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+</div>
+
 <header class="topbar">
   <div class="brand">
-    <span class="brand-mark">360°</span>
+    <span class="brand-mark"><span class="brand-mark-ring"></span><span class="brand-mark-text">360°</span></span>
     <span class="brand-name">IDEIAS 360º</span>
   </div>
   <nav class="topbar-actions">
@@ -26,15 +32,21 @@
       <div class="form-header">
         <h1>IDEIAS 360º</h1>
         <p class="form-desc">Compartilhe sua ideia de melhoria. Toda sugestão é bem-vinda!</p>
+        <div class="gradient-bar" aria-hidden="true"></div>
         <p class="privacy-note">Quando você enviar este formulário, ele não coletará automaticamente seus detalhes, como nome e endereço de email, a menos que você mesmo o forneça.</p>
       </div>
 
+      <ol id="stepper" class="stepper"></ol>
+      <p id="stepProgressLabel" class="step-progress-label"></p>
+
       <form id="ideaForm" novalidate>
-        <div id="fieldsContainer"></div>
+        <div id="stepsContainer"></div>
 
         <div class="form-actions">
-          <button type="submit" class="btn btn-primary btn-submit">Enviar</button>
-          <span id="formError" class="form-error" hidden>Preencha todas as perguntas obrigatórias antes de enviar.</span>
+          <button type="button" id="btnPrevStep" class="btn btn-ghost" hidden>← Voltar</button>
+          <button type="button" id="btnNextStep" class="btn btn-primary">Próximo →</button>
+          <button type="submit" id="btnSubmit" class="btn btn-primary btn-submit" hidden>Enviar ✓</button>
+          <span id="formError" class="form-error" hidden>Preencha todas as perguntas obrigatórias antes de continuar.</span>
         </div>
       </form>
     </div>

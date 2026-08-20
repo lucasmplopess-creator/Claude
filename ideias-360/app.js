@@ -38,108 +38,142 @@ const VALORES_DS = [
   "Foco no Cliente",
 ];
 
-// Definição das perguntas do formulário, na ordem apresentada ao usuário.
-const FORM_FIELDS = [
+// Perguntas do formulário, agrupadas em etapas (wizard) na ordem apresentada.
+const STEPS = [
   {
-    id: "setorOportunidade",
-    type: "select",
-    label: "Em qual setor você observou a oportunidade de Melhoria?",
-    options: SETORES,
-    required: true,
-  },
-  {
-    id: "matricula",
-    type: "text",
-    label: "Matrícula",
-    required: true,
-  },
-  {
-    id: "nome",
-    type: "text",
-    label: "Seu Nome e Sobrenome",
-    required: true,
-  },
-  {
-    id: "setorTrabalho",
-    type: "select",
-    label: "Em qual setor você trabalha?",
-    options: SETORES,
-    required: true,
-  },
-  {
-    id: "eixo",
-    type: "select",
-    label: "Qual eixo está relacionado à sua sugestão?",
-    options: EIXOS,
-    required: true,
-  },
-  {
-    id: "valorDs",
-    type: "select",
-    label: "Sua sugestão está alinhada a qual Valor da DS?",
-    options: VALORES_DS,
-    required: true,
-  },
-  {
-    id: "situacao",
-    type: "textarea",
-    label: "Qual é a situação que você deseja melhorar?",
-    help: "Descreva o problema.",
-    required: true,
-  },
-  {
-    id: "causaRaiz",
-    type: "textarea",
-    label: "Qual é a causa Raiz do problema?",
-    help: "Identifique a principal causa que gera o problema. (Exemplo: falta de treinamento, falha de equipamento, má comunicação).",
-    required: true,
-  },
-  {
-    id: "solucao",
-    type: "textarea",
-    label: "Qual seria sua solução sugerida? Como você consertaria isso?",
-    help: "Detalhe sua proposta de solução. Como ela resolverá o problema? Quais os passos que precisam ser tomados?",
-    required: true,
-  },
-  {
-    id: "beneficios",
-    type: "textarea",
-    label: "Quais benefícios você espera alcançar com a implementação dessa ideia?",
-    help: "Exemplos: Melhorar a eficiência, reduzir custos, aumentar a segurança, etc.",
-    required: true,
-  },
-  {
-    id: "recursos",
-    type: "textarea",
-    label: "Quais recursos seriam necessários para implementar sua sugestão?",
-    help: "(Pessoas, equipamentos, materiais, etc.)",
-    required: true,
-  },
-  {
-    id: "desafios",
-    type: "textarea",
-    label: "Quais desafios ou obstáculos você prevê na implementação da sua ideia?",
-    required: true,
-  },
-  {
-    id: "indicarOutraPessoa",
-    type: "radio",
-    label: "Gostaria de indicar outra pessoa para esta ideia?",
-    options: ["Sim", "Não"],
-    required: true,
-    conditional: {
-      showWhen: "Sim",
-      field: {
-        id: "nomePessoaIndicada",
-        type: "text",
-        label: "Nome da pessoa indicada",
+    title: "Identificação",
+    subtitle: "Conte um pouco sobre quem está sugerindo a ideia.",
+    fields: [
+      {
+        id: "setorOportunidade",
+        type: "select",
+        label: "Em qual setor você observou a oportunidade de Melhoria?",
+        options: SETORES,
         required: true,
       },
-    },
+      {
+        id: "matricula",
+        type: "text",
+        label: "Matrícula",
+        required: true,
+      },
+      {
+        id: "nome",
+        type: "text",
+        label: "Seu Nome e Sobrenome",
+        required: true,
+      },
+      {
+        id: "setorTrabalho",
+        type: "select",
+        label: "Em qual setor você trabalha?",
+        options: SETORES,
+        required: true,
+      },
+    ],
+  },
+  {
+    title: "Classificação da ideia",
+    subtitle: "Ajude a categorizar sua sugestão.",
+    fields: [
+      {
+        id: "eixo",
+        type: "select",
+        label: "Qual eixo está relacionado à sua sugestão?",
+        options: EIXOS,
+        required: true,
+      },
+      {
+        id: "valorDs",
+        type: "select",
+        label: "Sua sugestão está alinhada a qual Valor da DS?",
+        options: VALORES_DS,
+        required: true,
+      },
+    ],
+  },
+  {
+    title: "O problema",
+    subtitle: "Descreva a situação atual que você quer melhorar.",
+    fields: [
+      {
+        id: "situacao",
+        type: "textarea",
+        label: "Qual é a situação que você deseja melhorar?",
+        help: "Descreva o problema.",
+        required: true,
+      },
+      {
+        id: "causaRaiz",
+        type: "textarea",
+        label: "Qual é a causa Raiz do problema?",
+        help: "Identifique a principal causa que gera o problema. (Exemplo: falta de treinamento, falha de equipamento, má comunicação).",
+        required: true,
+      },
+    ],
+  },
+  {
+    title: "A solução e seu impacto",
+    subtitle: "Detalhe sua proposta e o que ela deve gerar de valor.",
+    fields: [
+      {
+        id: "solucao",
+        type: "textarea",
+        label: "Qual seria sua solução sugerida? Como você consertaria isso?",
+        help: "Detalhe sua proposta de solução. Como ela resolverá o problema? Quais os passos que precisam ser tomados?",
+        required: true,
+      },
+      {
+        id: "beneficios",
+        type: "textarea",
+        label: "Quais benefícios você espera alcançar com a implementação dessa ideia?",
+        help: "Exemplos: Melhorar a eficiência, reduzir custos, aumentar a segurança, etc.",
+        required: true,
+      },
+      {
+        id: "recursos",
+        type: "textarea",
+        label: "Quais recursos seriam necessários para implementar sua sugestão?",
+        help: "(Pessoas, equipamentos, materiais, etc.)",
+        required: true,
+      },
+      {
+        id: "desafios",
+        type: "textarea",
+        label: "Quais desafios ou obstáculos você prevê na implementação da sua ideia?",
+        required: true,
+      },
+    ],
+  },
+  {
+    title: "Indicação",
+    subtitle: "Por último, um detalhe rápido sobre a autoria da ideia.",
+    fields: [
+      {
+        id: "indicarOutraPessoa",
+        type: "radio",
+        label: "Gostaria de indicar outra pessoa para esta ideia?",
+        options: ["Sim", "Não"],
+        required: true,
+        conditional: {
+          showWhen: "Sim",
+          field: {
+            id: "nomePessoaIndicada",
+            type: "text",
+            label: "Nome da pessoa indicada",
+            required: true,
+          },
+        },
+      },
+    ],
   },
 ];
 
+const FORM_FIELDS = STEPS.flatMap((step) => step.fields);
+
 const STORAGE_KEY = "ideias360_submissions";
+
+let currentStep = 0;
 
 const els = {};
 
@@ -265,24 +299,90 @@ function renderField(field) {
   return wrap;
 }
 
-function renderForm() {
-  const container = qs("fieldsContainer");
-  container.innerHTML = "";
-  FORM_FIELDS.forEach((field) => {
-    container.appendChild(renderField(field));
+function renderStepper() {
+  const stepper = qs("stepper");
+  stepper.innerHTML = "";
+  STEPS.forEach((step, i) => {
+    const li = document.createElement("li");
+    const dot = document.createElement("span");
+    dot.className = "step-dot";
+    dot.innerHTML = `<span>${i + 1}</span>`;
+    li.appendChild(dot);
+    stepper.appendChild(li);
+
+    if (i < STEPS.length - 1) {
+      const connector = document.createElement("div");
+      connector.className = "step-connector";
+      connector.innerHTML = '<div class="step-connector-fill"></div>';
+      li.appendChild(connector);
+    }
   });
 }
 
-function clearInvalid() {
-  document.querySelectorAll(".field.invalid").forEach((el) => el.classList.remove("invalid"));
+function updateStepper() {
+  const items = qs("stepper").children;
+  Array.from(items).forEach((li, i) => {
+    li.classList.toggle("active", i === currentStep);
+    li.classList.toggle("done", i < currentStep);
+    const fill = li.querySelector(".step-connector-fill");
+    if (fill) fill.style.width = i < currentStep ? "100%" : "0%";
+  });
+  qs("stepProgressLabel").textContent = `Passo ${currentStep + 1} de ${STEPS.length} — ${STEPS[currentStep].title}`;
+}
+
+function renderForm() {
+  renderStepper();
+
+  const container = qs("stepsContainer");
+  container.innerHTML = "";
+
+  STEPS.forEach((step, i) => {
+    const panel = document.createElement("div");
+    panel.className = "step-panel";
+    panel.dataset.stepIndex = String(i);
+
+    const title = document.createElement("h2");
+    title.className = "step-title";
+    title.textContent = step.title;
+    panel.appendChild(title);
+
+    const subtitle = document.createElement("p");
+    subtitle.className = "step-subtitle";
+    subtitle.textContent = step.subtitle;
+    panel.appendChild(subtitle);
+
+    step.fields.forEach((field) => panel.appendChild(renderField(field)));
+
+    container.appendChild(panel);
+  });
+
+  goToStep(0);
+}
+
+function goToStep(index) {
+  currentStep = index;
+  document.querySelectorAll(".step-panel").forEach((panel) => {
+    panel.classList.toggle("active", Number(panel.dataset.stepIndex) === index);
+  });
+  updateStepper();
+
+  qs("btnPrevStep").hidden = index === 0;
+  const isLast = index === STEPS.length - 1;
+  qs("btnNextStep").hidden = isLast;
+  qs("btnSubmit").hidden = !isLast;
+}
+
+function clearInvalid(scopeEl) {
+  const root = scopeEl || document;
+  root.querySelectorAll(".field.invalid").forEach((el) => el.classList.remove("invalid"));
   qs("formError").hidden = true;
 }
 
-function validateForm() {
+function validateFields(fields) {
   let valid = true;
   let firstInvalid = null;
 
-  FORM_FIELDS.forEach((field) => {
+  fields.forEach((field) => {
     const wrap = document.querySelector(`.field[data-field-id="${field.id}"]`);
     let fieldValid = true;
 
@@ -344,6 +444,7 @@ function resetForm() {
   qs("ideaForm").reset();
   clearInvalid();
   document.querySelectorAll(".conditional-field").forEach((el) => { el.hidden = true; });
+  goToStep(0);
 }
 
 function showScreen(name) {
@@ -353,10 +454,23 @@ function showScreen(name) {
   if (name === "responsesScreen") renderResponsesTable();
 }
 
+function handleNextStep() {
+  clearInvalid();
+  if (!validateFields(STEPS[currentStep].fields)) return;
+  goToStep(currentStep + 1);
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function handlePrevStep() {
+  clearInvalid();
+  goToStep(currentStep - 1);
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
 function handleSubmit(e) {
   e.preventDefault();
   clearInvalid();
-  if (!validateForm()) return;
+  if (!validateFields(STEPS[currentStep].fields)) return;
 
   const data = collectFormData();
   const list = loadSubmissions();
@@ -530,6 +644,8 @@ function init() {
   renderForm();
 
   qs("ideaForm").addEventListener("submit", handleSubmit);
+  qs("btnNextStep").addEventListener("click", handleNextStep);
+  qs("btnPrevStep").addEventListener("click", handlePrevStep);
   qs("navForm").addEventListener("click", () => showScreen("formScreen"));
   qs("navResponses").addEventListener("click", () => showScreen("responsesScreen"));
   qs("btnAnotherResponse").addEventListener("click", () => showScreen("formScreen"));

@@ -6,18 +6,26 @@
 <title>IDEIAS 360º</title>
 <style>
 :root {
-  --primary: #0f5fae;
-  --primary-dark: #0b4a87;
-  --accent: #ff7a1a;
-  --bg: #f2f5f9;
+  --primary: #1a4fe0;
+  --primary-dark: #123aad;
+  --primary-light: #4f7bff;
+  --grad-1: #1a4fe0;
+  --grad-2: #7c3aed;
+  --grad-3: #e846b0;
+  --grad-4: #fb923c;
+  --grad-5: #fde047;
+  --gradient-full: linear-gradient(90deg, var(--grad-1), var(--grad-2), var(--grad-3), var(--grad-4), var(--grad-5));
+  --bg: #eef1f7;
   --card-bg: #ffffff;
-  --border: #dde3ea;
-  --text: #1c2733;
-  --text-muted: #5c6b7a;
+  --card-bg-glass: rgba(255, 255, 255, 0.82);
+  --border: #dde3ee;
+  --text: #16213a;
+  --text-muted: #5c6b84;
   --danger: #d5433c;
   --danger-dark: #b7362f;
-  --radius: 10px;
-  --shadow: 0 1px 3px rgba(16, 34, 56, 0.08), 0 1px 2px rgba(16, 34, 56, 0.06);
+  --radius: 18px;
+  --shadow: 0 8px 30px rgba(20, 40, 90, 0.1), 0 2px 8px rgba(20, 40, 90, 0.06);
+  --shadow-lg: 0 20px 60px rgba(20, 40, 90, 0.16), 0 4px 14px rgba(20, 40, 90, 0.08);
 }
 
 * { box-sizing: border-box; }
@@ -27,15 +35,69 @@ body {
   font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
   background: var(--bg);
   color: var(--text);
+  min-height: 100vh;
+  position: relative;
 }
+
+/* ---------- Decorative background ---------- */
+
+.bg-decor {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  background: linear-gradient(160deg, #f4f6fb 0%, #e9edf6 55%, #e3e8f4 100%);
+}
+
+.bg-stripes {
+  position: absolute;
+  inset: -20% -10%;
+  background:
+    repeating-linear-gradient(
+      -18deg,
+      rgba(255, 255, 255, 0.75) 0px,
+      rgba(255, 255, 255, 0.75) 90px,
+      rgba(217, 226, 242, 0.55) 90px,
+      rgba(217, 226, 242, 0.55) 180px
+    );
+  opacity: 0.9;
+}
+
+.bg-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.35;
+}
+
+.bg-glow-1 {
+  width: 520px;
+  height: 520px;
+  top: -160px;
+  right: -140px;
+  background: radial-gradient(circle, var(--grad-3), var(--grad-4) 60%, transparent 75%);
+}
+
+.bg-glow-2 {
+  width: 460px;
+  height: 460px;
+  bottom: -180px;
+  left: -140px;
+  background: radial-gradient(circle, var(--grad-1), var(--grad-2) 60%, transparent 75%);
+  opacity: 0.25;
+}
+
+/* ---------- Topbar ---------- */
 
 .topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 24px;
-  background: var(--card-bg);
-  border-bottom: 1px solid var(--border);
+  padding: 14px 28px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(221, 227, 238, 0.8);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -44,26 +106,48 @@ body {
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
 }
 
 .brand-mark {
+  position: relative;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary), var(--accent));
+  background: linear-gradient(135deg, var(--grad-1), var(--grad-2) 55%, var(--grad-3));
   color: #fff;
-  font-weight: 700;
-  font-size: 12px;
+  font-weight: 800;
+  font-size: 11.5px;
+  box-shadow: 0 4px 14px rgba(26, 79, 224, 0.35);
+}
+
+.brand-mark-ring {
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: var(--grad-4);
+  border-right-color: var(--grad-3);
+  animation: spin 5s linear infinite;
+}
+
+.brand-mark-text { position: relative; z-index: 1; letter-spacing: 0.3px; }
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
 .brand-name {
-  font-weight: 700;
-  font-size: 18px;
+  font-weight: 800;
+  font-size: 19px;
   letter-spacing: 0.2px;
+  background: linear-gradient(90deg, var(--primary-dark), var(--grad-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .topbar-actions {
@@ -71,28 +155,32 @@ body {
   gap: 8px;
 }
 
+/* ---------- Buttons ---------- */
+
 .btn {
   cursor: pointer;
   border: 1px solid transparent;
-  border-radius: 8px;
-  padding: 9px 16px;
+  border-radius: 10px;
+  padding: 10px 18px;
   font-size: 14px;
   font-weight: 600;
-  transition: background 0.15s, border-color 0.15s, opacity 0.15s;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, border-color 0.15s ease, opacity 0.15s ease;
 }
 
 .btn-primary {
-  background: var(--primary);
+  background: linear-gradient(120deg, var(--grad-1), var(--grad-2));
   color: #fff;
+  box-shadow: 0 6px 16px rgba(26, 79, 224, 0.3);
 }
-.btn-primary:hover { background: var(--primary-dark); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(26, 79, 224, 0.38); }
+.btn-primary:active { transform: translateY(0); }
 
 .btn-ghost {
-  background: transparent;
+  background: rgba(255, 255, 255, 0.6);
   border-color: var(--border);
   color: var(--text);
 }
-.btn-ghost:hover { background: var(--bg); }
+.btn-ghost:hover { background: #fff; border-color: var(--primary-light); transform: translateY(-1px); }
 
 .btn-danger {
   background: #fff;
@@ -110,55 +198,172 @@ body {
   line-height: 1;
 }
 
+.btn[hidden] { display: none; }
+
+/* ---------- Layout ---------- */
+
 .page {
-  max-width: 780px;
+  max-width: 820px;
   margin: 0 auto;
-  padding: 28px 16px 60px;
+  padding: 36px 16px 70px;
 }
 
 .screen[hidden] { display: none; }
+.screen { animation: fadeUp 0.35s ease; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
 .form-card, .responses-card {
-  background: var(--card-bg);
-  border: 1px solid var(--border);
+  background: var(--card-bg-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 28px 28px 32px;
+  box-shadow: var(--shadow-lg);
+  padding: 32px 32px 36px;
 }
 
-.form-header {
-  border-bottom: 4px solid var(--primary);
-  padding-bottom: 18px;
-  margin-bottom: 22px;
-}
+.form-header { margin-bottom: 20px; }
 
 .form-header h1 {
   margin: 0 0 6px;
-  font-size: 26px;
-  color: var(--primary-dark);
+  font-size: 30px;
+  font-weight: 800;
+  background: linear-gradient(90deg, var(--primary-dark), var(--grad-2) 60%, var(--grad-3));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .form-desc {
-  margin: 0 0 12px;
+  margin: 0 0 16px;
   color: var(--text-muted);
+  font-size: 15px;
+}
+
+.gradient-bar {
+  height: 5px;
+  width: 100%;
+  border-radius: 4px;
+  background: var(--gradient-full);
+  margin-bottom: 16px;
 }
 
 .privacy-note {
   margin: 0;
   font-size: 12.5px;
   color: var(--text-muted);
-  background: var(--bg);
-  border-radius: 6px;
+  background: rgba(238, 241, 247, 0.8);
+  border-radius: 8px;
   padding: 10px 12px;
 }
 
+/* ---------- Stepper ---------- */
+
+.stepper {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 22px 0 6px;
+  padding: 0;
+}
+
+.stepper li {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.stepper li:last-child { flex: 0 0 auto; }
+
+.step-dot {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--border);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  transition: all 0.25s ease;
+}
+
+.step-connector {
+  flex: 1;
+  height: 3px;
+  background: var(--border);
+  margin: 0 6px;
+  border-radius: 2px;
+  overflow: hidden;
+  position: relative;
+}
+
+.step-connector-fill {
+  position: absolute;
+  inset: 0;
+  width: 0%;
+  background: var(--gradient-full);
+  background-size: 400% 100%;
+  transition: width 0.35s ease;
+}
+
+.stepper li.active .step-dot,
+.stepper li.done .step-dot {
+  border-color: transparent;
+  color: #fff;
+  background: linear-gradient(135deg, var(--grad-1), var(--grad-2));
+  box-shadow: 0 4px 12px rgba(26, 79, 224, 0.35);
+}
+
+.stepper li.active .step-dot { transform: scale(1.12); }
+.stepper li.done .step-dot::after { content: "✓"; }
+.stepper li.done .step-dot span { display: none; }
+
+.step-progress-label {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin: 0 0 6px;
+}
+
+/* ---------- Step panels / fields ---------- */
+
+.step-panel { display: none; animation: slideIn 0.3s ease; }
+.step-panel.active { display: block; }
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(12px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.step-title {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 22px 0 4px;
+  color: var(--primary-dark);
+}
+
+.step-subtitle {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin: 0 0 18px;
+}
+
 .field {
-  margin-bottom: 22px;
-  padding-bottom: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 18px;
   border-bottom: 1px solid var(--border);
 }
 
-.field:last-child { border-bottom: none; }
+.field:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
 
 .field-label {
   display: block;
@@ -179,21 +384,22 @@ body {
 .field input[type="text"],
 .field textarea {
   width: 100%;
-  padding: 10px 12px;
+  padding: 11px 13px;
   font-size: 14px;
   font-family: inherit;
-  border: 1px solid var(--border);
-  border-radius: 8px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
   background: #fff;
   color: var(--text);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .field select:focus,
 .field input[type="text"]:focus,
 .field textarea:focus {
   outline: none;
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(15, 95, 174, 0.15);
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 4px rgba(26, 79, 224, 0.12);
 }
 
 .field textarea {
@@ -209,59 +415,78 @@ body {
 
 .radio-group {
   display: flex;
-  gap: 20px;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
 .radio-option {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   font-size: 14px;
   cursor: pointer;
+  padding: 10px 16px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.radio-option:has(input:checked) {
+  border-color: var(--primary);
+  background: rgba(26, 79, 224, 0.06);
+  font-weight: 600;
 }
 
 .conditional-field {
-  margin-top: 12px;
+  margin-top: 14px;
+  animation: fadeUp 0.25s ease;
 }
 
 .form-actions {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-top: 8px;
+  gap: 14px;
+  margin-top: 24px;
+  flex-wrap: wrap;
 }
 
-.btn-submit { padding: 10px 28px; }
+.btn-submit { padding: 10px 30px; }
 
 .form-error {
   color: var(--danger);
   font-size: 13.5px;
 }
 
+/* ---------- Success screen ---------- */
+
 .success-card {
   text-align: center;
-  padding: 48px 28px;
+  padding: 52px 28px;
 }
 
 .success-icon {
-  width: 56px;
-  height: 56px;
-  line-height: 56px;
+  width: 64px;
+  height: 64px;
+  line-height: 64px;
   border-radius: 50%;
-  background: #e5f6ec;
+  background: linear-gradient(135deg, #d7f6e4, #eafcf1);
   color: #1e8e4d;
-  font-size: 28px;
-  margin: 0 auto 16px;
+  font-size: 30px;
+  margin: 0 auto 18px;
+  box-shadow: 0 8px 20px rgba(30, 142, 77, 0.18);
 }
 
-.success-card h2 { margin: 0 0 8px; }
-.success-card p { color: var(--text-muted); margin: 0 0 24px; }
+.success-card h2 { margin: 0 0 8px; font-size: 24px; }
+.success-card p { color: var(--text-muted); margin: 0 0 26px; }
 
 .success-actions {
   display: flex;
   justify-content: center;
   gap: 10px;
+  flex-wrap: wrap;
 }
+
+/* ---------- Responses screen ---------- */
 
 .responses-header {
   display: flex;
@@ -270,6 +495,14 @@ body {
   flex-wrap: wrap;
   gap: 16px;
   margin-bottom: 20px;
+}
+
+.responses-header h2 {
+  margin: 0 0 4px;
+  background: linear-gradient(90deg, var(--primary-dark), var(--grad-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .responses-note {
@@ -286,11 +519,17 @@ body {
 }
 
 .search-input {
-  padding: 9px 12px;
-  border: 1px solid var(--border);
-  border-radius: 8px;
+  padding: 10px 13px;
+  border: 1.5px solid var(--border);
+  border-radius: 10px;
   font-size: 14px;
   min-width: 220px;
+  background: #fff;
+}
+.search-input:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 4px rgba(26, 79, 224, 0.12);
 }
 
 .empty-state {
@@ -301,18 +540,21 @@ body {
 
 .table-wrap {
   overflow-x: auto;
+  border-radius: 12px;
+  border: 1px solid var(--border);
 }
 
 .responses-table {
   width: 100%;
   border-collapse: collapse;
   font-size: 13.5px;
+  background: #fff;
 }
 
 .responses-table th,
 .responses-table td {
   text-align: left;
-  padding: 10px 12px;
+  padding: 11px 14px;
   border-bottom: 1px solid var(--border);
   white-space: nowrap;
   max-width: 220px;
@@ -322,14 +564,18 @@ body {
 
 .responses-table th {
   color: var(--text-muted);
-  font-weight: 600;
-  background: var(--bg);
+  font-weight: 700;
+  background: #f4f6fb;
   position: sticky;
   top: 0;
 }
 
+.responses-table tbody tr {
+  transition: background 0.12s ease;
+}
+
 .responses-table tbody tr:hover {
-  background: var(--bg);
+  background: rgba(26, 79, 224, 0.05);
   cursor: pointer;
 }
 
@@ -340,12 +586,16 @@ body {
   cursor: pointer;
   font-size: 13px;
   padding: 0;
+  font-weight: 600;
 }
+
+/* ---------- Modal ---------- */
 
 .modal-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(16, 24, 34, 0.5);
+  background: rgba(16, 24, 44, 0.55);
+  backdrop-filter: blur(2px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -362,20 +612,21 @@ body {
   max-width: 560px;
   max-height: 85vh;
   overflow-y: auto;
-  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  box-shadow: var(--shadow-lg);
+  animation: fadeUp 0.25s ease;
 }
 
 .modal-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 20px;
+  padding: 18px 22px;
   border-bottom: 1px solid var(--border);
 }
 
 .modal-header h3 { margin: 0; font-size: 17px; }
 
-.modal-body { padding: 16px 20px 24px; }
+.modal-body { padding: 18px 22px 26px; }
 
 .detail-row {
   margin-bottom: 14px;
@@ -396,17 +647,26 @@ body {
 
 @media (max-width: 600px) {
   .topbar { flex-direction: column; align-items: flex-start; gap: 10px; }
-  .form-card, .responses-card { padding: 20px 16px; }
+  .form-card, .responses-card { padding: 22px 18px; }
   .responses-header { flex-direction: column; }
+  .stepper .step-label { display: none; }
+  .form-actions { justify-content: stretch; }
+  .form-actions .btn { flex: 1; }
 }
 
 </style>
 </head>
 <body>
 
+<div class="bg-decor" aria-hidden="true">
+  <div class="bg-stripes"></div>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+</div>
+
 <header class="topbar">
   <div class="brand">
-    <span class="brand-mark">360°</span>
+    <span class="brand-mark"><span class="brand-mark-ring"></span><span class="brand-mark-text">360°</span></span>
     <span class="brand-name">IDEIAS 360º</span>
   </div>
   <nav class="topbar-actions">
@@ -422,15 +682,21 @@ body {
       <div class="form-header">
         <h1>IDEIAS 360º</h1>
         <p class="form-desc">Compartilhe sua ideia de melhoria. Toda sugestão é bem-vinda!</p>
+        <div class="gradient-bar" aria-hidden="true"></div>
         <p class="privacy-note">Quando você enviar este formulário, ele não coletará automaticamente seus detalhes, como nome e endereço de email, a menos que você mesmo o forneça.</p>
       </div>
 
+      <ol id="stepper" class="stepper"></ol>
+      <p id="stepProgressLabel" class="step-progress-label"></p>
+
       <form id="ideaForm" novalidate>
-        <div id="fieldsContainer"></div>
+        <div id="stepsContainer"></div>
 
         <div class="form-actions">
-          <button type="submit" class="btn btn-primary btn-submit">Enviar</button>
-          <span id="formError" class="form-error" hidden>Preencha todas as perguntas obrigatórias antes de enviar.</span>
+          <button type="button" id="btnPrevStep" class="btn btn-ghost" hidden>← Voltar</button>
+          <button type="button" id="btnNextStep" class="btn btn-primary">Próximo →</button>
+          <button type="submit" id="btnSubmit" class="btn btn-primary btn-submit" hidden>Enviar ✓</button>
+          <span id="formError" class="form-error" hidden>Preencha todas as perguntas obrigatórias antes de continuar.</span>
         </div>
       </form>
     </div>
@@ -541,108 +807,142 @@ const VALORES_DS = [
   "Foco no Cliente",
 ];
 
-// Definição das perguntas do formulário, na ordem apresentada ao usuário.
-const FORM_FIELDS = [
+// Perguntas do formulário, agrupadas em etapas (wizard) na ordem apresentada.
+const STEPS = [
   {
-    id: "setorOportunidade",
-    type: "select",
-    label: "Em qual setor você observou a oportunidade de Melhoria?",
-    options: SETORES,
-    required: true,
-  },
-  {
-    id: "matricula",
-    type: "text",
-    label: "Matrícula",
-    required: true,
-  },
-  {
-    id: "nome",
-    type: "text",
-    label: "Seu Nome e Sobrenome",
-    required: true,
-  },
-  {
-    id: "setorTrabalho",
-    type: "select",
-    label: "Em qual setor você trabalha?",
-    options: SETORES,
-    required: true,
-  },
-  {
-    id: "eixo",
-    type: "select",
-    label: "Qual eixo está relacionado à sua sugestão?",
-    options: EIXOS,
-    required: true,
-  },
-  {
-    id: "valorDs",
-    type: "select",
-    label: "Sua sugestão está alinhada a qual Valor da DS?",
-    options: VALORES_DS,
-    required: true,
-  },
-  {
-    id: "situacao",
-    type: "textarea",
-    label: "Qual é a situação que você deseja melhorar?",
-    help: "Descreva o problema.",
-    required: true,
-  },
-  {
-    id: "causaRaiz",
-    type: "textarea",
-    label: "Qual é a causa Raiz do problema?",
-    help: "Identifique a principal causa que gera o problema. (Exemplo: falta de treinamento, falha de equipamento, má comunicação).",
-    required: true,
-  },
-  {
-    id: "solucao",
-    type: "textarea",
-    label: "Qual seria sua solução sugerida? Como você consertaria isso?",
-    help: "Detalhe sua proposta de solução. Como ela resolverá o problema? Quais os passos que precisam ser tomados?",
-    required: true,
-  },
-  {
-    id: "beneficios",
-    type: "textarea",
-    label: "Quais benefícios você espera alcançar com a implementação dessa ideia?",
-    help: "Exemplos: Melhorar a eficiência, reduzir custos, aumentar a segurança, etc.",
-    required: true,
-  },
-  {
-    id: "recursos",
-    type: "textarea",
-    label: "Quais recursos seriam necessários para implementar sua sugestão?",
-    help: "(Pessoas, equipamentos, materiais, etc.)",
-    required: true,
-  },
-  {
-    id: "desafios",
-    type: "textarea",
-    label: "Quais desafios ou obstáculos você prevê na implementação da sua ideia?",
-    required: true,
-  },
-  {
-    id: "indicarOutraPessoa",
-    type: "radio",
-    label: "Gostaria de indicar outra pessoa para esta ideia?",
-    options: ["Sim", "Não"],
-    required: true,
-    conditional: {
-      showWhen: "Sim",
-      field: {
-        id: "nomePessoaIndicada",
-        type: "text",
-        label: "Nome da pessoa indicada",
+    title: "Identificação",
+    subtitle: "Conte um pouco sobre quem está sugerindo a ideia.",
+    fields: [
+      {
+        id: "setorOportunidade",
+        type: "select",
+        label: "Em qual setor você observou a oportunidade de Melhoria?",
+        options: SETORES,
         required: true,
       },
-    },
+      {
+        id: "matricula",
+        type: "text",
+        label: "Matrícula",
+        required: true,
+      },
+      {
+        id: "nome",
+        type: "text",
+        label: "Seu Nome e Sobrenome",
+        required: true,
+      },
+      {
+        id: "setorTrabalho",
+        type: "select",
+        label: "Em qual setor você trabalha?",
+        options: SETORES,
+        required: true,
+      },
+    ],
+  },
+  {
+    title: "Classificação da ideia",
+    subtitle: "Ajude a categorizar sua sugestão.",
+    fields: [
+      {
+        id: "eixo",
+        type: "select",
+        label: "Qual eixo está relacionado à sua sugestão?",
+        options: EIXOS,
+        required: true,
+      },
+      {
+        id: "valorDs",
+        type: "select",
+        label: "Sua sugestão está alinhada a qual Valor da DS?",
+        options: VALORES_DS,
+        required: true,
+      },
+    ],
+  },
+  {
+    title: "O problema",
+    subtitle: "Descreva a situação atual que você quer melhorar.",
+    fields: [
+      {
+        id: "situacao",
+        type: "textarea",
+        label: "Qual é a situação que você deseja melhorar?",
+        help: "Descreva o problema.",
+        required: true,
+      },
+      {
+        id: "causaRaiz",
+        type: "textarea",
+        label: "Qual é a causa Raiz do problema?",
+        help: "Identifique a principal causa que gera o problema. (Exemplo: falta de treinamento, falha de equipamento, má comunicação).",
+        required: true,
+      },
+    ],
+  },
+  {
+    title: "A solução e seu impacto",
+    subtitle: "Detalhe sua proposta e o que ela deve gerar de valor.",
+    fields: [
+      {
+        id: "solucao",
+        type: "textarea",
+        label: "Qual seria sua solução sugerida? Como você consertaria isso?",
+        help: "Detalhe sua proposta de solução. Como ela resolverá o problema? Quais os passos que precisam ser tomados?",
+        required: true,
+      },
+      {
+        id: "beneficios",
+        type: "textarea",
+        label: "Quais benefícios você espera alcançar com a implementação dessa ideia?",
+        help: "Exemplos: Melhorar a eficiência, reduzir custos, aumentar a segurança, etc.",
+        required: true,
+      },
+      {
+        id: "recursos",
+        type: "textarea",
+        label: "Quais recursos seriam necessários para implementar sua sugestão?",
+        help: "(Pessoas, equipamentos, materiais, etc.)",
+        required: true,
+      },
+      {
+        id: "desafios",
+        type: "textarea",
+        label: "Quais desafios ou obstáculos você prevê na implementação da sua ideia?",
+        required: true,
+      },
+    ],
+  },
+  {
+    title: "Indicação",
+    subtitle: "Por último, um detalhe rápido sobre a autoria da ideia.",
+    fields: [
+      {
+        id: "indicarOutraPessoa",
+        type: "radio",
+        label: "Gostaria de indicar outra pessoa para esta ideia?",
+        options: ["Sim", "Não"],
+        required: true,
+        conditional: {
+          showWhen: "Sim",
+          field: {
+            id: "nomePessoaIndicada",
+            type: "text",
+            label: "Nome da pessoa indicada",
+            required: true,
+          },
+        },
+      },
+    ],
   },
 ];
 
+const FORM_FIELDS = STEPS.flatMap((step) => step.fields);
+
 const STORAGE_KEY = "ideias360_submissions";
+
+let currentStep = 0;
 
 const els = {};
 
@@ -768,24 +1068,90 @@ function renderField(field) {
   return wrap;
 }
 
-function renderForm() {
-  const container = qs("fieldsContainer");
-  container.innerHTML = "";
-  FORM_FIELDS.forEach((field) => {
-    container.appendChild(renderField(field));
+function renderStepper() {
+  const stepper = qs("stepper");
+  stepper.innerHTML = "";
+  STEPS.forEach((step, i) => {
+    const li = document.createElement("li");
+    const dot = document.createElement("span");
+    dot.className = "step-dot";
+    dot.innerHTML = `<span>${i + 1}</span>`;
+    li.appendChild(dot);
+    stepper.appendChild(li);
+
+    if (i < STEPS.length - 1) {
+      const connector = document.createElement("div");
+      connector.className = "step-connector";
+      connector.innerHTML = '<div class="step-connector-fill"></div>';
+      li.appendChild(connector);
+    }
   });
 }
 
-function clearInvalid() {
-  document.querySelectorAll(".field.invalid").forEach((el) => el.classList.remove("invalid"));
+function updateStepper() {
+  const items = qs("stepper").children;
+  Array.from(items).forEach((li, i) => {
+    li.classList.toggle("active", i === currentStep);
+    li.classList.toggle("done", i < currentStep);
+    const fill = li.querySelector(".step-connector-fill");
+    if (fill) fill.style.width = i < currentStep ? "100%" : "0%";
+  });
+  qs("stepProgressLabel").textContent = `Passo ${currentStep + 1} de ${STEPS.length} — ${STEPS[currentStep].title}`;
+}
+
+function renderForm() {
+  renderStepper();
+
+  const container = qs("stepsContainer");
+  container.innerHTML = "";
+
+  STEPS.forEach((step, i) => {
+    const panel = document.createElement("div");
+    panel.className = "step-panel";
+    panel.dataset.stepIndex = String(i);
+
+    const title = document.createElement("h2");
+    title.className = "step-title";
+    title.textContent = step.title;
+    panel.appendChild(title);
+
+    const subtitle = document.createElement("p");
+    subtitle.className = "step-subtitle";
+    subtitle.textContent = step.subtitle;
+    panel.appendChild(subtitle);
+
+    step.fields.forEach((field) => panel.appendChild(renderField(field)));
+
+    container.appendChild(panel);
+  });
+
+  goToStep(0);
+}
+
+function goToStep(index) {
+  currentStep = index;
+  document.querySelectorAll(".step-panel").forEach((panel) => {
+    panel.classList.toggle("active", Number(panel.dataset.stepIndex) === index);
+  });
+  updateStepper();
+
+  qs("btnPrevStep").hidden = index === 0;
+  const isLast = index === STEPS.length - 1;
+  qs("btnNextStep").hidden = isLast;
+  qs("btnSubmit").hidden = !isLast;
+}
+
+function clearInvalid(scopeEl) {
+  const root = scopeEl || document;
+  root.querySelectorAll(".field.invalid").forEach((el) => el.classList.remove("invalid"));
   qs("formError").hidden = true;
 }
 
-function validateForm() {
+function validateFields(fields) {
   let valid = true;
   let firstInvalid = null;
 
-  FORM_FIELDS.forEach((field) => {
+  fields.forEach((field) => {
     const wrap = document.querySelector(`.field[data-field-id="${field.id}"]`);
     let fieldValid = true;
 
@@ -847,6 +1213,7 @@ function resetForm() {
   qs("ideaForm").reset();
   clearInvalid();
   document.querySelectorAll(".conditional-field").forEach((el) => { el.hidden = true; });
+  goToStep(0);
 }
 
 function showScreen(name) {
@@ -856,10 +1223,23 @@ function showScreen(name) {
   if (name === "responsesScreen") renderResponsesTable();
 }
 
+function handleNextStep() {
+  clearInvalid();
+  if (!validateFields(STEPS[currentStep].fields)) return;
+  goToStep(currentStep + 1);
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function handlePrevStep() {
+  clearInvalid();
+  goToStep(currentStep - 1);
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
 function handleSubmit(e) {
   e.preventDefault();
   clearInvalid();
-  if (!validateForm()) return;
+  if (!validateFields(STEPS[currentStep].fields)) return;
 
   const data = collectFormData();
   const list = loadSubmissions();
@@ -1033,6 +1413,8 @@ function init() {
   renderForm();
 
   qs("ideaForm").addEventListener("submit", handleSubmit);
+  qs("btnNextStep").addEventListener("click", handleNextStep);
+  qs("btnPrevStep").addEventListener("click", handlePrevStep);
   qs("navForm").addEventListener("click", () => showScreen("formScreen"));
   qs("navResponses").addEventListener("click", () => showScreen("responsesScreen"));
   qs("btnAnotherResponse").addEventListener("click", () => showScreen("formScreen"));
