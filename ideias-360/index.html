@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>IDEIAS 360º</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">360°</span>
+    <span class="brand-name">IDEIAS 360º</span>
+  </div>
+  <nav class="topbar-actions">
+    <button id="navForm" class="btn btn-ghost">Novo formulário</button>
+    <button id="navResponses" class="btn btn-ghost">Ver respostas</button>
+  </nav>
+</header>
+
+<main class="page">
+
+  <section id="formScreen" class="screen">
+    <div class="form-card">
+      <div class="form-header">
+        <h1>IDEIAS 360º</h1>
+        <p class="form-desc">Compartilhe sua ideia de melhoria. Toda sugestão é bem-vinda!</p>
+        <p class="privacy-note">Quando você enviar este formulário, ele não coletará automaticamente seus detalhes, como nome e endereço de email, a menos que você mesmo o forneça.</p>
+      </div>
+
+      <form id="ideaForm" novalidate>
+        <div id="fieldsContainer"></div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary btn-submit">Enviar</button>
+          <span id="formError" class="form-error" hidden>Preencha todas as perguntas obrigatórias antes de enviar.</span>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section id="successScreen" class="screen" hidden>
+    <div class="form-card success-card">
+      <div class="success-icon">✓</div>
+      <h2>Sua resposta foi registrada!</h2>
+      <p>Obrigado por contribuir com sua ideia de melhoria.</p>
+      <div class="success-actions">
+        <button id="btnAnotherResponse" class="btn btn-primary">Enviar outra resposta</button>
+        <button id="btnGoResponses" class="btn btn-ghost">Ver respostas</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="responsesScreen" class="screen" hidden>
+    <div class="responses-card">
+      <div class="responses-header">
+        <div>
+          <h2>Respostas recebidas</h2>
+          <p class="responses-note">Os dados ficam salvos apenas neste navegador/dispositivo (armazenamento local), pois este é um app sem servidor.</p>
+        </div>
+        <div class="responses-actions">
+          <input id="responsesSearch" class="search-input" type="text" placeholder="Buscar por nome, setor, matrícula..." />
+          <button id="btnExportCsv" class="btn btn-ghost">Exportar CSV</button>
+          <button id="btnExportJson" class="btn btn-ghost">Exportar JSON</button>
+          <button id="btnClearAll" class="btn btn-danger">Limpar tudo</button>
+        </div>
+      </div>
+
+      <div id="responsesEmpty" class="empty-state" hidden>
+        <p>Nenhuma resposta registrada ainda.</p>
+      </div>
+
+      <div class="table-wrap">
+        <table id="responsesTable" class="responses-table">
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Nome</th>
+              <th>Matrícula</th>
+              <th>Setor da oportunidade</th>
+              <th>Setor de trabalho</th>
+              <th>Eixo</th>
+              <th>Valor da DS</th>
+              <th>Situação</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="responsesTbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="detailOverlay" class="modal-overlay" hidden>
+  <div class="modal">
+    <div class="modal-header">
+      <h3>Detalhes da ideia</h3>
+      <button id="btnCloseDetail" class="btn-icon-plain" title="Fechar">×</button>
+    </div>
+    <div id="detailBody" class="modal-body"></div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
