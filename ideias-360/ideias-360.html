@@ -1,0 +1,1054 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>IDEIAS 360º</title>
+<style>
+:root {
+  --primary: #0f5fae;
+  --primary-dark: #0b4a87;
+  --accent: #ff7a1a;
+  --bg: #f2f5f9;
+  --card-bg: #ffffff;
+  --border: #dde3ea;
+  --text: #1c2733;
+  --text-muted: #5c6b7a;
+  --danger: #d5433c;
+  --danger-dark: #b7362f;
+  --radius: 10px;
+  --shadow: 0 1px 3px rgba(16, 34, 56, 0.08), 0 1px 2px rgba(16, 34, 56, 0.06);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px;
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.brand-name {
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.2px;
+}
+
+.topbar-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  cursor: pointer;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 9px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background 0.15s, border-color 0.15s, opacity 0.15s;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+.btn-primary:hover { background: var(--primary-dark); }
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--border);
+  color: var(--text);
+}
+.btn-ghost:hover { background: var(--bg); }
+
+.btn-danger {
+  background: #fff;
+  border-color: var(--danger);
+  color: var(--danger);
+}
+.btn-danger:hover { background: var(--danger); color: #fff; }
+
+.btn-icon-plain {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--text-muted);
+  line-height: 1;
+}
+
+.page {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 28px 16px 60px;
+}
+
+.screen[hidden] { display: none; }
+
+.form-card, .responses-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px 28px 32px;
+}
+
+.form-header {
+  border-bottom: 4px solid var(--primary);
+  padding-bottom: 18px;
+  margin-bottom: 22px;
+}
+
+.form-header h1 {
+  margin: 0 0 6px;
+  font-size: 26px;
+  color: var(--primary-dark);
+}
+
+.form-desc {
+  margin: 0 0 12px;
+  color: var(--text-muted);
+}
+
+.privacy-note {
+  margin: 0;
+  font-size: 12.5px;
+  color: var(--text-muted);
+  background: var(--bg);
+  border-radius: 6px;
+  padding: 10px 12px;
+}
+
+.field {
+  margin-bottom: 22px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.field:last-child { border-bottom: none; }
+
+.field-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 4px;
+  font-size: 15px;
+}
+
+.required-mark { color: var(--danger); margin-left: 2px; }
+
+.field-help {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0 0 10px;
+}
+
+.field select,
+.field input[type="text"],
+.field textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--text);
+}
+
+.field select:focus,
+.field input[type="text"]:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(15, 95, 174, 0.15);
+}
+
+.field textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+.field.invalid select,
+.field.invalid input[type="text"],
+.field.invalid textarea {
+  border-color: var(--danger);
+}
+
+.radio-group {
+  display: flex;
+  gap: 20px;
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.conditional-field {
+  margin-top: 12px;
+}
+
+.form-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.btn-submit { padding: 10px 28px; }
+
+.form-error {
+  color: var(--danger);
+  font-size: 13.5px;
+}
+
+.success-card {
+  text-align: center;
+  padding: 48px 28px;
+}
+
+.success-icon {
+  width: 56px;
+  height: 56px;
+  line-height: 56px;
+  border-radius: 50%;
+  background: #e5f6ec;
+  color: #1e8e4d;
+  font-size: 28px;
+  margin: 0 auto 16px;
+}
+
+.success-card h2 { margin: 0 0 8px; }
+.success-card p { color: var(--text-muted); margin: 0 0 24px; }
+
+.success-actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.responses-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.responses-note {
+  font-size: 13px;
+  color: var(--text-muted);
+  max-width: 480px;
+  margin: 4px 0 0;
+}
+
+.responses-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  padding: 9px 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+  min-width: 220px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 0;
+  color: var(--text-muted);
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.responses-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.responses-table th,
+.responses-table td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.responses-table th {
+  color: var(--text-muted);
+  font-weight: 600;
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+}
+
+.responses-table tbody tr:hover {
+  background: var(--bg);
+  cursor: pointer;
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--danger);
+  cursor: pointer;
+  font-size: 13px;
+  padding: 0;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(16, 24, 34, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 50;
+}
+
+.modal-overlay[hidden] { display: none; }
+
+.modal {
+  background: #fff;
+  border-radius: var(--radius);
+  width: 100%;
+  max-width: 560px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.modal-header h3 { margin: 0; font-size: 17px; }
+
+.modal-body { padding: 16px 20px 24px; }
+
+.detail-row {
+  margin-bottom: 14px;
+}
+
+.detail-row dt {
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 3px;
+}
+
+.detail-row dd {
+  margin: 0;
+  font-size: 14.5px;
+  white-space: pre-wrap;
+}
+
+@media (max-width: 600px) {
+  .topbar { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .form-card, .responses-card { padding: 20px 16px; }
+  .responses-header { flex-direction: column; }
+}
+
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark">360°</span>
+    <span class="brand-name">IDEIAS 360º</span>
+  </div>
+  <nav class="topbar-actions">
+    <button id="navForm" class="btn btn-ghost">Novo formulário</button>
+    <button id="navResponses" class="btn btn-ghost">Ver respostas</button>
+  </nav>
+</header>
+
+<main class="page">
+
+  <section id="formScreen" class="screen">
+    <div class="form-card">
+      <div class="form-header">
+        <h1>IDEIAS 360º</h1>
+        <p class="form-desc">Compartilhe sua ideia de melhoria. Toda sugestão é bem-vinda!</p>
+        <p class="privacy-note">Quando você enviar este formulário, ele não coletará automaticamente seus detalhes, como nome e endereço de email, a menos que você mesmo o forneça.</p>
+      </div>
+
+      <form id="ideaForm" novalidate>
+        <div id="fieldsContainer"></div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary btn-submit">Enviar</button>
+          <span id="formError" class="form-error" hidden>Preencha todas as perguntas obrigatórias antes de enviar.</span>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section id="successScreen" class="screen" hidden>
+    <div class="form-card success-card">
+      <div class="success-icon">✓</div>
+      <h2>Sua resposta foi registrada!</h2>
+      <p>Obrigado por contribuir com sua ideia de melhoria.</p>
+      <div class="success-actions">
+        <button id="btnAnotherResponse" class="btn btn-primary">Enviar outra resposta</button>
+        <button id="btnGoResponses" class="btn btn-ghost">Ver respostas</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="responsesScreen" class="screen" hidden>
+    <div class="responses-card">
+      <div class="responses-header">
+        <div>
+          <h2>Respostas recebidas</h2>
+          <p class="responses-note">Os dados ficam salvos apenas neste navegador/dispositivo (armazenamento local), pois este é um app sem servidor.</p>
+        </div>
+        <div class="responses-actions">
+          <input id="responsesSearch" class="search-input" type="text" placeholder="Buscar por nome, setor, matrícula..." />
+          <button id="btnExportCsv" class="btn btn-ghost">Exportar CSV</button>
+          <button id="btnExportJson" class="btn btn-ghost">Exportar JSON</button>
+          <button id="btnClearAll" class="btn btn-danger">Limpar tudo</button>
+        </div>
+      </div>
+
+      <div id="responsesEmpty" class="empty-state" hidden>
+        <p>Nenhuma resposta registrada ainda.</p>
+      </div>
+
+      <div class="table-wrap">
+        <table id="responsesTable" class="responses-table">
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Nome</th>
+              <th>Matrícula</th>
+              <th>Setor da oportunidade</th>
+              <th>Setor de trabalho</th>
+              <th>Eixo</th>
+              <th>Valor da DS</th>
+              <th>Situação</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="responsesTbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="detailOverlay" class="modal-overlay" hidden>
+  <div class="modal">
+    <div class="modal-header">
+      <h3>Detalhes da ideia</h3>
+      <button id="btnCloseDetail" class="btn-icon-plain" title="Fechar">×</button>
+    </div>
+    <div id="detailBody" class="modal-body"></div>
+  </div>
+</div>
+
+<script>
+"use strict";
+
+// Listas de opções — específicas da empresa. Ajuste livremente os valores
+// abaixo para refletir os setores, eixos estratégicos e valores reais da DS.
+const SETORES = [
+  "Produção",
+  "Manutenção",
+  "Qualidade",
+  "Logística / Almoxarifado",
+  "Comercial",
+  "Administrativo / Financeiro",
+  "Recursos Humanos",
+  "Tecnologia da Informação",
+  "Segurança do Trabalho",
+  "Meio Ambiente",
+  "Outro",
+];
+
+const EIXOS = [
+  "Segurança",
+  "Qualidade",
+  "Produtividade / Eficiência",
+  "Meio Ambiente e Sustentabilidade",
+  "Pessoas e Cultura",
+  "Inovação e Tecnologia",
+  "Redução de Custos",
+  "Outro",
+];
+
+const VALORES_DS = [
+  "Segurança em primeiro lugar",
+  "Integridade",
+  "Excelência",
+  "Colaboração e Trabalho em Equipe",
+  "Inovação",
+  "Respeito às Pessoas",
+  "Sustentabilidade",
+  "Foco no Cliente",
+];
+
+// Definição das perguntas do formulário, na ordem apresentada ao usuário.
+const FORM_FIELDS = [
+  {
+    id: "setorOportunidade",
+    type: "select",
+    label: "Em qual setor você observou a oportunidade de Melhoria?",
+    options: SETORES,
+    required: true,
+  },
+  {
+    id: "matricula",
+    type: "text",
+    label: "Matrícula",
+    required: true,
+  },
+  {
+    id: "nome",
+    type: "text",
+    label: "Seu Nome e Sobrenome",
+    required: true,
+  },
+  {
+    id: "setorTrabalho",
+    type: "select",
+    label: "Em qual setor você trabalha?",
+    options: SETORES,
+    required: true,
+  },
+  {
+    id: "eixo",
+    type: "select",
+    label: "Qual eixo está relacionado à sua sugestão?",
+    options: EIXOS,
+    required: true,
+  },
+  {
+    id: "valorDs",
+    type: "select",
+    label: "Sua sugestão está alinhada a qual Valor da DS?",
+    options: VALORES_DS,
+    required: true,
+  },
+  {
+    id: "situacao",
+    type: "textarea",
+    label: "Qual é a situação que você deseja melhorar?",
+    help: "Descreva o problema.",
+    required: true,
+  },
+  {
+    id: "causaRaiz",
+    type: "textarea",
+    label: "Qual é a causa Raiz do problema?",
+    help: "Identifique a principal causa que gera o problema. (Exemplo: falta de treinamento, falha de equipamento, má comunicação).",
+    required: true,
+  },
+  {
+    id: "solucao",
+    type: "textarea",
+    label: "Qual seria sua solução sugerida? Como você consertaria isso?",
+    help: "Detalhe sua proposta de solução. Como ela resolverá o problema? Quais os passos que precisam ser tomados?",
+    required: true,
+  },
+  {
+    id: "beneficios",
+    type: "textarea",
+    label: "Quais benefícios você espera alcançar com a implementação dessa ideia?",
+    help: "Exemplos: Melhorar a eficiência, reduzir custos, aumentar a segurança, etc.",
+    required: true,
+  },
+  {
+    id: "recursos",
+    type: "textarea",
+    label: "Quais recursos seriam necessários para implementar sua sugestão?",
+    help: "(Pessoas, equipamentos, materiais, etc.)",
+    required: true,
+  },
+  {
+    id: "desafios",
+    type: "textarea",
+    label: "Quais desafios ou obstáculos você prevê na implementação da sua ideia?",
+    required: true,
+  },
+  {
+    id: "indicarOutraPessoa",
+    type: "radio",
+    label: "Gostaria de indicar outra pessoa para esta ideia?",
+    options: ["Sim", "Não"],
+    required: true,
+    conditional: {
+      showWhen: "Sim",
+      field: {
+        id: "nomePessoaIndicada",
+        type: "text",
+        label: "Nome da pessoa indicada",
+        required: true,
+      },
+    },
+  },
+];
+
+const STORAGE_KEY = "ideias360_submissions";
+
+const els = {};
+
+function qs(id) { return document.getElementById(id); }
+
+function loadSubmissions() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    return raw ? JSON.parse(raw) : [];
+  } catch (e) {
+    return [];
+  }
+}
+
+function saveSubmissions(list) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+}
+
+function renderField(field) {
+  const wrap = document.createElement("div");
+  wrap.className = "field";
+  wrap.dataset.fieldId = field.id;
+
+  const label = document.createElement("label");
+  label.className = "field-label";
+  label.setAttribute("for", field.id);
+  label.textContent = field.label;
+  if (field.required) {
+    const mark = document.createElement("span");
+    mark.className = "required-mark";
+    mark.textContent = "*";
+    label.appendChild(mark);
+  }
+  wrap.appendChild(label);
+
+  if (field.help) {
+    const help = document.createElement("p");
+    help.className = "field-help";
+    help.textContent = field.help;
+    wrap.appendChild(help);
+  }
+
+  if (field.type === "select") {
+    const select = document.createElement("select");
+    select.id = field.id;
+    select.name = field.id;
+    const blank = document.createElement("option");
+    blank.value = "";
+    blank.textContent = "Selecionar sua resposta";
+    select.appendChild(blank);
+    field.options.forEach((opt) => {
+      const o = document.createElement("option");
+      o.value = opt;
+      o.textContent = opt;
+      select.appendChild(o);
+    });
+    wrap.appendChild(select);
+  } else if (field.type === "text") {
+    const input = document.createElement("input");
+    input.type = "text";
+    input.id = field.id;
+    input.name = field.id;
+    input.placeholder = "Insira sua resposta";
+    wrap.appendChild(input);
+  } else if (field.type === "textarea") {
+    const textarea = document.createElement("textarea");
+    textarea.id = field.id;
+    textarea.name = field.id;
+    textarea.placeholder = "Insira sua resposta";
+    wrap.appendChild(textarea);
+  } else if (field.type === "radio") {
+    const group = document.createElement("div");
+    group.className = "radio-group";
+    field.options.forEach((opt) => {
+      const optLabel = document.createElement("label");
+      optLabel.className = "radio-option";
+      const input = document.createElement("input");
+      input.type = "radio";
+      input.name = field.id;
+      input.value = opt;
+      optLabel.appendChild(input);
+      optLabel.appendChild(document.createTextNode(opt));
+      group.appendChild(optLabel);
+    });
+    wrap.appendChild(group);
+
+    if (field.conditional) {
+      const condWrap = document.createElement("div");
+      condWrap.className = "field conditional-field";
+      condWrap.hidden = true;
+      condWrap.dataset.fieldId = field.conditional.field.id;
+
+      const condLabel = document.createElement("label");
+      condLabel.className = "field-label";
+      condLabel.setAttribute("for", field.conditional.field.id);
+      condLabel.textContent = field.conditional.field.label;
+      if (field.conditional.field.required) {
+        const mark = document.createElement("span");
+        mark.className = "required-mark";
+        mark.textContent = "*";
+        condLabel.appendChild(mark);
+      }
+      condWrap.appendChild(condLabel);
+
+      const condInput = document.createElement("input");
+      condInput.type = "text";
+      condInput.id = field.conditional.field.id;
+      condInput.name = field.conditional.field.id;
+      condInput.placeholder = "Insira sua resposta";
+      condWrap.appendChild(condInput);
+
+      wrap.appendChild(condWrap);
+
+      group.addEventListener("change", () => {
+        const checked = group.querySelector("input:checked");
+        const show = checked && checked.value === field.conditional.showWhen;
+        condWrap.hidden = !show;
+        if (!show) condInput.value = "";
+      });
+    }
+  }
+
+  return wrap;
+}
+
+function renderForm() {
+  const container = qs("fieldsContainer");
+  container.innerHTML = "";
+  FORM_FIELDS.forEach((field) => {
+    container.appendChild(renderField(field));
+  });
+}
+
+function clearInvalid() {
+  document.querySelectorAll(".field.invalid").forEach((el) => el.classList.remove("invalid"));
+  qs("formError").hidden = true;
+}
+
+function validateForm() {
+  let valid = true;
+  let firstInvalid = null;
+
+  FORM_FIELDS.forEach((field) => {
+    const wrap = document.querySelector(`.field[data-field-id="${field.id}"]`);
+    let fieldValid = true;
+
+    if (field.type === "radio") {
+      const checked = document.querySelector(`input[name="${field.id}"]:checked`);
+      fieldValid = !!checked;
+
+      if (fieldValid && field.conditional && checked.value === field.conditional.showWhen) {
+        const condField = field.conditional.field;
+        const condEl = qs(condField.id);
+        const condWrap = document.querySelector(`.field[data-field-id="${condField.id}"]`);
+        if (condField.required && !condEl.value.trim()) {
+          condWrap.classList.add("invalid");
+          valid = false;
+          if (!firstInvalid) firstInvalid = condWrap;
+        } else {
+          condWrap.classList.remove("invalid");
+        }
+      }
+    } else {
+      const el = qs(field.id);
+      fieldValid = !field.required || !!el.value.trim();
+    }
+
+    if (!fieldValid) {
+      wrap.classList.add("invalid");
+      valid = false;
+      if (!firstInvalid) firstInvalid = wrap;
+    } else {
+      wrap.classList.remove("invalid");
+    }
+  });
+
+  if (!valid) {
+    qs("formError").hidden = false;
+    if (firstInvalid) firstInvalid.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+
+  return valid;
+}
+
+function collectFormData() {
+  const data = { id: Date.now() + "-" + Math.random().toString(36).slice(2, 8), createdAt: new Date().toISOString() };
+  FORM_FIELDS.forEach((field) => {
+    if (field.type === "radio") {
+      const checked = document.querySelector(`input[name="${field.id}"]:checked`);
+      data[field.id] = checked ? checked.value : "";
+      if (field.conditional && data[field.id] === field.conditional.showWhen) {
+        data[field.conditional.field.id] = qs(field.conditional.field.id).value.trim();
+      }
+    } else {
+      data[field.id] = qs(field.id).value.trim();
+    }
+  });
+  return data;
+}
+
+function resetForm() {
+  qs("ideaForm").reset();
+  clearInvalid();
+  document.querySelectorAll(".conditional-field").forEach((el) => { el.hidden = true; });
+}
+
+function showScreen(name) {
+  ["formScreen", "successScreen", "responsesScreen"].forEach((id) => {
+    qs(id).hidden = id !== name;
+  });
+  if (name === "responsesScreen") renderResponsesTable();
+}
+
+function handleSubmit(e) {
+  e.preventDefault();
+  clearInvalid();
+  if (!validateForm()) return;
+
+  const data = collectFormData();
+  const list = loadSubmissions();
+  list.push(data);
+  saveSubmissions(list);
+
+  resetForm();
+  showScreen("successScreen");
+}
+
+function fieldLabelById(id) {
+  for (const f of FORM_FIELDS) {
+    if (f.id === id) return f.label;
+    if (f.conditional && f.conditional.field.id === id) return f.conditional.field.label;
+  }
+  return id;
+}
+
+function formatDate(iso) {
+  const d = new Date(iso);
+  return d.toLocaleString("pt-BR");
+}
+
+function renderResponsesTable() {
+  const list = loadSubmissions();
+  const search = (qs("responsesSearch").value || "").toLowerCase();
+
+  const filtered = list.filter((item) => {
+    if (!search) return true;
+    return [item.nome, item.matricula, item.setorOportunidade, item.setorTrabalho, item.eixo, item.situacao]
+      .filter(Boolean)
+      .some((v) => String(v).toLowerCase().includes(search));
+  });
+
+  qs("responsesEmpty").hidden = list.length !== 0;
+  document.querySelector(".table-wrap").hidden = list.length === 0;
+
+  const tbody = qs("responsesTbody");
+  tbody.innerHTML = "";
+
+  filtered
+    .slice()
+    .reverse()
+    .forEach((item) => {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <td>${formatDate(item.createdAt)}</td>
+        <td>${escapeHtml(item.nome)}</td>
+        <td>${escapeHtml(item.matricula)}</td>
+        <td>${escapeHtml(item.setorOportunidade)}</td>
+        <td>${escapeHtml(item.setorTrabalho)}</td>
+        <td>${escapeHtml(item.eixo)}</td>
+        <td>${escapeHtml(item.valorDs)}</td>
+        <td>${escapeHtml(item.situacao)}</td>
+        <td><button class="link-btn" data-delete-id="${item.id}">Excluir</button></td>
+      `;
+      tr.addEventListener("click", (ev) => {
+        if (ev.target.closest("[data-delete-id]")) return;
+        showDetail(item);
+      });
+      tbody.appendChild(tr);
+    });
+
+  tbody.querySelectorAll("[data-delete-id]").forEach((btn) => {
+    btn.addEventListener("click", (ev) => {
+      ev.stopPropagation();
+      deleteSubmission(btn.dataset.deleteId);
+    });
+  });
+}
+
+function escapeHtml(str) {
+  if (str === undefined || str === null) return "";
+  return String(str)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+function deleteSubmission(id) {
+  const list = loadSubmissions().filter((item) => item.id !== id);
+  saveSubmissions(list);
+  renderResponsesTable();
+}
+
+function showDetail(item) {
+  const body = qs("detailBody");
+  body.innerHTML = "";
+  const dl = document.createElement("dl");
+
+  const allFieldIds = FORM_FIELDS.flatMap((f) => f.conditional ? [f.id, f.conditional.field.id] : [f.id]);
+
+  allFieldIds.forEach((id) => {
+    if (item[id] === undefined || item[id] === "") return;
+    const row = document.createElement("div");
+    row.className = "detail-row";
+    const dt = document.createElement("dt");
+    dt.textContent = fieldLabelById(id);
+    const dd = document.createElement("dd");
+    dd.textContent = item[id];
+    row.appendChild(dt);
+    row.appendChild(dd);
+    dl.appendChild(row);
+  });
+
+  const row = document.createElement("div");
+  row.className = "detail-row";
+  const dt = document.createElement("dt");
+  dt.textContent = "Enviado em";
+  const dd = document.createElement("dd");
+  dd.textContent = formatDate(item.createdAt);
+  row.appendChild(dt);
+  row.appendChild(dd);
+  dl.insertBefore(row, dl.firstChild);
+
+  body.appendChild(dl);
+  qs("detailOverlay").hidden = false;
+}
+
+function exportCsv() {
+  const list = loadSubmissions();
+  if (!list.length) return;
+
+  const allFieldIds = ["createdAt", ...FORM_FIELDS.flatMap((f) => f.conditional ? [f.id, f.conditional.field.id] : [f.id])];
+  const headers = ["Data de envio", ...allFieldIds.slice(1).map(fieldLabelById)];
+
+  const rows = list.map((item) =>
+    allFieldIds.map((id) => {
+      const val = id === "createdAt" ? formatDate(item.createdAt) : (item[id] || "");
+      return csvEscape(val);
+    })
+  );
+
+  const csv = [headers.map(csvEscape).join(";"), ...rows.map((r) => r.join(";"))].join("\r\n");
+  downloadFile(csv, "ideias360-respostas.csv", "text/csv;charset=utf-8;");
+}
+
+function csvEscape(val) {
+  const str = String(val ?? "");
+  if (/[";\n]/.test(str)) {
+    return '"' + str.replace(/"/g, '""') + '"';
+  }
+  return str;
+}
+
+function exportJson() {
+  const list = loadSubmissions();
+  if (!list.length) return;
+  downloadFile(JSON.stringify(list, null, 2), "ideias360-respostas.json", "application/json");
+}
+
+function downloadFile(content, filename, mime) {
+  const blob = new Blob(["﻿" + content], { type: mime });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+function clearAll() {
+  if (!confirm("Tem certeza que deseja apagar todas as respostas salvas neste dispositivo? Essa ação não pode ser desfeita.")) return;
+  saveSubmissions([]);
+  renderResponsesTable();
+}
+
+function init() {
+  renderForm();
+
+  qs("ideaForm").addEventListener("submit", handleSubmit);
+  qs("navForm").addEventListener("click", () => showScreen("formScreen"));
+  qs("navResponses").addEventListener("click", () => showScreen("responsesScreen"));
+  qs("btnAnotherResponse").addEventListener("click", () => showScreen("formScreen"));
+  qs("btnGoResponses").addEventListener("click", () => showScreen("responsesScreen"));
+  qs("responsesSearch").addEventListener("input", renderResponsesTable);
+  qs("btnExportCsv").addEventListener("click", exportCsv);
+  qs("btnExportJson").addEventListener("click", exportJson);
+  qs("btnClearAll").addEventListener("click", clearAll);
+  qs("btnCloseDetail").addEventListener("click", () => { qs("detailOverlay").hidden = true; });
+  qs("detailOverlay").addEventListener("click", (e) => {
+    if (e.target === qs("detailOverlay")) qs("detailOverlay").hidden = true;
+  });
+}
+
+document.addEventListener("DOMContentLoaded", init);
+
+</script>
+</body>
+</html>
