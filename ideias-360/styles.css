@@ -103,34 +103,12 @@ body {
 }
 
 .brand-mark {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 42px;
-  height: 42px;
+  display: block;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--grad-1), var(--grad-2) 55%, var(--grad-3));
-  color: #fff;
-  font-weight: 800;
-  font-size: 11.5px;
+  object-fit: cover;
   box-shadow: 0 4px 14px rgba(26, 79, 224, 0.35);
-}
-
-.brand-mark-ring {
-  position: absolute;
-  inset: -5px;
-  border-radius: 50%;
-  border: 2px solid transparent;
-  border-top-color: var(--grad-4);
-  border-right-color: var(--grad-3);
-  animation: spin 5s linear infinite;
-}
-
-.brand-mark-text { position: relative; z-index: 1; letter-spacing: 0.3px; }
-
-@keyframes spin {
-  to { transform: rotate(360deg); }
 }
 
 .brand-name {
@@ -219,30 +197,33 @@ body {
   padding: 32px 32px 36px;
 }
 
-.form-header { margin-bottom: 20px; }
-
-.form-header h1 {
-  margin: 0 0 6px;
-  font-size: 30px;
-  font-weight: 800;
-  background: linear-gradient(90deg, var(--primary-dark), var(--grad-2) 60%, var(--grad-3));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+.form-card {
+  padding: 0;
+  overflow: hidden;
 }
+
+.hero {
+  line-height: 0;
+}
+
+.hero-image {
+  display: block;
+  width: 100%;
+  height: clamp(140px, 22vw, 230px);
+  object-fit: cover;
+  object-position: center 42%;
+}
+
+.form-card-body {
+  padding: 28px 32px 36px;
+}
+
+.form-header { margin-bottom: 20px; }
 
 .form-desc {
   margin: 0 0 16px;
   color: var(--text-muted);
   font-size: 15px;
-}
-
-.gradient-bar {
-  height: 5px;
-  width: 100%;
-  border-radius: 4px;
-  background: var(--gradient-full);
-  margin-bottom: 16px;
 }
 
 .privacy-note {
@@ -640,7 +621,9 @@ body {
 
 @media (max-width: 600px) {
   .topbar { flex-direction: column; align-items: flex-start; gap: 10px; }
-  .form-card, .responses-card { padding: 22px 18px; }
+  .responses-card { padding: 22px 18px; }
+  .form-card-body { padding: 22px 18px; }
+  .success-card { padding: 40px 18px; }
   .responses-header { flex-direction: column; }
   .stepper .step-label { display: none; }
   .form-actions { justify-content: stretch; }

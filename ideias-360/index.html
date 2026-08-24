@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>IDEIAS 360º</title>
+<link rel="icon" href="assets/logo-icon.png" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -16,7 +17,7 @@
 
 <header class="topbar">
   <div class="brand">
-    <span class="brand-mark"><span class="brand-mark-ring"></span><span class="brand-mark-text">360°</span></span>
+    <img class="brand-mark" src="assets/logo-icon.png" alt="" />
     <span class="brand-name">IDEIAS 360º</span>
   </div>
   <nav class="topbar-actions">
@@ -29,26 +30,30 @@
 
   <section id="formScreen" class="screen">
     <div class="form-card">
-      <div class="form-header">
-        <h1>IDEIAS 360º</h1>
-        <p class="form-desc">Compartilhe sua ideia de melhoria. Toda sugestão é bem-vinda!</p>
-        <div class="gradient-bar" aria-hidden="true"></div>
-        <p class="privacy-note">Quando você enviar este formulário, ele não coletará automaticamente seus detalhes, como nome e endereço de email, a menos que você mesmo o forneça.</p>
+      <div class="hero">
+        <img class="hero-image" src="assets/banner-dentsply-sirona.png" alt="Dentsply Sirona — Ideias 360°" />
       </div>
 
-      <ol id="stepper" class="stepper"></ol>
-      <p id="stepProgressLabel" class="step-progress-label"></p>
-
-      <form id="ideaForm" novalidate>
-        <div id="stepsContainer"></div>
-
-        <div class="form-actions">
-          <button type="button" id="btnPrevStep" class="btn btn-ghost" hidden>← Voltar</button>
-          <button type="button" id="btnNextStep" class="btn btn-primary">Próximo →</button>
-          <button type="submit" id="btnSubmit" class="btn btn-primary btn-submit" hidden>Enviar ✓</button>
-          <span id="formError" class="form-error" hidden>Preencha todas as perguntas obrigatórias antes de continuar.</span>
+      <div class="form-card-body">
+        <div class="form-header">
+          <p class="form-desc">Compartilhe sua ideia de melhoria. Toda sugestão é bem-vinda!</p>
+          <p class="privacy-note">Quando você enviar este formulário, ele não coletará automaticamente seus detalhes, como nome e endereço de email, a menos que você mesmo o forneça.</p>
         </div>
-      </form>
+
+        <ol id="stepper" class="stepper"></ol>
+        <p id="stepProgressLabel" class="step-progress-label"></p>
+
+        <form id="ideaForm" novalidate>
+          <div id="stepsContainer"></div>
+
+          <div class="form-actions">
+            <button type="button" id="btnPrevStep" class="btn btn-ghost" hidden>← Voltar</button>
+            <button type="button" id="btnNextStep" class="btn btn-primary">Próximo →</button>
+            <button type="submit" id="btnSubmit" class="btn btn-primary btn-submit" hidden>Enviar ✓</button>
+            <span id="formError" class="form-error" hidden>Preencha todas as perguntas obrigatórias antes de continuar.</span>
+          </div>
+        </form>
+      </div>
     </div>
   </section>
 
