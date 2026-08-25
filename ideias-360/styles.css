@@ -39,7 +39,7 @@ body {
   inset: 0;
   z-index: -1;
   overflow: hidden;
-  background: linear-gradient(160deg, #f4f6fb 0%, #e9edf6 55%, #e3e8f4 100%);
+  background: linear-gradient(160deg, #f6f8fc 0%, #eef2f9 55%, #e6ecf6 100%);
 }
 
 .bg-stripes {
@@ -50,34 +50,55 @@ body {
       -18deg,
       rgba(255, 255, 255, 0.75) 0px,
       rgba(255, 255, 255, 0.75) 90px,
-      rgba(217, 226, 242, 0.55) 90px,
-      rgba(217, 226, 242, 0.55) 180px
+      rgba(219, 228, 244, 0.5) 90px,
+      rgba(219, 228, 244, 0.5) 180px
     );
-  opacity: 0.9;
+  opacity: 0.8;
 }
 
 .bg-glow {
   position: absolute;
   border-radius: 50%;
-  filter: blur(70px);
-  opacity: 0.35;
+  filter: blur(90px);
 }
 
 .bg-glow-1 {
-  width: 520px;
-  height: 520px;
-  top: -160px;
-  right: -140px;
-  background: radial-gradient(circle, var(--grad-3), var(--grad-4) 60%, transparent 75%);
+  width: 560px;
+  height: 560px;
+  top: -200px;
+  right: -160px;
+  background: radial-gradient(circle, rgba(26, 79, 224, 0.14), transparent 70%);
 }
 
 .bg-glow-2 {
-  width: 460px;
-  height: 460px;
-  bottom: -180px;
-  left: -140px;
-  background: radial-gradient(circle, var(--grad-1), var(--grad-2) 60%, transparent 75%);
-  opacity: 0.25;
+  width: 480px;
+  height: 480px;
+  bottom: -200px;
+  left: -160px;
+  background: radial-gradient(circle, rgba(18, 58, 173, 0.1), transparent 70%);
+}
+
+.bg-tooth {
+  position: absolute;
+  fill: var(--primary);
+  opacity: 0.05;
+}
+
+.bg-tooth-1 {
+  width: 46%;
+  max-width: 480px;
+  bottom: -9%;
+  right: -6%;
+  transform: rotate(-12deg);
+}
+
+.bg-tooth-2 {
+  width: 26%;
+  max-width: 260px;
+  top: 6%;
+  left: -6%;
+  transform: rotate(18deg);
+  opacity: 0.04;
 }
 
 /* ---------- Topbar ---------- */
