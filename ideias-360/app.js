@@ -478,10 +478,12 @@ function resetForm() {
 }
 
 function showScreen(name) {
-  ["formScreen", "successScreen", "responsesScreen"].forEach((id) => {
+  ["homeScreen", "formScreen", "successScreen", "responsesScreen"].forEach((id) => {
     qs(id).hidden = id !== name;
   });
   if (name === "responsesScreen") renderResponsesTable();
+  if (name === "formScreen") positionHeroRing();
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 function handleNextStep() {
@@ -684,8 +686,11 @@ function init() {
   qs("ideaForm").addEventListener("submit", handleSubmit);
   qs("btnNextStep").addEventListener("click", handleNextStep);
   qs("btnPrevStep").addEventListener("click", handlePrevStep);
+  qs("navHome").addEventListener("click", () => showScreen("homeScreen"));
   qs("navForm").addEventListener("click", () => showScreen("formScreen"));
   qs("navResponses").addEventListener("click", () => showScreen("responsesScreen"));
+  qs("optionNewIdea").addEventListener("click", () => showScreen("formScreen"));
+  qs("optionViewIdeas").addEventListener("click", () => showScreen("responsesScreen"));
   qs("btnAnotherResponse").addEventListener("click", () => showScreen("formScreen"));
   qs("btnGoResponses").addEventListener("click", () => showScreen("responsesScreen"));
   qs("responsesSearch").addEventListener("input", renderResponsesTable);

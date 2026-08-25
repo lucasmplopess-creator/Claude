@@ -26,6 +26,7 @@
     <span class="brand-name">IDEIAS 360º</span>
   </div>
   <nav class="topbar-actions">
+    <button id="navHome" class="btn btn-ghost">Início</button>
     <button id="navForm" class="btn btn-ghost">Novo formulário</button>
     <button id="navResponses" class="btn btn-ghost">Ver respostas</button>
   </nav>
@@ -33,7 +34,40 @@
 
 <main class="page">
 
-  <section id="formScreen" class="screen">
+  <section id="homeScreen" class="screen">
+    <div class="home-card">
+      <h1 class="home-title">O que você deseja fazer?</h1>
+      <p class="home-subtitle">Escolha uma das opções abaixo para continuar.</p>
+
+      <div class="option-grid">
+        <button type="button" id="optionNewIdea" class="option-card">
+          <span class="option-icon option-icon-a">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.2 1 2.05V17h6v-.25c0-.85.4-1.55 1-2.05A7 7 0 0 0 12 2z"/></svg>
+          </span>
+          <span class="option-title">Nova Ideia</span>
+          <span class="option-desc">Registre uma nova sugestão de melhoria em poucos passos guiados.</span>
+          <span class="option-cta option-cta-a">
+            Começar
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+          </span>
+        </button>
+
+        <button type="button" id="optionViewIdeas" class="option-card">
+          <span class="option-icon option-icon-b">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="M9 13l2 2 4-4"/></svg>
+          </span>
+          <span class="option-title">Consultar Ideias Enviadas</span>
+          <span class="option-desc">Veja o histórico de ideias já registradas e acompanhe cada uma delas.</span>
+          <span class="option-cta option-cta-b">
+            Ver respostas
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section id="formScreen" class="screen" hidden>
     <div class="form-card">
       <div class="hero">
         <img id="heroImage" class="hero-image" src="assets/banner-dentsply-sirona.png" alt="Dentsply Sirona — Ideias 360°" />

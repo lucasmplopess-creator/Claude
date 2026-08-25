@@ -231,6 +231,121 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
+/* ---------- Home ---------- */
+
+.home-card {
+  text-align: center;
+  padding: 40px 8px 16px;
+}
+
+.home-title {
+  margin: 0 0 10px;
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.home-subtitle {
+  margin: 0 0 40px;
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+.option-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+  text-align: left;
+}
+
+.option-card {
+  background: var(--card-bg-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: left;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.option-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 26px 70px rgba(20, 40, 90, 0.2), 0 6px 16px rgba(20, 40, 90, 0.1);
+}
+
+.option-card:active { transform: translateY(-1px); }
+
+.option-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.option-icon-a {
+  background: linear-gradient(120deg, var(--grad-1), var(--grad-2));
+  box-shadow: 0 6px 16px rgba(26, 79, 224, 0.3);
+}
+
+.option-icon-b {
+  background: linear-gradient(120deg, var(--grad-3), var(--grad-4));
+  box-shadow: 0 6px 16px rgba(232, 70, 176, 0.28);
+}
+
+.option-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.option-desc {
+  font-size: 14.5px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin-top: -8px;
+}
+
+.option-cta {
+  margin-top: auto;
+  padding-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 14.5px;
+}
+
+.option-cta-a {
+  background: linear-gradient(90deg, var(--primary-dark), var(--grad-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.option-cta-a svg { color: var(--primary); }
+
+.option-cta-b {
+  background: linear-gradient(90deg, #b8309a, var(--grad-4));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.option-cta-b svg { color: #c2378f; }
+
+@media (max-width: 640px) {
+  .option-grid { grid-template-columns: 1fr; }
+}
+
 .form-card, .responses-card {
   background: var(--card-bg-glass);
   backdrop-filter: blur(20px);
