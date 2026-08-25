@@ -123,7 +123,7 @@ body {
   position: absolute;
   inset: -5px;
   border-radius: 50%;
-  background: conic-gradient(from 0deg, var(--grad-1), var(--grad-2), var(--grad-3), var(--grad-4), var(--grad-5), var(--grad-1));
+  background: conic-gradient(from 0deg, var(--grad-1) 0%, var(--grad-2) 12.5%, var(--grad-3) 25%, var(--grad-4) 37.5%, var(--grad-5) 50%, transparent 50%, transparent 100%);
   -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
   mask: radial-gradient(farthest-side, transparent calc(100% - 3px), #000 calc(100% - 3px));
   animation: spin 4s linear infinite;
@@ -242,7 +242,7 @@ body {
 .hero-ring {
   position: absolute;
   border-radius: 50%;
-  background: conic-gradient(from 0deg, var(--grad-1), var(--grad-2), var(--grad-3), var(--grad-4), var(--grad-5), var(--grad-1));
+  background: conic-gradient(from 0deg, var(--grad-1) 0%, var(--grad-2) 12.5%, var(--grad-3) 25%, var(--grad-4) 37.5%, var(--grad-5) 50%, transparent 50%, transparent 100%);
   -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 4px));
   mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 4px));
   animation: spin 4.5s linear infinite;
