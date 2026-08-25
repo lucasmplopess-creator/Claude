@@ -171,6 +171,11 @@ const STEPS = [
 
 const FORM_FIELDS = STEPS.flatMap((step) => step.fields);
 
+// Posição do círculo do logo dentro da foto do banner (frações do tamanho
+// original da imagem), usada para alinhar o anel giratório sobre a foto
+// mesmo quando ela é redimensionada de forma responsiva.
+const HERO_LOGO = { xFrac: 0.2216, yFrac: 0.4995, dFrac: 0.3508 };
+
 const STORAGE_KEY = "ideias360_submissions";
 
 let currentStep = 0;
@@ -297,6 +302,31 @@ function renderField(field) {
   }
 
   return wrap;
+}
+
+function positionHeroRing() {
+  const hero = document.querySelector(".hero");
+  const img = qs("heroImage");
+  const ring = qs("heroRing");
+  if (!hero || !img || !ring || !img.naturalWidth) return;
+
+  const cw = hero.clientWidth;
+  const ch = hero.clientHeight;
+  const scale = Math.min(cw / img.naturalWidth, ch / img.naturalHeight);
+  const renderedW = img.naturalWidth * scale;
+  const renderedH = img.naturalHeight * scale;
+  const offsetX = (cw - renderedW) / 2;
+  const offsetY = (ch - renderedH) / 2;
+
+  const centerX = offsetX + HERO_LOGO.xFrac * renderedW;
+  const centerY = offsetY + HERO_LOGO.yFrac * renderedH;
+  const diameter = HERO_LOGO.dFrac * renderedW * 1.14;
+
+  ring.style.width = diameter + "px";
+  ring.style.height = diameter + "px";
+  ring.style.left = (centerX - diameter / 2) + "px";
+  ring.style.top = (centerY - diameter / 2) + "px";
+  ring.classList.add("visible");
 }
 
 function renderStepper() {
@@ -642,6 +672,14 @@ function clearAll() {
 
 function init() {
   renderForm();
+
+  const heroImage = qs("heroImage");
+  if (heroImage.complete) {
+    positionHeroRing();
+  } else {
+    heroImage.addEventListener("load", positionHeroRing);
+  }
+  window.addEventListener("resize", positionHeroRing);
 
   qs("ideaForm").addEventListener("submit", handleSubmit);
   qs("btnNextStep").addEventListener("click", handleNextStep);

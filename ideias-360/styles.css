@@ -102,13 +102,36 @@ body {
   gap: 12px;
 }
 
+.brand-mark-wrap {
+  position: relative;
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+}
+
 .brand-mark {
   display: block;
-  width: 40px;
-  height: 40px;
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-  object-fit: cover;
+  object-fit: contain;
   box-shadow: 0 4px 14px rgba(26, 79, 224, 0.35);
+}
+
+.brand-mark-ring {
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 2.5px solid transparent;
+  border-top-color: var(--grad-4);
+  border-right-color: var(--grad-3);
+  animation: spin 4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
 .brand-name {
@@ -203,16 +226,32 @@ body {
 }
 
 .hero {
+  position: relative;
   line-height: 0;
+  background: linear-gradient(135deg, #f7f8fb, #eef1f7);
 }
 
 .hero-image {
   display: block;
   width: 100%;
   height: clamp(140px, 22vw, 230px);
-  object-fit: cover;
-  object-position: center 42%;
+  object-fit: contain;
+  object-position: center;
 }
+
+.hero-ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: var(--grad-4);
+  border-right-color: var(--grad-3);
+  animation: spin 4.5s linear infinite;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.hero-ring.visible { opacity: 1; }
 
 .form-card-body {
   padding: 28px 32px 36px;
