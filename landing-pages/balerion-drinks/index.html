@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Balerion Drinks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&family=Jost:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* Marca nasce de uma logo noturna (obsidiana/ouro/brasa) — o mundo visual é deliberadamente único, sem alternância de tema. */
+  :root{
+    --bg: #0B0906;
+    --bg-raised: #171009;
+    --bg-raised-2: #1E140C;
+    --hairline: rgba(201,161,90,0.22);
+    --gold: #C9A15A;
+    --gold-bright: #F0D68C;
+    --ember: #9C1B2E;
+    --ember-bright: #E2394F;
+    --ink: #F3E9DA;
+    --ink-dim: #C9BCA4;
+    --ink-faint: #8C7E68;
+    --shadow: rgba(0,0,0,0.45);
+    --font-display: "Cinzel", "Iowan Old Style", Georgia, serif;
+    --font-body: "Libre Caslon Text", "Iowan Old Style", Georgia, serif;
+    --font-utility: "Jost", "Segoe UI", sans-serif;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce){ html{ scroll-behavior: auto; } }
+
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img, svg{ max-width: 100%; display:block; }
+
+  .wrap{
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 clamp(1.25rem, 4vw, 3rem);
+  }
+
+  .prose{ max-width: 62ch; }
+  .center{ text-align: center; margin-left:auto; margin-right:auto; }
+
+  h1,h2,h3{
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    text-wrap: balance;
+    margin: 0;
+    color: var(--gold-bright);
+  }
+
+  a{ color: inherit; }
+
+  .kicker{
+    display:flex;
+    align-items:center;
+    gap: 0.65rem;
+    font-family: var(--font-utility);
+    font-size: 0.72rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 1.1rem;
+  }
+  .kicker::before{
+    content:"";
+    width: 22px; height: 1px;
+    background: var(--gold);
+    flex: none;
+  }
+  .kicker b{ color: var(--gold); font-weight:600; }
+
+  .btn{
+    font-family: var(--font-utility);
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 0.95rem 1.9rem;
+    border-radius: 3px;
+    border: 1px solid transparent;
+    display: inline-flex;
+    align-items:center;
+    gap: 0.6rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+  }
+  .btn-primary{
+    background: linear-gradient(180deg, var(--gold-bright), var(--gold));
+    color: #241705;
+    box-shadow: 0 8px 24px -8px rgba(201,161,90,0.55);
+  }
+  .btn-primary:hover{ transform: translateY(-2px); box-shadow: 0 12px 28px -6px rgba(201,161,90,0.65); }
+  .btn-ghost{
+    border-color: var(--hairline);
+    color: var(--ink-dim);
+    background: transparent;
+  }
+  .btn-ghost:hover{ border-color: var(--gold); color: var(--gold-bright); }
+  .btn-ember{
+    background: linear-gradient(180deg, var(--ember-bright), var(--ember));
+    color: var(--ink);
+    box-shadow: 0 8px 24px -8px rgba(226,57,79,0.5);
+  }
+  .btn-ember:hover{ transform: translateY(-2px); }
+  .microcopy{
+    font-family: var(--font-utility);
+    font-size: 0.82rem;
+    color: var(--ink-faint);
+    margin-top: 0.85rem;
+  }
+
+  /* Header */
+  header.site{
+    position: sticky; top:0; z-index: 20;
+    background: rgba(11,9,6,0.86);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--hairline);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 1rem 0;
+  }
+  .wordmark{
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: 0.14em;
+    color: var(--gold-bright);
+    display:flex; flex-direction:column; line-height:1;
+    text-decoration:none;
+  }
+  .wordmark span{
+    font-family: var(--font-utility);
+    font-size: 0.56rem;
+    letter-spacing: 0.42em;
+    color: var(--ember-bright);
+    margin-top: 0.35rem;
+    font-weight: 500;
+  }
+  .navlinks{
+    display:flex; gap: 2rem; align-items:center;
+    font-family: var(--font-utility);
+    font-size: 0.85rem;
+    color: var(--ink-dim);
+  }
+  .navlinks a{ text-decoration:none; }
+  .navlinks a:hover{ color: var(--gold-bright); }
+  @media (max-width: 720px){ .navlinks a.hide-sm{ display:none; } }
+
+  /* Section shells */
+  section{ position: relative; padding: clamp(3.5rem, 8vw, 6.5rem) 0; }
+  section.raised{ background: var(--bg-raised); }
+  section.raised-2{ background: linear-gradient(180deg, var(--bg-raised), var(--bg-raised-2)); }
+  .ember-glow{
+    position:absolute; inset:0; pointer-events:none; overflow:hidden;
+  }
+  .ember-glow::before{
+    content:"";
+    position:absolute; width: 60vw; height: 60vw; max-width:900px; max-height:900px;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.16;
+  }
+
+  /* Hero */
+  .hero{ padding-top: clamp(3rem, 9vw, 6rem); overflow:hidden; }
+  .hero .ember-glow::before{ background: var(--ember); top:-20%; right:-15%; }
+  .hero-grid{
+    display:grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(2rem,5vw,4rem);
+    align-items:center; position:relative;
+  }
+  @media (max-width: 860px){ .hero-grid{ grid-template-columns: 1fr; } .hero-art{ order:-1; max-width: 260px; margin: 0 auto; } }
+  .hero h1{
+    font-size: clamp(2.35rem, 5.2vw, 3.75rem);
+    line-height: 1.08;
+  }
+  .hero .flame-word{ color: var(--ember-bright); }
+  .hero-sub{
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 1.18rem;
+    color: var(--ink-dim);
+    margin-top: 1.4rem;
+    max-width: 46ch;
+  }
+  .hero-actions{ display:flex; flex-wrap:wrap; gap: 1rem; margin-top: 2.2rem; align-items:center; }
+
+  .glass-art{ position:relative; }
+  .glass-art svg{ filter: drop-shadow(0 30px 60px rgba(156,27,46,0.35)); }
+
+  /* Opening / proposta de valor */
+  .opening-lines p{ margin: 0 0 1.1rem; color: var(--ink-dim); }
+  .opening-lines strong{ color: var(--ink); }
+
+  /* Dor */
+  .pain-list{ list-style:none; margin: 1.75rem 0 0; padding:0; display:grid; gap: 1rem; }
+  .pain-list li{
+    position:relative; padding-left: 1.9rem; color: var(--ink-dim);
+  }
+  .pain-list li::before{
+    content:"✦"; position:absolute; left:0; top:0.05em;
+    color: var(--ember-bright); font-size: 0.85em;
+  }
+
+  /* Grid layouts */
+  .two-col{ display:grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(2rem,5vw,4rem); align-items:start; }
+  @media (max-width: 860px){ .two-col{ grid-template-columns:1fr; } }
+
+  .benefit-grid{
+    display:grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem;
+    margin-top: 2.5rem;
+  }
+  @media (max-width: 720px){ .benefit-grid{ grid-template-columns: 1fr; } }
+  .benefit-card{
+    background: var(--bg-raised-2);
+    border: 1px solid var(--hairline);
+    border-radius: 4px;
+    padding: 1.6rem 1.7rem;
+  }
+  .benefit-card .num{
+    font-family: var(--font-utility);
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    color: var(--ember-bright);
+    display:block; margin-bottom: 0.7rem;
+  }
+  .benefit-card p{ margin:0; color: var(--ink-dim); }
+
+  /* Prova social */
+  .proof-band{
+    display:flex; flex-wrap:wrap; gap: clamp(1.5rem,5vw,3.5rem);
+    padding: 1.8rem 0; margin: 2.5rem 0 3rem;
+    border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline);
+  }
+  .proof-stat{ font-family: var(--font-utility); }
+  .proof-stat .n{ font-family: var(--font-display); font-size: 1.9rem; color: var(--gold-bright); display:block; }
+  .proof-stat .l{ font-size: 0.78rem; color: var(--ink-faint); letter-spacing:0.02em; }
+  .placeholder{ color: var(--ember-bright); font-style: italic; }
+
+  .testi-grid{ display:grid; grid-template-columns: repeat(3,1fr); gap: 1.3rem; }
+  @media (max-width: 860px){ .testi-grid{ grid-template-columns:1fr; } }
+  .testi-card{
+    background: var(--bg-raised); border:1px solid var(--hairline); border-radius:4px;
+    padding: 1.6rem; display:flex; flex-direction:column; gap: 1rem;
+  }
+  .testi-card .quote{ font-style: italic; color: var(--ink); margin:0; }
+  .testi-card .who{ font-family: var(--font-utility); font-size:0.8rem; color: var(--ink-faint); }
+
+  /* Oferta */
+  .offer-card{
+    background: linear-gradient(180deg, var(--bg-raised-2), var(--bg-raised));
+    border: 1px solid var(--hairline);
+    border-radius: 6px;
+    padding: clamp(1.8rem,4vw,2.8rem);
+    position:relative;
+  }
+  .offer-card::before{
+    content:""; position:absolute; inset:0; border-radius:6px; padding:1px;
+    background: linear-gradient(135deg, var(--gold), transparent 40%, transparent 60%, var(--ember));
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude;
+    opacity:0.5; pointer-events:none;
+  }
+  .offer-list{ list-style:none; margin:1.6rem 0 0; padding:0; display:grid; gap:0.85rem; }
+  .offer-list li{ padding-left:1.7rem; position:relative; color: var(--ink-dim); }
+  .offer-list li::before{ content:"◆"; position:absolute; left:0; top:0.15em; font-size:0.6em; color: var(--gold); }
+  .offer-anchor{
+    margin-top: 2rem; padding-top:1.6rem; border-top:1px dashed var(--hairline);
+    font-family: var(--font-utility); font-size:0.92rem; color: var(--ink-faint);
+  }
+  .bonus-row{ display:flex; flex-wrap:wrap; gap:0.9rem; margin-top:1.6rem; }
+  .bonus-chip{
+    font-family: var(--font-utility); font-size: 0.82rem;
+    border: 1px solid var(--hairline); border-radius: 999px;
+    padding: 0.5rem 1.05rem; color: var(--ink-dim);
+  }
+  .bonus-chip b{ color: var(--gold-bright); }
+
+  /* Objeções */
+  .obj-grid{ display:grid; gap: 1.1rem; margin-top:2.2rem; }
+  .obj-item{
+    display:grid; grid-template-columns: 1.1fr 1.4fr; gap: 1.5rem;
+    padding: 1.4rem 0; border-bottom: 1px solid var(--hairline);
+  }
+  @media (max-width: 720px){ .obj-item{ grid-template-columns:1fr; gap:0.6rem; } }
+  .obj-item .q{ font-family: var(--font-utility); font-weight:600; color: var(--ember-bright); }
+  .obj-item .a{ color: var(--ink-dim); margin:0; }
+
+  /* Garantia */
+  .guarantee-box{
+    display:grid; grid-template-columns: auto 1fr; gap: 1.8rem; align-items:center;
+    background: var(--bg-raised-2); border:1px solid var(--hairline); border-radius:6px;
+    padding: clamp(1.6rem,4vw,2.4rem);
+  }
+  @media (max-width:640px){ .guarantee-box{ grid-template-columns:1fr; text-align:center; } .guarantee-box .seal{ margin:0 auto; } }
+  .seal{
+    width:88px; height:88px; border-radius:50%;
+    border: 1.5px solid var(--gold);
+    display:flex; align-items:center; justify-content:center;
+    font-family: var(--font-display); color: var(--gold-bright);
+    font-size: 0.7rem; text-align:center; letter-spacing:0.05em; line-height:1.2;
+    flex: none;
+  }
+
+  /* Urgência */
+  .urgency-band{
+    background: linear-gradient(90deg, var(--ember), #6c1220);
+    border-radius: 6px; padding: clamp(1.6rem,4vw,2.2rem) clamp(1.6rem,4vw,2.6rem);
+    display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:1.4rem;
+  }
+  .urgency-band h3{ color: var(--ink); font-size:1.35rem; }
+  .urgency-band p{ margin:0.4rem 0 0; color: rgba(243,233,224,0.82); font-family: var(--font-utility); font-size:0.92rem; }
+
+  /* FAQ */
+  details.faq-item{
+    border-bottom: 1px solid var(--hairline);
+    padding: 1.3rem 0;
+  }
+  details.faq-item summary{
+    cursor:pointer; list-style:none;
+    font-family: var(--font-utility); font-weight:500; font-size:1.02rem;
+    color: var(--ink);
+    display:flex; justify-content:space-between; align-items:center; gap:1rem;
+  }
+  details.faq-item summary::-webkit-details-marker{ display:none; }
+  details.faq-item summary::after{
+    content:"+"; font-family: var(--font-display); font-size:1.4rem; color: var(--gold);
+    transition: transform 0.2s ease; flex:none;
+  }
+  details.faq-item[open] summary::after{ transform: rotate(45deg); }
+  details.faq-item p{ margin: 0.9rem 0 0; color: var(--ink-dim); max-width:62ch; }
+
+  /* CTA final */
+  .cta-final{ text-align:center; }
+  .cta-final .ember-glow::before{ background: var(--gold); left:50%; top:-30%; transform:translateX(-50%); opacity:0.14; }
+  .cta-final h2{ font-size: clamp(1.9rem,4.4vw,2.9rem); max-width: 20ch; margin: 0 auto; }
+
+  footer.site{
+    border-top: 1px solid var(--hairline);
+    padding: 2.8rem 0 3.4rem;
+    font-family: var(--font-utility);
+  }
+  .footer-grid{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:2rem; }
+  .footer-ps{ max-width:56ch; color: var(--ink-dim); font-family: var(--font-body); font-style:italic; }
+  .footer-brand{ color: var(--ink-faint); font-size:0.85rem; }
+  .footer-brand a{ color: var(--gold); text-decoration:none; }
+
+  .reveal{ opacity:1; transform:none; transition: opacity 0.7s ease, transform 0.7s ease; }
+  .js .reveal-init{ opacity:0; transform: translateY(18px); }
+</style>
+</head>
+<body class="js">
+
+<header class="site">
+  <div class="wrap nav">
+    <a href="#topo" class="wordmark">BALERION<span>DRINKS</span></a>
+    <nav class="navlinks">
+      <a href="#solucao" class="hide-sm">Como funciona</a>
+      <a href="#oferta" class="hide-sm">Pacotes</a>
+      <a href="#faq" class="hide-sm">Dúvidas</a>
+      <a href="https://www.instagram.com/balerion_drinks/" target="_blank" rel="noopener" class="btn btn-ghost" style="padding:0.55rem 1.2rem;">Instagram</a>
+    </nav>
+  </div>
+</header>
+
+<main id="topo">
+
+  <!-- BLOCO 01–04 · HERO: HEADLINE, SUBHEADLINE, ABERTURA, CTA PRIMÁRIO -->
+  <section class="hero">
+    <div class="ember-glow"></div>
+    <div class="wrap hero-grid">
+      <div class="reveal-init">
+        <p class="kicker"><b>Bloco 01–04</b> · Bar de autor para festas e eventos · Pirassununga e região</p>
+        <h1>O drink mais <span class="flame-word">lendário</span> da sua festa começa aqui.</h1>
+        <p class="hero-sub">Bar de drinks autorais com fumaça, apresentação de tirar o fôlego e cardápio assinado sob medida — para o seu evento virar aquele que todo mundo ainda comenta meses depois.</p>
+
+        <div class="opening-lines" style="margin-top:2rem;">
+          <p>Todo mundo lembra da comida. <strong>Quase ninguém lembra do drink.</strong></p>
+          <p>Na Balerion, a gente inverte isso: cada coquetel sai da coqueteleira como uma cena — fumaça baixando, cor mudando, celular erguido antes do primeiro gole.</p>
+          <p>Não é só bebida. É o momento que vira story, vira risada, vira <strong>"você viu aquele drink?"</strong> pelo resto da festa.</p>
+        </div>
+
+        <div class="hero-actions">
+          <a href="https://www.instagram.com/balerion_drinks/" target="_blank" rel="noopener" class="btn btn-primary">Quero um orçamento para meu evento</a>
+          <a href="#oferta" class="btn btn-ghost">Ver o que está incluso</a>
+        </div>
+        <p class="microcopy">Resposta em até 24h · sem compromisso · atendemos Pirassununga e região</p>
+      </div>
+
+      <div class="hero-art glass-art reveal-init" aria-hidden="true">
+        <svg viewBox="0 0 220 320" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="flame" x1="0" y1="1" x2="0" y2="0">
+              <stop offset="0%" stop-color="#9C1B2E"/>
+              <stop offset="55%" stop-color="#E2394F"/>
+              <stop offset="100%" stop-color="#F0D68C"/>
+            </linearGradient>
+            <linearGradient id="goldline" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#F0D68C"/>
+              <stop offset="100%" stop-color="#8C6A2F"/>
+            </linearGradient>
+          </defs>
+          <path d="M20 20 H200 L110 150 V260" fill="none" stroke="url(#goldline)" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+          <line x1="70" y1="300" x2="150" y2="300" stroke="url(#goldline)" stroke-width="3" stroke-linecap="round"/>
+          <line x1="110" y1="260" x2="110" y2="300" stroke="url(#goldline)" stroke-width="3"/>
+          <path d="M110 150 C95 120 130 110 108 78 C118 100 140 96 132 60 C155 92 150 130 128 150 C120 138 118 158 110 150Z" fill="url(#flame)" opacity="0.95"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOCO 05 · IDENTIFICAÇÃO DA DOR -->
+  <section class="raised" id="dor">
+    <div class="wrap two-col">
+      <div>
+        <p class="kicker"><b>Bloco 05</b> · A dor</p>
+        <h2>Você já deve ter sentido isso organizando um evento.</h2>
+      </div>
+      <div>
+        <ul class="pain-list">
+          <li>Contratar um "barzinho" genérico e a bebida ficar esquecida num canto — sem graça, sem drama, sem story.</li>
+          <li>Convidado pedindo "qualquer drink" porque o cardápio não combinava em nada com a festa.</li>
+          <li>O medo de faltar gelo, faltar copo, faltar bebida bem na hora em que todo mundo está na pista.</li>
+          <li>Um orçamento "fechado" que na hora do evento vira cobrança extra de surpresa.</li>
+          <li>Uma data que só acontece uma vez na vida — e passa rápido demais, sem nada memorável o bastante pra virar vídeo, foto ou lembrança.</li>
+        </ul>
+        <p class="prose" style="margin-top:1.6rem; color:var(--ink-dim);">O problema nunca foi a bebida em si. Foi ela nunca ter sido pensada para ser <strong style="color:var(--ink);">o ponto alto da festa.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOCO 06 · APRESENTAÇÃO DA SOLUÇÃO -->
+  <section id="solucao">
+    <div class="wrap two-col">
+      <div>
+        <p class="kicker"><b>Bloco 06</b> · A solução</p>
+        <h2>Um bar de drinks feito para ser o assunto da festa.</h2>
+      </div>
+      <div class="prose" style="color:var(--ink-dim);">
+        <p>A Balerion Drinks é um bar de autor para festas e eventos. Criamos um cardápio de coquetéis assinado sob medida para o seu tema, com apresentação cênica — fumaça, fogo controlado, cor, tempero visual — e uma equipe uniformizada que assume o operacional do início ao fim.</p>
+        <p>Do drink de boas-vindas ao último brinde, cada taça é servida para ser lembrada. E, de quebra, filmada e postada pelos seus convidados — a melhor propaganda que existe.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOCO 07 · BENEFÍCIOS -->
+  <section class="raised" id="beneficios">
+    <div class="wrap">
+      <p class="kicker"><b>Bloco 07</b> · O que muda para você</p>
+      <h2 style="max-width:26ch;">Não vendemos coquetel. Vendemos o momento que vira lembrança.</h2>
+      <div class="benefit-grid">
+        <div class="benefit-card"><span class="num">01</span><p>Seus convidados param de comentar a comida e passam a comentar o bar.</p></div>
+        <div class="benefit-card"><span class="num">02</span><p>Você não se preocupa com gelo, copo ou fila — a equipe cuida de tudo do início ao fim.</p></div>
+        <div class="benefit-card"><span class="num">03</span><p>Cardápio com a cara do seu evento, não um menu genérico copiado da internet.</p></div>
+        <div class="benefit-card"><span class="num">04</span><p>Momentos com fumaça e efeito visual que viram vídeo espontâneo — e divulgação de graça para o seu próximo evento.</p></div>
+        <div class="benefit-card"><span class="num">05</span><p>Orçamento fechado por escrito, sem cobrança surpresa no dia da festa.</p></div>
+        <div class="benefit-card"><span class="num">06</span><p>Equipe pontual e discreta, que cuida do bar sem tirar o brilho de quem é a estrela da festa: você.</p></div>
+        <div class="benefit-card"><span class="num">07</span><p>Opções sem álcool com o mesmo padrão de apresentação — nenhum convidado fica de fora do show.</p></div>
+        <div class="benefit-card"><span class="num">08</span><p>Um evento que vira referência: quem foi, lembra; quem não foi, pergunta "quem fez o bar?".</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOCO 08 · PROVA SOCIAL -->
+  <section id="prova">
+    <div class="wrap">
+      <p class="kicker"><b>Bloco 08</b> · Prova social</p>
+      <h2 style="max-width:24ch;">Quem já chamou o dragão pra festa.</h2>
+
+      <div class="proof-band">
+        <div class="proof-stat"><span class="n placeholder">[Nº]</span><span class="l">eventos atendidos</span></div>
+        <div class="proof-stat"><span class="n placeholder">[Nº]</span><span class="l">cidades na região de Pirassununga</span></div>
+        <div class="proof-stat"><span class="n placeholder">[X,X]★</span><span class="l">avaliação no Instagram/Google</span></div>
+      </div>
+
+      <div class="testi-grid">
+        <div class="testi-card">
+          <p class="quote placeholder">"[Inserir depoimento real de cliente aqui — o que ele sentiu, o que os convidados comentaram.]"</p>
+          <p class="who placeholder">[Nome do cliente] · [Tipo de evento]</p>
+        </div>
+        <div class="testi-card">
+          <p class="quote placeholder">"[Inserir segundo depoimento real, de preferência com print de mensagem ou avaliação do Instagram.]"</p>
+          <p class="who placeholder">[Nome do cliente] · [Tipo de evento]</p>
+        </div>
+        <div class="testi-card">
+          <p class="quote placeholder">"[Inserir terceiro depoimento real, ou dado numérico forte: convidados atendidos, drinks servidos etc.]"</p>
+          <p class="who placeholder">[Nome do cliente] · [Tipo de evento]</p>
+        </div>
+      </div>
+      <p class="microcopy" style="margin-top:1.4rem;">Como preencher: troque os campos em vermelho por depoimentos reais (DM, WhatsApp, avaliações) e prints dos Reels mais comentados do <a href="https://www.instagram.com/balerion_drinks/" target="_blank" rel="noopener" style="color:var(--gold);">@balerion_drinks</a> — vídeo de fumaça/fogo é a prova social mais forte deste nicho.</p>
+    </div>
+  </section>
+
+  <!-- BLOCO 09 · OFERTA -->
+  <section class="raised-2" id="oferta">
+    <div class="wrap">
+      <p class="kicker"><b>Bloco 09</b> · A oferta</p>
+      <h2 style="max-width:22ch;">Tudo o que vai transformar sua festa em espetáculo.</h2>
+
+      <div class="offer-card" style="margin-top:2.2rem;">
+        <p class="kicker" style="margin-bottom:0.6rem;"><b>Pacote Balerion</b> · sob medida para o tamanho do seu evento</p>
+        <ul class="offer-list">
+          <li>Bartenders especializados (quantidade conforme o número de convidados)</li>
+          <li>Cardápio autoral com até 6 rótulos, incluindo 1 drink assinatura com o nome do evento ou do aniversariante</li>
+          <li>Apresentação cênica com efeito de fumaça / fogo controlado</li>
+          <li>Estrutura completa de bar: bancada, gelo, copos, guarnições</li>
+          <li>Opções sem álcool no mesmo padrão de apresentação</li>
+          <li>Equipe uniformizada, com montagem e desmontagem inclusas</li>
+          <li>Orçamento fechado por escrito, sem surpresas</li>
+        </ul>
+
+        <div class="bonus-row">
+          <span class="bonus-chip"><b>Bônus 1 —</b> drink de boas-vindas para o(a) aniversariante/noivos</span>
+          <span class="bonus-chip"><b>Bônus 2 —</b> cardápio personalizado impresso com o nome do evento</span>
+          <span class="bonus-chip placeholder"><b>Bônus 3 —</b> [inserir bônus real, se houver promoção sazonal]</span>
+        </div>
+
+        <div class="offer-anchor">
+          Contratar separadamente bartender + estrutura de bar + efeitos especiais + cardápio autoral custa muito mais caro do que fechar tudo em um pacote único. <span class="placeholder">[Inserir aqui a lógica de valor real: "de R$ X, por R$ Y" ou faixas por nº de convidados]</span> — o orçamento final é sempre sob medida para o seu evento.
+        </div>
+
+        <div class="hero-actions" style="margin-top:1.8rem;">
+          <a href="https://www.instagram.com/balerion_drinks/" target="_blank" rel="noopener" class="btn btn-ember">Quero meu orçamento sob medida</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOCO 10 · QUEBRA DE OBJEÇÕES -->
+  <section id="objecoes">
+    <div class="wrap">
+      <p class="kicker"><b>Bloco 10</b> · Quebra de objeções</p>
+      <h2 style="max-width:22ch;">O que ainda pode estar te segurando.</h2>
+      <div class="obj-grid">
+        <div class="obj-item">
+          <p class="q">"Isso deve ser caro."</p>
+          <p class="a">O orçamento é sob medida para o número de convidados e o formato do seu evento — existem opções para festas de todos os tamanhos. Compare com o custo de contratar bartender, estrutura e efeitos especiais separadamente e feche a conta.</p>
+        </div>
+        <div class="obj-item">
+          <p class="q">"E se a bebida acabar no meio da festa?"</p>
+          <p class="a">Calculamos o consumo por convidado antes do evento e chegamos com margem de reposição — ninguém fica sem drink na hora que a festa está no ponto alto.</p>
+        </div>
+        <div class="obj-item">
+          <p class="q">"Meu evento é fora de Pirassununga, vocês atendem?"</p>
+          <p class="a">Atendemos Pirassununga e região. <span class="placeholder">[Inserir raio de cidades atendidas]</span> — fale com a gente e confirmamos sua localização sem custo.</p>
+        </div>
+        <div class="obj-item">
+          <p class="q">"Já tive experiência ruim com bar contratado antes."</p>
+          <p class="a">Equipe uniformizada, chegada com antecedência para montagem e tudo combinado por escrito — sem atraso, sem bagunça, sem imprevisto no seu dia.</p>
+        </div>
+        <div class="obj-item">
+          <p class="q">"Meu evento é mais sério/corporativo, não uma festa."</p>
+          <p class="a">O cardápio e a apresentação se adaptam ao tom do seu evento — do coquetel corporativo discreto ao aniversário mais festeiro.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOCO 11 · GARANTIA -->
+  <section class="raised">
+    <div class="wrap">
+      <p class="kicker"><b>Bloco 11</b> · Garantia</p>
+      <div class="guarantee-box">
+        <div class="seal">GARANTIA<br/>BALERION</div>
+        <div>
+          <h3 style="font-size:1.3rem; margin-bottom:0.6rem;">O combinado vai para o contrato — não para a sorte.</h3>
+          <p style="margin:0; color:var(--ink-dim);">Cardápio, quantidade, horário e valor ficam registrados por escrito antes do evento. Se o que foi combinado não for entregue no dia, devolvemos o valor referente ao item não cumprido. Precisou remarcar por motivo de força maior? Remarcamos sem multa, com <span class="placeholder">[X dias]</span> de antecedência. Sem letra miúda.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOCO 12 · URGÊNCIA / ESCASSEZ -->
+  <section id="urgencia">
+    <div class="wrap">
+      <p class="kicker"><b>Bloco 12</b> · Urgência real</p>
+      <div class="urgency-band">
+        <div>
+          <h3>Atendemos poucas datas por final de semana.</h3>
+          <p>Para manter o padrão em cada evento, limitamos o número de festas atendidas por sexta e sábado. <span class="placeholder">[Mês/período]</span> já tem <span class="placeholder">[X]</span> datas reservadas.</p>
+        </div>
+        <a href="https://www.instagram.com/balerion_drinks/" target="_blank" rel="noopener" class="btn btn-primary">Reservar minha data</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOCO 13 · FAQ -->
+  <section class="raised" id="faq">
+    <div class="wrap">
+      <p class="kicker"><b>Bloco 13</b> · Perguntas frequentes</p>
+      <h2 style="max-width:20ch; margin-bottom:1rem;">Ainda com dúvidas?</h2>
+
+      <details class="faq-item" open>
+        <summary>Com quantos convidados vocês trabalham?</summary>
+        <p>A partir de <span class="placeholder">[nº mínimo]</span> convidados, sem limite máximo — ajustamos a equipe e a estrutura ao tamanho do seu evento.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Vocês levam tudo (copos, gelo, bebida)?</summary>
+        <p>Sim. A estrutura completa de bar — bancada, gelo, copos e guarnições — já está incluída no pacote.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Dá para montar um cardápio personalizado com o tema da festa?</summary>
+        <p>Sim, essa é a nossa assinatura: cada cardápio é pensado para o seu evento, incluindo um drink com o nome do aniversariante ou dos noivos.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Vocês têm opções sem álcool?</summary>
+        <p>Sim, com a mesma apresentação e o mesmo padrão dos drinks alcoólicos — nenhum convidado fica de fora da experiência.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Como funciona o orçamento?</summary>
+        <p>Chame a gente no Instagram, conte o número de convidados, a data e o local, e enviamos uma proposta fechada em até 24h.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Vocês atendem fora de Pirassununga?</summary>
+        <p>Sim. <span class="placeholder">[Inserir raio de cidades/condições de deslocamento]</span>.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Precisa de sinal para reservar a data?</summary>
+        <p><span class="placeholder">[Inserir política real de sinal/reserva]</span>, formalizado em contrato junto com todos os detalhes do evento.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Com quanto tempo de antecedência devo fechar?</summary>
+        <p>O quanto antes — atendemos poucas datas por final de semana para manter o padrão de qualidade em cada evento.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- BLOCO 14 · CTA FINAL -->
+  <section class="cta-final">
+    <div class="ember-glow"></div>
+    <div class="wrap">
+      <p class="kicker center" style="justify-content:center;"><b>Bloco 14</b> · Último chamado</p>
+      <h2>Sua festa só acontece uma vez. Faça dela a lenda que todo mundo vai comentar depois.</h2>
+      <div class="hero-actions" style="justify-content:center; margin-top:1.8rem;">
+        <a href="https://www.instagram.com/balerion_drinks/" target="_blank" rel="noopener" class="btn btn-primary">Quero meu orçamento agora</a>
+      </div>
+      <p class="microcopy">Resposta em até 24h · orçamento sem compromisso</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- BLOCO 15 · PS / FECHAMENTO -->
+<footer class="site">
+  <div class="wrap footer-grid">
+    <p class="footer-ps">PS: as datas mais concorridas (sextas e sábados) fecham primeiro. Se você já tem uma data em mente, fala com a gente agora — antes que ela seja de outra festa.</p>
+    <p class="footer-brand">Balerion Drinks · Pirassununga e região<br/><a href="https://www.instagram.com/balerion_drinks/" target="_blank" rel="noopener">@balerion_drinks</a></p>
+  </div>
+</footer>
+
+<script>
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
+    var els = document.querySelectorAll('.reveal-init');
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('reveal'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.15 });
+    els.forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal-init').forEach(function(el){ el.classList.add('reveal'); });
+  }
+</script>
+
+</body>
+</html>
