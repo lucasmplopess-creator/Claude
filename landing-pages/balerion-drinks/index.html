@@ -151,7 +151,7 @@
     font-weight: 500;
   }
   .navlinks{
-    display:flex; gap: 2rem; align-items:center;
+    display:flex; gap: 1.2rem; align-items:center; flex-wrap:wrap; justify-content:flex-end;
     font-family: var(--font-utility);
     font-size: 0.85rem;
     color: var(--ink-dim);
@@ -220,10 +220,11 @@
   @media (max-width: 860px){ .two-col{ grid-template-columns:1fr; } }
 
   .benefit-grid{
-    display:grid; grid-template-columns: repeat(2, 1fr); gap: 1.4rem;
+    display:grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem;
     margin-top: 2.5rem;
   }
-  @media (max-width: 720px){ .benefit-grid{ grid-template-columns: 1fr; } }
+  @media (max-width: 960px){ .benefit-grid{ grid-template-columns: repeat(2,1fr); } }
+  @media (max-width: 620px){ .benefit-grid{ grid-template-columns: 1fr; } }
   .benefit-card{
     background: var(--bg-raised-2);
     border: 1px solid var(--hairline);
@@ -245,7 +246,7 @@
     padding: 1.8rem 0; margin: 2.5rem 0 3rem;
     border-top: 1px solid var(--hairline); border-bottom: 1px solid var(--hairline);
   }
-  .proof-stat{ font-family: var(--font-utility); }
+  .proof-stat{ font-family: var(--font-utility); flex: 1 1 200px; max-width: 260px; }
   .proof-stat .n{ font-family: var(--font-display); font-size: 1.9rem; color: var(--gold-bright); display:block; }
   .proof-stat .l{ font-size: 0.78rem; color: var(--ink-faint); letter-spacing:0.02em; }
   .placeholder{ color: var(--ember-bright); font-style: italic; }
@@ -372,6 +373,7 @@
       <a href="#oferta" class="hide-sm">Pacotes</a>
       <a href="#faq" class="hide-sm">Dúvidas</a>
       <a href="https://www.instagram.com/balerion_drinks/" target="_blank" rel="noopener" class="btn btn-ghost" style="padding:0.55rem 1.2rem;">Instagram</a>
+      <a href="https://wa.me/5519999989537?text=Ola%21%20Quero%20um%20orcamento%20para%20o%20meu%20evento%20com%20a%20Balerion%20Drinks." target="_blank" rel="noopener" class="btn btn-primary" style="padding:0.55rem 1.2rem;">WhatsApp</a>
     </nav>
   </div>
 </header>
@@ -383,9 +385,9 @@
     <div class="ember-glow"></div>
     <div class="wrap hero-grid">
       <div class="reveal-init">
-        <p class="kicker"><b>Bloco 01–04</b> · Bar de autor para festas e eventos · Pirassununga e região</p>
-        <h1>O drink mais <span class="flame-word">lendário</span> da sua festa começa aqui.</h1>
-        <p class="hero-sub">Bar de drinks autorais com fumaça, apresentação de tirar o fôlego e cardápio assinado sob medida — para o seu evento virar aquele que todo mundo ainda comenta meses depois.</p>
+        <p class="kicker"><b>Bloco 01–04</b> · Open bar premium para eventos · Pirassununga e região</p>
+        <h1>Seu evento merece mais do que drinks. <span class="flame-word">Merece uma experiência.</span></h1>
+        <p class="hero-sub">Open bar com drinks autorais, apresentação de tirar o fôlego e cardápio assinado sob medida — para casamentos, aniversários, debutantes, formaturas, festas infantis e eventos corporativos.</p>
 
         <div class="opening-lines" style="margin-top:2rem;">
           <p>Todo mundo lembra da comida. <strong>Quase ninguém lembra do drink.</strong></p>
@@ -394,10 +396,10 @@
         </div>
 
         <div class="hero-actions">
-          <a href="https://www.instagram.com/balerion_drinks/" target="_blank" rel="noopener" class="btn btn-primary">Quero um orçamento para meu evento</a>
+          <a href="https://wa.me/5519999989537?text=Ola%21%20Quero%20um%20orcamento%20para%20o%20meu%20evento%20com%20a%20Balerion%20Drinks." target="_blank" rel="noopener" class="btn btn-primary">Quero um orçamento para meu evento</a>
           <a href="#oferta" class="btn btn-ghost">Ver o que está incluso</a>
         </div>
-        <p class="microcopy">Resposta em até 24h · sem compromisso · atendemos Pirassununga e região</p>
+        <p class="microcopy">Resposta em até 24h · sem compromisso · Pirassununga e região</p>
       </div>
 
       <div class="hero-art glass-art reveal-init" aria-hidden="true">
@@ -435,6 +437,7 @@
           <li>Convidado pedindo "qualquer drink" porque o cardápio não combinava em nada com a festa.</li>
           <li>O medo de faltar gelo, faltar copo, faltar bebida bem na hora em que todo mundo está na pista.</li>
           <li>Um orçamento "fechado" que na hora do evento vira cobrança extra de surpresa.</li>
+          <li>O medo de contratar bebida sem procedência — ainda mais depois das notícias recentes sobre adulteração e metanol.</li>
           <li>Uma data que só acontece uma vez na vida — e passa rápido demais, sem nada memorável o bastante pra virar vídeo, foto ou lembrança.</li>
         </ul>
         <p class="prose" style="margin-top:1.6rem; color:var(--ink-dim);">O problema nunca foi a bebida em si. Foi ela nunca ter sido pensada para ser <strong style="color:var(--ink);">o ponto alto da festa.</strong></p>
@@ -447,11 +450,11 @@
     <div class="wrap two-col">
       <div>
         <p class="kicker"><b>Bloco 06</b> · A solução</p>
-        <h2>Um bar de drinks feito para ser o assunto da festa.</h2>
+        <h2>Um open bar feito para ser o assunto da festa.</h2>
       </div>
       <div class="prose" style="color:var(--ink-dim);">
-        <p>A Balerion Drinks é um bar de autor para festas e eventos. Criamos um cardápio de coquetéis assinado sob medida para o seu tema, com apresentação cênica — fumaça, fogo controlado, cor, tempero visual — e uma equipe uniformizada que assume o operacional do início ao fim.</p>
-        <p>Do drink de boas-vindas ao último brinde, cada taça é servida para ser lembrada. E, de quebra, filmada e postada pelos seus convidados — a melhor propaganda que existe.</p>
+        <p>A Balerion Drinks é um open bar premium para eventos: casamentos, noivados, mini weddings, aniversários e debutantes de 15 anos, formaturas, eventos corporativos e até festas infantis (com opções coloridas e 100% sem álcool para a criançada). Criamos um cardápio de drinks autorais e clássicos, com ingredientes frescos e selecionados, apresentação cênica e uma equipe uniformizada que assume o operacional do início ao fim.</p>
+        <p>Qualidade para a gente não é promessa, é compromisso: controle rigoroso e tolerância zero à adulteração em cada bebida que sai do nosso bar. Do drink de boas-vindas ao último brinde, cada taça é servida para ser lembrada — e filmada pelos seus convidados.</p>
       </div>
     </div>
   </section>
@@ -468,8 +471,9 @@
         <div class="benefit-card"><span class="num">04</span><p>Momentos com fumaça e efeito visual que viram vídeo espontâneo — e divulgação de graça para o seu próximo evento.</p></div>
         <div class="benefit-card"><span class="num">05</span><p>Orçamento fechado por escrito, sem cobrança surpresa no dia da festa.</p></div>
         <div class="benefit-card"><span class="num">06</span><p>Equipe pontual e discreta, que cuida do bar sem tirar o brilho de quem é a estrela da festa: você.</p></div>
-        <div class="benefit-card"><span class="num">07</span><p>Opções sem álcool com o mesmo padrão de apresentação — nenhum convidado fica de fora do show.</p></div>
-        <div class="benefit-card"><span class="num">08</span><p>Um evento que vira referência: quem foi, lembra; quem não foi, pergunta "quem fez o bar?".</p></div>
+        <div class="benefit-card"><span class="num">07</span><p>Opções sem álcool com o mesmo padrão de apresentação — inclusive um open bar colorido e sem álcool pensado para festas infantis.</p></div>
+        <div class="benefit-card"><span class="num">08</span><p>Controle rigoroso e tolerância zero à adulteração: você serve bebida de procedência, sem correr risco com a saúde dos seus convidados.</p></div>
+        <div class="benefit-card"><span class="num">09</span><p>Um evento que vira referência: quem foi, lembra; quem não foi, pergunta "quem fez o bar?".</p></div>
       </div>
     </div>
   </section>
@@ -478,29 +482,29 @@
   <section id="prova">
     <div class="wrap">
       <p class="kicker"><b>Bloco 08</b> · Prova social</p>
-      <h2 style="max-width:24ch;">Quem já chamou o dragão pra festa.</h2>
+      <h2 style="max-width:24ch;">Quem já chamou a Balerion pra festa.</h2>
 
       <div class="proof-band">
-        <div class="proof-stat"><span class="n placeholder">[Nº]</span><span class="l">eventos atendidos</span></div>
-        <div class="proof-stat"><span class="n placeholder">[Nº]</span><span class="l">cidades na região de Pirassununga</span></div>
-        <div class="proof-stat"><span class="n placeholder">[X,X]★</span><span class="l">avaliação no Instagram/Google</span></div>
+        <div class="proof-stat"><span class="n">2025</span><span class="l">atendendo eventos na região desde</span></div>
+        <div class="proof-stat"><span class="n">7</span><span class="l">tipos de evento atendidos: casamento, noivado, mini wedding, debutante, aniversário, formatura e corporativo</span></div>
+        <div class="proof-stat"><span class="n">+2,4 mil</span><span class="l">visualizações em um único vídeo de evento no Instagram</span></div>
       </div>
 
       <div class="testi-grid">
         <div class="testi-card">
-          <p class="quote placeholder">"[Inserir depoimento real de cliente aqui — o que ele sentiu, o que os convidados comentaram.]"</p>
-          <p class="who placeholder">[Nome do cliente] · [Tipo de evento]</p>
+          <p class="quote">"Que trabalho impecável de vocês! Sem palavras para descrever o quanto estamos gratos por toda a dedicação e profissionalismo de vocês! Parabéns!"</p>
+          <p class="who">Comentário real no Instagram · maio/2026</p>
         </div>
         <div class="testi-card">
-          <p class="quote placeholder">"[Inserir segundo depoimento real, de preferência com print de mensagem ou avaliação do Instagram.]"</p>
-          <p class="who placeholder">[Nome do cliente] · [Tipo de evento]</p>
+          <p class="quote">"Obrigada vcs, pelo comprometimento e pelo carinho, vcs arrasaram, eu amei."</p>
+          <p class="who">Comentário real no Instagram · pós-evento, mar/2025</p>
         </div>
         <div class="testi-card">
-          <p class="quote placeholder">"[Inserir terceiro depoimento real, ou dado numérico forte: convidados atendidos, drinks servidos etc.]"</p>
-          <p class="who placeholder">[Nome do cliente] · [Tipo de evento]</p>
+          <p class="quote">"Lindo demais, caprichosos e atenciosos."</p>
+          <p class="who">Comentário real no Instagram · jul/2026</p>
         </div>
       </div>
-      <p class="microcopy" style="margin-top:1.4rem;">Como preencher: troque os campos em vermelho por depoimentos reais (DM, WhatsApp, avaliações) e prints dos Reels mais comentados do <a href="https://www.instagram.com/balerion_drinks/" target="_blank" rel="noopener" style="color:var(--gold);">@balerion_drinks</a> — vídeo de fumaça/fogo é a prova social mais forte deste nicho.</p>
+      <p class="microcopy" style="margin-top:1.4rem;">Depoimentos extraídos de comentários reais em <a href="https://www.instagram.com/balerion_drinks/" target="_blank" rel="noopener" style="color:var(--gold);">@balerion_drinks</a>. Sugestão de melhoria: peça autorização aos clientes para usar nome completo + foto do evento — aumenta ainda mais a credibilidade.</p>
     </div>
   </section>
 
@@ -511,29 +515,27 @@
       <h2 style="max-width:22ch;">Tudo o que vai transformar sua festa em espetáculo.</h2>
 
       <div class="offer-card" style="margin-top:2.2rem;">
-        <p class="kicker" style="margin-bottom:0.6rem;"><b>Pacote Balerion</b> · sob medida para o tamanho do seu evento</p>
+        <p class="kicker" style="margin-bottom:0.6rem;"><b>Open Bar Balerion</b> · sob medida para casamento, aniversário, debutante, formatura, corporativo ou festa infantil</p>
         <ul class="offer-list">
           <li>Bartenders especializados (quantidade conforme o número de convidados)</li>
-          <li>Cardápio autoral com até 6 rótulos, incluindo 1 drink assinatura com o nome do evento ou do aniversariante</li>
-          <li>Apresentação cênica com efeito de fumaça / fogo controlado</li>
+          <li>Cardápio de drinks autorais e clássicos, com ingredientes frescos e selecionados</li>
+          <li>Opções sem álcool no mesmo padrão — incluindo versão colorida para open bar infantil</li>
           <li>Estrutura completa de bar: bancada, gelo, copos, guarnições</li>
-          <li>Opções sem álcool no mesmo padrão de apresentação</li>
+          <li>Controle rigoroso de qualidade, com tolerância zero à adulteração</li>
           <li>Equipe uniformizada, com montagem e desmontagem inclusas</li>
-          <li>Orçamento fechado por escrito, sem surpresas</li>
         </ul>
 
         <div class="bonus-row">
-          <span class="bonus-chip"><b>Bônus 1 —</b> drink de boas-vindas para o(a) aniversariante/noivos</span>
-          <span class="bonus-chip"><b>Bônus 2 —</b> cardápio personalizado impresso com o nome do evento</span>
-          <span class="bonus-chip placeholder"><b>Bônus 3 —</b> [inserir bônus real, se houver promoção sazonal]</span>
+          <span class="bonus-chip"><b>Bônus —</b> drink de boas-vindas para o(a) aniversariante/noivos</span>
+          <span class="bonus-chip placeholder"><b>Bônus —</b> [inserir bônus real, se houver promoção sazonal]</span>
         </div>
 
         <div class="offer-anchor">
-          Contratar separadamente bartender + estrutura de bar + efeitos especiais + cardápio autoral custa muito mais caro do que fechar tudo em um pacote único. <span class="placeholder">[Inserir aqui a lógica de valor real: "de R$ X, por R$ Y" ou faixas por nº de convidados]</span> — o orçamento final é sempre sob medida para o seu evento.
+          Contratar separadamente bartender, estrutura de bar e cardápio autoral custa mais caro do que fechar tudo em um pacote único. <span class="placeholder">[Inserir aqui a lógica de valor real: "de R$ X, por R$ Y" ou faixas por nº de convidados]</span> — o orçamento final é sempre sob medida para o seu evento, sem cobrança surpresa.
         </div>
 
         <div class="hero-actions" style="margin-top:1.8rem;">
-          <a href="https://www.instagram.com/balerion_drinks/" target="_blank" rel="noopener" class="btn btn-ember">Quero meu orçamento sob medida</a>
+          <a href="https://wa.me/5519999989537?text=Ola%21%20Quero%20um%20orcamento%20para%20o%20meu%20evento%20com%20a%20Balerion%20Drinks." target="_blank" rel="noopener" class="btn btn-ember">Quero meu orçamento sob medida</a>
         </div>
       </div>
     </div>
@@ -555,15 +557,15 @@
         </div>
         <div class="obj-item">
           <p class="q">"Meu evento é fora de Pirassununga, vocês atendem?"</p>
-          <p class="a">Atendemos Pirassununga e região. <span class="placeholder">[Inserir raio de cidades atendidas]</span> — fale com a gente e confirmamos sua localização sem custo.</p>
+          <p class="a">Atendemos Pirassununga e região — fale com a gente pelo WhatsApp e confirmamos sua localização sem custo, antes de fechar qualquer coisa.</p>
         </div>
         <div class="obj-item">
-          <p class="q">"Já tive experiência ruim com bar contratado antes."</p>
-          <p class="a">Equipe uniformizada, chegada com antecedência para montagem e tudo combinado por escrito — sem atraso, sem bagunça, sem imprevisto no seu dia.</p>
+          <p class="q">"E a segurança da bebida? Depois das notícias de metanol, fico com receio."</p>
+          <p class="a">Entendemos — e levamos isso a sério: controle rigoroso e tolerância zero à adulteração em cada bebida que sai do nosso bar. Qualidade aqui não é promessa, é compromisso.</p>
         </div>
         <div class="obj-item">
           <p class="q">"Meu evento é mais sério/corporativo, não uma festa."</p>
-          <p class="a">O cardápio e a apresentação se adaptam ao tom do seu evento — do coquetel corporativo discreto ao aniversário mais festeiro.</p>
+          <p class="a">O cardápio e a apresentação se adaptam ao tom do seu evento — do coquetel corporativo discreto ao aniversário mais festeiro, incluindo opções sem álcool.</p>
         </div>
       </div>
     </div>
@@ -576,8 +578,8 @@
       <div class="guarantee-box">
         <div class="seal">GARANTIA<br/>BALERION</div>
         <div>
-          <h3 style="font-size:1.3rem; margin-bottom:0.6rem;">O combinado vai para o contrato — não para a sorte.</h3>
-          <p style="margin:0; color:var(--ink-dim);">Cardápio, quantidade, horário e valor ficam registrados por escrito antes do evento. Se o que foi combinado não for entregue no dia, devolvemos o valor referente ao item não cumprido. Precisou remarcar por motivo de força maior? Remarcamos sem multa, com <span class="placeholder">[X dias]</span> de antecedência. Sem letra miúda.</p>
+          <h3 style="font-size:1.3rem; margin-bottom:0.6rem;">Qualidade não é promessa, é compromisso.</h3>
+          <p style="margin:0; color:var(--ink-dim);">Controle rigoroso e tolerância zero à adulteração em cada bebida que sai do nosso bar — a mesma transparência que já reforçamos publicamente diante das notícias sobre bebida adulterada no Brasil. Além disso, cardápio, quantidade, horário e valor ficam combinados com você antes do evento, sem cobrança surpresa no dia. <span class="placeholder">[Formalizar política de contrato/remarcação real com o cliente]</span></p>
         </div>
       </div>
     </div>
@@ -589,10 +591,10 @@
       <p class="kicker"><b>Bloco 12</b> · Urgência real</p>
       <div class="urgency-band">
         <div>
-          <h3>Atendemos poucas datas por final de semana.</h3>
-          <p>Para manter o padrão em cada evento, limitamos o número de festas atendidas por sexta e sábado. <span class="placeholder">[Mês/período]</span> já tem <span class="placeholder">[X]</span> datas reservadas.</p>
+          <h3>Atendemos um número limitado de eventos por final de semana.</h3>
+          <p>Para manter o padrão em cada festa, sextas e sábados esgotam primeiro — principalmente em alta temporada de casamentos, formaturas e festas de fim de ano.</p>
         </div>
-        <a href="https://www.instagram.com/balerion_drinks/" target="_blank" rel="noopener" class="btn btn-primary">Reservar minha data</a>
+        <a href="https://wa.me/5519999989537?text=Ola%21%20Quero%20reservar%20uma%20data%20com%20a%20Balerion%20Drinks." target="_blank" rel="noopener" class="btn btn-primary">Reservar minha data</a>
       </div>
     </div>
   </section>
@@ -604,36 +606,32 @@
       <h2 style="max-width:20ch; margin-bottom:1rem;">Ainda com dúvidas?</h2>
 
       <details class="faq-item" open>
-        <summary>Com quantos convidados vocês trabalham?</summary>
-        <p>A partir de <span class="placeholder">[nº mínimo]</span> convidados, sem limite máximo — ajustamos a equipe e a estrutura ao tamanho do seu evento.</p>
-      </details>
-      <details class="faq-item">
         <summary>Vocês levam tudo (copos, gelo, bebida)?</summary>
         <p>Sim. A estrutura completa de bar — bancada, gelo, copos e guarnições — já está incluída no pacote.</p>
       </details>
       <details class="faq-item">
         <summary>Dá para montar um cardápio personalizado com o tema da festa?</summary>
-        <p>Sim, essa é a nossa assinatura: cada cardápio é pensado para o seu evento, incluindo um drink com o nome do aniversariante ou dos noivos.</p>
+        <p>Sim, essa é a nossa assinatura: cardápio de drinks autorais e clássicos pensado para o seu evento, com ingredientes frescos e selecionados.</p>
       </details>
       <details class="faq-item">
-        <summary>Vocês têm opções sem álcool?</summary>
-        <p>Sim, com a mesma apresentação e o mesmo padrão dos drinks alcoólicos — nenhum convidado fica de fora da experiência.</p>
+        <summary>Vocês têm opções sem álcool? E para festa infantil?</summary>
+        <p>Sim. Temos drinks sem álcool com a mesma apresentação premium — inclusive um open bar colorido pensado especialmente para festas infantis e aniversários de criança.</p>
+      </details>
+      <details class="faq-item">
+        <summary>É seguro? Como vocês garantem a procedência da bebida?</summary>
+        <p>Controle rigoroso e tolerância zero à adulteração em cada bebida que sai do nosso bar — reforçamos publicamente esse compromisso diante das notícias recentes sobre bebida adulterada no Brasil.</p>
       </details>
       <details class="faq-item">
         <summary>Como funciona o orçamento?</summary>
-        <p>Chame a gente no Instagram, conte o número de convidados, a data e o local, e enviamos uma proposta fechada em até 24h.</p>
+        <p>Chame a gente no WhatsApp, conte o número de convidados, a data e o local, e enviamos uma proposta sob medida.</p>
       </details>
       <details class="faq-item">
         <summary>Vocês atendem fora de Pirassununga?</summary>
-        <p>Sim. <span class="placeholder">[Inserir raio de cidades/condições de deslocamento]</span>.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Precisa de sinal para reservar a data?</summary>
-        <p><span class="placeholder">[Inserir política real de sinal/reserva]</span>, formalizado em contrato junto com todos os detalhes do evento.</p>
+        <p>Atendemos Pirassununga e região — chame no WhatsApp com o endereço do seu evento e confirmamos o atendimento sem custo.</p>
       </details>
       <details class="faq-item">
         <summary>Com quanto tempo de antecedência devo fechar?</summary>
-        <p>O quanto antes — atendemos poucas datas por final de semana para manter o padrão de qualidade em cada evento.</p>
+        <p>O quanto antes — datas de sexta e sábado esgotam primeiro, especialmente em alta temporada de casamentos e formaturas.</p>
       </details>
     </div>
   </section>
@@ -645,7 +643,7 @@
       <p class="kicker center" style="justify-content:center;"><b>Bloco 14</b> · Último chamado</p>
       <h2>Sua festa só acontece uma vez. Faça dela a lenda que todo mundo vai comentar depois.</h2>
       <div class="hero-actions" style="justify-content:center; margin-top:1.8rem;">
-        <a href="https://www.instagram.com/balerion_drinks/" target="_blank" rel="noopener" class="btn btn-primary">Quero meu orçamento agora</a>
+        <a href="https://wa.me/5519999989537?text=Ola%21%20Quero%20um%20orcamento%20para%20o%20meu%20evento%20com%20a%20Balerion%20Drinks." target="_blank" rel="noopener" class="btn btn-primary">Quero meu orçamento agora</a>
       </div>
       <p class="microcopy">Resposta em até 24h · orçamento sem compromisso</p>
     </div>
@@ -657,7 +655,7 @@
 <footer class="site">
   <div class="wrap footer-grid">
     <p class="footer-ps">PS: as datas mais concorridas (sextas e sábados) fecham primeiro. Se você já tem uma data em mente, fala com a gente agora — antes que ela seja de outra festa.</p>
-    <p class="footer-brand">Balerion Drinks · Pirassununga e região<br/><a href="https://www.instagram.com/balerion_drinks/" target="_blank" rel="noopener">@balerion_drinks</a></p>
+    <p class="footer-brand">Balerion Drinks · Pirassununga e região<br/><a href="https://www.instagram.com/balerion_drinks/" target="_blank" rel="noopener">@balerion_drinks</a> · <a href="https://wa.me/5519999989537" target="_blank" rel="noopener">WhatsApp</a></p>
   </div>
 </footer>
 
