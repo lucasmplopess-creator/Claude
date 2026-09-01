@@ -223,7 +223,8 @@ textarea.bal-input{resize:vertical;min-height:78px}
 .menu-hero h1{font-family:var(--font-d);font-size:clamp(26px,4vw,40px);color:var(--gold)}
 .menu-hero p{font-family:var(--font-s);font-style:italic;font-size:19px;color:var(--muted);margin:8px 0 0}
 .cat-h{font-family:var(--font-d);font-size:16px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-deep);
-  margin:30px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+  margin:30px 0 6px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.cat-desc{font-family:var(--font-s);font-style:italic;font-size:14.5px;color:var(--muted);margin:0 0 16px}
 .dk{border:1px solid var(--line);border-radius:12px;padding:20px;background:linear-gradient(180deg,var(--panel3),var(--panel));position:relative}
 .dk.destaque{border-color:var(--gold)}
 .dk .star{position:absolute;top:12px;right:14px;color:var(--gold)}
@@ -848,7 +849,7 @@ body::before{
     <div class="bal-row">
       <div class="bal-field"><label>Nome</label><input class="bal-input" id="c_nome"/></div>
       <div class="bal-field" style="max-width:180px"><label>Categoria</label>
-        <select class="bal-select" id="c_cat"><option>Autorais</option><option>Clássicos</option><option>Caipirinhas</option><option>Mocktails</option><option>Shots</option></select></div>
+        <select class="bal-select" id="c_cat"><option>Simples e Descontraído</option><option>Sofisticado e Conceituado</option><option>Caipirinhas Gourmet</option><option>Vitalis · 0% Álcool</option></select></div>
     </div>
     <div class="bal-field"><label>Descrição</label><textarea class="bal-input" id="c_desc" placeholder="Ingredientes e perfil sensorial…"></textarea></div>
     <div class="bal-row">
@@ -916,7 +917,7 @@ body::before{
     <div class="bal-row">
       <div class="bal-field"><label>Nome do drink</label><input class="bal-input" id="d_nome"/></div>
       <div class="bal-field" style="max-width:160px"><label>Categoria</label>
-        <select class="bal-select" id="d_cat"><option>Autoral</option><option>Clássico</option><option>Caipirinha</option><option>Mocktail</option><option>Shot</option></select></div>
+        <select class="bal-select" id="d_cat"><option>Simples</option><option>Sofisticado</option><option>Caipirinha</option><option>Vitalis</option></select></div>
       <div class="bal-field" style="max-width:120px"><label>Rende (doses)</label><input class="bal-input" type="number" id="d_rend" value="1" min="1"/></div>
     </div>
     <label style="display:block;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:6px 0 8px">Ingredientes</label>
@@ -1547,7 +1548,13 @@ window.BAL_EMBEDDED_STYLE = document.querySelector('style') ? document.querySele
 (function () {
   const { DB, esc, toast, openModal, closeModal } = BALERION;
   const COL = 'cardapio'; let editId = null; let edit = false;
-  const CATS = ['Autorais', 'Clássicos', 'Caipirinhas', 'Mocktails', 'Shots'];
+  const CATS = ['Simples e Descontraído', 'Sofisticado e Conceituado', 'Caipirinhas Gourmet', 'Vitalis · 0% Álcool'];
+  const CATS_DESC = {
+    'Simples e Descontraído': 'Drinks clássicos, leves e refrescantes, ideais para animar qualquer festa.',
+    'Sofisticado e Conceituado': 'Drinks elaborados com ingredientes premium e apresentação refinada.',
+    'Caipirinhas Gourmet': 'Combinações autorais de frutas e temperos sobre a base da caipirinha clássica.',
+    'Vitalis · 0% Álcool': 'Drinks criativos e refrescantes, preparados sem álcool para todos curtirem juntos.'
+  };
   function toggleEdit() {
     edit = !edit; document.getElementById('admin-card').style.display = edit ? 'block' : 'none';
     document.getElementById('cardBtnEdit').classList.toggle('primary', edit); draw();
@@ -1573,11 +1580,47 @@ window.BAL_EMBEDDED_STYLE = document.querySelector('style') ? document.querySele
   function excluir(id) { DB.remove(COL, id); draw(); toast('Removido'); }
   function seed() {
     [
-      ['Balerion Negroni', 'Autorais', 'Gin, Campari e vermute tinto, servido sobre pedra de gelo com casca de laranja.', ['gin', 'amargo', 'encorpado'], 1],
-      ['Fogo do Dragão', 'Autorais', 'Tequila, pimenta, maracujá e um toque defumado. Intenso e marcante.', ['tequila', 'picante', 'autoral'], 1],
-      ['Caipirinha de Limão', 'Caipirinhas', 'Cachaça artesanal, limão tahiti e açúcar. O clássico brasileiro.', ['cachaça', 'cítrico'], 0],
-      ['Gin Tônica Balerion', 'Clássicos', 'Gin premium, tônica e botânicos frescos.', ['gin', 'refrescante'], 0],
-      ['Pôr do Sol (sem álcool)', 'Mocktails', 'Maracujá, laranja e xarope de romã. Frutado e vibrante.', ['mocktail', 'frutado'], 0]
+      ["Hi-Fi", "Simples e Descontraído", "Vodka com refrigerante de laranja, leve e refrescante.", ["vodka","cítrico","refrescante"], 0],
+      ["Caipiroska", "Simples e Descontraído", "Vodka, fruta e açúcar — a caipirinha em versão vodka.", ["vodka","cítrico"], 0],
+      ["Mojito", "Simples e Descontraído", "Rum, limão, açúcar, clube soda e folhas de hortelã.", ["rum","hortelã","refrescante"], 1],
+      ["Ouro Tropical", "Simples e Descontraído", "Cachaça ouro, limão taiti, limão siciliano, mel e cravo.", ["cachaça","autoral","especiado"], 0],
+      ["Stark", "Simples e Descontraído", "Rúcula, vodka, xarope de açúcar, limão e uva roxa.", ["vodka","autoral","herbal"], 0],
+      ["Negroni", "Simples e Descontraído", "Gin, Campari, vermute rosso e laranja — o clássico italiano.", ["gin","amargo","encorpado"], 1],
+      ["Caipirinha", "Simples e Descontraído", "Cachaça, fruta e açúcar — o clássico brasileiro.", ["cachaça","cítrico"], 0],
+      ["Sakerinha", "Simples e Descontraído", "Saquê, fruta e açúcar, em versão suave e aromática.", ["saquê","frutado"], 0],
+      ["Lagoa Azul", "Simples e Descontraído", "Vodka, licor blue, soda, limão e hortelã.", ["vodka","cítrico","refrescante"], 0],
+      ["Cuba Libre", "Simples e Descontraído", "Rum, coca-cola e rodelas de limão.", ["rum","clássico"], 0],
+      ["Espanhola", "Simples e Descontraído", "Vinho tinto suave, abacaxi e leite condensado.", ["vinho","cremoso"], 0],
+      ["Piña Colada", "Simples e Descontraído", "Rum, suco de abacaxi, leite de coco e leite condensado.", ["rum","cremoso","tropical"], 1],
+      ["Gin Tônica", "Simples e Descontraído", "Gin, tônica e especiarias frescas.", ["gin","refrescante"], 0],
+      ["Martini Citrus", "Sofisticado e Conceituado", "Martini, refrigerante citrus e limão.", ["vermute","cítrico"], 0],
+      ["Aperol Spritz", "Sofisticado e Conceituado", "Aperol, espumante prosecco, clube soda e laranja.", ["aperol","borbulhante"], 1],
+      ["Moscow Mule", "Sofisticado e Conceituado", "Vodka, limão, xarope de gengibre, espuma de gengibre e água com gás.", ["vodka","gengibre","refrescante"], 0],
+      ["Fitzgerald", "Sofisticado e Conceituado", "Gin, limão siciliano, xarope de açúcar e Angostura.", ["gin","clássico","cítrico"], 0],
+      ["Sex on the Beach", "Sofisticado e Conceituado", "Vodka, licor de pêssego, suco de laranja e xarope de grenadine.", ["vodka","frutado"], 0],
+      ["Maracured", "Sofisticado e Conceituado", "Whisky, maracujá e xarope de açúcar.", ["whisky","autoral","frutado"], 0],
+      ["Belline", "Sofisticado e Conceituado", "Espumante e purê de pêssego.", ["espumante","delicado"], 0],
+      ["Maracutaya", "Sofisticado e Conceituado", "Pitaya, maracujá, gin e xarope de açúcar.", ["gin","autoral","frutado"], 1],
+      ["Dragon Citrus", "Sofisticado e Conceituado", "Gin, limão, energético de melancia e espuma cítrica.", ["gin","autoral","energético"], 1],
+      ["Expresso Martini", "Sofisticado e Conceituado", "Vodka, café expresso e licor de café.", ["vodka","café","encorpado"], 0],
+      ["Caipirinha Morango com Maracujá", "Caipirinhas Gourmet", "Cachaça, morango, maracujá e açúcar.", ["cachaça","frutado"], 1],
+      ["Caipirinha Limão Siciliano com Gengibre", "Caipirinhas Gourmet", "Cachaça, limão siciliano, gengibre e açúcar.", ["cachaça","cítrico","picante"], 0],
+      ["Caipirinha Abacaxi com Hortelã e Pimenta Rosa", "Caipirinhas Gourmet", "Cachaça, abacaxi, hortelã, pimenta rosa e açúcar.", ["cachaça","tropical","herbal"], 0],
+      ["Caipirinha Caju com Limão Siciliano", "Caipirinhas Gourmet", "Cachaça, caju, limão siciliano e açúcar.", ["cachaça","frutado"], 0],
+      ["Caipirinha Tangerina com Gengibre", "Caipirinhas Gourmet", "Cachaça, tangerina, gengibre e açúcar.", ["cachaça","cítrico","picante"], 0],
+      ["Caipirinha Manga com Pimenta Dedo-de-Moça", "Caipirinhas Gourmet", "Cachaça, manga, pimenta dedo-de-moça e açúcar.", ["cachaça","picante","tropical"], 0],
+      ["Caipirinha Manga com Maracujá e Açúcar Mascavo", "Caipirinhas Gourmet", "Cachaça, manga, maracujá e açúcar mascavo.", ["cachaça","frutado"], 0],
+      ["Caipirinha Pitaya Rosa com Limão Siciliano e Hortelã", "Caipirinhas Gourmet", "Cachaça, pitaya rosa, limão siciliano, hortelã e açúcar.", ["cachaça","autoral","herbal"], 1],
+      ["Morango Citrus", "Vitalis · 0% Álcool", "Morango, xarope de açúcar, soda e espuma cítrica.", ["mocktail","frutado"], 1],
+      ["Limonada Suíça", "Vitalis · 0% Álcool", "Limão, leite condensado e água.", ["mocktail","cremoso"], 0],
+      ["Soda Italiana", "Vitalis · 0% Álcool", "Morango, maçã verde, tangerina, frutas vermelhas, maracujá, melancia ou pink limonada — escolha o sabor.", ["mocktail","refrescante"], 0],
+      ["Mojito sem Álcool", "Vitalis · 0% Álcool", "Limão, açúcar, hortelã e clube soda.", ["mocktail","hortelã","refrescante"], 0],
+      ["Piña Descolada", "Vitalis · 0% Álcool", "Abacaxi, leite condensado, leite de coco e suco de abacaxi.", ["mocktail","cremoso","tropical"], 1],
+      ["Caipfruta", "Vitalis · 0% Álcool", "Fruta, açúcar e água gaseificada — a caipirinha sem álcool.", ["mocktail","frutado"], 0],
+      ["Blue Ocean", "Vitalis · 0% Álcool", "Xarope blue, clube soda e laranja.", ["mocktail","refrescante"], 0],
+      ["Energi Tropical", "Vitalis · 0% Álcool", "Energético e espuma cítrica.", ["mocktail","energético"], 0],
+      ["Baila Lua", "Vitalis · 0% Álcool", "Xarope de curaçau blue, abacaxi e leite condensado.", ["mocktail","cremoso","tropical"], 0],
+      ["Sunset", "Vitalis · 0% Álcool", "Suco de laranja, suco de pêssego e cranberry.", ["mocktail","frutado","refrescante"], 0]
     ].forEach(d => DB.save(COL, { nome: d[0], cat: d[1], desc: d[2], tags: d[3], dest: !!d[4] })); draw();
   }
   function draw() {
@@ -1586,7 +1629,7 @@ window.BAL_EMBEDDED_STYLE = document.querySelector('style') ? document.querySele
     if (!arr.length) { if (edit) { document.getElementById('cardMenu').innerHTML = '<div class="bal-empty">Nenhum drink. Clique em "Novo drink".</div>'; return; } seed(); arr = DB.list(COL); }
     const html = CATS.map(cat => {
       const items = arr.filter(d => d.cat === cat); if (!items.length) return '';
-      return `<div class="cat-h">${cat}</div><div class="bal-grid g3">` + items.map(d => `
+      return `<div class="cat-h">${cat}</div><p class="cat-desc">${esc(CATS_DESC[cat] || '')}</p><div class="bal-grid g3">` + items.map(d => `
       <div class="dk ${d.dest ? 'destaque' : ''}">${d.dest ? '<span class="star">✦</span>' : ''}
         <h4>${esc(d.nome)}</h4><p>${esc(d.desc || '')}</p>
         <div class="tags">${(d.tags || []).map(t => `<span class="tg">${esc(t)}</span>`).join('')}</div>
@@ -1684,7 +1727,7 @@ window.BAL_EMBEDDED_STYLE = document.querySelector('style') ? document.querySele
   document.getElementById('d_rend').addEventListener('input', calcCusto);
   function novo() {
     editId = null; document.getElementById('mtit-ficha').textContent = 'Nova ficha';
-    document.getElementById('d_nome').value = ''; document.getElementById('d_cat').value = 'Autoral';
+    document.getElementById('d_nome').value = ''; document.getElementById('d_cat').value = 'Simples';
     document.getElementById('d_rend').value = 1; document.getElementById('d_prep').value = '';
     document.getElementById('fichaIngs').innerHTML = ''; ingRow(); ingRow(); calcCusto(); openModal('m-ficha');
   }
@@ -1707,18 +1750,55 @@ window.BAL_EMBEDDED_STYLE = document.querySelector('style') ? document.querySele
   function excluir(id) { DB.remove(COL, id); draw(); toast('Removida'); }
   function seed() {
     if (DB.list(COL).length) { toast('Já existem fichas'); return; }
-    DB.save(COL, {
-      nome: 'Balerion Negroni', cat: 'Autoral', rend: 1, prep: 'Mexer com gelo e coar sobre pedra grande. Casca de laranja.',
-      ings: [{ nome: 'Gin', qtd: 30, un: 'ml', custo: 3.5 }, { nome: 'Campari', qtd: 30, un: 'ml', custo: 3 }, { nome: 'Vermute', qtd: 30, un: 'ml', custo: 2.5 }], total: 9, dose: 9
-    });
-    DB.save(COL, {
-      nome: 'Caipirinha de Limão', cat: 'Caipirinha', rend: 1, prep: 'Macerar limão com açúcar, adicionar cachaça e gelo.',
-      ings: [{ nome: 'Cachaça', qtd: 60, un: 'ml', custo: 2.5 }, { nome: 'Limão', qtd: 1, un: 'un', custo: 0.6 }, { nome: 'Açúcar', qtd: 15, un: 'g', custo: 0.2 }], total: 3.3, dose: 3.3
-    });
+    [
+      {nome:"Hi-Fi",cat:"Simples",rend:1,prep:"Servir vodka gelada em copo baixo com gelo e completar com refrigerante de laranja.",ings:[{nome:"Vodka",qtd:50,un:"ml",custo:1.9}, {nome:"Refrigerante de laranja",qtd:150,un:"ml",custo:0.75}],total:2.65,dose:2.65},
+      {nome:"Caipiroska",cat:"Simples",rend:1,prep:"Macerar a fruta com açúcar, adicionar vodka e gelo, mexer bem.",ings:[{nome:"Vodka",qtd:60,un:"ml",custo:2.28}, {nome:"Limão",qtd:1,un:"un",custo:0.9}, {nome:"Açúcar",qtd:20,un:"g",custo:0.12}],total:3.3,dose:3.3},
+      {nome:"Mojito",cat:"Simples",rend:1,prep:"Macerar hortelã, limão e açúcar; adicionar rum e gelo; completar com clube soda.",ings:[{nome:"Rum",qtd:50,un:"ml",custo:2.25}, {nome:"Limão",qtd:1,un:"un",custo:0.9}, {nome:"Açúcar",qtd:20,un:"g",custo:0.12}, {nome:"Hortelã",qtd:0.25,un:"maço",custo:0.75}, {nome:"Clube soda",qtd:60,un:"ml",custo:0.36}],total:4.38,dose:4.38},
+      {nome:"Ouro Tropical",cat:"Simples",rend:1,prep:"Macerar limões com mel e cravo; adicionar cachaça ouro e gelo.",ings:[{nome:"Cachaça ouro",qtd:60,un:"ml",custo:1.5}, {nome:"Limão taiti",qtd:0.5,un:"un",custo:0.45}, {nome:"Limão siciliano",qtd:0.5,un:"un",custo:0.7}, {nome:"Mel",qtd:15,un:"g",custo:0.45}, {nome:"Cravo",qtd:1,un:"g",custo:0.1}],total:3.2,dose:3.2},
+      {nome:"Stark",cat:"Simples",rend:1,prep:"Macerar rúcula, limão e açúcar; adicionar vodka, gelo e uva roxa.",ings:[{nome:"Vodka",qtd:60,un:"ml",custo:2.28}, {nome:"Rúcula",qtd:0.2,un:"maço",custo:0.6}, {nome:"Açúcar",qtd:20,un:"g",custo:0.12}, {nome:"Limão",qtd:1,un:"un",custo:0.9}, {nome:"Uva roxa",qtd:30,un:"g",custo:0.42}],total:4.32,dose:4.32},
+      {nome:"Negroni",cat:"Simples",rend:1,prep:"Mexer com gelo e coar sobre pedra grande. Finalizar com casca de laranja.",ings:[{nome:"Gin",qtd:30,un:"ml",custo:1.2}, {nome:"Campari",qtd:30,un:"ml",custo:2.58}, {nome:"Vermute rosso",qtd:30,un:"ml",custo:1.8}],total:5.58,dose:5.58},
+      {nome:"Caipirinha",cat:"Caipirinha",rend:1,prep:"Macerar a fruta com açúcar, adicionar cachaça e gelo.",ings:[{nome:"Cachaça",qtd:60,un:"ml",custo:1.5}, {nome:"Limão",qtd:1,un:"un",custo:0.9}, {nome:"Açúcar",qtd:20,un:"g",custo:0.12}],total:2.52,dose:2.52},
+      {nome:"Sakerinha",cat:"Simples",rend:1,prep:"Macerar a fruta com açúcar, adicionar saquê gelado e gelo.",ings:[{nome:"Saquê",qtd:60,un:"ml",custo:2.94}, {nome:"Morango",qtd:40,un:"g",custo:0.72}, {nome:"Açúcar",qtd:15,un:"g",custo:0.09}],total:3.75,dose:3.75},
+      {nome:"Lagoa Azul",cat:"Simples",rend:1,prep:"Montar no copo com gelo: vodka, licor blue e limão; completar com soda e hortelã.",ings:[{nome:"Vodka",qtd:50,un:"ml",custo:1.9}, {nome:"Licor blue curaçau",qtd:30,un:"ml",custo:1.26}, {nome:"Clube soda",qtd:60,un:"ml",custo:0.36}, {nome:"Limão",qtd:0.5,un:"un",custo:0.45}, {nome:"Hortelã",qtd:0.2,un:"maço",custo:0.6}],total:4.57,dose:4.57},
+      {nome:"Cuba Libre",cat:"Simples",rend:1,prep:"Servir rum em copo com gelo, completar com coca-cola e rodelas de limão.",ings:[{nome:"Rum",qtd:50,un:"ml",custo:2.25}, {nome:"Coca-Cola",qtd:150,un:"ml",custo:0.75}, {nome:"Limão",qtd:0.5,un:"un",custo:0.45}],total:3.45,dose:3.45},
+      {nome:"Espanhola",cat:"Simples",rend:1,prep:"Bater no liquidificador com gelo até cremoso e servir.",ings:[{nome:"Vinho tinto suave",qtd:100,un:"ml",custo:2.0}, {nome:"Abacaxi",qtd:60,un:"g",custo:0.36}, {nome:"Leite condensado",qtd:30,un:"ml",custo:0.54}],total:2.9,dose:2.9},
+      {nome:"Piña Colada",cat:"Simples",rend:1,prep:"Bater rum, suco de abacaxi, leite de coco e leite condensado com gelo até cremoso.",ings:[{nome:"Rum",qtd:60,un:"ml",custo:2.7}, {nome:"Suco de abacaxi",qtd:90,un:"ml",custo:0.9}, {nome:"Leite de coco",qtd:30,un:"ml",custo:0.75}, {nome:"Leite condensado",qtd:20,un:"ml",custo:0.36}],total:4.71,dose:4.71},
+      {nome:"Gin Tônica",cat:"Simples",rend:1,prep:"Servir gin em taça com bastante gelo, completar com tônica e finalizar com especiarias.",ings:[{nome:"Gin",qtd:50,un:"ml",custo:2.0}, {nome:"Tônica",qtd:150,un:"ml",custo:1.8}, {nome:"Especiarias",qtd:2,un:"g",custo:0.1}],total:3.9,dose:3.9},
+      {nome:"Martini Citrus",cat:"Sofisticado",rend:1,prep:"Servir o vermute martini em taça com gelo, completar com refrigerante citrus e limão.",ings:[{nome:"Martini (vermute)",qtd:60,un:"ml",custo:3.6}, {nome:"Refrigerante citrus",qtd:90,un:"ml",custo:0.45}, {nome:"Limão",qtd:0.5,un:"un",custo:0.45}],total:4.5,dose:4.5},
+      {nome:"Aperol Spritz",cat:"Sofisticado",rend:1,prep:"Montar na taça com gelo: aperol, espumante prosecco e soda; finalizar com laranja.",ings:[{nome:"Aperol",qtd:60,un:"ml",custo:5.22}, {nome:"Espumante prosecco",qtd:90,un:"ml",custo:4.77}, {nome:"Clube soda",qtd:30,un:"ml",custo:0.18}, {nome:"Laranja",qtd:0.5,un:"un",custo:0.6}],total:10.77,dose:10.77},
+      {nome:"Moscow Mule",cat:"Sofisticado",rend:1,prep:"Servir vodka e limão na caneca de cobre com gelo, completar com xarope e espuma de gengibre e água com gás.",ings:[{nome:"Vodka",qtd:45,un:"ml",custo:1.71}, {nome:"Limão",qtd:0.5,un:"un",custo:0.45}, {nome:"Xarope de gengibre",qtd:20,un:"ml",custo:0.56}, {nome:"Espuma de gengibre",qtd:10,un:"ml",custo:0.28}, {nome:"Água com gás",qtd:100,un:"ml",custo:0.4}],total:3.4,dose:3.4},
+      {nome:"Fitzgerald",cat:"Sofisticado",rend:1,prep:"Bater no shaker com gelo e coar em taça de coquetel.",ings:[{nome:"Gin",qtd:60,un:"ml",custo:2.4}, {nome:"Limão siciliano",qtd:0.5,un:"un",custo:0.7}, {nome:"Xarope de açúcar",qtd:20,un:"ml",custo:0.36}, {nome:"Angostura",qtd:2,un:"ml",custo:0.6}],total:4.06,dose:4.06},
+      {nome:"Sex on the Beach",cat:"Sofisticado",rend:1,prep:"Montar no copo com gelo: vodka, licor de pêssego, suco de laranja e xarope de grenadine.",ings:[{nome:"Vodka",qtd:45,un:"ml",custo:1.71}, {nome:"Licor de pêssego",qtd:20,un:"ml",custo:1.2}, {nome:"Suco de laranja",qtd:60,un:"ml",custo:0.54}, {nome:"Xarope de grenadine",qtd:15,un:"ml",custo:0.45}],total:3.9,dose:3.9},
+      {nome:"Maracured",cat:"Sofisticado",rend:1,prep:"Bater no shaker com gelo e coar em copo baixo com gelo.",ings:[{nome:"Whisky",qtd:60,un:"ml",custo:2.88}, {nome:"Maracujá",qtd:0.5,un:"un",custo:1.25}, {nome:"Xarope de açúcar",qtd:15,un:"ml",custo:0.27}],total:4.4,dose:4.4},
+      {nome:"Belline",cat:"Sofisticado",rend:1,prep:"Servir o purê de pêssego na taça e completar delicadamente com espumante gelado.",ings:[{nome:"Espumante",qtd:100,un:"ml",custo:5.3}, {nome:"Purê de pêssego",qtd:40,un:"ml",custo:0.56}],total:5.86,dose:5.86},
+      {nome:"Maracutaya",cat:"Sofisticado",rend:1,prep:"Bater no shaker pitaya, maracujá, gin e xarope de açúcar com gelo; coar em taça.",ings:[{nome:"Pitaya",qtd:0.3,un:"un",custo:2.7}, {nome:"Maracujá",qtd:0.5,un:"un",custo:1.25}, {nome:"Gin",qtd:45,un:"ml",custo:1.8}, {nome:"Xarope de açúcar",qtd:15,un:"ml",custo:0.27}],total:6.02,dose:6.02},
+      {nome:"Dragon Citrus",cat:"Sofisticado",rend:1,prep:"Montar no copo com gelo: gin e limão; completar com energético de melancia e espuma cítrica.",ings:[{nome:"Gin",qtd:45,un:"ml",custo:1.8}, {nome:"Limão",qtd:0.5,un:"un",custo:0.45}, {nome:"Energético de melancia",qtd:100,un:"ml",custo:3.5}, {nome:"Espuma cítrica",qtd:15,un:"ml",custo:0.38}],total:6.13,dose:6.13},
+      {nome:"Expresso Martini",cat:"Sofisticado",rend:1,prep:"Bater no shaker com bastante gelo até formar espuma e coar em taça de coquetel.",ings:[{nome:"Vodka",qtd:50,un:"ml",custo:1.9}, {nome:"Café expresso",qtd:30,un:"ml",custo:2.7}, {nome:"Licor de café",qtd:25,un:"ml",custo:1.68}],total:6.28,dose:6.28},
+      {nome:"Caipirinha Morango com Maracujá",cat:"Caipirinha",rend:1,prep:"Macerar as frutas e temperos com açúcar, adicionar cachaça e gelo.",ings:[{nome:"Cachaça",qtd:60,un:"ml",custo:1.5}, {nome:"Açúcar",qtd:20,un:"g",custo:0.12}, {nome:"Morango",qtd:40,un:"g",custo:0.72}, {nome:"Maracujá",qtd:0.3,un:"un",custo:0.75}],total:3.09,dose:3.09},
+      {nome:"Caipirinha Limão Siciliano com Gengibre",cat:"Caipirinha",rend:1,prep:"Macerar as frutas e temperos com açúcar, adicionar cachaça e gelo.",ings:[{nome:"Cachaça",qtd:60,un:"ml",custo:1.5}, {nome:"Açúcar",qtd:20,un:"g",custo:0.12}, {nome:"Limão siciliano",qtd:1,un:"un",custo:1.4}, {nome:"Gengibre",qtd:8,un:"g",custo:0.11}],total:3.13,dose:3.13},
+      {nome:"Caipirinha Abacaxi com Hortelã e Pimenta Rosa",cat:"Caipirinha",rend:1,prep:"Macerar as frutas e temperos com açúcar, adicionar cachaça e gelo.",ings:[{nome:"Cachaça",qtd:60,un:"ml",custo:1.5}, {nome:"Açúcar",qtd:20,un:"g",custo:0.12}, {nome:"Abacaxi",qtd:60,un:"g",custo:0.36}, {nome:"Hortelã",qtd:0.2,un:"maço",custo:0.6}, {nome:"Pimenta rosa",qtd:1,un:"g",custo:0.06}],total:2.64,dose:2.64},
+      {nome:"Caipirinha Caju com Limão Siciliano",cat:"Caipirinha",rend:1,prep:"Macerar as frutas e temperos com açúcar, adicionar cachaça e gelo.",ings:[{nome:"Cachaça",qtd:60,un:"ml",custo:1.5}, {nome:"Açúcar",qtd:20,un:"g",custo:0.12}, {nome:"Caju",qtd:1,un:"un",custo:2.0}, {nome:"Limão siciliano",qtd:0.3,un:"un",custo:0.42}],total:4.04,dose:4.04},
+      {nome:"Caipirinha Tangerina com Gengibre",cat:"Caipirinha",rend:1,prep:"Macerar as frutas e temperos com açúcar, adicionar cachaça e gelo.",ings:[{nome:"Cachaça",qtd:60,un:"ml",custo:1.5}, {nome:"Açúcar",qtd:20,un:"g",custo:0.12}, {nome:"Tangerina",qtd:1.5,un:"un",custo:1.5}, {nome:"Gengibre",qtd:8,un:"g",custo:0.11}],total:3.23,dose:3.23},
+      {nome:"Caipirinha Manga com Pimenta Dedo-de-Moça",cat:"Caipirinha",rend:1,prep:"Macerar as frutas e temperos com açúcar, adicionar cachaça e gelo.",ings:[{nome:"Cachaça",qtd:60,un:"ml",custo:1.5}, {nome:"Açúcar",qtd:20,un:"g",custo:0.12}, {nome:"Manga",qtd:0.5,un:"un",custo:1.1}, {nome:"Pimenta dedo-de-moça",qtd:2,un:"g",custo:0.06}],total:2.78,dose:2.78},
+      {nome:"Caipirinha Manga com Maracujá e Açúcar Mascavo",cat:"Caipirinha",rend:1,prep:"Macerar as frutas e temperos com açúcar, adicionar cachaça e gelo.",ings:[{nome:"Cachaça",qtd:60,un:"ml",custo:1.5}, {nome:"Açúcar mascavo",qtd:20,un:"g",custo:0.16}, {nome:"Manga",qtd:0.4,un:"un",custo:0.88}, {nome:"Maracujá",qtd:0.3,un:"un",custo:0.75}],total:3.29,dose:3.29},
+      {nome:"Caipirinha Pitaya Rosa com Limão Siciliano e Hortelã",cat:"Caipirinha",rend:1,prep:"Macerar as frutas e temperos com açúcar, adicionar cachaça e gelo.",ings:[{nome:"Cachaça",qtd:60,un:"ml",custo:1.5}, {nome:"Açúcar",qtd:20,un:"g",custo:0.12}, {nome:"Pitaya",qtd:0.4,un:"un",custo:3.6}, {nome:"Limão siciliano",qtd:0.3,un:"un",custo:0.42}, {nome:"Hortelã",qtd:0.2,un:"maço",custo:0.6}],total:6.24,dose:6.24},
+      {nome:"Morango Citrus",cat:"Vitalis",rend:1,prep:"Bater o morango com xarope, coar, montar com gelo e completar com soda e espuma cítrica.",ings:[{nome:"Morango",qtd:60,un:"g",custo:1.08}, {nome:"Xarope de açúcar",qtd:20,un:"ml",custo:0.36}, {nome:"Clube soda",qtd:120,un:"ml",custo:0.72}, {nome:"Espuma cítrica",qtd:15,un:"ml",custo:0.38}],total:2.54,dose:2.54},
+      {nome:"Limonada Suíça",cat:"Vitalis",rend:1,prep:"Bater limão, leite condensado e água com gelo; coar e servir.",ings:[{nome:"Limão",qtd:2,un:"un",custo:1.8}, {nome:"Leite condensado",qtd:60,un:"ml",custo:1.08}, {nome:"Água",qtd:150,un:"ml",custo:0.15}],total:3.03,dose:3.03},
+      {nome:"Soda Italiana",cat:"Vitalis",rend:1,prep:"Montar no copo com gelo: xarope do sabor escolhido e completar com clube soda.",ings:[{nome:"Xarope (sabor à escolha)",qtd:40,un:"ml",custo:1.0}, {nome:"Clube soda",qtd:150,un:"ml",custo:0.9}],total:1.9,dose:1.9},
+      {nome:"Mojito sem Álcool",cat:"Vitalis",rend:1,prep:"Macerar limão, açúcar e hortelã, adicionar gelo e completar com clube soda.",ings:[{nome:"Limão",qtd:1,un:"un",custo:0.9}, {nome:"Açúcar",qtd:20,un:"g",custo:0.12}, {nome:"Hortelã",qtd:0.3,un:"maço",custo:0.9}, {nome:"Clube soda",qtd:150,un:"ml",custo:0.9}],total:2.82,dose:2.82},
+      {nome:"Piña Descolada",cat:"Vitalis",rend:1,prep:"Bater suco de abacaxi, leite condensado e leite de coco com gelo até cremoso.",ings:[{nome:"Suco de abacaxi",qtd:100,un:"ml",custo:1.0}, {nome:"Leite condensado",qtd:30,un:"ml",custo:0.54}, {nome:"Leite de coco",qtd:30,un:"ml",custo:0.75}],total:2.29,dose:2.29},
+      {nome:"Caipfruta",cat:"Vitalis",rend:1,prep:"Macerar a fruta com açúcar, adicionar gelo e completar com água gaseificada.",ings:[{nome:"Fruta (sabor à escolha)",qtd:0.4,un:"un",custo:0.88}, {nome:"Açúcar",qtd:20,un:"g",custo:0.12}, {nome:"Água gaseificada",qtd:120,un:"ml",custo:0.48}],total:1.48,dose:1.48},
+      {nome:"Blue Ocean",cat:"Vitalis",rend:1,prep:"Montar no copo com gelo: xarope blue e laranja; completar com clube soda.",ings:[{nome:"Xarope blue",qtd:30,un:"ml",custo:0.84}, {nome:"Clube soda",qtd:150,un:"ml",custo:0.9}, {nome:"Laranja",qtd:0.3,un:"un",custo:0.36}],total:2.1,dose:2.1},
+      {nome:"Energi Tropical",cat:"Vitalis",rend:1,prep:"Servir o energético bem gelado com gelo e finalizar com espuma cítrica.",ings:[{nome:"Energético",qtd:200,un:"ml",custo:7.0}, {nome:"Espuma cítrica",qtd:15,un:"ml",custo:0.38}],total:7.38,dose:7.38},
+      {nome:"Baila Lua",cat:"Vitalis",rend:1,prep:"Montar no copo com gelo: xarope de curaçau blue, suco de abacaxi e leite condensado.",ings:[{nome:"Xarope de curaçau blue",qtd:30,un:"ml",custo:0.84}, {nome:"Suco de abacaxi",qtd:60,un:"ml",custo:0.6}, {nome:"Leite condensado",qtd:30,un:"ml",custo:0.54}],total:1.98,dose:1.98},
+      {nome:"Sunset",cat:"Vitalis",rend:1,prep:"Montar no copo com gelo, em camadas: suco de laranja, suco de pêssego e cranberry.",ings:[{nome:"Suco de laranja",qtd:80,un:"ml",custo:0.72}, {nome:"Suco de pêssego",qtd:80,un:"ml",custo:1.12}, {nome:"Suco de cranberry",qtd:40,un:"ml",custo:0.64}],total:2.48,dose:2.48}
+    ].forEach(f => DB.save(COL, f));
     draw(); toast('Exemplos carregados');
   }
   function draw() {
-    const arr = DB.list(COL).sort((a, b) => a.nome.localeCompare(b.nome));
+    let arr = DB.list(COL);
+    if (!arr.length) { seed(); arr = DB.list(COL); }
+    arr = arr.sort((a, b) => a.nome.localeCompare(b.nome));
     document.getElementById('grid-ficha').innerHTML = arr.length ? arr.map(r => `
     <div class="bal-card fcard">
       <div class="cat">${esc(r.cat)}</div><h4>${esc(r.nome)}</h4>
