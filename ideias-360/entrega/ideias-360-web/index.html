@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>IDEIAS 360º</title>
+<link rel="icon" href="assets/logo-icon.png" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="bg-decor" aria-hidden="true">
+  <div class="bg-stripes"></div>
+  <div class="bg-glow bg-glow-1"></div>
+  <div class="bg-glow bg-glow-2"></div>
+  <svg class="bg-tooth bg-tooth-1" viewBox="0 0 100 100"><path d="M50 8c-16 0-28 10-28 24 0 10 4 16 7 24 3 8 4 20 9 28 3 5 8 5 9-2 1-6 1-14 3-18 2-4 6-4 8 0 2 4 2 12 3 18 1 7 6 7 9 2 5-8 6-20 9-28 3-8 7-14 7-24 0-14-12-24-28-24z"/></svg>
+  <svg class="bg-tooth bg-tooth-2" viewBox="0 0 100 100"><path d="M50 8c-16 0-28 10-28 24 0 10 4 16 7 24 3 8 4 20 9 28 3 5 8 5 9-2 1-6 1-14 3-18 2-4 6-4 8 0 2 4 2 12 3 18 1 7 6 7 9 2 5-8 6-20 9-28 3-8 7-14 7-24 0-14-12-24-28-24z"/></svg>
+</div>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark-wrap">
+      <img class="brand-mark" src="assets/logo-icon.png" alt="" />
+      <span class="brand-mark-ring" aria-hidden="true"></span>
+    </span>
+    <span class="brand-name">IDEIAS 360º</span>
+  </div>
+  <nav class="topbar-actions">
+    <button id="navHome" class="btn btn-ghost">Início</button>
+    <button id="navForm" class="btn btn-ghost">Novo formulário</button>
+    <button id="navResponses" class="btn btn-ghost">Ver respostas</button>
+  </nav>
+</header>
+
+<main class="page">
+
+  <section id="homeScreen" class="screen">
+    <div class="home-card">
+      <h1 class="home-title">O que você deseja fazer?</h1>
+      <p class="home-subtitle">Escolha uma das opções abaixo para continuar.</p>
+
+      <div class="option-grid">
+        <button type="button" id="optionNewIdea" class="option-card">
+          <span class="option-icon option-icon-a">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.2 1 2.05V17h6v-.25c0-.85.4-1.55 1-2.05A7 7 0 0 0 12 2z"/></svg>
+          </span>
+          <span class="option-title">Nova Ideia</span>
+          <span class="option-desc">Registre uma nova sugestão de melhoria em poucos passos guiados.</span>
+          <span class="option-cta option-cta-a">
+            Começar
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+          </span>
+        </button>
+
+        <button type="button" id="optionViewIdeas" class="option-card">
+          <span class="option-icon option-icon-b">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="4" width="12" height="17" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="M9 13l2 2 4-4"/></svg>
+          </span>
+          <span class="option-title">Consultar Ideias Enviadas</span>
+          <span class="option-desc">Veja o histórico de ideias já registradas e acompanhe cada uma delas.</span>
+          <span class="option-cta option-cta-b">
+            Ver respostas
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section id="formScreen" class="screen" hidden>
+    <div class="form-card">
+      <div class="hero">
+        <img id="heroImage" class="hero-image" src="assets/banner-dentsply-sirona.png" alt="Dentsply Sirona — Ideias 360°" />
+        <span id="heroRing" class="hero-ring" aria-hidden="true"></span>
+      </div>
+
+      <div class="form-card-body">
+        <div class="form-header">
+          <p class="form-desc">Compartilhe sua ideia de melhoria. Toda sugestão é bem-vinda!</p>
+          <p class="privacy-note">Quando você enviar este formulário, ele não coletará automaticamente seus detalhes, como nome e endereço de email, a menos que você mesmo o forneça.</p>
+        </div>
+
+        <ol id="stepper" class="stepper"></ol>
+        <p id="stepProgressLabel" class="step-progress-label"></p>
+
+        <form id="ideaForm" novalidate>
+          <div id="stepsContainer"></div>
+
+          <div class="form-actions">
+            <button type="button" id="btnPrevStep" class="btn btn-ghost" hidden>← Voltar</button>
+            <button type="button" id="btnNextStep" class="btn btn-primary">Próximo →</button>
+            <button type="submit" id="btnSubmit" class="btn btn-primary btn-submit" hidden>Enviar ✓</button>
+            <span id="formError" class="form-error" hidden>Preencha todas as perguntas obrigatórias antes de continuar.</span>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="successScreen" class="screen" hidden>
+    <div class="form-card success-card">
+      <div class="success-icon">✓</div>
+      <h2>Sua resposta foi registrada!</h2>
+      <p>Obrigado por contribuir com sua ideia de melhoria.</p>
+      <div class="success-actions">
+        <button id="btnAnotherResponse" class="btn btn-primary">Enviar outra resposta</button>
+        <button id="btnGoResponses" class="btn btn-ghost">Ver respostas</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="responsesScreen" class="screen" hidden>
+    <div class="responses-card">
+      <div class="responses-header">
+        <div>
+          <h2>Respostas recebidas</h2>
+          <p class="responses-note">Os dados ficam salvos apenas neste navegador/dispositivo (armazenamento local), pois este é um app sem servidor.</p>
+        </div>
+        <div class="responses-actions">
+          <input id="responsesSearch" class="search-input" type="text" placeholder="Buscar por nome, setor, matrícula..." />
+          <button id="btnExportCsv" class="btn btn-ghost">Exportar CSV</button>
+          <button id="btnExportJson" class="btn btn-ghost">Exportar JSON</button>
+          <button id="btnClearAll" class="btn btn-danger">Limpar tudo</button>
+        </div>
+      </div>
+
+      <div id="responsesEmpty" class="empty-state" hidden>
+        <p>Nenhuma resposta registrada ainda.</p>
+      </div>
+
+      <div class="table-wrap">
+        <table id="responsesTable" class="responses-table">
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Nome</th>
+              <th>Matrícula</th>
+              <th>Setor da oportunidade</th>
+              <th>Setor de trabalho</th>
+              <th>Eixo</th>
+              <th>Valor da DS</th>
+              <th>Situação</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="responsesTbody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<div id="detailOverlay" class="modal-overlay" hidden>
+  <div class="modal">
+    <div class="modal-header">
+      <h3>Detalhes da ideia</h3>
+      <button id="btnCloseDetail" class="btn-icon-plain" title="Fechar">×</button>
+    </div>
+    <div id="detailBody" class="modal-body"></div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
