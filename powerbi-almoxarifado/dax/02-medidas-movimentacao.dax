@@ -1,0 +1,143 @@
+// =====================================================================
+// 02 - MOVIMENTACAO E CONSUMO
+// Pasta de exibicao sugerida: 02 Movimentação
+//
+// REGRA CENTRAL: consumo considera apenas movimentos marcados com
+// dTipoMovimento[ContaConsumo] = TRUE. Transferencias entre depositos
+// nao sao consumo e distorcem giro, cobertura e curva ABC.
+// =====================================================================
+
+// ---------------------------------------------------------------------
+Qtd Movimentações = COUNTROWS ( fMovimentacaoEstoque ) + 0
+// Formato: #.##0
+
+// ---------------------------------------------------------------------
+Qtd Entrada =
+CALCULATE (
+    SUM ( fMovimentacaoEstoque[Quantidade] ),
+    dTipoMovimento[Natureza] = "Entrada"
+) + 0
+
+Valor Entrada =
+CALCULATE (
+    SUM ( fMovimentacaoEstoque[ValorTotal] ),
+    dTipoMovimento[Natureza] = "Entrada"
+) + 0
+// Formato: R$ #.##0,00
+
+// ---------------------------------------------------------------------
+Qtd Saída =
+CALCULATE (
+    SUM ( fMovimentacaoEstoque[Quantidade] ),
+    dTipoMovimento[Natureza] = "Saida"
+) + 0
+
+Valor Saída =
+CALCULATE (
+    SUM ( fMovimentacaoEstoque[ValorTotal] ),
+    dTipoMovimento[Natureza] = "Saida"
+) + 0
+
+// ---------------------------------------------------------------------
+// CONSUMO: subconjunto das saidas que representa uso real de material
+// ---------------------------------------------------------------------
+Qtd Consumo =
+CALCULATE (
+    SUM ( fMovimentacaoEstoque[Quantidade] ),
+    dTipoMovimento[ContaConsumo] = TRUE ()
+) + 0
+
+Valor Consumo =
+CALCULATE (
+    SUM ( fMovimentacaoEstoque[ValorTotal] ),
+    dTipoMovimento[ContaConsumo] = TRUE ()
+) + 0
+// Formato: R$ #.##0,00 | Esta e a medida usada em giro, ABC e cobertura.
+
+// ---------------------------------------------------------------------
+Saldo Líquido Período = [Qtd Entrada] - [Qtd Saída]
+Valor Líquido Período = [Valor Entrada] - [Valor Saída]
+
+// ---------------------------------------------------------------------
+// MOVIMENTOS POR GRUPO
+// ---------------------------------------------------------------------
+Valor Transferências =
+CALCULATE ( SUM ( fMovimentacaoEstoque[ValorTotal] ), dTipoMovimento[GrupoMovimento] = "Transferencia" ) + 0
+
+Valor Ajustes =
+CALCULATE ( SUM ( fMovimentacaoEstoque[ValorSinalizado] ), dTipoMovimento[GrupoMovimento] = "Ajuste" ) + 0
+
+Valor Perdas =
+CALCULATE ( SUM ( fMovimentacaoEstoque[ValorTotal] ), dTipoMovimento[GrupoMovimento] = "Perda" ) + 0
+
+Valor Devoluções =
+CALCULATE ( SUM ( fMovimentacaoEstoque[ValorTotal] ), dTipoMovimento[GrupoMovimento] = "Devolucao" ) + 0
+
+% Perdas sobre Consumo = DIVIDE ( [Valor Perdas], [Valor Consumo] )
+// Formato: 0,00%
+
+% Ajustes sobre Estoque = DIVIDE ( ABS ( [Valor Ajustes] ), [Valor Estoque] )
+// Formato: 0,00%
+
+// =====================================================================
+// CONSUMO MEDIO
+// A janela de meses vem da tabela desconectada pJanelaMeses, permitindo
+// que o usuario escolha 3, 6, 12 ou 24 meses na propria pagina.
+// =====================================================================
+
+Janela Meses = SELECTEDVALUE ( pJanelaMeses[Meses], 6 )
+
+// ---------------------------------------------------------------------
+Consumo Médio Mensal =
+VAR _Meses   = [Janela Meses]
+VAR _DataFim = MAX ( dCalendario[Data] )
+VAR _DataIni = EDATE ( _DataFim, -_Meses ) + 1
+VAR _Consumo =
+    CALCULATE (
+        [Valor Consumo],
+        REMOVEFILTERS ( dCalendario ),
+        DATESBETWEEN ( dCalendario[Data], _DataIni, _DataFim )
+    )
+RETURN
+DIVIDE ( _Consumo, _Meses )
+// Formato: R$ #.##0,00
+
+// ---------------------------------------------------------------------
+Consumo Médio Mensal Qtd =
+VAR _Meses   = [Janela Meses]
+VAR _DataFim = MAX ( dCalendario[Data] )
+VAR _DataIni = EDATE ( _DataFim, -_Meses ) + 1
+VAR _Consumo =
+    CALCULATE (
+        [Qtd Consumo],
+        REMOVEFILTERS ( dCalendario ),
+        DATESBETWEEN ( dCalendario[Data], _DataIni, _DataFim )
+    )
+RETURN
+DIVIDE ( _Consumo, _Meses )
+
+// ---------------------------------------------------------------------
+Consumo Médio Diário = DIVIDE ( [Consumo Médio Mensal Qtd], 30 )
+
+Consumo Médio Diário Valor = DIVIDE ( [Consumo Médio Mensal], 30 )
+
+// ---------------------------------------------------------------------
+// CONSUMO EM JANELAS FIXAS (uso em ABC, XYZ e cobertura anualizada)
+// ---------------------------------------------------------------------
+Valor Consumo 12M =
+CALCULATE (
+    [Valor Consumo],
+    DATESINPERIOD ( dCalendario[Data], MAX ( dCalendario[Data] ), -12, MONTH )
+)
+
+Qtd Consumo 12M =
+CALCULATE (
+    [Qtd Consumo],
+    DATESINPERIOD ( dCalendario[Data], MAX ( dCalendario[Data] ), -12, MONTH )
+)
+
+// ---------------------------------------------------------------------
+Ticket Médio Movimentação = DIVIDE ( [Valor Saída], [Qtd Movimentações] )
+
+// ---------------------------------------------------------------------
+Documentos Processados = DISTINCTCOUNT ( fMovimentacaoEstoque[NumeroDocumento] ) + 0

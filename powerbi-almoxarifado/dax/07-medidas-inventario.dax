@@ -1,0 +1,101 @@
+// =====================================================================
+// 07 - INVENTARIO E ACURACIDADE
+// Pasta de exibicao sugerida: 07 Inventário
+// =====================================================================
+
+// ---------------------------------------------------------------------
+Itens Inventariados = COUNTROWS ( fInventarioContagem ) + 0
+// Formato: #.##0
+
+SKUs Inventariados = DISTINCTCOUNT ( fInventarioContagem[SK_Item] ) + 0
+
+Ciclos Realizados = DISTINCTCOUNT ( fInventarioContagem[CicloInventario] ) + 0
+
+// ---------------------------------------------------------------------
+Cobertura Inventário % =
+DIVIDE ( [SKUs Inventariados], [SKUs Cadastrados Ativos] )
+// Formato: 0,0% | Meta: acima de 90% ao ano
+
+// ---------------------------------------------------------------------
+// ACURACIDADE POR CONTAGEM (IAE)
+// Percentual de itens contados cuja quantidade fisica bateu com o saldo
+// do sistema dentro da tolerancia definida na regra de negocio.
+// ---------------------------------------------------------------------
+Itens sem Divergência =
+CALCULATE ( COUNTROWS ( fInventarioContagem ), fInventarioContagem[FlagSemDivergencia] = 1 ) + 0
+
+Itens com Divergência =
+CALCULATE ( COUNTROWS ( fInventarioContagem ), fInventarioContagem[FlagSemDivergencia] = 0 ) + 0
+
+Acuracidade Inventário % =
+DIVIDE ( [Itens sem Divergência], [Itens Inventariados] )
+// Formato: 0,0% | Meta: acima de 98%
+
+// ---------------------------------------------------------------------
+// ACURACIDADE FINANCEIRA
+// Mede o impacto em valor, nao apenas a contagem de itens errados. Um
+// unico item caro divergente pesa mais do que dez itens baratos.
+// ---------------------------------------------------------------------
+Valor Contado =
+SUMX ( fInventarioContagem, fInventarioContagem[QuantidadeContada] * fInventarioContagem[CustoMedio] )
+
+Divergência Valor Absoluta =
+SUMX ( fInventarioContagem, ABS ( fInventarioContagem[DivergenciaValor] ) )
+
+Acuracidade Financeira % =
+1 - DIVIDE ( [Divergência Valor Absoluta], [Valor Contado] )
+// Formato: 0,00% | Meta: acima de 99%
+
+// ---------------------------------------------------------------------
+// DIVERGENCIAS
+// ---------------------------------------------------------------------
+Divergência Quantidade = SUM ( fInventarioContagem[DivergenciaQuantidade] ) + 0
+
+Divergência Valor = SUM ( fInventarioContagem[DivergenciaValor] ) + 0
+// Formato: R$ #.##0,00 | Negativo indica falta fisica
+
+Divergência Positiva =
+CALCULATE ( SUM ( fInventarioContagem[DivergenciaValor] ), fInventarioContagem[DivergenciaQuantidade] > 0 ) + 0
+// Sobra fisica: o almoxarifado tem mais material do que o sistema aponta
+
+Divergência Negativa =
+CALCULATE ( SUM ( fInventarioContagem[DivergenciaValor] ), fInventarioContagem[DivergenciaQuantidade] < 0 ) + 0
+// Falta fisica: risco de ruptura nao detectada e de fraude
+
+% Divergência sobre Estoque =
+DIVIDE ( [Divergência Valor Absoluta], [Valor Estoque] )
+// Formato: 0,00% | Meta: menor que 0,5%
+
+// ---------------------------------------------------------------------
+Divergência Média por Item =
+DIVIDE ( [Divergência Valor Absoluta], [Itens com Divergência] )
+
+Maior Divergência =
+MAXX ( fInventarioContagem, ABS ( fInventarioContagem[DivergenciaValor] ) )
+
+// ---------------------------------------------------------------------
+// EVOLUCAO DA ACURACIDADE
+// ---------------------------------------------------------------------
+Acuracidade Inventário % MA =
+CALCULATE ( [Acuracidade Inventário %], DATEADD ( dCalendario[Data], -1, MONTH ) )
+
+Var pp Acuracidade =
+[Acuracidade Inventário %] - [Acuracidade Inventário % MA]
+// Formato: +0,0;-0,0;0,0 | Variacao em pontos percentuais
+
+// ---------------------------------------------------------------------
+// ACURACIDADE POR CURVA
+// A meta deve ser diferenciada: itens de curva A exigem acuracidade
+// proxima de 100%, itens de curva C admitem tolerancia maior.
+// ---------------------------------------------------------------------
+Meta Acuracidade por Curva =
+SWITCH (
+    SELECTEDVALUE ( dItem[ClasseABC] ),
+    "A", 0.99,
+    "B", 0.97,
+    "C", 0.95,
+    0.98
+)
+
+Gap Acuracidade =
+[Acuracidade Inventário %] - [Meta Acuracidade por Curva]

@@ -1,0 +1,156 @@
+// =====================================================================
+// 04 - REQUISICOES E NIVEL DE SERVICO
+// Pasta de exibicao sugerida: 04 Nível de Serviço
+//
+// As flags FlagAtendidoTotal, FlagNoPrazo e FlagOTIF sao calculadas na
+// view SQL vw_Requisicao. Manter essa logica na origem reduz o tamanho
+// do modelo e acelera as medidas, porque o VertiPaq comprime colunas de
+// dois valores com eficiencia maxima.
+// =====================================================================
+
+// ---------------------------------------------------------------------
+Qtd Requisições = DISTINCTCOUNT ( fRequisicaoItem[NumeroRequisicao] ) + 0
+// Formato: #.##0
+
+Qtd Itens Requisitados = COUNTROWS ( fRequisicaoItem ) + 0
+
+// ---------------------------------------------------------------------
+Qtd Solicitada = SUM ( fRequisicaoItem[QuantidadeSolicitada] ) + 0
+Qtd Atendida   = SUM ( fRequisicaoItem[QuantidadeAtendida] ) + 0
+Qtd Não Atendida = SUM ( fRequisicaoItem[QuantidadeNaoAtendida] ) + 0
+
+// ---------------------------------------------------------------------
+// FILL RATE: percentual da quantidade demandada que foi entregue
+// ---------------------------------------------------------------------
+Fill Rate % =
+DIVIDE ( [Qtd Atendida], [Qtd Solicitada] )
+// Formato: 0,0% | Meta: acima de 95%
+
+// ---------------------------------------------------------------------
+// ATENDIMENTO POR LINHA: percentual de itens entregues integralmente
+// ---------------------------------------------------------------------
+Itens Atendidos Integralmente =
+CALCULATE ( COUNTROWS ( fRequisicaoItem ), fRequisicaoItem[FlagAtendidoTotal] = 1 ) + 0
+
+Atendimento Linha % =
+DIVIDE ( [Itens Atendidos Integralmente], [Qtd Itens Requisitados] )
+// Formato: 0,0% | Meta: acima de 92%
+
+// ---------------------------------------------------------------------
+// PONTUALIDADE
+// ---------------------------------------------------------------------
+Itens Atendidos = CALCULATE ( COUNTROWS ( fRequisicaoItem ), NOT ISBLANK ( fRequisicaoItem[DataAtendimento] ) ) + 0
+
+Itens no Prazo = CALCULATE ( COUNTROWS ( fRequisicaoItem ), fRequisicaoItem[FlagNoPrazo] = 1 ) + 0
+
+On Time % = DIVIDE ( [Itens no Prazo], [Itens Atendidos] )
+// Formato: 0,0% | Meta: acima de 93%
+
+// ---------------------------------------------------------------------
+// OTIF: entregue completo E no prazo
+// ---------------------------------------------------------------------
+Itens OTIF = CALCULATE ( COUNTROWS ( fRequisicaoItem ), fRequisicaoItem[FlagOTIF] = 1 ) + 0
+
+OTIF % = DIVIDE ( [Itens OTIF], [Qtd Itens Requisitados] )
+// Formato: 0,0% | Meta: acima de 90%
+
+// ---------------------------------------------------------------------
+// TEMPO DE ATENDIMENTO
+// ---------------------------------------------------------------------
+Tempo Médio Atendimento (h) =
+AVERAGEX (
+    FILTER ( fRequisicaoItem, NOT ISBLANK ( fRequisicaoItem[DataAtendimento] ) ),
+    fRequisicaoItem[HorasAtendimento]
+)
+// Formato: #.##0,0 "h" | Meta: menor que 24 horas
+
+Tempo Mediano Atendimento (h) =
+MEDIANX (
+    FILTER ( fRequisicaoItem, NOT ISBLANK ( fRequisicaoItem[DataAtendimento] ) ),
+    fRequisicaoItem[HorasAtendimento]
+)
+// A mediana revela melhor o padrao real quando existem poucos casos
+// extremos puxando a media para cima.
+
+Atendimento no Mesmo Dia % =
+DIVIDE (
+    CALCULATE ( COUNTROWS ( fRequisicaoItem ), fRequisicaoItem[HorasAtendimento] <= 24 ),
+    [Itens Atendidos]
+)
+
+// ---------------------------------------------------------------------
+// BACKLOG
+// ---------------------------------------------------------------------
+Requisições Pendentes =
+CALCULATE (
+    DISTINCTCOUNT ( fRequisicaoItem[NumeroRequisicao] ),
+    ISBLANK ( fRequisicaoItem[DataAtendimento] ),
+    dStatusRequisicao[StatusFinalizado] = FALSE ()
+) + 0
+
+Itens Pendentes =
+CALCULATE (
+    COUNTROWS ( fRequisicaoItem ),
+    ISBLANK ( fRequisicaoItem[DataAtendimento] ),
+    dStatusRequisicao[StatusFinalizado] = FALSE ()
+) + 0
+
+% Backlog = DIVIDE ( [Itens Pendentes], [Qtd Itens Requisitados] )
+
+Idade Média Backlog (dias) =
+AVERAGEX (
+    FILTER (
+        fRequisicaoItem,
+        ISBLANK ( fRequisicaoItem[DataAtendimento] )
+    ),
+    DATEDIFF ( fRequisicaoItem[DataSolicitacao], TODAY (), DAY )
+)
+// Formato: #.##0,0 "dias" | Meta: menor que 3 dias
+
+Backlog Mais Antigo (dias) =
+MAXX (
+    FILTER ( fRequisicaoItem, ISBLANK ( fRequisicaoItem[DataAtendimento] ) ),
+    DATEDIFF ( fRequisicaoItem[DataSolicitacao], TODAY (), DAY )
+)
+
+// ---------------------------------------------------------------------
+// RUPTURA
+// ---------------------------------------------------------------------
+Itens em Ruptura =
+CALCULATE (
+    COUNTROWS ( fRequisicaoItem ),
+    fRequisicaoItem[MotivoNaoAtendimento] = "Falta de saldo"
+) + 0
+
+Taxa de Ruptura % =
+DIVIDE ( [Itens em Ruptura], [Qtd Itens Requisitados] )
+// Formato: 0,0% | Meta: menor que 3%
+
+Valor Demanda Não Atendida =
+SUMX (
+    fRequisicaoItem,
+    fRequisicaoItem[QuantidadeNaoAtendida] * fRequisicaoItem[CustoUnitario]
+)
+// Formato: R$ #.##0,00
+
+SKUs com Ruptura =
+CALCULATE (
+    DISTINCTCOUNT ( fRequisicaoItem[SK_Item] ),
+    fRequisicaoItem[MotivoNaoAtendimento] = "Falta de saldo"
+) + 0
+
+// ---------------------------------------------------------------------
+// ANALISE PELA DATA DE ATENDIMENTO
+// Usa o relacionamento inativo entre dCalendario e DataAtendimento.
+// ---------------------------------------------------------------------
+Itens Atendidos (por data de entrega) =
+CALCULATE (
+    COUNTROWS ( fRequisicaoItem ),
+    USERELATIONSHIP ( dCalendario[Data], fRequisicaoItem[DataAtendimento] )
+) + 0
+
+Fill Rate % (por data de entrega) =
+CALCULATE (
+    [Fill Rate %],
+    USERELATIONSHIP ( dCalendario[Data], fRequisicaoItem[DataAtendimento] )
+)

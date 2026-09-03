@@ -1,0 +1,183 @@
+// =====================================================================
+// 01 - POSICAO E VALOR DE ESTOQUE
+// Pasta de exibicao sugerida: 01 Estoque
+//
+// ATENCAO SEMI-ADITIVIDADE: fPosicaoEstoque e um snapshot. Somar o saldo
+// ao longo de varios dias multiplica o estoque. Toda medida de saldo usa
+// LASTNONBLANK para retornar apenas a ultima data com dados do periodo.
+// =====================================================================
+
+// ---------------------------------------------------------------------
+Valor Estoque =
+CALCULATE (
+    SUM ( fPosicaoEstoque[ValorSaldo] ),
+    LASTNONBLANK ( dCalendario[Data], CALCULATE ( COUNTROWS ( fPosicaoEstoque ) ) )
+)
+// Formato: R$ #.##0,00 | Pasta: 01 Estoque
+
+// ---------------------------------------------------------------------
+Saldo Quantidade =
+CALCULATE (
+    SUM ( fPosicaoEstoque[QuantidadeSaldo] ),
+    LASTNONBLANK ( dCalendario[Data], CALCULATE ( COUNTROWS ( fPosicaoEstoque ) ) )
+)
+// Formato: #.##0,00
+
+// ---------------------------------------------------------------------
+Saldo Disponível =
+CALCULATE (
+    SUM ( fPosicaoEstoque[QuantidadeDisponivel] ),
+    LASTNONBLANK ( dCalendario[Data], CALCULATE ( COUNTROWS ( fPosicaoEstoque ) ) )
+)
+
+// ---------------------------------------------------------------------
+Quantidade Reservada =
+CALCULATE (
+    SUM ( fPosicaoEstoque[QuantidadeReservada] ),
+    LASTNONBLANK ( dCalendario[Data], CALCULATE ( COUNTROWS ( fPosicaoEstoque ) ) )
+)
+
+// ---------------------------------------------------------------------
+Quantidade Bloqueada =
+CALCULATE (
+    SUM ( fPosicaoEstoque[QuantidadeBloqueada] ),
+    LASTNONBLANK ( dCalendario[Data], CALCULATE ( COUNTROWS ( fPosicaoEstoque ) ) )
+)
+
+// ---------------------------------------------------------------------
+// Alternativa de melhor desempenho para modelos grandes. Substitui o
+// LASTNONBLANK por uma variavel escalar, evitando a varredura repetida.
+// ---------------------------------------------------------------------
+Valor Estoque (Otimizado) =
+VAR _UltimaData =
+    CALCULATE (
+        MAX ( fPosicaoEstoque[Data] ),
+        REMOVEFILTERS ( fPosicaoEstoque ),
+        VALUES ( dCalendario[Data] )
+    )
+RETURN
+CALCULATE (
+    SUM ( fPosicaoEstoque[ValorSaldo] ),
+    dCalendario[Data] = _UltimaData
+)
+
+// ---------------------------------------------------------------------
+SKUs com Saldo =
+CALCULATE (
+    DISTINCTCOUNT ( fPosicaoEstoque[SK_Item] ),
+    LASTNONBLANK ( dCalendario[Data], CALCULATE ( COUNTROWS ( fPosicaoEstoque ) ) ),
+    fPosicaoEstoque[QuantidadeSaldo] > 0
+)
+// Formato: #.##0
+
+// ---------------------------------------------------------------------
+SKUs Cadastrados Ativos =
+CALCULATE (
+    DISTINCTCOUNT ( dItem[SK_Item] ),
+    dItem[StatusItem] = "Ativo"
+)
+
+// ---------------------------------------------------------------------
+Estoque Médio Valor =
+AVERAGEX (
+    VALUES ( dCalendario[AnoMes] ),
+    [Valor Estoque]
+)
+// Base do calculo de giro. Media dos saldos de fechamento de cada mes
+// dentro do periodo selecionado.
+
+// ---------------------------------------------------------------------
+Estoque Médio Quantidade =
+AVERAGEX ( VALUES ( dCalendario[AnoMes] ), [Saldo Quantidade] )
+
+// ---------------------------------------------------------------------
+Custo Médio Unitário =
+DIVIDE ( [Valor Estoque], [Saldo Quantidade] )
+// Formato: R$ #.##0,0000
+
+// =====================================================================
+// PARAMETROS DE REPOSICAO
+// =====================================================================
+
+Estoque Mínimo Total = SUMX ( VALUES ( dItem[SK_Item] ), CALCULATE ( MAX ( dItem[EstoqueMinimo] ) ) )
+Estoque Máximo Total = SUMX ( VALUES ( dItem[SK_Item] ), CALCULATE ( MAX ( dItem[EstoqueMaximo] ) ) )
+
+// ---------------------------------------------------------------------
+Itens Abaixo do Mínimo =
+VAR _ItensComPosicao =
+    CALCULATETABLE (
+        VALUES ( dItem[SK_Item] ),
+        fPosicaoEstoque
+    )
+RETURN
+COUNTROWS (
+    FILTER (
+        _ItensComPosicao,
+        VAR _Saldo  = [Saldo Quantidade]
+        VAR _Minimo = CALCULATE ( MAX ( dItem[EstoqueMinimo] ) )
+        RETURN _Minimo > 0 && _Saldo < _Minimo
+    )
+) + 0
+
+// ---------------------------------------------------------------------
+Itens Acima do Máximo =
+VAR _ItensComPosicao = CALCULATETABLE ( VALUES ( dItem[SK_Item] ), fPosicaoEstoque )
+RETURN
+COUNTROWS (
+    FILTER (
+        _ItensComPosicao,
+        VAR _Saldo  = [Saldo Quantidade]
+        VAR _Maximo = CALCULATE ( MAX ( dItem[EstoqueMaximo] ) )
+        RETURN _Maximo > 0 && _Saldo > _Maximo
+    )
+) + 0
+
+// ---------------------------------------------------------------------
+Itens no Ponto de Pedido =
+VAR _ItensComPosicao = CALCULATETABLE ( VALUES ( dItem[SK_Item] ), fPosicaoEstoque )
+RETURN
+COUNTROWS (
+    FILTER (
+        _ItensComPosicao,
+        VAR _Saldo = [Saldo Quantidade]
+        VAR _PP    = CALCULATE ( MAX ( dItem[PontoPedido] ) )
+        RETURN _PP > 0 && _Saldo <= _PP
+    )
+) + 0
+
+// ---------------------------------------------------------------------
+Itens Zerados =
+CALCULATE (
+    DISTINCTCOUNT ( fPosicaoEstoque[SK_Item] ),
+    LASTNONBLANK ( dCalendario[Data], CALCULATE ( COUNTROWS ( fPosicaoEstoque ) ) ),
+    fPosicaoEstoque[QuantidadeSaldo] = 0
+) + 0
+
+// ---------------------------------------------------------------------
+Valor Excesso Estoque =
+VAR _ItensComPosicao = CALCULATETABLE ( VALUES ( dItem[SK_Item] ), fPosicaoEstoque )
+RETURN
+SUMX (
+    _ItensComPosicao,
+    VAR _Saldo  = [Saldo Quantidade]
+    VAR _Maximo = CALCULATE ( MAX ( dItem[EstoqueMaximo] ) )
+    VAR _Custo  = [Custo Médio Unitário]
+    RETURN
+    IF ( _Maximo > 0 && _Saldo > _Maximo, ( _Saldo - _Maximo ) * _Custo, 0 )
+)
+// Formato: R$ #.##0,00
+
+// ---------------------------------------------------------------------
+% Itens Abaixo do Mínimo =
+DIVIDE ( [Itens Abaixo do Mínimo], [SKUs com Saldo] )
+// Formato: 0,0%
+
+// ---------------------------------------------------------------------
+// CONTROLE DE ATUALIZACAO
+// ---------------------------------------------------------------------
+Data da Posição =
+"Posição em " &
+FORMAT (
+    CALCULATE ( MAX ( fPosicaoEstoque[Data] ), VALUES ( dCalendario[Data] ) ),
+    "dd/mm/yyyy"
+)

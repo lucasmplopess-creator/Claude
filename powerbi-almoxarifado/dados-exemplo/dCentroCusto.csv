@@ -1,0 +1,13 @@
+﻿SK_CentroCusto;CodigoCentroCusto;NomeCentroCusto;Area;Gerencia;Diretoria;Responsavel;EmailResponsavel;StatusCentroCusto
+1;CC1010;Manutenção Industrial;Manutenção;Gerência de Manutenção;Diretoria de Operações;Ana Ribeiro;ana.ribeiro@empresa.com.br;Ativo
+2;CC1020;Produção Linha A;Produção;Gerência de Produção;Diretoria de Operações;Carlos Menezes;carlos.menezes@empresa.com.br;Ativo
+3;CC1030;Produção Linha B;Produção;Gerência de Produção;Diretoria de Operações;Débora Fontes;debora.fontes@empresa.com.br;Ativo
+4;CC1040;Utilidades;Manutenção;Gerência de Manutenção;Diretoria de Operações;Eduardo Salles;eduardo.salles@empresa.com.br;Ativo
+5;CC2010;Logística e Expedição;Logística;Gerência de Logística;Diretoria de Operações;Fernanda Alves;fernanda.alves@empresa.com.br;Ativo
+6;CC2020;Almoxarifado Central;Suprimentos;Gerência de Suprimentos;Diretoria Administrativa;Gustavo Prado;gustavo.prado@empresa.com.br;Ativo
+7;CC3010;Qualidade;Qualidade;Gerência de Qualidade;Diretoria Técnica;Helena Duarte;helena.duarte@empresa.com.br;Ativo
+8;CC3020;Engenharia de Processos;Engenharia;Gerência de Engenharia;Diretoria Técnica;Igor Marques;igor.marques@empresa.com.br;Ativo
+9;CC4010;Administrativo;Administrativo;Gerência Administrativa;Diretoria Administrativa;Juliana Castro;juliana.castro@empresa.com.br;Ativo
+10;CC4020;Tecnologia da Informação;Administrativo;Gerência Administrativa;Diretoria Administrativa;Leonardo Pires;leonardo.pires@empresa.com.br;Ativo
+11;CC5010;Segurança do Trabalho;SSMA;Gerência de SSMA;Diretoria de Operações;Mariana Rocha;mariana.rocha@empresa.com.br;Ativo
+12;CC5020;Facilities;Administrativo;Gerência Administrativa;Diretoria Administrativa;Nelson Tavares;nelson.tavares@empresa.com.br;Ativo

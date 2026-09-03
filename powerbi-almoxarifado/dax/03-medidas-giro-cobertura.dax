@@ -1,0 +1,186 @@
+// =====================================================================
+// 03 - GIRO, COBERTURA E OBSOLESCENCIA
+// Pasta de exibicao sugerida: 03 Giro e Cobertura
+// =====================================================================
+
+// ---------------------------------------------------------------------
+// GIRO DO PERIODO SELECIONADO
+// Quantas vezes o estoque se renovou dentro do periodo filtrado.
+// ---------------------------------------------------------------------
+Giro de Estoque =
+DIVIDE ( [Valor Consumo], [Estoque Médio Valor] )
+// Formato: #.##0,00 "x"
+
+// ---------------------------------------------------------------------
+// GIRO ANUALIZADO
+// Projeta o giro do periodo para uma base de 12 meses, tornando
+// comparaveis periodos de tamanhos diferentes.
+// ---------------------------------------------------------------------
+Giro de Estoque Anualizado =
+VAR _MesesNoPeriodo = DISTINCTCOUNT ( dCalendario[AnoMes] )
+RETURN
+DIVIDE ( [Valor Consumo], [Estoque Médio Valor] ) * DIVIDE ( 12, _MesesNoPeriodo )
+
+// ---------------------------------------------------------------------
+// GIRO EM 12 MESES MOVEIS
+// Visao mais estavel para o cartao executivo.
+// ---------------------------------------------------------------------
+Giro 12 Meses =
+VAR _EstoqueMedio12M =
+    CALCULATE (
+        [Estoque Médio Valor],
+        DATESINPERIOD ( dCalendario[Data], MAX ( dCalendario[Data] ), -12, MONTH )
+    )
+RETURN
+DIVIDE ( [Valor Consumo 12M], _EstoqueMedio12M )
+
+// ---------------------------------------------------------------------
+// DIAS DE ESTOQUE (DIO)
+// ---------------------------------------------------------------------
+Dias de Estoque (DIO) =
+DIVIDE ( 365, [Giro 12 Meses] )
+// Formato: #.##0 "dias"
+
+// ---------------------------------------------------------------------
+// COBERTURA EM DIAS: versao por valor
+// Recomendada para totais e para qualquer nivel de agregacao, porque
+// nao mistura unidades de medida diferentes.
+// ---------------------------------------------------------------------
+Cobertura Dias =
+DIVIDE ( [Valor Estoque], [Consumo Médio Diário Valor] )
+// Formato: #.##0 "dias"
+
+// ---------------------------------------------------------------------
+// COBERTURA EM DIAS: versao por quantidade
+// Use somente no detalhe de item, onde a unidade de medida e unica.
+// ---------------------------------------------------------------------
+Cobertura Dias (Qtd) =
+DIVIDE ( [Saldo Quantidade], [Consumo Médio Diário] )
+
+// ---------------------------------------------------------------------
+Faixa de Cobertura =
+VAR _Cobertura = [Cobertura Dias]
+RETURN
+SWITCH (
+    TRUE (),
+    ISBLANK ( _Cobertura ),  "Sem consumo",
+    _Cobertura = 0,          "0. Ruptura",
+    _Cobertura <= 15,        "1. Crítico (até 15 dias)",
+    _Cobertura <= 30,        "2. Atenção (16 a 30 dias)",
+    _Cobertura <= 60,        "3. Adequado (31 a 60 dias)",
+    _Cobertura <= 120,       "4. Elevado (61 a 120 dias)",
+    "5. Excessivo (acima de 120 dias)"
+)
+
+// =====================================================================
+// OBSOLESCENCIA E ITENS SEM GIRO
+// =====================================================================
+
+Dias sem Movimento =
+VAR _DataRef = CALCULATE ( MAX ( fPosicaoEstoque[Data] ), VALUES ( dCalendario[Data] ) )
+VAR _UltimaSaida =
+    CALCULATE (
+        MAX ( fPosicaoEstoque[DataUltimaSaida] ),
+        LASTNONBLANK ( dCalendario[Data], CALCULATE ( COUNTROWS ( fPosicaoEstoque ) ) )
+    )
+RETURN
+DATEDIFF ( _UltimaSaida, _DataRef, DAY )
+
+// ---------------------------------------------------------------------
+Itens sem Giro =
+VAR _ItensComPosicao = CALCULATETABLE ( VALUES ( dItem[SK_Item] ), fPosicaoEstoque )
+RETURN
+COUNTROWS (
+    FILTER (
+        _ItensComPosicao,
+        [Saldo Quantidade] > 0 && ( [Dias sem Movimento] > 180 || ISBLANK ( [Dias sem Movimento] ) )
+    )
+) + 0
+
+// ---------------------------------------------------------------------
+Valor Itens sem Giro =
+VAR _ItensComPosicao = CALCULATETABLE ( VALUES ( dItem[SK_Item] ), fPosicaoEstoque )
+RETURN
+SUMX (
+    FILTER (
+        _ItensComPosicao,
+        [Saldo Quantidade] > 0 && ( [Dias sem Movimento] > 180 || ISBLANK ( [Dias sem Movimento] ) )
+    ),
+    [Valor Estoque]
+)
+// Formato: R$ #.##0,00
+
+// ---------------------------------------------------------------------
+% Estoque sem Giro = DIVIDE ( [Valor Itens sem Giro], [Valor Estoque] )
+// Formato: 0,0%
+
+// ---------------------------------------------------------------------
+Itens Obsoletos =
+VAR _ItensComPosicao = CALCULATETABLE ( VALUES ( dItem[SK_Item] ), fPosicaoEstoque )
+RETURN
+COUNTROWS (
+    FILTER (
+        _ItensComPosicao,
+        [Saldo Quantidade] > 0 && ( [Dias sem Movimento] > 365 || ISBLANK ( [Dias sem Movimento] ) )
+    )
+) + 0
+
+Valor Obsoleto =
+VAR _ItensComPosicao = CALCULATETABLE ( VALUES ( dItem[SK_Item] ), fPosicaoEstoque )
+RETURN
+SUMX (
+    FILTER (
+        _ItensComPosicao,
+        [Saldo Quantidade] > 0 && ( [Dias sem Movimento] > 365 || ISBLANK ( [Dias sem Movimento] ) )
+    ),
+    [Valor Estoque]
+)
+
+% Estoque Obsoleto = DIVIDE ( [Valor Obsoleto], [Valor Estoque] )
+
+// ---------------------------------------------------------------------
+// ALTERNATIVA DE ALTO DESEMPENHO
+// Se o modelo tiver mais de 500 mil linhas em fPosicaoEstoque, use as
+// colunas FlagSemGiro e FlagObsoleto criadas na view SQL. O calculo sai
+// de iterador item a item para uma simples soma filtrada.
+// ---------------------------------------------------------------------
+Valor Itens sem Giro (SQL) =
+CALCULATE (
+    SUM ( fPosicaoEstoque[ValorSaldo] ),
+    LASTNONBLANK ( dCalendario[Data], CALCULATE ( COUNTROWS ( fPosicaoEstoque ) ) ),
+    fPosicaoEstoque[FlagSemGiro] = 1
+)
+
+// =====================================================================
+// CUSTO DE CARREGAMENTO DO ESTOQUE
+// Taxa padrao de 25% ao ano cobrindo capital, armazenagem, seguro,
+// obsolescencia e movimentacao. Ajuste conforme a realidade da empresa.
+// =====================================================================
+
+Taxa Carregamento Anual = 0.25
+
+Custo de Carregamento =
+VAR _MesesNoPeriodo = DISTINCTCOUNT ( dCalendario[AnoMes] )
+RETURN
+[Estoque Médio Valor] * [Taxa Carregamento Anual] * DIVIDE ( _MesesNoPeriodo, 12 )
+// Formato: R$ #.##0,00
+
+Custo de Carregamento do Excesso =
+[Valor Excesso Estoque] * [Taxa Carregamento Anual]
+
+// =====================================================================
+// AGING DE ESTOQUE
+// =====================================================================
+
+Valor Estoque Aging =
+CALCULATE (
+    SUM ( fPosicaoEstoque[ValorSaldo] ),
+    LASTNONBLANK ( dCalendario[Data], CALCULATE ( COUNTROWS ( fPosicaoEstoque ) ) )
+)
+// Use com a coluna fPosicaoEstoque[FaixaAging] no eixo do grafico.
+
+% Valor por Faixa Aging =
+DIVIDE (
+    [Valor Estoque Aging],
+    CALCULATE ( [Valor Estoque Aging], REMOVEFILTERS ( fPosicaoEstoque[FaixaAging] ) )
+)

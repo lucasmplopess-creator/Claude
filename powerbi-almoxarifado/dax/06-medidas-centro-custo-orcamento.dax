@@ -1,0 +1,108 @@
+// =====================================================================
+// 06 - CONSUMO POR CENTRO DE CUSTO E ORCAMENTO
+// Pasta de exibicao sugerida: 06 Centro de Custo
+//
+// A tabela fOrcamento tem grao mensal enquanto as demais fatos tem grao
+// diario. Sempre exiba estas medidas em contexto mensal ou superior.
+// =====================================================================
+
+// ---------------------------------------------------------------------
+Orçamento Período = SUM ( fOrcamento[ValorOrcado] ) + 0
+// Formato: R$ #.##0,00
+
+// ---------------------------------------------------------------------
+Realizado Período = [Valor Consumo]
+
+// ---------------------------------------------------------------------
+Saldo Orçamentário = [Orçamento Período] - [Realizado Período]
+// Formato: R$ #.##0,00 | Positivo indica verba disponivel
+
+// ---------------------------------------------------------------------
+% Realizado sobre Orçado =
+DIVIDE ( [Realizado Período], [Orçamento Período] )
+// Formato: 0,0% | Meta: ate 100%
+
+// ---------------------------------------------------------------------
+Status Orçamentário =
+VAR _Pct = [% Realizado sobre Orçado]
+RETURN
+SWITCH (
+    TRUE (),
+    ISBLANK ( _Pct ),  "Sem orçamento",
+    _Pct <= 0.85,      "1. Dentro do previsto",
+    _Pct <= 1.00,      "2. Atenção",
+    "3. Estourado"
+)
+
+// ---------------------------------------------------------------------
+Orçamento Acumulado YTD =
+CALCULATE ( [Orçamento Período], DATESYTD ( dCalendario[Data] ) )
+
+Realizado Acumulado YTD =
+CALCULATE ( [Realizado Período], DATESYTD ( dCalendario[Data] ) )
+
+% Realizado YTD = DIVIDE ( [Realizado Acumulado YTD], [Orçamento Acumulado YTD] )
+
+Saldo Orçamentário YTD = [Orçamento Acumulado YTD] - [Realizado Acumulado YTD]
+
+// ---------------------------------------------------------------------
+// PROJECAO DE FECHAMENTO DO ANO
+// Extrapola o ritmo de consumo atual para o total do exercicio.
+// ---------------------------------------------------------------------
+Projeção Consumo Ano =
+VAR _MesesDecorridos = CALCULATE ( DISTINCTCOUNT ( dCalendario[AnoMes] ), DATESYTD ( dCalendario[Data] ) )
+VAR _RealizadoYTD    = [Realizado Acumulado YTD]
+RETURN
+DIVIDE ( _RealizadoYTD, _MesesDecorridos ) * 12
+
+Projeção sobre Orçamento Anual =
+VAR _OrcamentoAno =
+    CALCULATE (
+        [Orçamento Período],
+        REMOVEFILTERS ( dCalendario ),
+        VALUES ( dCalendario[Ano] )
+    )
+RETURN
+DIVIDE ( [Projeção Consumo Ano], _OrcamentoAno )
+// Acima de 100% sinaliza que o centro de custo estoura a verba se
+// mantiver o ritmo atual de consumo.
+
+// ---------------------------------------------------------------------
+// PARTICIPACAO E RANKING
+// ---------------------------------------------------------------------
+% Consumo do Centro de Custo =
+DIVIDE (
+    [Valor Consumo],
+    CALCULATE ( [Valor Consumo], ALLSELECTED ( dCentroCusto ) )
+)
+
+Rank Centro de Custo =
+RANKX ( ALLSELECTED ( dCentroCusto[NomeCentroCusto] ), [Valor Consumo], , DESC, DENSE )
+
+% Consumo da Categoria =
+DIVIDE (
+    [Valor Consumo],
+    CALCULATE ( [Valor Consumo], ALLSELECTED ( dItem[Categoria] ) )
+)
+
+Rank Consumo Item =
+RANKX ( ALLSELECTED ( dItem[CodigoItem] ), [Valor Consumo], , DESC, DENSE )
+
+// ---------------------------------------------------------------------
+Custo Médio por Requisição =
+DIVIDE ( [Valor Consumo], [Qtd Requisições] )
+// Formato: R$ #.##0,00
+
+Consumo por Colaborador =
+DIVIDE ( [Valor Consumo], DISTINCTCOUNT ( fRequisicaoItem[SK_Solicitante] ) )
+
+// ---------------------------------------------------------------------
+// TOP N DINAMICO
+// Combine com um parametro numerico "Top N" criado em
+// Modelagem > Novo parametro > Intervalo numerico (1 a 50).
+// ---------------------------------------------------------------------
+Valor Consumo Top N =
+VAR _TopN = SELECTEDVALUE ( 'Top N'[Valor], 10 )
+VAR _Rank = [Rank Consumo Item]
+RETURN
+IF ( _Rank <= _TopN, [Valor Consumo] )

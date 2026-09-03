@@ -1,0 +1,6 @@
+﻿SK_Status;CodigoStatus;DescricaoStatus;StatusFinalizado
+1;AB;Aberta;NAO
+2;SE;Em separação;NAO
+3;AT;Atendida;SIM
+4;AP;Atendida parcialmente;SIM
+5;CA;Cancelada;SIM

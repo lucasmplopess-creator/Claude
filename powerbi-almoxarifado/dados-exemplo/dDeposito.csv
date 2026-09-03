@@ -1,0 +1,5 @@
+﻿SK_Deposito;CodigoDeposito;NomeDeposito;TipoDeposito;Planta;UF;EmailResponsavel
+1;DEP01;Almoxarifado Central;Central;Planta Matriz;SP;almox.central@empresa.com.br
+2;DEP02;Almoxarifado Manutenção;Avançado;Planta Matriz;SP;almox.manutencao@empresa.com.br
+3;DEP03;Almoxarifado Filial Sul;Central;Filial Sul;PR;almox.sul@empresa.com.br
+4;DEP04;Quarentena;Quarentena;Planta Matriz;SP;qualidade@empresa.com.br

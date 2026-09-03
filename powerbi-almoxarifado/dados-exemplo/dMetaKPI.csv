@@ -1,0 +1,193 @@
+﻿AnoMes;Indicador;ValorMeta;TipoMeta;LimiteInferior;LimiteSuperior
+202409;Fill Rate;0,9500;MaiorMelhor;;
+202409;OTIF;0,9000;MaiorMelhor;;
+202409;Acuracidade;0,9800;MaiorMelhor;;
+202409;Giro de Estoque;4,0000;MaiorMelhor;;
+202409;Cobertura;45,0000;Faixa;40,5000;60,7500
+202409;Estoque sem Giro;0,0800;MenorMelhor;;
+202409;Taxa de Ruptura;0,0300;MenorMelhor;;
+202409;Pontualidade Fornecedor;0,9200;MaiorMelhor;;
+202410;Fill Rate;0,9500;MaiorMelhor;;
+202410;OTIF;0,9000;MaiorMelhor;;
+202410;Acuracidade;0,9800;MaiorMelhor;;
+202410;Giro de Estoque;4,0000;MaiorMelhor;;
+202410;Cobertura;45,0000;Faixa;40,5000;60,7500
+202410;Estoque sem Giro;0,0800;MenorMelhor;;
+202410;Taxa de Ruptura;0,0300;MenorMelhor;;
+202410;Pontualidade Fornecedor;0,9200;MaiorMelhor;;
+202411;Fill Rate;0,9500;MaiorMelhor;;
+202411;OTIF;0,9000;MaiorMelhor;;
+202411;Acuracidade;0,9800;MaiorMelhor;;
+202411;Giro de Estoque;4,0000;MaiorMelhor;;
+202411;Cobertura;45,0000;Faixa;40,5000;60,7500
+202411;Estoque sem Giro;0,0800;MenorMelhor;;
+202411;Taxa de Ruptura;0,0300;MenorMelhor;;
+202411;Pontualidade Fornecedor;0,9200;MaiorMelhor;;
+202412;Fill Rate;0,9500;MaiorMelhor;;
+202412;OTIF;0,9000;MaiorMelhor;;
+202412;Acuracidade;0,9800;MaiorMelhor;;
+202412;Giro de Estoque;4,0000;MaiorMelhor;;
+202412;Cobertura;45,0000;Faixa;40,5000;60,7500
+202412;Estoque sem Giro;0,0800;MenorMelhor;;
+202412;Taxa de Ruptura;0,0300;MenorMelhor;;
+202412;Pontualidade Fornecedor;0,9200;MaiorMelhor;;
+202501;Fill Rate;0,9500;MaiorMelhor;;
+202501;OTIF;0,9000;MaiorMelhor;;
+202501;Acuracidade;0,9800;MaiorMelhor;;
+202501;Giro de Estoque;4,0000;MaiorMelhor;;
+202501;Cobertura;45,0000;Faixa;40,5000;60,7500
+202501;Estoque sem Giro;0,0800;MenorMelhor;;
+202501;Taxa de Ruptura;0,0300;MenorMelhor;;
+202501;Pontualidade Fornecedor;0,9200;MaiorMelhor;;
+202502;Fill Rate;0,9500;MaiorMelhor;;
+202502;OTIF;0,9000;MaiorMelhor;;
+202502;Acuracidade;0,9800;MaiorMelhor;;
+202502;Giro de Estoque;4,0000;MaiorMelhor;;
+202502;Cobertura;45,0000;Faixa;40,5000;60,7500
+202502;Estoque sem Giro;0,0800;MenorMelhor;;
+202502;Taxa de Ruptura;0,0300;MenorMelhor;;
+202502;Pontualidade Fornecedor;0,9200;MaiorMelhor;;
+202503;Fill Rate;0,9500;MaiorMelhor;;
+202503;OTIF;0,9000;MaiorMelhor;;
+202503;Acuracidade;0,9800;MaiorMelhor;;
+202503;Giro de Estoque;4,0000;MaiorMelhor;;
+202503;Cobertura;45,0000;Faixa;40,5000;60,7500
+202503;Estoque sem Giro;0,0800;MenorMelhor;;
+202503;Taxa de Ruptura;0,0300;MenorMelhor;;
+202503;Pontualidade Fornecedor;0,9200;MaiorMelhor;;
+202504;Fill Rate;0,9500;MaiorMelhor;;
+202504;OTIF;0,9000;MaiorMelhor;;
+202504;Acuracidade;0,9800;MaiorMelhor;;
+202504;Giro de Estoque;4,0000;MaiorMelhor;;
+202504;Cobertura;45,0000;Faixa;40,5000;60,7500
+202504;Estoque sem Giro;0,0800;MenorMelhor;;
+202504;Taxa de Ruptura;0,0300;MenorMelhor;;
+202504;Pontualidade Fornecedor;0,9200;MaiorMelhor;;
+202505;Fill Rate;0,9500;MaiorMelhor;;
+202505;OTIF;0,9000;MaiorMelhor;;
+202505;Acuracidade;0,9800;MaiorMelhor;;
+202505;Giro de Estoque;4,0000;MaiorMelhor;;
+202505;Cobertura;45,0000;Faixa;40,5000;60,7500
+202505;Estoque sem Giro;0,0800;MenorMelhor;;
+202505;Taxa de Ruptura;0,0300;MenorMelhor;;
+202505;Pontualidade Fornecedor;0,9200;MaiorMelhor;;
+202506;Fill Rate;0,9500;MaiorMelhor;;
+202506;OTIF;0,9000;MaiorMelhor;;
+202506;Acuracidade;0,9800;MaiorMelhor;;
+202506;Giro de Estoque;4,0000;MaiorMelhor;;
+202506;Cobertura;45,0000;Faixa;40,5000;60,7500
+202506;Estoque sem Giro;0,0800;MenorMelhor;;
+202506;Taxa de Ruptura;0,0300;MenorMelhor;;
+202506;Pontualidade Fornecedor;0,9200;MaiorMelhor;;
+202507;Fill Rate;0,9500;MaiorMelhor;;
+202507;OTIF;0,9000;MaiorMelhor;;
+202507;Acuracidade;0,9800;MaiorMelhor;;
+202507;Giro de Estoque;4,0000;MaiorMelhor;;
+202507;Cobertura;45,0000;Faixa;40,5000;60,7500
+202507;Estoque sem Giro;0,0800;MenorMelhor;;
+202507;Taxa de Ruptura;0,0300;MenorMelhor;;
+202507;Pontualidade Fornecedor;0,9200;MaiorMelhor;;
+202508;Fill Rate;0,9500;MaiorMelhor;;
+202508;OTIF;0,9000;MaiorMelhor;;
+202508;Acuracidade;0,9800;MaiorMelhor;;
+202508;Giro de Estoque;4,0000;MaiorMelhor;;
+202508;Cobertura;45,0000;Faixa;40,5000;60,7500
+202508;Estoque sem Giro;0,0800;MenorMelhor;;
+202508;Taxa de Ruptura;0,0300;MenorMelhor;;
+202508;Pontualidade Fornecedor;0,9200;MaiorMelhor;;
+202509;Fill Rate;0,9500;MaiorMelhor;;
+202509;OTIF;0,9000;MaiorMelhor;;
+202509;Acuracidade;0,9800;MaiorMelhor;;
+202509;Giro de Estoque;4,0000;MaiorMelhor;;
+202509;Cobertura;45,0000;Faixa;40,5000;60,7500
+202509;Estoque sem Giro;0,0800;MenorMelhor;;
+202509;Taxa de Ruptura;0,0300;MenorMelhor;;
+202509;Pontualidade Fornecedor;0,9200;MaiorMelhor;;
+202510;Fill Rate;0,9500;MaiorMelhor;;
+202510;OTIF;0,9000;MaiorMelhor;;
+202510;Acuracidade;0,9800;MaiorMelhor;;
+202510;Giro de Estoque;4,0000;MaiorMelhor;;
+202510;Cobertura;45,0000;Faixa;40,5000;60,7500
+202510;Estoque sem Giro;0,0800;MenorMelhor;;
+202510;Taxa de Ruptura;0,0300;MenorMelhor;;
+202510;Pontualidade Fornecedor;0,9200;MaiorMelhor;;
+202511;Fill Rate;0,9500;MaiorMelhor;;
+202511;OTIF;0,9000;MaiorMelhor;;
+202511;Acuracidade;0,9800;MaiorMelhor;;
+202511;Giro de Estoque;4,0000;MaiorMelhor;;
+202511;Cobertura;45,0000;Faixa;40,5000;60,7500
+202511;Estoque sem Giro;0,0800;MenorMelhor;;
+202511;Taxa de Ruptura;0,0300;MenorMelhor;;
+202511;Pontualidade Fornecedor;0,9200;MaiorMelhor;;
+202512;Fill Rate;0,9500;MaiorMelhor;;
+202512;OTIF;0,9000;MaiorMelhor;;
+202512;Acuracidade;0,9800;MaiorMelhor;;
+202512;Giro de Estoque;4,0000;MaiorMelhor;;
+202512;Cobertura;45,0000;Faixa;40,5000;60,7500
+202512;Estoque sem Giro;0,0800;MenorMelhor;;
+202512;Taxa de Ruptura;0,0300;MenorMelhor;;
+202512;Pontualidade Fornecedor;0,9200;MaiorMelhor;;
+202601;Fill Rate;0,9500;MaiorMelhor;;
+202601;OTIF;0,9000;MaiorMelhor;;
+202601;Acuracidade;0,9800;MaiorMelhor;;
+202601;Giro de Estoque;4,0000;MaiorMelhor;;
+202601;Cobertura;45,0000;Faixa;40,5000;60,7500
+202601;Estoque sem Giro;0,0800;MenorMelhor;;
+202601;Taxa de Ruptura;0,0300;MenorMelhor;;
+202601;Pontualidade Fornecedor;0,9200;MaiorMelhor;;
+202602;Fill Rate;0,9500;MaiorMelhor;;
+202602;OTIF;0,9000;MaiorMelhor;;
+202602;Acuracidade;0,9800;MaiorMelhor;;
+202602;Giro de Estoque;4,0000;MaiorMelhor;;
+202602;Cobertura;45,0000;Faixa;40,5000;60,7500
+202602;Estoque sem Giro;0,0800;MenorMelhor;;
+202602;Taxa de Ruptura;0,0300;MenorMelhor;;
+202602;Pontualidade Fornecedor;0,9200;MaiorMelhor;;
+202603;Fill Rate;0,9500;MaiorMelhor;;
+202603;OTIF;0,9000;MaiorMelhor;;
+202603;Acuracidade;0,9800;MaiorMelhor;;
+202603;Giro de Estoque;4,0000;MaiorMelhor;;
+202603;Cobertura;45,0000;Faixa;40,5000;60,7500
+202603;Estoque sem Giro;0,0800;MenorMelhor;;
+202603;Taxa de Ruptura;0,0300;MenorMelhor;;
+202603;Pontualidade Fornecedor;0,9200;MaiorMelhor;;
+202604;Fill Rate;0,9500;MaiorMelhor;;
+202604;OTIF;0,9000;MaiorMelhor;;
+202604;Acuracidade;0,9800;MaiorMelhor;;
+202604;Giro de Estoque;4,0000;MaiorMelhor;;
+202604;Cobertura;45,0000;Faixa;40,5000;60,7500
+202604;Estoque sem Giro;0,0800;MenorMelhor;;
+202604;Taxa de Ruptura;0,0300;MenorMelhor;;
+202604;Pontualidade Fornecedor;0,9200;MaiorMelhor;;
+202605;Fill Rate;0,9500;MaiorMelhor;;
+202605;OTIF;0,9000;MaiorMelhor;;
+202605;Acuracidade;0,9800;MaiorMelhor;;
+202605;Giro de Estoque;4,0000;MaiorMelhor;;
+202605;Cobertura;45,0000;Faixa;40,5000;60,7500
+202605;Estoque sem Giro;0,0800;MenorMelhor;;
+202605;Taxa de Ruptura;0,0300;MenorMelhor;;
+202605;Pontualidade Fornecedor;0,9200;MaiorMelhor;;
+202606;Fill Rate;0,9500;MaiorMelhor;;
+202606;OTIF;0,9000;MaiorMelhor;;
+202606;Acuracidade;0,9800;MaiorMelhor;;
+202606;Giro de Estoque;4,0000;MaiorMelhor;;
+202606;Cobertura;45,0000;Faixa;40,5000;60,7500
+202606;Estoque sem Giro;0,0800;MenorMelhor;;
+202606;Taxa de Ruptura;0,0300;MenorMelhor;;
+202606;Pontualidade Fornecedor;0,9200;MaiorMelhor;;
+202607;Fill Rate;0,9500;MaiorMelhor;;
+202607;OTIF;0,9000;MaiorMelhor;;
+202607;Acuracidade;0,9800;MaiorMelhor;;
+202607;Giro de Estoque;4,0000;MaiorMelhor;;
+202607;Cobertura;45,0000;Faixa;40,5000;60,7500
+202607;Estoque sem Giro;0,0800;MenorMelhor;;
+202607;Taxa de Ruptura;0,0300;MenorMelhor;;
+202607;Pontualidade Fornecedor;0,9200;MaiorMelhor;;
+202608;Fill Rate;0,9500;MaiorMelhor;;
+202608;OTIF;0,9000;MaiorMelhor;;
+202608;Acuracidade;0,9800;MaiorMelhor;;
+202608;Giro de Estoque;4,0000;MaiorMelhor;;
+202608;Cobertura;45,0000;Faixa;40,5000;60,7500
+202608;Estoque sem Giro;0,0800;MenorMelhor;;
+202608;Taxa de Ruptura;0,0300;MenorMelhor;;
+202608;Pontualidade Fornecedor;0,9200;MaiorMelhor;;

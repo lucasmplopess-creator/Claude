@@ -1,0 +1,251 @@
+﻿SK_Item;CodigoItem;Descricao;Categoria;Subcategoria;UnidadeMedida;CurvaABC;Criticidade;EstoqueMinimo;EstoqueMaximo;PontoPedido;LoteMinimoCompra;LeadTimePadraoDias;CustoPadrao;Perecivel;ItemControlado;SK_FornecedorPreferencial;StatusItem;DataCadastro
+1;IT01001;Disjuntores Material Ref 1001;Material Elétrico;Disjuntores;CX;;Média;18;65;22;8;7;137,4400;NAO;NAO;23;Ativo;2023-12-16
+2;IT01002;Vedação Material Ref 1002;Material Hidráulico;Vedação;PAR;;Alta;127;753;166;58;10;222,1600;NAO;NAO;27;Inativo;2023-02-17
+3;IT01003;Proteção Respiratória EPI Ref 1003;EPI;Proteção Respiratória;PAR;;Baixa;64;243;156;31;45;110,4900;NAO;SIM;25;Ativo;2023-10-25
+4;IT01004;Corte Ferramentas Ref 1004;Ferramentas;Corte;CX;;Alta;139;780;205;66;15;246,1800;NAO;NAO;13;Ativo;2020-07-24
+5;IT01005;Rolamentos Peças Ref 1005;Peças de Reposição;Rolamentos;KG;;Baixa;42;232;72;22;20;1818,6300;NAO;NAO;8;Ativo;2020-06-18
+6;IT01006;Óleos Lubrificantes Ref 1006;Lubrificantes;Óleos;KG;;Média;145;752;338;97;30;177,5600;SIM;NAO;8;Ativo;2022-03-26
+7;IT01007;Papelaria Material Ref 1007;Material de Escritório;Papelaria;PC;;Média;103;600;211;54;30;25,4100;NAO;NAO;24;Ativo;2024-04-27
+8;IT01008;Utensílios Limpeza Ref 1008;Limpeza e Higiene;Utensílios;KG;;Média;91;355;113;47;7;72,6700;NAO;NAO;21;Ativo;2020-08-28
+9;IT01009;Disjuntores Material Ref 1009;Material Elétrico;Disjuntores;KG;;Média;113;548;264;50;45;91,2300;NAO;NAO;1;Ativo;2020-03-06
+10;IT01010;Vedação Material Ref 1010;Material Hidráulico;Vedação;MT;;Baixa;68;248;128;45;20;151,7300;NAO;NAO;11;Ativo;2020-08-04
+11;IT01011;Proteção Respiratória EPI Ref 1011;EPI;Proteção Respiratória;UN;;Alta;101;363;188;87;15;27,7100;NAO;SIM;31;Ativo;2023-04-23
+12;IT01012;Manuais Ferramentas Ref 1012;Ferramentas;Manuais;CX;;Alta;144;646;369;75;45;450,7100;NAO;NAO;1;Ativo;2023-10-29
+13;IT01013;Rolamentos Peças Ref 1013;Peças de Reposição;Rolamentos;CX;;Baixa;30;95;86;19;45;1213,4300;NAO;NAO;8;Ativo;2023-06-30
+14;IT01014;Graxas Lubrificantes Ref 1014;Lubrificantes;Graxas;LT;;Média;176;908;308;99;20;204,1600;SIM;NAO;29;Ativo;2023-03-04
+15;IT01015;Informática Material Ref 1015;Material de Escritório;Informática;PC;;Média;119;543;178;59;15;38,7400;NAO;NAO;29;Ativo;2020-08-08
+16;IT01016;Químicos Limpeza Ref 1016;Limpeza e Higiene;Químicos;CX;;Baixa;26;108;43;25;10;27,3100;NAO;NAO;5;Ativo;2020-11-08
+17;IT01017;Conectores Material Ref 1017;Material Elétrico;Conectores;PAR;;Média;42;128;78;18;30;134,4800;NAO;NAO;31;Inativo;2020-12-21
+18;IT01018;Registros Material Ref 1018;Material Hidráulico;Registros;PAR;;Média;117;609;211;70;20;143,8500;NAO;NAO;15;Ativo;2020-07-12
+19;IT01019;Calçados EPI Ref 1019;EPI;Calçados;CX;;Baixa;57;315;96;29;20;67,7600;NAO;SIM;35;Inativo;2021-03-17
+20;IT01020;Manuais Ferramentas Ref 1020;Ferramentas;Manuais;CX;;Média;28;116;49;32;10;139,1000;NAO;NAO;22;Ativo;2021-02-15
+21;IT01021;Filtros Peças Ref 1021;Peças de Reposição;Filtros;UN;;Baixa;105;551;137;68;7;1156,2900;NAO;NAO;23;Ativo;2019-05-21
+22;IT01022;Fluidos Lubrificantes Ref 1022;Lubrificantes;Fluidos;MT;;Média;12;45;15;7;7;53,0400;NAO;NAO;14;Ativo;2020-06-08
+23;IT01023;Informática Material Ref 1023;Material de Escritório;Informática;KG;;Alta;93;325;114;45;7;20,0400;NAO;NAO;2;Ativo;2022-03-25
+24;IT01024;Utensílios Limpeza Ref 1024;Limpeza e Higiene;Utensílios;PC;;Média;26;132;45;28;10;70,9400;NAO;NAO;20;Ativo;2022-05-14
+25;IT01025;Cabos Material Ref 1025;Material Elétrico;Cabos;LT;;Média;62;255;146;42;30;235,0000;NAO;NAO;1;Ativo;2023-08-12
+26;IT01026;Vedação Material Ref 1026;Material Hidráulico;Vedação;PC;;Média;173;745;292;90;20;38,7700;NAO;NAO;18;Ativo;2024-02-27
+27;IT01027;Calçados EPI Ref 1027;EPI;Calçados;UN;;Média;145;796;212;67;15;65,3200;NAO;SIM;29;Ativo;2021-08-09
+28;IT01028;Corte Ferramentas Ref 1028;Ferramentas;Corte;KG;;Média;42;227;91;37;20;341,7100;NAO;NAO;18;Ativo;2021-11-24
+29;IT01029;Correias Peças Ref 1029;Peças de Reposição;Correias;MT;;Média;105;518;142;55;10;195,8600;NAO;NAO;2;Ativo;2020-03-29
+30;IT01030;Graxas Lubrificantes Ref 1030;Lubrificantes;Graxas;PC;;Média;40;161;72;24;20;212,1700;NAO;NAO;30;Ativo;2020-05-29
+31;IT01031;Papelaria Material Ref 1031;Material de Escritório;Papelaria;CX;;Média;40;203;74;17;30;17,2500;NAO;NAO;31;Ativo;2022-04-22
+32;IT01032;Utensílios Limpeza Ref 1032;Limpeza e Higiene;Utensílios;UN;;Baixa;111;393;207;96;15;44,6300;NAO;NAO;9;Ativo;2024-06-18
+33;IT01033;Cabos Material Ref 1033;Material Elétrico;Cabos;KG;;Média;51;155;122;53;20;165,3300;NAO;NAO;29;Ativo;2024-05-31
+34;IT01034;Tubos Material Ref 1034;Material Hidráulico;Tubos;PC;;Média;103;332;136;72;7;57,7500;NAO;NAO;10;Ativo;2022-02-26
+35;IT01035;Proteção Respiratória EPI Ref 1035;EPI;Proteção Respiratória;CX;;Baixa;36;193;63;20;20;26,9800;NAO;SIM;25;Ativo;2021-06-25
+36;IT01036;Medição Ferramentas Ref 1036;Ferramentas;Medição;UN;;Baixa;89;523;288;100;30;968,3000;NAO;NAO;14;Ativo;2020-06-25
+37;IT01037;Rolamentos Peças Ref 1037;Peças de Reposição;Rolamentos;MT;;Média;23;117;31;16;7;275,7500;NAO;NAO;15;Ativo;2020-08-02
+38;IT01038;Fluidos Lubrificantes Ref 1038;Lubrificantes;Fluidos;PC;;Baixa;21;102;31;10;15;279,7300;NAO;NAO;8;Ativo;2022-08-19
+39;IT01039;Papelaria Material Ref 1039;Material de Escritório;Papelaria;PAR;;Média;139;665;184;67;10;86,8400;NAO;NAO;19;Ativo;2021-08-17
+40;IT01040;Utensílios Limpeza Ref 1040;Limpeza e Higiene;Utensílios;UN;;Baixa;48;156;108;30;30;28,8300;NAO;NAO;21;Ativo;2019-02-22
+41;IT01041;Cabos Material Ref 1041;Material Elétrico;Cabos;PC;;Baixa;118;708;220;51;30;97,9400;NAO;NAO;3;Ativo;2019-12-25
+42;IT01042;Vedação Material Ref 1042;Material Hidráulico;Vedação;UN;;Média;49;267;115;33;30;97,7600;NAO;NAO;27;Ativo;2022-10-04
+43;IT01043;Proteção Cabeça EPI Ref 1043;EPI;Proteção Cabeça;PAR;;Média;47;197;72;25;15;125,7100;NAO;SIM;30;Ativo;2020-05-31
+44;IT01044;Medição Ferramentas Ref 1044;Ferramentas;Medição;MT;;Alta;112;518;140;61;7;163,0700;NAO;NAO;34;Ativo;2023-03-30
+45;IT01045;Vedantes Peças Ref 1045;Peças de Reposição;Vedantes;PC;;Média;60;232;179;59;30;917,2500;NAO;NAO;2;Ativo;2022-05-31
+46;IT01046;Óleos Lubrificantes Ref 1046;Lubrificantes;Óleos;UN;;Média;23;137;55;24;20;218,3300;NAO;NAO;10;Ativo;2023-01-07
+47;IT01047;Informática Material Ref 1047;Material de Escritório;Informática;MT;;Alta;26;121;55;22;20;43,2100;NAO;NAO;33;Ativo;2019-10-07
+48;IT01048;Químicos Limpeza Ref 1048;Limpeza e Higiene;Químicos;PC;;Média;77;232;202;63;30;27,5200;NAO;NAO;32;Ativo;2021-07-03
+49;IT01049;Conectores Material Ref 1049;Material Elétrico;Conectores;PC;;Média;94;527;148;41;20;120,0600;NAO;NAO;25;Ativo;2023-05-08
+50;IT01050;Vedação Material Ref 1050;Material Hidráulico;Vedação;PAR;;Média;82;409;159;58;20;31,2100;NAO;NAO;10;Ativo;2019-03-17
+51;IT01051;Proteção Mãos EPI Ref 1051;EPI;Proteção Mãos;UN;;Baixa;42;241;100;44;20;69,7600;NAO;SIM;27;Ativo;2024-06-09
+52;IT01052;Elétricas Ferramentas Ref 1052;Ferramentas;Elétricas;PAR;;Média;118;584;241;62;30;132,3500;NAO;NAO;35;Ativo;2020-10-10
+53;IT01053;Vedantes Peças Ref 1053;Peças de Reposição;Vedantes;CX;;Baixa;14;54;36;7;45;1451,2800;NAO;NAO;28;Ativo;2023-04-07
+54;IT01054;Fluidos Lubrificantes Ref 1054;Lubrificantes;Fluidos;PAR;;Alta;27;85;39;12;15;216,2900;NAO;NAO;28;Ativo;2021-12-23
+55;IT01055;Informática Material Ref 1055;Material de Escritório;Informática;PC;;Média;112;465;141;63;7;47,8100;NAO;NAO;10;Ativo;2022-07-30
+56;IT01056;Descartáveis Limpeza Ref 1056;Limpeza e Higiene;Descartáveis;CX;;Alta;113;569;180;50;20;36,6900;NAO;NAO;23;Ativo;2020-09-04
+57;IT01057;Conectores Material Ref 1057;Material Elétrico;Conectores;MT;;Média;73;242;118;34;20;201,2400;NAO;NAO;19;Ativo;2020-08-27
+58;IT01058;Tubos Material Ref 1058;Material Hidráulico;Tubos;UN;;Baixa;108;576;207;50;30;225,2600;NAO;NAO;32;Ativo;2024-01-24
+59;IT01059;Proteção Respiratória EPI Ref 1059;EPI;Proteção Respiratória;PC;;Baixa;35;170;48;19;10;109,2900;NAO;SIM;9;Ativo;2024-01-25
+60;IT01060;Manuais Ferramentas Ref 1060;Ferramentas;Manuais;KG;;Baixa;33;189;131;33;45;317,9800;NAO;NAO;12;Ativo;2023-05-30
+61;IT01061;Filtros Peças Ref 1061;Peças de Reposição;Filtros;PAR;;Média;180;1050;260;80;15;764,4500;NAO;NAO;22;Ativo;2021-08-17
+62;IT01062;Óleos Lubrificantes Ref 1062;Lubrificantes;Óleos;PAR;;Baixa;171;717;444;91;45;72,9900;NAO;NAO;26;Inativo;2022-01-03
+63;IT01063;Papelaria Material Ref 1063;Material de Escritório;Papelaria;KG;;Alta;72;354;174;51;30;39,0900;NAO;NAO;15;Ativo;2022-06-22
+64;IT01064;Utensílios Limpeza Ref 1064;Limpeza e Higiene;Utensílios;KG;;Média;96;550;232;45;45;29,9800;NAO;NAO;8;Ativo;2024-04-21
+65;IT01065;Cabos Material Ref 1065;Material Elétrico;Cabos;PC;;Baixa;37;161;110;36;30;112,0900;NAO;NAO;35;Ativo;2023-03-01
+66;IT01066;Conexões Material Ref 1066;Material Hidráulico;Conexões;UN;;Média;72;422;171;49;30;180,8200;NAO;NAO;14;Ativo;2024-04-30
+67;IT01067;Proteção Mãos EPI Ref 1067;EPI;Proteção Mãos;UN;;Média;27;133;51;12;30;125,2000;NAO;SIM;13;Ativo;2024-04-27
+68;IT01068;Corte Ferramentas Ref 1068;Ferramentas;Corte;CX;;Baixa;16;64;25;18;7;144,8500;NAO;NAO;14;Ativo;2023-04-17
+69;IT01069;Correias Peças Ref 1069;Peças de Reposição;Correias;KG;;Baixa;135;646;179;65;10;852,0900;NAO;NAO;10;Ativo;2022-01-11
+70;IT01070;Graxas Lubrificantes Ref 1070;Lubrificantes;Graxas;CX;;Média;10;54;18;13;10;251,9600;NAO;NAO;17;Ativo;2023-02-28
+71;IT01071;Informática Material Ref 1071;Material de Escritório;Informática;LT;;Média;94;313;152;58;15;44,5700;NAO;NAO;3;Ativo;2024-02-05
+72;IT01072;Utensílios Limpeza Ref 1072;Limpeza e Higiene;Utensílios;MT;;Média;81;449;97;34;7;40,1300;NAO;NAO;32;Ativo;2021-06-27
+73;IT01073;Cabos Material Ref 1073;Material Elétrico;Cabos;LT;;Baixa;31;152;48;25;10;278,0500;NAO;NAO;25;Ativo;2021-12-22
+74;IT01074;Registros Material Ref 1074;Material Hidráulico;Registros;PAR;;Média;44;218;179;45;45;87,1000;NAO;NAO;14;Ativo;2023-12-24
+75;IT01075;Proteção Mãos EPI Ref 1075;EPI;Proteção Mãos;PC;;Média;64;274;265;67;45;59,5100;NAO;SIM;10;Ativo;2021-08-29
+76;IT01076;Manuais Ferramentas Ref 1076;Ferramentas;Manuais;LT;;Alta;22;120;55;11;45;144,5200;NAO;NAO;22;Ativo;2021-04-21
+77;IT01077;Filtros Peças Ref 1077;Peças de Reposição;Filtros;KG;;Média;75;290;330;85;45;1454,8800;NAO;NAO;33;Ativo;2022-09-06
+78;IT01078;Graxas Lubrificantes Ref 1078;Lubrificantes;Graxas;CX;;Baixa;12;46;24;12;15;90,2800;SIM;NAO;2;Ativo;2022-09-09
+79;IT01079;Impressão Material Ref 1079;Material de Escritório;Impressão;CX;;Baixa;37;150;53;16;15;26,2200;NAO;NAO;26;Ativo;2023-02-26
+80;IT01080;Utensílios Limpeza Ref 1080;Limpeza e Higiene;Utensílios;KG;;Média;17;68;32;11;20;81,6800;NAO;NAO;21;Ativo;2022-03-08
+81;IT01081;Cabos Material Ref 1081;Material Elétrico;Cabos;PC;;Média;28;107;35;15;7;270,2900;NAO;NAO;29;Ativo;2020-03-17
+82;IT01082;Tubos Material Ref 1082;Material Hidráulico;Tubos;UN;;Média;20;100;45;13;30;70,7100;NAO;NAO;4;Inativo;2020-09-09
+83;IT01083;Proteção Mãos EPI Ref 1083;EPI;Proteção Mãos;CX;;Alta;49;257;77;60;7;107,7900;NAO;SIM;35;Ativo;2021-10-21
+84;IT01084;Medição Ferramentas Ref 1084;Ferramentas;Medição;KG;;Média;110;356;143;72;7;130,3100;NAO;NAO;26;Ativo;2021-05-05
+85;IT01085;Filtros Peças Ref 1085;Peças de Reposição;Filtros;KG;;Alta;9;46;20;6;30;228,5200;NAO;NAO;7;Ativo;2022-04-21
+86;IT01086;Graxas Lubrificantes Ref 1086;Lubrificantes;Graxas;UN;;Média;34;181;64;30;15;161,7100;NAO;NAO;33;Ativo;2023-05-09
+87;IT01087;Informática Material Ref 1087;Material de Escritório;Informática;CX;;Alta;105;361;164;89;10;31,7300;NAO;NAO;10;Ativo;2022-09-04
+88;IT01088;Químicos Limpeza Ref 1088;Limpeza e Higiene;Químicos;LT;;Média;122;530;244;61;30;23,0500;NAO;NAO;21;Ativo;2022-07-08
+89;IT01089;Lâmpadas Material Ref 1089;Material Elétrico;Lâmpadas;KG;;Média;21;100;31;10;15;84,0200;NAO;NAO;20;Ativo;2019-03-19
+90;IT01090;Tubos Material Ref 1090;Material Hidráulico;Tubos;MT;;Média;41;185;52;23;7;74,1400;NAO;NAO;3;Ativo;2023-07-17
+91;IT01091;Proteção Mãos EPI Ref 1091;EPI;Proteção Mãos;PAR;;Média;54;293;70;35;7;49,6100;NAO;SIM;6;Ativo;2019-12-20
+92;IT01092;Manuais Ferramentas Ref 1092;Ferramentas;Manuais;KG;;Média;58;237;123;33;30;266,7600;NAO;NAO;22;Ativo;2019-04-18
+93;IT01093;Filtros Peças Ref 1093;Peças de Reposição;Filtros;LT;;Baixa;14;78;26;12;15;174,3900;NAO;NAO;22;Ativo;2022-09-21
+94;IT01094;Óleos Lubrificantes Ref 1094;Lubrificantes;Óleos;UN;;Média;35;167;108;24;45;311,9900;NAO;NAO;22;Ativo;2022-10-04
+95;IT01095;Impressão Material Ref 1095;Material de Escritório;Impressão;LT;;Média;54;271;168;57;30;74,6800;NAO;NAO;24;Ativo;2024-05-01
+96;IT01096;Químicos Limpeza Ref 1096;Limpeza e Higiene;Químicos;PAR;;Alta;63;245;103;60;10;30,6500;NAO;NAO;35;Ativo;2023-12-15
+97;IT01097;Cabos Material Ref 1097;Material Elétrico;Cabos;PAR;;Média;103;359;250;74;30;193,2300;NAO;NAO;11;Ativo;2019-03-31
+98;IT01098;Vedação Material Ref 1098;Material Hidráulico;Vedação;MT;;Média;69;362;180;55;30;73,4900;NAO;NAO;16;Ativo;2023-07-15
+99;IT01099;Calçados EPI Ref 1099;EPI;Calçados;KG;;Baixa;41;180;75;17;30;137,1800;NAO;SIM;33;Ativo;2024-06-01
+100;IT01100;Elétricas Ferramentas Ref 1100;Ferramentas;Elétricas;KG;;Média;56;249;120;64;15;891,5600;NAO;NAO;7;Ativo;2021-11-22
+101;IT01101;Rolamentos Peças Ref 1101;Peças de Reposição;Rolamentos;CX;;Baixa;62;267;181;60;30;427,8700;NAO;NAO;23;Ativo;2021-04-29
+102;IT01102;Óleos Lubrificantes Ref 1102;Lubrificantes;Óleos;UN;;Baixa;40;123;53;28;7;129,1700;SIM;NAO;10;Ativo;2020-08-10
+103;IT01103;Informática Material Ref 1103;Material de Escritório;Informática;UN;;Média;25;143;44;14;20;59,5900;NAO;NAO;10;Ativo;2023-01-29
+104;IT01104;Utensílios Limpeza Ref 1104;Limpeza e Higiene;Utensílios;PC;;Baixa;13;48;26;13;15;40,4900;NAO;NAO;30;Ativo;2023-09-10
+105;IT01105;Conectores Material Ref 1105;Material Elétrico;Conectores;UN;;Média;10;39;13;5;10;176,0200;NAO;NAO;16;Ativo;2020-01-19
+106;IT01106;Tubos Material Ref 1106;Material Hidráulico;Tubos;LT;;Alta;44;262;99;27;30;98,5200;NAO;NAO;31;Inativo;2021-03-03
+107;IT01107;Proteção Respiratória EPI Ref 1107;EPI;Proteção Respiratória;UN;;Baixa;6;30;11;5;15;42,7500;NAO;SIM;22;Ativo;2020-12-22
+108;IT01108;Medição Ferramentas Ref 1108;Ferramentas;Medição;CX;;Baixa;38;169;60;16;20;885,9600;NAO;NAO;5;Ativo;2024-04-16
+109;IT01109;Vedantes Peças Ref 1109;Peças de Reposição;Vedantes;MT;;Baixa;23;90;31;18;7;143,2600;NAO;NAO;35;Ativo;2019-03-16
+110;IT01110;Fluidos Lubrificantes Ref 1110;Lubrificantes;Fluidos;KG;;Média;36;121;117;27;45;83,3100;NAO;NAO;29;Ativo;2021-03-02
+111;IT01111;Informática Material Ref 1111;Material de Escritório;Informática;MT;;Alta;45;146;118;37;30;102,2400;NAO;NAO;12;Ativo;2020-10-19
+112;IT01112;Químicos Limpeza Ref 1112;Limpeza e Higiene;Químicos;MT;;Média;97;339;197;50;30;18,9200;NAO;NAO;3;Ativo;2024-02-10
+113;IT01113;Lâmpadas Material Ref 1113;Material Elétrico;Lâmpadas;KG;;Média;30;147;45;32;7;180,6500;NAO;NAO;11;Ativo;2019-10-20
+114;IT01114;Vedação Material Ref 1114;Material Hidráulico;Vedação;UN;;Média;14;82;24;10;15;30,0100;NAO;NAO;29;Ativo;2021-01-31
+115;IT01115;Calçados EPI Ref 1115;EPI;Calçados;UN;;Alta;55;211;112;43;20;107,0400;NAO;SIM;12;Ativo;2021-03-03
+116;IT01116;Manuais Ferramentas Ref 1116;Ferramentas;Manuais;MT;;Média;27;155;69;21;30;278,3200;NAO;NAO;9;Ativo;2021-07-14
+117;IT01117;Correias Peças Ref 1117;Peças de Reposição;Correias;PC;;Média;78;465;177;33;45;1532,8700;NAO;NAO;5;Ativo;2020-08-17
+118;IT01118;Graxas Lubrificantes Ref 1118;Lubrificantes;Graxas;CX;;Alta;59;241;223;55;45;275,6700;NAO;NAO;9;Ativo;2021-10-08
+119;IT01119;Papelaria Material Ref 1119;Material de Escritório;Papelaria;UN;;Média;43;243;128;42;30;32,4000;NAO;NAO;31;Ativo;2023-04-25
+120;IT01120;Descartáveis Limpeza Ref 1120;Limpeza e Higiene;Descartáveis;LT;;Média;10;44;41;10;45;61,6600;NAO;NAO;12;Ativo;2019-09-22
+121;IT01121;Conectores Material Ref 1121;Material Elétrico;Conectores;KG;;Baixa;76;266;221;72;30;153,5200;NAO;NAO;15;Ativo;2024-04-10
+122;IT01122;Registros Material Ref 1122;Material Hidráulico;Registros;LT;;Média;25;122;66;21;30;168,1800;NAO;NAO;33;Ativo;2022-04-27
+123;IT01123;Proteção Mãos EPI Ref 1123;EPI;Proteção Mãos;PAR;;Baixa;100;469;147;47;15;34,8300;NAO;SIM;6;Inativo;2022-08-06
+124;IT01124;Medição Ferramentas Ref 1124;Ferramentas;Medição;LT;;Média;51;289;231;60;45;660,1600;NAO;NAO;20;Ativo;2023-07-07
+125;IT01125;Vedantes Peças Ref 1125;Peças de Reposição;Vedantes;KG;;Média;15;66;29;10;20;443,2600;NAO;NAO;21;Ativo;2020-10-15
+126;IT01126;Fluidos Lubrificantes Ref 1126;Lubrificantes;Fluidos;CX;;Média;43;143;69;26;15;379,0300;NAO;NAO;16;Ativo;2019-04-14
+127;IT01127;Informática Material Ref 1127;Material de Escritório;Informática;PC;;Média;151;876;199;72;10;94,3900;NAO;NAO;11;Ativo;2021-11-20
+128;IT01128;Descartáveis Limpeza Ref 1128;Limpeza e Higiene;Descartáveis;CX;;Média;39;230;71;24;20;38,8400;NAO;NAO;4;Ativo;2021-10-10
+129;IT01129;Conectores Material Ref 1129;Material Elétrico;Conectores;PAR;;Média;8;41;11;4;10;108,5300;NAO;NAO;3;Ativo;2022-03-13
+130;IT01130;Conexões Material Ref 1130;Material Hidráulico;Conexões;LT;;Média;46;177;76;23;20;73,2300;NAO;NAO;8;Ativo;2019-07-18
+131;IT01131;Calçados EPI Ref 1131;EPI;Calçados;LT;;Média;197;709;295;98;15;55,0600;NAO;SIM;3;Inativo;2019-10-08
+132;IT01132;Medição Ferramentas Ref 1132;Ferramentas;Medição;KG;;Alta;39;226;116;38;30;870,4500;NAO;NAO;20;Ativo;2021-11-04
+133;IT01133;Vedantes Peças Ref 1133;Peças de Reposição;Vedantes;MT;;Média;31;103;55;24;15;1068,8900;NAO;NAO;2;Ativo;2020-06-27
+134;IT01134;Fluidos Lubrificantes Ref 1134;Lubrificantes;Fluidos;LT;;Média;54;240;237;61;45;245,5800;SIM;NAO;25;Ativo;2022-10-26
+135;IT01135;Papelaria Material Ref 1135;Material de Escritório;Papelaria;MT;;Média;130;553;170;86;7;12,1200;NAO;NAO;27;Ativo;2022-06-06
+136;IT01136;Descartáveis Limpeza Ref 1136;Limpeza e Higiene;Descartáveis;PC;;Média;93;435;131;57;10;66,7100;NAO;NAO;25;Ativo;2019-12-21
+137;IT01137;Conectores Material Ref 1137;Material Elétrico;Conectores;KG;;Média;50;271;129;26;45;284,7800;NAO;NAO;13;Ativo;2020-07-25
+138;IT01138;Registros Material Ref 1138;Material Hidráulico;Registros;MT;;Média;179;908;272;93;15;54,0500;NAO;NAO;23;Ativo;2024-03-28
+139;IT01139;Proteção Respiratória EPI Ref 1139;EPI;Proteção Respiratória;PAR;;Alta;90;528;147;43;20;46,1600;NAO;SIM;3;Ativo;2023-01-02
+140;IT01140;Manuais Ferramentas Ref 1140;Ferramentas;Manuais;KG;;Baixa;38;208;82;33;20;350,4400;NAO;NAO;18;Ativo;2022-06-14
+141;IT01141;Correias Peças Ref 1141;Peças de Reposição;Correias;KG;;Baixa;59;195;211;51;45;375,8300;NAO;NAO;7;Ativo;2019-10-09
+142;IT01142;Óleos Lubrificantes Ref 1142;Lubrificantes;Óleos;MT;;Média;217;1223;501;95;45;349,4900;SIM;NAO;19;Ativo;2022-08-15
+143;IT01143;Papelaria Material Ref 1143;Material de Escritório;Papelaria;UN;;Baixa;22;122;45;11;30;86,7500;NAO;NAO;12;Ativo;2023-09-12
+144;IT01144;Químicos Limpeza Ref 1144;Limpeza e Higiene;Químicos;PAR;;Baixa;8;42;18;7;20;74,6100;NAO;NAO;3;Inativo;2022-03-09
+145;IT01145;Cabos Material Ref 1145;Material Elétrico;Cabos;CX;;Baixa;43;193;120;26;45;294,0800;NAO;NAO;30;Ativo;2023-07-15
+146;IT01146;Tubos Material Ref 1146;Material Hidráulico;Tubos;PAR;;Média;62;323;231;56;45;68,6200;NAO;NAO;13;Ativo;2023-10-20
+147;IT01147;Calçados EPI Ref 1147;EPI;Calçados;MT;;Média;36;214;150;38;45;119,1100;NAO;SIM;16;Inativo;2021-02-24
+148;IT01148;Elétricas Ferramentas Ref 1148;Ferramentas;Elétricas;PC;;Média;42;127;85;22;30;442,3800;NAO;NAO;16;Ativo;2019-08-31
+149;IT01149;Vedantes Peças Ref 1149;Peças de Reposição;Vedantes;PC;;Baixa;62;314;153;30;45;455,0200;NAO;NAO;19;Ativo;2020-03-28
+150;IT01150;Óleos Lubrificantes Ref 1150;Lubrificantes;Óleos;MT;;Baixa;49;250;120;35;30;342,7000;SIM;NAO;14;Ativo;2022-10-25
+151;IT01151;Impressão Material Ref 1151;Material de Escritório;Impressão;UN;;Alta;15;86;48;11;45;80,9700;NAO;NAO;33;Ativo;2022-01-04
+152;IT01152;Químicos Limpeza Ref 1152;Limpeza e Higiene;Químicos;UN;;Baixa;80;380;292;71;45;22,5000;NAO;NAO;29;Ativo;2021-07-17
+153;IT01153;Disjuntores Material Ref 1153;Material Elétrico;Disjuntores;UN;;Média;64;251;109;34;20;155,8900;NAO;NAO;1;Ativo;2022-03-30
+154;IT01154;Tubos Material Ref 1154;Material Hidráulico;Tubos;MT;;Alta;60;192;72;26;7;31,4200;NAO;NAO;27;Ativo;2019-10-05
+155;IT01155;Calçados EPI Ref 1155;EPI;Calçados;PC;;Baixa;106;535;207;76;20;55,2000;NAO;SIM;9;Ativo;2020-12-13
+156;IT01156;Manuais Ferramentas Ref 1156;Ferramentas;Manuais;PAR;;Alta;94;517;213;40;45;211,2300;NAO;NAO;20;Ativo;2023-01-12
+157;IT01157;Vedantes Peças Ref 1157;Peças de Reposição;Vedantes;PC;;Baixa;70;250;137;67;15;766,1100;NAO;NAO;3;Ativo;2021-05-08
+158;IT01158;Fluidos Lubrificantes Ref 1158;Lubrificantes;Fluidos;MT;;Média;68;325;118;75;10;238,9300;SIM;NAO;4;Ativo;2019-04-01
+159;IT01159;Informática Material Ref 1159;Material de Escritório;Informática;CX;;Baixa;41;245;60;40;7;37,9300;NAO;NAO;21;Ativo;2023-05-02
+160;IT01160;Utensílios Limpeza Ref 1160;Limpeza e Higiene;Utensílios;KG;;Alta;32;136;91;20;45;61,2000;NAO;NAO;12;Ativo;2021-05-24
+161;IT01161;Conectores Material Ref 1161;Material Elétrico;Conectores;MT;;Média;54;214;89;26;20;65,5900;NAO;NAO;20;Ativo;2023-03-26
+162;IT01162;Vedação Material Ref 1162;Material Hidráulico;Vedação;LT;;Média;40;230;53;19;10;56,2000;NAO;NAO;27;Ativo;2019-10-02
+163;IT01163;Calçados EPI Ref 1163;EPI;Calçados;PC;;Baixa;38;125;62;18;20;41,6900;NAO;SIM;4;Ativo;2022-10-11
+164;IT01164;Manuais Ferramentas Ref 1164;Ferramentas;Manuais;CX;;Baixa;32;117;83;17;45;994,5200;NAO;NAO;22;Ativo;2024-02-05
+165;IT01165;Rolamentos Peças Ref 1165;Peças de Reposição;Rolamentos;CX;;Média;41;182;92;17;45;339,2900;NAO;NAO;14;Ativo;2020-05-05
+166;IT01166;Fluidos Lubrificantes Ref 1166;Lubrificantes;Fluidos;LT;;Baixa;31;117;99;23;45;111,6700;NAO;NAO;31;Ativo;2020-10-17
+167;IT01167;Papelaria Material Ref 1167;Material de Escritório;Papelaria;LT;;Baixa;61;186;82;31;10;33,0800;NAO;NAO;27;Ativo;2020-02-06
+168;IT01168;Descartáveis Limpeza Ref 1168;Limpeza e Higiene;Descartáveis;KG;;Baixa;78;394;162;42;30;25,4000;NAO;NAO;32;Ativo;2022-08-07
+169;IT01169;Conectores Material Ref 1169;Material Elétrico;Conectores;LT;;Baixa;110;491;148;57;10;144,1400;NAO;NAO;4;Ativo;2023-09-15
+170;IT01170;Tubos Material Ref 1170;Material Hidráulico;Tubos;UN;;Baixa;51;249;118;50;20;205,2300;NAO;NAO;1;Ativo;2021-07-22
+171;IT01171;Proteção Respiratória EPI Ref 1171;EPI;Proteção Respiratória;LT;;Média;89;271;153;48;20;24,7900;NAO;SIM;1;Inativo;2023-01-19
+172;IT01172;Medição Ferramentas Ref 1172;Ferramentas;Medição;CX;;Alta;43;233;111;23;45;531,1700;NAO;NAO;7;Ativo;2020-05-08
+173;IT01173;Correias Peças Ref 1173;Peças de Reposição;Correias;MT;;Média;19;112;47;21;20;907,6500;NAO;NAO;15;Ativo;2023-08-23
+174;IT01174;Óleos Lubrificantes Ref 1174;Lubrificantes;Óleos;MT;;Alta;103;426;136;71;7;199,7200;NAO;NAO;11;Ativo;2023-09-28
+175;IT01175;Informática Material Ref 1175;Material de Escritório;Informática;CX;;Média;57;328;69;26;7;54,7100;NAO;NAO;31;Ativo;2024-03-07
+176;IT01176;Químicos Limpeza Ref 1176;Limpeza e Higiene;Químicos;KG;;Alta;19;110;86;22;45;50,4400;NAO;NAO;14;Ativo;2023-03-21
+177;IT01177;Conectores Material Ref 1177;Material Elétrico;Conectores;LT;;Média;50;208;97;24;30;294,3300;NAO;NAO;9;Ativo;2022-11-12
+178;IT01178;Tubos Material Ref 1178;Material Hidráulico;Tubos;LT;;Baixa;109;352;234;93;20;94,7200;NAO;NAO;26;Ativo;2020-10-30
+179;IT01179;Proteção Cabeça EPI Ref 1179;EPI;Proteção Cabeça;MT;;Alta;85;495;126;62;10;86,9000;NAO;SIM;25;Ativo;2022-06-20
+180;IT01180;Medição Ferramentas Ref 1180;Ferramentas;Medição;CX;;Baixa;77;412;113;55;10;861,0300;NAO;NAO;21;Ativo;2019-07-07
+181;IT01181;Rolamentos Peças Ref 1181;Peças de Reposição;Rolamentos;MT;;Média;33;118;48;33;7;1699,4500;NAO;NAO;33;Ativo;2019-02-23
+182;IT01182;Óleos Lubrificantes Ref 1182;Lubrificantes;Óleos;MT;;Média;25;76;37;12;15;119,1000;NAO;NAO;16;Ativo;2019-12-14
+183;IT01183;Impressão Material Ref 1183;Material de Escritório;Impressão;KG;;Média;15;53;34;14;20;33,7700;NAO;NAO;31;Ativo;2021-01-09
+184;IT01184;Descartáveis Limpeza Ref 1184;Limpeza e Higiene;Descartáveis;KG;;Alta;62;206;173;55;30;76,2700;NAO;NAO;26;Ativo;2022-06-24
+185;IT01185;Conectores Material Ref 1185;Material Elétrico;Conectores;KG;;Média;60;205;136;25;45;237,8200;NAO;NAO;13;Ativo;2019-12-30
+186;IT01186;Vedação Material Ref 1186;Material Hidráulico;Vedação;KG;;Média;54;289;85;23;20;218,6300;NAO;NAO;26;Ativo;2024-03-23
+187;IT01187;Proteção Mãos EPI Ref 1187;EPI;Proteção Mãos;PC;;Média;34;176;115;40;30;81,1600;NAO;SIM;19;Ativo;2019-05-22
+188;IT01188;Corte Ferramentas Ref 1188;Ferramentas;Corte;PAR;;Média;26;134;40;14;15;686,8800;NAO;NAO;29;Ativo;2021-09-08
+189;IT01189;Vedantes Peças Ref 1189;Peças de Reposição;Vedantes;KG;;Baixa;136;731;245;81;20;769,8400;NAO;NAO;35;Ativo;2024-02-16
+190;IT01190;Óleos Lubrificantes Ref 1190;Lubrificantes;Óleos;PC;;Média;37;116;51;20;10;66,7100;NAO;NAO;22;Ativo;2021-05-31
+191;IT01191;Papelaria Material Ref 1191;Material de Escritório;Papelaria;CX;;Média;36;182;78;21;30;10,3800;NAO;NAO;26;Ativo;2022-10-23
+192;IT01192;Utensílios Limpeza Ref 1192;Limpeza e Higiene;Utensílios;UN;;Alta;14;59;34;15;20;50,8700;NAO;NAO;10;Ativo;2020-12-03
+193;IT01193;Conectores Material Ref 1193;Material Elétrico;Conectores;KG;;Alta;58;295;76;38;7;230,8100;NAO;NAO;3;Ativo;2019-08-24
+194;IT01194;Tubos Material Ref 1194;Material Hidráulico;Tubos;LT;;Alta;111;580;143;49;10;169,1500;NAO;NAO;11;Ativo;2021-05-23
+195;IT01195;Calçados EPI Ref 1195;EPI;Calçados;PC;;Média;56;234;147;30;45;40,6200;NAO;SIM;13;Ativo;2021-05-29
+196;IT01196;Corte Ferramentas Ref 1196;Ferramentas;Corte;UN;;Baixa;39;124;94;18;45;75,1900;NAO;NAO;35;Ativo;2020-10-29
+197;IT01197;Correias Peças Ref 1197;Peças de Reposição;Correias;MT;;Média;50;197;93;21;30;656,3700;NAO;NAO;8;Ativo;2023-09-28
+198;IT01198;Graxas Lubrificantes Ref 1198;Lubrificantes;Graxas;PC;;Alta;148;706;213;65;15;188,4300;NAO;NAO;20;Ativo;2021-02-03
+199;IT01199;Impressão Material Ref 1199;Material de Escritório;Impressão;PC;;Média;41;146;99;29;30;18,4700;NAO;NAO;12;Ativo;2021-09-29
+200;IT01200;Descartáveis Limpeza Ref 1200;Limpeza e Higiene;Descartáveis;MT;;Alta;53;310;64;24;7;21,4600;NAO;NAO;25;Ativo;2021-11-01
+201;IT01201;Conectores Material Ref 1201;Material Elétrico;Conectores;UN;;Baixa;57;185;105;36;20;133,0900;NAO;NAO;15;Ativo;2020-07-16
+202;IT01202;Conexões Material Ref 1202;Material Hidráulico;Conexões;LT;;Alta;32;144;79;16;45;100,9300;NAO;NAO;8;Ativo;2022-01-17
+203;IT01203;Proteção Respiratória EPI Ref 1203;EPI;Proteção Respiratória;UN;;Baixa;99;591;178;59;20;74,6600;NAO;SIM;16;Ativo;2019-03-08
+204;IT01204;Corte Ferramentas Ref 1204;Ferramentas;Corte;PAR;;Baixa;146;542;179;72;7;279,1800;NAO;NAO;23;Ativo;2022-06-03
+205;IT01205;Vedantes Peças Ref 1205;Peças de Reposição;Vedantes;LT;;Média;30;141;39;14;10;285,9600;NAO;NAO;35;Ativo;2022-12-12
+206;IT01206;Graxas Lubrificantes Ref 1206;Lubrificantes;Graxas;PAR;;Baixa;45;153;110;22;45;104,4200;SIM;NAO;18;Ativo;2019-09-17
+207;IT01207;Impressão Material Ref 1207;Material de Escritório;Impressão;MT;;Alta;41;206;55;20;10;79,9000;NAO;NAO;18;Ativo;2021-02-07
+208;IT01208;Descartáveis Limpeza Ref 1208;Limpeza e Higiene;Descartáveis;KG;;Média;103;395;187;63;20;18,7200;NAO;NAO;32;Ativo;2019-01-06
+209;IT01209;Cabos Material Ref 1209;Material Elétrico;Cabos;MT;;Média;73;393;107;34;15;213,3800;NAO;NAO;28;Ativo;2021-10-10
+210;IT01210;Registros Material Ref 1210;Material Hidráulico;Registros;KG;;Baixa;38;169;53;23;10;67,5100;NAO;NAO;4;Inativo;2022-07-06
+211;IT01211;Calçados EPI Ref 1211;EPI;Calçados;CX;;Baixa;66;388;176;83;20;20,0600;NAO;SIM;9;Ativo;2020-09-10
+212;IT01212;Elétricas Ferramentas Ref 1212;Ferramentas;Elétricas;PC;;Alta;88;362;162;74;15;996,1300;NAO;NAO;26;Ativo;2023-01-26
+213;IT01213;Correias Peças Ref 1213;Peças de Reposição;Correias;CX;;Média;18;61;26;11;10;616,5900;NAO;NAO;29;Inativo;2022-11-25
+214;IT01214;Graxas Lubrificantes Ref 1214;Lubrificantes;Graxas;UN;;Baixa;154;568;220;99;10;259,9100;NAO;NAO;21;Ativo;2020-09-04
+215;IT01215;Papelaria Material Ref 1215;Material de Escritório;Papelaria;LT;;Média;156;535;352;65;45;33,9100;NAO;NAO;11;Ativo;2023-01-19
+216;IT01216;Químicos Limpeza Ref 1216;Limpeza e Higiene;Químicos;UN;;Alta;22;80;66;15;45;46,6300;NAO;NAO;8;Ativo;2021-02-25
+217;IT01217;Lâmpadas Material Ref 1217;Material Elétrico;Lâmpadas;LT;;Média;45;169;69;24;15;318,4200;NAO;NAO;19;Ativo;2022-11-15
+218;IT01218;Tubos Material Ref 1218;Material Hidráulico;Tubos;MT;;Média;88;314;187;50;30;168,7700;NAO;NAO;4;Ativo;2023-06-14
+219;IT01219;Proteção Mãos EPI Ref 1219;EPI;Proteção Mãos;UN;;Baixa;12;68;37;13;30;68,8700;NAO;SIM;21;Ativo;2023-10-29
+220;IT01220;Corte Ferramentas Ref 1220;Ferramentas;Corte;KG;;Média;43;138;67;52;7;367,3100;NAO;NAO;4;Ativo;2021-03-26
+221;IT01221;Filtros Peças Ref 1221;Peças de Reposição;Filtros;LT;;Média;53;261;164;37;45;922,6800;NAO;NAO;18;Ativo;2019-06-11
+222;IT01222;Fluidos Lubrificantes Ref 1222;Lubrificantes;Fluidos;PAR;;Média;133;652;226;93;15;314,7300;SIM;NAO;20;Ativo;2023-02-03
+223;IT01223;Papelaria Material Ref 1223;Material de Escritório;Papelaria;PC;;Baixa;20;63;35;11;20;13,6500;NAO;NAO;12;Ativo;2022-12-20
+224;IT01224;Químicos Limpeza Ref 1224;Limpeza e Higiene;Químicos;KG;;Alta;25;137;56;16;30;51,6600;NAO;NAO;9;Ativo;2023-11-24
+225;IT01225;Lâmpadas Material Ref 1225;Material Elétrico;Lâmpadas;UN;;Média;27;103;40;13;15;214,0000;NAO;NAO;5;Ativo;2021-11-12
+226;IT01226;Registros Material Ref 1226;Material Hidráulico;Registros;LT;;Média;86;285;134;71;10;32,6500;NAO;NAO;8;Ativo;2021-11-08
+227;IT01227;Proteção Cabeça EPI Ref 1227;EPI;Proteção Cabeça;CX;;Baixa;99;570;195;72;20;23,3300;NAO;SIM;3;Ativo;2024-02-15
+228;IT01228;Corte Ferramentas Ref 1228;Ferramentas;Corte;KG;;Alta;25;81;45;20;15;247,8600;NAO;NAO;4;Ativo;2023-07-06
+229;IT01229;Rolamentos Peças Ref 1229;Peças de Reposição;Rolamentos;UN;;Média;20;79;30;10;15;1750,8800;NAO;NAO;1;Ativo;2020-08-20
+230;IT01230;Fluidos Lubrificantes Ref 1230;Lubrificantes;Fluidos;PAR;;Baixa;100;448;157;57;15;246,2200;SIM;NAO;35;Ativo;2020-05-17
+231;IT01231;Papelaria Material Ref 1231;Material de Escritório;Papelaria;UN;;Baixa;56;285;87;31;15;9,8500;NAO;NAO;1;Ativo;2021-02-09
+232;IT01232;Utensílios Limpeza Ref 1232;Limpeza e Higiene;Utensílios;CX;;Baixa;18;106;26;12;10;53,5700;NAO;NAO;6;Inativo;2020-04-19
+233;IT01233;Conectores Material Ref 1233;Material Elétrico;Conectores;PC;;Baixa;49;221;62;28;7;204,3100;NAO;NAO;5;Ativo;2019-05-08
+234;IT01234;Vedação Material Ref 1234;Material Hidráulico;Vedação;PAR;;Baixa;31;130;45;14;15;124,0900;NAO;NAO;21;Ativo;2020-04-23
+235;IT01235;Proteção Cabeça EPI Ref 1235;EPI;Proteção Cabeça;MT;;Média;15;52;22;14;7;149,5100;NAO;SIM;8;Ativo;2024-05-29
+236;IT01236;Elétricas Ferramentas Ref 1236;Ferramentas;Elétricas;PAR;;Baixa;36;182;52;34;7;447,3400;NAO;NAO;3;Ativo;2023-10-21
+237;IT01237;Filtros Peças Ref 1237;Peças de Reposição;Filtros;KG;;Baixa;88;443;161;54;20;265,8100;NAO;NAO;12;Inativo;2021-04-08
+238;IT01238;Graxas Lubrificantes Ref 1238;Lubrificantes;Graxas;UN;;Alta;85;291;104;41;7;170,5400;SIM;NAO;15;Ativo;2023-08-14
+239;IT01239;Informática Material Ref 1239;Material de Escritório;Informática;UN;;Alta;82;472;176;47;30;33,1800;NAO;NAO;5;Ativo;2022-08-15
+240;IT01240;Descartáveis Limpeza Ref 1240;Limpeza e Higiene;Descartáveis;UN;;Alta;11;64;22;11;15;60,3600;NAO;NAO;28;Ativo;2021-03-19
+241;IT01241;Conectores Material Ref 1241;Material Elétrico;Conectores;MT;;Baixa;117;448;152;52;10;61,3300;NAO;NAO;3;Ativo;2022-06-17
+242;IT01242;Conexões Material Ref 1242;Material Hidráulico;Conexões;CX;;Média;33;127;82;37;20;121,0700;NAO;NAO;34;Ativo;2023-07-01
+243;IT01243;Proteção Cabeça EPI Ref 1243;EPI;Proteção Cabeça;LT;;Média;127;512;250;62;30;172,4600;NAO;SIM;25;Ativo;2019-02-23
+244;IT01244;Medição Ferramentas Ref 1244;Ferramentas;Medição;LT;;Média;6;36;13;7;15;597,4800;NAO;NAO;15;Ativo;2019-07-25
+245;IT01245;Correias Peças Ref 1245;Peças de Reposição;Correias;CX;;Média;19;114;84;22;45;972,2900;NAO;NAO;25;Ativo;2023-09-15
+246;IT01246;Óleos Lubrificantes Ref 1246;Lubrificantes;Óleos;PC;;Baixa;61;291;193;44;45;80,2000;SIM;NAO;10;Ativo;2020-01-21
+247;IT01247;Informática Material Ref 1247;Material de Escritório;Informática;LT;;Média;19;69;27;16;7;45,8600;NAO;NAO;22;Ativo;2020-02-17
+248;IT01248;Químicos Limpeza Ref 1248;Limpeza e Higiene;Químicos;PC;;Baixa;15;52;31;16;15;30,6000;NAO;NAO;8;Ativo;2023-10-29
+249;IT01249;Lâmpadas Material Ref 1249;Material Elétrico;Lâmpadas;KG;;Alta;49;196;87;28;20;316,2100;NAO;NAO;11;Ativo;2021-06-13
+250;IT01250;Vedação Material Ref 1250;Material Hidráulico;Vedação;KG;;Média;36;174;84;16;45;121,4500;NAO;NAO;12;Ativo;2023-02-12

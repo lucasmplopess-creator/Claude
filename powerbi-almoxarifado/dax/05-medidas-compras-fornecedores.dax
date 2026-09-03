@@ -1,0 +1,181 @@
+// =====================================================================
+// 05 - COMPRAS E FORNECEDORES
+// Pasta de exibicao sugerida: 05 Compras
+// =====================================================================
+
+// ---------------------------------------------------------------------
+Qtd Pedidos = DISTINCTCOUNT ( fCompraItem[NumeroPedido] ) + 0
+Qtd Itens Pedidos = COUNTROWS ( fCompraItem ) + 0
+
+Valor Compras = SUM ( fCompraItem[ValorPedido] ) + 0
+// Formato: R$ #.##0,00
+
+Valor Recebido = SUM ( fCompraItem[ValorRecebido] ) + 0
+
+Qtd Pedida   = SUM ( fCompraItem[QuantidadePedida] ) + 0
+Qtd Recebida = SUM ( fCompraItem[QuantidadeRecebida] ) + 0
+Qtd Devolvida = SUM ( fCompraItem[QuantidadeDevolvida] ) + 0
+
+// ---------------------------------------------------------------------
+// PEDIDOS EM ABERTO
+// ---------------------------------------------------------------------
+Pedidos em Aberto =
+CALCULATE (
+    DISTINCTCOUNT ( fCompraItem[NumeroPedido] ),
+    ISBLANK ( fCompraItem[DataRecebimento] )
+) + 0
+
+Valor em Trânsito =
+CALCULATE (
+    SUM ( fCompraItem[ValorPedido] ),
+    ISBLANK ( fCompraItem[DataRecebimento] )
+) + 0
+
+Pedidos Atrasados =
+CALCULATE (
+    DISTINCTCOUNT ( fCompraItem[NumeroPedido] ),
+    ISBLANK ( fCompraItem[DataRecebimento] ),
+    fCompraItem[DataPrometida] < TODAY ()
+) + 0
+
+Valor Pedidos Atrasados =
+CALCULATE (
+    SUM ( fCompraItem[ValorPedido] ),
+    ISBLANK ( fCompraItem[DataRecebimento] ),
+    fCompraItem[DataPrometida] < TODAY ()
+) + 0
+
+// ---------------------------------------------------------------------
+// LEAD TIME
+// ---------------------------------------------------------------------
+Lead Time Médio (dias) =
+AVERAGEX (
+    FILTER ( fCompraItem, NOT ISBLANK ( fCompraItem[DataRecebimento] ) ),
+    fCompraItem[LeadTimeRealDias]
+)
+// Formato: #.##0,0 "dias"
+
+Lead Time Mediano (dias) =
+MEDIANX (
+    FILTER ( fCompraItem, NOT ISBLANK ( fCompraItem[DataRecebimento] ) ),
+    fCompraItem[LeadTimeRealDias]
+)
+
+Lead Time Padrão (dias) =
+AVERAGEX ( VALUES ( dItem[SK_Item] ), CALCULATE ( MAX ( dItem[LeadTimePadraoDias] ) ) )
+
+Desvio do Lead Time (dias) =
+[Lead Time Médio (dias)] - [Lead Time Padrão (dias)]
+// Valor positivo indica que o fornecedor entrega mais devagar que o
+// prazo contratado. Este e o numero que sustenta uma renegociacao.
+
+Aderência Lead Time % =
+VAR _Recebidos = CALCULATE ( COUNTROWS ( fCompraItem ), NOT ISBLANK ( fCompraItem[DataRecebimento] ) )
+VAR _NoPadrao =
+    COUNTROWS (
+        FILTER (
+            fCompraItem,
+            NOT ISBLANK ( fCompraItem[DataRecebimento] )
+                && fCompraItem[LeadTimeRealDias] <= RELATED ( dItem[LeadTimePadraoDias] )
+        )
+    )
+RETURN
+DIVIDE ( _NoPadrao, _Recebidos )
+// Formato: 0,0% | Meta: acima de 90%
+
+// ---------------------------------------------------------------------
+// PONTUALIDADE E QUALIDADE DO FORNECEDOR
+// ---------------------------------------------------------------------
+Itens Recebidos = CALCULATE ( COUNTROWS ( fCompraItem ), NOT ISBLANK ( fCompraItem[DataRecebimento] ) ) + 0
+
+Itens Entregues no Prazo = CALCULATE ( COUNTROWS ( fCompraItem ), fCompraItem[FlagEntregaNoPrazo] = 1 ) + 0
+
+Pontualidade Fornecedor % =
+DIVIDE ( [Itens Entregues no Prazo], [Itens Recebidos] )
+// Formato: 0,0% | Meta: acima de 92%
+
+Acuracidade Quantidade % =
+DIVIDE ( [Qtd Recebida], [Qtd Pedida] )
+// Formato: 0,0%
+
+Taxa de Devolução % =
+DIVIDE ( [Qtd Devolvida], [Qtd Recebida] )
+// Formato: 0,00% | Meta: menor que 2%
+
+Atraso Médio (dias) =
+AVERAGEX (
+    FILTER ( fCompraItem, fCompraItem[FlagEntregaNoPrazo] = 0 && NOT ISBLANK ( fCompraItem[DataRecebimento] ) ),
+    DATEDIFF ( fCompraItem[DataPrometida], fCompraItem[DataRecebimento], DAY )
+)
+
+// ---------------------------------------------------------------------
+// IQF: INDICE DE QUALIFICACAO DO FORNECEDOR
+// Nota de 0 a 100 combinando prazo (50%), quantidade (30%) e
+// qualidade (20%). Ajuste os pesos conforme a politica de suprimentos.
+// ---------------------------------------------------------------------
+IQF Fornecedor =
+VAR _Prazo     = [Pontualidade Fornecedor %]
+VAR _Quantidade = MIN ( [Acuracidade Quantidade %], 1 )
+VAR _Qualidade = 1 - [Taxa de Devolução %]
+RETURN
+( _Prazo * 0.5 + _Quantidade * 0.3 + _Qualidade * 0.2 ) * 100
+// Formato: #.##0,0 | Meta: acima de 85 pontos
+
+Classificação Fornecedor =
+VAR _IQF = [IQF Fornecedor]
+RETURN
+SWITCH (
+    TRUE (),
+    ISBLANK ( _IQF ), "Sem histórico",
+    _IQF >= 95, "A. Excelente",
+    _IQF >= 85, "B. Bom",
+    _IQF >= 70, "C. Regular",
+    "D. Crítico"
+)
+
+// ---------------------------------------------------------------------
+// CONCENTRACAO DE FORNECEDORES
+// ---------------------------------------------------------------------
+Qtd Fornecedores Ativos = DISTINCTCOUNT ( fCompraItem[SK_Fornecedor] ) + 0
+
+Rank Fornecedor =
+RANKX ( ALLSELECTED ( dFornecedor[RazaoSocial] ), [Valor Compras], , DESC, DENSE )
+
+% Top 5 Fornecedores =
+VAR _Total = CALCULATE ( [Valor Compras], ALLSELECTED ( dFornecedor ) )
+VAR _Top5 =
+    SUMX (
+        TOPN ( 5, ALLSELECTED ( dFornecedor[RazaoSocial] ), [Valor Compras], DESC ),
+        [Valor Compras]
+    )
+RETURN
+DIVIDE ( _Top5, _Total )
+// Formato: 0,0% | Meta: menor que 60%
+
+% Participação Fornecedor =
+DIVIDE ( [Valor Compras], CALCULATE ( [Valor Compras], ALLSELECTED ( dFornecedor ) ) )
+
+// ---------------------------------------------------------------------
+// EVOLUCAO DO CUSTO DE AQUISICAO
+// ---------------------------------------------------------------------
+Preço Médio Aquisição = DIVIDE ( [Valor Recebido], [Qtd Recebida] )
+// Formato: R$ #.##0,0000
+
+Preço Médio Aquisição AA =
+CALCULATE ( [Preço Médio Aquisição], SAMEPERIODLASTYEAR ( dCalendario[Data] ) )
+
+Var % Custo Aquisição =
+DIVIDE (
+    [Preço Médio Aquisição] - [Preço Médio Aquisição AA],
+    [Preço Médio Aquisição AA]
+)
+// Formato: +0,0%;-0,0%;0,0%
+
+// ---------------------------------------------------------------------
+// ANALISE PELA DATA DE RECEBIMENTO (relacionamento inativo)
+// ---------------------------------------------------------------------
+Valor Recebido (por data de recebimento) =
+CALCULATE (
+    SUM ( fCompraItem[ValorRecebido] ),
+    USERELATIONSHIP ( dCalendario[Data], fCompraItem[DataRecebimento] )
+)

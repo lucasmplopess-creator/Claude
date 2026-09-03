@@ -1,0 +1,222 @@
+// =====================================================================
+// 00 - TABELAS AUXILIARES E COLUNAS CALCULADAS
+// Cole cada bloco em "Modelagem > Nova tabela" ou "Nova coluna".
+// =====================================================================
+
+// ---------------------------------------------------------------------
+// TABELA VAZIA PARA HOSPEDAR AS MEDIDAS
+// Crie em: Inserir dados > cole uma coluna vazia > nomeie "_Medidas".
+// Depois de criar a primeira medida, oculte a coluna. A tabela sobe para
+// o topo do painel de campos com o icone de calculadora.
+// ---------------------------------------------------------------------
+_Medidas = DATATABLE ( "Coluna", STRING, { { BLANK() } } )
+
+
+// ---------------------------------------------------------------------
+// CALENDARIO EM DAX (alternativa ao Power Query)
+// Use apenas se preferir manter o calendario no modelo. A versao em
+// Power Query e a recomendada por permitir dobramento de consulta.
+// ---------------------------------------------------------------------
+dCalendario =
+VAR _DataMin = DATE ( YEAR ( MIN ( fMovimentacaoEstoque[Data] ) ), 1, 1 )
+VAR _DataMax = DATE ( YEAR ( MAX ( fMovimentacaoEstoque[Data] ) ), 12, 31 )
+RETURN
+ADDCOLUMNS (
+    CALENDAR ( _DataMin, _DataMax ),
+    "Ano",            YEAR ( [Date] ),
+    "Trimestre",      "T" & FORMAT ( [Date], "Q" ),
+    "AnoTrimestre",   YEAR ( [Date] ) & "-T" & FORMAT ( [Date], "Q" ),
+    "MesNumero",      MONTH ( [Date] ),
+    "MesNome",        FORMAT ( [Date], "MMMM", "pt-BR" ),
+    "MesAbrev",       FORMAT ( [Date], "MMM", "pt-BR" ),
+    "AnoMes",         YEAR ( [Date] ) * 100 + MONTH ( [Date] ),
+    "AnoMesNome",     FORMAT ( [Date], "MMM/yy", "pt-BR" ),
+    "Semana",         WEEKNUM ( [Date], 2 ),
+    "DiaSemana",      WEEKDAY ( [Date], 2 ),
+    "DiaSemanaNome",  FORMAT ( [Date], "dddd", "pt-BR" ),
+    "DiaUtil",        IF ( WEEKDAY ( [Date], 2 ) <= 5, TRUE (), FALSE () ),
+    "DataFimMes",     EOMONTH ( [Date], 0 ),
+    "MesesAtras",     DATEDIFF ( [Date], TODAY (), MONTH ),
+    "IsMesAtual",     IF ( EOMONTH ( [Date], 0 ) = EOMONTH ( TODAY (), 0 ), TRUE (), FALSE () ),
+    "IsAnoAtual",     IF ( YEAR ( [Date] ) = YEAR ( TODAY () ), TRUE (), FALSE () )
+)
+// Apos criar: renomeie a coluna [Date] para [Data], marque a tabela como
+// tabela de datas e configure as colunas de ordenacao:
+//   MesNome      ordenado por MesNumero
+//   MesAbrev     ordenado por MesNumero
+//   AnoMesNome   ordenado por AnoMes
+//   DiaSemanaNome ordenado por DiaSemana
+
+
+// ---------------------------------------------------------------------
+// TABELA DESCONECTADA: SELECAO DINAMICA DE METRICA
+// Permite trocar a metrica exibida no grafico principal por segmentacao.
+// ---------------------------------------------------------------------
+pSelecaoMetrica =
+DATATABLE (
+    "Ordem",   INTEGER,
+    "Metrica", STRING,
+    "Codigo",  STRING,
+    {
+        { 1, "Valor de Estoque",      "ESTOQUE"   },
+        { 2, "Valor de Consumo",      "CONSUMO"   },
+        { 3, "Valor de Entradas",     "ENTRADA"   },
+        { 4, "Giro de Estoque",       "GIRO"      },
+        { 5, "Cobertura em Dias",     "COBERTURA" },
+        { 6, "Fill Rate",             "FILLRATE"  },
+        { 7, "OTIF",                  "OTIF"      }
+    }
+)
+// Ordene a coluna Metrica pela coluna Ordem.
+
+
+// ---------------------------------------------------------------------
+// TABELA DESCONECTADA: JANELA MOVEL DE ANALISE
+// Usada nas medidas de consumo medio e curva XYZ.
+// ---------------------------------------------------------------------
+pJanelaMeses =
+DATATABLE (
+    "Ordem",  INTEGER,
+    "Rotulo", STRING,
+    "Meses",  INTEGER,
+    {
+        { 1, "Ultimos 3 meses",  3  },
+        { 2, "Ultimos 6 meses",  6  },
+        { 3, "Ultimos 12 meses", 12 },
+        { 4, "Ultimos 24 meses", 24 }
+    }
+)
+// Ordene Rotulo por Ordem. Defina "Ultimos 6 meses" como selecao padrao
+// na segmentacao.
+
+
+// ---------------------------------------------------------------------
+// TABELA DESCONECTADA: NIVEL DE SERVICO PARA ESTOQUE DE SEGURANCA
+// O fator Z corresponde ao nivel de servico desejado na curva normal.
+// ---------------------------------------------------------------------
+pNivelServico =
+DATATABLE (
+    "NivelServico", STRING,
+    "FatorZ",       DOUBLE,
+    {
+        { "90%",   1.28 },
+        { "95%",   1.65 },
+        { "97,5%", 1.96 },
+        { "99%",   2.33 }
+    }
+)
+
+
+// =====================================================================
+// COLUNAS CALCULADAS
+// =====================================================================
+
+// ---------------------------------------------------------------------
+// dItem: curva ABC estatica calculada uma vez no refresh.
+// Muito mais rapida que a versao dinamica em medida. Use esta em
+// segmentacoes e a versao dinamica apenas quando o usuario precisar
+// reclassificar conforme o filtro aplicado.
+// ---------------------------------------------------------------------
+dItem[ValorConsumo12M] =
+VAR _DataFim = CALCULATE ( MAX ( fMovimentacaoEstoque[Data] ), ALL ( fMovimentacaoEstoque ) )
+VAR _DataIni = EDATE ( _DataFim, -12 )
+RETURN
+CALCULATE (
+    SUM ( fMovimentacaoEstoque[ValorTotal] ),
+    fMovimentacaoEstoque[Data] > _DataIni,
+    fMovimentacaoEstoque[Data] <= _DataFim,
+    dTipoMovimento[ContaConsumo] = TRUE ()
+) + 0
+
+dItem[PercentualAcumuladoABC] =
+VAR _TotalGeral = SUMX ( ALL ( dItem ), dItem[ValorConsumo12M] )
+VAR _ValorAtual = dItem[ValorConsumo12M]
+VAR _Acumulado =
+    SUMX (
+        FILTER ( ALL ( dItem ), dItem[ValorConsumo12M] >= _ValorAtual ),
+        dItem[ValorConsumo12M]
+    )
+RETURN
+DIVIDE ( _Acumulado, _TotalGeral )
+
+dItem[ClasseABC] =
+SWITCH (
+    TRUE (),
+    dItem[ValorConsumo12M] = 0,          "Sem consumo",
+    dItem[PercentualAcumuladoABC] <= 0.80, "A",
+    dItem[PercentualAcumuladoABC] <= 0.95, "B",
+    "C"
+)
+
+// ---------------------------------------------------------------------
+// dItem: curva XYZ estatica pelo coeficiente de variacao do consumo.
+// ---------------------------------------------------------------------
+dItem[CoefVariacaoConsumo] =
+VAR _Item    = dItem[SK_Item]
+VAR _DataFim = CALCULATE ( MAX ( fMovimentacaoEstoque[Data] ), ALL ( fMovimentacaoEstoque ) )
+VAR _DataIni = EDATE ( _DataFim, -12 )
+VAR _Consumos =
+    ADDCOLUMNS (
+        CALCULATETABLE (
+            VALUES ( dCalendario[AnoMes] ),
+            dCalendario[Data] > _DataIni,
+            dCalendario[Data] <= _DataFim,
+            ALL ( dCalendario )
+        ),
+        "@Qtd",
+            VAR _M = dCalendario[AnoMes]
+            RETURN
+            CALCULATE (
+                SUM ( fMovimentacaoEstoque[Quantidade] ),
+                ALL ( dCalendario ),
+                dCalendario[AnoMes] = _M,
+                fMovimentacaoEstoque[SK_Item] = _Item,
+                dTipoMovimento[ContaConsumo] = TRUE ()
+            ) + 0
+    )
+VAR _Media  = AVERAGEX ( _Consumos, [@Qtd] )
+VAR _Desvio = STDEVX.P ( _Consumos, [@Qtd] )
+RETURN
+DIVIDE ( _Desvio, _Media )
+
+dItem[ClasseXYZ] =
+SWITCH (
+    TRUE (),
+    ISBLANK ( dItem[CoefVariacaoConsumo] ),   "Sem histórico",
+    dItem[CoefVariacaoConsumo] <= 0.5,        "X",
+    dItem[CoefVariacaoConsumo] <= 1.0,        "Y",
+    "Z"
+)
+
+dItem[MatrizABCXYZ] = dItem[ClasseABC] & dItem[ClasseXYZ]
+
+dItem[EstrategiaReposicao] =
+SWITCH (
+    dItem[MatrizABCXYZ],
+    "AX", "Reposição automática, contrato de fornecimento",
+    "AY", "Revisão quinzenal, estoque de segurança moderado",
+    "AZ", "Compra sob demanda com aprovação gerencial",
+    "BX", "Ponto de pedido automático",
+    "BY", "Revisão mensal",
+    "BZ", "Compra pontual",
+    "CX", "Lote grande, revisão trimestral",
+    "CY", "Lote grande, revisão trimestral",
+    "CZ", "Avaliar eliminação do cadastro",
+    "Classificar"
+)
+
+// ---------------------------------------------------------------------
+// fPosicaoEstoque: faixas de idade de estoque para o grafico de aging.
+// ---------------------------------------------------------------------
+fPosicaoEstoque[FaixaAging] =
+VAR _Dias = DATEDIFF ( fPosicaoEstoque[DataUltimaSaida], fPosicaoEstoque[Data], DAY )
+RETURN
+SWITCH (
+    TRUE (),
+    ISBLANK ( fPosicaoEstoque[DataUltimaSaida] ), "6. Nunca movimentado",
+    _Dias <= 30,   "1. Até 30 dias",
+    _Dias <= 90,   "2. 31 a 90 dias",
+    _Dias <= 180,  "3. 91 a 180 dias",
+    _Dias <= 365,  "4. 181 a 365 dias",
+    "5. Acima de 365 dias"
+)

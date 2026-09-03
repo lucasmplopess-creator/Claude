@@ -1,0 +1,136 @@
+// =====================================================================
+// 09 - INTELIGENCIA TEMPORAL
+// Pasta de exibicao sugerida: 09 Análise Temporal
+//
+// PRE-REQUISITO: dCalendario marcada como tabela de datas do modelo em
+// Modelagem > Marcar como tabela de data. Sem isso as funcoes abaixo
+// retornam resultados incorretos em periodos parciais.
+// =====================================================================
+
+// ---------------------------------------------------------------------
+// PERIODO ANTERIOR (MES A MES)
+// ---------------------------------------------------------------------
+Valor Consumo MA =
+CALCULATE ( [Valor Consumo], DATEADD ( dCalendario[Data], -1, MONTH ) )
+
+Var Consumo MoM = [Valor Consumo] - [Valor Consumo MA]
+
+Var % Consumo MoM =
+DIVIDE ( [Valor Consumo] - [Valor Consumo MA], [Valor Consumo MA] )
+// Formato: +0,0%;-0,0%;0,0%
+
+Valor Estoque MA =
+CALCULATE ( [Valor Estoque], DATEADD ( dCalendario[Data], -1, MONTH ) )
+
+Var % Estoque MoM =
+DIVIDE ( [Valor Estoque] - [Valor Estoque MA], [Valor Estoque MA] )
+
+// ---------------------------------------------------------------------
+// MESMO PERIODO DO ANO ANTERIOR
+// ---------------------------------------------------------------------
+Valor Consumo AA =
+CALCULATE ( [Valor Consumo], SAMEPERIODLASTYEAR ( dCalendario[Data] ) )
+
+Var % Consumo YoY =
+DIVIDE ( [Valor Consumo] - [Valor Consumo AA], [Valor Consumo AA] )
+
+Valor Estoque AA =
+CALCULATE ( [Valor Estoque], SAMEPERIODLASTYEAR ( dCalendario[Data] ) )
+
+Var % Estoque YoY =
+DIVIDE ( [Valor Estoque] - [Valor Estoque AA], [Valor Estoque AA] )
+
+Giro 12 Meses AA =
+CALCULATE ( [Giro 12 Meses], SAMEPERIODLASTYEAR ( dCalendario[Data] ) )
+
+// ---------------------------------------------------------------------
+// ACUMULADOS
+// ---------------------------------------------------------------------
+Valor Consumo YTD = CALCULATE ( [Valor Consumo], DATESYTD ( dCalendario[Data] ) )
+
+Valor Consumo YTD AA =
+CALCULATE ( [Valor Consumo], DATESYTD ( SAMEPERIODLASTYEAR ( dCalendario[Data] ) ) )
+
+Var % Consumo YTD =
+DIVIDE ( [Valor Consumo YTD] - [Valor Consumo YTD AA], [Valor Consumo YTD AA] )
+
+Valor Compras YTD = CALCULATE ( [Valor Compras], DATESYTD ( dCalendario[Data] ) )
+
+Valor Consumo QTD = CALCULATE ( [Valor Consumo], DATESQTD ( dCalendario[Data] ) )
+
+Valor Consumo MTD = CALCULATE ( [Valor Consumo], DATESMTD ( dCalendario[Data] ) )
+
+// ---------------------------------------------------------------------
+// MEDIAS MOVEIS
+// Suavizam a sazonalidade e revelam a tendencia real do consumo.
+// ---------------------------------------------------------------------
+Média Móvel 3M Consumo =
+AVERAGEX (
+    DATESINPERIOD ( dCalendario[Data], MAX ( dCalendario[Data] ), -3, MONTH ),
+    CALCULATE ( [Valor Consumo] )
+)
+// Observacao: esta versao itera dia a dia. Para media por mes use a
+// versao abaixo, que e a correta quando o eixo do grafico e mensal.
+
+Média Móvel 3M Consumo (mensal) =
+VAR _DataFim = MAX ( dCalendario[Data] )
+VAR _Meses =
+    CALCULATETABLE (
+        VALUES ( dCalendario[AnoMes] ),
+        REMOVEFILTERS ( dCalendario ),
+        DATESINPERIOD ( dCalendario[Data], _DataFim, -3, MONTH )
+    )
+RETURN
+AVERAGEX (
+    _Meses,
+    VAR _M = dCalendario[AnoMes]
+    RETURN CALCULATE ( [Valor Consumo], REMOVEFILTERS ( dCalendario ), dCalendario[AnoMes] = _M )
+)
+
+Média Móvel 6M Consumo (mensal) =
+VAR _DataFim = MAX ( dCalendario[Data] )
+VAR _Meses =
+    CALCULATETABLE (
+        VALUES ( dCalendario[AnoMes] ),
+        REMOVEFILTERS ( dCalendario ),
+        DATESINPERIOD ( dCalendario[Data], _DataFim, -6, MONTH )
+    )
+RETURN
+AVERAGEX (
+    _Meses,
+    VAR _M = dCalendario[AnoMes]
+    RETURN CALCULATE ( [Valor Consumo], REMOVEFILTERS ( dCalendario ), dCalendario[AnoMes] = _M )
+)
+
+// ---------------------------------------------------------------------
+// TENDENCIA
+// Compara a media dos ultimos 3 meses com a dos 3 meses anteriores.
+// ---------------------------------------------------------------------
+Tendência Consumo =
+VAR _Recente = [Média Móvel 3M Consumo (mensal)]
+VAR _Anterior =
+    CALCULATE (
+        [Média Móvel 3M Consumo (mensal)],
+        DATEADD ( dCalendario[Data], -3, MONTH )
+    )
+VAR _Variacao = DIVIDE ( _Recente - _Anterior, _Anterior )
+RETURN
+SWITCH (
+    TRUE (),
+    ISBLANK ( _Variacao ),  "Sem histórico",
+    _Variacao > 0.10,       "▲ Em alta",
+    _Variacao < -0.10,      "▼ Em queda",
+    "● Estável"
+)
+
+// ---------------------------------------------------------------------
+// ULTIMA ATUALIZACAO DO MODELO
+// Crie uma consulta em Power Query chamada UltimaAtualizacao com o
+// codigo do arquivo powerquery/parametros.m e use a medida abaixo.
+// ---------------------------------------------------------------------
+Última Atualização =
+"Dados atualizados em " &
+FORMAT ( MAX ( UltimaAtualizacao[DataHora] ), "dd/mm/yyyy HH:mm" )
+
+Dias desde a Atualização =
+DATEDIFF ( MAX ( UltimaAtualizacao[DataHora] ), NOW (), DAY )

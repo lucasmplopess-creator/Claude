@@ -1,0 +1,190 @@
+// =====================================================================
+// 08 - CURVA ABC, CURVA XYZ E PARAMETROS DE REPOSICAO
+// Pasta de exibicao sugerida: 08 Classificação
+//
+// As versoes dinamicas abaixo reclassificam os itens conforme o filtro
+// aplicado na pagina. Sao mais pesadas que as colunas calculadas do
+// arquivo 00. Use as colunas calculadas em segmentacoes e eixos, e
+// estas medidas apenas quando a reclassificacao interativa for exigida.
+// =====================================================================
+
+// ---------------------------------------------------------------------
+// CURVA ABC DINAMICA
+// ---------------------------------------------------------------------
+Rank ABC =
+IF (
+    NOT ISBLANK ( [Valor Consumo 12M] ),
+    RANKX ( ALLSELECTED ( dItem[CodigoItem] ), [Valor Consumo 12M], , DESC, DENSE )
+)
+
+% Acumulado ABC =
+VAR _Total = CALCULATE ( [Valor Consumo 12M], ALLSELECTED ( dItem ) )
+VAR _Rank  = [Rank ABC]
+VAR _Acumulado =
+    SUMX (
+        FILTER (
+            ALLSELECTED ( dItem[CodigoItem] ),
+            [Rank ABC] <= _Rank
+        ),
+        [Valor Consumo 12M]
+    )
+RETURN
+DIVIDE ( _Acumulado, _Total )
+// Formato: 0,0%
+
+Classe ABC Dinâmica =
+VAR _Pct = [% Acumulado ABC]
+RETURN
+SWITCH (
+    TRUE (),
+    ISBLANK ( _Pct ),  BLANK (),
+    _Pct <= 0.80,      "A",
+    _Pct <= 0.95,      "B",
+    "C"
+)
+
+// ---------------------------------------------------------------------
+// CURVA XYZ DINAMICA
+// Classifica pela previsibilidade da demanda usando o coeficiente de
+// variacao do consumo mensal dos ultimos 12 meses.
+//   CV ate 0,5  -> X, demanda estavel e facil de prever
+//   CV ate 1,0  -> Y, demanda com oscilacao moderada
+//   CV acima    -> Z, demanda erratica, dificil de planejar
+// ---------------------------------------------------------------------
+Coef Variação Consumo =
+VAR _DataFim = MAX ( dCalendario[Data] )
+VAR _Meses =
+    CALCULATETABLE (
+        VALUES ( dCalendario[AnoMes] ),
+        REMOVEFILTERS ( dCalendario ),
+        DATESINPERIOD ( dCalendario[Data], _DataFim, -12, MONTH )
+    )
+VAR _Consumos =
+    ADDCOLUMNS (
+        _Meses,
+        "@Qtd",
+            VAR _M = dCalendario[AnoMes]
+            RETURN
+            CALCULATE (
+                [Qtd Consumo],
+                REMOVEFILTERS ( dCalendario ),
+                dCalendario[AnoMes] = _M
+            ) + 0
+    )
+VAR _Media  = AVERAGEX ( _Consumos, [@Qtd] )
+VAR _Desvio = STDEVX.P ( _Consumos, [@Qtd] )
+RETURN
+IF ( _Media > 0, DIVIDE ( _Desvio, _Media ) )
+// Formato: #.##0,00
+
+Classe XYZ Dinâmica =
+VAR _CV = [Coef Variação Consumo]
+RETURN
+SWITCH (
+    TRUE (),
+    ISBLANK ( _CV ), "Sem histórico",
+    _CV <= 0.5,      "X",
+    _CV <= 1.0,      "Y",
+    "Z"
+)
+
+Matriz ABC-XYZ = [Classe ABC Dinâmica] & [Classe XYZ Dinâmica]
+
+// =====================================================================
+// PARAMETROS DE REPOSICAO SUGERIDOS
+// Compare o resultado destas medidas com os parametros cadastrados no
+// ERP. Divergencias grandes indicam cadastro desatualizado, que e a
+// causa mais comum de ruptura e de excesso simultaneos.
+// =====================================================================
+
+// ---------------------------------------------------------------------
+Fator Z Nível de Serviço = SELECTEDVALUE ( pNivelServico[FatorZ], 1.65 )
+
+// ---------------------------------------------------------------------
+Desvio Padrão Consumo Mensal =
+VAR _DataFim = MAX ( dCalendario[Data] )
+VAR _Meses =
+    CALCULATETABLE (
+        VALUES ( dCalendario[AnoMes] ),
+        REMOVEFILTERS ( dCalendario ),
+        DATESINPERIOD ( dCalendario[Data], _DataFim, -12, MONTH )
+    )
+VAR _Consumos =
+    ADDCOLUMNS (
+        _Meses,
+        "@Qtd",
+            VAR _M = dCalendario[AnoMes]
+            RETURN CALCULATE ( [Qtd Consumo], REMOVEFILTERS ( dCalendario ), dCalendario[AnoMes] = _M ) + 0
+    )
+RETURN
+STDEVX.P ( _Consumos, [@Qtd] )
+
+// ---------------------------------------------------------------------
+// ESTOQUE DE SEGURANCA
+// ES = Z x desvio padrao da demanda x raiz do lead time em meses
+// ---------------------------------------------------------------------
+Estoque Segurança Sugerido =
+VAR _Z        = [Fator Z Nível de Serviço]
+VAR _Desvio   = [Desvio Padrão Consumo Mensal]
+VAR _LeadTime = AVERAGEX ( VALUES ( dItem[SK_Item] ), CALCULATE ( MAX ( dItem[LeadTimePadraoDias] ) ) )
+RETURN
+_Z * _Desvio * SQRT ( DIVIDE ( _LeadTime, 30 ) )
+// Formato: #.##0,00
+
+// ---------------------------------------------------------------------
+// PONTO DE PEDIDO
+// PP = consumo medio diario x lead time + estoque de seguranca
+// ---------------------------------------------------------------------
+Ponto de Pedido Sugerido =
+VAR _CMD      = [Consumo Médio Diário]
+VAR _LeadTime = AVERAGEX ( VALUES ( dItem[SK_Item] ), CALCULATE ( MAX ( dItem[LeadTimePadraoDias] ) ) )
+RETURN
+_CMD * _LeadTime + [Estoque Segurança Sugerido]
+
+Ponto de Pedido Cadastrado =
+AVERAGEX ( VALUES ( dItem[SK_Item] ), CALCULATE ( MAX ( dItem[PontoPedido] ) ) )
+
+Gap Ponto de Pedido =
+[Ponto de Pedido Sugerido] - [Ponto de Pedido Cadastrado]
+// Positivo indica parametro cadastrado abaixo do necessario, o que gera
+// ruptura. Negativo indica parametro inflado, o que gera excesso.
+
+// ---------------------------------------------------------------------
+// LOTE ECONOMICO DE COMPRA
+// LEC = raiz de ( 2 x demanda anual x custo do pedido / custo unitario
+//                 x taxa de manutencao )
+// Ajuste o custo administrativo por pedido conforme o processo interno.
+// ---------------------------------------------------------------------
+Custo Administrativo por Pedido = 150
+
+Lote Econômico Compra =
+VAR _DemandaAnual = [Qtd Consumo 12M]
+VAR _CustoPedido  = [Custo Administrativo por Pedido]
+VAR _CustoUnit    = [Custo Médio Unitário]
+VAR _TaxaManut    = [Taxa Carregamento Anual]
+RETURN
+IF (
+    _DemandaAnual > 0 && _CustoUnit > 0,
+    SQRT ( DIVIDE ( 2 * _DemandaAnual * _CustoPedido, _CustoUnit * _TaxaManut ) )
+)
+// Formato: #.##0
+
+Nº Ideal de Pedidos por Ano =
+DIVIDE ( [Qtd Consumo 12M], [Lote Econômico Compra] )
+
+// ---------------------------------------------------------------------
+// SUGESTAO DE COMPRA
+// Quantidade a comprar hoje para recompor ate o estoque maximo, apenas
+// para os itens que ja atingiram o ponto de pedido.
+// ---------------------------------------------------------------------
+Quantidade Sugerida de Compra =
+VAR _Saldo  = [Saldo Disponível]
+VAR _PP     = [Ponto de Pedido Sugerido]
+VAR _Maximo = AVERAGEX ( VALUES ( dItem[SK_Item] ), CALCULATE ( MAX ( dItem[EstoqueMaximo] ) ) )
+VAR _Lote   = AVERAGEX ( VALUES ( dItem[SK_Item] ), CALCULATE ( MAX ( dItem[LoteMinimoCompra] ) ) )
+VAR _Necessidade = MAX ( _Maximo - _Saldo, 0 )
+RETURN
+IF ( _Saldo <= _PP, MAX ( _Necessidade, _Lote ) )
+
+Valor Sugerido de Compra =
+[Quantidade Sugerida de Compra] * [Custo Médio Unitário]

@@ -1,0 +1,254 @@
+// =====================================================================
+// 10 - KPI, METAS, SEMAFOROS E TITULOS DINAMICOS
+// Pasta de exibicao sugerida: 10 KPI e Formatação
+// =====================================================================
+
+// ---------------------------------------------------------------------
+// LEITURA DA META CADASTRADA
+// A tabela dMetaKPI guarda a meta de cada indicador por mes, permitindo
+// que a meta evolua ao longo do ano sem alterar o modelo.
+// ---------------------------------------------------------------------
+Meta Fill Rate =
+CALCULATE ( AVERAGE ( dMetaKPI[ValorMeta] ), dMetaKPI[Indicador] = "Fill Rate" )
+
+Meta OTIF =
+CALCULATE ( AVERAGE ( dMetaKPI[ValorMeta] ), dMetaKPI[Indicador] = "OTIF" )
+
+Meta Giro =
+CALCULATE ( AVERAGE ( dMetaKPI[ValorMeta] ), dMetaKPI[Indicador] = "Giro de Estoque" )
+
+Meta Acuracidade =
+CALCULATE ( AVERAGE ( dMetaKPI[ValorMeta] ), dMetaKPI[Indicador] = "Acuracidade" )
+
+Meta Cobertura =
+CALCULATE ( AVERAGE ( dMetaKPI[ValorMeta] ), dMetaKPI[Indicador] = "Cobertura" )
+
+// ---------------------------------------------------------------------
+// ATINGIMENTO E SEMAFORO GENERICO
+// ---------------------------------------------------------------------
+Atingimento Fill Rate = DIVIDE ( [Fill Rate %], [Meta Fill Rate] )
+Atingimento OTIF      = DIVIDE ( [OTIF %], [Meta OTIF] )
+Atingimento Giro      = DIVIDE ( [Giro 12 Meses], [Meta Giro] )
+
+// ---------------------------------------------------------------------
+// CORES DO SEMAFORO
+// Aplique em Formatação condicional > Cor da fonte > Formato por > Valor
+// do campo, selecionando a medida correspondente.
+// ---------------------------------------------------------------------
+Cor Fill Rate =
+VAR _Valor = [Fill Rate %]
+VAR _Meta  = [Meta Fill Rate]
+RETURN
+SWITCH (
+    TRUE (),
+    ISBLANK ( _Valor ),        "#9AA5B1",
+    _Valor >= _Meta,           "#1B8A5A",
+    _Valor >= _Meta * 0.95,    "#E8A33D",
+    "#C0392B"
+)
+
+Cor OTIF =
+VAR _Valor = [OTIF %]
+VAR _Meta  = [Meta OTIF]
+RETURN
+SWITCH (
+    TRUE (),
+    ISBLANK ( _Valor ),        "#9AA5B1",
+    _Valor >= _Meta,           "#1B8A5A",
+    _Valor >= _Meta * 0.95,    "#E8A33D",
+    "#C0392B"
+)
+
+Cor Acuracidade =
+VAR _Valor = [Acuracidade Inventário %]
+VAR _Meta  = [Meta Acuracidade]
+RETURN
+SWITCH (
+    TRUE (),
+    ISBLANK ( _Valor ),     "#9AA5B1",
+    _Valor >= _Meta,        "#1B8A5A",
+    _Valor >= _Meta - 0.02, "#E8A33D",
+    "#C0392B"
+)
+
+// Cobertura tem meta de faixa: nem baixa demais nem alta demais.
+Cor Cobertura =
+VAR _Valor = [Cobertura Dias]
+RETURN
+SWITCH (
+    TRUE (),
+    ISBLANK ( _Valor ),                "#9AA5B1",
+    _Valor < 15,                       "#C0392B",
+    _Valor >= 15  && _Valor < 30,      "#E8A33D",
+    _Valor >= 30  && _Valor <= 60,     "#1B8A5A",
+    _Valor > 60   && _Valor <= 120,    "#E8A33D",
+    "#C0392B"
+)
+
+Cor Estoque sem Giro =
+VAR _Valor = [% Estoque sem Giro]
+RETURN
+SWITCH (
+    TRUE (),
+    ISBLANK ( _Valor ), "#9AA5B1",
+    _Valor <= 0.08,     "#1B8A5A",
+    _Valor <= 0.15,     "#E8A33D",
+    "#C0392B"
+)
+
+// ---------------------------------------------------------------------
+// INDICADOR DE VARIACAO COM SETA
+// Use como rotulo secundario nos cartoes de KPI.
+// ---------------------------------------------------------------------
+Rótulo Var Consumo MoM =
+VAR _Var = [Var % Consumo MoM]
+VAR _Seta = SWITCH ( TRUE (), _Var > 0, "▲ ", _Var < 0, "▼ ", "● " )
+RETURN
+IF (
+    ISBLANK ( _Var ),
+    "sem comparativo",
+    _Seta & FORMAT ( ABS ( _Var ), "0.0%" ) & " vs mês anterior"
+)
+
+Cor Var Consumo MoM =
+VAR _Var = [Var % Consumo MoM]
+RETURN
+SWITCH ( TRUE (), ISBLANK ( _Var ), "#9AA5B1", _Var > 0.10, "#C0392B", _Var < -0.10, "#1B8A5A", "#5A6572" )
+// Aumento de consumo acima de 10% aparece em vermelho porque representa
+// despesa acima do padrao, nao um resultado positivo.
+
+Rótulo Var Estoque MoM =
+VAR _Var = [Var % Estoque MoM]
+VAR _Seta = SWITCH ( TRUE (), _Var > 0, "▲ ", _Var < 0, "▼ ", "● " )
+RETURN
+IF ( ISBLANK ( _Var ), "sem comparativo", _Seta & FORMAT ( ABS ( _Var ), "0.0%" ) & " vs mês anterior" )
+
+// ---------------------------------------------------------------------
+// STATUS TEXTUAL DO PAINEL
+// ---------------------------------------------------------------------
+Status Geral Almoxarifado =
+VAR _Criticos =
+    ( IF ( [Fill Rate %] < [Meta Fill Rate], 1, 0 ) )
+  + ( IF ( [OTIF %] < [Meta OTIF], 1, 0 ) )
+  + ( IF ( [Acuracidade Inventário %] < [Meta Acuracidade], 1, 0 ) )
+  + ( IF ( [Giro 12 Meses] < [Meta Giro], 1, 0 ) )
+  + ( IF ( [% Estoque sem Giro] > 0.08, 1, 0 ) )
+RETURN
+SWITCH (
+    TRUE (),
+    _Criticos = 0, "Todos os indicadores dentro da meta",
+    _Criticos = 1, "1 indicador fora da meta",
+    _Criticos & " indicadores fora da meta"
+)
+
+// ---------------------------------------------------------------------
+// TITULOS DINAMICOS
+// Aplique em Formatação do visual > Título > Formato por > Valor do campo.
+// ---------------------------------------------------------------------
+Título Período Selecionado =
+VAR _Ini = MIN ( dCalendario[Data] )
+VAR _Fim = MAX ( dCalendario[Data] )
+RETURN
+"Período de " & FORMAT ( _Ini, "dd/mm/yyyy" ) & " a " & FORMAT ( _Fim, "dd/mm/yyyy" )
+
+Título Depósito Selecionado =
+VAR _Qtd = COUNTROWS ( VALUES ( dDeposito[NomeDeposito] ) )
+VAR _Todos = COUNTROWS ( ALL ( dDeposito[NomeDeposito] ) )
+RETURN
+SWITCH (
+    TRUE (),
+    _Qtd = _Todos, "Todos os depósitos",
+    _Qtd = 1,      SELECTEDVALUE ( dDeposito[NomeDeposito] ),
+    _Qtd & " depósitos selecionados"
+)
+
+Título Consumo por Centro de Custo =
+"Consumo por centro de custo | " & [Título Depósito Selecionado] & " | " & [Título Período Selecionado]
+
+// ---------------------------------------------------------------------
+// MENSAGEM DE VAZIO
+// Exibe uma orientacao quando o filtro nao retorna dados, em vez de
+// deixar o visual em branco sem explicacao.
+// ---------------------------------------------------------------------
+Mensagem sem Dados =
+IF (
+    ISBLANK ( [Valor Consumo] ),
+    "Não há movimentação no período e nos filtros selecionados. Ajuste o período ou limpe os filtros.",
+    BLANK ()
+)
+
+// =====================================================================
+// SELECAO DINAMICA DE METRICA
+// Combine com a tabela desconectada pSelecaoMetrica. O usuario escolhe
+// a metrica na segmentacao e o mesmo grafico atende a sete analises.
+// =====================================================================
+
+Métrica Selecionada =
+VAR _Codigo = SELECTEDVALUE ( pSelecaoMetrica[Codigo], "ESTOQUE" )
+RETURN
+SWITCH (
+    _Codigo,
+    "ESTOQUE",   [Valor Estoque],
+    "CONSUMO",   [Valor Consumo],
+    "ENTRADA",   [Valor Entrada],
+    "GIRO",      [Giro 12 Meses],
+    "COBERTURA", [Cobertura Dias],
+    "FILLRATE",  [Fill Rate %],
+    "OTIF",      [OTIF %],
+    BLANK ()
+)
+
+Formato Métrica Selecionada =
+VAR _Codigo = SELECTEDVALUE ( pSelecaoMetrica[Codigo], "ESTOQUE" )
+RETURN
+SWITCH (
+    _Codigo,
+    "ESTOQUE",   "R$ #,##0",
+    "CONSUMO",   "R$ #,##0",
+    "ENTRADA",   "R$ #,##0",
+    "GIRO",      "#,##0.00",
+    "COBERTURA", "#,##0",
+    "FILLRATE",  "0.0%",
+    "OTIF",      "0.0%",
+    "#,##0"
+)
+// Aplique em: selecione a medida "Métrica Selecionada" > Ferramentas de
+// medida > Formato > escolha "Dinâmico" e aponte para esta medida.
+// Requer a versao do Power BI Desktop com formato dinamico habilitado.
+
+Título Métrica Selecionada =
+SELECTEDVALUE ( pSelecaoMetrica[Metrica], "Valor de Estoque" ) & " | " & [Título Período Selecionado]
+
+// =====================================================================
+// QUALIDADE DE DADOS
+// =====================================================================
+
+Itens sem Curva ABC =
+CALCULATE ( COUNTROWS ( dItem ), ISBLANK ( dItem[CurvaABC] ), dItem[StatusItem] = "Ativo" ) + 0
+
+Itens sem Estoque Mínimo =
+CALCULATE ( COUNTROWS ( dItem ), ISBLANK ( dItem[EstoqueMinimo] ), dItem[StatusItem] = "Ativo" ) + 0
+
+Itens sem Lead Time =
+CALCULATE ( COUNTROWS ( dItem ), ISBLANK ( dItem[LeadTimePadraoDias] ), dItem[StatusItem] = "Ativo" ) + 0
+
+Movimentos sem Centro de Custo =
+CALCULATE (
+    COUNTROWS ( fMovimentacaoEstoque ),
+    ISBLANK ( fMovimentacaoEstoque[SK_CentroCusto] ),
+    dTipoMovimento[Natureza] = "Saida"
+) + 0
+
+Movimentos com Custo Zerado =
+CALCULATE ( COUNTROWS ( fMovimentacaoEstoque ), fMovimentacaoEstoque[CustoUnitario] = 0 ) + 0
+
+Total de Pendências de Cadastro =
+[Itens sem Curva ABC] + [Itens sem Estoque Mínimo] + [Itens sem Lead Time]
+  + [Movimentos sem Centro de Custo] + [Movimentos com Custo Zerado]
+
+Índice de Qualidade do Cadastro =
+VAR _ItensAtivos = [SKUs Cadastrados Ativos]
+VAR _ItensComPendencia = [Itens sem Curva ABC] + [Itens sem Estoque Mínimo] + [Itens sem Lead Time]
+RETURN
+1 - DIVIDE ( _ItensComPendencia, _ItensAtivos * 3 )
+// Formato: 0,0% | Cada item pode ter ate 3 pendencias de cadastro.

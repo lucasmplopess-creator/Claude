@@ -1,0 +1,36 @@
+﻿SK_Fornecedor;CodigoFornecedor;RazaoSocial;NomeFantasia;UF;Cidade;CategoriaFornecimento;PorteFornecedor;StatusFornecedor;DataHomologacao
+1;F0001;Alfa Suprimentos Ltda;Alfa;SP;Campinas;Peças de Reposição;Pequeno;Ativo;2019-02-24
+2;F0002;Beta Suprimentos Ltda;Beta;PE;Recife;Material de Escritório;Pequeno;Bloqueado;2020-06-14
+3;F0003;Delta Materiais Ltda;Delta;PR;Curitiba;Material Elétrico;Grande;Ativo;2024-02-11
+4;F0004;Ômega Industrial Ltda;Ômega;RJ;Rio de Janeiro;Limpeza e Higiene;Grande;Ativo;2018-01-27
+5;F0005;Nexus Equipamentos Ltda;Nexus;MG;Belo Horizonte;Material de Escritório;Médio;Ativo;2020-05-31
+6;F0006;Prime Suprimentos Ltda;Prime;SC;Joinville;Material Hidráulico;Médio;Ativo;2021-11-09
+7;F0007;Vertex Comercial Ltda;Vertex;GO;Goiânia;Material Elétrico;Grande;Ativo;2019-05-27
+8;F0008;Orion Suprimentos Ltda;Orion;RJ;Rio de Janeiro;Peças de Reposição;Grande;Ativo;2022-01-21
+9;F0009;Atlas Industrial Ltda;Atlas;GO;Goiânia;Material Hidráulico;Pequeno;Ativo;2021-03-31
+10;F0010;Zenit Componentes Ltda;Zenit;SP;Campinas;Ferramentas;Pequeno;Ativo;2023-02-01
+11;F0011;Aurora Industrial Ltda;Aurora;SC;Joinville;Lubrificantes;Médio;Ativo;2020-12-29
+12;F0012;Titan Materiais Ltda;Titan;SP;Campinas;EPI;Grande;Ativo;2019-11-01
+13;F0013;Vector Distribuidora Ltda;Vector;BA;Salvador;Peças de Reposição;Grande;Ativo;2020-06-18
+14;F0014;Lumen Componentes Ltda;Lumen;SC;Joinville;Material Elétrico;Pequeno;Ativo;2021-07-16
+15;F0015;Nova Comercial Ltda;Nova;RJ;Rio de Janeiro;Material Hidráulico;Pequeno;Ativo;2024-05-12
+16;F0016;Sigma Industrial Ltda;Sigma;SC;Joinville;Limpeza e Higiene;Médio;Ativo;2023-02-23
+17;F0017;Kappa Comercial Ltda;Kappa;MG;Belo Horizonte;EPI;Pequeno;Ativo;2024-01-17
+18;F0018;Solar Equipamentos Ltda;Solar;RS;Porto Alegre;Material de Escritório;Grande;Ativo;2020-06-17
+19;F0019;Metro Materiais Ltda;Metro;MG;Belo Horizonte;Limpeza e Higiene;Pequeno;Ativo;2019-03-26
+20;F0020;Global Equipamentos Ltda;Global;MG;Belo Horizonte;EPI;Grande;Ativo;2018-09-18
+21;F0021;Ápice Distribuidora Ltda;Ápice;RJ;Rio de Janeiro;Limpeza e Higiene;Grande;Ativo;2024-03-16
+22;F0022;Fênix Equipamentos Ltda;Fênix;SP;São Paulo;Material Hidráulico;Grande;Ativo;2020-12-28
+23;F0023;Ibéria Suprimentos Ltda;Ibéria;SC;Joinville;Peças de Reposição;Médio;Ativo;2018-01-14
+24;F0024;Andes Materiais Ltda;Andes;RS;Porto Alegre;EPI;Grande;Ativo;2021-05-07
+25;F0025;Pampa Materiais Ltda;Pampa;PE;Recife;Ferramentas;Pequeno;Ativo;2019-10-24
+26;F0026;Cerrado Componentes Ltda;Cerrado;PE;Recife;Material Elétrico;Grande;Ativo;2018-03-21
+27;F0027;Litoral Comercial Ltda;Litoral;SP;Campinas;Peças de Reposição;Pequeno;Bloqueado;2024-05-12
+28;F0028;Planalto Suprimentos Ltda;Planalto;SP;Campinas;Limpeza e Higiene;Pequeno;Ativo;2023-12-22
+29;F0029;Bandeirante Industrial Ltda;Bandeirante;MG;Belo Horizonte;Limpeza e Higiene;Grande;Ativo;2023-12-02
+30;F0030;Guará Distribuidora Ltda;Guará;GO;Goiânia;Ferramentas;Grande;Ativo;2020-04-03
+31;F0031;Ipê Distribuidora Ltda;Ipê;RS;Porto Alegre;Lubrificantes;Médio;Ativo;2023-01-24
+32;F0032;Jacarandá Industrial Ltda;Jacarandá;SP;Campinas;Ferramentas;Pequeno;Ativo;2024-03-18
+33;F0033;Peroba Materiais Ltda;Peroba;PR;Curitiba;Ferramentas;Pequeno;Bloqueado;2018-08-30
+34;F0034;Sucupira Suprimentos Ltda;Sucupira;PR;Curitiba;Material Elétrico;Médio;Bloqueado;2020-09-01
+35;F0035;Angico Equipamentos Ltda;Angico;RS;Porto Alegre;Limpeza e Higiene;Pequeno;Ativo;2024-05-27

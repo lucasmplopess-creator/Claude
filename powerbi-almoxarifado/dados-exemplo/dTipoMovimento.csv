@@ -1,0 +1,13 @@
+﻿SK_TipoMovimento;CodigoMovimento;DescricaoMovimento;Natureza;GrupoMovimento;AfetaCusto;ContaConsumo
+1;101;Entrada por compra;Entrada;Compra;SIM;NAO
+2;102;Entrada por devolução de área;Entrada;Devolucao;SIM;NAO
+3;103;Entrada por transferência;Entrada;Transferencia;NAO;NAO
+4;104;Entrada por ajuste de inventário;Entrada;Ajuste;SIM;NAO
+5;105;Entrada por devolução de fornecedor;Entrada;Devolucao;SIM;NAO
+6;201;Saída para consumo;Saida;Consumo;SIM;SIM
+7;202;Saída para manutenção;Saida;Consumo;SIM;SIM
+8;203;Saída para produção;Saida;Consumo;SIM;SIM
+9;204;Saída por transferência;Saida;Transferencia;NAO;NAO
+10;205;Saída por ajuste de inventário;Saida;Ajuste;SIM;NAO
+11;206;Saída por perda ou avaria;Saida;Perda;SIM;NAO
+12;207;Saída por devolução ao fornecedor;Saida;Devolucao;SIM;NAO
