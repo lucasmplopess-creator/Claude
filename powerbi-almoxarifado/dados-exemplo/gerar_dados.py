@@ -12,6 +12,7 @@ Saida: arquivos CSV neste mesmo diretorio, separados por ponto e virgula,
 codificacao UTF-8 com BOM (compativel com Excel em portugues do Brasil).
 """
 
+import collections
 import csv
 import math
 import os
@@ -346,7 +347,12 @@ def simular(perfis, centros, solicitantes):
     for sk_item, p in perfis.items():
         # Cada item fica em 1 ou 2 depositos
         depositos_item = [1] if random.random() < 0.55 else random.sample([1, 2, 3], k=2)
-        for sk_dep in depositos_item:
+        # Transferencias entre depositos do mesmo item. Sao saida no deposito de
+        # origem e entrada no de destino, com saldo liquido zero para a empresa.
+        # Nao contam como consumo, e e justamente essa distincao que o painel
+        # precisa respeitar para nao inflar giro, cobertura e curva ABC.
+        transf_pendentes = collections.defaultdict(list)
+        for idx_dep, sk_dep in enumerate(depositos_item):
             saldo = round(p["demanda"] * random.uniform(1.2, 3.0), 0)
             custo = p["preco"]
             ultima_saida = None
@@ -361,6 +367,19 @@ def simular(perfis, centros, solicitantes):
             for idx_mes, (ano, mes) in enumerate(meses):
                 ref_fim = fim_do_mes(ano, mes)
                 item_parado = mes_parada is not None and idx_mes >= mes_parada
+
+                # --- Entrada por transferencia recebida de outro deposito ---
+                for (dt_t, qtd_t) in list(transf_pendentes[sk_dep]):
+                    if dt_t <= ref_fim:
+                        saldo += qtd_t
+                        ultima_entrada = dt_t
+                        sk_mov += 1
+                        movimentacoes.append([
+                            sk_mov, dt_t.isoformat(), sk_item, sk_dep, 3, "", "",
+                            "TR%06d" % sk_mov,
+                            brl(qtd_t), brl(custo), brl2(qtd_t * custo),
+                            brl(qtd_t), brl2(qtd_t * custo)])
+                        transf_pendentes[sk_dep].remove((dt_t, qtd_t))
 
                 # --- Recebimento de pedidos que chegam neste mes ---
                 for (dt_chegada, qtd, _sk) in list(pedidos_pendentes):
@@ -450,6 +469,21 @@ def simular(perfis, centros, solicitantes):
                             random.choice(centros), "", "PERDA%05d" % sk_mov,
                             brl(qtd_perda), brl(custo), brl2(qtd_perda * custo),
                             brl(-qtd_perda), brl2(-qtd_perda * custo)])
+
+                # --- Saida por transferencia para o deposito secundario ---
+                if (len(depositos_item) > 1 and idx_dep == 0 and not item_parado
+                        and random.random() < 0.20 and saldo > p["demanda"]):
+                    qtd_t = round(p["demanda"] * random.uniform(0.20, 0.50), 0)
+                    if 0 < qtd_t <= saldo:
+                        dt_t = dia_util_aleatorio(ano, mes)
+                        saldo -= qtd_t
+                        sk_mov += 1
+                        movimentacoes.append([
+                            sk_mov, dt_t.isoformat(), sk_item, sk_dep, 9, "", "",
+                            "TR%06d" % sk_mov,
+                            brl(qtd_t), brl(custo), brl2(qtd_t * custo),
+                            brl(-qtd_t), brl2(-qtd_t * custo)])
+                        transf_pendentes[depositos_item[1]].append((dt_t, qtd_t))
 
                 # --- Reposicao: gera pedido de compra ---
                 if saldo <= p["pp"] and not item_parado:

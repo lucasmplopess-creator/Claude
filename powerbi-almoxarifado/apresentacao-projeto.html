@@ -1,0 +1,855 @@
+<title>Painel do Almoxarifado</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+
+<style>
+/* ---------- tokens: light (bare :root defines the complete palette) ---------- */
+:root{
+  --ground:#EEF2F2;
+  --paper:#FFFFFF;
+  --paper-2:#F7FAFA;
+  --ink:#0F262A;
+  --ink-2:#48595D;
+  --muted:#7A8C8F;
+  --rule:#D8E2E2;
+  --rule-strong:#B9C9C9;
+
+  --accent:#00959E;
+  --accent-deep:#00666E;
+  --accent-wash:#E1F0F1;
+
+  --series-1:#00959E;
+  --series-2:#6A4BC0;
+
+  --abc-a:#00666E;
+  --abc-b:#00959E;
+  --abc-c:#8CCDD3;
+
+  --good:#0F7B4F;
+  --good-wash:#E2F1EA;
+  --warn:#8F6100;
+  --warn-wash:#F6EEDC;
+  --bad:#A5342A;
+  --bad-wash:#F7E7E4;
+
+  --grid:#E6ECEC;
+  --axis:#C4D2D2;
+
+  --shadow:0 1px 2px rgba(15,38,42,.06), 0 8px 24px -18px rgba(15,38,42,.35);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --ground:#0A1416;
+    --paper:#111F22;
+    --paper-2:#152629;
+    --ink:#E2ECEC;
+    --ink-2:#A2B5B7;
+    --muted:#7C9093;
+    --rule:#1F3438;
+    --rule-strong:#2C464B;
+
+    --accent:#17A3AE;
+    --accent-deep:#5FC3CC;
+    --accent-wash:#12292D;
+
+    --series-1:#17A3AE;
+    --series-2:#8168D6;
+
+    --abc-a:#0B5C63;
+    --abc-b:#17A3AE;
+    --abc-c:#6FC7CF;
+
+    --good:#3FAE77;
+    --good-wash:#102A21;
+    --warn:#D19A2B;
+    --warn-wash:#2A2312;
+    --bad:#E0685C;
+    --bad-wash:#2C1714;
+
+    --grid:#1C2F33;
+    --axis:#2A4348;
+
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -18px rgba(0,0,0,.8);
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#0A1416;
+  --paper:#111F22;
+  --paper-2:#152629;
+  --ink:#E2ECEC;
+  --ink-2:#A2B5B7;
+  --muted:#7C9093;
+  --rule:#1F3438;
+  --rule-strong:#2C464B;
+
+  --accent:#17A3AE;
+  --accent-deep:#5FC3CC;
+  --accent-wash:#12292D;
+
+  --series-1:#17A3AE;
+  --series-2:#8168D6;
+
+  --abc-a:#0B5C63;
+  --abc-b:#17A3AE;
+  --abc-c:#6FC7CF;
+
+  --good:#3FAE77;
+  --good-wash:#102A21;
+  --warn:#D19A2B;
+  --warn-wash:#2A2312;
+  --bad:#E0685C;
+  --bad-wash:#2C1714;
+
+  --grid:#1C2F33;
+  --axis:#2A4348;
+
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px -18px rgba(0,0,0,.8);
+}
+
+/* ---------- base ---------- */
+*{box-sizing:border-box}
+body{
+  background:var(--ground);
+  color:var(--ink);
+  font-family:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;
+  font-size:15px;
+  line-height:1.62;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px 96px}
+
+h1,h2,h3{font-family:Archivo,"Segoe UI",system-ui,sans-serif;text-wrap:balance;margin:0}
+p{margin:0}
+a{color:var(--accent-deep)}
+
+.mono{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+.eyebrow{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--muted);
+}
+.num{font-variant-numeric:tabular-nums}
+
+/* ---------- masthead: engineering title block ---------- */
+.mast{padding:56px 0 0}
+.mast-kicker{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.mast-kicker .bar{width:34px;height:3px;background:var(--accent);border-radius:2px}
+.mast h1{
+  font-size:clamp(34px,5.4vw,56px);font-weight:700;letter-spacing:-.025em;line-height:1.04;
+}
+.mast h1 span{color:var(--accent-deep)}
+.mast-lede{
+  margin-top:18px;max-width:62ch;font-size:17px;color:var(--ink-2);
+}
+
+/* title block grid */
+.titleblock{
+  margin-top:36px;
+  display:grid;grid-template-columns:repeat(6,1fr);
+  border:1px solid var(--rule-strong);border-radius:6px;overflow:hidden;
+  background:var(--paper);
+}
+.tb-cell{padding:14px 16px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.tb-cell:nth-child(6n){border-right:none}
+.tb-cell:nth-last-child(-n+6){border-bottom:none}
+.tb-cell .k{
+  font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.13em;
+  text-transform:uppercase;color:var(--muted);display:block;margin-bottom:5px;
+}
+.tb-cell .v{
+  font-family:Archivo,sans-serif;font-weight:600;font-size:19px;letter-spacing:-.01em;
+  font-variant-numeric:tabular-nums;color:var(--ink);display:block;line-height:1.2;
+}
+.tb-cell .v small{font-weight:500;font-size:12px;color:var(--ink-2);display:block;letter-spacing:0}
+
+/* ---------- sections ---------- */
+section{margin-top:72px}
+.sec-head{display:flex;align-items:baseline;gap:16px;padding-bottom:14px;border-bottom:1px solid var(--rule-strong);margin-bottom:28px}
+.sec-code{
+  font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;letter-spacing:.12em;
+  color:var(--accent-deep);white-space:nowrap;padding-top:6px;
+}
+.sec-head h2{font-size:26px;font-weight:600;letter-spacing:-.018em;flex:1}
+.sec-note{font-size:13px;color:var(--muted);text-align:right;white-space:nowrap}
+.lede{max-width:70ch;color:var(--ink-2);margin-bottom:26px}
+
+/* ---------- KPI instrument row ---------- */
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);
+  border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.kpi{background:var(--paper);padding:18px 18px 16px;display:flex;flex-direction:column;gap:9px;min-height:146px}
+.kpi .lab{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);line-height:1.4}
+.kpi .val{font-family:Archivo,sans-serif;font-weight:700;font-size:31px;letter-spacing:-.03em;
+  font-variant-numeric:tabular-nums;line-height:1;color:var(--ink)}
+.kpi .val u{text-decoration:none;font-size:15px;font-weight:500;color:var(--ink-2);margin-left:3px}
+.kpi .foot{margin-top:auto;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.chip{
+  font-family:"IBM Plex Mono",monospace;font-size:10px;font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;padding:3px 7px;border-radius:3px;white-space:nowrap;
+}
+.chip.ok{background:var(--good-wash);color:var(--good)}
+.chip.no{background:var(--bad-wash);color:var(--bad)}
+.chip.at{background:var(--warn-wash);color:var(--warn)}
+.chip.nt{background:var(--accent-wash);color:var(--accent-deep)}
+.kpi .meta{font-size:11.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.kpi.is-off{box-shadow:inset 3px 0 0 var(--bad)}
+.kpi.is-warn{box-shadow:inset 3px 0 0 var(--warn)}
+
+/* ---------- chart ---------- */
+.card{background:var(--paper);border:1px solid var(--rule);border-radius:8px;padding:22px 22px 18px;box-shadow:var(--shadow)}
+.chart-head{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;margin-bottom:6px}
+.chart-title{font-family:Archivo,sans-serif;font-size:16px;font-weight:600;letter-spacing:-.01em}
+.chart-sub{font-size:12.5px;color:var(--muted);margin-top:2px}
+.legend{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.lg{display:flex;align-items:center;gap:7px;font-size:12.5px;color:var(--ink-2)}
+.lg i{width:11px;height:11px;border-radius:2px;display:inline-block;flex:none}
+.lg i.line{height:3px;border-radius:2px}
+.chart-scroll{overflow-x:auto;margin-top:10px}
+.chart-scroll svg{display:block;min-width:640px;width:100%;height:auto}
+.tip{
+  position:fixed;pointer-events:none;opacity:0;transition:opacity .1s;z-index:20;
+  background:var(--paper);border:1px solid var(--rule-strong);border-radius:6px;
+  padding:9px 11px;box-shadow:var(--shadow);font-size:12.5px;min-width:170px;
+}
+.tip .t-m{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+.tip .t-r{display:flex;align-items:center;gap:8px;justify-content:space-between;line-height:1.7}
+.tip .t-r span{display:flex;align-items:center;gap:6px;color:var(--ink-2)}
+.tip .t-r i{width:9px;height:9px;border-radius:2px;flex:none}
+.tip .t-r b{font-variant-numeric:tabular-nums;font-weight:600;color:var(--ink)}
+
+/* ---------- ABC bar ---------- */
+.abc{margin-top:22px;display:grid;grid-template-columns:1fr;gap:12px}
+.abc-bar{display:flex;gap:2px;height:34px}
+.abc-seg{border-radius:2px;display:flex;align-items:center;padding-left:10px;
+  font-family:"IBM Plex Mono",monospace;font-size:11px;font-weight:600;color:#fff}
+.abc-seg.c{color:var(--ink)}
+.abc-keys{display:flex;gap:26px;flex-wrap:wrap;font-size:12.5px;color:var(--ink-2)}
+.abc-keys div{display:flex;align-items:center;gap:7px}
+.abc-keys i{width:11px;height:11px;border-radius:2px}
+
+/* ---------- generic tables ---------- */
+.tbl-scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:520px}
+th{
+  font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);text-align:left;font-weight:500;padding:0 14px 9px 0;border-bottom:1px solid var(--rule-strong);
+}
+td{padding:11px 14px 11px 0;border-bottom:1px solid var(--rule);vertical-align:top;color:var(--ink-2)}
+td:first-child{color:var(--ink);font-weight:500}
+tr:last-child td{border-bottom:none}
+td.n,th.n{text-align:right;font-variant-numeric:tabular-nums;padding-right:26px;white-space:nowrap}
+
+/* ---------- decision blocks ---------- */
+.decisions{display:grid;gap:18px}
+.dec{background:var(--paper);border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.dec-top{padding:18px 20px 16px;display:grid;grid-template-columns:1fr;gap:8px}
+.dec-top h3{font-size:17px;font-weight:600;letter-spacing:-.012em}
+.dec-top p{color:var(--ink-2);font-size:14px;max-width:78ch}
+.dec-code{
+  background:var(--paper-2);border-top:1px solid var(--rule);
+  padding:14px 20px;overflow-x:auto;
+}
+.dec-code pre{margin:0;font-family:"IBM Plex Mono",monospace;font-size:12.5px;line-height:1.72;color:var(--ink-2);white-space:pre}
+.dec-code .fn{color:var(--accent-deep);font-weight:500}
+.dec-code .cm{color:var(--muted)}
+.dec-code .ms{color:var(--ink);font-weight:500}
+
+/* ---------- diagram ---------- */
+figure{margin:0}
+.fig-scroll{overflow-x:auto}
+.fig-scroll svg{display:block;min-width:660px;width:100%;height:auto;color:var(--ink-2)}
+figcaption{margin-top:14px;font-size:13px;color:var(--muted);max-width:76ch}
+
+/* ---------- page list ---------- */
+.pages{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);
+  border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.pg{background:var(--paper);padding:15px 17px;display:flex;flex-direction:column;gap:5px}
+.pg b{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.1em;color:var(--accent-deep);font-weight:600}
+.pg strong{font-family:Archivo,sans-serif;font-size:14.5px;font-weight:600;letter-spacing:-.008em;color:var(--ink)}
+.pg span{font-size:12.5px;color:var(--muted);line-height:1.5}
+
+/* ---------- steps ---------- */
+.steps{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);border-radius:8px;overflow:hidden}
+.step{background:var(--paper);display:grid;grid-template-columns:46px 200px 1fr 80px;gap:16px;align-items:center;padding:14px 18px}
+.step .s-n{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:600;color:var(--accent-deep)}
+.step .s-t{font-weight:500;color:var(--ink);font-size:14.5px}
+.step .s-d{font-size:12.5px;color:var(--muted)}
+.step .s-h{text-align:right;font-family:"IBM Plex Mono",monospace;font-size:13px;font-variant-numeric:tabular-nums;color:var(--ink-2)}
+.step.total{background:var(--accent-wash)}
+.step.total .s-t,.step.total .s-h{color:var(--accent-deep);font-weight:600}
+
+/* ---------- repo tree ---------- */
+.tree{background:var(--paper);border:1px solid var(--rule);border-radius:8px;padding:20px 22px;overflow-x:auto}
+.tree pre{margin:0;font-family:"IBM Plex Mono",monospace;font-size:12.5px;line-height:1.85;color:var(--ink-2);white-space:pre}
+.tree pre b{color:var(--ink);font-weight:600}
+.tree pre i{color:var(--muted);font-style:normal}
+
+/* ---------- footer ---------- */
+footer{margin-top:72px;padding-top:22px;border-top:1px solid var(--rule-strong);
+  display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:12.5px;color:var(--muted)}
+
+/* ---------- responsive ---------- */
+@media (max-width:920px){
+  .titleblock{grid-template-columns:repeat(3,1fr)}
+  .tb-cell:nth-child(6n){border-right:1px solid var(--rule)}
+  .tb-cell:nth-child(3n){border-right:none}
+  .tb-cell:nth-last-child(-n+6){border-bottom:1px solid var(--rule)}
+  .tb-cell:nth-last-child(-n+3){border-bottom:none}
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .pages{grid-template-columns:repeat(2,1fr)}
+  .step{grid-template-columns:44px 1fr 74px;gap:12px}
+  .step .s-d{display:none}
+}
+@media (max-width:600px){
+  .wrap{padding:0 16px 72px}
+  .titleblock{grid-template-columns:repeat(2,1fr)}
+  .tb-cell:nth-child(3n){border-right:1px solid var(--rule)}
+  .tb-cell:nth-child(2n){border-right:none}
+  .kpis{grid-template-columns:1fr}
+  .pages{grid-template-columns:1fr}
+  .sec-head{flex-wrap:wrap}
+  .sec-note{text-align:left}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:3px}
+</style>
+
+<div class="wrap">
+
+  <!-- ============ MASTHEAD ============ -->
+  <header class="mast">
+    <div class="mast-kicker">
+      <span class="bar"></span>
+      <span class="eyebrow">Projeto Power BI · Gestão de Materiais</span>
+    </div>
+    <h1>Painel de indicadores<br>do <span>Almoxarifado</span></h1>
+    <p class="mast-lede">
+      Escopo, modelo de dados, banco, biblioteca de medidas, especificação visual e base de
+      homologação. Um projeto completo, agnóstico de ERP, pronto para sair do zero até o
+      painel publicado.
+    </p>
+
+    <div class="titleblock">
+      <div class="tb-cell"><span class="k">Plataforma</span><span class="v">Power BI<small>Desktop + Service</small></span></div>
+      <div class="tb-cell"><span class="k">Indicadores</span><span class="v">82<small>em 9 blocos</small></span></div>
+      <div class="tb-cell"><span class="k">Definições DAX</span><span class="v">248<small>medidas e colunas</small></span></div>
+      <div class="tb-cell"><span class="k">Páginas</span><span class="v">12<small>mais 3 drill-through</small></span></div>
+      <div class="tb-cell"><span class="k">Modelo</span><span class="v">8 + 6<small>dimensões e fatos</small></span></div>
+      <div class="tb-cell"><span class="k">Esforço</span><span class="v">132 h<small>4 a 8 semanas</small></span></div>
+    </div>
+  </header>
+
+  <!-- ============ 01 KPIs ============ -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-code">SEC 01</span>
+      <h2>Os oito cartões da visão executiva</h2>
+      <span class="sec-note">Base de homologação · ago/2026</span>
+    </div>
+    <p class="lede">
+      A primeira página responde em dez segundos se o almoxarifado está saudável. Os números
+      abaixo saem da base de exemplo que acompanha o projeto, calibrada para produzir metas
+      batidas e metas em aberto, de modo que toda a formatação condicional possa ser testada
+      antes da conexão com o ERP.
+    </p>
+
+    <div class="kpis">
+      <div class="kpi">
+        <span class="lab">Valor em estoque</span>
+        <span class="val num">R$ 13,92<u>mi</u></span>
+        <span class="foot"><span class="chip nt">Referência</span><span class="meta">345 combinações item e depósito</span></span>
+      </div>
+      <div class="kpi">
+        <span class="lab">Giro de estoque · 12 meses</span>
+        <span class="val num">5,49<u>x</u></span>
+        <span class="foot"><span class="chip ok">Na meta</span><span class="meta">meta acima de 4,00x</span></span>
+      </div>
+      <div class="kpi is-warn">
+        <span class="lab">Cobertura</span>
+        <span class="val num">68<u>dias</u></span>
+        <span class="foot"><span class="chip at">Acima da faixa</span><span class="meta">faixa de 30 a 60 dias</span></span>
+      </div>
+      <div class="kpi">
+        <span class="lab">Fill Rate</span>
+        <span class="val num">96,4<u>%</u></span>
+        <span class="foot"><span class="chip ok">Na meta</span><span class="meta">meta acima de 95,0%</span></span>
+      </div>
+      <div class="kpi">
+        <span class="lab">OTIF</span>
+        <span class="val num">93,9<u>%</u></span>
+        <span class="foot"><span class="chip ok">Na meta</span><span class="meta">meta acima de 90,0%</span></span>
+      </div>
+      <div class="kpi is-off">
+        <span class="lab">Acuracidade de inventário</span>
+        <span class="val num">96,1<u>%</u></span>
+        <span class="foot"><span class="chip no">Fora da meta</span><span class="meta">meta acima de 98,0%</span></span>
+      </div>
+      <div class="kpi is-off">
+        <span class="lab">Estoque sem giro</span>
+        <span class="val num">11,1<u>%</u></span>
+        <span class="foot"><span class="chip no">Fora da meta</span><span class="meta">R$ 1,55 mi parados há mais de 180 dias</span></span>
+      </div>
+      <div class="kpi">
+        <span class="lab">Taxa de ruptura</span>
+        <span class="val num">0,8<u>%</u></span>
+        <span class="foot"><span class="chip ok">Na meta</span><span class="meta">meta abaixo de 3,0%</span></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 CHART ============ -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-code">SEC 02</span>
+      <h2>Vinte e quatro meses de consumo e estoque</h2>
+      <span class="sec-note">Valores em R$ mil</span>
+    </div>
+
+    <div class="card">
+      <div class="chart-head">
+        <div>
+          <div class="chart-title">Consumo mensal e valor de estoque no fechamento</div>
+          <div class="chart-sub">Consumo exclui transferência entre depósitos. Estoque é o saldo do último dia de cada mês.</div>
+        </div>
+        <div class="legend">
+          <span class="lg"><i style="background:var(--series-1)"></i>Consumo do mês</span>
+          <span class="lg"><i class="line" style="background:var(--series-2)"></i>Valor de estoque</span>
+        </div>
+      </div>
+      <div class="chart-scroll">
+        <svg id="chart" viewBox="0 0 1000 330" role="img" aria-label="Colunas de consumo mensal entre 4,7 e 7,9 milhões de reais e linha de valor de estoque entre 8,2 e 15,5 milhões de reais, de setembro de 2024 a agosto de 2026."></svg>
+      </div>
+
+      <div class="abc">
+        <div class="chart-title" style="margin-top:8px">Concentração do consumo: curva ABC dos últimos 12 meses</div>
+        <div class="abc-bar" role="img" aria-label="Curva ABC por valor de consumo: classe A com 79,9%, classe B com 15,0% e classe C com 5,1%.">
+          <div class="abc-seg" style="background:var(--abc-a);flex:79.9">A · 79,9%</div>
+          <div class="abc-seg" style="background:var(--abc-b);flex:15.0">B · 15,0%</div>
+          <div class="abc-seg c" style="background:var(--abc-c);flex:5.1">C</div>
+        </div>
+        <div class="abc-keys">
+          <div><i style="background:var(--abc-a)"></i>Classe A · 63 itens (27% dos itens com consumo) · R$ 59,3 mi</div>
+          <div><i style="background:var(--abc-b)"></i>Classe B · 72 itens · R$ 11,1 mi</div>
+          <div><i style="background:var(--abc-c)"></i>Classe C · 97 itens · R$ 3,8 mi</div>
+        </div>
+      </div>
+    </div>
+    <p class="lede" style="margin-top:22px;margin-bottom:0">
+      Pouco mais de um quarto dos itens com consumo responde por quatro quintos do valor. É essa
+      concentração que justifica tratar reposição, acuracidade e política de estoque por classe,
+      e não com uma regra única para todos os itens.
+    </p>
+  </section>
+
+  <!-- ============ 03 MODELO ============ -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-code">SEC 03</span>
+      <h2>Modelo de dados</h2>
+      <span class="sec-note">Esquema estrela · filtro em direção única</span>
+    </div>
+
+    <div class="card">
+      <figure>
+        <div class="fig-scroll">
+          <svg viewBox="0 0 920 470" role="img" aria-label="Esquema estrela: o calendário filtra as cinco tabelas fato por uma relação ativa na data do documento e duas relações inativas; oito dimensões filtram as fatos em direção única.">
+            <defs>
+              <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <polygon points="0,1 10,5 0,9" fill="currentColor"></polygon>
+              </marker>
+              <marker id="ar-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <polygon points="0,1 10,5 0,9" fill="#00959E"></polygon>
+              </marker>
+            </defs>
+
+            <!-- calendario -->
+            <rect x="345" y="14" width="230" height="46" rx="5" fill="none" stroke="#00959E" stroke-width="1.6"></rect>
+            <text x="460" y="34" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="12.5" font-weight="600" fill="#00959E">dCalendario</text>
+            <text x="460" y="50" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="11" fill="currentColor">espinha temporal do modelo</text>
+
+            <!-- relacao ativa -->
+            <line x1="412" y1="60" x2="412" y2="128" stroke="#00959E" stroke-width="1.6" marker-end="url(#ar-a)"></line>
+            <text x="404" y="86" text-anchor="end" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">ativa</text>
+            <text x="404" y="99" text-anchor="end" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">data do documento</text>
+
+            <!-- relacoes inativas -->
+            <line x1="508" y1="60" x2="508" y2="128" stroke="currentColor" stroke-width="1.4" stroke-dasharray="5 4" marker-end="url(#ar)"></line>
+            <text x="516" y="86" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">2 inativas</text>
+            <text x="516" y="99" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">atendimento e recebimento</text>
+
+            <!-- bloco de fatos -->
+            <rect x="330" y="130" width="260" height="220" rx="6" fill="none" stroke="currentColor" stroke-width="1.6"></rect>
+            <text x="460" y="153" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1.4" fill="currentColor">6 TABELAS FATO</text>
+            <text x="348" y="180" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="currentColor">fMovimentacaoEstoque</text>
+            <text x="348" y="202" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="currentColor">fPosicaoEstoque</text>
+            <text x="348" y="224" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="currentColor">fRequisicaoItem</text>
+            <text x="348" y="246" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="currentColor">fCompraItem</text>
+            <text x="348" y="268" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="currentColor">fInventarioContagem</text>
+            <text x="348" y="290" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="currentColor">fOrcamento</text>
+            <line x1="346" y1="306" x2="574" y2="306" stroke="currentColor" stroke-width="1" opacity=".35"></line>
+            <text x="460" y="324" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">grão: item × depósito × data × documento</text>
+            <text x="460" y="339" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">colunas numéricas ocultas, só medidas expostas</text>
+
+            <!-- dimensoes esquerda -->
+            <rect x="40" y="148" width="184" height="34" rx="4" fill="none" stroke="currentColor" stroke-width="1.2"></rect>
+            <text x="132" y="170" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="currentColor">dItem</text>
+            <line x1="224" y1="165" x2="326" y2="165" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar)"></line>
+
+            <rect x="40" y="200" width="184" height="34" rx="4" fill="none" stroke="currentColor" stroke-width="1.2"></rect>
+            <text x="132" y="222" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="currentColor">dDeposito</text>
+            <line x1="224" y1="217" x2="326" y2="217" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar)"></line>
+
+            <rect x="40" y="252" width="184" height="34" rx="4" fill="none" stroke="currentColor" stroke-width="1.2"></rect>
+            <text x="132" y="274" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="currentColor">dCentroCusto</text>
+            <line x1="224" y1="269" x2="326" y2="269" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar)"></line>
+
+            <rect x="40" y="304" width="184" height="34" rx="4" fill="none" stroke="currentColor" stroke-width="1.2"></rect>
+            <text x="132" y="326" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="currentColor">dFornecedor</text>
+            <line x1="224" y1="321" x2="326" y2="321" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar)"></line>
+
+            <!-- dimensoes direita -->
+            <rect x="696" y="148" width="184" height="34" rx="4" fill="none" stroke="currentColor" stroke-width="1.2"></rect>
+            <text x="788" y="170" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="currentColor">dTipoMovimento</text>
+            <line x1="694" y1="165" x2="594" y2="165" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar)"></line>
+
+            <rect x="696" y="200" width="184" height="34" rx="4" fill="none" stroke="currentColor" stroke-width="1.2"></rect>
+            <text x="788" y="222" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="currentColor">dSolicitante</text>
+            <line x1="694" y1="217" x2="594" y2="217" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar)"></line>
+
+            <rect x="696" y="252" width="184" height="34" rx="4" fill="none" stroke="currentColor" stroke-width="1.2"></rect>
+            <text x="788" y="274" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="currentColor">dStatusRequisicao</text>
+            <line x1="694" y1="269" x2="594" y2="269" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar)"></line>
+
+            <rect x="696" y="304" width="184" height="34" rx="4" fill="none" stroke="currentColor" stroke-width="1.2"></rect>
+            <text x="788" y="326" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11.5" fill="currentColor">dMetaKPI</text>
+            <line x1="694" y1="321" x2="594" y2="321" stroke="currentColor" stroke-width="1.2" marker-end="url(#ar)"></line>
+
+            <!-- rotulo das setas -->
+            <text x="275" y="140" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">1 → N · filtra</text>
+            <text x="644" y="140" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor">1 → N · filtra</text>
+
+            <!-- nota RLS -->
+            <line x1="132" y1="338" x2="132" y2="392" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 4"></line>
+            <rect x="40" y="392" width="184" height="52" rx="4" fill="none" stroke="currentColor" stroke-width="1" opacity=".55"></rect>
+            <text x="132" y="412" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1.2" fill="currentColor" opacity=".8">RLS</text>
+            <text x="132" y="428" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor" opacity=".8">e-mail do responsável</text>
+            <text x="132" y="440" text-anchor="middle" font-family="IBM Plex Sans, sans-serif" font-size="10.5" fill="currentColor" opacity=".8">filtra o centro de custo</text>
+          </svg>
+        </div>
+        <figcaption>
+          Toda dimensão filtra as fatos em direção única, sem relacionamento bidirecional. O calendário
+          entra duas vezes em requisições e compras: a relação ativa usa a data do documento, e as duas
+          inativas ficam disponíveis para as medidas que precisam analisar pela data de entrega, ativadas
+          com <span class="mono">USERELATIONSHIP</span>.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ 04 DECISOES ============ -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-code">SEC 04</span>
+      <h2>As três decisões que definem se os números estão certos</h2>
+      <span class="sec-note">Erros mais frequentes em painel de estoque</span>
+    </div>
+
+    <div class="decisions">
+
+      <div class="dec">
+        <div class="dec-top">
+          <h3>1. O snapshot de estoque nunca é somado ao longo do tempo</h3>
+          <p>
+            A tabela de posição guarda o saldo de cada dia. Somar um trimestre inteiro multiplica o
+            estoque por noventa. Toda medida de saldo retorna apenas a última data com dados dentro
+            do período filtrado. Este é o erro mais comum e o mais difícil de perceber, porque o
+            número continua parecendo plausível.
+          </p>
+        </div>
+        <div class="dec-code"><pre><span class="ms">Valor Estoque</span> =
+<span class="fn">CALCULATE</span> (
+    <span class="fn">SUM</span> ( fPosicaoEstoque[ValorSaldo] ),
+    <span class="fn">LASTNONBLANK</span> ( dCalendario[Data], <span class="fn">CALCULATE</span> ( <span class="fn">COUNTROWS</span> ( fPosicaoEstoque ) ) )
+)</pre></div>
+      </div>
+
+      <div class="dec">
+        <div class="dec-top">
+          <h3>2. Transferência entre depósitos é saída, mas não é consumo</h3>
+          <p>
+            Se a transferência entrar no cálculo, o giro sobe, a cobertura cai e a curva ABC classifica
+            como item crítico o material que apenas mudou de prateleira. A dimensão de tipo de movimento
+            carrega a marcação <span class="mono">ContaConsumo</span>, e giro, cobertura, consumo médio,
+            curva ABC e curva XYZ filtram por ela. Na base de exemplo as 578 transferências inflam o
+            giro em 1,3% quando o filtro é removido, de 5,49x para 5,56x. O desvio cresce na mesma
+            proporção do volume transferido entre depósitos.
+          </p>
+        </div>
+        <div class="dec-code"><pre><span class="ms">Valor Consumo</span> =
+<span class="fn">CALCULATE</span> (
+    <span class="fn">SUM</span> ( fMovimentacaoEstoque[ValorTotal] ),
+    dTipoMovimento[ContaConsumo] = <span class="fn">TRUE</span> ()
+)
+
+<span class="ms">Giro 12 Meses</span> =
+<span class="fn">VAR</span> _EstoqueMedio =
+    <span class="fn">CALCULATE</span> ( [Estoque Médio Valor],
+        <span class="fn">DATESINPERIOD</span> ( dCalendario[Data], <span class="fn">MAX</span> ( dCalendario[Data] ), -12, <span class="fn">MONTH</span> ) )
+<span class="fn">RETURN</span> <span class="fn">DIVIDE</span> ( [Valor Consumo 12M], _EstoqueMedio )</pre></div>
+      </div>
+
+      <div class="dec">
+        <div class="dec-top">
+          <h3>3. As flags de nível de serviço são resolvidas na origem, não em DAX</h3>
+          <p>
+            Atendido integralmente, no prazo e OTIF viram colunas de dois valores na view SQL. O VertiPaq
+            comprime colunas assim com eficiência máxima, o que reduz o modelo e transforma o cálculo de
+            OTIF em uma contagem filtrada em vez de um iterador linha a linha sobre centenas de milhares
+            de requisições.
+          </p>
+        </div>
+        <div class="dec-code"><pre><span class="cm">-- na view bi.vw_Requisicao</span>
+<span class="fn">CASE WHEN</span> QuantidadeAtendida &gt;= QuantidadeSolicitada
+      <span class="fn">AND</span> DataAtendimento &lt;= DataPrometida <span class="fn">THEN</span> 1 <span class="fn">ELSE</span> 0 <span class="fn">END</span> <span class="fn">AS</span> FlagOTIF
+
+<span class="cm">// no modelo</span>
+<span class="ms">OTIF %</span> = <span class="fn">DIVIDE</span> (
+    <span class="fn">CALCULATE</span> ( <span class="fn">COUNTROWS</span> ( fRequisicaoItem ), fRequisicaoItem[FlagOTIF] = 1 ),
+    <span class="fn">COUNTROWS</span> ( fRequisicaoItem )
+)</pre></div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ 05 BLOCOS ============ -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-code">SEC 05</span>
+      <h2>Cobertura de indicadores</h2>
+      <span class="sec-note">82 indicadores em 9 blocos</span>
+    </div>
+    <div class="card">
+      <div class="tbl-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th style="width:26%">Bloco</th>
+              <th class="n" style="width:9%">Ind.</th>
+              <th>Indicadores de referência</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Posição e valor de estoque</td><td class="n">9</td><td>Valor total, SKUs com saldo, itens abaixo do mínimo, itens no ponto de pedido, valor em excesso</td></tr>
+            <tr><td>Movimentação e consumo</td><td class="n">13</td><td>Entradas, saídas, consumo médio mensal e diário, ajustes, perdas, variação mês a mês e ano a ano</td></tr>
+            <tr><td>Giro, cobertura e obsolescência</td><td class="n">9</td><td>Giro, cobertura em dias, DIO, itens sem giro, valor obsoleto, custo de carregamento</td></tr>
+            <tr><td>Nível de serviço</td><td class="n">11</td><td>Fill Rate, OTIF, pontualidade, tempo médio de atendimento, backlog, taxa de ruptura</td></tr>
+            <tr><td>Compras e fornecedores</td><td class="n">11</td><td>Lead time real contra padrão, pontualidade, devolução, IQF, concentração dos cinco maiores</td></tr>
+            <tr><td>Consumo por centro de custo</td><td class="n">7</td><td>Realizado contra orçado, saldo orçamentário, projeção de fechamento do ano, ranking</td></tr>
+            <tr><td>Inventário e acuracidade</td><td class="n">8</td><td>Acuracidade por contagem e financeira, divergência positiva e negativa, cobertura do ciclo</td></tr>
+            <tr><td>Classificação estratégica</td><td class="n">7</td><td>Curva ABC, curva XYZ, matriz, estoque de segurança, ponto de pedido e lote econômico sugeridos</td></tr>
+            <tr><td>Qualidade de dados</td><td class="n">7</td><td>Cadastro incompleto, movimento sem centro de custo, custo zerado, conciliação com o ERP</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="lede" style="margin-top:22px;margin-bottom:0">
+      O bloco de classificação estratégica calcula ponto de pedido e estoque de segurança a partir do
+      histórico real e compara com o que está cadastrado no ERP. A diferença entre os dois é a lista
+      objetiva de ajustes que resolve ruptura e excesso ao mesmo tempo.
+    </p>
+  </section>
+
+  <!-- ============ 06 PAGINAS ============ -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-code">SEC 06</span>
+      <h2>As doze páginas do relatório</h2>
+      <span class="sec-note">Mais 3 drill-through e 1 tooltip</span>
+    </div>
+    <div class="pages">
+      <div class="pg"><b>01</b><strong>Capa</strong><span>Navegação por botões e carimbo da última atualização</span></div>
+      <div class="pg"><b>02</b><strong>Visão executiva</strong><span>Oito cartões de KPI, evolução, composição e alertas</span></div>
+      <div class="pg"><b>03</b><strong>Posição de estoque</strong><span>Treemap, dispersão de cobertura por valor e aging</span></div>
+      <div class="pg"><b>04</b><strong>Movimentação</strong><span>Entradas, saídas, cascata por grupo, perdas e ajustes</span></div>
+      <div class="pg"><b>05</b><strong>Nível de serviço</strong><span>Fill Rate, OTIF, funil de atendimento e backlog</span></div>
+      <div class="pg"><b>06</b><strong>Compras e fornecedores</strong><span>Lead time contra pontualidade, IQF e concentração</span></div>
+      <div class="pg"><b>07</b><strong>Centro de custo</strong><span>Realizado contra orçado, hierarquia e projeção do ano</span></div>
+      <div class="pg"><b>08</b><strong>Inventário</strong><span>Acuracidade por curva, divergências e evolução</span></div>
+      <div class="pg"><b>09</b><strong>Itens críticos</strong><span>Lista diária de compra com quantidade sugerida</span></div>
+      <div class="pg"><b>10</b><strong>Curvas ABC e XYZ</strong><span>Pareto, matriz e comparação de parâmetros</span></div>
+      <div class="pg"><b>11</b><strong>Detalhamento</strong><span>Tabela analítica completa habilitada para exportação</span></div>
+      <div class="pg"><b>12</b><strong>Glossário</strong><span>Definição e fórmula de cada indicador na ferramenta</span></div>
+    </div>
+  </section>
+
+  <!-- ============ 07 IMPLEMENTACAO ============ -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-code">SEC 07</span>
+      <h2>Implementação em nove etapas</h2>
+      <span class="sec-note">Sequência obrigatória</span>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="s-n">01</span><span class="s-t">Ambiente</span><span class="s-d">Desktop, gateway e ferramentas de apoio</span><span class="s-h">4 h</span></div>
+      <div class="step"><span class="s-n">02</span><span class="s-t">Base de dados</span><span class="s-d">Schema analítico e views de consumo</span><span class="s-h">24 h</span></div>
+      <div class="step"><span class="s-n">03</span><span class="s-t">Carga e tratamento</span><span class="s-d">Power Query com dobramento preservado</span><span class="s-h">16 h</span></div>
+      <div class="step"><span class="s-n">04</span><span class="s-t">Modelo</span><span class="s-d">Relacionamentos, tabela de datas, ocultações</span><span class="s-h">8 h</span></div>
+      <div class="step"><span class="s-n">05</span><span class="s-t">Medidas</span><span class="s-d">248 definições DAX com formato e pasta</span><span class="s-h">16 h</span></div>
+      <div class="step"><span class="s-n">06</span><span class="s-t">Validação</span><span class="s-d">Conciliação contra o ERP, tolerância de 0,5%</span><span class="s-h">12 h</span></div>
+      <div class="step"><span class="s-n">07</span><span class="s-t">Páginas</span><span class="s-d">12 páginas, drill-through, tooltip e tema</span><span class="s-h">32 h</span></div>
+      <div class="step"><span class="s-n">08</span><span class="s-t">Segurança e publicação</span><span class="s-d">RLS, workspace, app e agendamento</span><span class="s-h">12 h</span></div>
+      <div class="step"><span class="s-n">09</span><span class="s-t">Treinamento</span><span class="s-d">Sessão por perfil e transferência</span><span class="s-h">8 h</span></div>
+      <div class="step total"><span class="s-n">Σ</span><span class="s-t">Total do projeto</span><span class="s-d">Meio período: 7 a 8 semanas. Integral: 4 a 5 semanas.</span><span class="s-h">132 h</span></div>
+    </div>
+  </section>
+
+  <!-- ============ 08 REPO ============ -->
+  <section>
+    <div class="sec-head">
+      <span class="sec-code">SEC 08</span>
+      <h2>O que está entregue no repositório</h2>
+      <span class="sec-note">42 arquivos · 5.007 linhas de documentação e código</span>
+    </div>
+    <div class="tree">
+<pre><b>powerbi-almoxarifado/</b>
+├── <b>README.md</b>                       <i>guia de início rápido e adaptação ao ERP</i>
+├── <b>docs/</b>
+│   ├── 01-escopo-projeto.md         <i>objetivos, perfis, regras, riscos, aceite</i>
+│   ├── 02-dicionario-indicadores.md <i>82 indicadores com fórmula e meta</i>
+│   ├── 03-modelo-dados.md           <i>esquema estrela e volumetria</i>
+│   ├── 04-layout-dashboard.md       <i>wireframe das 12 páginas</i>
+│   ├── 05-governanca-rls-publicacao.md
+│   └── 06-plano-implementacao.md    <i>9 etapas e erros a evitar</i>
+├── <b>sql/</b>
+│   ├── 01-ddl-schema.sql            <i>schema bi, índices, chaves e adaptações</i>
+│   └── 02-views-analiticas.sql      <i>8 views, flags resolvidas na origem</i>
+├── <b>powerquery/</b>                    <i>parâmetros, calendário, dimensões e fatos</i>
+├── <b>dax/</b>                            <i>11 arquivos, 248 definições comentadas</i>
+│   ├── 01-medidas-estoque.dax       ├── 06-medidas-centro-custo-orcamento.dax
+│   ├── 02-medidas-movimentacao.dax  ├── 07-medidas-inventario.dax
+│   ├── 03-medidas-giro-cobertura.dax├── 08-medidas-abc-xyz-reposicao.dax
+│   ├── 04-medidas-nivel-servico.dax ├── 09-medidas-tempo.dax
+│   └── 05-medidas-compras-forn.dax  └── 10-medidas-kpi-formatacao.dax
+├── <b>tema/</b>tema-almoxarifado.json     <i>tema corporativo pronto para aplicar</i>
+└── <b>dados-exemplo/</b>                  <i>gerador Python e 15 CSV, 24 meses</i>
+    └── gerar_dados.py               <i>59 mil linhas de fato, sem dependências</i></pre>
+    </div>
+  </section>
+
+  <footer>
+    <span>Branch <span class="mono">claude/power-bi-almoxarifado-dashboard-gqsh0n</span></span>
+    <span>Versão 1.0 · valores da base de homologação, não de operação real</span>
+  </footer>
+</div>
+
+<div class="tip" id="tip" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  var data = [
+    {m:"set/24",c:5548,e:8196},{m:"out/24",c:4895,e:12849},{m:"nov/24",c:5163,e:14684},
+    {m:"dez/24",c:6045,e:15174},{m:"jan/25",c:6451,e:13019},{m:"fev/25",c:7176,e:11842},
+    {m:"mar/25",c:7868,e:11058},{m:"abr/25",c:7770,e:10976},{m:"mai/25",c:7364,e:12890},
+    {m:"jun/25",c:7121,e:12101},{m:"jul/25",c:6311,e:13525},{m:"ago/25",c:5857,e:13422},
+    {m:"set/25",c:4694,e:15273},{m:"out/25",c:5008,e:15517},{m:"nov/25",c:5353,e:14351},
+    {m:"dez/25",c:5854,e:13663},{m:"jan/26",c:6298,e:12814},{m:"fev/26",c:6872,e:12987},
+    {m:"mar/26",c:6851,e:13102},{m:"abr/26",c:6858,e:12424},{m:"mai/26",c:7459,e:11468},
+    {m:"jun/26",c:6462,e:13029},{m:"jul/26",c:6347,e:13810},{m:"ago/26",c:6196,e:13916}
+  ];
+
+  var W=1000,H=330,ML=58,MR=14,MT=18,MB=44;
+  var PW=W-ML-MR, PH=H-MT-MB, Y0=MT+PH, MAXV=16000;
+  var slot=PW/data.length, bw=Math.min(22,slot-14);
+  var NS="http://www.w3.org/2000/svg";
+
+  function y(v){ return Y0 - (v/MAXV)*PH; }
+  function cx(i){ return ML + i*slot + slot/2; }
+  function fmt(v){ return v.toLocaleString("pt-BR"); }
+  function el(n,a){ var e=document.createElementNS(NS,n); for(var k in a) e.setAttribute(k,a[k]); return e; }
+
+  var svg=document.getElementById("chart");
+  var css=getComputedStyle(document.documentElement);
+  var C_GRID=css.getPropertyValue("--grid").trim();
+  var C_AXIS=css.getPropertyValue("--axis").trim();
+  var C_MUT =css.getPropertyValue("--muted").trim();
+  var C_INK =css.getPropertyValue("--ink").trim();
+  var C_S1  =css.getPropertyValue("--series-1").trim();
+  var C_S2  =css.getPropertyValue("--series-2").trim();
+  var C_PAP =css.getPropertyValue("--paper").trim();
+
+  // gridlines + y labels
+  [0,4000,8000,12000,16000].forEach(function(v){
+    svg.appendChild(el("line",{x1:ML,x2:W-MR,y1:y(v),y2:y(v),stroke:v===0?C_AXIS:C_GRID,"stroke-width":1}));
+    var t=el("text",{x:ML-10,y:y(v)+4,"text-anchor":"end","font-size":11,fill:C_MUT,
+      "font-family":"IBM Plex Mono, monospace"});
+    t.textContent = v===0 ? "0" : fmt(v);
+    svg.appendChild(t);
+  });
+
+  // bars: consumo (flow)
+  data.forEach(function(d,i){
+    svg.appendChild(el("rect",{x:cx(i)-bw/2,y:y(d.c),width:bw,height:Y0-y(d.c),
+      rx:4,fill:C_S1}));
+  });
+
+  // line: estoque (stock)
+  var pts=data.map(function(d,i){ return cx(i)+","+y(d.e); }).join(" ");
+  svg.appendChild(el("polyline",{points:pts,fill:"none",stroke:C_S2,"stroke-width":2.5,
+    "stroke-linejoin":"round","stroke-linecap":"round"}));
+
+  // endpoint marker + direct label
+  var li=data.length-1;
+  svg.appendChild(el("circle",{cx:cx(li),cy:y(data[li].e),r:5.5,fill:C_S2,stroke:C_PAP,"stroke-width":2}));
+  var lbl=el("text",{x:cx(li),y:y(data[li].e)-14,"text-anchor":"end","font-size":11.5,
+    fill:C_INK,"font-weight":600,"font-family":"IBM Plex Mono, monospace"});
+  lbl.textContent="13.916";
+  svg.appendChild(lbl);
+
+  // x labels every 3 months
+  data.forEach(function(d,i){
+    if(i%3!==0 && i!==data.length-1) return;
+    var t=el("text",{x:cx(i),y:Y0+20,"text-anchor":"middle","font-size":11,fill:C_MUT,
+      "font-family":"IBM Plex Mono, monospace"});
+    t.textContent=d.m;
+    svg.appendChild(t);
+  });
+
+  // axis unit
+  var u=el("text",{x:ML-10,y:MT-4,"text-anchor":"end","font-size":10,fill:C_MUT,
+    "font-family":"IBM Plex Mono, monospace"});
+  u.textContent="R$ mil";
+  svg.appendChild(u);
+
+  // hover layer
+  var cross=el("line",{x1:0,x2:0,y1:MT,y2:Y0,stroke:C_AXIS,"stroke-width":1,opacity:0});
+  svg.appendChild(cross);
+  var tip=document.getElementById("tip");
+
+  data.forEach(function(d,i){
+    var hit=el("rect",{x:ML+i*slot,y:MT,width:slot,height:PH,fill:"transparent",
+      tabindex:0,role:"img","aria-label":d.m+": consumo "+fmt(d.c)+" mil reais, estoque "+fmt(d.e)+" mil reais"});
+    function show(ev){
+      cross.setAttribute("x1",cx(i)); cross.setAttribute("x2",cx(i)); cross.setAttribute("opacity",1);
+      tip.innerHTML='<div class="t-m">'+d.m+'</div>'+
+        '<div class="t-r"><span><i style="background:'+C_S1+'"></i>Consumo</span><b>'+fmt(d.c)+'</b></div>'+
+        '<div class="t-r"><span><i style="background:'+C_S2+'"></i>Estoque</span><b>'+fmt(d.e)+'</b></div>';
+      var r=(ev && ev.clientX!==undefined) ? {x:ev.clientX,y:ev.clientY}
+            : (function(){var b=hit.getBoundingClientRect();return {x:b.left+b.width/2,y:b.top+40};})();
+      tip.style.opacity=1;
+      var tw=tip.offsetWidth, th=tip.offsetHeight;
+      tip.style.left=Math.min(Math.max(8,r.x+14), window.innerWidth-tw-8)+"px";
+      tip.style.top=Math.min(Math.max(8,r.y-th-12), window.innerHeight-th-8)+"px";
+    }
+    function hide(){ cross.setAttribute("opacity",0); tip.style.opacity=0; }
+    hit.addEventListener("pointermove",show);
+    hit.addEventListener("pointerenter",show);
+    hit.addEventListener("pointerleave",hide);
+    hit.addEventListener("focus",show);
+    hit.addEventListener("blur",hide);
+    svg.appendChild(hit);
+  });
+})();
+</script>

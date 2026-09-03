@@ -19,6 +19,7 @@ Projeto completo e pronto para implementação: escopo, modelo de dados, banco, 
 | Biblioteca de medidas | `dax/` | 11 arquivos com 248 definições comentadas entre medidas, colunas e tabelas |
 | Tema visual | `tema/tema-almoxarifado.json` | Tema corporativo pronto para aplicar |
 | Base de exemplo | `dados-exemplo/` | Gerador Python e 15 arquivos CSV com 24 meses de histórico |
+| Apresentação do projeto | `apresentacao-projeto.html` | Página única para apresentar o escopo à gestão |
 
 ---
 
@@ -51,15 +52,17 @@ Resultado da última posição gerada (agosto de 2026), útil para conferir se a
 
 | Indicador | Valor | Meta | Situação |
 |-----------|-------|------|----------|
-| Valor de estoque | R$ 15,68 milhões | Referência | ● |
-| Giro de estoque (12 meses) | 4,79 x | Acima de 4,00 x | Dentro |
-| Cobertura | 78 dias | 30 a 60 dias | Acima da faixa |
-| Fill Rate | 96,5% | Acima de 95% | Dentro |
-| OTIF | 94,1% | Acima de 90% | Dentro |
-| Taxa de ruptura | 1,0% | Abaixo de 3% | Dentro |
-| Pontualidade do fornecedor | 88,3% | Acima de 92% | Fora |
-| Acuracidade de inventário | 95,1% | Acima de 98% | Fora |
-| Estoque sem giro | 27,2% do valor | Abaixo de 8% | Fora |
+| Valor de estoque | R$ 13,92 milhões | Referência | ● |
+| Giro de estoque (12 meses) | 5,49 x | Acima de 4,00 x | Dentro |
+| Cobertura | 68 dias | 30 a 60 dias | Acima da faixa |
+| Fill Rate | 96,4% | Acima de 95% | Dentro |
+| OTIF | 93,9% | Acima de 90% | Dentro |
+| Taxa de ruptura | 0,8% | Abaixo de 3% | Dentro |
+| Pontualidade do fornecedor | 88,8% | Acima de 92% | Fora |
+| Acuracidade de inventário | 96,1% | Acima de 98% | Fora |
+| Estoque sem giro | 11,1% do valor | Abaixo de 8% | Fora |
+
+Volumetria gerada: 59 mil linhas de fato distribuídas em 250 itens, 345 combinações de item e depósito, 24 meses de histórico. A base inclui transferências entre depósitos, perdas, ajustes e pedidos em aberto, de modo que todas as regras de negócio do projeto possam ser exercitadas.
 
 As três metas em aberto são propositais. Elas dão material real para as páginas de ação do painel e mostram como a formatação condicional se comporta em cenário desfavorável.
 

@@ -15,4 +15,8 @@ Formato baseado em Keep a Changelog. Versionamento semântico.
 * Documento de governança com RLS, publicação, nomenclatura e otimização
 * Plano de implementação em 9 etapas com estimativa de esforço
 * Tema visual corporativo em JSON
-* Gerador de base de exemplo em Python com 24 meses de histórico
+* Gerador de base de exemplo em Python com 24 meses de histórico, incluindo
+  transferências entre depósitos, perdas, ajustes, pedidos em aberto e itens que
+  deixam de girar ao longo do período, de modo que todas as regras de negócio do
+  projeto sejam exercitadas na homologação
+* Apresentação do projeto em página única (`apresentacao-projeto.html`)
