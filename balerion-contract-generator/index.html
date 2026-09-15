@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090909">
+  <meta name="description" content="Gerador de contratos da Balerion Drinks para eventos e serviços de bar.">
+  <title>Balerion Drinks | Gerador de Contratos</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <img src="./assets/balerion-logo.png" alt="Balerion Drinks">
+      <div>
+        <span class="eyebrow">BALERION DRINKS</span>
+        <h1>Gerador de contratos</h1>
+      </div>
+    </div>
+    <div class="save-state" id="saveState"><span></span> Rascunho salvo neste dispositivo</div>
+  </header>
+
+  <main class="workspace">
+    <section class="editor" aria-labelledby="editorTitle">
+      <div class="section-heading">
+        <div>
+          <p class="kicker">NOVO DOCUMENTO</p>
+          <h2 id="editorTitle">Contrato de prestação de serviço</h2>
+          <p>Preencha os dados. A prévia e o PDF são atualizados automaticamente.</p>
+        </div>
+        <button type="button" class="text-button" id="exampleButton">Preencher exemplo</button>
+      </div>
+
+      <form id="contractForm" novalidate>
+        <details class="form-group" open>
+          <summary><span>01</span><div><strong>Contratante</strong><small>Dados do cliente responsável</small></div></summary>
+          <div class="fields">
+            <label class="wide">Nome completo ou razão social<input name="clientName" autocomplete="name" required placeholder="Ex.: Maria Silva"></label>
+            <label>CPF ou CNPJ<input name="clientDocument" inputmode="numeric" required placeholder="000.000.000-00"></label>
+            <label>Telefone<input name="clientPhone" inputmode="tel" autocomplete="tel" placeholder="(00) 00000-0000"></label>
+            <label class="wide">Endereço completo<input name="clientAddress" autocomplete="street-address" placeholder="Rua, número, bairro, cidade e CEP"></label>
+            <label class="wide">E-mail<input name="clientEmail" type="email" autocomplete="email" placeholder="cliente@email.com"></label>
+          </div>
+        </details>
+
+        <details class="form-group" open>
+          <summary><span>02</span><div><strong>Evento</strong><small>Local, data e operação</small></div></summary>
+          <div class="fields">
+            <label>Tipo de evento<select name="eventType"><option>Casamento</option><option>Aniversário</option><option>Confraternização</option><option>Festa de 15 anos</option><option>Formatura</option><option>Bodas</option><option>Chá revelação</option><option>Batizado</option><option>Outro evento</option></select></label>
+            <label>Número do orçamento<input name="quoteNumber" placeholder="Ex.: 2026-018"></label>
+            <label class="wide">Local do evento<input name="eventLocation" required placeholder="Espaço, endereço e cidade"></label>
+            <label>Data<input name="eventDate" type="date" required></label>
+            <label>Convidados<input name="guestCount" type="number" min="1" inputmode="numeric" placeholder="150"></label>
+            <label>Início<input name="startTime" type="time" required></label>
+            <label>Término<input name="endTime" type="time" required></label>
+            <label>Duração contratada<input name="durationHours" type="number" min="1" step="0.5" value="4"><span class="suffix">horas</span></label>
+            <label>Hora extra<input name="extraHourValue" inputmode="decimal" placeholder="0,00"><span class="prefix">R$</span></label>
+          </div>
+        </details>
+
+        <details class="form-group">
+          <summary><span>03</span><div><strong>Valores e condições</strong><small>Investimento e pagamentos</small></div></summary>
+          <div class="fields">
+            <label>Valor total<input name="totalValue" inputmode="decimal" required placeholder="0,00"><span class="prefix">R$</span></label>
+            <label>Convidado excedente<input name="extraGuestValue" inputmode="decimal" placeholder="0,00"><span class="prefix">R$</span></label>
+            <label>Sinal de reserva<input name="depositPercent" type="number" min="0" max="100" value="20"><span class="suffix">%</span></label>
+            <label>Na assinatura<input name="signaturePercent" type="number" min="0" max="100" value="50"><span class="suffix">%</span></label>
+            <label>Saldo final<input name="finalPercent" type="number" min="0" max="100" value="30"><span class="suffix">%</span></label>
+            <label>Prazo do saldo<input name="finalDays" type="number" min="0" value="7"><span class="suffix">dias antes</span></label>
+          </div>
+          <p class="inline-alert" id="paymentAlert" hidden>Os percentuais de pagamento precisam somar 100%.</p>
+        </details>
+
+        <details class="form-group">
+          <summary><span>04</span><div><strong>Cardápio e insumos</strong><small>Escopo contratado</small></div></summary>
+          <div class="fields">
+            <label class="wide">Cardápio do evento<textarea name="menu" rows="4" placeholder="Liste os drinks ou informe: conforme Anexo I"></textarea></label>
+            <label class="wide">Responsável por bebidas, frutas e insumos<select name="suppliesBy"><option value="client">Contratante</option><option value="provider">Balerion Drinks</option><option value="quote">Conforme orçamento aprovado</option></select></label>
+            <label class="wide">Observações adicionais<textarea name="notes" rows="3" placeholder="Estrutura, acesso, restrições ou combinações específicas"></textarea></label>
+          </div>
+        </details>
+
+        <details class="form-group">
+          <summary><span>05</span><div><strong>Autorizações</strong><small>Imagem e conferência final</small></div></summary>
+          <div class="choice-row" role="group" aria-label="Autorização de uso de imagem">
+            <span>Uso de imagens do evento pela Balerion Drinks</span>
+            <label><input type="radio" name="imageConsent" value="yes" checked> Autorizado</label>
+            <label><input type="radio" name="imageConsent" value="no"> Não autorizado</label>
+          </div>
+          <label class="check-row"><input type="checkbox" name="reviewed" required><span>Conferi os dados e estou ciente de que o documento deve ser revisado antes da assinatura.</span></label>
+        </details>
+
+        <div class="form-actions">
+          <button type="button" class="secondary-button" id="resetButton">Limpar formulário</button>
+          <button type="submit" class="primary-button" id="downloadButton"><span>Baixar contrato em PDF</span><small>Documento A4 pronto para assinatura</small></button>
+        </div>
+        <p class="legal-note">O modelo mantém as cláusulas do documento enviado. Recomenda-se revisão jurídica antes do uso definitivo.</p>
+      </form>
+    </section>
+
+    <aside class="preview-pane" aria-labelledby="previewTitle">
+      <div class="preview-toolbar">
+        <div><span>PRÉVIA AO VIVO</span><strong id="previewTitle">Contrato preenchido</strong></div>
+        <div class="page-count">8 páginas</div>
+      </div>
+      <div class="paper-wrap">
+        <article class="paper" id="contractPreview">
+          <header class="paper-header">
+            <img src="./assets/balerion-logo.png" alt="">
+            <div><small>BALERION DRINKS</small><b>CONTRATO DE PRESTAÇÃO DE SERVIÇO</b></div>
+          </header>
+          <div class="paper-number">ORÇAMENTO <span data-preview="quoteNumber">NÃO INFORMADO</span></div>
+          <section>
+            <h3>CONTRATANTE</h3>
+            <dl>
+              <div><dt>Nome</dt><dd data-preview="clientName">A preencher</dd></div>
+              <div><dt>CPF/CNPJ</dt><dd data-preview="clientDocument">A preencher</dd></div>
+              <div><dt>Telefone</dt><dd data-preview="clientPhone">A preencher</dd></div>
+              <div><dt>E-mail</dt><dd data-preview="clientEmail">A preencher</dd></div>
+              <div class="full"><dt>Endereço</dt><dd data-preview="clientAddress">A preencher</dd></div>
+            </dl>
+          </section>
+          <section>
+            <h3>OBJETO DO CONTRATO</h3>
+            <p>Prestação de serviços de bartender pela CONTRATADA, compreendendo montagem, operação e desmontagem do bar, bem como preparação e serviço de drinks no evento <b data-preview="eventType">Casamento</b>.</p>
+            <div class="event-summary">
+              <div><small>DATA</small><strong data-preview="eventDate">A definir</strong></div>
+              <div><small>HORÁRIO</small><strong><span data-preview="startTime">--:--</span> às <span data-preview="endTime">--:--</span></strong></div>
+              <div><small>CONVIDADOS</small><strong data-preview="guestCount">A definir</strong></div>
+            </div>
+            <p class="location"><small>LOCAL DO EVENTO</small><span data-preview="eventLocation">A preencher</span></p>
+          </section>
+          <section>
+            <h3>INVESTIMENTO</h3>
+            <div class="investment"><span>Valor total do serviço</span><strong>R$ <span data-preview="totalValue">0,00</span></strong></div>
+          </section>
+          <section class="clauses">
+            <h3>CLÁUSULAS DO CONTRATO</h3>
+            <ol><li>Serviços inclusos</li><li>Equipamentos e danos</li><li>Duração e horas extras</li><li>Valores e pagamento</li><li>Obrigações das partes</li><li>Ajuste de valores</li><li>Rescisão</li><li>Proteção de dados</li><li>Cardápio</li><li>Uso de imagem</li><li>Proteção de menores</li></ol>
+          </section>
+          <footer>Documento gerado pela Balerion Drinks</footer>
+        </article>
+      </div>
+    </aside>
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="./assets/pdf-lib.min.js"></script>
+  <script src="./assets/fontkit.umd.min.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
