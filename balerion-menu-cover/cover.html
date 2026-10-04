@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><title>Capa Cardápio Balerion Drinks</title>
+<style>
+@font-face{font-family:"Playfair";src:url("../balerion-contract-generator/assets/fonts/PlayfairDisplay-Variable.ttf");font-weight:400 900}
+:root{--gold:#d9b46a;--gold-hi:#f4dc9c;--gold-lo:#9c7430;--wine:#3a0a14;--red:#d4202e}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:794px;height:1123px;background:#070405}
+.page{position:relative;width:794px;height:1123px;overflow:hidden;font-family:"Playfair",Georgia,serif;
+ background:radial-gradient(ellipse 70% 40% at 50% 62%,rgba(212,32,46,.38),transparent 70%),
+ radial-gradient(ellipse 80% 30% at 50% 0%,rgba(120,20,34,.55),transparent 70%),#070405}
+.photo{position:absolute;left:0;right:0;bottom:0;height:520px;background:url("../balerion-contract-generator/assets/cover-page.jpg") center bottom/100% auto no-repeat;
+ -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 20%,#000 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 20%,#000 100%);filter:saturate(1.25) contrast(1.08) brightness(1.08)}
+.flame{position:absolute;left:50%;top:560px;width:900px;height:420px;transform:translateX(-50%);
+ background:radial-gradient(ellipse at 50% 100%,rgba(255,120,30,.55),rgba(212,32,46,.25) 45%,transparent 70%);mix-blend-mode:screen;filter:blur(8px)}
+.streak{position:absolute;top:-100px;left:-140px;width:260px;height:1400px;transform:rotate(24deg);
+ background:linear-gradient(90deg,transparent,rgba(244,220,156,.10),transparent)}
+.streak.b{left:560px;width:160px;opacity:.7}
+.vig{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 55%,transparent 55%,rgba(0,0,0,.65) 100%)}
+canvas{position:absolute;inset:0}
+.frame{position:absolute;inset:22px;border:1.5px solid rgba(217,180,106,.75)}
+.frame:after{content:"";position:absolute;inset:7px;border:.6px solid rgba(217,180,106,.4)}
+.corner{position:absolute;width:26px;height:26px;border:2px solid var(--gold-hi)}
+.c1{top:16px;left:16px;border-right:0;border-bottom:0}.c2{top:16px;right:16px;border-left:0;border-bottom:0}
+.c3{bottom:16px;left:16px;border-right:0;border-top:0}.c4{bottom:16px;right:16px;border-left:0;border-top:0}
+.logo{position:absolute;top:48px;left:50%;width:330px;transform:translateX(-50%);filter:drop-shadow(0 0 28px rgba(212,32,46,.55))}
+.eyebrow{position:absolute;top:372px;width:100%;text-align:center;font:600 13px/1 "Playfair";letter-spacing:.55em;color:var(--gold);text-indent:.55em}
+.title{position:absolute;top:398px;width:100%;text-align:center;font-weight:800;font-size:112px;line-height:1;letter-spacing:.06em;text-indent:.06em;
+ background:linear-gradient(180deg,#fff3c4 0%,#e8c46f 38%,#a47a32 62%,#f0d48a 100%);-webkit-background-clip:text;background-clip:text;color:transparent;
+ filter:drop-shadow(0 6px 22px rgba(0,0,0,.8))}
+.rule{position:absolute;top:548px;left:50%;width:420px;transform:translateX(-50%);display:flex;align-items:center;gap:14px}
+.rule i{flex:1;height:1px;background:linear-gradient(90deg,transparent,var(--gold))}
+.rule i:last-child{transform:scaleX(-1)}
+.rule b{width:9px;height:9px;transform:rotate(45deg);background:var(--red);box-shadow:0 0 14px var(--red);border:1px solid var(--gold-hi)}
+.tag{position:absolute;top:576px;width:100%;text-align:center;font-weight:600;font-size:30px;letter-spacing:.2em;color:#f6ecd6;text-indent:.2em;text-shadow:0 2px 14px #000}
+.tag em{font-style:normal;color:var(--gold-hi)}
+.botshade{position:absolute;left:0;right:0;bottom:0;height:200px;background:linear-gradient(to top,rgba(5,3,4,.92),transparent)}
+.foot{position:absolute;bottom:52px;width:100%;text-align:center;text-shadow:0 2px 12px #000}
+.foot .a{font-weight:700;font-size:15px;letter-spacing:.5em;text-indent:.5em;color:var(--gold-hi)}
+.foot .b{margin-top:9px;font-size:14px;font-style:italic;color:#e9dfca;letter-spacing:.08em}
+</style></head><body>
+<div class="page">
+  <div class="streak"></div><div class="streak b"></div>
+  <div class="photo"></div><div class="flame"></div><div class="vig"></div>
+  <div class="botshade"></div>
+  <canvas id="fx" width="794" height="1123"></canvas>
+  <div class="frame"></div><div class="corner c1"></div><div class="corner c2"></div><div class="corner c3"></div><div class="corner c4"></div>
+  <img class="logo" src="../balerion-contract-generator/assets/balerion-logo.png" alt="Balerion Drinks">
+  <div class="eyebrow">COQUETELARIA PARA EVENTOS</div>
+  <div class="title">CARDÁPIO</div>
+  <div class="rule"><i></i><b></b><i></i></div>
+  <div class="tag">SABOR QUE <em>INCENDEIA</em> A FESTA</div>
+  <div class="foot"><div class="a">NOSSOS DRINKS</div><div class="b">Uma experiência em cada brinde.</div></div>
+</div>
+<script>
+let s=7;const r=()=>(s=(s*16807)%2147483647)/2147483647;
+const c=document.getElementById('fx').getContext('2d');
+for(let i=0;i<140;i++){const x=r()*794,y=300+r()*800,z=.6+r()*2.4,a=.25+r()*.75;
+ const g=c.createRadialGradient(x,y,0,x,y,z*4);const col=r()>.5?'255,150,50':'244,220,156';
+ g.addColorStop(0,`rgba(${col},${a})`);g.addColorStop(1,`rgba(${col},0)`);c.fillStyle=g;c.beginPath();c.arc(x,y,z*4,0,7);c.fill();}
+</script></body></html>
